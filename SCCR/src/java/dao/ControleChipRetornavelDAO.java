@@ -19,7 +19,8 @@ public class ControleChipRetornavelDAO {
             ResultSet rs = comando.executeQuery("select*from controle_chip_retornavel");
             while (rs.next()) {
 
-                ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel(rs.getInt("identificadorAtleta"), null);
+                ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel
+                (rs.getInt("identificadorAtleta"), null);
                 controleChipRetornavel.setProva_ID(rs.getString("prova_ID"));
                         
              
