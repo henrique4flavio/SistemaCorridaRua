@@ -4,11 +4,11 @@
 
 ### Disciplina:
 
-*   Laboratório de Lrogramação
+*   Laboratório de Programação
 
 
 ### Alunos:
 
-*	  Flávio Henrique
-*   Laís Alves
-* 	Jonathas Araújo
+* Flávio Henrique
+* Laís Alves
+* Jonathas Araújo
