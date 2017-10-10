@@ -1,9 +1,12 @@
-# Sistema de corrida de rua
-## IF Sudeste MG - Campus Juiz de Fora
-### Alunos:
-*	Flávio Henrique
-* 	Laís Alves
-* 	Jonathas Araújo
+# Sistema de Corrida de Rua (SCCR)
+## Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de Minas Gerais
 
-# Disciplina:
-* Laboratorio de programação
+
+### Disciplina:
+*   Laboratório de Lrogramação
+
+
+### Alunos:
+*	  Flávio Henrique
+*   Laís Alves
+* 	Jonathas Araújo
