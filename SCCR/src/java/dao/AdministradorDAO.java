@@ -18,10 +18,11 @@ public class AdministradorDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select*from administrador");
+            ResultSet rs = comando.executeQuery("select * from administrador");
             while (rs.next()) {
 
                 Administrador administrador = new Administrador(
+                        rs.getInt("id"),
                         rs.getString("nome"),
                         rs.getString("senha"),
                         rs.getString("login"),
