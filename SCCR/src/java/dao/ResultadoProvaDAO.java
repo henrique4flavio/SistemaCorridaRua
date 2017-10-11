@@ -21,7 +21,8 @@ public class ResultadoProvaDAO {
             ResultSet rs = comando.executeQuery("select*from resultado_prova");
             while (rs.next()) {
 
-                ResultadoProva resultadoProva = new ResultadoProva(rs.getString("resultadoClassificacao"));
+                ResultadoProva resultadoProva = new ResultadoProva(rs.getInt("id"), 
+                        rs.getString("resultadoClassificacao"));
 
                 
                 resultadoProvas.add(resultadoProva);

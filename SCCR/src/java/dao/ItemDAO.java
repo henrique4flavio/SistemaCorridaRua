@@ -17,11 +17,11 @@ public class ItemDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select*from item");
+            ResultSet rs = comando.executeQuery("select * from item");
             while (rs.next()) {
 
                 Item item = new Item(
-                rs.getString("nome"));
+                rs.getInt("id"), rs.getString("nome"));
                 
                 
                 itens.add(item);

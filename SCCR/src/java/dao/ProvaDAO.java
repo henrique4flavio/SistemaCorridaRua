@@ -18,16 +18,16 @@ public class ProvaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select*from prova");
+            ResultSet rs = comando.executeQuery("select * from prova");
             while (rs.next()) {
 
-                Prova prova = new Prova(rs.getString("nomeProva"), rs.getString("localLargada"),
+                Prova prova = new Prova(rs.getInt("id"), rs.getString("nomeProva"), rs.getString("localLargada"),
                 rs.getString("horarioLargada"), rs.getString("dataDaProva"), rs.getInt("maxParticipantes"),
                 rs.getString("dataInicioInscricao"), rs.getString("dataFimInscricao"), rs.getString("faixaEtaria"), null, null, null);
                 
-                prova.setOrganizador_ID(rs.getString("organizador_ID"));
-                prova.setRanking_ID(rs.getString("ranking_ID"));
-                prova.setResultado_prova_ID(rs.getString("resultado_prova_ID"));
+                prova.setOrganizador_id(rs.getString("organizador_id"));
+                prova.setRanking_id(rs.getString("ranking_id"));
+                prova.setResultado_prova_id(rs.getString("resultado_prova_id"));
                 
 
                 provas.add(prova);

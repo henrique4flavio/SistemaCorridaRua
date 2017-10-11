@@ -21,8 +21,10 @@ public class Atleta extends Usuario {
     private String apelido;
 
     private String nomeDaEquipe;
+    //Variaveis do banco de dados
+    private int id;
 
-    public Atleta(String dataNascimento, String nome, String sexo, String endereco, String tamCamisa, String telefoneCel, String telefoneFixo, String cpf, String apelido, String nomeDaEquipe, String senha, String login, String email) {
+    public Atleta(int id, String dataNascimento, String nome, String sexo, String endereco, String tamCamisa, String telefoneCel, String telefoneFixo, String cpf, String apelido, String nomeDaEquipe, String senha, String login, String email) {
         super(nome, senha, login, email);
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
@@ -33,8 +35,18 @@ public class Atleta extends Usuario {
         this.cpf = cpf;
         this.apelido = apelido;
         this.nomeDaEquipe = nomeDaEquipe;
+        this.id = id;
 
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 
     public String getDataNascimento() {
         return dataNascimento;

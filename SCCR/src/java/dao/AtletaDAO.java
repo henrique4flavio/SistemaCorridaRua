@@ -21,7 +21,7 @@ public class AtletaDAO {
             ResultSet rs = comando.executeQuery("select*from atleta");
             while (rs.next()) {
 
-                Atleta atleta = new Atleta(rs.getString("dataNascimento"), rs.getString("nome"),
+                Atleta atleta = new Atleta(rs.getInt("id"), rs.getString("dataNascimento"), rs.getString("nome"),
                         rs.getString("sexo"), rs.getString("endereco"), rs.getString("tamCamisa"),
                         rs.getString("telefoneCel"), rs.getString("telefoneFixo"), rs.getString("cpf"),
                         rs.getString("apelido"), rs.getString("nomeDaEquipe"), rs.getString("senha"),

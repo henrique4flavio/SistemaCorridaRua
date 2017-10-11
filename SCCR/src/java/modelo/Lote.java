@@ -12,18 +12,29 @@ public class Lote {
 
     private String valor;
 
-    //A chave abaixo é Estrangeira, do banco de dados
-    private String prova_ID;
+    //Variaveis do banco de dados
+    private int id;
+    
+    private String prova_id;
 
-    public Lote(String dataInicio, String dataFim, String valor, String identificacao, String prova_ID) {
+    public Lote(int id, String dataInicio, String dataFim, String valor, String identificacao, String prova_id) {
         this.valor = valor;
         this.dataFim = dataFim;
         this.dataInicio = dataInicio;
-        this.prova_ID = prova_ID;
+        this.prova_id = prova_id;
         this.identificacao = identificacao;
+        this.id = id;
 
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getIdentificacao() {
         return identificacao;
     }
@@ -60,12 +71,12 @@ public class Lote {
 
     }
 
-    public String getprova_ID() {
-        return prova_ID;
+    public String getprova_id() {
+        return prova_id;
     }
 
-    public void setProva_ID(String prova_ID) {
-        this.prova_ID = prova_ID;
+    public void setProva_id(String prova_id) {
+        this.prova_id = prova_id;
     }
 
 }

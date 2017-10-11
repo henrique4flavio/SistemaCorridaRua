@@ -20,14 +20,16 @@ public class Prova {
 
     private String faixaEtaria;
     
-    //As chaves abaixo são Estrangeiras, do banco de dados 
-    private String organizador_ID;
+    //Variaveis do banco de dados
+    private int id;
     
-    private String ranking_ID;
+    private String organizador_id;
     
-    private String resultado_prova_ID;
+    private String ranking_id;
+    
+    private String resultado_prova_id;
 
-    public Prova(String nomeProva, String localLargada, String horarioLargada, String dataDaProva, int maxParticipantes, String dataInicioInscricao, String dataFimInscricao, String faixaEtaria, String organizador_ID, String ranking_ID, String resultado_prova_ID) {
+    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataDaProva, int maxParticipantes, String dataInicioInscricao, String dataFimInscricao, String faixaEtaria, String organizador_id, String ranking_id, String resultado_prova_id) {
         this.nomeProva = nomeProva;
         this.localLargada = localLargada;
         this.horarioLargada = horarioLargada;
@@ -36,12 +38,24 @@ public class Prova {
         this.dataInicioInscricao = dataInicioInscricao;
         this.dataFimInscricao = dataFimInscricao;
         this.faixaEtaria = faixaEtaria;
-        this.organizador_ID = organizador_ID;
-        this.ranking_ID = ranking_ID;
-        this.resultado_prova_ID = resultado_prova_ID;
+        this.organizador_id = organizador_id;
+        this.ranking_id = ranking_id;
+        this.resultado_prova_id = resultado_prova_id;
+        this.id = id;
     }
 
-    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setRanking_id(String ranking_id) {
+        this.ranking_id = ranking_id;
+    }
+
     
     public void setFaixaEtaria(String faixaEtaria) {
         this.faixaEtaria = faixaEtaria;
@@ -107,28 +121,28 @@ public class Prova {
     public String getFaixaEtaria() {
         return faixaEtaria;
     }
-    public String getOrganizador_ID() {
-        return organizador_ID;
+    public String getOrganizador_id() {
+        return organizador_id;
     }
 
-    public void setOrganizador_ID(String organizador_ID) {
-        this.organizador_ID = organizador_ID;
+    public void setOrganizador_id(String organizador_id) {
+        this.organizador_id = organizador_id;
     }
 
-    public String getRanking_ID() {
-        return ranking_ID;
+    public String getRanking_id() {
+        return ranking_id;
     }
 
-    public void setRanking_ID(String ranking_ID) {
-        this.ranking_ID = ranking_ID;
+    public void setRanking_ID(String ranking_id) {
+        this.ranking_id = ranking_id;
     }
 
-    public String getResultado_prova_ID() {
-        return resultado_prova_ID;
+    public String getResultado_prova_id() {
+        return resultado_prova_id;
     }
 
-    public void setResultado_prova_ID(String resultado_prova_ID) {
-        this.resultado_prova_ID = resultado_prova_ID;
+    public void setResultado_prova_id(String resultado_prova_id) {
+        this.resultado_prova_id = resultado_prova_id;
     }
 
 

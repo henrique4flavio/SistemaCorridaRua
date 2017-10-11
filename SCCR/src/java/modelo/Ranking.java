@@ -3,11 +3,21 @@ package modelo;
 import java.util.*;
 
 public class Ranking {
+    private int id;
 
     private String nome;
 
-    public Ranking(String nome) {
+    public Ranking(int id, String nome) {
         this.nome = nome;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     

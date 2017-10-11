@@ -10,14 +10,25 @@ public class Percurso {
 
     private int faixaEtaria;
     
-    //A chave abaixo é Estrangeira, do banco de dados
-    private String prova_ID;
+    //Variaveis do banco de dados
+    private int id;
+    
+    private String prova_id;
 
-    public Percurso(String nome, double distancia, int faixaEtaria, String prova_ID) {
+    public Percurso(int id, String nome, double distancia, int faixaEtaria, String prova_id) {
         this.nome = nome;
         this.distancia = distancia;
         this.faixaEtaria = faixaEtaria;
-        this.prova_ID = prova_ID;
+        this.prova_id = prova_id;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     
@@ -47,12 +58,12 @@ public class Percurso {
         return nome;
     }
 
-    public String getProva_ID() {
-        return prova_ID;
+    public String getProva_id() {
+        return prova_id;
     }
     
-    public void setProva_ID(String prova_ID) {
-        this.prova_ID = prova_ID;
+    public void setProva_id(String prova_id) {
+        this.prova_id = prova_id;
     }
 
     

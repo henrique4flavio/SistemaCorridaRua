@@ -17,16 +17,17 @@ public class InscricaoDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select*from inscricao");
+            ResultSet rs = comando.executeQuery("select * from inscricao");
             while (rs.next()) {
 
-                Inscricao inscricao = new Inscricao(rs.getString("dataInscricao"), rs.getInt("numeroInscricao"),
+                Inscricao inscricao = new Inscricao(rs.getInt("id"), rs.getString("dataInscricao"), 
+                        rs.getInt("numeroInscricao"),
                         rs.getString("formaPagamento"), null, null, null, null, null);
-                inscricao.setKit_ID(rs.getString("kit_ID"));
-                inscricao.setControle_chip_retornavel_ID(rs.getString("controle_chip_retornavel_ID"));
-                inscricao.setProva_ID(rs.getString("prova_ID"));
-                inscricao.setPercurso_ID(rs.getString("percurso_ID"));
-                inscricao.setAtleta_ID(rs.getString("atleta_ID"));
+                inscricao.setKit_id(rs.getString("kit_id"));
+                inscricao.setControle_chip_retornavel_id(rs.getString("controle_chip_retornavel_id"));
+                inscricao.setProva_ID(rs.getString("prova_id"));
+                inscricao.setPercurso_ID(rs.getString("percurso_id"));
+                inscricao.setAtleta_ID(rs.getString("atleta_id"));
 
                 inscricoes.add(inscricao);
 

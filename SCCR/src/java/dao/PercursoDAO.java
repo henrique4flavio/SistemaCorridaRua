@@ -21,13 +21,13 @@ public class PercursoDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select*from percurso");
+            ResultSet rs = comando.executeQuery("select * from percurso");
             while (rs.next()) {
 
-                Percurso percurso = new Percurso(rs.getString("nome"), 
+                Percurso percurso = new Percurso(rs.getInt("id"), rs.getString("nome"), 
                 rs.getDouble("distancia"), rs.getInt("faixaEtaria"), null);
                       
-                        percurso.setProva_ID(rs.getString("prova_ID"));
+                        percurso.setProva_id(rs.getString("prova_id"));
             
                 percursos.add(percurso);
 

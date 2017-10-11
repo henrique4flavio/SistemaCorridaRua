@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Administrador extends Usuario {
     
+    //Variaveis do banco de dados
     private int id;
 
     public Administrador(int id, String nome, String senha, String login, String email) {

@@ -3,22 +3,32 @@ package modelo;
 import java.util.*;
 
 public class Organizador extends Usuario {
-
     
-    //A chave abaixo é Estrangeira, do banco de dados
-    private String administrador_ID;
+    //Variaveis do banco de dados
+    private int id;
+    
+    private String administrador_id;
 
-    public Organizador(String nome, String senha, String login, String email, String administrador_ID) {
+    public Organizador(int id, String nome, String senha, String login, String email, String administrador_id) {
         super(nome, senha, login, email);
+        this.id = id;
 
     }
 
-    public String getAdministrador_ID() {
-        return administrador_ID;
+    public int getId() {
+        return id;
     }
 
-    public void setAdministrador_ID(String administrador_ID) {
-        this.administrador_ID = administrador_ID;
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public String getAdministrador_id() {
+        return administrador_id;
+    }
+
+    public void setAdministrador_ID(String administrador_id) {
+        this.administrador_id = administrador_id;
     }
     
  

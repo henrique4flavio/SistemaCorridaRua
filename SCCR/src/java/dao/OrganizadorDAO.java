@@ -24,6 +24,7 @@ public class OrganizadorDAO {
             while (rs.next()) {
 
                 Organizador organizador = new Organizador(
+                        rs.getInt("id"),
                         rs.getString("nome"),
                         rs.getString("senha"),
                         rs.getString("login"),

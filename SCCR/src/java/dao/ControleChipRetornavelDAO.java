@@ -16,12 +16,12 @@ public class ControleChipRetornavelDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select*from controle_chip_retornavel");
+            ResultSet rs = comando.executeQuery("select * from controle_chip_retornavel");
             while (rs.next()) {
 
                 ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel
-                (rs.getInt("identificadorAtleta"), null);
-                controleChipRetornavel.setProva_ID(rs.getString("prova_ID"));
+                (rs.getInt("id"), rs.getInt("identificadorAtleta"), null);
+                controleChipRetornavel.setProva_id(rs.getString("prova_id"));
                         
              
 

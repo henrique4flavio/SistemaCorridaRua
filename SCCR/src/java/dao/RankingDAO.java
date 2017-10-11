@@ -18,10 +18,10 @@ public class RankingDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select*from ranking");
+            ResultSet rs = comando.executeQuery("select * from ranking");
             while (rs.next()) {
 
-                Ranking ranking = new Ranking(rs.getString("nome"));
+                Ranking ranking = new Ranking(rs.getInt("id"), rs.getString("nome"));
 
                 
                 rankings.add(ranking);

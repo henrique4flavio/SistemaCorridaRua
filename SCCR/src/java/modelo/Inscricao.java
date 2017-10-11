@@ -10,26 +10,29 @@ public class Inscricao {
 
     private String formaPagamento;
     
-    //A chave abaixo é Estrangeira, do banco de dados
-    private String kit_ID;
+    //Variaveis do banco de dados
+    private int id;
     
-    private String controle_chip_retornavel_ID;
+    private String kit_id;
     
-    private String prova_ID;
+    private String controle_chip_retornavel_id;
     
-    private String percurso_ID;
+    private String prova_id;
     
-    private String atleta_ID;
+    private String percurso_id;
+    
+    private String atleta_id;
 
-    public Inscricao(String dataInscricao, int numeroInscricao, String formaPagamento, String kit_ID, String controle_chip_retornavel_ID, String prova_ID, String percurso_ID, String atleta_ID) {
+    public Inscricao(int id, String dataInscricao, int numeroInscricao, String formaPagamento, String kit_id, String controle_chip_retornavel_id, String prova_id, String percurso_id, String atleta_id) {
         this.dataInscricao = dataInscricao;
         this.numeroInscricao = numeroInscricao;
         this.formaPagamento = formaPagamento;
-        this.kit_ID = kit_ID;
-        this.controle_chip_retornavel_ID = controle_chip_retornavel_ID;
-        this.prova_ID = prova_ID;
-        this.percurso_ID = percurso_ID;
-        this.atleta_ID = atleta_ID;
+        this.kit_id = kit_id;
+        this.controle_chip_retornavel_id = controle_chip_retornavel_id;
+        this.prova_id = prova_id;
+        this.percurso_id = percurso_id;
+        this.atleta_id = atleta_id;
+        this.id = id;
     }
             
             
@@ -59,44 +62,44 @@ public class Inscricao {
         this.formaPagamento = formaPagamento;
     }
 
-    public String getKit_ID() {
-        return kit_ID;
+    public String getKit_id() {
+        return kit_id;
     }
 
-    public void setKit_ID(String kit_ID) {
-        this.kit_ID = kit_ID;
+    public void setKit_id(String kit_id) {
+        this.kit_id = kit_id;
     }
 
-    public String getControle_chip_retornavel_ID() {
-        return controle_chip_retornavel_ID;
+    public String getControle_chip_retornavel_id() {
+        return controle_chip_retornavel_id;
     }
 
-    public void setControle_chip_retornavel_ID(String controle_chip_retornavel_ID) {
-        this.controle_chip_retornavel_ID = controle_chip_retornavel_ID;
+    public void setControle_chip_retornavel_id(String controle_chip_retornavel_id) {
+        this.controle_chip_retornavel_id = controle_chip_retornavel_id;
     }
 
-    public String getProva_ID() {
-        return prova_ID;
+    public String getProva_id() {
+        return prova_id;
     }
 
-    public void setProva_ID(String prova_ID) {
-        this.prova_ID = prova_ID;
+    public void setProva_ID(String prova_id) {
+        this.prova_id = prova_id;
     }
 
-    public String getPercurso_ID() {
-        return percurso_ID;
+    public String getPercurso_id() {
+        return percurso_id;
     }
 
-    public void setPercurso_ID(String percurso_ID) {
-        this.percurso_ID = percurso_ID;
+    public void setPercurso_ID(String percurso_id) {
+        this.percurso_id = percurso_id;
     }
 
-    public String getAtleta_ID() {
-        return atleta_ID;
+    public String getAtleta_id() {
+        return atleta_id;
     }
 
-    public void setAtleta_ID(String atleta_ID) {
-        this.atleta_ID = atleta_ID;
+    public void setAtleta_ID(String atleta_id) {
+        this.atleta_id = atleta_id;
     }
     
 
