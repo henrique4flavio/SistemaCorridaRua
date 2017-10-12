@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pesquisa de administradores</title>
     </head>
-    <body>
+    <body border='1'>
         <h1>Pesquisa de administradores</h1>
         <table>    
             <tr>
