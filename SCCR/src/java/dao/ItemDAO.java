@@ -21,7 +21,7 @@ public class ItemDAO {
             while (rs.next()) {
 
                 Item item = new Item(
-                rs.getInt("id"), rs.getString("nome"));
+                rs.getInt("id"), rs.getString("nomeItem"));
                 
                 
                 itens.add(item);

@@ -16,6 +16,14 @@
         <servlet-name>PesquisaControleChipRetornavel</servlet-name>
         <servlet-class>controller.PesquisaControleChipRetornavelController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PesquisaInscricaoController</servlet-name>
+        <servlet-class>controller.PesquisaInscricaoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PesquisaItemController</servlet-name>
+        <servlet-class>controller.PesquisaItemController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>PesquisaControleChipRetornavel</servlet-name>
         <url-pattern>/PesquisaControleChipRetornavel</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaInscricaoController</servlet-name>
+        <url-pattern>/PesquisaInscricaoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaItemController</servlet-name>
+        <url-pattern>/PesquisaItemController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

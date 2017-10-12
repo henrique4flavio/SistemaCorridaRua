@@ -11,6 +11,8 @@
 
         <a href="PesquisaAdministradorController">Manter Administrador</a><br>
         <a href="PesquisaAtletaController">Manter Atleta</a><br>
-            <a href="PesquisaControleChipRetornavelController">Controle do Chip Retornavel</a>
+        <a href="PesquisaControleChipRetornavelController">Controle do Chip Retornavel</a><br>
+         <a href="PesquisaInscricaoController">Atletas Inscritos</a><br>
+         <a href="PesquisaItemController">Itens</a><br>
     </body>
 </html>

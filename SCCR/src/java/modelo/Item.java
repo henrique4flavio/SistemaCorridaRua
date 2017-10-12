@@ -1,11 +1,17 @@
 package modelo;
 
+import dao.ItemDAO;
 import java.util.*;
 
 public class Item {
 
     private String nomeItem;
     private int id;
+ public  Item(int id,String nomeItem) {
+        this.nomeItem = nomeItem;
+        this.id = id;
+    }
+
 
     public int getId() {
         return id;
@@ -15,11 +21,7 @@ public class Item {
         this.id = id;
     }
 
-    public Item(int id,String nomeItem) {
-        this.nomeItem = nomeItem;
-        this.id = id;
-    }
-
+   
     public String getNomeItem() {
         return nomeItem;
     }
@@ -44,5 +46,9 @@ public class Item {
 
         return null;
     }
+   public static List<Item> obterItem()
+            throws ClassNotFoundException {
+        return ItemDAO.obterItens();
 
+}
 }
