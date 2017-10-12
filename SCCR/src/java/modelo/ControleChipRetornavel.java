@@ -1,5 +1,7 @@
 package modelo;
 
+import dao.AtletaDAO;
+import dao.ControleChipRetornavelDAO;
 import java.util.*;
 
 public class ControleChipRetornavel {
@@ -49,5 +51,9 @@ public class ControleChipRetornavel {
     public void gerarRelatorioDeEntrega() {
 
     }
-
+    public static List<ControleChipRetornavel> obterControleChipRetornavel()
+            throws ClassNotFoundException {
+        return ControleChipRetornavelDAO.obterControleChipRetornaveis();
+    
+}
 }

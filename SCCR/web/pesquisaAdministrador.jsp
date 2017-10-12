@@ -15,15 +15,22 @@
 
                 <th>Código administrador</th>
                 <th>Nome Administrador</th>
-                <th colspan=2>Ação</th>
+                <th>Senha</th>
+                <th>Login</th>
+                <th>Email</th>
+
+
 
             </tr>    
 
-            <c:forEach items="${administradores}" var="administrador">
+            <c:forEach items="${Administrador}" var="Administrador">
                 <tr>
 
-                    <td><c:out value = "${administrador.id}" /></td>
-                    <td><c:out value = "${administrador.nome}" /></td>
+                    <td><c:out value = "${Administrador.id}" /></td>
+                    <td><c:out value = "${Administrador.nome}" /></td>
+                    <td><c:out value = "${Administrador.senha}" /></td>
+                    <td><c:out value = "${Administrador.login}" /></td>
+                    <td><c:out value = "${Administrador.email}" /></td>
                     <td><a href ="ManterAdministradorController?acao=prepararEditar&ID_administrador <c:out value="${administrador.id}"/>">Editar</a></td>
                     <td><a href ="ManterAdministradorController?acao=prepararEditar&ID_administrador <c:out value="${administrador.id}"/>">Excluir</a></td>
 
