@@ -10,9 +10,13 @@ public class Atleta extends Usuario {
     private String sexo;
 
     private String rua;
+    
     private String bairro;
+    
     private String cidade;
+    
     private String estado;
+    
     private String pais;
 
     private String tamCamisa;
