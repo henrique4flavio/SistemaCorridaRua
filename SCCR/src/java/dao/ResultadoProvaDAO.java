@@ -18,7 +18,7 @@ public class ResultadoProvaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select*from resultado_prova");
+            ResultSet rs = comando.executeQuery("select * from resultado_prova");
             while (rs.next()) {
 
                 ResultadoProva resultadoProva = new ResultadoProva(rs.getInt("id"), 

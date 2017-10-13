@@ -3,9 +3,10 @@ package modelo;
 import java.util.*;
 
 public class ResultadoProva {
-    private int id;
-
+    
     private String ResultadoClassificacao;
+    //Variaveis do banco de dados
+    private int id;
 
     public ResultadoProva(int id, String ResultadoClassificacao) {
         this.ResultadoClassificacao = ResultadoClassificacao;

@@ -17,7 +17,7 @@ public class KitDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select*from kit");
+            ResultSet rs = comando.executeQuery("select * from kit");
             while (rs.next()) {
 
                 Kit kit = new Kit(rs.getInt("id"), rs.getString("nomeKit"));

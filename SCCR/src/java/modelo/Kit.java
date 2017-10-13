@@ -3,9 +3,10 @@ package modelo;
 import java.util.*;
 
 public class Kit {
-    private int id;
     
     private String nomeKit;
+    //Variaveis do banco de dados
+    private int id;
 
     public Kit(int id, String nomeKit) {
         this.nomeKit = nomeKit;

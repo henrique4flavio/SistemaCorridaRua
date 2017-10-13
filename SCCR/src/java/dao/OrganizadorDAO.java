@@ -20,7 +20,7 @@ public class OrganizadorDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select*from organizador");
+            ResultSet rs = comando.executeQuery("select * from organizador");
             while (rs.next()) {
 
                 Organizador organizador = new Organizador(

@@ -3,9 +3,10 @@ package modelo;
 import java.util.*;
 
 public class Ranking {
-    private int id;
-
+    
     private String nome;
+    //Variaveis do banco de dados
+    private int id;
 
     public Ranking(int id, String nome) {
         this.nome = nome;

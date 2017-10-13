@@ -18,7 +18,7 @@ public class AtletaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select*from atleta");
+            ResultSet rs = comando.executeQuery("select * from atleta");
             while (rs.next()) {
 
                 Atleta atleta = new Atleta(rs.getInt("id"), rs.getString("dataNascimento"), rs.getString("nome"),
