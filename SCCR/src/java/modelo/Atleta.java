@@ -1,5 +1,6 @@
 package modelo;
 
+import dao.AtletaDAO;
 import java.util.*;
 
 public class Atleta extends Usuario {
@@ -8,7 +9,11 @@ public class Atleta extends Usuario {
 
     private String sexo;
 
-    private String endereco;
+    private String rua;
+    private String bairro;
+    private String cidade;
+    private String estado;
+    private String pais;
 
     private String tamCamisa;
 
@@ -24,11 +29,16 @@ public class Atleta extends Usuario {
     //Variaveis do banco de dados
     private int id;
 
-    public Atleta(int id, String dataNascimento, String nome, String sexo, String endereco, String tamCamisa, String telefoneCel, String telefoneFixo, String cpf, String apelido, String nomeDaEquipe, String senha, String login, String email) {
+    public Atleta(int id, String nome, String nomeDaEquipe, String dataNascimento, String apelido, String cpf, String tamCamisa, String sexo, String telefoneFixo, String telefoneCel, String rua, String bairro, String cidade, String estado, String pais, String login, String senha, String email) {
+        //To change body of generated methods, choose Tools | Templates.
         super(nome, senha, login, email);
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
-        this.endereco = endereco;
+        this.rua = rua;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.pais = pais;
         this.tamCamisa = tamCamisa;
         this.telefoneCel = telefoneCel;
         this.telefoneFixo = telefoneFixo;
@@ -36,6 +46,8 @@ public class Atleta extends Usuario {
         this.apelido = apelido;
         this.nomeDaEquipe = nomeDaEquipe;
         this.id = id;
+        this.nome=nome;
+        
 
     }
 
@@ -46,7 +58,6 @@ public class Atleta extends Usuario {
     public void setId(int id) {
         this.id = id;
     }
-    
 
     public String getDataNascimento() {
         return dataNascimento;
@@ -64,13 +75,47 @@ public class Atleta extends Usuario {
         this.sexo = sexo;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getRua() {
+        return rua;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setRua(String rua) {
+        this.rua = rua;
     }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    
 
     public String getTamCamisa() {
         return tamCamisa;
@@ -141,6 +186,11 @@ public class Atleta extends Usuario {
 
     public String cadastrarAtleta() {
         return "";
+    }
+
+    public static List<Atleta> obterAtleta()
+            throws ClassNotFoundException {
+        return AtletaDAO.obterAtletas();
     }
 
 }

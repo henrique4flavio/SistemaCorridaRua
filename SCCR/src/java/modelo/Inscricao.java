@@ -1,8 +1,11 @@
 package modelo;
 
+import dao.InscricaoDAO;
 import java.util.*;
 
 public class Inscricao {
+
+    
 
     private String dataInscricao;
 
@@ -122,5 +125,9 @@ public class Inscricao {
     public void emitirComprovanteIncricao() {
 
     }
+    public static List<Inscricao> obterInscricao()
+            throws ClassNotFoundException {
+        return InscricaoDAO.obterInscricoes();
 
 }
+    }

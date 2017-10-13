@@ -21,7 +21,7 @@ public class Administrador extends Usuario {
         this.id = id;
     }
     
-    public static List<Administrador> obterAdministradores()
+    public static List<Administrador> obterAdministrador()
             throws ClassNotFoundException {
         return AdministradorDAO.obterAdministradores();
     }

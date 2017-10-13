@@ -12,13 +12,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Administrador;
+import modelo.Item;
 
 /**
  *
- * @author Aluno
+ * @author Laís Alves
  */
-public class PesquisaAdministradorController extends HttpServlet {
+public class PesquisaItemController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,13 +31,16 @@ public class PesquisaAdministradorController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            request.setAttribute("Administrador", Administrador.obterAdministrador());
-            RequestDispatcher view
-                    = request.getRequestDispatcher("/pesquisaAdministrador.jsp");
-            view.forward(request, response);
-        } catch (ClassNotFoundException ex) {
-        }
+        response.setContentType("text/html;charset=UTF-8");
+        try  {
+            request.setAttribute("Item",Item.obterItem());
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaItem.jsp");
+            view.forward(request,response);
+
+            
+                   }catch(ClassNotFoundException ex){
+                       
+                   }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -77,6 +80,6 @@ public class PesquisaAdministradorController extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }
+    }// </editor-fold>
 
 }
