@@ -38,9 +38,7 @@ public class Inscricao {
         this.id = id;
     }
             
-            
-    
-
+ 
     public String getDataInscricao() {
         return dataInscricao;
     }
