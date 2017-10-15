@@ -1,15 +1,16 @@
 package modelo;
 
+import dao.ResultadoProvaDAO;
 import java.util.*;
 
 public class ResultadoProva {
-    
-    private String ResultadoClassificacao;
+
+    private String resultadoClassificacao;
     //Variaveis do banco de dados
     private int id;
 
     public ResultadoProva(int id, String ResultadoClassificacao) {
-        this.ResultadoClassificacao = ResultadoClassificacao;
+        this.resultadoClassificacao = ResultadoClassificacao;
         this.id = id;
     }
 
@@ -22,13 +23,13 @@ public class ResultadoProva {
     }
 
     public String getResultadoClassificacao() {
-        return ResultadoClassificacao;
+        return resultadoClassificacao;
     }
 
     public void setResultadoClassificacao(String ResultadoClassificacao) {
-        this.ResultadoClassificacao = ResultadoClassificacao;
+        this.resultadoClassificacao = ResultadoClassificacao;
     }
-    
+
     public void consultarResultadoIndividual() {
 
     }
@@ -49,4 +50,9 @@ public class ResultadoProva {
 
     }
 
+    public static List<ResultadoProva> obterResultadoProva()
+            throws ClassNotFoundException {
+        return ResultadoProvaDAO.obterResultadoProvas();
+
+    }
 }

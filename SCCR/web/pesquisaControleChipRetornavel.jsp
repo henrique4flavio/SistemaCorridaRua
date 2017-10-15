@@ -1,8 +1,3 @@
-<%-- 
-    Document   : pesquisaControleChipRetornavel
-    Created on : 12/10/2017, 12:40:34
-    Author     : Laís Alves
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -15,22 +10,22 @@
         <title>Chip Retornavel</title>
     </head>
     <body border='1'>
-        <h1> Emprestimos do Chip Retornavel</h1>
-        <table>    
+        <h1>Emprestimos chip</h1>
+        <table border='1'>    
             <tr>
 
-                <th>Código administrador</th>
-                <th> Atleta Identificador </th>
-                <th>Id da Prova</th>
+                <th>Código do chip retornavel</th>
+                <th>Identificação do atleta </th>
+                <th>Código da prova</th>
             </tr>    
             <c:forEach items="${ControleChipRetornavel}" var="ControleChipRetornavel">
                 <tr>
 
-                 <td><c:out value = "${ControleChipRetornavel.id}" /></td>
-                <td><c:out value = "${ControleChipRetornavel.identificadorAtleta}" /></td>
-                <td><c:out value = "${ControleChipRetornavel.prova_id}" /></td>
-                <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_administrador" <c:out value="${ControleChipRetornavel.id}"/>">Editar</a></td>
-                <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_administrador" <c:out value="${ControleChipRetornavel.id}"/>">Excluir</a></td>
+                    <td><c:out value = "${ControleChipRetornavel.id}" /></td>
+                    <td><c:out value = "${ControleChipRetornavel.identificadorAtleta}" /></td>
+                    <td><c:out value = "${ControleChipRetornavel.prova_id}" /></td>
+                    <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_administrador" <c:out value="${ControleChipRetornavel.id}"/>">Editar</a></td>
+                    <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_administrador" <c:out value="${ControleChipRetornavel.id}"/>">Excluir</a></td>
 
                 </tr>
             </c:forEach>

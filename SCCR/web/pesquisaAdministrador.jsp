@@ -8,13 +8,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pesquisa de administradores</title>
     </head>
-    <body border='1'>
+    <body>
         <h1>Pesquisa de administradores</h1>
-        <table>    
+        <table border='1'>    
             <tr>
 
-                <th>Código administrador</th>
-                <th>Nome Administrador</th>
+                <th>Código do administrador</th>
+                <th>Nome do administrador</th>
                 <th>Senha</th>
                 <th>Login</th>
                 <th>Email</th>

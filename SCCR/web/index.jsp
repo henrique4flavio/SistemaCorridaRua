@@ -1,18 +1,21 @@
 
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Sistema de Corrida de Rua</title>
+        <title>SCCR</title>
     </head>
     <body>
-        <h1> Sistema de Corrida de Rua</h1>
+        <h1> <center> Sistema de controle de corrida de rua(SCCR)</center></h1>
 
-        <a href="PesquisaAdministradorController">Manter Administrador</a><br>
-        <a href="PesquisaAtletaController">Manter Atleta</a><br>
-        <a href="PesquisaControleChipRetornavelController">Controle do Chip Retornavel</a><br>
-         <a href="PesquisaInscricaoController">Atletas Inscritos</a><br>
-         <a href="PesquisaItemController">Itens</a><br>
+        <a href="PesquisaAdministradorController">Manter administrador</a><br>
+        <a href="PesquisaAtletaController">Manter atleta</a><br>
+        <a href="PesquisaControleChipRetornavelController">Controle do chip retornavel</a><br>
+        <a href="PesquisaInscricaoController">Atletas inscritos</a><br>
+        <a href="PesquisaItemController">Itens</a><br>
+        <a href="PesquisaResultadoProvaController">Resultados das provas</a><br>
+        <a href="PesquisaRankingController">Rankings</a><br>
+        <a href="PesquisaProvaController">Provas</a><br>
+        <a href="PesquisaPercursoController">Percursos</a><br>
+        
     </body>
 </html>

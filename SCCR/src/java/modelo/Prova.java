@@ -1,5 +1,6 @@
 package modelo;
 
+import dao.ProvaDAO;
 import java.util.*;
 
 public class Prova {
@@ -175,6 +176,11 @@ public class Prova {
     }
 
     public void cadastrarProvaRanking(Ranking ranking) {
+
+    }
+    public static List<Prova> obterProva()
+            throws ClassNotFoundException {
+        return ProvaDAO.obterProvas();
 
     }
 

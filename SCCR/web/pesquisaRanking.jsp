@@ -7,25 +7,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Item</title>
+        <title>Rankings</title>
     </head>
     <body>
-        <h1>Itens</h1>
+        <h1>Rankings</h1>
         <table border='1'>    
             <tr>
 
-                <th>Código do item</th>
-                <th>Nome do item</th>
+                <th>Código do ranking</th>
+                <th>Ranking</th>
 
             </tr>    
 
-            <c:forEach items="${Item}" var="Item">
+            <c:forEach items="${Ranking}" var="Ranking">
                 <tr>
 
-                    <td><c:out value = "${Item.id}" /></td>
-                    <td><c:out value = "${Item.nomeItem}" /></td>
-                    <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${Item.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${Item.id}"/>">Excluir </a><td>
+                    <td><c:out value = "${Ranking.id}" /></td>
+                    <td><c:out value = "${Ranking.nome}" /></td>
+                    <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${Ranking.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${Ranking.id}"/>">Excluir </a><td>
 
 
                 </tr>                                                                  

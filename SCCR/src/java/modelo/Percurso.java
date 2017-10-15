@@ -1,5 +1,6 @@
 package modelo;
 
+import dao.PercursoDAO;
 import java.util.*;
 
 public class Percurso {
@@ -88,6 +89,11 @@ public class Percurso {
     }
 
     public void divulgarPercurso() {
+
+    }
+    public static List<Percurso> obterPercurso()
+            throws ClassNotFoundException {
+        return PercursoDAO.obterPercursos();
 
     }
 

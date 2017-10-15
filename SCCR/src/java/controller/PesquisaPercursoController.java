@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package controller;
 
 import java.io.IOException;
@@ -8,10 +12,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Item;
+import modelo.Percurso;
 
-
-public class PesquisaItemController extends HttpServlet {
+/**
+ *
+ * @author flavi
+ */
+public class PesquisaPercursoController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -26,8 +33,8 @@ public class PesquisaItemController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
-            request.setAttribute("Item",Item.obterItem());
-            RequestDispatcher view = request.getRequestDispatcher("/pesquisaItem.jsp");
+            request.setAttribute("Percurso",Percurso.obterPercurso());
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaPercurso.jsp");
             view.forward(request,response);
 
             

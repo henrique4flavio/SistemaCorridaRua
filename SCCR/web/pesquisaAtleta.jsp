@@ -1,8 +1,3 @@
-<%-- 
-    Document   : pesquisaAtleta
-    Created on : 10/10/2017, 17:09:10
-    Author     : Laís Alves
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c"%>
@@ -12,29 +7,29 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Pesquisa de Atletas</title>
+        <title>Pesquisa de atletas</title>
     </head>
-    
+
     <body>
         <h1> Pesquisa de Atletas</h1>
         <table border='1'>
             <tr>
-                <th> Codigo  </th>
-                <th> Nome do Atleta </th>
-                <th> Nome da Equipe  </th>
-                <th> Data de Nascimento</th>
-                <th>  apelido</th>
-                <th>  CPF</th>
-                <th>  Tamanho Da Camisa</th>
-                <th>  Sexo</th>
-                <th>  Telefone Fixo</th>
-                <th>  Telefone Celular</th>
+                <th> Código do atleta  </th>
+                <th> Nome do atleta </th>
+                <th> Nome da equipe  </th>
+                <th> Data de nascimento</th>
+                <th> Apelido</th>
+                <th> CPF</th>
+                <th> Tamanho da camisa</th>
+                <th> Sexo</th>
+                <th> Telefone fixo</th>
+                <th> Telefone celular</th>
                 <th> Rua </th>
                 <th> Bairro</th>
                 <th> Estado </th>
                 <th> Pais </th>
                 <th> Cidade </th>       
-               <th> Login</th>
+                <th> Login</th>
                 <th> Senha</th>
                 <th> Email </th>       
             </tr>

@@ -1,5 +1,6 @@
 package modelo;
 
+import dao.RankingDAO;
 import java.util.*;
 
 public class Ranking {
@@ -43,6 +44,12 @@ public class Ranking {
     }
 
     public void divulgarRanking() {
+
+    }
+    
+    public static List<Ranking> obterRanking()
+            throws ClassNotFoundException {
+        return RankingDAO.obterRankings();
 
     }
 
