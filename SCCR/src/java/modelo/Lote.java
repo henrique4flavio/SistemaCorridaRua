@@ -1,5 +1,6 @@
 package modelo;
 
+import dao.LoteDAO;
 import java.util.*;
 
 public class Lote {
@@ -78,5 +79,9 @@ public class Lote {
     public void setProva_id(String prova_id) {
         this.prova_id = prova_id;
     }
-
+    
+    public static List<Lote> obterLote()
+            throws ClassNotFoundException {
+        return LoteDAO.obterLotes();
+    }
 }

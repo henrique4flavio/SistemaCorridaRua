@@ -1,12 +1,12 @@
 package modelo;
 
+import dao.OrganizadorDAO;
 import java.util.*;
 
 public class Organizador extends Usuario {
     
     //Variaveis do banco de dados
     private int id;
-    
     private String administrador_id;
 
     public Organizador(int id, String nome, String senha, String login, String email, String administrador_id) {
@@ -42,6 +42,10 @@ public class Organizador extends Usuario {
 
     public String visualizarClassificacao() {
         return "";
+    }
+    public static List<Organizador> obterOrganizador()
+            throws ClassNotFoundException {
+        return OrganizadorDAO.obterOrganizadores();
     }
 
 }

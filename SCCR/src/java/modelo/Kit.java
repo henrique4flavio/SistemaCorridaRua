@@ -1,5 +1,6 @@
 package modelo;
 
+import dao.KitDAO;
 import java.util.*;
 
 public class Kit {
@@ -34,5 +35,12 @@ public class Kit {
 
     public void excluirElementoKit() {
     }
+    
+    public static List<Kit> obterKit()
+            throws ClassNotFoundException {
+        return KitDAO.obterKits();
+
+}
+    
 
 }

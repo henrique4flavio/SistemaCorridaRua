@@ -42,43 +42,56 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
-        <url-pattern>/PesquisaAdministradorController</url-pattern>
+        <url-pattern>controller.PesquisaAdministradorController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PesquisaAtletaController</servlet-name>
-        <url-pattern>/PesquisaAtletaController</url-pattern>
+        <url-pattern>controller.PesquisaAtletaController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PesquisaControleChipRetornavelController</servlet-name>
-        <url-pattern>/PesquisaControleChipRetornavelController</url-pattern>
+        <url-pattern>controller.PesquisaControleChipRetornavelController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PesquisaControleChipRetornavel</servlet-name>
-        <url-pattern>/PesquisaControleChipRetornavel</url-pattern>
+        <url-pattern>controller.PesquisaControleChipRetornavel</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PesquisaItemController</servlet-name>
-        <url-pattern>/PesquisaItemController</url-pattern>
+        <url-pattern>controller.PesquisaItemController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PesquisaInscricaoController</servlet-name>
-        <url-pattern>/PesquisaInscricaoController</url-pattern>
+        <url-pattern>controller.PesquisaInscricaoController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PesquisaResultadoProvaController</servlet-name>
-        <url-pattern>/PesquisaResultadoProvaController</url-pattern>
+        <url-pattern>controller.PesquisaResultadoProvaController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PesquisaRankingController</servlet-name>
-        <url-pattern>/PesquisaRankingController</url-pattern>
+        <url-pattern>controller.PesquisaRankingController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PesquisaProvaController</servlet-name>
-        <url-pattern>/PesquisaProvaController</url-pattern>
+        <url-pattern>controller.PesquisaProvaController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PesquisaPercursoController</servlet-name>
-        <url-pattern>/PesquisaPercursoController</url-pattern>
+        <url-pattern>controller.PesquisaPercursoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaKitController</servlet-name>
+        <url-pattern>controller.PesquisaKitController</url-pattern>   
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>PesquisaLoteController</servlet-name>
+        <url-pattern>controller.PesquisaLoteController</url-pattern>
+    </servlet-mapping>
+    
+     <servlet-mapping>
+        <servlet-name>PesquisaOrganizadorController</servlet-name>
+        <url-pattern>controller.PesquisaOrganizadorController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
