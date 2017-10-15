@@ -16,6 +16,8 @@
         <a href="PesquisaRankingController">Rankings</a><br>
         <a href="PesquisaProvaController">Provas</a><br>
         <a href="PesquisaPercursoController">Percursos</a><br>
-        
+        <a href="PesquisaOrganizadorController">Organizadores</a><br>
+        <a href="PesquisaLoteController">Lotes</a><br>
+        <a href="PesquisaKitController">Kits</a><br>
     </body>
 </html>
