@@ -9,7 +9,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pesquisa de Organizadores</title>
     </head>
-//int id, String nome, String senha, String login, String email, String administrador_id
+
     <body>
         <h1> Pesquisa de Organizadores</h1>
         <table border='1'>

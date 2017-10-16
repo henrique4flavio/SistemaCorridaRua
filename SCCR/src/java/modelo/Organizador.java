@@ -27,7 +27,7 @@ public class Organizador extends Usuario {
         return administrador_id;
     }
 
-    public void setAdministrador_ID(String administrador_id) {
+    public void setAdministrador_id(String administrador_id) {
         this.administrador_id = administrador_id;
     }
     

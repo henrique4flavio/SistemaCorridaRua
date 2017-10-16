@@ -30,7 +30,7 @@ public class OrganizadorDAO {
                         rs.getString("login"),
                         rs.getString("email"), null);
                       
-                        organizador.setAdministrador_ID(rs.getString("administrador_ID"));;
+                        organizador.setAdministrador_id(rs.getString("administrador_id"));;
                 
 
                 organizadores.add(organizador);
