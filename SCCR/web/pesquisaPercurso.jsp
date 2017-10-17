@@ -24,18 +24,18 @@
              
             </tr>    
 
-            <c:forEach items="${Percurso}" var="Percurso">
+            <c:forEach items="${Percurso}" var="percurso">
                 <tr>
 
-                    <td><c:out value = "${Percurso.id}" /></td>
-                    <td><c:out value = "${Percurso.nome}" /></td>
-                    <td><c:out value = "${Percurso.distancia}" /></td>
-                    <td><c:out value = "${Percurso.faixaEtaria}" /></td>
-                    <td><c:out value = "${Percurso.prova_id}" /></td>
+                    <td><c:out value = "${percurso.id}" /></td>
+                    <td><c:out value = "${percurso.nome}" /></td>
+                    <td><c:out value = "${percurso.distancia}" /></td>
+                    <td><c:out value = "${percurso.faixaEtaria}" /></td>
+                    <td><c:out value = "${percurso.prova_id}" /></td>
 
 
-                    <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${Percurso.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${Percurso.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${percurso.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${percurso.id}"/>">Excluir </a><td>
 
 
                 </tr>                                                                  

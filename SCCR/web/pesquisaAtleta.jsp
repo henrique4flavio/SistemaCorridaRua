@@ -33,28 +33,28 @@
                 <th> Senha</th>
                 <th> Email </th>       
             </tr>
-            <c:forEach items="${Atleta}" var="Atleta">
+            <c:forEach items="${Atleta}" var="atleta">
                 <tr> 
-                    <td> <c:out value="${Atleta.id}"/> </td>
-                    <td> <c:out value= "${Atleta.nome}"/></td>
-                    <td> <c:out value= "${Atleta.nomeDaEquipe}"/></td>
-                    <td> <c:out value="${Atleta.dataNascimento}"/> </td>
-                    <td> <c:out value="${Atleta.apelido}"/> </td>
-                    <td> <c:out value="${Atleta.cpf}"/> </td>
-                    <td> <c:out value="${Atleta.tamCamisa}"/> </td>
-                    <td> <c:out value="${Atleta.sexo}"/> </td>
-                    <td> <c:out value="${Atleta.telefoneFixo}"/> </td>
-                    <td> <c:out value="${Atleta.telefoneCel}"/> </td>
-                    <td> <c:out value="${Atleta.rua}"/> </td>
-                    <td> <c:out value="${Atleta.bairro}"/> </td>
-                    <td> <c:out value="${Atleta.estado}"/> </td>
-                    <td> <c:out value="${Atleta.pais}"/> </td>
-                    <td> <c:out value="${Atleta.cidade}"/> </td>
-                    <td> <c:out value="${Atleta.login}"/> </td>
-                    <td> <c:out value="${Atleta.senha}"/> </td>
-                    <td> <c:out value="${Atleta.email}"/> </td>
-                    <td> <a href="ManterAtletaController ?acao=prepararEditar&Editar&id = <c:out value="${Atleta.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterAtletaController?acao=prepararExcluir&id = <c:out value="${Atleta.id}"/>">Excluir </a><td>
+                    <td> <c:out value="${atleta.id}"/> </td>
+                    <td> <c:out value= "${atleta.nome}"/></td>
+                    <td> <c:out value= "${atleta.nomeDaEquipe}"/></td>
+                    <td> <c:out value="${atleta.dataNascimento}"/> </td>
+                    <td> <c:out value="${atleta.apelido}"/> </td>
+                    <td> <c:out value="${atleta.cpf}"/> </td>
+                    <td> <c:out value="${atleta.tamCamisa}"/> </td>
+                    <td> <c:out value="${atleta.sexo}"/> </td>
+                    <td> <c:out value="${atleta.telefoneFixo}"/> </td>
+                    <td> <c:out value="${atleta.telefoneCel}"/> </td>
+                    <td> <c:out value="${atleta.rua}"/> </td>
+                    <td> <c:out value="${atleta.bairro}"/> </td>
+                    <td> <c:out value="${atleta.estado}"/> </td>
+                    <td> <c:out value="${atleta.pais}"/> </td>
+                    <td> <c:out value="${atleta.cidade}"/> </td>
+                    <td> <c:out value="${atleta.login}"/> </td>
+                    <td> <c:out value="${atleta.senha}"/> </td>
+                    <td> <c:out value="${atleta.email}"/> </td>
+                    <td> <a href="ManterAtletaController ?acao=prepararEditar&Editar&id = <c:out value="${atleta.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterAtletaController?acao=prepararExcluir&id = <c:out value="${atleta.id}"/>">Excluir </a><td>
 
                 </tr>
 

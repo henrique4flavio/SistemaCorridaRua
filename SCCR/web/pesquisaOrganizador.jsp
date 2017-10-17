@@ -22,17 +22,17 @@
                 <th> Administrador</th>
                 
             </tr>
-            <c:forEach items="${Organizador}" var="Organizador">
+            <c:forEach items="${Organizador}" var="organizador">
                 <tr> 
-                    <td> <c:out value="${Organizador.id}"/> </td>
-                    <td> <c:out value= "${Organizador.nome}"/></td>
-                    <td> <c:out value= "${Organizador.login}"/></td>
-                    <td> <c:out value="${Organizador.senha}"/> </td>
-                    <td> <c:out value="${Organizador.email}"/> </td>
-                    <td> <c:out value="${Organizador.administrador_id}"/> </td>
+                    <td> <c:out value="${organizador.id}"/> </td>
+                    <td> <c:out value= "${organizador.nome}"/></td>
+                    <td> <c:out value= "${organizador.login}"/></td>
+                    <td> <c:out value="${organizador.senha}"/> </td>
+                    <td> <c:out value="${organizador.email}"/> </td>
+                    <td> <c:out value="${organizador.administrador_id}"/> </td>
                 
-                    <td> <a href="ManterOrganizadorController ?acao=prepararEditar&Editar&id = <c:out value="${Organizador.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterOrganizadorController?acao=prepararExcluir&id = <c:out value="${Organizador.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterOrganizadorController ?acao=prepararEditar&Editar&id = <c:out value="${organizador.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterOrganizadorController?acao=prepararExcluir&id = <c:out value="${organizador.id}"/>">Excluir </a><td>
 
                 </tr>
 

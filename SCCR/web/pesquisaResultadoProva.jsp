@@ -19,13 +19,13 @@
 
             </tr>    
 
-            <c:forEach items="${ResultadoProva}" var="ResultadoProva">
+            <c:forEach items="${ResultadoProva}" var="resultadoProva">
                 <tr>
 
-                    <td><c:out value = "${ResultadoProva.id}" /></td>
-                    <td><c:out value = "${ResultadoProva.resultadoClassificacao}" /></td>
-                    <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${ResultadoProva.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${ResultadoProva.id}"/>">Excluir </a><td>
+                    <td><c:out value = "${resultadoProva.id}" /></td>
+                    <td><c:out value = "${resultadoProva.resultadoClassificacao}" /></td>
+                    <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${resultadoProva.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${resultadoProva.id}"/>">Excluir </a><td>
 
 
                 </tr>                                                                  

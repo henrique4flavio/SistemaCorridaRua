@@ -19,13 +19,13 @@
 
             </tr>    
 
-            <c:forEach items="${Item}" var="Item">
+            <c:forEach items="${Item}" var="item">
                 <tr>
 
-                    <td><c:out value = "${Item.id}" /></td>
-                    <td><c:out value = "${Item.nomeItem}" /></td>
-                    <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${Item.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${Item.id}"/>">Excluir </a><td>
+                    <td><c:out value = "${item.id}" /></td>
+                    <td><c:out value = "${item.nomeItem}" /></td>
+                    <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${item.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${item.id}"/>">Excluir </a><td>
 
 
                 </tr>                                                                  

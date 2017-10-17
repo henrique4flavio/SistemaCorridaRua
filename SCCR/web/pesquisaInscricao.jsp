@@ -27,19 +27,19 @@
 
 
             </tr>   
-            <c:forEach items="${Inscricao}" var="Inscricao">
+            <c:forEach items="${Inscricao}" var="inscricao">
                 <tr> 
-                    <td> <c:out value="${Inscricao.id}"/> </td>
-                    <td> <c:out value= "${Inscricao.dataInscricao}"/></td>
-                    <td> <c:out value= "${Inscricao.numeroInscricao}"/></td>
-                    <td> <c:out value="${Inscricao.formaPagamento}"/> </td>
-                    <td> <c:out value="${Inscricao.kit_id}"/> </td>
-                    <td> <c:out value="${Inscricao.controle_chip_retornavel_id}"/> </td>
-                    <td> <c:out value= "${Inscricao.prova_id}"/></td>
-                    <td> <c:out value= "${Inscricao.percurso_id}"/></td>
-                    <td> <c:out value="${Inscricao.atleta_id}"/> </td>
-                    <td><a href ="ManterInscricaoController?acao=prepararEditar&ID_Item" <c:out value="${Inscricao.id}"/>">Editar</a></td>
-                    <td><a href ="ManterInscricaoController?acao=prepararEditar&ID_Item" <c:out value="${Inscricao.id}"/>">Excluir</a></td>
+                    <td> <c:out value="${inscricao.id}"/> </td>
+                    <td> <c:out value= "${inscricao.dataInscricao}"/></td>
+                    <td> <c:out value= "${inscricao.numeroInscricao}"/></td>
+                    <td> <c:out value="${inscricao.formaPagamento}"/> </td>
+                    <td> <c:out value="${inscricao.kit_id}"/> </td>
+                    <td> <c:out value="${inscricao.controle_chip_retornavel_id}"/> </td>
+                    <td> <c:out value= "${inscricao.prova_id}"/></td>
+                    <td> <c:out value= "${inscricao.percurso_id}"/></td>
+                    <td> <c:out value="${inscricao.atleta_id}"/> </td>
+                    <td><a href ="ManterInscricaoController?acao=prepararEditar&ID_Item" <c:out value="${inscricao.id}"/>">Editar</a></td>
+                    <td><a href ="ManterInscricaoController?acao=prepararEditar&ID_Item" <c:out value="${inscricao.id}"/>">Excluir</a></td>
 
                 </tr>
             </c:forEach>

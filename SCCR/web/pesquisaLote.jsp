@@ -22,18 +22,18 @@
 
             </tr>    
 
-            <c:forEach items="${Lote}" var="Lote">
+            <c:forEach items="${Lote}" var="lote">
                 <tr>
 
-                    <td><c:out value = "${Lote.id}" /></td>
-                    <td><c:out value = "${Lote.prova_id}" /></td>
-                    <td><c:out value = "${Lote.dataInicio}" /></td>
-                    <td><c:out value = "${Lote.dataFim}" /></td>
-                    <td><c:out value = "${Lote.valor}" /></td>
+                    <td><c:out value = "${lote.id}" /></td>
+                    <td><c:out value = "${lote.prova_id}" /></td>
+                    <td><c:out value = "${lote.dataInicio}" /></td>
+                    <td><c:out value = "${lote.dataFim}" /></td>
+                    <td><c:out value = "${lote.valor}" /></td>
 
 
-                    <td> <a href="ManterLoteController ?acao=prepararEditar&Editar&id = <c:out value="${Lote.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterLoteController?acao=prepararExcluir&id = <c:out value="${Lote.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterLoteController ?acao=prepararEditar&Editar&id = <c:out value="${lote.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterLoteController?acao=prepararExcluir&id = <c:out value="${lote.id}"/>">Excluir </a><td>
                 </tr>
             </c:forEach>
         </table>

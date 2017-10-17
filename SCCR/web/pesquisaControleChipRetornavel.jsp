@@ -2,7 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,14 +18,14 @@
                 <th>Identificação do atleta </th>
                 <th>Código da prova</th>
             </tr>    
-            <c:forEach items="${ControleChipRetornavel}" var="ControleChipRetornavel">
+            <c:forEach items="${ControleChipRetornavel}" var="controleChipRetornavel">
                 <tr>
 
-                    <td><c:out value = "${ControleChipRetornavel.id}" /></td>
-                    <td><c:out value = "${ControleChipRetornavel.identificadorAtleta}" /></td>
-                    <td><c:out value = "${ControleChipRetornavel.prova_id}" /></td>
-                    <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_administrador" <c:out value="${ControleChipRetornavel.id}"/>">Editar</a></td>
-                    <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_administrador" <c:out value="${ControleChipRetornavel.id}"/>">Excluir</a></td>
+                    <td><c:out value = "${controleChipRetornavel.id}" /></td>
+                    <td><c:out value = "${controleChipRetornavel.identificadorAtleta}" /></td>
+                    <td><c:out value = "${controleChipRetornavel.prova_id}" /></td>
+                    <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_administrador" <c:out value="${controleChipRetornavel.id}"/>">Editar</a></td>
+                    <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_administrador" <c:out value="${controleChipRetornavel.id}"/>">Excluir</a></td>
 
                 </tr>
             </c:forEach>

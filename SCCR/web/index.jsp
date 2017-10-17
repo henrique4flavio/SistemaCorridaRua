@@ -7,17 +7,17 @@
     <body>
         <h1> <center> Sistema de controle de corrida de rua(SCCR)</center></h1>
 
-        <a href="PesquisaAdministradorController">Manter administrador</a><br>
-        <a href="PesquisaAtletaController">Manter atleta</a><br>
-        <a href="PesquisaControleChipRetornavelController">Controle do chip retornavel</a><br>
-        <a href="PesquisaInscricaoController">Atletas inscritos</a><br>
-        <a href="PesquisaItemController">Itens</a><br>
-        <a href="PesquisaResultadoProvaController">Resultados das provas</a><br>
-        <a href="PesquisaRankingController">Rankings</a><br>
-        <a href="PesquisaProvaController">Provas</a><br>
-        <a href="PesquisaPercursoController">Percursos</a><br>
-        <a href="PesquisaOrganizadorController">Organizadores</a><br>
-        <a href="PesquisaLoteController">Lotes</a><br>
-        <a href="PesquisaKitController">Kits</a><br>
+        <a href="PesquisaAdministradorController">Pesquisar administrador</a><br>
+        <a href="PesquisaAtletaController">Pesquisar atleta</a><br>
+        <a href="PesquisaControleChipRetornavelController">Pesquisar chip retornavel</a><br>
+        <a href="PesquisaInscricaoController">Pesquisar atletas inscritos</a><br>
+        <a href="PesquisaItemController">Pesquisar itens</a><br>
+        <a href="PesquisaResultadoProvaController">Pesquisar resultados das provas</a><br>
+        <a href="PesquisaRankingController">Pesquisar rankings</a><br>
+        <a href="PesquisaProvaController">Pesquisar provas</a><br>
+        <a href="PesquisaPercursoController">Pesquisar percursos</a><br>
+        <a href="PesquisaOrganizadorController">Pesquisar organizadores</a><br>
+        <a href="PesquisaLoteController">Pesquisar lotes</a><br>
+        <a href="PesquisaKitController">Pesquisar kits</a><br>
     </body>
 </html>

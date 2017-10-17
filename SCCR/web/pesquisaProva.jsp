@@ -30,25 +30,25 @@
 
             </tr>    
 
-            <c:forEach items="${Prova}" var="Prova">
+            <c:forEach items="${Prova}" var="prova">
                 <tr>
 
-                    <td><c:out value = "${Prova.id}" /></td>
-                    <td><c:out value = "${Prova.nomeProva}" /></td>
-                    <td><c:out value = "${Prova.localLargada}" /></td>
-                    <td><c:out value = "${Prova.horarioLargada}" /></td>
-                    <td><c:out value = "${Prova.dataDaProva}" /></td>
-                    <td><c:out value = "${Prova.maxParticipantes}" /></td>
-                    <td><c:out value = "${Prova.dataInicioInscricao}" /></td>
-                    <td><c:out value = "${Prova.dataFimInscricao}" /></td>
-                    <td><c:out value = "${Prova.faixaEtaria}" /></td>
-                    <td><c:out value = "${Prova.organizador_id}" /></td>
-                    <td><c:out value = "${Prova.ranking_id}" /></td>
-                    <td><c:out value = "${Prova.resultado_prova_id}" /></td>
+                    <td><c:out value = "${prova.id}" /></td>
+                    <td><c:out value = "${prova.nomeProva}" /></td>
+                    <td><c:out value = "${prova.localLargada}" /></td>
+                    <td><c:out value = "${prova.horarioLargada}" /></td>
+                    <td><c:out value = "${prova.dataDaProva}" /></td>
+                    <td><c:out value = "${prova.maxParticipantes}" /></td>
+                    <td><c:out value = "${prova.dataInicioInscricao}" /></td>
+                    <td><c:out value = "${prova.dataFimInscricao}" /></td>
+                    <td><c:out value = "${prova.faixaEtaria}" /></td>
+                    <td><c:out value = "${prova.organizador_id}" /></td>
+                    <td><c:out value = "${prova.ranking_id}" /></td>
+                    <td><c:out value = "${prova.resultado_prova_id}" /></td>
 
 
-                    <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${Prova.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${Prova.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${prova.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${prova.id}"/>">Excluir </a><td>
 
 
                 </tr>                                                                  
