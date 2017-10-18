@@ -1,8 +1,3 @@
-<%-- 
-    Document   : manterLote
-    Created on : 18/10/2017, 13:59:54
-    Author     : Laís Alves
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
