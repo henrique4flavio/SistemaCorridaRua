@@ -30,7 +30,7 @@ public class PesquisaRankingController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
-            request.setAttribute("ResultadoProva",Ranking.obterRanking());
+            request.setAttribute("Ranking",Ranking.obterRanking());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaRanking.jsp");
             view.forward(request,response);
 
