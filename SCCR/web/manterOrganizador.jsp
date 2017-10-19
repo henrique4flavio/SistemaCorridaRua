@@ -1,8 +1,3 @@
-<%-- 
-    Document   : manterOrganizador
-    Created on : 18/10/2017, 14:12:13
-    Author     : Laís Alves
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,7 +20,7 @@
                         <td><input type="text" name="txtCodigoAdministrador" value="${organizador.administrador_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
-                        <td>Nome:</td> 
+                        <td>Nome do organizador:</td> 
                         <td><input type="text" name="txtNomeOrganizador" value="${organizador.nomeDaEquipe}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>

@@ -26,8 +26,8 @@ public class PesquisaKitController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
-            request.setAttribute("Item",Kit.obterKit());
-            RequestDispatcher view = request.getRequestDispatcher("/pesquisaItem.jsp");
+            request.setAttribute("Kit",Kit.obterKit());
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaKit.jsp");
             view.forward(request,response);
 
             

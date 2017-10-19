@@ -22,14 +22,14 @@
 
             </tr>    
 
-            <c:forEach items="${Kit}" var="kit">
+            <c:forEach items="${Kit}" var="Kit">
                 <tr>
 
-                    <td><c:out value = "${kit.id}" /></td>
-                    <td><c:out value = "${kit.nomeKit}" /></td>
+                    <td><c:out value = "${Kit.id}" /></td>
+                    <td><c:out value = "${Kit.nome}" /></td>
                     
-                   <td> <a href="ManterKitController ?acao=prepararEditar&Editar&id = <c:out value="${kit.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterKitController?acao=prepararExcluir&id = <c:out value="${kit.id}"/>">Excluir </a><td>
+                   <td> <a href="ManterKitController ?acao=prepararEditar&Editar&id = <c:out value="${Kit.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterKitController?acao=prepararExcluir&id = <c:out value="${Kit.id}"/>">Excluir </a><td>
                 </tr>
             </c:forEach>
         </table>

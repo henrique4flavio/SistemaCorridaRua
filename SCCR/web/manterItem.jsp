@@ -18,7 +18,7 @@
                     <td><input type="text" name="txtIdItem" value="${item.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
-                        <td>Nome:</td> 
+                        <td>Nome do item:</td> 
                         <td><input type="text" name="txtNomeItem" value="${item.nomeItem}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                  <tr>

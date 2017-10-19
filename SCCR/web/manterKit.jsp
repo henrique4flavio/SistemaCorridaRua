@@ -1,8 +1,3 @@
-<%-- 
-    Document   : manterKit
-    Created on : 18/10/2017, 13:57:23
-    Author     : Laís Alves
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,7 +16,7 @@
                     <td><input type="text" name="txtIdKit" value="${kit.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
-                        <td>Nome:</td> 
+                        <td>Nome do kit:</td> 
                         <td><input type="text" name="txtNomeKit" value="${kit.nomeItem}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                 <tr>
