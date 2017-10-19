@@ -12,7 +12,7 @@
     <body>
         <h1>Manter Atleta - ${operacao}</h1>
 
-        <form action="ManterCursoController?acao=confirmar${operacao}" method="post" name="frmManterCurso">
+        <form action="ManterAtletaController?acao=confirmar${operacao}" method="post" name="frmManterAtleta">
             <table>
                 <tr>
                     <td>Código do Atleta:</td> 
@@ -70,27 +70,27 @@
                     </tr>
                     <tr>
                         <td>Estado:</td> 
-                        <td><input type="text" name="txtNomeAtleta" value="${atleta.estado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtEstadoAtleta" value="${atleta.estado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Rua:</td> 
-                        <td><input type="text" name="txtNomeAtleta" value="${atleta.rua}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtRuaAtleta" value="${atleta.rua}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Bairro:</td> 
-                        <td><input type="text" name="txtNomeAtleta" value="${atleta.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtBairroAtleta" value="${atleta.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Cidade:</td> 
-                        <td><input type="text" name="txtNomeAtleta" value="${atleta.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtCidadeAtleta" value="${atleta.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Login:</td> 
-                        <td><input type="text" name="txtNomeAtleta" value="${atleta.login}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtLoginAtleta" value="${atleta.login}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Senha:</td> 
-                        <td><input type="text" name="txtNomeAtleta" value="${atleta.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtSenhaAtleta" value="${atleta.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                 </tr>
 
                 <tr>
