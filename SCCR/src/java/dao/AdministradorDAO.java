@@ -108,7 +108,7 @@ public class AdministradorDAO {
     }
 }
 
-    public static void excluir(Administrador administrador )throws SQLException,ClassNotFoundException {
+    public static void excluir(Administrador administrador)throws SQLException,ClassNotFoundException {
            Connection conexao = null;
            Statement comando = null;
            String stringSQL;
@@ -135,7 +135,7 @@ public class AdministradorDAO {
         try{
             conexao = BD.getConexao();
             comando= conexao.createStatement();
-            ResultSet rs = comando.executeQuery( "select *from administrador id = "+id);
+            ResultSet rs = comando.executeQuery( "select * from administrador id = "+id);
             rs.first();
             
             administrador = new Administrador (rs.getInt("id"),

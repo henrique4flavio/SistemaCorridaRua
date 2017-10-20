@@ -1,6 +1,7 @@
 package modelo;
 
 import dao.ResultadoProvaDAO;
+import java.sql.SQLException;
 import java.util.*;
 
 public class ResultadoProva {
@@ -55,4 +56,22 @@ public class ResultadoProva {
         return ResultadoProvaDAO.obterResultadoProvas();
 
     }
+    public void gravar() throws SQLException, ClassNotFoundException {
+
+        ResultadoProvaDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException, ClassNotFoundException {
+        ResultadoProvaDAO.alterar(this);
+
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException {
+        ResultadoProvaDAO.excluir(this);
+    }
+
+    public static ResultadoProva obterResultadoProva(int id) throws ClassNotFoundException, SQLException {
+        return ResultadoProvaDAO.obterResultadoProva(id);
+    }
 }
+
