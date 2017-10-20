@@ -52,92 +52,91 @@ public class ResultadoProvaDAO {
         }
 
     }
-     public static void gravar(ResultadoProva resultadoProva) throws SQLException,ClassNotFoundException{
+    public static void gravar(ResultadoProva resultadoProva) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
-        try{
+        try {
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into resultado_prova (resultadoClassificacao,id)"+"values(?,?)";
+            String sql = "insert into resultado_prova (resultadoClassificacao,id)" + "values(?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
-            
-            comando.setString(1,resultadoProva.getResultadoClassificacao());
-            comando.setInt(2,resultadoProva.getId());
-        // comando caso tenha um campo opcional,chave estrngeira seja vazia.
-        /*
+
+            comando.setString(1, resultadoProva.getResultadoClassificacao());
+            comando.setInt(2, resultadoProva.getId());
+            // comando caso tenha um campo opcional,chave estrngeira seja vazia.
+            /*
         if(curso.setNull(6,Types.null));
         else{
                 comando.set(6,curso.getCoordenador().getMatricula());
         }
         comando.setInt(6,curso.getCodCurso());
-*/
-        comando.execute();
-        comando.close();
-        conexao.close();
-            
-        }
-    catch(SQLException e){
-    
-    throw e;
-}
+             */
+            comando.execute();
+            comando.close();
+            conexao.close();
 
-}
+        } catch (SQLException e) {
 
-    public static void alterar(ResultadoProva resultadoProva) throws SQLException,ClassNotFoundException {
-       Connection conexao = null;
-       try{
-           conexao = BD.getConexao();
-           String sql= "update resultado_prova set resultadoClassificacao= ? where id = ?";
-           PreparedStatement comando = conexao.prepareStatement(sql);
-           comando.setString(1,resultadoProva.getResultadoClassificacao());
-           comando.setInt(2,resultadoProva.getId());
-           comando.execute();
-           comando.close();
-           conexao.close();
-       }    catch(SQLException e){
             throw e;
-    }
-}
+        }
 
-    public static void excluir(ResultadoProva resultadoProva)throws SQLException,ClassNotFoundException {
-           Connection conexao = null;
-           Statement comando = null;
-           String stringSQL;
-           
-           try{
-               conexao = BD.getConexao();
-               comando= conexao.createStatement();
-               stringSQL = "delete from resultado_prova where id ="+
-                       resultadoProva.getId();
-               comando.execute(stringSQL);
-           }catch(SQLException e){
-               throw e;
-           }finally {
-               fecharConexao(conexao,comando);
-           }
-    
-    
     }
-    public static ResultadoProva obterAResultadoProva(int id) throws ClassNotFoundException,SQLException {
+
+    public static void alterar(ResultadoProva resultadoProva) throws SQLException, ClassNotFoundException {
+        Connection conexao = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "update resultado_prova set resultadoClassificacao= ? where id = ?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setString(1, resultadoProva.getResultadoClassificacao());
+            comando.setInt(2, resultadoProva.getId());
+            comando.execute();
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+
+    public static void excluir(ResultadoProva resultadoProva) throws SQLException, ClassNotFoundException {
+        Connection conexao = null;
+        Statement comando = null;
+        String stringSQL;
+
+        try {
+            conexao = BD.getConexao();
+            comando = conexao.createStatement();
+            stringSQL = "delete from resultado_prova where id ="
+                    + resultadoProva.getId();
+            comando.execute(stringSQL);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            fecharConexao(conexao, comando);
+        }
+
+    }
+
+    public static ResultadoProva obterResultadoProva(int id) throws ClassNotFoundException, SQLException {
         Connection conexao = null;
         Statement comando = null;
         ResultadoProva resultadoProva = null;
-        
-        try{
+
+        try {
             conexao = BD.getConexao();
-            comando= conexao.createStatement();
-            ResultSet rs = comando.executeQuery( "select * resultado_prova id = "+id);
+            comando = conexao.createStatement();
+            ResultSet rs = comando.executeQuery("select * resultado_prova id = " + id);
             rs.first();
-            
-            resultadoProva = new ResultadoProva (rs.getInt("id"),
-                    rs.getString("resultadoClassificacao"));                  
+
+            resultadoProva = new ResultadoProva(rs.getInt("id"),
+                    rs.getString("resultadoClassificacao"));
             // para chave estrangeira.
             //curso.setMatriculaProfessorCoordenador(rs.getInt("professorCoordenador"))
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-        }finally{
-            fecharConexao(conexao,comando);
+        } finally {
+            fecharConexao(conexao, comando);
         }
-           
+
         return resultadoProva;
     }
 
