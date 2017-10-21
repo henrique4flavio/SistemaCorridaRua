@@ -1,6 +1,7 @@
 package modelo;
 
 import dao.InscricaoDAO;
+import java.sql.SQLException;
 import java.util.*;
 
 public class Inscricao {
@@ -15,6 +16,14 @@ public class Inscricao {
     
     //Variaveis do banco de dados
     private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
     private String kit_id;
     
@@ -107,19 +116,19 @@ public class Inscricao {
     public void inscreverAtleta(Atleta atleta, Prova prova) {
 
     }
-
+/*
     public void alterarInscricao(Atleta atleta, Prova prova) {
 
     }
-
+*/
     public void consultarInscricao(Atleta atleta, Prova prova) {
 
     }
-
+/*
     public void excluirInscricao(Atleta atleta, Prova prova) {
 
     }
-
+*/
     public void emitirComprovanteIncricao() {
 
     }
@@ -128,4 +137,21 @@ public class Inscricao {
         return InscricaoDAO.obterInscricoes();
 
 }
-    }
+    
+public void gravar() throws SQLException,ClassNotFoundException {
+    
+    InscricaoDAO.gravar(this);
+}
+    
+public void alterar ()throws SQLException,ClassNotFoundException{
+    InscricaoDAO.alterar(this);
+    
+}
+    
+public void excluir () throws SQLException,ClassNotFoundException{
+    InscricaoDAO.excluir(this);
+}
+public static Inscricao obterInscricao(int id) throws ClassNotFoundException,SQLException{
+   return  InscricaoDAO.obterInscricao(id);
+}
+}

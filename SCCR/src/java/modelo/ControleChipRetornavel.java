@@ -2,6 +2,7 @@ package modelo;
 
 import dao.AtletaDAO;
 import dao.ControleChipRetornavelDAO;
+import java.sql.SQLException;
 import java.util.*;
 
 public class ControleChipRetornavel {
@@ -39,14 +40,12 @@ public class ControleChipRetornavel {
         this.prova_id = prova_id;
     }
     
-
+/*
     public void cadastrar() {
 
     }
-
-    public void excluir() {
-
-    }
+*/
+    
 
     public void gerarRelatorioDeEntrega() {
 
@@ -56,4 +55,21 @@ public class ControleChipRetornavel {
         return ControleChipRetornavelDAO.obterControleChipRetornaveis();
     
 }
+    public void gravar() throws SQLException,ClassNotFoundException {
+    
+    ControleChipRetornavelDAO.gravar(this);
 }
+    
+public void alterar ()throws SQLException,ClassNotFoundException{
+   ControleChipRetornavelDAO .alterar(this);
+    
+}
+    
+public void excluir () throws SQLException,ClassNotFoundException{
+    ControleChipRetornavelDAO.excluir(this);
+}
+public static ControleChipRetornavel obterControleChipRetornavel(int id) throws ClassNotFoundException,SQLException{
+   return  ControleChipRetornavelDAO.obterControleChipRetornavel(id);
+}
+}
+

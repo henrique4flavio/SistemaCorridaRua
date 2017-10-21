@@ -1,6 +1,7 @@
 package modelo;
 
 import dao.ItemDAO;
+import java.sql.SQLException;
 import java.util.*;
 
 public class Item {
@@ -36,13 +37,6 @@ public class Item {
 
     }
 
-    public void alterarItem() {
-
-    }
-
-    public void excluitItem() {
-
-    }
 
     public Item consultarItem() {
 
@@ -52,5 +46,22 @@ public class Item {
             throws ClassNotFoundException {
         return ItemDAO.obterItens();
 
+}
+   
+    public void gravar() throws SQLException,ClassNotFoundException {
+    
+    ItemDAO.gravar(this);
+}
+    
+public void alterar ()throws SQLException,ClassNotFoundException{
+    ItemDAO.alterar(this);
+    
+}
+    
+public void excluir () throws SQLException,ClassNotFoundException{
+    ItemDAO.excluir(this);
+}
+public static Item obterItem(int id) throws ClassNotFoundException,SQLException{
+   return  ItemDAO.obterItem(id);
 }
 }
