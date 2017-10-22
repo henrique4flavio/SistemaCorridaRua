@@ -4,7 +4,7 @@ import dao.KitDAO;
 import java.util.*;
 
 public class Kit {
-    
+
     private String nomeKit;
     //Variaveis do banco de dados
     private int id;
@@ -21,7 +21,7 @@ public class Kit {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getNomeKit() {
         return nomeKit;
     }
@@ -35,12 +35,11 @@ public class Kit {
 
     public void excluirElementoKit() {
     }
-    
+
     public static List<Kit> obterKit()
             throws ClassNotFoundException {
         return KitDAO.obterKits();
 
-}
-    
+    }
 
 }

@@ -27,9 +27,9 @@ public class InscricaoDAO {
                         rs.getString("formaPagamento"), null, null, null, null, null);
                 inscricao.setKit_id(rs.getString("kit_id"));
                 inscricao.setControle_chip_retornavel_id(rs.getString("controle_chip_retornavel_id"));
-                inscricao.setProva_ID(rs.getString("prova_id"));
-                inscricao.setPercurso_ID(rs.getString("percurso_id"));
-                inscricao.setAtleta_ID(rs.getString("atleta_id"));
+                inscricao.setProva_id(rs.getString("prova_id"));
+                inscricao.setPercurso_id(rs.getString("percurso_id"));
+                inscricao.setAtleta_id(rs.getString("atleta_id"));
 
                 inscricoes.add(inscricao);
 
@@ -150,9 +150,9 @@ public class InscricaoDAO {
                     rs.getString("formaPagamento"), null, null, null, null, null);
             inscricao.setKit_id(rs.getString("kit_id"));
             inscricao.setControle_chip_retornavel_id(rs.getString("controle_chip_retornavel_id"));
-            inscricao.setProva_ID(rs.getString("prova_id"));
-            inscricao.setPercurso_ID(rs.getString("percurso_id"));
-            inscricao.setAtleta_ID(rs.getString("atleta_id"));
+            inscricao.setProva_id(rs.getString("prova_id"));
+            inscricao.setPercurso_id(rs.getString("percurso_id"));
+            inscricao.setAtleta_id(rs.getString("atleta_id"));
 
             // para chave estrangeira.
             //curso.setMatriculaProfessorCoordenador(rs.getInt("professorCoordenador"))

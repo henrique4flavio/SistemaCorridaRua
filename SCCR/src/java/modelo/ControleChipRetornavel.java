@@ -8,9 +8,9 @@ import java.util.*;
 public class ControleChipRetornavel {
 
     private int identificadorAtleta;
-     //Variaveis do banco de dados
+    //Variaveis do banco de dados
     private int id;
-    
+
     private String prova_id;
 
     public ControleChipRetornavel(int id, int identificadorAtleta, String prova_id) {
@@ -26,7 +26,6 @@ public class ControleChipRetornavel {
     public void setId(int id) {
         this.id = id;
     }
-    
 
     public int getIdentificadorAtleta() {
         return identificadorAtleta;
@@ -39,37 +38,37 @@ public class ControleChipRetornavel {
     public void setProva_id(String prova_id) {
         this.prova_id = prova_id;
     }
-    
-/*
+
+    /*
     public void cadastrar() {
 
     }
-*/
-    
-
+     */
     public void gerarRelatorioDeEntrega() {
 
     }
+
     public static List<ControleChipRetornavel> obterControleChipRetornavel()
             throws ClassNotFoundException {
         return ControleChipRetornavelDAO.obterControleChipRetornaveis();
-    
-}
-    public void gravar() throws SQLException,ClassNotFoundException {
-    
-    ControleChipRetornavelDAO.gravar(this);
-}
-    
-public void alterar ()throws SQLException,ClassNotFoundException{
-   ControleChipRetornavelDAO .alterar(this);
-    
-}
-    
-public void excluir () throws SQLException,ClassNotFoundException{
-    ControleChipRetornavelDAO.excluir(this);
-}
-public static ControleChipRetornavel obterControleChipRetornavel(int id) throws ClassNotFoundException,SQLException{
-   return  ControleChipRetornavelDAO.obterControleChipRetornavel(id);
-}
-}
 
+    }
+
+    public void gravar() throws SQLException, ClassNotFoundException {
+
+        ControleChipRetornavelDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException, ClassNotFoundException {
+        ControleChipRetornavelDAO.alterar(this);
+
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException {
+        ControleChipRetornavelDAO.excluir(this);
+    }
+
+    public static ControleChipRetornavel obterControleChipRetornavel(int id) throws ClassNotFoundException, SQLException {
+        return ControleChipRetornavelDAO.obterControleChipRetornavel(id);
+    }
+}

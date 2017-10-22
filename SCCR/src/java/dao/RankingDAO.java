@@ -115,7 +115,7 @@ public class RankingDAO {
 
     }
 
-    public static Ranking obterResultadoProva(int id) throws ClassNotFoundException, SQLException {
+    public static Ranking obterRanking(int id) throws ClassNotFoundException, SQLException {
         Connection conexao = null;
         Statement comando = null;
         Ranking ranking = null;

@@ -11,13 +11,13 @@ public class Atleta extends Usuario {
     private String sexo;
 
     private String rua;
-    
+
     private String bairro;
-    
+
     private String cidade;
-    
+
     private String estado;
-    
+
     private String pais;
 
     private String tamCamisa;
@@ -51,8 +51,7 @@ public class Atleta extends Usuario {
         this.apelido = apelido;
         this.nomeDaEquipe = nomeDaEquipe;
         this.id = id;
-        this.nome=nome;
-        
+        this.nome = nome;
 
     }
 
@@ -119,8 +118,6 @@ public class Atleta extends Usuario {
     public void setPais(String pais) {
         this.pais = pais;
     }
-
-    
 
     public String getTamCamisa() {
         return tamCamisa;
@@ -198,23 +195,21 @@ public class Atleta extends Usuario {
         return AtletaDAO.obterAtletas();
     }
 
-    
-    public void gravar() throws SQLException,ClassNotFoundException {
-    
-    AtletaDAO.gravar(this);
-}
-    
-public void alterar ()throws SQLException,ClassNotFoundException{
-    AtletaDAO.alterar(this);
-    
-}
-    
-public void excluir () throws SQLException,ClassNotFoundException{
-    AtletaDAO.excluir(this);
-}
-public static Atleta obterAtleta(int id) throws ClassNotFoundException,SQLException{
-   return  AtletaDAO.obterAtleta(id);
-}
-}
+    public void gravar() throws SQLException, ClassNotFoundException {
 
+        AtletaDAO.gravar(this);
+    }
 
+    public void alterar() throws SQLException, ClassNotFoundException {
+        AtletaDAO.alterar(this);
+
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException {
+        AtletaDAO.excluir(this);
+    }
+
+    public static Atleta obterAtleta(int id) throws ClassNotFoundException, SQLException {
+        return AtletaDAO.obterAtleta(id);
+    }
+}

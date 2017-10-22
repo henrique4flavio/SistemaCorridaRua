@@ -1,13 +1,14 @@
 package modelo;
 
 import dao.PercursoDAO;
+import java.sql.SQLException;
 import java.util.*;
 
 public class Percurso {
 
     private String nome;
 
-    private double distancia;
+    private String distancia;
 
     private int faixaEtaria;
     
@@ -16,7 +17,7 @@ public class Percurso {
     
     private String prova_id;
 
-    public Percurso(int id, String nome, double distancia, int faixaEtaria, String prova_id) {
+    public Percurso(int id, String nome, String distancia, int faixaEtaria, String prova_id) {
         this.nome = nome;
         this.distancia = distancia;
         this.faixaEtaria = faixaEtaria;
@@ -32,18 +33,15 @@ public class Percurso {
         this.id = id;
     }
 
-    
-
-   
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public double getDistancia() {
+    public String getDistancia() {
         return distancia;
     }
 
-    public void setDistancia(double distancia) {
+    public void setDistancia(String distancia) {
         this.distancia = distancia;
     }
 
@@ -95,6 +93,23 @@ public class Percurso {
             throws ClassNotFoundException {
         return PercursoDAO.obterPercursos();
 
+    }
+    public void gravar() throws SQLException, ClassNotFoundException {
+
+        PercursoDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException, ClassNotFoundException {
+        PercursoDAO.alterar(this);
+
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException {
+        PercursoDAO.excluir(this);
+    }
+
+    public static Percurso obterPercurso(int id) throws ClassNotFoundException, SQLException {
+        return PercursoDAO.obterPercurso(id);
     }
 
 }

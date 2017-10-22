@@ -93,7 +93,7 @@ public class AdministradorDAO {
        Connection conexao = null;
        try{
            conexao = BD.getConexao();
-           String sql= "update administrador set nome= ?,senha=?,login=?,email=? where id = ?";
+           String sql= "update administrador set nome=?,senha=?,login=?,email=? where id = ?";
            PreparedStatement comando = conexao.prepareStatement(sql);
            comando.setString(1,administrador.getNome());
            comando.setString(2,administrador.getSenha());

@@ -10,8 +10,8 @@ public class Item {
 
     //Variaveis do banco de dados
     private int id;
-  
-    public  Item(int id,String nomeItem) {
+
+    public Item(int id, String nomeItem) {
 
         this.nomeItem = nomeItem;
         this.id = id;
@@ -37,31 +37,32 @@ public class Item {
 
     }
 
-
     public Item consultarItem() {
 
         return null;
     }
-   public static List<Item> obterItem()
+
+    public static List<Item> obterItem()
             throws ClassNotFoundException {
         return ItemDAO.obterItens();
 
-}
-   
-    public void gravar() throws SQLException,ClassNotFoundException {
-    
-    ItemDAO.gravar(this);
-}
-    
-public void alterar ()throws SQLException,ClassNotFoundException{
-    ItemDAO.alterar(this);
-    
-}
-    
-public void excluir () throws SQLException,ClassNotFoundException{
-    ItemDAO.excluir(this);
-}
-public static Item obterItem(int id) throws ClassNotFoundException,SQLException{
-   return  ItemDAO.obterItem(id);
-}
+    }
+
+    public void gravar() throws SQLException, ClassNotFoundException {
+
+        ItemDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException, ClassNotFoundException {
+        ItemDAO.alterar(this);
+
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException {
+        ItemDAO.excluir(this);
+    }
+
+    public static Item obterItem(int id) throws ClassNotFoundException, SQLException {
+        return ItemDAO.obterItem(id);
+    }
 }

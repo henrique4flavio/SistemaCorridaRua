@@ -1,6 +1,7 @@
 package modelo;
 
 import dao.ProvaDAO;
+import java.sql.SQLException;
 import java.util.*;
 
 public class Prova {
@@ -11,13 +12,13 @@ public class Prova {
 
     private String horarioLargada;
 
-    private String dataDaProva;
+    private String dataProva;
 
     private int maxParticipantes;
 
-    private String dataInicioInscricao;
+    private String inicioInscricao;
 
-    private String dataFimInscricao;
+    private String fimInscricao;
 
     private String faixaEtaria;
     
@@ -30,14 +31,14 @@ public class Prova {
     
     private String resultado_prova_id;
 
-    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataDaProva, int maxParticipantes, String dataInicioInscricao, String dataFimInscricao, String faixaEtaria, String organizador_id, String ranking_id, String resultado_prova_id) {
+    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, int maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria, String organizador_id, String ranking_id, String resultado_prova_id) {
         this.nomeProva = nomeProva;
         this.localLargada = localLargada;
         this.horarioLargada = horarioLargada;
-        this.dataDaProva = dataDaProva;
+        this.dataProva = dataProva;
         this.maxParticipantes = maxParticipantes;
-        this.dataInicioInscricao = dataInicioInscricao;
-        this.dataFimInscricao = dataFimInscricao;
+        this.inicioInscricao = inicioInscricao;
+        this.fimInscricao = fimInscricao;
         this.faixaEtaria = faixaEtaria;
         this.organizador_id = organizador_id;
         this.ranking_id = ranking_id;
@@ -87,12 +88,12 @@ public class Prova {
         this.horarioLargada = horarioLargada;
     }
 
-    public String getDataDaProva() {
-        return dataDaProva;
+    public String getDataProva() {
+        return dataProva;
     }
 
-    public void setDataDaProva(String dataDaProva) {
-        this.dataDaProva = dataDaProva;
+    public void setDataProva(String dataProva) {
+        this.dataProva = dataProva;
     }
 
     public int getMaxParticipantes() {
@@ -103,20 +104,20 @@ public class Prova {
         this.maxParticipantes = maxParticipantes;
     }
 
-    public String getDataInicioInscricao() {
-        return dataInicioInscricao;
+    public String getInicioInscricao() {
+        return inicioInscricao;
     }
 
-    public void setDataInicioInscricao(String dataInicioInscricao) {
-        this.dataInicioInscricao = dataInicioInscricao;
+    public void setInicioInscricao(String inicioInscricao) {
+        this.inicioInscricao = inicioInscricao;
     }
 
-    public String getDataFimInscricao() {
-        return dataFimInscricao;
+    public String getFimInscricao() {
+        return fimInscricao;
     }
 
-    public void setDataFimInscricao(String dataFimInscricao) {
-        this.dataFimInscricao = dataFimInscricao;
+    public void setFimInscricao(String fimInscricao) {
+        this.fimInscricao = fimInscricao;
     }
 
     public String getFaixaEtaria() {
@@ -182,6 +183,23 @@ public class Prova {
             throws ClassNotFoundException {
         return ProvaDAO.obterProvas();
 
+    }
+    public void gravar() throws SQLException, ClassNotFoundException {
+
+        ProvaDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException, ClassNotFoundException {
+        ProvaDAO.alterar(this);
+
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException {
+        ProvaDAO.excluir(this);
+    }
+
+    public static Prova obterProva(int id) throws ClassNotFoundException, SQLException {
+        return ProvaDAO.obterProva(id);
     }
 
 }
