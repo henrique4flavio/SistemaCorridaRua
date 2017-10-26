@@ -52,6 +52,22 @@
         <servlet-name>PesquisaKitController</servlet-name>
         <servlet-class>controller.PesquisaKitController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManterAdministradorController</servlet-name>
+        <servlet-class>controller.ManterAdministradorController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterAtletaController</servlet-name>
+        <servlet-class>controller.ManterAtletaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterControleChipRetornavelController</servlet-name>
+        <servlet-class>controller.ManterControleChipRetornavelController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterKitController</servlet-name>
+        <servlet-class>controller.ManterKitController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -103,6 +119,22 @@
     <servlet-mapping>
         <servlet-name>PesquisaKitController</servlet-name>
         <url-pattern>/PesquisaKitController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterAdministradorController</servlet-name>
+        <url-pattern>/ManterAdministradorController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterAtletaController</servlet-name>
+        <url-pattern>/ManterAtletaController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterControleChipRetornavelController</servlet-name>
+        <url-pattern>/ManterControleChipRetornavelController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterKitController</servlet-name>
+        <url-pattern>/ManterKitController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
