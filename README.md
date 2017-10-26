@@ -20,3 +20,21 @@
 * O trabalho poderá ser desenvolvido em no máximo 3 pessoas.
 
 
+
+
+public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.setAttribute("operacao", "Incluir");
+		request.setAttribute("kits",
+		Kit.obterKits());
+			
+
+            RequestDispatcher view = request.getRequestDispatcher("/manterKit.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex) {
+        } catch (IOException ex) {
+	} catch (ClassNotFoundException)
+
+        }
+    }
+
