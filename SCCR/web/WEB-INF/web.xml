@@ -68,6 +68,22 @@
         <servlet-name>ManterKitController</servlet-name>
         <servlet-class>controller.ManterKitController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManterInscricaoControler</servlet-name>
+        <servlet-class>controller.ManterInscricaoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterItemController</servlet-name>
+        <servlet-class>controller.ManterItemController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterLoteController</servlet-name>
+        <servlet-class>controller.ManterLoteController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterOrganizadorController</servlet-name>
+        <servlet-class>controller.ManterOrganizadorController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -135,6 +151,22 @@
     <servlet-mapping>
         <servlet-name>ManterKitController</servlet-name>
         <url-pattern>/ManterKitController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterInscricaoControler</servlet-name>
+        <url-pattern>/ManterInscricaoControler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterItemController</servlet-name>
+        <url-pattern>/ManterItemController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterLoteController</servlet-name>
+        <url-pattern>/ManterLoteController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterOrganizadorController</servlet-name>
+        <url-pattern>/ManterOrganizadorController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
