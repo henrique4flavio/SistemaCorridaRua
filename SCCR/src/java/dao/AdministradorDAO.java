@@ -61,14 +61,14 @@ public class AdministradorDAO {
         try{
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into administrador (nome,senha,login,email,id)"+"values(?,?,?,?)";
+            String sql = "insert into administrador (nome,senha,login,email,id) values(?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
             
             comando.setString(1,administrador.getNome());
             comando.setString(2,administrador.getSenha());
-            comando.setString(3,administrador.getSenha());
+            comando.setString(3,administrador.getLogin());
             comando.setString(4,administrador.getEmail());
-            comando.setInt(6,administrador.getId());
+            comando.setInt(5,administrador.getId());
         // comando caso tenha um campo opcional,chave estrngeira seja vazia.
         /*
         if(curso.setNull(6,Types.null));
