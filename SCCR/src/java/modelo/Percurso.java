@@ -10,14 +10,14 @@ public class Percurso {
 
     private String distancia;
 
-    private int faixaEtaria;
+    private String faixaEtaria;
     
     //Variaveis do banco de dados
     private int id;
     
     private String prova_id;
 
-    public Percurso(int id, String nome, String distancia, int faixaEtaria, String prova_id) {
+    public Percurso(int id, String nome, String distancia, String faixaEtaria, String prova_id) {
         this.nome = nome;
         this.distancia = distancia;
         this.faixaEtaria = faixaEtaria;
@@ -45,11 +45,11 @@ public class Percurso {
         this.distancia = distancia;
     }
 
-    public int getFaixaEtaria() {
+    public String getFaixaEtaria() {
         return faixaEtaria;
     }
 
-    public void setFaixaEtaria(int faixaEtaria) {
+    public void setFaixaEtaria(String faixaEtaria) {
         this.faixaEtaria = faixaEtaria;
     }
 

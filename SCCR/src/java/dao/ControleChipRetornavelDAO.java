@@ -18,7 +18,7 @@ public class ControleChipRetornavelDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from controleChipRetornavel");
+            ResultSet rs = comando.executeQuery("select * from controlechipretornavel");
             while (rs.next()) {
 
                 ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel(rs.getInt("id"), rs.getInt("identificadorAtleta"), null);

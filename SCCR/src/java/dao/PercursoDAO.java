@@ -26,7 +26,7 @@ public class PercursoDAO {
             while (rs.next()) {
 
                 Percurso percurso = new Percurso(rs.getInt("id"), rs.getString("nome"), 
-                rs.getString("distancia"), rs.getInt("faixaEtaria"), null);
+                rs.getString("distancia"), rs.getString("faixaEtaria"), null);
                       
                         percurso.setProva_id(rs.getString("prova_id"));
             
@@ -67,7 +67,7 @@ public class PercursoDAO {
             comando.setInt(1, percurso.getId());
             comando.setString(2, percurso.getNome());
             comando.setString(3, percurso.getDistancia());
-            comando.setInt(4, percurso.getFaixaEtaria());
+            comando.setString(4, percurso.getFaixaEtaria());
             comando.setString(5, percurso.getProva_id());
             
             // comando caso tenha um campo opcional,chave estrngeira seja vazia.
@@ -97,7 +97,7 @@ public class PercursoDAO {
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, percurso.getNome());
             comando.setString(2, percurso.getDistancia());
-            comando.setInt(3, percurso.getFaixaEtaria());
+            comando.setString(3, percurso.getFaixaEtaria());
             comando.setString(4, percurso.getProva_id());
             comando.setInt(5, percurso.getId());
             
@@ -140,7 +140,7 @@ public class PercursoDAO {
             rs.first();
 
             percurso = new Percurso(rs.getInt("id"), rs.getString("nome"), 
-                rs.getString("distancia"), rs.getInt("faixaEtaria"), null);
+                rs.getString("distancia"), rs.getString("faixaEtaria"), null);
                       
                         percurso.setProva_id(rs.getString("prova_id"));
             // para chave estrangeira.

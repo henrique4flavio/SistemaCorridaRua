@@ -23,12 +23,8 @@ public class ProvaDAO {
             while (rs.next()) {
 
                 Prova prova = new Prova(rs.getInt("id"), rs.getString("nomeProva"), rs.getString("localLargada"),
-                rs.getString("horarioLargada"), rs.getString("dataDaProva"), rs.getInt("maxParticipantes"),
-                rs.getString("dataInicioInscricao"), rs.getString("dataFimInscricao"), rs.getString("faixaEtaria"), null, null, null);
-                
-                prova.setOrganizador_id(rs.getString("organizador_id"));
-                prova.setRanking_id(rs.getString("ranking_id"));
-                prova.setResultado_prova_id(rs.getString("resultado_prova_id"));
+                rs.getString("horarioLargada"), rs.getString("dataDaProva"), rs.getString("maxParticipantes"),
+                rs.getString("dataInicioInscricao"), rs.getString("dataFimInscricao"), rs.getString("faixaEtaria"), rs.getInt("organizador_id"),rs.getInt("ranking_id"),rs.getInt("resultadoProva_id"));
                 
 
                 provas.add(prova);
@@ -63,20 +59,21 @@ public class ProvaDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem que fazer para as duas classes .
-            String sql = "insert into prova (id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, inicioInscricao, fimInscricao, faixaEtaria, organizador_id, ranking_id, resultado_prova_id)" + "values(?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into prova (id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, inicioInscricao, fimInscricao, faixaEtaria, organizador_id, ranking_id, resultadoProva_id) values(?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, prova.getId());
             comando.setString(2, prova.getNomeProva());
-            comando.setString(3, prova.getHorarioLargada());
-            comando.setString(4, prova.getDataProva());
-            comando.setInt(5, prova.getMaxParticipantes());
-            comando.setString(6, prova.getInicioInscricao());
-            comando.setString(7, prova.getFimInscricao());
-            comando.setString(8, prova.getFaixaEtaria());
-            comando.setString(9, prova.getOrganizador_id());
-            comando.setString(10, prova.getRanking_id());
-            comando.setString(11, prova.getResultado_prova_id());
+            comando.setString(3, prova.getLocalLargada());
+            comando.setString(4, prova.getHorarioLargada());
+            comando.setString(5, prova.getDataProva());
+            comando.setString(6, prova.getMaxParticipantes());
+            comando.setString(7, prova.getInicioInscricao());
+            comando.setString(8, prova.getFimInscricao());
+            comando.setString(9, prova.getFaixaEtaria());
+            comando.setInt(10, prova.getOrganizador_id());
+            comando.setInt(11, prova.getRanking_id());
+            comando.setInt(12, prova.getResultadoProva_id());
             
             // comando caso tenha um campo opcional,chave estrngeira seja vazia.
             /*
@@ -101,19 +98,20 @@ public class ProvaDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update prova set nomeProva=?,localLargada=?,horarioLargada=?,dataProva=?,maxParticipantes=?,inicioInscricao=?,fimInscricao=?,faixaEtaria=?,organizador_id=?,ranking_id=?,resultado_prova_id=? where id = ?";
+            String sql = "update prova set nomeProva=?,localLargada=?,horarioLargada=?,dataProva=?,maxParticipantes=?,inicioInscricao=?,fimInscricao=?,faixaEtaria=?,organizador_id=?,ranking_id=?,resultadoProva_id=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, prova.getNomeProva());
-            comando.setString(2, prova.getHorarioLargada());
-            comando.setString(3, prova.getDataProva());
-            comando.setInt(4, prova.getMaxParticipantes());
-            comando.setString(5, prova.getInicioInscricao());
-            comando.setString(6, prova.getFimInscricao());
-            comando.setString(7, prova.getFaixaEtaria());
-            comando.setString(8, prova.getOrganizador_id());
-            comando.setString(9, prova.getRanking_id());
-            comando.setString(10, prova.getResultado_prova_id());
-            comando.setInt(11, prova.getId());
+            comando.setString(2, prova.getLocalLargada());
+            comando.setString(3, prova.getHorarioLargada());
+            comando.setString(4, prova.getDataProva());
+            comando.setString(5, prova.getMaxParticipantes());
+            comando.setString(6, prova.getInicioInscricao());
+            comando.setString(7, prova.getFimInscricao());
+            comando.setString(8, prova.getFaixaEtaria());
+            comando.setInt(9, prova.getOrganizador_id());
+            comando.setInt(10, prova.getRanking_id());
+            comando.setInt(11, prova.getResultadoProva_id());
+            comando.setInt(12, prova.getId());
             
             comando.execute();
             comando.close();
@@ -154,12 +152,8 @@ public class ProvaDAO {
             rs.first();
 
             prova = new Prova(rs.getInt("id"), rs.getString("nomeProva"), rs.getString("localLargada"),
-                rs.getString("horarioLargada"), rs.getString("dataDaProva"), rs.getInt("maxParticipantes"),
-                rs.getString("dataInicioInscricao"), rs.getString("dataFimInscricao"), rs.getString("faixaEtaria"), null, null, null);
-                
-                prova.setOrganizador_id(rs.getString("organizador_id"));
-                prova.setRanking_id(rs.getString("ranking_id"));
-                prova.setResultado_prova_id(rs.getString("resultado_prova_id"));
+                rs.getString("horarioLargada"), rs.getString("dataDaProva"), rs.getString("maxParticipantes"),
+                rs.getString("dataInicioInscricao"), rs.getString("dataFimInscricao"), rs.getString("faixaEtaria"), rs.getInt("organizador_id"), rs.getInt("ranking_id"), rs.getInt("resultadoProva_id"));
             // para chave estrangeira.
             //curso.setMatriculaProfessorCoordenador(rs.getInt("professorCoordenador"))
         } catch (SQLException e) {

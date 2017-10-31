@@ -44,7 +44,7 @@
                     <td><c:out value = "${prova.faixaEtaria}" /></td>
                     <td><c:out value = "${prova.organizador_id}" /></td>
                     <td><c:out value = "${prova.ranking_id}" /></td>
-                    <td><c:out value = "${prova.resultado_prova_id}" /></td>
+                    <td><c:out value = "${prova.resultadoProva_id}" /></td>
 
 
                     <td> <a href="ManterProvaController ?acao=prepararEditar&Editar&id = <c:out value="${prova.id}"/>"> Editar </a></td>

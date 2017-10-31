@@ -19,7 +19,7 @@ public class ResultadoProvaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from resultado_prova");
+            ResultSet rs = comando.executeQuery("select * from resultadoprova");
             while (rs.next()) {
 
                 ResultadoProva resultadoProva = new ResultadoProva(rs.getInt("id"), 
@@ -57,7 +57,7 @@ public class ResultadoProvaDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into resultado_prova (resultadoClassificacao,id)" + "values(?,?)";
+            String sql = "insert into resultadoprova (resultadoClassificacao,id) values(?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setString(1, resultadoProva.getResultadoClassificacao());
@@ -85,7 +85,7 @@ public class ResultadoProvaDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update resultado_prova set resultadoClassificacao= ? where id = ?";
+            String sql = "update resultadoprova set resultadoClassificacao= ? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, resultadoProva.getResultadoClassificacao());
             comando.setInt(2, resultadoProva.getId());
@@ -105,7 +105,7 @@ public class ResultadoProvaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            stringSQL = "delete from resultado_prova where id ="
+            stringSQL = "delete from resultadoprova where id ="
                     + resultadoProva.getId();
             comando.execute(stringSQL);
         } catch (SQLException e) {
@@ -124,7 +124,7 @@ public class ResultadoProvaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * resultado_prova id = " + id);
+            ResultSet rs = comando.executeQuery("select * resultadoprova id = " + id);
             rs.first();
 
             resultadoProva = new ResultadoProva(rs.getInt("id"),

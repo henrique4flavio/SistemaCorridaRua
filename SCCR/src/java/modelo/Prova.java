@@ -14,7 +14,7 @@ public class Prova {
 
     private String dataProva;
 
-    private int maxParticipantes;
+    private String maxParticipantes;
 
     private String inicioInscricao;
 
@@ -25,13 +25,13 @@ public class Prova {
     //Variaveis do banco de dados
     private int id;
     
-    private String organizador_id;
+    private int organizador_id;
     
-    private String ranking_id;
+    private int ranking_id;
     
-    private String resultado_prova_id;
+    private int resultadoProva_id;
 
-    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, int maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria, String organizador_id, String ranking_id, String resultado_prova_id) {
+    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria, int organizador_id, int ranking_id, int resultadoProva_id) {
         this.nomeProva = nomeProva;
         this.localLargada = localLargada;
         this.horarioLargada = horarioLargada;
@@ -42,7 +42,7 @@ public class Prova {
         this.faixaEtaria = faixaEtaria;
         this.organizador_id = organizador_id;
         this.ranking_id = ranking_id;
-        this.resultado_prova_id = resultado_prova_id;
+        this.resultadoProva_id = resultadoProva_id;
         this.id = id;
     }
 
@@ -54,7 +54,7 @@ public class Prova {
         this.id = id;
     }
 
-    public void setRanking_id(String ranking_id) {
+    public void setRanking_id(int ranking_id) {
         this.ranking_id = ranking_id;
     }
 
@@ -96,11 +96,11 @@ public class Prova {
         this.dataProva = dataProva;
     }
 
-    public int getMaxParticipantes() {
+    public String getMaxParticipantes() {
         return maxParticipantes;
     }
 
-    public void setMaxParticipantes(int maxParticipantes) {
+    public void setMaxParticipantes(String maxParticipantes) {
         this.maxParticipantes = maxParticipantes;
     }
 
@@ -123,28 +123,28 @@ public class Prova {
     public String getFaixaEtaria() {
         return faixaEtaria;
     }
-    public String getOrganizador_id() {
+    public int getOrganizador_id() {
         return organizador_id;
     }
 
-    public void setOrganizador_id(String organizador_id) {
+    public void setOrganizador_id(int organizador_id) {
         this.organizador_id = organizador_id;
     }
 
-    public String getRanking_id() {
+    public int getRanking_id() {
         return ranking_id;
     }
 
-    public void setRanking_ID(String ranking_id) {
+    public void setRanking_ID(int ranking_id) {
         this.ranking_id = ranking_id;
     }
 
-    public String getResultado_prova_id() {
-        return resultado_prova_id;
+    public int getResultadoProva_id() {
+        return resultadoProva_id;
     }
 
-    public void setResultado_prova_id(String resultado_prova_id) {
-        this.resultado_prova_id = resultado_prova_id;
+    public void setResultadoProva_id(int resultadoProva_id) {
+        this.resultadoProva_id = resultadoProva_id;
     }
 
 
