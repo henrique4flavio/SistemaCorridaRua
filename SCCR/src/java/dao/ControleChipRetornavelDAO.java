@@ -55,7 +55,7 @@ public class ControleChipRetornavelDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into controleChipRetornavel (id,identificadorAtleta,prova_id)" + "values(?,?,?)";
+            String sql = "insert into controleChipRetornavel (id,identificadorAtleta,prova_id) values(?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, controleChipRetornavel.getId());
@@ -101,7 +101,7 @@ public class ControleChipRetornavelDAO {
 
     }
 
-    public static ControleChipRetornavel obterControleChipRetornavel(int id)throws SQLException,ClassNotFoundException {
+    public static ControleChipRetornavel obterControleChipRetornavel(int id) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
         ControleChipRetornavel controleChipRetornavel = null;
@@ -109,11 +109,11 @@ public class ControleChipRetornavelDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select *from controleChipRetornavel id = " + id);
+            ResultSet rs = comando.executeQuery("select * from controleChipRetornavel id = " + id);
             rs.first();
-controleChipRetornavel = new ControleChipRetornavel(rs.getInt("id"), rs.getInt("identificadorAtleta"), null);
-                controleChipRetornavel.setProva_id(rs.getString("prova_id"));
-           
+            controleChipRetornavel = new ControleChipRetornavel(rs.getInt("id"), rs.getInt("identificadorAtleta"), null);
+            controleChipRetornavel.setProva_id(rs.getString("prova_id"));
+
             // para chave estrangeira.
             //curso.setMatriculaProfessorCoordenador(rs.getInt("professorCoordenador"))
         } catch (SQLException e) {

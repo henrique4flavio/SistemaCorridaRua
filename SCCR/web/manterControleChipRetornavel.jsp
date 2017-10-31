@@ -17,7 +17,7 @@
             <table>
                 <tr>
                         <td>Código controle de chip:</td> 
-                    <td><input type="text" name="txtIdAControleChipRetornavel" value="${controleChipRetornavel.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="text" name="txtIdControleChipRetornavel" value="${controleChipRetornavel.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Identificador atleta:</td> 
