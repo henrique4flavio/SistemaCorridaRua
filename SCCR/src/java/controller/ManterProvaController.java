@@ -7,13 +7,25 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Kit;
-import modelo.Prova;
+import modelo.Organizador;
+import modelo.Ranking;
+import modelo.ResultadoProva;
 
-public class ManterKitController extends HttpServlet {
+public class ManterProvaController extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
@@ -21,15 +33,20 @@ public class ManterKitController extends HttpServlet {
     }
 
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
-
         try {
             request.setAttribute("operacao", "Incluir");
+            request.setAttribute("organizador", Organizador.obterOrganizador());
+            request.setAttribute("ranking", Ranking.obterRanking());
+            request.setAttribute("resultadoProva", ResultadoProva.obterResultadoProva());
 
-            RequestDispatcher view = request.getRequestDispatcher("/manterKit.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/manterProva.jsp");
+
             view.forward(request, response);
         } catch (ServletException ex) {
         } catch (IOException ex) {
+        } catch (ClassNotFoundException ex) {
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

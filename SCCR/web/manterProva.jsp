@@ -11,7 +11,7 @@
     <body>
         <h1>Manter provas - ${operacao}</h1>
 
-        <form action="ManterCursoController?acao=confirmar${operacao}" method="post" name="frmManterCurso">
+        <form action="ManterProvaController?acao=confirmar${operacao}" method="post" name="frmManterCurso">
             <table>
                 <tr>
                     <td>Código da prova:</td> 

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controller;
 
 import java.io.IOException;
@@ -12,11 +8,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Kit;
+import modelo.Prova;
+import modelo.ControleChipRetornavel;
+import modelo.Percurso;
+import modelo.Atleta;
 
-/**
- *
- * @author Laís Alves
- */
+
 public class ManterInscricaoController extends HttpServlet {
 
     /**
@@ -40,11 +38,18 @@ public class ManterInscricaoController extends HttpServlet {
 public void prepararIncluir(HttpServletRequest request, HttpServletResponse response){
         try{
             request.setAttribute("operacao", "Incluir");
+            request.setAttribute("prova", Prova.obterProva());
+            request.setAttribute("kit", Kit.obterKit());
+            request.setAttribute("controleChipRetornavel", ControleChipRetornavel.obterControleChipRetornavel());
+            request.setAttribute("percurso", Percurso.obterPercurso());
+            request.setAttribute("atleta", Atleta.obterAtleta());
+            
             RequestDispatcher view = request.getRequestDispatcher("/manterInscricao.jsp");
             
             view.forward(request, response);
         }catch (ServletException ex){
         }catch (IOException ex){
+        }catch (ClassNotFoundException ex) {
         }
           
     }

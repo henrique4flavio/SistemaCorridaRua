@@ -11,7 +11,7 @@
     <body>
         <h1>Manter percurso - ${operacao}</h1>
 
-        <form action="ManterCursoController?acao=confirmar${operacao}" method="post" name="frmManterCurso">
+        <form action="ManterPercursoController?acao=confirmar${operacao}" method="post" name="frmManterCurso">
             <table>
                 <tr>
                     <td>Código do percurso:</td> 

@@ -84,6 +84,22 @@
         <servlet-name>ManterOrganizadorController</servlet-name>
         <servlet-class>controller.ManterOrganizadorController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManterResultadoProvaController</servlet-name>
+        <servlet-class>controller.ManterResultadoProvaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterRankingController</servlet-name>
+        <servlet-class>controller.ManterRankingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterProvaController</servlet-name>
+        <servlet-class>controller.ManterProvaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterPercursoController</servlet-name>
+        <servlet-class>controller.ManterPercursoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -167,6 +183,22 @@
     <servlet-mapping>
         <servlet-name>ManterOrganizadorController</servlet-name>
         <url-pattern>/ManterOrganizadorController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterResultadoProvaController</servlet-name>
+        <url-pattern>/ManterResultadoProvaController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterRankingController</servlet-name>
+        <url-pattern>/ManterRankingController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterProvaController</servlet-name>
+        <url-pattern>/ManterProvaController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterPercursoController</servlet-name>
+        <url-pattern>/ManterPercursoController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

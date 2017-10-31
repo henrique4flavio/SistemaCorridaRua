@@ -24,15 +24,15 @@
 
                     <td><c:out value = "${resultadoProva.id}" /></td>
                     <td><c:out value = "${resultadoProva.resultadoClassificacao}" /></td>
-                    <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${resultadoProva.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${resultadoProva.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterResultadoProvaController ?acao=prepararEditar&Editar&id = <c:out value="${resultadoProva.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterResultadoProvaController?acao=prepararExcluir&id = <c:out value="${resultadoProva.id}"/>">Excluir </a><td>
 
 
                 </tr>                                                                  
             </c:forEach>
         </table>
         <br><br>
-        <form action ="ManterItemController?acao=prepararIncluir" method="post">
+        <form action ="ManterResultadoProvaController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
 

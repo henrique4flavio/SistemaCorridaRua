@@ -13,7 +13,7 @@
     <body>
         <h1>Manter Controle de chip retornavel - ${operacao}</h1>
 
-        <form action="ManterAdministradorController?acao=confirmar${operacao}" method="post" name="frmManterControleChipRetornavel">
+        <form action="ManterControleChipRetornavelController?acao=confirmar${operacao}" method="post" name="frmManterControleChipRetornavel">
             <table>
                 <tr>
                         <td>Código controle de chip:</td> 
