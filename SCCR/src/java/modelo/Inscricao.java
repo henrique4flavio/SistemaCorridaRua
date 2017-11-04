@@ -25,7 +25,7 @@ public class Inscricao {
 
     private String kit_id;
 
-    private String controle_chip_retornavel_id;
+    private String controleChipRetornavel_id;
 
     private String prova_id;
 
@@ -33,12 +33,12 @@ public class Inscricao {
 
     private String atleta_id;
 
-    public Inscricao(int id, String dataInscricao, int numeroInscricao, String formaPagamento, String kit_id, String controle_chip_retornavel_id, String prova_id, String percurso_id, String atleta_id) {
+    public Inscricao(int id, String dataInscricao, int numeroInscricao, String formaPagamento, String kit_id, String controleChipRetornavel_id, String prova_id, String percurso_id, String atleta_id) {
         this.dataInscricao = dataInscricao;
         this.numeroInscricao = numeroInscricao;
         this.formaPagamento = formaPagamento;
         this.kit_id = kit_id;
-        this.controle_chip_retornavel_id = controle_chip_retornavel_id;
+        this.controleChipRetornavel_id = controleChipRetornavel_id;
         this.prova_id = prova_id;
         this.percurso_id = percurso_id;
         this.atleta_id = atleta_id;
@@ -77,12 +77,12 @@ public class Inscricao {
         this.kit_id = kit_id;
     }
 
-    public String getControle_chip_retornavel_id() {
-        return controle_chip_retornavel_id;
+    public String getControleChipRetornavel_id() {
+        return controleChipRetornavel_id;
     }
 
-    public void setControle_chip_retornavel_id(String controle_chip_retornavel_id) {
-        this.controle_chip_retornavel_id = controle_chip_retornavel_id;
+    public void setControleChipRetornavel_id(String controleChipRetornavel_id) {
+        this.controleChipRetornavel_id = controleChipRetornavel_id;
     }
 
     public String getProva_id() {

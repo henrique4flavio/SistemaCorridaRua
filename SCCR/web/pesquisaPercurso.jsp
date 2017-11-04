@@ -13,15 +13,13 @@
         <h1>Percursos</h1>
         <table border='1'>    
             <tr>
-
+                
                 <th>Código do percurso</th>
                 <th>Nome do percurso</th>
                 <th>Distancia</th>
                 <th>Faixa Etaria</th>
                 <th>Código da prova</th>
-                
-
-             
+                            
             </tr>    
 
             <c:forEach items="${Percurso}" var="percurso">
@@ -45,6 +43,5 @@
         <form action ="ManterPercursoController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
-
     </body>
 </html>

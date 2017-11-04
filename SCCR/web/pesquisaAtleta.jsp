@@ -7,11 +7,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Pesquisa de atletas</title>
+        <title>Atletas</title>
     </head>
 
     <body>
-        <h1> Pesquisa de Atletas</h1>
+        <h1>Atletas</h1>
         <table border='1'>
             <tr>
                 <th> Código do atleta  </th>
@@ -55,9 +55,7 @@
                     <td> <c:out value="${atleta.email}"/> </td>
                     <td> <a href="ManterAtletaController ?acao=prepararEditar&Editar&id = <c:out value="${atleta.id}"/>"> Editar </a></td>
                     <td> <a href="ManterAtletaController?acao=prepararExcluir&id = <c:out value="${atleta.id}"/>">Excluir </a><td>
-
                 </tr>
-
             </c:forEach>
         </table>
         <form action ="ManterAtletaController?acao=prepararIncluir" method="post">

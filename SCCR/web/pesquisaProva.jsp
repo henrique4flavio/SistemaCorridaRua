@@ -25,8 +25,6 @@
                 <th>Faixa etaria</th>
                 <th>Código do organizador</th>
                 <th>Código do ranking</th>
-                <th>Código da classificação</th>
-
 
             </tr>    
 
@@ -44,20 +42,16 @@
                     <td><c:out value = "${prova.faixaEtaria}" /></td>
                     <td><c:out value = "${prova.organizador_id}" /></td>
                     <td><c:out value = "${prova.ranking_id}" /></td>
-                    <td><c:out value = "${prova.resultadoProva_id}" /></td>
 
-
-                    <td> <a href="ManterProvaController ?acao=prepararEditar&Editar&id = <c:out value="${prova.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterProvaController?acao=prepararEditar&Editar&id = <c:out value="${prova.id}"/>"> Editar </a></td>
                     <td> <a href="ManterProvaController?acao=prepararExcluir&id = <c:out value="${prova.id}"/>">Excluir </a><td>
 
-
-                </tr>                                                                  
+               </tr>                                                                  
             </c:forEach>
         </table>
         <br><br>
         <form action ="ManterProvaController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
-
     </body>
 </html>

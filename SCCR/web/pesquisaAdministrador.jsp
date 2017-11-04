@@ -6,10 +6,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Pesquisa de administradores</title>
+        <title>Administradores</title>
     </head>
     <body>
-        <h1>Pesquisa de administradores</h1>
+        <h1>Administradores</h1>
         <table border='1'>    
             <tr>
 

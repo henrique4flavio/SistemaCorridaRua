@@ -34,9 +34,8 @@
                        <tr>
                     <td>Código da Prova:</td> 
                     <td><input type="text" name="txtIdProva" value="${lote.prova_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-                    </tr>
-                
-                <tr>
+                    </tr>               
+               <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>
             </table>

@@ -20,6 +20,10 @@
                     <tr>
                         <td>Resultado da classificação:</td> 
                         <td><input type="text" name="txtResultadoClassificacao" value="${resultadoProva.resultadoClassificacao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
+                    <tr>
+                        <td>Nome da prova:</td> 
+                        <td><input type="text" name="txtNomeProva" value="${resultadoProva.nomeProva}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                 </tr>
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>

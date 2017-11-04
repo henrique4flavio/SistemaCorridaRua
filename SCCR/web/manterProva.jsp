@@ -11,7 +11,7 @@
     <body>
         <h1>Manter provas - ${operacao}</h1>
 
-        <form action="ManterProvaController?acao=confirmar${operacao}" method="post" name="frmManterCurso">
+        <form action="ManterProvaController?acao=confirmar${operacao}" method="post" name="frmManterProva">
             <table>
                 <tr>
                     <td>Código da prova:</td> 
@@ -35,8 +35,16 @@
                     </tr>
                     <tr>
                         <td>Maximo de participantes:</td> 
-                        <td><input type="text" name="txtCpf" value="${prova.maxParticipantes}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtmaxParticipantes" value="${prova.maxParticipantes}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
+                    <tr>
+                        <td>Inicio das incrições:</td> 
+                        <td><input type="text" name="txtInicioInscricao" value="${prova.inicioInscricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
+                    <tr>
+                        <td>Fim das incrições:</td> 
+                        <td><input type="text" name="txtFimInscricao" value="${prova.fimInscricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>                                
                     <tr>
                         <td>Faixa etaria:</td> 
                         <td><input type="text" name="txtFaixaEtaria" value="${prova.faixaEtaria}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
@@ -44,17 +52,13 @@
                     
                     <tr>
                     <td>Código do organizador:</td> 
-                    <td><input type="text" name="txtIdOrganizador" value="${prova.organizador_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="text" name="txtOrganizador_id" value="${prova.organizador_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                     <td>Código do ranking:</td> 
-                    <td><input type="text" name="txtIdRanking" value="${prova.ranking_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="text" name="txtRanking_id" value="${prova.ranking_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
-                    <td>Código dos resultados das provas:</td> 
-                    <td><input type="text" name="txtIdresultado_prova" value="${prova.resultado_prova_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-                    </tr>
-
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>

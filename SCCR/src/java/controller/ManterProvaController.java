@@ -37,7 +37,6 @@ public class ManterProvaController extends HttpServlet {
             request.setAttribute("operacao", "Incluir");
             request.setAttribute("organizador", Organizador.obterOrganizador());
             request.setAttribute("ranking", Ranking.obterRanking());
-            request.setAttribute("resultadoProva", ResultadoProva.obterResultadoProva());
 
             RequestDispatcher view = request.getRequestDispatcher("/manterProva.jsp");
 

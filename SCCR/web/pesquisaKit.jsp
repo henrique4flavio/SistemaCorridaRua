@@ -17,9 +17,6 @@
                 <th>Nome do Kit</th>
                 <th>Itens</th>
                 
-
-
-
             </tr>    
 
             <c:forEach items="${Kit}" var="kit">
@@ -30,14 +27,13 @@
                     
                    <td> <a href="ManterKitController ?acao=prepararEditar&Editar&id = <c:out value="${kit.id}"/>"> Editar </a></td>
                     <td> <a href="ManterKitController?acao=prepararExcluir&id = <c:out value="${kit.id}"/>">Excluir </a><td>
+               
                 </tr>
             </c:forEach>
         </table>
         <form action ="ManterKitController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
-
-
     </body>
 </html>
 

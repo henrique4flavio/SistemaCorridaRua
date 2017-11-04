@@ -22,11 +22,15 @@ public class InscricaoDAO {
             ResultSet rs = comando.executeQuery("select * from inscricao");
             while (rs.next()) {
 
-                Inscricao inscricao = new Inscricao(rs.getInt("id"), rs.getString("dataInscricao"),
-                        rs.getInt("numeroInscricao"),
-                        rs.getString("formaPagamento"), null, null, null, null, null);
+                Inscricao inscricao = new Inscricao(
+                rs.getInt("id"), 
+                rs.getString("dataInscricao"),
+                rs.getInt("numeroInscricao"),
+                rs.getString("formaPagamento"), 
+                null, null, null, null, null);
+                
                 inscricao.setKit_id(rs.getString("kit_id"));
-                inscricao.setControle_chip_retornavel_id(rs.getString("controle_chip_retornavel_id"));
+                inscricao.setControleChipRetornavel_id(rs.getString("controleChipRetornavel_id"));
                 inscricao.setProva_id(rs.getString("prova_id"));
                 inscricao.setPercurso_id(rs.getString("percurso_id"));
                 inscricao.setAtleta_id(rs.getString("atleta_id"));
@@ -61,8 +65,7 @@ public class InscricaoDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into inscricao (id,dataInscricao,numeroInscricao,formaPagamento,kit_id,controle_chip_retornavel_id,prova_id,percurso_id,atleta_id)" + "values(?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into inscricao (id,dataInscricao,numeroInscricao,formaPagamento,kit_id,controlechipretornavel_id,prova_id,percurso_id,atleta_id) values(?,?,?,?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, inscricao.getId());
@@ -70,7 +73,7 @@ public class InscricaoDAO {
             comando.setInt(3, inscricao.getNumeroInscricao());
             comando.setString(4, inscricao.getFormaPagamento());
             comando.setString(5, inscricao.getKit_id());
-            comando.setString(6, inscricao.getControle_chip_retornavel_id());
+            comando.setString(6, inscricao.getControleChipRetornavel_id());
             comando.setString(7, inscricao.getProva_id());
             comando.setString(8, inscricao.getPercurso_id());
             comando.setString(9, inscricao.getAtleta_id());
@@ -97,13 +100,13 @@ public class InscricaoDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update inscricao set dataInscricao= ?,numeroInscricao=?,formaPagamento=?,kit_id=?,controle_chip_retornavel_id=?,prova_id=?,percurso_id=?,atleta_id=? where id = ?";
+            String sql = "update inscricao set dataInscricao=?,numeroInscricao=?,formaPagamento=?,kit_id=?,controlechipretornavel_id=?,prova_id=?,percurso_id=?,atleta_id=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, inscricao.getDataInscricao());
             comando.setInt(2, inscricao.getNumeroInscricao());
             comando.setString(3, inscricao.getFormaPagamento());
             comando.setString(4, inscricao.getKit_id());
-            comando.setString(5, inscricao.getControle_chip_retornavel_id());
+            comando.setString(5, inscricao.getControleChipRetornavel_id());
             comando.setString(6, inscricao.getProva_id());
             comando.setString(7, inscricao.getPercurso_id());
             comando.setString(8, inscricao.getAtleta_id());
@@ -142,20 +145,18 @@ public class InscricaoDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select *from inscricao id = " + id);
+            ResultSet rs = comando.executeQuery("select * from inscricao id = " + id);
             rs.first();
 
             inscricao = new Inscricao(rs.getInt("id"), rs.getString("dataInscricao"),
                     rs.getInt("numeroInscricao"),
                     rs.getString("formaPagamento"), null, null, null, null, null);
             inscricao.setKit_id(rs.getString("kit_id"));
-            inscricao.setControle_chip_retornavel_id(rs.getString("controle_chip_retornavel_id"));
+            inscricao.setControleChipRetornavel_id(rs.getString("controleChipRetornavel_id"));
             inscricao.setProva_id(rs.getString("prova_id"));
             inscricao.setPercurso_id(rs.getString("percurso_id"));
             inscricao.setAtleta_id(rs.getString("atleta_id"));
-
-            // para chave estrangeira.
-            //curso.setMatriculaProfessorCoordenador(rs.getInt("professorCoordenador"))
+        
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

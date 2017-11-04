@@ -7,12 +7,23 @@ import java.util.*;
 public class ResultadoProva {
 
     private String resultadoClassificacao;
+    
+    private String nomeProva;
     //Variaveis do banco de dados
     private int id;
 
-    public ResultadoProva(int id, String ResultadoClassificacao) {
-        this.resultadoClassificacao = ResultadoClassificacao;
+    public ResultadoProva(int id, String resultadoClassificacao, String nomeProva) {
+        this.resultadoClassificacao = resultadoClassificacao;
         this.id = id;
+        
+    }
+
+    public String getNomeProva() {
+        return nomeProva;
+    }
+
+    public void setNomeProva(String nomeProva) {
+        this.nomeProva = nomeProva;
     }
 
     public int getId() {

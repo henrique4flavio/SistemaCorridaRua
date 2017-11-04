@@ -20,9 +20,11 @@ public class LoteDAO {
             comando = conexao.createStatement();
             ResultSet rs = comando.executeQuery("select * from lote");
             while (rs.next()) {
-                Lote lote = new Lote(rs.getInt("id"), rs.getString("dataInicio"),
-                        rs.getString("dataFim"), rs.getString("valor"),
-                        rs.getString("identificacao"), null);
+                Lote lote = new Lote(
+                rs.getInt("id"), rs.getString("dataInicio"),
+                rs.getString("dataFim"), rs.getString("valor"),
+                rs.getString("identificacao"), 
+                null);
 
                 lote.setProva_id(rs.getString("prova_id"));
 

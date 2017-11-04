@@ -25,10 +25,14 @@ public class PercursoDAO {
             ResultSet rs = comando.executeQuery("select * from percurso");
             while (rs.next()) {
 
-                Percurso percurso = new Percurso(rs.getInt("id"), rs.getString("nome"), 
-                rs.getString("distancia"), rs.getString("faixaEtaria"), null);
+                Percurso percurso = new Percurso(
+                rs.getInt("id"), 
+                rs.getString("nome"), 
+                rs.getString("distancia"),
+                rs.getString("faixaEtaria"), 
+                null);
                       
-                        percurso.setProva_id(rs.getString("prova_id"));
+                percurso.setProva_id(rs.getString("prova_id"));
             
                 percursos.add(percurso);
 
@@ -70,14 +74,6 @@ public class PercursoDAO {
             comando.setString(4, percurso.getFaixaEtaria());
             comando.setString(5, percurso.getProva_id());
             
-            // comando caso tenha um campo opcional,chave estrngeira seja vazia.
-            /*
-        if(curso.setNull(6,Types.null));
-        else{
-                comando.set(6,curso.getCoordenador().getMatricula());
-        }
-        comando.setInt(6,curso.getCodCurso());
-             */
             comando.execute();
             comando.close();
             conexao.close();

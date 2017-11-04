@@ -22,7 +22,9 @@ public class KitDAO {
             ResultSet rs = comando.executeQuery("select * from kit");
             while (rs.next()) {
 
-                Kit kit = new Kit(rs.getInt("id"), rs.getString("nomeKit"));
+                Kit kit = new Kit(
+                        rs.getInt("id"), 
+                        rs.getString("nomeKit"));
 
                 
                 kits.add(kit);

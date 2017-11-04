@@ -22,7 +22,9 @@ public class RankingDAO {
             ResultSet rs = comando.executeQuery("select * from ranking");
             while (rs.next()) {
 
-                Ranking ranking = new Ranking(rs.getInt("id"), rs.getString("nome"));
+                Ranking ranking = new Ranking(
+                rs.getInt("id"), 
+                rs.getString("nome"));
 
                 rankings.add(ranking);
 

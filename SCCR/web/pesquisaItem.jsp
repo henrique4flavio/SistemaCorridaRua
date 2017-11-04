@@ -21,12 +21,11 @@
 
             <c:forEach items="${Item}" var="item">
                 <tr>
-
+                    
                     <td><c:out value = "${item.id}" /></td>
                     <td><c:out value = "${item.nomeItem}" /></td>
                     <td> <a href="ManterItemController ?acao=prepararEditar&Editar&id = <c:out value="${item.id}"/>"> Editar </a></td>
                     <td> <a href="ManterItemController?acao=prepararExcluir&id = <c:out value="${item.id}"/>">Excluir </a><td>
-
 
                 </tr>                                                                  
             </c:forEach>
@@ -35,6 +34,5 @@
         <form action ="ManterItemController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
-
     </body>
 </html>

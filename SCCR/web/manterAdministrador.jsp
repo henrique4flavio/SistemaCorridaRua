@@ -36,7 +36,6 @@
                         <td>Senha:</td> 
                         <td><input type="text" name="txtSenhaAdm" value="${administrador.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                 </tr>
-
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>

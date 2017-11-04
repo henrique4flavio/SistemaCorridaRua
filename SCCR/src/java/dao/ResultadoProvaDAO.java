@@ -22,8 +22,10 @@ public class ResultadoProvaDAO {
             ResultSet rs = comando.executeQuery("select * from resultadoprova");
             while (rs.next()) {
 
-                ResultadoProva resultadoProva = new ResultadoProva(rs.getInt("id"), 
-                        rs.getString("resultadoClassificacao"));
+                ResultadoProva resultadoProva = new ResultadoProva(
+                rs.getInt("id"), 
+                rs.getString("resultadoClassificacao"),
+                rs.getString("nomeProva"));
 
                 
                 resultadoProvas.add(resultadoProva);
@@ -57,7 +59,7 @@ public class ResultadoProvaDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into resultadoprova (resultadoClassificacao,id) values(?,?)";
+            String sql = "insert into resultadoprova (resultadoClassificacao,nomeProva,id) values(?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setString(1, resultadoProva.getResultadoClassificacao());
@@ -85,7 +87,7 @@ public class ResultadoProvaDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update resultadoprova set resultadoClassificacao= ? where id = ?";
+            String sql = "update resultadoprova set resultadoClassificacao=?,nomeProva=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, resultadoProva.getResultadoClassificacao());
             comando.setInt(2, resultadoProva.getId());
@@ -127,8 +129,10 @@ public class ResultadoProvaDAO {
             ResultSet rs = comando.executeQuery("select * resultadoprova id = " + id);
             rs.first();
 
-            resultadoProva = new ResultadoProva(rs.getInt("id"),
-                    rs.getString("resultadoClassificacao"));
+            resultadoProva = new ResultadoProva(
+                    rs.getInt("id"),
+                    rs.getString("resultadoClassificacao"),
+                    rs.getString("nomeProva"));
             // para chave estrangeira.
             //curso.setMatriculaProfessorCoordenador(rs.getInt("professorCoordenador"))
         } catch (SQLException e) {

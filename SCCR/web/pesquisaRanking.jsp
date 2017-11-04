@@ -24,9 +24,8 @@
 
                     <td><c:out value = "${ranking.id}" /></td>
                     <td><c:out value = "${ranking.nome}" /></td>
-                    <td> <a href="ManterRankingController ?acao=prepararEditar&Editar&id = <c:out value="${ranking.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterRankingController?acao=prepararEditar&Editar&id = <c:out value="${ranking.id}"/>"> Editar </a></td>
                     <td> <a href="ManterRankingController?acao=prepararExcluir&id = <c:out value="${ranking.id}"/>">Excluir </a><td>
-
 
                 </tr>                                                                  
             </c:forEach>
@@ -35,6 +34,5 @@
         <form action ="ManterRankingController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
-
     </body>
 </html>

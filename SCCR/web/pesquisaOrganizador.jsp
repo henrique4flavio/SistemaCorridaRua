@@ -35,14 +35,11 @@
                     <td> <a href="ManterOrganizadorController?acao=prepararExcluir&id = <c:out value="${organizador.id}"/>">Excluir </a><td>
 
                 </tr>
-
             </c:forEach>
         </table>
         <form action ="ManterOrganizadorController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>     
-
-
     </body>
 </html>
 

@@ -34,10 +34,11 @@
                     <td> <c:out value= "${inscricao.numeroInscricao}"/></td>
                     <td> <c:out value="${inscricao.formaPagamento}"/> </td>
                     <td> <c:out value="${inscricao.kit_id}"/> </td>
-                    <td> <c:out value="${inscricao.controle_chip_retornavel_id}"/> </td>
+                    <td> <c:out value="${inscricao.controleChipRetornavel_id}"/> </td>
                     <td> <c:out value= "${inscricao.prova_id}"/></td>
                     <td> <c:out value= "${inscricao.percurso_id}"/></td>
                     <td> <c:out value="${inscricao.atleta_id}"/> </td>
+                    
                     <td><a href ="ManterInscricaoController?acao=prepararEditar&ID_Item" <c:out value="${inscricao.id}"/>">Editar</a></td>
                     <td><a href ="ManterInscricaoController?acao=prepararEditar&ID_Item" <c:out value="${inscricao.id}"/>">Excluir</a></td>
 
@@ -47,9 +48,5 @@
         <form action ="ManterInscricao?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
-
-
-
-
     </body>
 </html>

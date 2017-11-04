@@ -13,29 +13,20 @@
         <form action="ManterInscricaoController?acao=confirmar${operacao}" method="post" name="frmManterInscricao">
             <table>
                 <tr>
-                    <td>Numero da Inscrição:</td> 
-                    <td><input type="text" name="txtNumInscricao" value="${inscricao.numeroInsricao}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td>Codigo da Inscrição:</td> 
+                    <td><input type="text" name="txtId" value="${inscricao.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
- 
+            
+                <tr>
+                    <td>Data da Inscrição:</td> 
+                    <td><input type="text" name="txtDataInscricao" value="${inscricao.dataInscricao}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    </tr>
+
                     <tr>
-                        <td>Data de Inscrição:</td> 
-                        <td><input type="text" name="txtDataInscricao" value="${atleta.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td>Numero da Inscrição:</td> 
+                        <td><input type="text" name="txtNumeroInsricao" value="${inscricao.numeroInsricao}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
-                    
-                    <tr>
-                        <td>Atleta:</td> 
-                        <td><input type="text" name="txtNomeAtleta" value="${inscricao.atleta_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Prova:</td> 
-                        <td><input type="text" name="txtProva" value="${inscricao.prova_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Percurso:</td> 
-                        <td><input type="text" name="txtPercurso" value="${inscricao.percurso_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    
+
                     <tr> 
                         <td>Forma de Pagamento:</td> 
                         <td>
@@ -45,8 +36,33 @@
                             </select>
                         </td>
                     </tr>
-                    
-                <tr>
+
+                    <tr>
+                        <td>Kit:</td> 
+                        <td><input type="text" name="txtKit_id" value="${inscricao.kit_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
+
+                    <tr>
+                        <td>Controle de chip retornavel:</td> 
+                        <td><input type="text" name="txtControleChipRetornavel_id" value="${inscricao.controleChipRetornavel_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Prova:</td> 
+                        <td><input type="text" name="txtProva_id" value="${inscricao.prova_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Percurso:</td> 
+                        <td><input type="text" name="txtPercurso_id" value="${inscricao.percurso_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
+                    <tr>
+                        <td>Atleta:</td> 
+                        <td><input type="text" name="txtAtleta_id" value="${inscricao.atleta_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                </tr>
+             <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>
             </table>

@@ -26,10 +26,7 @@
                     <tr>
                         <td>Prova:</td> 
                         <td><input type="text" name="txtProva" value="${controleChipRetornavel.prova_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    
-                   
-
+                    </tr>               
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>

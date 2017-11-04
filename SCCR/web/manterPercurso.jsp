@@ -11,7 +11,7 @@
     <body>
         <h1>Manter percurso - ${operacao}</h1>
 
-        <form action="ManterPercursoController?acao=confirmar${operacao}" method="post" name="frmManterCurso">
+        <form action="ManterPercursoController?acao=confirmar${operacao}" method="post" name="frmManterPercurso">
             <table>
                 <tr>
                     <td>Código do percurso:</td> 
@@ -33,7 +33,6 @@
                     <td>Código da Prova:</td> 
                     <td><input type="text" name="txtIdProva" value="${percurso.prova_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
-
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>

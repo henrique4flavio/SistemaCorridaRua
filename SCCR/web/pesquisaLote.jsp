@@ -19,7 +19,6 @@
                 <th>Data do Fim</th>
                 <th>Valor</th>
 
-
             </tr>    
 
             <c:forEach items="${Lote}" var="lote">
@@ -40,8 +39,6 @@
         <form action ="ManterLoteController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
-
-
     </body>
 </html>
 

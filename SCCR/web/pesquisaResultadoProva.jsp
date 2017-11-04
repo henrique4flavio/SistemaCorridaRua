@@ -16,6 +16,7 @@
 
                 <th>Código do resultado da prova</th>
                 <th>Resultado da classificação</th>
+                 <th>Nome Prova</th>
 
             </tr>    
 
@@ -24,10 +25,10 @@
 
                     <td><c:out value = "${resultadoProva.id}" /></td>
                     <td><c:out value = "${resultadoProva.resultadoClassificacao}" /></td>
+                    <td><c:out value = "${resultadoProva.nomeProva}" /></td>
                     <td> <a href="ManterResultadoProvaController ?acao=prepararEditar&Editar&id = <c:out value="${resultadoProva.id}"/>"> Editar </a></td>
                     <td> <a href="ManterResultadoProvaController?acao=prepararExcluir&id = <c:out value="${resultadoProva.id}"/>">Excluir </a><td>
-
-
+                        
                 </tr>                                                                  
             </c:forEach>
         </table>
@@ -35,6 +36,5 @@
         <form action ="ManterResultadoProvaController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
-
     </body>
 </html>
