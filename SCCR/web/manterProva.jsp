@@ -15,7 +15,7 @@
             <table>
                 <tr>
                     <td>Código da prova:</td> 
-                    <td><input type="text" name="txtIdProva" value="${prova.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="text" name="txtId" value="${prova.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Nome da prova:</td> 
@@ -31,7 +31,7 @@
                     </tr>
                     <tr>
                         <td>Data da prova:</td> 
-                        <td><input type="text" name="txtDataDaProva" value="${prova.dataDaProva}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtDataProva" value="${prova.dataProva}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Maximo de participantes:</td> 

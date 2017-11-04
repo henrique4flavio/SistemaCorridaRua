@@ -35,7 +35,7 @@
                     <td><c:out value = "${prova.nomeProva}" /></td>
                     <td><c:out value = "${prova.localLargada}" /></td>
                     <td><c:out value = "${prova.horarioLargada}" /></td>
-                    <td><c:out value = "${prova.dataDaProva}" /></td>
+                    <td><c:out value = "${prova.dataProva}" /></td>
                     <td><c:out value = "${prova.maxParticipantes}" /></td>
                     <td><c:out value = "${prova.dataInicioInscricao}" /></td>
                     <td><c:out value = "${prova.dataFimInscricao}" /></td>
@@ -49,7 +49,6 @@
                </tr>                                                                  
             </c:forEach>
         </table>
-        <br><br>
         <form action ="ManterProvaController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    

@@ -30,7 +30,6 @@
                 </tr>                                                                  
             </c:forEach>
         </table>
-        <br><br>
         <form action ="ManterRankingController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
