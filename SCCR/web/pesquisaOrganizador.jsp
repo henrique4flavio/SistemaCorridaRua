@@ -19,7 +19,7 @@
                 <th> Login </th>
                 <th> Senha</th>
                 <th> email</th>
-                <th> Administrador</th>
+                <th> Código do administrador</th>
                 
             </tr>
             <c:forEach items="${Organizador}" var="organizador">

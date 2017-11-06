@@ -17,10 +17,7 @@
                     <td>Código do Organizador:</td> 
                     <td><input type="text" name="txtIdOrganizador" value="${organizador.id}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>></td>
                     </tr>
-                    <tr>
-                        <td>Codigo do Administrador </td> 
-                        <td><input type="text" name="txtCodigoAdministrador" value="${organizador.administrador_id}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>></td>
-                    </tr>
+                    
                     <tr>
                         <td>Nome do organizador:</td> 
                         <td><input type="text" name="txtNomeOrganizador" value="${organizador.nome}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>></td>
@@ -37,7 +34,11 @@
                     <tr>
                         <td>Email:</td> 
                         <td><input type="text" name="txtEmailOrganizador" value="${organizador.email}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>></td>
-                    </tr>                  
+                    </tr> 
+                    <tr>
+                        <td>Codigo do Administrador </td> 
+                        <td><input type="text" name="txtCodigoAdministrador" value="${organizador.administrador_id}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>></td>
+                    </tr>
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>

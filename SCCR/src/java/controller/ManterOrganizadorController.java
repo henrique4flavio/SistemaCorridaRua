@@ -57,19 +57,19 @@ public class ManterOrganizadorController extends HttpServlet {
     }
     
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));
-        String administrador_id = request.getParameter("txtCodigoAdministrador");       
+        int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));      
         String nome = request.getParameter("txtNomeOrganizador");
         String senha = request.getParameter("txtSenhaOrganizaador");
         String login = request.getParameter("txtloginOganizador");
         String email = request.getParameter("txtEmailOrganizador");
+        String administrador_id = request.getParameter("txtCodigoAdministrador"); 
     
         try {
             Administrador administrador = Administrador.obterAdministrador(id);
             Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);
     
     
-            administrador.gravar();
+            organizador.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaOrganizadorController");
             view.forward(request, response);
         } catch (IOException ex) {

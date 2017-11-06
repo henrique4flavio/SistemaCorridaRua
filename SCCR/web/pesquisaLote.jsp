@@ -25,14 +25,15 @@
                 <tr>
 
                     <td><c:out value = "${lote.id}" /></td>
+                    <td><c:out value = "${lote.idetificacao}" /></td>
                     <td><c:out value = "${lote.prova_id}" /></td>
                     <td><c:out value = "${lote.dataInicio}" /></td>
                     <td><c:out value = "${lote.dataFim}" /></td>
                     <td><c:out value = "${lote.valor}" /></td>
 
 
-                    <td> <a href="ManterLoteController ?acao=prepararEditar&Editar&id = <c:out value="${lote.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterLoteController?acao=prepararExcluir&id = <c:out value="${lote.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterLoteController?acao=prepararEditar&Editar&ID_lote = <c:out value="${lote.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterLoteController?acao=prepararExcluir&ID_lote = <c:out value="${lote.id}"/>">Excluir </a><td>
                 </tr>
             </c:forEach>
         </table>

@@ -59,7 +59,7 @@ public class LoteDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into lote (id, identificacao, dataInicio , dataFim , valor, prova_id)" + "values(?,?,?,?,?,?)";
+            String sql = "insert into lote (id,identificacao,dataInicio,dataFim,valor,prova_id) values(?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setInt(1, lote.getId());
             comando.setString(2, lote.getIdentificacao());
@@ -91,7 +91,7 @@ public class LoteDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update lote set identificacao=?, dataInicio=?, dataFim=?, valor=?, prova_id=? where id = ?";
+            String sql = "update lote set identificacao=?,dataInicio=?,dataFim=?,valor=?,prova_id=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, lote.getIdentificacao());
             comando.setString(2, lote.getDataInicio());
@@ -135,7 +135,7 @@ public class LoteDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from id = " + id);
+            ResultSet rs = comando.executeQuery("select * from lote id = " + id);
             rs.next();
 
             lote = new Lote(rs.getInt("id"),
