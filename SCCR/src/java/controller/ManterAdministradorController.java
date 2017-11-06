@@ -39,8 +39,9 @@ public class ManterAdministradorController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("txtIdAdministrador"));
         String nomeAdministrador = request.getParameter("txtNomeAdministrador");
         String email = request.getParameter("txtEmail");
-        String login = request.getParameter("txtLoginAdm");
         String senha = request.getParameter("txtSenhaAdm");
+        String login = request.getParameter("txtLoginAdm");
+        
         try {
             Administrador administrador = new Administrador(id, nomeAdministrador, senha, login, email);
             administrador.gravar();

@@ -25,12 +25,10 @@ public class ManterLoteController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
-        }
-
+        } 
     }
 
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {

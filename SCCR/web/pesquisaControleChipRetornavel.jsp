@@ -24,8 +24,8 @@
                     <td><c:out value = "${controleChipRetornavel.id}" /></td>
                     <td><c:out value = "${controleChipRetornavel.identificadorAtleta}" /></td>
                     <td><c:out value = "${controleChipRetornavel.prova_id}" /></td>
-                    <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_administrador" <c:out value="${controleChipRetornavel.id}"/>">Editar</a></td>
-                    <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_administrador" <c:out value="${controleChipRetornavel.id}"/>">Excluir</a></td>
+                    <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_controleChipRetornavel" <c:out value="${controleChipRetornavel.id}"/>">Editar</a></td>
+                    <td><a href ="ManterControleChipRetornavel?acao=prepararEditar&ID_controleChipRetornavel" <c:out value="${controleChipRetornavel.id}"/>">Excluir</a></td>
 
                 </tr>
             </c:forEach>

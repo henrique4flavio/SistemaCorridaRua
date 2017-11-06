@@ -65,7 +65,7 @@ public class PercursoDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem que fazer para as duas classes .
-            String sql = "insert into percurso (id, nome, distancia, faixaEtaria, prova_id)" + "values(?,?,?,?,?)";
+            String sql = "insert into percurso (id, nome, distancia, faixaEtaria, prova_id) values(?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, percurso.getId());

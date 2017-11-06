@@ -15,7 +15,7 @@
             <table>
                 <tr>
                     <td>Código do percurso:</td> 
-                    <td><input type="text" name="txtIdPercurso" value="${percurso.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="text" name="txtIdPercurso" value="${percurso.id}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>></td>
                     </tr>
                     <tr>
                         <td>Nome do percurso:</td> 

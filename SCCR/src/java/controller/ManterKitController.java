@@ -17,7 +17,7 @@ public class ManterKitController extends HttpServlet {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
-        }
+        } 
     }
 
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {

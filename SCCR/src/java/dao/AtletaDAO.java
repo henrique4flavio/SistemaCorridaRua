@@ -73,8 +73,7 @@ public class AtletaDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into atleta(id,nome,nomeEquipe,dtNascimento,apelido,cpf,TamCamisa,sexo,telefoneFixo,telefoneCelular,rua,bairro,cidade,estado,pais,login,senha,email)"
-                    + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into atleta(id,nome,nomeEquipe,dtNascimento,apelido,cpf,tamCamisa,sexo,telefoneFixo,telefoneCelular,rua,bairro,cidade,estado,pais,login,senha,email) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, atleta.getId());
@@ -99,14 +98,7 @@ public class AtletaDAO {
             comando.setString(17, atleta.getSenha());
             comando.setString(18, atleta.getEmail());
 
-            // comando caso tenha um campo opcional,chave estrngeira seja vazia.
-            /*
-        if(curso.setNull(6,Types.null));
-        else{
-                comando.set(6,curso.getCoordenador().getMatricula());
-        }
-        comando.setInt(6,curso.getCodCurso());
-             */
+            
             comando.execute();
             comando.close();
             conexao.close();
@@ -183,7 +175,7 @@ public class AtletaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select *from atleta id = " + id);
+            ResultSet rs = comando.executeQuery("select * from atleta id = " + id);
             rs.first();
             atleta = new Atleta(rs.getInt("id"), rs.getString("nome"), rs.getString("nomeEquipe"),
                     rs.getString("dtNascimento"), rs.getString("apelido"), rs.getString("cpf"),

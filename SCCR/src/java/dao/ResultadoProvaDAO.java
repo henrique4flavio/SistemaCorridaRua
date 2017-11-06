@@ -63,7 +63,8 @@ public class ResultadoProvaDAO {
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setString(1, resultadoProva.getResultadoClassificacao());
-            comando.setInt(2, resultadoProva.getId());
+            comando.setString(2, resultadoProva.getNomeProva());
+            comando.setInt(3, resultadoProva.getId());
             // comando caso tenha um campo opcional,chave estrngeira seja vazia.
             /*
         if(curso.setNull(6,Types.null));
@@ -90,7 +91,8 @@ public class ResultadoProvaDAO {
             String sql = "update resultadoprova set resultadoClassificacao=?,nomeProva=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, resultadoProva.getResultadoClassificacao());
-            comando.setInt(2, resultadoProva.getId());
+            comando.setString(2, resultadoProva.getNomeProva());
+            comando.setInt(3, resultadoProva.getId());
             comando.execute();
             comando.close();
             conexao.close();

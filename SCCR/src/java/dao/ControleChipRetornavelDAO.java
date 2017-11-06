@@ -19,14 +19,14 @@ public class ControleChipRetornavelDAO {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
             ResultSet rs = comando.executeQuery("select * from controlechipretornavel");
+            
             while (rs.next()) {
-
                 ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel(
                 rs.getInt("id"), 
-                rs.getInt("identificadorAtleta"), 
+                rs.getString("identificadorAtleta"), 
                 null);
                 controleChipRetornavel.setProva_id(rs.getString("prova_id"));
-
+                
                 controleChipRetornaveis.add(controleChipRetornavel);
 
             }
@@ -57,22 +57,15 @@ public class ControleChipRetornavelDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into controleChipRetornavel (id,identificadorAtleta,prova_id) values(?,?,?)";
+          
+            String sql = "insert into controlechipretornavel (id,identificadorAtleta,prova_id) values(?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, controleChipRetornavel.getId());
-            comando.setInt(2, controleChipRetornavel.getIdentificadorAtleta());
+            comando.setString(2, controleChipRetornavel.getIdentificadorAtleta());
             comando.setString(3, controleChipRetornavel.getProva_id());
 
-            // comando caso tenha um campo opcional,chave estrngeira seja vazia.
-            /*
-        if(curso.setNull(6,Types.null));
-        else{
-                comando.set(6,curso.getCoordenador().getMatricula());
-        }
-        comando.setInt(6,curso.getCodCurso());
-             */
+            
             comando.execute();
             comando.close();
             conexao.close();
@@ -89,9 +82,9 @@ public class ControleChipRetornavelDAO {
         try {
             conexao = BD.getConexao();
 
-            String sql = "update controleChipRetornavel set identificadorAtleta= ?,prova_id=? where id = ?";
+            String sql = "update controlechipretornavel set identificadorAtleta=?,prova_id=? where id=?";
             PreparedStatement comando = conexao.prepareStatement(sql);
-            comando.setInt(1, controleChipRetornavel.getIdentificadorAtleta());
+            comando.setString(1, controleChipRetornavel.getIdentificadorAtleta());
             comando.setString(2, controleChipRetornavel.getProva_id());
 
             comando.setInt(3, controleChipRetornavel.getId());
@@ -112,13 +105,15 @@ public class ControleChipRetornavelDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from controleChipRetornavel id = " + id);
+            ResultSet rs = comando.executeQuery("select * from controlechipretornavel id = " + id);
             rs.first();
-            controleChipRetornavel = new ControleChipRetornavel(rs.getInt("id"), rs.getInt("identificadorAtleta"), null);
+            controleChipRetornavel = new ControleChipRetornavel(
+                    rs.getInt("id"), 
+                    rs.getString("identificadorAtleta"),
+                    null);
             controleChipRetornavel.setProva_id(rs.getString("prova_id"));
 
-            // para chave estrangeira.
-            //curso.setMatriculaProfessorCoordenador(rs.getInt("professorCoordenador"))
+            
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -136,8 +131,7 @@ public class ControleChipRetornavelDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            stringSQL = "delete from controleChipRetornavel where id ="
-                    + controleChipRetornavel.getId();
+            stringSQL = "delete from controlechipretornavel where id = " + controleChipRetornavel.getId();
             comando.execute(stringSQL);
         } catch (SQLException e) {
             throw e;

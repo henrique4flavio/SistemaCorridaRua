@@ -30,7 +30,7 @@ public class OrganizadorDAO {
                         rs.getString("email"),
                         null);
 
-                organizador.setAdministrador_id(rs.getString("administrador_id"));;
+                organizador.setAdministrador_id(rs.getString("administrador_id"));
 
                 organizadores.add(organizador);
 
@@ -62,24 +62,17 @@ public class OrganizadorDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into organizador (nome,senha,login,email, administrador_id, id)" + "values(?,?,?,?,?)";
+          
+            String sql = "insert into organizador(id,nome,senha,login,email,administrador_id) values(?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
-
-            comando.setString(1, organizador.getNome());
-            comando.setString(2, organizador.getSenha());
+            
+            comando.setInt(1, organizador.getId());
+            comando.setString(2, organizador.getNome());
             comando.setString(3, organizador.getSenha());
-            comando.setString(4, organizador.getEmail());
-            comando.setString(5, organizador.getAdministrador_id());
-            comando.setInt(6, organizador.getId());
-            // comando caso tenha um campo opcional,chave estrngeira seja vazia.
-            /*
-        if(curso.setNull(6,Types.null));
-        else{
-                comando.set(6,curso.getCoordenador().getMatricula());
-        }
-        comando.setInt(6,curso.getCodCurso());
-             */
+            comando.setString(4, organizador.getSenha());
+            comando.setString(5, organizador.getEmail());
+            comando.setString(6, organizador.getAdministrador_id());
+            
             comando.execute();
             comando.close();
             conexao.close();
@@ -146,8 +139,8 @@ public class OrganizadorDAO {
                     rs.getString("senha"),
                     rs.getString("login"),
                     rs.getString("email"), null);
-            // para chave estrangeira.
-            //curso.setMatriculaProfessorCoordenador(rs.getInt("professorCoordenador"))
+            organizador.setAdministrador_id(rs.getString("administrador_id"));
+           
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

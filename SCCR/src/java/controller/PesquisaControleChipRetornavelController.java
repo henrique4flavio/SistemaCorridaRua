@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package controller;
 
 import java.io.IOException;
@@ -30,9 +34,10 @@ public class PesquisaControleChipRetornavelController extends HttpServlet {
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaControleChipRetornavel.jsp");
             view.forward(request,response);
 
-        }catch(ClassNotFoundException ex){
             
-        }
+                   }catch(ClassNotFoundException ex){
+                       
+                   }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

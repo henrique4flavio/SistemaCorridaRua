@@ -7,13 +7,13 @@ import java.util.*;
 
 public class ControleChipRetornavel {
 
-    private int identificadorAtleta;
+    private String identificadorAtleta;
     //Variaveis do banco de dados
     private int id;
 
     private String prova_id;
 
-    public ControleChipRetornavel(int id, int identificadorAtleta, String prova_id) {
+    public ControleChipRetornavel(int id, String identificadorAtleta, String prova_id) {
         this.identificadorAtleta = identificadorAtleta;
         this.prova_id = prova_id;
         this.id = id;
@@ -27,8 +27,12 @@ public class ControleChipRetornavel {
         this.id = id;
     }
 
-    public int getIdentificadorAtleta() {
+    public String getIdentificadorAtleta() {
         return identificadorAtleta;
+    }
+
+    public void setIdentificadorAtleta(String identificadorAtleta) {
+        this.identificadorAtleta = identificadorAtleta;
     }
 
     public String getProva_id() {

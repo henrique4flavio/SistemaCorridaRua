@@ -3,6 +3,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -24,11 +25,13 @@ public class ManterRankingController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
         String acao = request.getParameter("acao");
-        if(acao.equals("prepararIncluir")){
-            prepararIncluir(request, response);   
+        if (acao.equals("prepararIncluir")) {
+            prepararIncluir(request, response);
+        } else {
+            if (acao.equals("confirmarIncluir")) {
+                confirmarIncluir(request, response);
+            }
         }
     }
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response){
@@ -43,6 +46,30 @@ public class ManterRankingController extends HttpServlet {
           
 
     }
+    public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdRanking"));
+        String nome = request.getParameter("txtNomeRanking");
+       
+        try {
+            Ranking ranking = new Ranking(id, nome);
+    
+            ranking.gravar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaRankingController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    }
+    
+    
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

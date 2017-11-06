@@ -66,7 +66,7 @@
 
                     <tr>
                         <td>Pais:</td> 
-                        <td><input type="text" name="txtNomeAtleta" value="${atleta.pais}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtPais" value="${atleta.pais}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Estado:</td> 
