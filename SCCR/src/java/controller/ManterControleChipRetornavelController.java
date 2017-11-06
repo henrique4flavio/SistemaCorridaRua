@@ -28,6 +28,7 @@ public class ManterControleChipRetornavelController extends HttpServlet {
             throws ServletException, IOException {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
+            
             prepararIncluir(request, response);
         } else {
             if (acao.equals("confirmarIncluir")) {
@@ -53,7 +54,7 @@ public class ManterControleChipRetornavelController extends HttpServlet {
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdControleChipRetornavel"));
         String identificadorAtleta = request.getParameter("txtIdentificadorAtleta");
-        String prova_id = request.getParameter("txtIdProva");
+        String prova_id = request.getParameter("txtProva");
     
         try {
             Prova prova = Prova.obterProva(id);       
