@@ -3,6 +3,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,9 +20,12 @@ public class ManterItemController extends HttpServlet {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
-        } 
+        } else {
+            if (acao.equals("confirmarIncluir")) {
+                confirmarIncluir(request, response);
+            }
     } 
-    
+    }
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response){
         try{
             request.setAttribute("operacao", "Incluir");
@@ -33,6 +37,26 @@ public class ManterItemController extends HttpServlet {
         }
           
     }
+public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdItem"));
+        String nomeItem = request.getParameter("txtNomeItem");
+        
+        try {
+            Item item = new Item(id,nomeItem);
+            item.gravar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaItemController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    
+}
 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

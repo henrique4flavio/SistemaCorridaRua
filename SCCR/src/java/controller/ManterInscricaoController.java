@@ -3,6 +3,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -44,6 +45,29 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
         }
           
     }
+public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdControleChipRetornavel"));
+        String identificadorAtleta = request.getParameter("txtIdentificadorAtleta");
+        String prova_id = request.getParameter("txtProva");
+    
+        try {
+            Prova prova = Prova.obterProva(id);       
+            ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel(id, identificadorAtleta, prova_id);
+    
+            controleChipRetornavel.gravar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaControleChipRetornavelController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

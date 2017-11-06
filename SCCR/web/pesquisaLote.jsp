@@ -25,7 +25,7 @@
                 <tr>
 
                     <td><c:out value = "${lote.id}" /></td>
-                    <td><c:out value = "${lote.idetificacao}" /></td>
+                    <td><c:out value = "${lote.identificacao}" /></td>
                     <td><c:out value = "${lote.prova_id}" /></td>
                     <td><c:out value = "${lote.dataInicio}" /></td>
                     <td><c:out value = "${lote.dataFim}" /></td>
