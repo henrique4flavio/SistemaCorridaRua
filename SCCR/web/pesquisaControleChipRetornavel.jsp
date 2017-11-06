@@ -30,7 +30,7 @@
                 </tr>
             </c:forEach>
         </table>
-        <form action ="ManterControleChipRetornavel?acao=prepararIncluir" method="post">
+        <form action ="ManterControleChipRetornavelController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
     </body>
