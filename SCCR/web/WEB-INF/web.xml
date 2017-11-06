@@ -57,7 +57,7 @@
         <servlet-class>controller.ManterKitController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ManterInscricaoControler</servlet-name>
+        <servlet-name>ManterInscricaoController</servlet-name>
         <servlet-class>controller.ManterInscricaoController</servlet-class>
     </servlet>
     <servlet>
@@ -153,8 +153,8 @@
         <url-pattern>/ManterKitController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ManterInscricaoControler</servlet-name>
-        <url-pattern>/ManterInscricaoControler</url-pattern>
+        <servlet-name>ManterInscricaoController</servlet-name>
+        <url-pattern>/ManterInscricaoController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ManterItemController</servlet-name>
