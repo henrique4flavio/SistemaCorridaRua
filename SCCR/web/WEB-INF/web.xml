@@ -90,7 +90,7 @@
     </servlet>
     <servlet>
         <servlet-name>ManterControleChipRetornavelController</servlet-name>
-        <servlet-class>controller.ManterControleChipRetornavelController</servlet-class>
+        <servlet-class>controller.ManterlotChipRetornavelController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>PesquisaControleChipRetornavelController</servlet-name>

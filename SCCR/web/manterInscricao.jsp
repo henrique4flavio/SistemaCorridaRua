@@ -24,7 +24,7 @@
 
                     <tr>
                         <td>Numero da Inscrição:</td> 
-                        <td><input type="text" name="txtNumeroInsricao" value="${inscricao.numeroInsricao}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtNumeroInsricao" value="${inscricao.numeroInscricao}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
 
                     <tr> 
@@ -38,28 +38,28 @@
                     </tr>
 
                     <tr>
-                        <td>Kit:</td> 
+                        <td>Codigo do kit:</td> 
                         <td><input type="text" name="txtKit_id" value="${inscricao.kit_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
 
                     <tr>
-                        <td>Controle de chip retornavel:</td> 
+                        <td>Codigo do controle de chip retornavel:</td> 
                         <td><input type="text" name="txtControleChipRetornavel_id" value="${inscricao.controleChipRetornavel_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
 
 
                     <tr>
-                        <td>Prova:</td> 
+                        <td>Codigo da prova:</td> 
                         <td><input type="text" name="txtProva_id" value="${inscricao.prova_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
 
 
                     <tr>
-                        <td>Percurso:</td> 
+                        <td>Codigo do percurso:</td> 
                         <td><input type="text" name="txtPercurso_id" value="${inscricao.percurso_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
-                        <td>Atleta:</td> 
+                        <td>Codigo do atleta:</td> 
                         <td><input type="text" name="txtAtleta_id" value="${inscricao.atleta_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                 </tr>
              <tr>

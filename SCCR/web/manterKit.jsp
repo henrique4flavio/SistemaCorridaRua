@@ -19,7 +19,7 @@
                     </tr>
                     <tr>
                         <td>Nome do kit:</td> 
-                        <td><input type="text" name="txtNomeKit" value="${kit.nomeItem}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtNomeKit" value="${kit.nomeKit}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>

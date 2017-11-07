@@ -58,7 +58,7 @@ public class ControleChipRetornavelDAO {
         try {
             conexao = BD.getConexao();
           
-            String sql = "insert into controlechipretornavel (id,identificadorAtleta,prova_id) values(?,?,?)";
+            String sql = "insert into controlechipretornavel(id,identificadorAtleta,prova_id) values(?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, controleChipRetornavel.getId());
@@ -86,8 +86,8 @@ public class ControleChipRetornavelDAO {
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, controleChipRetornavel.getIdentificadorAtleta());
             comando.setString(2, controleChipRetornavel.getProva_id());
-
             comando.setInt(3, controleChipRetornavel.getId());
+            
             comando.execute();
             comando.close();
             conexao.close();

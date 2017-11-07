@@ -58,7 +58,7 @@ public class KitDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into kit (id, nome)" + "values(?,?)";
+            String sql = "insert into kit (id, nomeKit) values(?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setInt(1, kit.getId());
             comando.setString(2, kit.getNomeKit());
@@ -78,7 +78,7 @@ public class KitDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update kit set nome=? where id = ?";
+            String sql = "update kit set nomeKit=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, kit.getNomeKit());
             comando.setInt(2, kit.getId());

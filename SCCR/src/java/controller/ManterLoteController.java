@@ -35,6 +35,20 @@ public class ManterLoteController extends HttpServlet {
             }
         }
     }
+   
+   public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.setAttribute("operacao", "Incluir");
+            request.setAttribute("Prova", Prova.obterProva());
+
+            RequestDispatcher view = request.getRequestDispatcher("/manterLote.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex) {
+        } catch (IOException ex) {
+        } catch (ClassNotFoundException ex) {
+        }
+    }
+   
    public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdLote"));
         String identificacao = request.getParameter("txtIdentificacaoLote");
@@ -61,19 +75,4 @@ public class ManterLoteController extends HttpServlet {
         }
     }
    
-   
-   
-
-    public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            request.setAttribute("operacao", "Incluir");
-            request.setAttribute("Prova", Prova.obterProva());
-
-            RequestDispatcher view = request.getRequestDispatcher("/manterLote.jsp");
-            view.forward(request, response);
-        } catch (ServletException ex) {
-        } catch (IOException ex) {
-        } catch (ClassNotFoundException ex) {
-        }
-    }
 }

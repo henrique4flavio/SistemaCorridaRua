@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,13 +13,41 @@ import modelo.Prova;
 
 public class ManterKitController extends HttpServlet {
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
-        } 
+        } else {
+            if (acao.equals("confirmarIncluir")) {
+                confirmarIncluir(request, response);
+            }
+        }
     }
+     
+     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdKit"));
+        String nomeKit = request.getParameter("txtNomeKit");
+        
+        
+        try {
+            Kit kit = new Kit(id, nomeKit);
+            kit.gravar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaKitController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    
+}
+     
+     
 
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
 

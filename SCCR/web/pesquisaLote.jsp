@@ -14,6 +14,7 @@
             <tr>
 
                 <th>Código do Lote</th>
+                <th>Identificação</th>
                 <th>Prova</th>
                 <th>Data de Inicio</th>
                 <th>Data do Fim</th>
@@ -32,7 +33,7 @@
                     <td><c:out value = "${lote.valor}" /></td>
 
 
-                    <td> <a href="ManterLoteController?acao=prepararEditar&Editar&ID_lote = <c:out value="${lote.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterLoteController?acao=prepararEditar&Editar&ID_lote = <c:out value="${lote.id}"/>">Editar</a></td>
                     <td> <a href="ManterLoteController?acao=prepararExcluir&ID_lote = <c:out value="${lote.id}"/>">Excluir </a><td>
                 </tr>
             </c:forEach>

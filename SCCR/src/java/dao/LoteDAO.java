@@ -21,8 +21,10 @@ public class LoteDAO {
             ResultSet rs = comando.executeQuery("select * from lote");
             while (rs.next()) {
                 Lote lote = new Lote(
-                rs.getInt("id"), rs.getString("dataInicio"),
-                rs.getString("dataFim"), rs.getString("valor"),
+                rs.getInt("id"), 
+                rs.getString("dataInicio"),
+                rs.getString("dataFim"), 
+                rs.getString("valor"),
                 rs.getString("identificacao"), 
                 null);
 
@@ -68,14 +70,7 @@ public class LoteDAO {
             comando.setString(5, lote.getValor());
             comando.setString(6, lote.getprova_id());
 
-            // comando caso tenha um campo opcional,chave estrngeira seja vazia.
-            /*
-        if(curso.setNull(6,Types.null));
-        else{
-                comando.set(6,curso.getCoordenador().getMatricula());
-        }
-        comando.setInt(6,curso.getCodCurso());
-             */
+            
             comando.execute();
             comando.close();
             conexao.close();
@@ -140,7 +135,8 @@ public class LoteDAO {
 
             lote = new Lote(rs.getInt("id"),
                     rs.getString("dataInicio"),
-                    rs.getString("dataFim"), rs.getString("valor"),
+                    rs.getString("dataFim"), 
+                    rs.getString("valor"),
                     rs.getString("identificacao"), null);
 
             lote.setProva_id(rs.getString("prova_id"));

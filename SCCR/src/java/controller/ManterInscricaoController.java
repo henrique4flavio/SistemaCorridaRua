@@ -14,6 +14,7 @@ import modelo.Prova;
 import modelo.ControleChipRetornavel;
 import modelo.Percurso;
 import modelo.Atleta;
+import modelo.Inscricao;
 
 
 public class ManterInscricaoController extends HttpServlet {
@@ -25,8 +26,13 @@ public class ManterInscricaoController extends HttpServlet {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
-        } 
-    } 
+        } else {
+            if (acao.equals("confirmarIncluir")) {
+                confirmarIncluir(request, response);
+            }
+        }
+    }
+
 public void prepararIncluir(HttpServletRequest request, HttpServletResponse response){
         try{
             request.setAttribute("operacao", "Incluir");
@@ -47,15 +53,25 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
     }
 public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdControleChipRetornavel"));
-        String identificadorAtleta = request.getParameter("txtIdentificadorAtleta");
-        String prova_id = request.getParameter("txtProva");
-    
+        String dataInscricao = request.getParameter("txtDataInscricao");
+        int numeroInsricao = Integer.parseInt(request.getParameter("txtNumeroInsricao"));
+        String formaPagamento = request.getParameter("optFormaPagamento");
+        String kit_id = request.getParameter("txtKit_id");
+        String controleChipRetornavel_id = request.getParameter("txtControleChipRetornavel_id");
+        String prova_id = request.getParameter("txtProva_id");
+        String percurso_id = request.getParameter("txtPercurso_id");
+        String atleta_id = request.getParameter("txtAtleta_id");
+        
         try {
-            Prova prova = Prova.obterProva(id);       
-            ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel(id, identificadorAtleta, prova_id);
+            Kit kit = Kit.obterKit(id);
+            ControleChipRetornavel controleChipRetornavel = ControleChipRetornavel.obterControleChipRetornavel(id);
+            Prova prova = Prova.obterProva(id);
+            Percurso percurso = Percurso.obterPercurso(id);
+            Atleta atleta = Atleta.obterAtleta(id);
+            Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInsricao, formaPagamento, kit_id, controleChipRetornavel_id, prova_id, percurso_id, atleta_id);
     
-            controleChipRetornavel.gravar();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaControleChipRetornavelController");
+            inscricao.gravar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
             view.forward(request, response);
         } catch (IOException ex) {
 

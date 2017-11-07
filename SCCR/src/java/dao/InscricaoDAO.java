@@ -77,14 +77,7 @@ public class InscricaoDAO {
             comando.setString(7, inscricao.getProva_id());
             comando.setString(8, inscricao.getPercurso_id());
             comando.setString(9, inscricao.getAtleta_id());
-            // comando caso tenha um campo opcional,chave estrngeira seja vazia.
-            /*
-        if(curso.setNull(6,Types.null));
-        else{
-                comando.set(6,curso.getCoordenador().getMatricula());
-        }
-        comando.setInt(6,curso.getCodCurso());
-             */
+           
             comando.execute();
             comando.close();
             conexao.close();
@@ -110,6 +103,7 @@ public class InscricaoDAO {
             comando.setString(6, inscricao.getProva_id());
             comando.setString(7, inscricao.getPercurso_id());
             comando.setString(8, inscricao.getAtleta_id());
+            comando.setInt(9, inscricao.getId());
             comando.execute();
             comando.close();
             conexao.close();
