@@ -19,7 +19,7 @@
                 
             </tr>    
 
-            <c:forEach items="${Kit}" var="kit">
+            <c:forEach items="${kits}" var="kit">
                 <tr>
 
                     <td><c:out value = "${kit.id}" /></td>

@@ -3,6 +3,8 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +25,7 @@ public class ManterPercursoController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
@@ -84,14 +86,18 @@ public class ManterPercursoController extends HttpServlet {
 
     }
 
-    public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) {
+    public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Excluir");
             request.setAttribute("provas", Prova.obterProvas());
-          
+            int idPercurso =  Integer.parseInt(request.getParameter("id"));
+            
+            
+            Percurso percurso = Percurso.obterPercurso(idPercurso);
+            request.setAttribute("percurso",percurso);
             RequestDispatcher view = request.getRequestDispatcher("/manterPercurso.jsp");
-
             view.forward(request, response);
+            
         } catch (ServletException ex) {
         } catch (IOException ex) {
         } catch (ClassNotFoundException ex) {
@@ -136,7 +142,11 @@ public class ManterPercursoController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterPercursoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -150,7 +160,11 @@ public class ManterPercursoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterPercursoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

@@ -19,7 +19,7 @@
 
             </tr>    
 
-            <c:forEach items="${Item}" var="item">
+            <c:forEach items="${itens}" var="item">
                 <tr>
                     
                     <td><c:out value = "${item.id}" /></td>

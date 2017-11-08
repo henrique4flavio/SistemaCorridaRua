@@ -20,7 +20,7 @@
 
             </tr>    
 
-            <c:forEach items="${ResultadoProva}" var="resultadoProva">
+            <c:forEach items="${resultadoProvas}" var="resultadoProva">
                 <tr>
 
                     <td><c:out value = "${resultadoProva.id}" /></td>

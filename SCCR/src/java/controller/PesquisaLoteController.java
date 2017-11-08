@@ -25,7 +25,7 @@ public class PesquisaLoteController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
-            request.setAttribute("Lote",Lote.obterLotes());
+            request.setAttribute("lotes",Lote.obterLotes());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaLote.jsp");
             view.forward(request,response);
 

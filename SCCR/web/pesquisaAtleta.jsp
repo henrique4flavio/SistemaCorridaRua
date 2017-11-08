@@ -33,7 +33,7 @@
                 <th> Senha</th>
                 <th> Email </th>       
             </tr>
-            <c:forEach items="${Atleta}" var="atleta">
+            <c:forEach items="${atletas}" var="atleta">
                 <tr> 
                     <td> <c:out value="${atleta.id}"/> </td>
                     <td> <c:out value= "${atleta.nome}"/></td>

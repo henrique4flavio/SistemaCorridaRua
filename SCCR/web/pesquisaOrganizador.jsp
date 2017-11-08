@@ -22,7 +22,7 @@
                 <th> Código do administrador</th>
                 
             </tr>
-            <c:forEach items="${Organizador}" var="organizador">
+            <c:forEach items="${organizadores}" var="organizador">
                 <tr> 
                     <td> <c:out value="${organizador.id}"/> </td>
                     <td> <c:out value= "${organizador.nome}"/></td>

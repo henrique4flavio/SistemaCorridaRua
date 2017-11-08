@@ -22,7 +22,7 @@
 
             </tr>    
 
-            <c:forEach items="${Lote}" var="lote">
+            <c:forEach items="${lotes}" var="lote">
                 <tr>
 
                     <td><c:out value = "${lote.id}" /></td>

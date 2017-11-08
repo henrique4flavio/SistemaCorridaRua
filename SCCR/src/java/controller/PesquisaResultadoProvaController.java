@@ -26,7 +26,7 @@ public class PesquisaResultadoProvaController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
-            request.setAttribute("ResultadoProva",ResultadoProva.obterResultadoProvas());
+            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoProvas());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProva.jsp");
             view.forward(request,response);
 

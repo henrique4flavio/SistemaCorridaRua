@@ -26,7 +26,7 @@ public class PesquisaItemController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
-            request.setAttribute("Item",Item.obterItens());
+            request.setAttribute("itens",Item.obterItens());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaItem.jsp");
             view.forward(request,response);
 

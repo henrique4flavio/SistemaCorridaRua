@@ -33,7 +33,7 @@ public class PesquisaPercursoController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
-            request.setAttribute("Percurso",Percurso.obterPercursos());
+            request.setAttribute("percursos",Percurso.obterPercursos());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaPercurso.jsp");
             view.forward(request,response);
 

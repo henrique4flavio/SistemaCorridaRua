@@ -23,7 +23,7 @@
 
             </tr>    
                 
-            <c:forEach items="${Administrador}" var="administrador">
+            <c:forEach items="${administradores}" var="administrador">
                 <tr>
 
                     <td><c:out value = "${administrador.id}" /></td>
@@ -31,8 +31,8 @@
                     <td><c:out value = "${administrador.senha}" /></td>
                     <td><c:out value = "${administrador.login}" /></td>
                     <td><c:out value = "${administrador.email}" /></td>
-                    <td><a href ="ManterAdministradorController?acao=prepararEditar&ID_administrador <c:out value="${administrador.id}"/>">Editar</a></td>
-                    <td><a href ="ManterAdministradorController?acao=prepararEditar&ID_administrador <c:out value="${administrador.id}"/>">Excluir</a></td>
+                    <td><a href ="ManterAdministradorController?acao=prepararEditar&id=<c:out value="${administrador.id}"/>">Editar</a></td>
+                    <td><a href ="ManterAdministradorController?acao=prepararExcluir&id=<c:out value="${administrador.id}"/>">Excluir</a></td>
 
                 </tr>
             </c:forEach>

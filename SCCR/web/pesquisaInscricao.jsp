@@ -27,7 +27,7 @@
 
 
             </tr>   
-            <c:forEach items="${Inscricao}" var="inscricao">
+            <c:forEach items="${inscricoes}" var="inscricao">
                 <tr> 
                     <td> <c:out value="${inscricao.id}"/> </td>
                     <td> <c:out value= "${inscricao.dataInscricao}"/></td>

@@ -26,7 +26,7 @@ public class PesquisaInscricaoController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
-            request.setAttribute("Inscricao",Inscricao.obterInscricoes());
+            request.setAttribute("inscricoes",Inscricao.obterInscricoes());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaInscricao.jsp");
             view.forward(request,response);
 

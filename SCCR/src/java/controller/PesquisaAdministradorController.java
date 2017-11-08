@@ -25,7 +25,7 @@ public class PesquisaAdministradorController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            request.setAttribute("Administrador", Administrador.obterAdministradores());
+            request.setAttribute("administradores", Administrador.obterAdministradores());
             RequestDispatcher view
                     = request.getRequestDispatcher("/pesquisaAdministrador.jsp");
             view.forward(request, response);

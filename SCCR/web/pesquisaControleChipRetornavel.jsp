@@ -18,7 +18,7 @@
                 <th>Identificação do atleta </th>
                 <th>Código da prova</th>
             </tr>    
-            <c:forEach items="${ControleChipRetornavel}" var="controleChipRetornavel">
+            <c:forEach items="${controleChipRetornaveis}" var="controleChipRetornavel">
                 <tr>
 
                     <td><c:out value = "${controleChipRetornavel.id}" /></td>

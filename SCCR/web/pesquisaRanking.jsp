@@ -19,7 +19,7 @@
 
             </tr>    
 
-            <c:forEach items="${Ranking}" var="ranking">
+            <c:forEach items="${rankings}" var="ranking">
                 <tr>
 
                     <td><c:out value = "${ranking.id}" /></td>
