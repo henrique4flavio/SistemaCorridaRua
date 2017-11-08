@@ -28,7 +28,7 @@
 
             </tr>    
 
-            <c:forEach items="${Prova}" var="prova">
+            <c:forEach items="${provas}" var="prova">
                 <tr>
 
                     <td><c:out value = "${prova.id}" /></td>
@@ -37,14 +37,14 @@
                     <td><c:out value = "${prova.horarioLargada}" /></td>
                     <td><c:out value = "${prova.dataProva}" /></td>
                     <td><c:out value = "${prova.maxParticipantes}" /></td>
-                    <td><c:out value = "${prova.dataInicioInscricao}" /></td>
-                    <td><c:out value = "${prova.dataFimInscricao}" /></td>
+                    <td><c:out value = "${prova.inicioInscricao}" /></td>
+                    <td><c:out value = "${prova.fimInscricao}" /></td>
                     <td><c:out value = "${prova.faixaEtaria}" /></td>
                     <td><c:out value = "${prova.organizador_id}" /></td>
                     <td><c:out value = "${prova.ranking_id}" /></td>
 
-                    <td> <a href="ManterProvaController?acao=prepararEditar&Editar&ID_prova = <c:out value="${prova.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterProvaController?acao=prepararExcluir&ID_prova = <c:out value="${prova.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterProvaController?acao=prepararEditar&Editar&id=<c:out value="${prova.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterProvaController?acao=prepararExcluir&id=<c:out value="${prova.id}"/>">Excluir </a><td>
 
                </tr>                                                                  
             </c:forEach>

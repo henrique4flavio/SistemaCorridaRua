@@ -42,7 +42,7 @@ public class Item {
         return null;
     }
 
-    public static List<Item> obterItem()
+    public static List<Item> obterItens()
             throws ClassNotFoundException {
         return ItemDAO.obterItens();
 

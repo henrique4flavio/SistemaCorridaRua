@@ -44,7 +44,7 @@ public class ManterOrganizadorController extends HttpServlet {
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
-            request.setAttribute("Administrador", Administrador.obterAdministrador());
+            request.setAttribute("Administrador", Administrador.obterAdministradores());
             
             RequestDispatcher view = request.getRequestDispatcher("/manterOrganizador.jsp");
             view.forward(request, response);

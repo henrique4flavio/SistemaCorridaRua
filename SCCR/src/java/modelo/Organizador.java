@@ -46,7 +46,7 @@ public class Organizador extends Usuario {
     public String visualizarClassificacao() {
         return "";
     }
-    public static List<Organizador> obterOrganizador()
+    public static List<Organizador> obterOrganizadores()
             throws ClassNotFoundException {
         return OrganizadorDAO.obterOrganizadores();
     }

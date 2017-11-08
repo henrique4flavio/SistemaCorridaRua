@@ -30,7 +30,7 @@ public class PesquisaControleChipRetornavelController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
-            request.setAttribute("ControleChipRetornavel",ControleChipRetornavel.obterControleChipRetornavel());
+            request.setAttribute("ControleChipRetornavel",ControleChipRetornavel.obterControleChipRetornaveis());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaControleChipRetornavel.jsp");
             view.forward(request,response);
 

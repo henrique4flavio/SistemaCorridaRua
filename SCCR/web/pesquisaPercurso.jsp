@@ -32,7 +32,7 @@
                     <td><c:out value = "${percurso.prova_id}" /></td>
 
 
-                    <td> <a href="ManterPercursoController ?acao=prepararEditar&Editar&ID_percurso = <c:out value="${percurso.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterPercursoController?acao=prepararEditar&Editar&ID_percurso = <c:out value="${percurso.id}"/>"> Editar </a></td>
                     <td> <a href="ManterPercursoController?acao=prepararExcluir&ID_percurso = <c:out value="${percurso.id}"/>">Excluir </a><td>
 
 

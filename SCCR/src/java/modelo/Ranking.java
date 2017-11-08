@@ -47,7 +47,7 @@ public class Ranking {
 
     }
 
-    public static List<Ranking> obterRanking()
+    public static List<Ranking> obterRankings()
             throws ClassNotFoundException {
         return RankingDAO.obterRankings();
 

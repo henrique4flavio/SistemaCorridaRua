@@ -30,8 +30,15 @@
                         <td><input type="text" name="txtfaixaEtaria" value="${percurso.faixaEtaria}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
-                    <td>Código da Prova:</td> 
-                    <td><input type="text" name="txtIdProva" value="${percurso.prova_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td>Prova</td>
+                    <td>
+                        <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <option value="0" <c:if test="${percurso.prova.id== null}"> selected</c:if>>Selecione uma prova</option>  
+                            <c:forEach items="${provas}" var="prova">
+                                <option value="${prova.id}" <c:if test="${percurso.prova_id == prova.id}"> selected</c:if>>${prova.nomeProva}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>                                       
                     </tr>
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>

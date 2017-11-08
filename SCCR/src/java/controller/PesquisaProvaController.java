@@ -7,6 +7,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -33,7 +34,8 @@ public class PesquisaProvaController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
-            request.setAttribute("Prova",Prova.obterProva());
+            List teste = Prova.obterProvas();
+            request.setAttribute("provas",Prova.obterProvas());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaProva.jsp");
             view.forward(request,response);
 

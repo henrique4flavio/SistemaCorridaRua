@@ -29,8 +29,8 @@ public class ProvaDAO {
                     rs.getString("horarioLargada"), 
                     rs.getString("dataProva"),
                     rs.getString("maxParticipantes"),
-                    rs.getString("dataInicioInscricao"), 
-                    rs.getString("dataFimInscricao"), 
+                    rs.getString("inicioInscricao"),
+                    rs.getString("fimInscricao"),
                     rs.getString("faixaEtaria"), 
                     null, null);
             
@@ -158,8 +158,8 @@ public class ProvaDAO {
                     rs.getString("horarioLargada"), 
                     rs.getString("dataProva"),
                     rs.getString("maxParticipantes"),
-                    rs.getString("dataInicioInscricao"), 
-                    rs.getString("dataFimInscricao"), 
+                    rs.getString("inicioInscricao"), 
+                    rs.getString("fimInscricao"), 
                     rs.getString("faixaEtaria"), 
                     null, null);
             

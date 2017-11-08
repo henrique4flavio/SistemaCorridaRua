@@ -26,7 +26,7 @@ public class PesquisaAtletaController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            request.setAttribute("Atleta",Atleta.obterAtleta());
+            request.setAttribute("Atleta",Atleta.obterAtletas());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaAtleta.jsp");
             view.forward(request,response);
            

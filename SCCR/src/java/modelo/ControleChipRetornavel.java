@@ -52,7 +52,7 @@ public class ControleChipRetornavel {
 
     }
 
-    public static List<ControleChipRetornavel> obterControleChipRetornavel()
+    public static List<ControleChipRetornavel> obterControleChipRetornaveis()
             throws ClassNotFoundException {
         return ControleChipRetornavelDAO.obterControleChipRetornaveis();
 

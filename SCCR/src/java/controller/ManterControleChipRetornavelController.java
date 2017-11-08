@@ -40,7 +40,7 @@ public class ManterControleChipRetornavelController extends HttpServlet {
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
-            request.setAttribute("prova", Prova.obterProva());
+            request.setAttribute("prova", Prova.obterProvas());
 
             RequestDispatcher view = request.getRequestDispatcher("/manterControleChipRetornavel.jsp");
 

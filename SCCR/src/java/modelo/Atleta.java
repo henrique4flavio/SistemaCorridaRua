@@ -190,7 +190,7 @@ public class Atleta extends Usuario {
         return "";
     }
 
-    public static List<Atleta> obterAtleta()
+    public static List<Atleta> obterAtletas()
             throws ClassNotFoundException {
         return AtletaDAO.obterAtletas();
     }

@@ -39,7 +39,7 @@ public class ManterLoteController extends HttpServlet {
    public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
-            request.setAttribute("Prova", Prova.obterProva());
+            request.setAttribute("Prova", Prova.obterProvas());
 
             RequestDispatcher view = request.getRequestDispatcher("/manterLote.jsp");
             view.forward(request, response);

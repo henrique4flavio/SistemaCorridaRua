@@ -123,7 +123,7 @@ public class OrganizadorDAO {
 
     }
 
-    public static Organizador obterOrganizador(int id) throws ClassNotFoundException, SQLException {
+    public static Organizador obterOrganizador(int id) throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
         Organizador organizador = null;

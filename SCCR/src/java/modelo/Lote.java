@@ -81,7 +81,7 @@ public class Lote {
         this.prova_id = prova_id;
     }
     
-    public static List<Lote> obterLote()
+    public static List<Lote> obterLotes()
             throws ClassNotFoundException {
         return LoteDAO.obterLotes();
     }

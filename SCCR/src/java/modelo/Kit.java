@@ -37,7 +37,7 @@ public class Kit {
     public void excluirElementoKit() {
     }
 
-    public static List<Kit> obterKit()
+    public static List<Kit> obterKits()
             throws ClassNotFoundException {
         return KitDAO.obterKits();
 

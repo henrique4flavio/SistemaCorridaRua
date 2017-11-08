@@ -62,7 +62,7 @@ public class ResultadoProva {
 
     }
 
-    public static List<ResultadoProva> obterResultadoProva()
+    public static List<ResultadoProva> obterResultadoProvas()
             throws ClassNotFoundException {
         return ResultadoProvaDAO.obterResultadoProvas();
 

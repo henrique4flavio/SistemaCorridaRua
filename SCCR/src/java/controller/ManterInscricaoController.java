@@ -36,11 +36,11 @@ public class ManterInscricaoController extends HttpServlet {
 public void prepararIncluir(HttpServletRequest request, HttpServletResponse response){
         try{
             request.setAttribute("operacao", "Incluir");
-            request.setAttribute("prova", Prova.obterProva());
-            request.setAttribute("kit", Kit.obterKit());
-            request.setAttribute("controleChipRetornavel", ControleChipRetornavel.obterControleChipRetornavel());
-            request.setAttribute("percurso", Percurso.obterPercurso());
-            request.setAttribute("atleta", Atleta.obterAtleta());
+            request.setAttribute("prova", Prova.obterProvas());
+            request.setAttribute("kit", Kit.obterKits());
+            request.setAttribute("controleChipRetornavel", ControleChipRetornavel.obterControleChipRetornaveis());
+            request.setAttribute("percurso", Percurso.obterPercursos());
+            request.setAttribute("atleta", Atleta.obterAtletas());
             
             RequestDispatcher view = request.getRequestDispatcher("/manterInscricao.jsp");
             

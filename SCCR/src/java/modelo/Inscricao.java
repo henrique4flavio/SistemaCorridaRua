@@ -131,7 +131,7 @@ public class Inscricao {
 
     }
 
-    public static List<Inscricao> obterInscricao()
+    public static List<Inscricao> obterInscricoes()
             throws ClassNotFoundException {
         return InscricaoDAO.obterInscricoes();
 

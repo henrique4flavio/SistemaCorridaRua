@@ -27,10 +27,14 @@ public class Prova {
     
     private String organizador_id;
     
-    private String ranking_id;
+    private Organizador organizador;
+    
+    private String  ranking_id;
+    
+    private Ranking ranking;
     
 
-    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria, String organizador_id, String ranking_id) {
+    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria, Organizador organizador, Ranking ranking) {
         this.nomeProva = nomeProva;
         this.localLargada = localLargada;
         this.horarioLargada = horarioLargada;
@@ -39,8 +43,8 @@ public class Prova {
         this.inicioInscricao = inicioInscricao;
         this.fimInscricao = fimInscricao;
         this.faixaEtaria = faixaEtaria;
-        this.organizador_id = organizador_id;
-        this.ranking_id = ranking_id;
+        this.organizador = organizador;
+        this.ranking = ranking;
         this.id = id;
     }
 
@@ -52,7 +56,23 @@ public class Prova {
         this.id = id;
     }
 
-    public void setRanking_id(String ranking_id) {
+    public Organizador getOrganizador() {
+        return organizador;
+    }
+
+    public void setOrganizador(Organizador organizador) {
+        this.organizador = organizador;
+    }
+
+    public Ranking getRanking() {
+        return ranking;
+    }
+
+    public void setRanking(Ranking ranking) {
+        this.ranking = ranking;
+    }
+
+    public void setRanking_id(String  ranking_id) {
         this.ranking_id = ranking_id;
     }
 
@@ -168,7 +188,7 @@ public class Prova {
     public void cadastrarProvaRanking(Ranking ranking) {
 
     }
-    public static List<Prova> obterProva()
+    public static List<Prova> obterProvas()
             throws ClassNotFoundException {
         return ProvaDAO.obterProvas();
 

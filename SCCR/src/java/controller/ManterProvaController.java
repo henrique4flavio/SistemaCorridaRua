@@ -39,8 +39,8 @@ public class ManterProvaController extends HttpServlet {
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
-            request.setAttribute("organizador", Organizador.obterOrganizador());
-            request.setAttribute("ranking", Ranking.obterRanking());
+            request.setAttribute("organizador", Organizador.obterOrganizadores());
+            request.setAttribute("ranking", Ranking.obterRankings());
 
             RequestDispatcher view = request.getRequestDispatcher("/manterProva.jsp");
 
@@ -62,13 +62,14 @@ public class ManterProvaController extends HttpServlet {
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
         
-        String organizador_id = request.getParameter("txtOrganizador_id");
-        String ranking_id = request.getParameter("txtRanking_id");
+        int organizador_id = Integer.parseInt(request.getParameter("txtOrganizador_id"));
+        int ranking_id = Integer.parseInt(request.getParameter("txtRanking_id"));
     
+   
         try {
-            Organizador organizador = Organizador.obterOrganizador(id);
-            Ranking ranking = Ranking.obterRanking(id);
-            Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, organizador_id, ranking_id);
+            Organizador organizador = Organizador.obterOrganizador(organizador_id);
+            Ranking ranking = Ranking.obterRanking(ranking_id);
+            Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, organizador, ranking);
     
             prova.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController");

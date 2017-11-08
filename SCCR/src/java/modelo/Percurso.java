@@ -89,7 +89,7 @@ public class Percurso {
     public void divulgarPercurso() {
 
     }
-    public static List<Percurso> obterPercurso()
+    public static List<Percurso> obterPercursos()
             throws ClassNotFoundException {
         return PercursoDAO.obterPercursos();
 
