@@ -31,8 +31,8 @@
                     <td> <c:out value="${organizador.email}"/> </td>
                     <td> <c:out value="${organizador.administrador_id}"/> </td>
                 
-                    <td> <a href="ManterOrganizadorController?acao=prepararEditar&Editar&ID_organizador = <c:out value="${organizador.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterOrganizadorController?acao=prepararExcluir&ID_organizador = <c:out value="${organizador.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterOrganizadorController?acao=prepararEditar&id=<c:out value="${organizador.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterOrganizadorController?acao=prepararExcluir&id=<c:out value="${organizador.id}"/>">Excluir </a><td>
 
                 </tr>
             </c:forEach>

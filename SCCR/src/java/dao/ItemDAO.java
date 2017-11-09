@@ -57,7 +57,7 @@ public class ItemDAO {
         try{
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into item (id,nomeItem)"+"values(?,?)";
+            String sql = "insert into item (id,nomeItem) values(?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
             
             comando.setInt(1,item.getId());
@@ -126,7 +126,7 @@ public class ItemDAO {
         try{
             conexao = BD.getConexao();
             comando= conexao.createStatement();
-            ResultSet rs = comando.executeQuery( "select *from item id = "+id);
+            ResultSet rs = comando.executeQuery( "select *from item where id = "+id);
             rs.first();
             
             item = new Item (rs.getInt("id"),

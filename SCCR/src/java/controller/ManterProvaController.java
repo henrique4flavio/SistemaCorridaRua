@@ -75,8 +75,6 @@ public class ManterProvaController extends HttpServlet {
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
         
 
-   
-        
         String organizador_id = request.getParameter("txtOrganizador_id");
         String ranking_id = request.getParameter("txtRanking_id");
        

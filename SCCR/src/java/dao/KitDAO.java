@@ -118,7 +118,7 @@ public class KitDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from kit id = " + id);
+            ResultSet rs = comando.executeQuery("select * from kit where id = " + id);
             rs.next();
 
             kit = new Kit(rs.getInt("id"), rs.getString("nomeKit"));

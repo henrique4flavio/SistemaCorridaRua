@@ -131,7 +131,7 @@ public class OrganizadorDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from organizador id = " + id);
+            ResultSet rs = comando.executeQuery("select * from organizador where id = " + id);
             rs.next();
 
             organizador = new Organizador (rs.getInt("id"),

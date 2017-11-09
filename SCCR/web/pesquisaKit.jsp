@@ -25,8 +25,8 @@
                     <td><c:out value = "${kit.id}" /></td>
                     <td><c:out value = "${kit.nomeKit}" /></td>
                     
-                   <td> <a href="ManterKitController?acao=prepararEditar&Editar&ID_kit = <c:out value="${kit.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterKitController?acao=prepararExcluir&ID_kit = <c:out value="${kit.id}"/>">Excluir </a><td>
+                   <td> <a href="ManterKitController?acao=prepararEditar&id=<c:out value="${kit.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterKitController?acao=prepararExcluir&id=<c:out value="${kit.id}"/>">Excluir </a><td>
                
                 </tr>
             </c:forEach>
