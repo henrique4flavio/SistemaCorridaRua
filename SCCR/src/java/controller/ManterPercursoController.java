@@ -71,8 +71,7 @@ public class ManterPercursoController extends HttpServlet {
     
     
     
-
-    public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
+   public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
             request.setAttribute("prova", Prova.obterProvas());
@@ -86,6 +85,7 @@ public class ManterPercursoController extends HttpServlet {
         }
 
     }
+    
 
     public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {

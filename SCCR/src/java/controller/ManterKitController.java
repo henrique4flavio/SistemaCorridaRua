@@ -3,6 +3,8 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,8 +16,8 @@ import modelo.Prova;
 public class ManterKitController extends HttpServlet {
 
      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String acao = request.getParameter("acao");
+            throws ServletException, IOException, SQLException {
+     String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
         } else {
@@ -23,7 +25,55 @@ public class ManterKitController extends HttpServlet {
                 confirmarIncluir(request, response);
             }
         }
+        if (acao.equals("prepararExcluir")) {
+            prepararExcluir(request, response);
+        } else {
+            if (acao.equals("confirmarExcluir")) {
+                confirmarExcluir(request, response);
+            }
+        }
     }
+     public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Excluir");
+            // para chave estrangeira
+            //request.setAttribute("administrador", Administrador.obterAdministrador());
+
+            int codKit = Integer.parseInt(request.getParameter("id"));
+    
+
+            Kit kit = Kit.obterKit(codKit);
+            request.setAttribute("kit", kit);
+            RequestDispatcher view = request.getRequestDispatcher("/manterKit.jsp");
+            view.forward(request, response);
+    } catch (ServletException ex) {
+
+        } catch (IOException ex) {
+
+        } catch (ClassNotFoundException ex) {
+        }
+     }
+     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdKit"));
+        String nome = request.getParameter("txtNomeKit");
+        Kit kit = new Kit(id, nome);
+        try {
+            kit.excluir();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaKitController");
+
+            view.forward(request, response);
+
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    }
+
      
      public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdKit"));
@@ -73,7 +123,11 @@ public class ManterKitController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         try {
+             processRequest(request, response);
+         } catch (SQLException ex) {
+             Logger.getLogger(ManterKitController.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }
 
     /**
@@ -87,7 +141,11 @@ public class ManterKitController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         try {
+             processRequest(request, response);
+         } catch (SQLException ex) {
+             Logger.getLogger(ManterKitController.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }
 
     /**

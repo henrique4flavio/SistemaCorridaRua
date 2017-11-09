@@ -53,10 +53,6 @@
         <servlet-class>controller.ManterAtletaController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ManterKitController</servlet-name>
-        <servlet-class>controller.ManterKitController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ManterInscricaoController</servlet-name>
         <servlet-class>controller.ManterInscricaoController</servlet-class>
     </servlet>
@@ -95,6 +91,10 @@
     <servlet>
         <servlet-name>PesquisaControleChipRetornavelController</servlet-name>
         <servlet-class>controller.PesquisaControleChipRetornavelController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterKitController</servlet-name>
+        <servlet-class>controller.ManterKitController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
@@ -149,10 +149,6 @@
         <url-pattern>/ManterAtletaController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ManterKitController</servlet-name>
-        <url-pattern>/ManterKitController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ManterInscricaoController</servlet-name>
         <url-pattern>/ManterInscricaoController</url-pattern>
     </servlet-mapping>
@@ -191,6 +187,10 @@
     <servlet-mapping>
         <servlet-name>PesquisaControleChipRetornavelController</servlet-name>
         <url-pattern>/PesquisaControleChipRetornavelController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterKitController</servlet-name>
+        <url-pattern>/ManterKitController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -39,6 +39,14 @@ public class ManterControleChipRetornavelController extends HttpServlet {
                 } else {
                     if (acao.equals("confirmarExcluir")) {
                         confirmarExcluir(request, response);
+                    } else {
+                        if (acao.equals("prepararEditar")) {
+                            prepararEditar(request, response);
+                        } else {
+                            if (acao.equals("confirmarEditar")) {
+                                confirmarEditar(request, response);
+                            }
+                        }
                     }
                 }
             }
@@ -125,6 +133,49 @@ public class ManterControleChipRetornavelController extends HttpServlet {
 
         }
     }
+    
+    public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Editar");
+            // para chave estrangeira
+            request.setAttribute("provas", Prova.obterProvas());
+            request.setAttribute("atletas", Atleta.obterAtletas());
+
+            int codChip = Integer.parseInt(request.getParameter("id"));
+
+            ControleChipRetornavel controleChipRetornavel = ControleChipRetornavel.obterControleChipRetornavel(codChip);
+            request.setAttribute("controleChipRetornavel", controleChipRetornavel);
+            RequestDispatcher view = request.getRequestDispatcher("/manterControleChipRetornavel.jsp");
+            view.forward(request, response);
+
+        } catch (ServletException ex) {
+
+        } catch (IOException ex) {
+
+        } catch (ClassNotFoundException ex) {
+        }
+    }
+     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdControleChipRetornavel"));
+        String identificadorAtleta = request.getParameter("txtIdentificadorAtleta");
+        String prova_id = request.getParameter("txtProva");
+        ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel(id, identificadorAtleta, prova_id);
+
+        try {
+            controleChipRetornavel.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaControleChipRetornavelController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

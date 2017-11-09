@@ -33,6 +33,14 @@ public class ManterInscricaoController extends HttpServlet {
                 } else {
                     if (acao.equals("confirmarExcluir")) {
                         confirmarExcluir(request, response);
+                    } else {
+                        if (acao.equals("prepararEditar")) {
+                            prepararEditar(request, response);
+                        } else {
+                            if (acao.equals("confirmarEditar")) {
+                                confirmarEditar(request, response);
+                            }
+                        }
                     }
                 }
             }
@@ -130,6 +138,58 @@ public class ManterInscricaoController extends HttpServlet {
             Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInsricao, formaPagamento, kit_id, controleChipRetornavel_id, prova_id, percurso_id, atleta_id);
 
             inscricao.gravar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    }
+
+    public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Editar");
+            request.setAttribute("prova", Prova.obterProvas());
+            request.setAttribute("kit", Kit.obterKits());
+            request.setAttribute("controleChipRetornavel", ControleChipRetornavel.obterControleChipRetornaveis());
+            request.setAttribute("percurso", Percurso.obterPercursos());
+            request.setAttribute("atleta", Atleta.obterAtletas());
+
+            int codInscricao = Integer.parseInt(request.getParameter("id"));
+
+            Inscricao inscricao = Inscricao.obterInscricao(codInscricao);
+            request.setAttribute("inscricao", inscricao);
+            RequestDispatcher view = request.getRequestDispatcher("/manterInscricao.jsp");
+            view.forward(request, response);
+
+            view.forward(request, response);
+        } catch (ServletException ex) {
+        } catch (IOException ex) {
+        } catch (ClassNotFoundException ex) {
+        }
+
+    }
+
+    public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtId"));
+        String dataInscricao = request.getParameter("txtDataInscricao");
+        int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInsricao"));
+        String formaPagamento = request.getParameter("optFormaPagamento");
+        String codKit = request.getParameter("txtKit_id");
+        String codChip = request.getParameter("txtControleChipRetornavel_id");
+        String codProva = request.getParameter("txtProva_id");
+        String codAtleta = request.getParameter("txtAtleta_id");
+        String codPercurso = request.getParameter("txtPercurso_id");
+        Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, codKit,
+                codChip, codProva, codPercurso, codAtleta);
+
+        try {
+            inscricao.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
             view.forward(request, response);
         } catch (IOException ex) {

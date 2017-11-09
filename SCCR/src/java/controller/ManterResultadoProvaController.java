@@ -44,10 +44,19 @@ public class ManterResultadoProvaController extends HttpServlet {
                 } else {
                     if (acao.equals("confirmarExcluir")) {
                         confirmarExcluir(request, response);
+                    } else {
+                if (acao.equals("prepararEditar")) {
+                    prepararEditar(request, response);
+                } else {
+                    if (acao.equals("confirmarEditar")) {
+                        confirmarEditar(request, response);
                     }
+                    
                 }
+                    }
             }
         }
+    }
     }
     
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response){
@@ -131,6 +140,50 @@ public class ManterResultadoProvaController extends HttpServlet {
 
         }
     }
+     
+     public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException{
+        try {
+            request.setAttribute("operacao", "Editar");
+
+
+            int codResultadoProva = Integer.parseInt(request.getParameter("id"));
+            
+            ResultadoProva resultadoProva = ResultadoProva.obterResultadoProva(codResultadoProva);
+            
+                   
+            request.setAttribute("resultadoProva", resultadoProva);
+
+            RequestDispatcher view = request.getRequestDispatcher("/manterResultadoProva.jsp");
+            view.forward(request, response);
+
+        } catch (ServletException ex) {
+
+        } catch (IOException ex) {
+
+        } catch (ClassNotFoundException ex) {
+        }
+    }
+     
+     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdResultadoProva"));
+        String resultadoClassificacao = request.getParameter("txtResultadoClassificacao");
+        String nomeProva = request.getParameter("txtNomeProva");
+        
+        
+
+        try {
+            ResultadoProva resultadoProva = new ResultadoProva(id, resultadoClassificacao, nomeProva);
+            resultadoProva.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaResultadoProvaController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+        } catch (SQLException ex) {
+        } catch (ClassNotFoundException ex) {
+        } catch (ServletException ex) {
+
+        }
+    }
+     
     
     
     
