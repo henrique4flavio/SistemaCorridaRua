@@ -139,7 +139,7 @@ public class InscricaoDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from inscricao id = " + id);
+            ResultSet rs = comando.executeQuery("select * from inscricao where id = " + id);
             rs.first();
 
             inscricao = new Inscricao(rs.getInt("id"), rs.getString("dataInscricao"),

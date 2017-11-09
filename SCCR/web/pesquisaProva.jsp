@@ -43,7 +43,7 @@
                     <td><c:out value = "${prova.organizador_id}" /></td>
                     <td><c:out value = "${prova.ranking_id}" /></td>
 
-                    <td> <a href="ManterProvaController?acao=prepararEditar&Editar&id=<c:out value="${prova.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterProvaController?acao=prepararEditar&id=<c:out value="${prova.id}"/>"> Editar </a></td>
                     <td> <a href="ManterProvaController?acao=prepararExcluir&id=<c:out value="${prova.id}"/>">Excluir </a><td>
 
                </tr>                                                                  

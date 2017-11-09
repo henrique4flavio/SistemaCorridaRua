@@ -53,8 +53,8 @@
                     <td> <c:out value="${atleta.login}"/> </td>
                     <td> <c:out value="${atleta.senha}"/> </td>
                     <td> <c:out value="${atleta.email}"/> </td>
-                    <td> <a href="ManterAtletaController?acao=prepararEditar&Editar&ID_atleta = <c:out value="${atleta.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterAtletaController?acao=prepararExcluir&ID_atleta = <c:out value="${atleta.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterAtletaController?acao=prepararEditar&Editar&id=<c:out value="${atleta.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterAtletaController?acao=prepararExcluir&id=<c:out value="${atleta.id}"/>">Excluir </a><td>
                 </tr>
             </c:forEach>
         </table>

@@ -34,7 +34,7 @@ public class PesquisaProvaController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
-            List teste = Prova.obterProvas();
+          
             request.setAttribute("provas",Prova.obterProvas());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaProva.jsp");
             view.forward(request,response);

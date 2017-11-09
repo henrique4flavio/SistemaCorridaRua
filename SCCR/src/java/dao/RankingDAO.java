@@ -58,7 +58,7 @@ public class RankingDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into ranking (nome,id)" + "values(?,?)";
+            String sql = "insert into ranking (nome,id) values(?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setString(1, ranking.getNome());
@@ -86,7 +86,7 @@ public class RankingDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update ranking set nome= ? where id = ?";
+            String sql = "update ranking set nome=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, ranking.getNome());
             comando.setInt(2, ranking.getId());
@@ -125,7 +125,7 @@ public class RankingDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * ranking id = " + id);
+            ResultSet rs = comando.executeQuery("select *from ranking where id = "+id);
             rs.first();
 
             ranking = new Ranking(rs.getInt("id"),

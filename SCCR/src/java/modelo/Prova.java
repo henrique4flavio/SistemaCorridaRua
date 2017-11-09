@@ -27,14 +27,12 @@ public class Prova {
     
     private String organizador_id;
     
-    private Organizador organizador;
-    
     private String  ranking_id;
     
-    private Ranking ranking;
+
     
 
-    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria, Organizador organizador, Ranking ranking) {
+    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria, String organizador_id, String ranking_id) {
         this.nomeProva = nomeProva;
         this.localLargada = localLargada;
         this.horarioLargada = horarioLargada;
@@ -43,8 +41,8 @@ public class Prova {
         this.inicioInscricao = inicioInscricao;
         this.fimInscricao = fimInscricao;
         this.faixaEtaria = faixaEtaria;
-        this.organizador = organizador;
-        this.ranking = ranking;
+        this.organizador_id = organizador_id;
+        this.ranking_id = ranking_id;
         this.id = id;
     }
 
@@ -56,20 +54,20 @@ public class Prova {
         this.id = id;
     }
 
-    public Organizador getOrganizador() {
-        return organizador;
+    public String getOrganizador() {
+        return organizador_id;
     }
 
-    public void setOrganizador(Organizador organizador) {
-        this.organizador = organizador;
+    public void setOrganizador(String organizador) {
+        this.organizador_id = organizador_id;
     }
 
-    public Ranking getRanking() {
-        return ranking;
+    public String getRanking() {
+        return ranking_id;
     }
 
-    public void setRanking(Ranking ranking) {
-        this.ranking = ranking;
+    public void setRanking(String ranking) {
+        this.ranking_id = ranking_id;
     }
 
     public void setRanking_id(String  ranking_id) {

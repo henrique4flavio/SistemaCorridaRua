@@ -175,7 +175,7 @@ public class AtletaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from atleta id = " + id);
+            ResultSet rs = comando.executeQuery("select * from atleta where id = " + id);
             rs.first();
             atleta = new Atleta(rs.getInt("id"), rs.getString("nome"), rs.getString("nomeEquipe"),
                     rs.getString("dtNascimento"), rs.getString("apelido"), rs.getString("cpf"),

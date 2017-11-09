@@ -148,7 +148,7 @@ public class ProvaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * prova where id = " + id);
+            ResultSet rs = comando.executeQuery("select *from prova where id = " + id);
             rs.first();
 
             prova = new Prova(

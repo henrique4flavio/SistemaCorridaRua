@@ -105,7 +105,7 @@ public class ControleChipRetornavelDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from controlechipretornavel id = " + id);
+            ResultSet rs = comando.executeQuery("select * from controlechipretornavel where id = " + id);
             rs.first();
             controleChipRetornavel = new ControleChipRetornavel(
                     rs.getInt("id"), 

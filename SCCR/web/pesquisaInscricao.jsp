@@ -39,8 +39,8 @@
                     <td> <c:out value= "${inscricao.percurso_id}"/></td>
                     <td> <c:out value="${inscricao.atleta_id}"/> </td>
                     
-                    <td><a href ="ManterInscricaoController?acao=prepararEditar&ID_Item" <c:out value="${inscricao.id}"/>">Editar</a></td>
-                    <td><a href ="ManterInscricaoController?acao=prepararEditar&ID_Item" <c:out value="${inscricao.id}"/>">Excluir</a></td>
+                    <td><a href ="ManterInscricaoController?acao=prepararEditar&id=<c:out value="${inscricao.id}"/>">Editar</a></td>
+                    <td><a href ="ManterInscricaoController?acao=prepararExcluir&id=<c:out value="${inscricao.id}"/>">Excluir</a></td>
 
                 </tr>
             </c:forEach>

@@ -26,8 +26,8 @@
                     <td><c:out value = "${resultadoProva.id}" /></td>
                     <td><c:out value = "${resultadoProva.resultadoClassificacao}" /></td>
                     <td><c:out value = "${resultadoProva.nomeProva}" /></td>
-                    <td> <a href="ManterResultadoProvaController?acao=prepararEditar&Editar&ID_resultadoProva = <c:out value="${resultadoProva.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterResultadoProvaController?acao=prepararExcluir&ID_resultadoProva = <c:out value="${resultadoProva.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterResultadoProvaController?acao=prepararEditar&id=<c:out value="${resultadoProva.id}"/>"> Editar </a></td>
+                    <td> <a href="ManterResultadoProvaController?acao=prepararExcluir&id=<c:out value="${resultadoProva.id}"/>">Excluir </a><td>
                         
                 </tr>                                                                  
             </c:forEach>

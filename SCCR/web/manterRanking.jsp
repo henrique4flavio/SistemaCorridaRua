@@ -11,7 +11,7 @@
     <body>
         <h1>Manter Ranking - ${operacao}</h1>
 
-        <form action="ManterRankingController?acao=confirmar${operacao}" method="post" name="frmManterCurso">
+        <form action="ManterRankingController?acao=confirmar${operacao}" method="post" name="frmManterRanking">
             <table>
                 <tr>
                     <td>Código do ranking:</td> 

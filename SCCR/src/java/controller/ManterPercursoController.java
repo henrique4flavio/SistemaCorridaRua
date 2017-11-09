@@ -49,6 +49,7 @@ public class ManterPercursoController extends HttpServlet {
         String distancia = request.getParameter("txtDistancia");
         String faixaEtaria = request.getParameter("txtfaixaEtaria");
         String prova_id = request.getParameter("optProva");
+        
         Percurso percurso = new Percurso(id, nome, distancia, faixaEtaria, prova_id);
         try {
             percurso.excluir();
@@ -89,11 +90,13 @@ public class ManterPercursoController extends HttpServlet {
     public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Excluir");
-            request.setAttribute("provas", Prova.obterProvas());
-            int idPercurso =  Integer.parseInt(request.getParameter("id"));
+            request.setAttribute("prova", Prova.obterProvas());
             
             
-            Percurso percurso = Percurso.obterPercurso(idPercurso);
+            int codPercurso =  Integer.parseInt(request.getParameter("id"));
+            
+            
+            Percurso percurso = Percurso.obterPercurso(codPercurso);
             request.setAttribute("percurso",percurso);
             RequestDispatcher view = request.getRequestDispatcher("/manterPercurso.jsp");
             view.forward(request, response);
@@ -116,7 +119,7 @@ public class ManterPercursoController extends HttpServlet {
             Prova prova = Prova.obterProva(id);
             Percurso percurso = new Percurso(id, nome, distancia, faixaEtaria, prova_id);
 
-            percurso.gravar();
+            percurso.excluir();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaPercursoController");
             view.forward(request, response);
         } catch (IOException ex) {

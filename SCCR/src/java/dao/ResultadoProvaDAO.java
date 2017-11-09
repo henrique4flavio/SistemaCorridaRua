@@ -128,7 +128,7 @@ public class ResultadoProvaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * resultadoprova id = " + id);
+            ResultSet rs = comando.executeQuery("select *from resultadoprova where id = "+id);
             rs.first();
 
             resultadoProva = new ResultadoProva(

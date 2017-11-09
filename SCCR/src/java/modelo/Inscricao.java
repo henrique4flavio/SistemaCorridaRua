@@ -33,7 +33,8 @@ public class Inscricao {
 
     private String atleta_id;
 
-    public Inscricao(int id, String dataInscricao, int numeroInscricao, String formaPagamento, String kit_id, String controleChipRetornavel_id, String prova_id, String percurso_id, String atleta_id) {
+    public Inscricao(int id, String dataInscricao, int numeroInscricao, String formaPagamento, 
+            String kit_id, String controleChipRetornavel_id, String prova_id, String percurso_id, String atleta_id) {
         this.dataInscricao = dataInscricao;
         this.numeroInscricao = numeroInscricao;
         this.formaPagamento = formaPagamento;

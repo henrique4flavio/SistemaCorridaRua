@@ -4,6 +4,8 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -24,13 +26,21 @@ public class ManterRankingController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException{
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
         } else {
             if (acao.equals("confirmarIncluir")) {
                 confirmarIncluir(request, response);
+            } else {
+                if (acao.equals("prepararExcluir")) {
+                    prepararExcluir(request, response);
+                } else {
+                    if (acao.equals("confirmarExcluir")) {
+                        confirmarExcluir(request, response);
+                    }
+                }
             }
         }
     }
@@ -67,6 +77,52 @@ public class ManterRankingController extends HttpServlet {
         }
     }
     
+    public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException{
+        try {
+            request.setAttribute("operacao", "Excluir");
+
+
+            int codRanking = Integer.parseInt(request.getParameter("id"));
+            
+            Ranking ranking = Ranking.obterRanking(codRanking);
+            
+                   
+            request.setAttribute("ranking", ranking);
+
+            RequestDispatcher view = request.getRequestDispatcher("/manterRanking.jsp");
+            view.forward(request, response);
+
+        } catch (ServletException ex) {
+
+        } catch (IOException ex) {
+
+        } catch (ClassNotFoundException ex) {
+        }
+    }
+    
+    
+    public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdRanking"));
+        String nome = request.getParameter("txtNomeRanking");
+        
+        
+        Ranking ranking = new Ranking(id, nome);
+
+
+        try {
+            ranking.excluir();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaRankingController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    }
     
     
     
@@ -83,7 +139,11 @@ public class ManterRankingController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterRankingController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -97,7 +157,11 @@ public class ManterRankingController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterRankingController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
