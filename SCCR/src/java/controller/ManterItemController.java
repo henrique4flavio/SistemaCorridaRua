@@ -64,7 +64,7 @@ public class ManterItemController extends HttpServlet {
     }
 
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("ttxtIdItem"));
+        int id = Integer.parseInt(request.getParameter("txtIdItem"));
         String nomeItem = request.getParameter("txtNomeItem");
 
         Item item = new Item(id, nomeItem);
@@ -96,7 +96,7 @@ public class ManterItemController extends HttpServlet {
     }
 
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("ttxtIdItem"));
+        int id = Integer.parseInt(request.getParameter("txtIdItem"));
         String nomeItem = request.getParameter("txtNomeItem");
 
         try {
@@ -137,7 +137,7 @@ public class ManterItemController extends HttpServlet {
     }
 
     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("ttxtIdItem"));
+        int id = Integer.parseInt(request.getParameter("txtIdItem"));
         String nomeItem = request.getParameter("txtNomeItem");
 
         Item item = new Item(id, nomeItem);

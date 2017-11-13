@@ -3,6 +3,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,6 +11,8 @@
         <title>Manter Atleta</title>
     </head>
     <body>
+        
+          <jsp:include page="barra_superior.jspf"/>
         <h1>Manter Atleta - ${operacao}</h1>
 
         <form action="ManterAtletaController?acao=confirmar${operacao}" method="post" name="frmManterAtleta">

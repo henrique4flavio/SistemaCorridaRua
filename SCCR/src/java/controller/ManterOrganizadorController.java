@@ -34,7 +34,7 @@ public class ManterOrganizadorController extends HttpServlet {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
-        } else {
+        }else{
             if (acao.equals("confirmarIncluir")) {
                 confirmarIncluir(request, response);
             } else {
@@ -59,7 +59,7 @@ public class ManterOrganizadorController extends HttpServlet {
 
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
-            request.setAttribute("operacao", "Incluir");
+            request.setAttribute("operacao","Incluir");
             request.setAttribute("Organizador", Organizador.obterOrganizadores());
 
             RequestDispatcher view = request.getRequestDispatcher("/manterOrganizador.jsp");
@@ -75,11 +75,11 @@ public class ManterOrganizadorController extends HttpServlet {
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));
         String nome = request.getParameter("txtNomeOrganizador");
-        String senha = request.getParameter("txtSenhaOrganizaador");
+        String senha = request.getParameter("txtSenhaOrganizador");
         String login = request.getParameter("txtloginOganizador");
         String email = request.getParameter("txtEmailOrganizador");
         String administrador_id = request.getParameter("txtCodigoAdministrador");
-
+        
         try {
             Administrador administrador = Administrador.obterAdministrador(id);
             Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);

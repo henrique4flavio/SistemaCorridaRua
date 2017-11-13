@@ -15,13 +15,7 @@ public class Inscricao {
     //Variaveis do banco de dados
     private int id;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    
 
     private String kit_id;
 
@@ -154,5 +148,12 @@ public class Inscricao {
 
     public static Inscricao obterInscricao(int id) throws ClassNotFoundException, SQLException {
         return InscricaoDAO.obterInscricao(id);
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
