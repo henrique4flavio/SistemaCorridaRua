@@ -74,15 +74,15 @@ public class ManterInscricaoController extends HttpServlet {
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtId"));
         String dataInscricao = request.getParameter("txtDataInscricao");
-        int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInsricao"));
+        int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInscricao"));
         String formaPagamento = request.getParameter("optFormaPagamento");
-        String codKit = request.getParameter("txtKit_id");
-        String codChip = request.getParameter("txtControleChipRetornavel_id");
-        String codProva = request.getParameter("txtProva_id");
-        String codAtleta = request.getParameter("txtAtleta_id");
-        String codPercurso = request.getParameter("txtPercurso_id");
-        Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, codKit,
-                codChip, codProva, codPercurso, codAtleta);
+        String kit_id = request.getParameter("txtKit_id");
+        String controleChipRetornavel_id = request.getParameter("txtControleChipRetornavel_id");
+        String prova_id = request.getParameter("txtProva_id");
+        String atleta_id = request.getParameter("txtAtleta_id");
+        String percurso_id = request.getParameter("txtPercurso_id");
+        
+        Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, kit_id, controleChipRetornavel_id, prova_id, percurso_id, atleta_id);
 
         try {
             inscricao.excluir();
@@ -102,9 +102,9 @@ public class ManterInscricaoController extends HttpServlet {
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
-            request.setAttribute("prova", Prova.obterProvas());
             request.setAttribute("kit", Kit.obterKits());
             request.setAttribute("controleChipRetornavel", ControleChipRetornavel.obterControleChipRetornaveis());
+            request.setAttribute("prova", Prova.obterProvas());            
             request.setAttribute("percurso", Percurso.obterPercursos());
             request.setAttribute("atleta", Atleta.obterAtletas());
 
@@ -119,15 +119,17 @@ public class ManterInscricaoController extends HttpServlet {
     }
 
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtIdControleChipRetornavel"));
+        int id = Integer.parseInt(request.getParameter("txtId"));
         String dataInscricao = request.getParameter("txtDataInscricao");
-        int numeroInsricao = Integer.parseInt(request.getParameter("txtNumeroInsricao"));
+        int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInscricao"));
         String formaPagamento = request.getParameter("optFormaPagamento");
+        
         String kit_id = request.getParameter("txtKit_id");
         String controleChipRetornavel_id = request.getParameter("txtControleChipRetornavel_id");
         String prova_id = request.getParameter("txtProva_id");
-        String percurso_id = request.getParameter("txtPercurso_id");
         String atleta_id = request.getParameter("txtAtleta_id");
+        String percurso_id = request.getParameter("txtPercurso_id");
+        
 
         try {
             Kit kit = Kit.obterKit(id);
@@ -135,8 +137,8 @@ public class ManterInscricaoController extends HttpServlet {
             Prova prova = Prova.obterProva(id);
             Percurso percurso = Percurso.obterPercurso(id);
             Atleta atleta = Atleta.obterAtleta(id);
-            Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInsricao, formaPagamento, kit_id, controleChipRetornavel_id, prova_id, percurso_id, atleta_id);
-
+            
+            Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, kit_id, controleChipRetornavel_id, prova_id, percurso_id, atleta_id);
             inscricao.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
             view.forward(request, response);
@@ -178,16 +180,14 @@ public class ManterInscricaoController extends HttpServlet {
     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtId"));
         String dataInscricao = request.getParameter("txtDataInscricao");
-        int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInsricao"));
+        int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInscricao"));
         String formaPagamento = request.getParameter("optFormaPagamento");
-        String codKit = request.getParameter("txtKit_id");
-        String codChip = request.getParameter("txtControleChipRetornavel_id");
-        String codProva = request.getParameter("txtProva_id");
-        String codAtleta = request.getParameter("txtAtleta_id");
-        String codPercurso = request.getParameter("txtPercurso_id");
-        Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, codKit,
-                codChip, codProva, codPercurso, codAtleta);
-
+        String kit_id = request.getParameter("txtKit_id");
+        String controleChipRetornavel_id = request.getParameter("txtControleChipRetornavel_id");
+        String prova_id = request.getParameter("txtProva_id");
+        String atleta_id = request.getParameter("txtAtleta_id");
+        String percurso_id = request.getParameter("txtPercurso_id");
+        Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, kit_id, controleChipRetornavel_id, prova_id, percurso_id, atleta_id);
         try {
             inscricao.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");

@@ -78,8 +78,12 @@ public class ManterControleChipRetornavelController extends HttpServlet {
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdControleChipRetornavel"));
         String identificadorAtleta = request.getParameter("txtIdentificadorAtleta");
+<<<<<<< HEAD
         String prova_id = request.getParameter("txtProva");
         
+=======
+        String prova_id = request.getParameter("optProva");
+>>>>>>> 62ba7b51a3b7cc04b5296ddeffd019f7f70e5f73
         ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel(id, identificadorAtleta, prova_id);
 
         try {
@@ -115,7 +119,7 @@ public class ManterControleChipRetornavelController extends HttpServlet {
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdControleChipRetornavel"));
         String identificadorAtleta = request.getParameter("txtIdentificadorAtleta");
-        String prova_id = request.getParameter("txtProva");
+        String prova_id = request.getParameter("optProva");
 
         try {
             Prova prova = Prova.obterProva(id);
@@ -124,6 +128,9 @@ public class ManterControleChipRetornavelController extends HttpServlet {
             controleChipRetornavel.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaControleChipRetornavelController");
             view.forward(request, response);
+            
+            
+            
         } catch (IOException ex) {
 
         } catch (SQLException ex) {
@@ -139,7 +146,7 @@ public class ManterControleChipRetornavelController extends HttpServlet {
         try {
             request.setAttribute("operacao", "Editar");
             // para chave estrangeira
-            request.setAttribute("provas", Prova.obterProvas());
+            request.setAttribute("prova", Prova.obterProvas());
             request.setAttribute("atletas", Atleta.obterAtletas());
 
             int codChip = Integer.parseInt(request.getParameter("id"));
@@ -159,7 +166,7 @@ public class ManterControleChipRetornavelController extends HttpServlet {
      public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdControleChipRetornavel"));
         String identificadorAtleta = request.getParameter("txtIdentificadorAtleta");
-        String prova_id = request.getParameter("txtProva");
+        String prova_id = request.getParameter("optProva");
         ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel(id, identificadorAtleta, prova_id);
 
         try {

@@ -19,12 +19,12 @@
             
                 <tr>
                     <td>Data da Inscrição:</td> 
-                    <td><input type="text" name="txtDataInscricao" value="${inscricao.dataInscricao}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="text" name="txtDataInscricao" value="${inscricao.dataInscricao}" <c:if test="${operacao != 'Incluir'}"></c:if>></td>
                     </tr>
 
                     <tr>
                         <td>Numero da Inscrição:</td> 
-                        <td><input type="text" name="txtNumeroInsricao" value="${inscricao.numeroInscricao}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtNumeroInscricao" value="${inscricao.numeroInscricao}" <c:if test="${operacao != 'Incluir'}"> </c:if>></td>
                     </tr>
 
                     <tr> 
