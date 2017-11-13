@@ -24,6 +24,7 @@ public class ManterPercursoController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+ 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         String acao = request.getParameter("acao");
@@ -32,13 +33,22 @@ public class ManterPercursoController extends HttpServlet {
         } else {
             if (acao.equals("confirmarIncluir")) {
                 confirmarIncluir(request, response);
-            }
-        }
-        if (acao.equals("prepararExcluir")) {
-            prepararExcluir(request, response);
-        } else {
-            if (acao.equals("confirmarExcluir")) {
-                confirmarExcluir(request, response);
+            } else {
+                if (acao.equals("prepararExcluir")) {
+                    prepararExcluir(request, response);
+                } else {
+                    if (acao.equals("confirmarExcluir")) {
+                        confirmarExcluir(request, response);
+                    } else {
+                        if (acao.equals("prepararEditar")) {
+                            prepararEditar(request, response);
+                        } else {
+                            if (acao.equals("confirmarEditar")) {
+                                confirmarEditar(request, response);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -80,6 +90,12 @@ public class ManterPercursoController extends HttpServlet {
         } catch (IOException ex) {
         } catch (ClassNotFoundException ex) {
         }
+        
+        
+        
+        
+        
+        
 
     }
 
@@ -126,8 +142,50 @@ public class ManterPercursoController extends HttpServlet {
         } catch (ServletException ex) {
 
         }
+    
     }
+    public void prepararEditar(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.setAttribute("operacao", "Editar");
+            request.setAttribute("prova", Prova.obterProvas());
 
+            RequestDispatcher view = request.getRequestDispatcher("/manterPercurso.jsp");
+
+            view.forward(request, response);
+        } catch (ServletException ex) {
+        } catch (IOException ex) {
+        } catch (ClassNotFoundException ex) {
+        }
+
+    }
+    
+    public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdPercurso"));
+        String nome = request.getParameter("txtNomePercurso");
+        String distancia = request.getParameter("txtDistancia");
+        String faixaEtaria = request.getParameter("txtfaixaEtaria");
+
+        String prova_id = request.getParameter("optProva");
+
+        try {
+            Prova prova = Prova.obterProva(id);
+            Percurso percurso = new Percurso(id, nome, distancia, faixaEtaria, prova_id);
+
+            percurso.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaPercursoController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

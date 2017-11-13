@@ -78,12 +78,8 @@ public class ManterControleChipRetornavelController extends HttpServlet {
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdControleChipRetornavel"));
         String identificadorAtleta = request.getParameter("txtIdentificadorAtleta");
-<<<<<<< HEAD
-        String prova_id = request.getParameter("txtProva");
         
-=======
         String prova_id = request.getParameter("optProva");
->>>>>>> 62ba7b51a3b7cc04b5296ddeffd019f7f70e5f73
         ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel(id, identificadorAtleta, prova_id);
 
         try {
