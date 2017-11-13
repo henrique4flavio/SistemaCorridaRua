@@ -3,3 +3,5 @@
 /SCCR/dist/
 SCCR/src/java/dao/BD.java
 SCCR/src/java/dao/BD.java
+SCCR/src/java/dao/PercursoDAO.java
+SCCR/src/java/controller/ManterControleChipRetornavelController.java

@@ -132,7 +132,7 @@ public class PercursoDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select *from percurso where id ="+id);
+            ResultSet rs = comando.executeQuery("select * from percurso where id =" +id);
             rs.first();
 
             percurso = new Percurso(rs.getInt("id"), rs.getString("nome"), 

@@ -57,7 +57,7 @@ public class ManterControleChipRetornavelController extends HttpServlet {
         try {
             request.setAttribute("operacao", "Excluir");
             // para chave estrangeira
-            request.setAttribute("provas", Prova.obterProvas());
+            request.setAttribute("prova", Prova.obterProvas());
             request.setAttribute("atletas", Atleta.obterAtletas());
 
             int codChip = Integer.parseInt(request.getParameter("id"));
@@ -79,6 +79,7 @@ public class ManterControleChipRetornavelController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("txtIdControleChipRetornavel"));
         String identificadorAtleta = request.getParameter("txtIdentificadorAtleta");
         String prova_id = request.getParameter("txtProva");
+        
         ControleChipRetornavel controleChipRetornavel = new ControleChipRetornavel(id, identificadorAtleta, prova_id);
 
         try {
