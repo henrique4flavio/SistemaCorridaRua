@@ -37,10 +37,6 @@
         <servlet-class>controller.PesquisaOrganizadorController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>PesquisaLoteController</servlet-name>
-        <servlet-class>controller.PesquisaLoteController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>PesquisaKitController</servlet-name>
         <servlet-class>controller.PesquisaKitController</servlet-class>
     </servlet>
@@ -59,10 +55,6 @@
     <servlet>
         <servlet-name>ManterItemController</servlet-name>
         <servlet-class>controller.ManterItemController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ManterLoteController</servlet-name>
-        <servlet-class>controller.ManterLoteController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ManterOrganizadorController</servlet-name>
@@ -95,6 +87,14 @@
     <servlet>
         <servlet-name>ManterKitController</servlet-name>
         <servlet-class>controller.ManterKitController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterLoteController</servlet-name>
+        <servlet-class>controller.ManterLoteController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PesquisaLoteController</servlet-name>
+        <servlet-class>controller.PesquisaLoteController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
@@ -133,10 +133,6 @@
         <url-pattern>/PesquisaOrganizadorController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>PesquisaLoteController</servlet-name>
-        <url-pattern>/PesquisaLoteController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>PesquisaKitController</servlet-name>
         <url-pattern>/PesquisaKitController</url-pattern>
     </servlet-mapping>
@@ -155,10 +151,6 @@
     <servlet-mapping>
         <servlet-name>ManterItemController</servlet-name>
         <url-pattern>/ManterItemController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ManterLoteController</servlet-name>
-        <url-pattern>/ManterLoteController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ManterOrganizadorController</servlet-name>
@@ -191,6 +183,14 @@
     <servlet-mapping>
         <servlet-name>ManterKitController</servlet-name>
         <url-pattern>/ManterKitController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterLoteController</servlet-name>
+        <url-pattern>/ManterLoteController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaLoteController</servlet-name>
+        <url-pattern>/PesquisaLoteController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

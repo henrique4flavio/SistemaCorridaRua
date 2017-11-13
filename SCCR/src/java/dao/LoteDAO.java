@@ -130,7 +130,7 @@ public class LoteDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from lote where id = " + id);
+            ResultSet rs = comando.executeQuery("select * from lote where id ="+id);
             rs.next();
 
             lote = new Lote(rs.getInt("id"),

@@ -50,7 +50,7 @@ public class ManterInscricaoController extends HttpServlet {
     public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Excluir");
-            request.setAttribute("prova", Prova.obterProvas());
+            request.setAttribute("provas", Prova.obterProvas());
             request.setAttribute("kit", Kit.obterKits());
             request.setAttribute("controleChipRetornavel", ControleChipRetornavel.obterControleChipRetornaveis());
             request.setAttribute("percurso", Percurso.obterPercursos());
