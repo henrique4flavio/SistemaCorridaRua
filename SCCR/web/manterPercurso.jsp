@@ -34,7 +34,7 @@
                     <td>
                         <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${percurso.prova.id== null}"> selected</c:if>>Selecione uma prova</option>  
-                            <c:forEach items="${provas}" var="prova">
+                            <c:forEach items="${prova}" var="prova">
                                 <option value="${prova.id}" <c:if test="${percurso.prova_id == prova.id}"> selected</c:if>>${prova.nomeProva}</option>  
                             </c:forEach>
                         </select>
