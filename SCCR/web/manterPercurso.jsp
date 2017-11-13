@@ -29,8 +29,9 @@
                         <td>Faixa etaria:</td> 
                         <td><input type="text" name="txtfaixaEtaria" value="${percurso.faixaEtaria}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
+                    
                     <tr>
-                        <td>Prova</td>
+                   <td>Prova</td>
                     <td>
                         <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${percurso.prova.id== null}"> selected</c:if>>Selecione uma prova</option>  
