@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.*;
 
-public class Usuario {
+public abstract class Usuario {
 
     private String nome;
 
