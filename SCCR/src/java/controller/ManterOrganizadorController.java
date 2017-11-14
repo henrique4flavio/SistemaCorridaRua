@@ -60,7 +60,7 @@ public class ManterOrganizadorController extends HttpServlet {
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao","Incluir");
-            request.setAttribute("Organizador", Organizador.obterOrganizadores());
+            request.setAttribute("Administrador", Administrador.obterAdministradores());
 
             RequestDispatcher view = request.getRequestDispatcher("/manterOrganizador.jsp");
             view.forward(request, response);
@@ -76,7 +76,7 @@ public class ManterOrganizadorController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));
         String nome = request.getParameter("txtNomeOrganizador");
         String senha = request.getParameter("txtSenhaOrganizador");
-        String login = request.getParameter("txtloginOganizador");
+        String login = request.getParameter("txtloginOrganizador");
         String email = request.getParameter("txtEmailOrganizador");
         String administrador_id = request.getParameter("txtCodigoAdministrador");
         
@@ -101,6 +101,8 @@ public class ManterOrganizadorController extends HttpServlet {
     public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Excluir");
+            request.setAttribute("Administrador", Administrador.obterAdministradores());
+            
             int codOrganizador = Integer.parseInt(request.getParameter("id"));
 
             Organizador organizador = Organizador.obterOrganizador(codOrganizador);
@@ -167,7 +169,7 @@ public class ManterOrganizadorController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));
         String nome = request.getParameter("txtNomeOrganizador");
         String senha = request.getParameter("txtSenhaOrganizaador");
-        String login = request.getParameter("txtloginOganizador");
+        String login = request.getParameter("txtloginOrganizador");
         String email = request.getParameter("txtEmailOrganizador");
         String administrador_id = request.getParameter("txtCodigoAdministrador");
 
@@ -191,6 +193,8 @@ public class ManterOrganizadorController extends HttpServlet {
     public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Editar");
+            request.setAttribute("Administrador", Administrador.obterAdministradores());
+            
             int codOrganizador = Integer.parseInt(request.getParameter("id"));
 
             Organizador organizador = Organizador.obterOrganizador(codOrganizador);

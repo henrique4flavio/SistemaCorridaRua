@@ -11,8 +11,7 @@
         <title>Manter Atleta</title>
     </head>
     <body>
-        
-          <jsp:include page="barra_superior.jspf"/>
+
         <h1>Manter Atleta - ${operacao}</h1>
 
         <form action="ManterAtletaController?acao=confirmar${operacao}" method="post" name="frmManterAtleta">
