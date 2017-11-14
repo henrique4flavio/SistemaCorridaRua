@@ -7,13 +7,14 @@
 <html>
            
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <jsp:include page="bootstrap.jspf"/>
         <title>Manter Administrador</title>
     </head>
     <body>
-        <h1>Manter Administrador - ${operacao}</h1>
+        <jsp:include page="barra_superior.jspf"/>
+        <h3>Manter Administrador - ${operacao}</h3>
 
-        <form action="ManterAdministradorController?acao=confirmar${operacao}" method="post" name="frmManterAdministrador">
+        <form class="form-horizontal" action="ManterAdministradorController?acao=confirmar${operacao}" method="post" name="frmManterAdministrador">
             <table>
                 <tr>
                     <td>Código do Administrador:</td> 

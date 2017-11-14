@@ -7,10 +7,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Manter Atleta</title>
+      <jsp:include page="bootstrap.jspf"/>
+      <title>Manter Atleta</title>
     </head>
     <body>
+        <jsp:include page="barra_superior.jspf"/>
 
         <h1>Manter Atleta - ${operacao}</h1>
 

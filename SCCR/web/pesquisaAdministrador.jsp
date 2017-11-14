@@ -10,7 +10,7 @@
     <body>
         <jsp:include page="barra_superior.jspf"/>
         <h3>Administradores</h3>
-        <table class="table table-bordred table-striped">
+        <table class="table table-bordered">
             <thead>
             <tr>
 

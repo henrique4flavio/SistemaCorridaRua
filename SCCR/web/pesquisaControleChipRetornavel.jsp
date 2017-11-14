@@ -6,12 +6,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Chip Retornavel</title>
+        <jsp:include page="bootstrap.jspf"/>
+      <title>Manter Atleta</title>
     </head>
-    <body border='1'>
-        <h1>Emprestimos chip</h1>
-        <table border='1'>    
+    <body>
+        <jsp:include page="barra_superior.jspf"/>
+        <h3>Emprestimos chip</h3>
+        <table class="table table-bordered">    
             <tr>
 
                 <th>Código do chip retornavel</th>
@@ -24,8 +25,8 @@
                     <td><c:out value = "${controleChipRetornavel.id}" /></td>
                     <td><c:out value = "${controleChipRetornavel.identificadorAtleta}" /></td>
                     <td><c:out value = "${controleChipRetornavel.prova_id}" /></td>
-                    <td><a href ="ManterControleChipRetornavelController?acao=prepararEditar&id=<c:out value="${controleChipRetornavel.id}"/>">Editar</a></td>
-                    <td><a href ="ManterControleChipRetornavelController?acao=prepararExcluir&id=<c:out value="${controleChipRetornavel.id}"/>">Excluir</a></td>
+                    <td><a href ="ManterControleChipRetornavelController?acao=prepararEditar&id=<c:out value="${controleChipRetornavel.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                    <td><a href ="ManterControleChipRetornavelController?acao=prepararExcluir&id=<c:out value="${controleChipRetornavel.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
                 </tr>
             </c:forEach>

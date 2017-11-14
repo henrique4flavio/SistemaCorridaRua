@@ -6,11 +6,12 @@
 <html>
 
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Manter Controle de chip retornavel</title>
+        <jsp:include page="bootstrap.jspf"/>
+      <title>Manter Chip</title>
     </head>
     <body>
-        <h1>Manter Controle de chip retornavel - ${operacao}</h1>
+        <jsp:include page="barra_superior.jspf"/>
+        <h3>Manter Controle de chip retornavel - ${operacao}</h3>
 
         <form action="ManterControleChipRetornavelController?acao=confirmar${operacao}" method="post" name="frmManterControleChipRetornavel">
             <table>

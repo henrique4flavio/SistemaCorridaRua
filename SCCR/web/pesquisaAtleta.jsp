@@ -6,13 +6,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Atletas</title>
+        <jsp:include page="bootstrap.jspf"/>
     </head>
-
     <body>
-        <h1>Atletas</h1>
-        <table border='1'>
+        <jsp:include page="barra_superior.jspf"/>
+        
+        <h3>Atletas</h3>
+        <table class="table table-bordered">
             <tr>
                 <th> Código do atleta  </th>
                 <th> Nome do atleta </th>
@@ -53,8 +53,8 @@
                     <td> <c:out value="${atleta.login}"/> </td>
                     <td> <c:out value="${atleta.senha}"/> </td>
                     <td> <c:out value="${atleta.email}"/> </td>
-                    <td> <a href="ManterAtletaController?acao=prepararEditar&Editar&id=<c:out value="${atleta.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterAtletaController?acao=prepararExcluir&id=<c:out value="${atleta.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterAtletaController?acao=prepararEditar&Editar&id=<c:out value="${atleta.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                    <td> <a href="ManterAtletaController?acao=prepararExcluir&id=<c:out value="${atleta.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
                 </tr>
             </c:forEach>
         </table>

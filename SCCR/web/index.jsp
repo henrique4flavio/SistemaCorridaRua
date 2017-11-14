@@ -5,6 +5,7 @@ pageEncoding="UTF-8"%>
 <html>
     <head>
 <jsp:include page="bootstrap.jspf"/>
+<title>SCCR</title>
  
 </head>
 <body>
