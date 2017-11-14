@@ -5,12 +5,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Administradores</title>
+       <jsp:include page="bootstrap.jspf"/>
     </head>
     <body>
-        <h1>Administradores</h1>
-        <table border='1'>    
+        <jsp:include page="barra_superior.jspf"/>
+        <h3>Administradores</h3>
+        <table class="table table-bordred table-striped">
+            <thead>
             <tr>
 
                 <th>Código do administrador</th>
@@ -18,10 +19,8 @@
                 <th>Senha</th>
                 <th>Login</th>
                 <th>Email</th>
-
-
-
-            </tr>    
+            </tr>  
+         </thead>
                 
             <c:forEach items="${administradores}" var="administrador">
                 <tr>
@@ -31,8 +30,8 @@
                     <td><c:out value = "${administrador.senha}" /></td>
                     <td><c:out value = "${administrador.login}" /></td>
                     <td><c:out value = "${administrador.email}" /></td>
-                    <td><a href ="ManterAdministradorController?acao=prepararEditar&id=<c:out value="${administrador.id}"/>">Editar</a></td>
-                    <td><a href ="ManterAdministradorController?acao=prepararExcluir&id=<c:out value="${administrador.id}"/>">Excluir</a></td>
+                    <td><a href ="ManterAdministradorController?acao=prepararEditar&id=<c:out value="${administrador.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                    <td><a href ="ManterAdministradorController?acao=prepararExcluir&id=<c:out value="${administrador.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
                 </tr>
             </c:forEach>
