@@ -31,6 +31,7 @@ public class ManterPercursoController extends HttpServlet {
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
         } 
+        // Tem que estar sem o else. 
             if (acao.equals("confirmarIncluir")) {
                 confirmarIncluir(request, response);
             } else {
@@ -52,13 +53,30 @@ public class ManterPercursoController extends HttpServlet {
             }
         }
     }
+public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao","Excluir");
+            request.setAttribute("prova", Prova.obterProvas());
 
+            int codPercurso = Integer.parseInt(request.getParameter("id"));
+
+            Percurso percurso = Percurso.obterPercurso(codPercurso);
+            request.setAttribute("percurso", percurso);
+            RequestDispatcher view = request.getRequestDispatcher("/manterPercurso.jsp");
+            view.forward(request, response);
+
+        } catch (ServletException ex) {
+        } catch (IOException ex) {
+        } catch (ClassNotFoundException ex) {
+        }
+
+    }
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdPercurso"));
         String nome = request.getParameter("txtNomePercurso");
         String distancia = request.getParameter("txtDistancia");
         String faixaEtaria = request.getParameter("txtfaixaEtaria");
-        String prova_id = request.getParameter("optProva");
+        String prova_id = request.getParameter("txtProva");
 
         Percurso percurso = new Percurso(id, nome, distancia, faixaEtaria, prova_id);
         try {
@@ -91,32 +109,10 @@ public class ManterPercursoController extends HttpServlet {
         } catch (ClassNotFoundException ex) {
         }
         
-        
-        
-        
-        
-        
 
     }
 
-    public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-        try {
-            request.setAttribute("operacao","Excluir");
-            request.setAttribute("provas", Prova.obterProvas());
-
-            int codPercurso = Integer.parseInt(request.getParameter("id"));
-
-            Percurso percurso = Percurso.obterPercurso(codPercurso);
-            request.setAttribute("percursos", percurso);
-            RequestDispatcher view = request.getRequestDispatcher("/manterPercurso.jsp");
-            view.forward(request, response);
-
-        } catch (ServletException ex) {
-        } catch (IOException ex) {
-        } catch (ClassNotFoundException ex) {
-        }
-
-    }
+    
 
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdPercurso"));
@@ -167,7 +163,7 @@ public class ManterPercursoController extends HttpServlet {
         String distancia = request.getParameter("txtDistancia");
         String faixaEtaria = request.getParameter("txtfaixaEtaria");
 
-        String prova_id = request.getParameter("optProva");
+        String prova_id = request.getParameter("txtProva");
  Percurso percurso = new Percurso(id, nome, distancia, faixaEtaria, prova_id);
         try {
             
