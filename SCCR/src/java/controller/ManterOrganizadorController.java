@@ -30,11 +30,11 @@ public class ManterOrganizadorController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException, SQLException{
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
-        }else{
+        } else {
             if (acao.equals("confirmarIncluir")) {
                 confirmarIncluir(request, response);
             } else {
@@ -44,13 +44,14 @@ public class ManterOrganizadorController extends HttpServlet {
                     if (acao.equals("confirmarExcluir")) {
                         confirmarExcluir(request, response);
                     } else {
-                        if (acao.equals("prepararEditar")) {
-                            prepararEditar(request, response);
-                        } else {
-                            if (acao.equals("confirmarEditar")) {
-                                confirmarEditar(request, response);
-                            }
-                        }
+                if (acao.equals("prepararEditar")) {
+                    prepararEditar(request, response);
+                } else {
+                    if (acao.equals("confirmarEditar")) {
+                        confirmarEditar(request, response);
+                    }
+                    
+                }
                     }
                 }
             }
@@ -147,7 +148,7 @@ public class ManterOrganizadorController extends HttpServlet {
     public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Editar");
-            request.setAttribute("Administrador", Administrador.obterAdministradores());
+            request.setAttribute("administrador", Administrador.obterAdministradores());
             
             int codOrganizador = Integer.parseInt(request.getParameter("id"));
 
@@ -190,7 +191,7 @@ public class ManterOrganizadorController extends HttpServlet {
     }
 
     
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -202,11 +203,11 @@ public class ManterOrganizadorController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(ManterOrganizadorController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       try {
+           processRequest(request, response);
+       } catch (SQLException ex) {
+           Logger.getLogger(ManterOrganizadorController.class.getName()).log(Level.SEVERE, null, ex);
+       }
     }
 
     /**
@@ -220,11 +221,11 @@ public class ManterOrganizadorController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(ManterOrganizadorController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       try {
+           processRequest(request, response);
+       } catch (SQLException ex) {
+           Logger.getLogger(ManterOrganizadorController.class.getName()).log(Level.SEVERE, null, ex);
+       }
     }
 
     /**
