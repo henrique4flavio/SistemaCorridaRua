@@ -79,6 +79,7 @@ public class ManterOrganizadorController extends HttpServlet {
         String senha = request.getParameter("txtSenhaOrganizador");
         String login = request.getParameter("txtloginOrganizador");
         String email = request.getParameter("txtEmailOrganizador");
+       
         String administrador_id = request.getParameter("txtCodigoAdministrador");
         
         try {
