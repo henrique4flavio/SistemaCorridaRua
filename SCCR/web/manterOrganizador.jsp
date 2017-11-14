@@ -28,7 +28,7 @@
                     </tr>
                     <tr>
                         <td>login</td> 
-                        <td><input type="text" name="txtloginOganizador" value="${organizador.login}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>></td>
+                        <td><input type="text" name="txtLoginOrganizador" value="${organizador.login}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>></td>
                     </tr>
 
                     <tr>

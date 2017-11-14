@@ -60,7 +60,7 @@ public class ManterOrganizadorController extends HttpServlet {
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao","Incluir");
-            request.setAttribute("Organizador", Organizador.obterOrganizadores());
+            request.setAttribute("administrador", Administrador.obterAdministradores());
 
             RequestDispatcher view = request.getRequestDispatcher("/manterOrganizador.jsp");
             view.forward(request, response);
@@ -76,7 +76,7 @@ public class ManterOrganizadorController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));
         String nome = request.getParameter("txtNomeOrganizador");
         String senha = request.getParameter("txtSenhaOrganizador");
-        String login = request.getParameter("txtloginOganizador");
+        String login = request.getParameter("txtloginOrganizador");
         String email = request.getParameter("txtEmailOrganizador");
         String administrador_id = request.getParameter("txtCodigoAdministrador");
         
@@ -101,6 +101,8 @@ public class ManterOrganizadorController extends HttpServlet {
     public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Excluir");
+            request.setAttribute("administrador", Administrador.obterAdministradores());
+            
             int codOrganizador = Integer.parseInt(request.getParameter("id"));
 
             Organizador organizador = Organizador.obterOrganizador(codOrganizador);
@@ -116,6 +118,78 @@ public class ManterOrganizadorController extends HttpServlet {
         }
     }
 
+    
+    public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));
+        String nome = request.getParameter("txtNomeOrganizador");
+        String senha = request.getParameter("txtSenhaOrganizaador");
+        String login = request.getParameter("txtloginOrganizador");
+        String email = request.getParameter("txtEmailOrganizador");
+        String administrador_id = request.getParameter("txtCodigoAdministrador");
+
+        Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);
+
+        try {
+            organizador.excluir();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaOrganizadorController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    }
+
+    public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Editar");
+            request.setAttribute("Administrador", Administrador.obterAdministradores());
+            
+            int codOrganizador = Integer.parseInt(request.getParameter("id"));
+
+            Organizador organizador = Organizador.obterOrganizador(codOrganizador);
+            request.setAttribute("organizador", organizador);
+            RequestDispatcher view = request.getRequestDispatcher("/manterOrganizador.jsp");
+            view.forward(request, response);
+
+        } catch (ServletException ex) {
+
+        } catch (IOException ex) {
+
+        } catch (ClassNotFoundException ex) {
+        }
+    }
+
+    public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));
+        String nome = request.getParameter("txtNomeOrganizador");
+        String senha = request.getParameter("txtSenhaOrganizaador");
+        String login = request.getParameter("txtloginOganizador");
+        String email = request.getParameter("txtEmailOrganizador");
+        String administrador_id = request.getParameter("txtCodigoAdministrador");
+
+        Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);
+
+        try {
+            organizador.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaOrganizadorController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    }
+
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -162,73 +236,4 @@ public class ManterOrganizadorController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));
-        String nome = request.getParameter("txtNomeOrganizador");
-        String senha = request.getParameter("txtSenhaOrganizaador");
-        String login = request.getParameter("txtloginOganizador");
-        String email = request.getParameter("txtEmailOrganizador");
-        String administrador_id = request.getParameter("txtCodigoAdministrador");
-
-        Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);
-
-        try {
-            organizador.excluir();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaOrganizadorController");
-            view.forward(request, response);
-        } catch (IOException ex) {
-
-        } catch (SQLException ex) {
-
-        } catch (ClassNotFoundException ex) {
-
-        } catch (ServletException ex) {
-
-        }
-    }
-
-    public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-        try {
-            request.setAttribute("operacao", "Editar");
-            int codOrganizador = Integer.parseInt(request.getParameter("id"));
-
-            Organizador organizador = Organizador.obterOrganizador(codOrganizador);
-            request.setAttribute("organizador", organizador);
-            RequestDispatcher view = request.getRequestDispatcher("/manterOrganizador.jsp");
-            view.forward(request, response);
-
-        } catch (ServletException ex) {
-
-        } catch (IOException ex) {
-
-        } catch (ClassNotFoundException ex) {
-        }
-    }
-
-    public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));
-        String nome = request.getParameter("txtNomeOrganizador");
-        String senha = request.getParameter("txtSenhaOrganizaador");
-        String login = request.getParameter("txtloginOganizador");
-        String email = request.getParameter("txtEmailOrganizador");
-        String administrador_id = request.getParameter("txtCodigoAdministrador");
-
-        Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);
-
-        try {
-            organizador.alterar();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaOrganizadorController");
-            view.forward(request, response);
-        } catch (IOException ex) {
-
-        } catch (SQLException ex) {
-
-        } catch (ClassNotFoundException ex) {
-
-        } catch (ServletException ex) {
-
-        }
-    }
-
 }
