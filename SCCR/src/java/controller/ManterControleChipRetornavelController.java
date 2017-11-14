@@ -141,7 +141,6 @@ public class ManterControleChipRetornavelController extends HttpServlet {
     public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Editar");
-            // para chave estrangeira
             request.setAttribute("prova", Prova.obterProvas());
             request.setAttribute("atletas", Atleta.obterAtletas());
 
