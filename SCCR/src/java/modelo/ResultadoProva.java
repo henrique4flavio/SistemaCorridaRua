@@ -15,6 +15,7 @@ public class ResultadoProva {
     public ResultadoProva(int id, String resultadoClassificacao, String nomeProva) {
         this.resultadoClassificacao = resultadoClassificacao;
         this.id = id;
+        this.nomeProva = nomeProva;
         
     }
 
