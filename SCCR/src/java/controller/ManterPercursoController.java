@@ -144,11 +144,13 @@ public class ManterPercursoController extends HttpServlet {
         }
     
     }
-    public void prepararEditar(HttpServletRequest request, HttpServletResponse response) {
+    public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Editar");
             request.setAttribute("prova", Prova.obterProvas());
-
+            int codPercurso = Integer.parseInt(request.getParameter("id"));
+            Percurso percurso = Percurso.obterPercurso(codPercurso);
+            request.setAttribute("percurso", percurso);
             RequestDispatcher view = request.getRequestDispatcher("/manterPercurso.jsp");
 
             view.forward(request, response);
@@ -166,12 +168,10 @@ public class ManterPercursoController extends HttpServlet {
         String faixaEtaria = request.getParameter("txtfaixaEtaria");
 
         String prova_id = request.getParameter("optProva");
-
+ Percurso percurso = new Percurso(id, nome, distancia, faixaEtaria, prova_id);
         try {
-            Prova prova = Prova.obterProva(id);
-            Percurso percurso = new Percurso(id, nome, distancia, faixaEtaria, prova_id);
-
-            percurso.alterar();
+            
+                 percurso.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaPercursoController");
             view.forward(request, response);
         } catch (IOException ex) {
