@@ -30,13 +30,13 @@ public class ManterPercursoController extends HttpServlet {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
-        } else {
+        } 
             if (acao.equals("confirmarIncluir")) {
                 confirmarIncluir(request, response);
             } else {
                 if (acao.equals("prepararExcluir")) {
                     prepararExcluir(request, response);
-                } else {
+                }  
                     if (acao.equals("confirmarExcluir")) {
                         confirmarExcluir(request, response);
                     } else {
@@ -47,8 +47,8 @@ public class ManterPercursoController extends HttpServlet {
                                 confirmarEditar(request, response);
                             }
                         }
-                    }
-                }
+                    
+                
             }
         }
     }
