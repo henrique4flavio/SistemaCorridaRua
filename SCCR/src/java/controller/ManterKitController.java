@@ -15,21 +15,30 @@ import modelo.Prova;
 
 public class ManterKitController extends HttpServlet {
 
-     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-     String acao = request.getParameter("acao");
+        String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
         } else {
             if (acao.equals("confirmarIncluir")) {
                 confirmarIncluir(request, response);
-            }
-        }
-        if (acao.equals("prepararExcluir")) {
-            prepararExcluir(request, response);
-        } else {
-            if (acao.equals("confirmarExcluir")) {
-                confirmarExcluir(request, response);
+            } else {
+                if (acao.equals("prepararExcluir")) {
+                    prepararExcluir(request, response);
+                } else {
+                    if (acao.equals("confirmarExcluir")) {
+                        confirmarExcluir(request, response);
+                    } else {
+                        if (acao.equals("prepararEditar")) {
+                            prepararEditar(request, response);
+                        } else {
+                            if (acao.equals("confirmarEditar")) {
+                                confirmarEditar(request, response);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -110,6 +119,49 @@ public class ManterKitController extends HttpServlet {
         } catch (IOException ex) {
         }
     }
+    public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Editar");
+            
+
+            int codKit = Integer.parseInt(request.getParameter("id"));
+
+            Kit kit = Kit.obterKit(codKit);
+            request.setAttribute("kit", kit);
+            RequestDispatcher view = request.getRequestDispatcher("/manterKit.jsp");
+            view.forward(request, response);
+
+        } catch (ServletException ex) {
+
+        } catch (IOException ex) {
+
+        } catch (ClassNotFoundException ex) {
+        }
+    }
+    
+    public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdKit"));
+        String nomeKit = request.getParameter("txtNomeKit");
+        
+
+        Kit kit = new Kit(id, nomeKit);
+
+        try {
+            kit.alterar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaKitController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    }
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
