@@ -144,10 +144,16 @@ public class ManterPercursoController extends HttpServlet {
         }
     
     }
-    public void prepararEditar(HttpServletRequest request, HttpServletResponse response) {
+    public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Editar");
             request.setAttribute("prova", Prova.obterProvas());
+            
+             int codPercurso = Integer.parseInt(request.getParameter("id"));
+            
+            Percurso percurso = Percurso.obterPercurso(codPercurso);
+            request.setAttribute("percurso", percurso);
+            
 
             RequestDispatcher view = request.getRequestDispatcher("/manterPercurso.jsp");
 
