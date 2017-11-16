@@ -6,12 +6,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <jsp:include page="bootstrap.jspf"/>
         <title>Percursos</title>
     </head>
     <body>
-        <h1>Percursos</h1>
-        <table border='1'>    
+        <jsp:include page="barra_superior.jspf"/>
+        <h3>Percursos</h3>
+        <table class="table table-bordered">    
             <tr>
                 
                 <th>Código do percurso</th>
@@ -32,8 +33,8 @@
                     <td><c:out value = "${percurso.prova_id}" /></td>
 
 
-                    <td> <a href="ManterPercursoController?acao=prepararEditar&id=<c:out value="${percurso.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterPercursoController?acao=prepararExcluir&id=<c:out value="${percurso.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterPercursoController?acao=prepararEditar&id=<c:out value="${percurso.id}"/>"> <button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                    <td> <a href="ManterPercursoController?acao=prepararExcluir&id=<c:out value="${percurso.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
 
                 </tr>                                                                  

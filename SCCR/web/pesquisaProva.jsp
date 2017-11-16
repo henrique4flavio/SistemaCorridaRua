@@ -6,12 +6,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <jsp:include page="bootstrap.jspf"/>
         <title>Provas</title>
     </head>
     <body>
-        <h1>Provas</h1>
-        <table border='1'>    
+        <jsp:include page="barra_superior.jspf"/>
+        <h3>Provas</h3>
+        <table class="table table-bordered">    
             <tr>
 
                 <th>Código da prova</th>
@@ -43,8 +44,8 @@
                     <td><c:out value = "${prova.organizador_id}" /></td>
                     <td><c:out value = "${prova.ranking_id}" /></td>
 
-                    <td> <a href="ManterProvaController?acao=prepararEditar&id=<c:out value="${prova.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterProvaController?acao=prepararExcluir&id=<c:out value="${prova.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterProvaController?acao=prepararEditar&id=<c:out value="${prova.id}"/>"> <button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                    <td> <a href="ManterProvaController?acao=prepararExcluir&id=<c:out value="${prova.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
                </tr>                                                                  
             </c:forEach>

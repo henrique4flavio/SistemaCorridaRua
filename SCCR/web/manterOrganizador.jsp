@@ -5,10 +5,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <jsp:include page="bootstrap.jspf"/>
         <title>Manter Organizador</title>
     </head>
     <body>
+        <jsp:include page="barra_superior.jspf"/>
         <h1>Manter Organizador - ${operacao}</h1>
 
         <form action="ManterOrganizadorController?acao=confirmar${operacao}" method="post" name="frmManterOrganizador">

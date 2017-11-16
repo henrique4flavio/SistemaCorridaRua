@@ -5,10 +5,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <jsp:include page="bootstrap.jspf"/>
         <title>Manter Resultado Prova</title>
     </head>
     <body>
+        <jsp:include page="barra_superior.jspf"/>
         <h1>Manter Resultado Prova - ${operacao}</h1>
 
         <form action="ManterResultadoProvaController?acao=confirmar${operacao}" method="post" name="frmManterResultadoProva">

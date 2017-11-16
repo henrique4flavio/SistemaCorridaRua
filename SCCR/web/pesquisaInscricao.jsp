@@ -6,12 +6,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <jsp:include page="bootstrap.jspf"/>
         <title>Inscrição</title>
     </head>
     <body>
-        <h1>Inscrição</h1> 
-        <table border='1'>    
+        <jsp:include page="barra_superior.jspf"/>
+        <h3>Inscrição</h3> 
+        <table class="table table-bordered"> 
             <tr>
 
                 <th>Código da inscrição</th>
@@ -39,8 +40,8 @@
                     <td> <c:out value= "${inscricao.percurso_id}"/></td>
                     <td> <c:out value="${inscricao.atleta_id}"/> </td>
                     
-                    <td><a href ="ManterInscricaoController?acao=prepararEditar&id=<c:out value="${inscricao.id}"/>">Editar</a></td>
-                    <td><a href ="ManterInscricaoController?acao=prepararExcluir&id=<c:out value="${inscricao.id}"/>">Excluir</a></td>
+                    <td><a href ="ManterInscricaoController?acao=prepararEditar&id=<c:out value="${inscricao.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                    <td><a href ="ManterInscricaoController?acao=prepararExcluir&id=<c:out value="${inscricao.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
                 </tr>
             </c:forEach>
