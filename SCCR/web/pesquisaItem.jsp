@@ -6,12 +6,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <jsp:include page="bootstrap.jspf"/>
         <title>Item</title>
     </head>
     <body>
-        <h1>Itens</h1>
-        <table border='1'>    
+        <jsp:include page="barra_superior.jspf"/>
+        <h3>Itens</h3>
+        <table class="table table-bordered">    
             <tr>
 
                 <th>Código do item</th>
@@ -24,8 +25,8 @@
                     
                     <td><c:out value = "${item.id}" /></td>
                     <td><c:out value = "${item.nomeItem}" /></td>
-                    <td> <a href="ManterItemController?acao=prepararEditar&id=<c:out value="${item.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterItemController?acao=prepararExcluir&id=<c:out value="${item.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterItemController?acao=prepararEditar&id=<c:out value="${item.id}"/>"> <button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                    <td> <a href="ManterItemController?acao=prepararExcluir&id=<c:out value="${item.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
                 </tr>                                                                  
             </c:forEach>

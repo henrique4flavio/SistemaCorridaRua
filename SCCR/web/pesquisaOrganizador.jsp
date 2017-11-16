@@ -6,13 +6,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <jsp:include page="bootstrap.jspf"/>
         <title>Pesquisa de Organizadores</title>
     </head>
 
     <body>
-        <h1> Pesquisa de Organizadores</h1>
-        <table border='1'>
+        <jsp:include page="barra_superior.jspf"/>
+        <h3> Organizadores</h3>
+        <table class="table table-bordered">
             <tr>
                 <th> Código do Organizador  </th>
                 <th> Nome</th>
@@ -31,8 +32,8 @@
                     <td> <c:out value="${organizador.email}"/> </td>
                     <td> <c:out value="${organizador.administrador_id}"/> </td>
                 
-                    <td> <a href="ManterOrganizadorController?acao=prepararEditar&id=<c:out value="${organizador.id}"/>"> Editar </a></td>
-                    <td> <a href="ManterOrganizadorController?acao=prepararExcluir&id=<c:out value="${organizador.id}"/>">Excluir </a><td>
+                    <td> <a href="ManterOrganizadorController?acao=prepararEditar&id=<c:out value="${organizador.id}"/>"> Editar </a></td><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                    <td> <a href="ManterOrganizadorController?acao=prepararExcluir&id=<c:out value="${organizador.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
                 </tr>
             </c:forEach>

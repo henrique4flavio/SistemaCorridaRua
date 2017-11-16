@@ -9,6 +9,7 @@
         <title>Manter Ranking</title>
     </head>
     <body>
+        <jsp:include page="barra_superior.jspf"/>
         <h1>Manter Ranking - ${operacao}</h1>
 
         <form action="ManterRankingController?acao=confirmar${operacao}" method="post" name="frmManterRanking">

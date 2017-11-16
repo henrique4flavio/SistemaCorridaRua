@@ -5,10 +5,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <jsp:include page="bootstrap.jspf"/>
         <title>Manter Kit</title>
     </head>
     <body>
+        <jsp:include page="barra_superior.jspf"/>
         <h1>Manter Kit - ${operacao}</h1>
 
         <form action="ManterKitController?acao=confirmar${operacao}" method="post" name="frmManterKit">
