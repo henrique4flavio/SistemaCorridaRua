@@ -12,7 +12,7 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h3>Manter Administrador - ${operacao}</h3>
+        <h3>${operacao}</h3>
 
         <form class="form-horizontal" action="ManterAdministradorController?acao=confirmar${operacao}" method="post" name="frmManterAdministrador">
             <table>
@@ -21,7 +21,7 @@
                     <td><input type="text" name="txtIdAdministrador" value="${administrador.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
-                        <td>Nome do Administrador:</td> 
+                        <td>Nome do administrador:</td> 
                         <td><input type="text" name="txtNomeAdministrador" value="${administrador.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
             

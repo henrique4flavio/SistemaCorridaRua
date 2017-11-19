@@ -13,12 +13,12 @@
     <body>
         <jsp:include page="barra_superior.jspf"/>
 
-        <h1>Manter Atleta - ${operacao}</h1>
+        <h3>${operacao}</h3>
 
         <form action="ManterAtletaController?acao=confirmar${operacao}" method="post" name="frmManterAtleta">
             <table>
                 <tr>
-                    <td>Código do Atleta:</td> 
+                    <td>Código do atleta:</td> 
                     <td><input type="text" name="txtIdAtleta" value="${atleta.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
@@ -26,11 +26,7 @@
                         <td><input type="text" name="txtNomeAtleta" value="${atleta.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
-                        <td>Nome da Equipe:</td> 
-                        <td><input type="text" name="txtNomeEquipe" value="${atleta.nomeDaEquipe}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Data de Nascimento:</td> 
+                        <td>Data de nascimento:</td> 
                         <td><input type="text" name="txtDataNascimento" value="${atleta.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
@@ -41,10 +37,22 @@
                         <td>CPF:</td> 
                         <td><input type="text" name="txtCpf" value="${atleta.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
-                    <tr>
-                        <td>Tamanho da Camisa:</td> 
+<!--                    <tr>
+                        <td>Tamanho da camisa:</td> 
                         <td><input type="text" name="txtTamanhoCamisa" value="${atleta.tamCamisa}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
+                    </tr>-->
+                    <tr> 
+                        <td>Tamanho da camisa:</td> 
+                        <td>
+                            <select name="optTamanhoCamisa" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <option value="M" <c:if test="${tamCamisa == 'M'}"> selected</c:if>>M</option>
+                            <option value="P" <c:if test="${tamCamisa == 'P'}"> selected</c:if>>P</option>
+                            <option value="PP" <c:if test="${tamCamisa == 'PP'}"> selected</c:if>>PP</option>
+                            <option value="G" <c:if test="${tamCamisa == 'G'}"> selected</c:if>>G</option>
+                            <option value="GG" <c:if test="${tamCamisa == 'GG'}"> selected</c:if>>GG</option>
+                            </select>
+                        </td>
+                    </tr>                   
                     <tr> 
                         <td>Sexo:</td> 
                         <td>
@@ -59,11 +67,11 @@
                         <td><input type="text" name="txtEmail" value="${atleta.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
-                        <td>Telefone Fixo:</td> 
+                        <td>Telefone fixo:</td> 
                         <td><input type="text" name="txtTelefoneFixo" value="${atleta.telefoneFixo}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
-                        <td>Telefone Celular:</td> 
+                        <td>Telefone celular:</td> 
                         <td><input type="text" name="txtTelefoneCelular" value="${atleta.telefoneCel}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
 

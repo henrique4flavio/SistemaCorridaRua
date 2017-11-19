@@ -6,11 +6,11 @@
 <html>
     <head>
         <jsp:include page="bootstrap.jspf"/>
-        <title>Lotes</title>
+        <title>Manter lotes</title>
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h3>Lotes de Inscrição</h3>
+
         <table class="table table-bordered">    
             <tr>
 

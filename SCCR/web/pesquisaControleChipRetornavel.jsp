@@ -7,11 +7,10 @@
 <html>
     <head>
         <jsp:include page="bootstrap.jspf"/>
-      <title>Manter Atleta</title>
+      <title>Manter emprestimo</title>
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h3>Emprestimos chip</h3>
         <table class="table table-bordered">    
             <tr>
 

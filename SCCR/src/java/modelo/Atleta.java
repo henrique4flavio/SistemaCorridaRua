@@ -30,11 +30,10 @@ public class Atleta extends Usuario {
 
     private String apelido;
 
-    private String nomeDaEquipe;
     //Variaveis do banco de dados
     private int id;
 
-    public Atleta(int id, String nome, String nomeDaEquipe, String dataNascimento, String apelido, String cpf, String tamCamisa, String sexo, String telefoneFixo, String telefoneCel, String rua, String bairro, String cidade, String estado, String pais, String login, String senha, String email) {
+    public Atleta(int id, String nome, String dataNascimento, String apelido, String cpf, String tamCamisa, String sexo, String telefoneFixo, String telefoneCel, String rua, String bairro, String cidade, String estado, String pais, String login, String senha, String email) {
         //To change body of generated methods, choose Tools | Templates.
         super(nome, senha, login, email);
         this.dataNascimento = dataNascimento;
@@ -49,7 +48,6 @@ public class Atleta extends Usuario {
         this.telefoneFixo = telefoneFixo;
         this.cpf = cpf;
         this.apelido = apelido;
-        this.nomeDaEquipe = nomeDaEquipe;
         this.id = id;
         this.nome = nome;
 
@@ -157,14 +155,6 @@ public class Atleta extends Usuario {
 
     public void setApelido(String apelido) {
         this.apelido = apelido;
-    }
-
-    public String getNomeDaEquipe() {
-        return nomeDaEquipe;
-    }
-
-    public void setNomeDaEquipe(String nomeDaEquipe) {
-        this.nomeDaEquipe = nomeDaEquipe;
     }
 
     public String getNome() {

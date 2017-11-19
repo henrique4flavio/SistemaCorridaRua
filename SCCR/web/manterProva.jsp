@@ -10,7 +10,7 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h1>Manter provas - ${operacao}</h1>
+        <h3>${operacao}</h3>
 
         <form action="ManterProvaController?acao=confirmar${operacao}" method="post" name="frmManterProva">
             <table>

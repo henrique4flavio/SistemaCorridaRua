@@ -10,7 +10,7 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h1>Manter Kit - ${operacao}</h1>
+        <h3>${operacao}</h3>
 
         <form action="ManterKitController?acao=confirmar${operacao}" method="post" name="frmManterKit">
             <table>

@@ -6,11 +6,11 @@
 <html>
     <head>
         <jsp:include page="bootstrap.jspf"/>
-        <title>Kits</title>
+        <title>Manter kits</title>
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h3>Kits</h3>
+
         <table class="table table-bordered">    
             <tr>
 
