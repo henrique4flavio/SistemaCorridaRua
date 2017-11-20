@@ -9,6 +9,16 @@
     <head>
       <jsp:include page="bootstrap.jspf"/>
       <title>Manter Atleta</title>
+      
+      <script> function validaSenha(input) {
+                if (input.value != document.getElementById('senha').value) {
+                    input.setCustomValidity('Repita a senha corretamente');
+                } else {
+                    input.setCustomValidity('');
+                }
+            }
+        </script>
+      
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
@@ -101,7 +111,11 @@
                     </tr>
                     <tr>
                         <td>Senha:</td> 
-                        <td><input type="password" name="txtSenhaAtleta" value="${atleta.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="password" id="senha" name="txtSenhaAtleta" value="${atleta.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                </tr>
+                 <tr>
+                        <td>Confirmar Senha:</td> 
+                        <td><input type="password" name="txtValidadaSenha" oninput="validaSenha(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                 </tr>
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>

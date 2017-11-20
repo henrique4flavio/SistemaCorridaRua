@@ -50,7 +50,7 @@
                     </tr>
                     <tr>
                         <td>Confirmar Senha:</td> 
-                        <td><input type="password" name="txtValidadaSenha" value="${administrador.senha}" oninput="validaSenha(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="password" name="txtValidadaSenha" oninput="validaSenha(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                 </tr>
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
