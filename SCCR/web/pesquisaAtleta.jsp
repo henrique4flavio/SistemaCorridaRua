@@ -30,7 +30,6 @@
                 <th> Pais </th>
                 <th> Cidade </th>       
                 <th> Login</th>
-                <th> Senha</th>
                 <th> Email </th>       
             </tr>
             <c:forEach items="${atletas}" var="atleta">
@@ -51,7 +50,6 @@
                     <td> <c:out value="${atleta.pais}"/> </td>
                     <td> <c:out value="${atleta.cidade}"/> </td>
                     <td> <c:out value="${atleta.login}"/> </td>
-                    <td> <c:out value="${atleta.senha}"/> </td>
                     <td> <c:out value="${atleta.email}"/> </td>
                     <td> <a href="ManterAtletaController?acao=prepararEditar&Editar&id=<c:out value="${atleta.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                     <td> <a href="ManterAtletaController?acao=prepararExcluir&id=<c:out value="${atleta.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>

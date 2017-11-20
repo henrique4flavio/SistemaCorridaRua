@@ -18,7 +18,6 @@
                 <th> Código do Organizador  </th>
                 <th> Nome</th>
                 <th> Login </th>
-                <th> Senha</th>
                 <th> email</th>
                 <th> Código do administrador</th>
                 
@@ -28,7 +27,6 @@
                     <td> <c:out value="${organizador.id}"/> </td>
                     <td> <c:out value= "${organizador.nome}"/></td>
                     <td> <c:out value= "${organizador.login}"/></td>
-                    <td> <c:out value="${organizador.senha}"/> </td>
                     <td> <c:out value="${organizador.email}"/> </td>
                     <td> <c:out value="${organizador.administrador_id}"/> </td>
                 

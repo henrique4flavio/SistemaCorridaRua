@@ -16,7 +16,6 @@
 
                 <th>Código do administrador</th>
                 <th>Nome do administrador</th>
-                <th>Senha</th>
                 <th>Login</th>
                 <th>Email</th>
             </tr>  
@@ -27,7 +26,6 @@
 
                     <td><c:out value = "${administrador.id}" /></td>
                     <td><c:out value = "${administrador.nome}" /></td>
-                    <td><c:out value = "${administrador.senha}" /></td>
                     <td><c:out value = "${administrador.login}" /></td>
                     <td><c:out value = "${administrador.email}" /></td>
                     <td><a href ="ManterAdministradorController?acao=prepararEditar&id=<c:out value="${administrador.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
