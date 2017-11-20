@@ -11,7 +11,7 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h3>Manter Controle de chip retornavel - ${operacao}</h3>
+        <h3>${operacao}</h3>
 
         <form action="ManterControleChipRetornavelController?acao=confirmar${operacao}" method="post" name="frmManterControleChipRetornavel">
             <table>

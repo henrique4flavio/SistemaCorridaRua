@@ -7,11 +7,11 @@
 <html>
     <head>
         <jsp:include page="bootstrap.jspf"/>
-        <title>Provas</title>
+        <title>Manter provas</title>
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h3>Provas</h3>
+
         <table class="table table-bordered">    
             <tr>
 

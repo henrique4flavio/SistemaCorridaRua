@@ -6,10 +6,11 @@
 <html>
     <head>
        <jsp:include page="bootstrap.jspf"/>
+       <title>Manter administrador</title>
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h3>Administradores</h3>
+
         <table class="table table-bordered">
             <thead>
             <tr>

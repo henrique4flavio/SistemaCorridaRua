@@ -66,11 +66,10 @@ public class ManterAtletaController extends HttpServlet {
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdAtleta"));
         String nome = request.getParameter("txtNomeAtleta");
-        String nomeEquipe = request.getParameter("txtNomeEquipe");
         String dataNascimento = request.getParameter("txtDataNascimento");
         String apelido = request.getParameter("txtApelido");
         String cpf = request.getParameter("txtCpf");
-        String tamCamisa = request.getParameter("txtTamanhoCamisa");
+        String tamCamisa = request.getParameter("optTamanhoCamisa");
         String sexo = request.getParameter("optSexo");
         String email = request.getParameter("txtEmail");
         String telFixo = request.getParameter("txtTelefoneFixo");
@@ -84,7 +83,7 @@ public class ManterAtletaController extends HttpServlet {
         String login = request.getParameter("txtLoginAtleta");
         String senha = request.getParameter("txtSenhaAtleta");
 
-        Atleta atleta = new Atleta(id, nome, nomeEquipe, dataNascimento, apelido,
+        Atleta atleta = new Atleta(id, nome, dataNascimento, apelido,
                 cpf, tamCamisa, sexo, telFixo, telCel, rua, bairro, cidade, estado, pais, login, senha, email);
 
         try {
@@ -121,7 +120,7 @@ public class ManterAtletaController extends HttpServlet {
         String cidade = request.getParameter("txtCidadeAtleta");
         String estado = request.getParameter("txtEstadoAtleta");
         String pais = request.getParameter("txtPais");
-        String tamCamisa = request.getParameter("txtTamanhoCamisa");
+        String tamCamisa = request.getParameter("optTamanhoCamisa");
         String telefoneFixo = request.getParameter("txtTelefoneFixo");
         String telefoneCelular = request.getParameter("txtTelefoneCelular");
         String cpf = request.getParameter("txtCpf");
@@ -134,7 +133,7 @@ public class ManterAtletaController extends HttpServlet {
         String senha = request.getParameter("txtSenhaAtleta");
 
         try {
-            Atleta atleta = new Atleta(id, nome, nomeDaEquipe, dataNascimento, apelido, cpf, tamCamisa, sexo, telefoneFixo, telefoneCelular, rua, bairro, cidade, estado, pais, login, senha, email);
+            Atleta atleta = new Atleta(id, nome, dataNascimento, apelido, cpf, tamCamisa, sexo, telefoneFixo, telefoneCelular, rua, bairro, cidade, estado, pais, login, senha, email);
             atleta.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaAtletaController");
             view.forward(request, response);
@@ -179,7 +178,7 @@ public class ManterAtletaController extends HttpServlet {
         String cidade = request.getParameter("txtCidadeAtleta");
         String estado = request.getParameter("txtEstadoAtleta");
         String pais = request.getParameter("txtPais");
-        String tamCamisa = request.getParameter("txtTamanhoCamisa");
+        String tamCamisa = request.getParameter("optTamanhoCamisa");
         String telefoneFixo = request.getParameter("txtTelefoneFixo");
         String telefoneCelular = request.getParameter("txtTelefoneCelular");
         String cpf = request.getParameter("txtCpf");
@@ -192,7 +191,7 @@ public class ManterAtletaController extends HttpServlet {
         String senha = request.getParameter("txtSenhaAtleta");
 
         try {
-            Atleta atleta = new Atleta(id, nome, nomeDaEquipe, dataNascimento, apelido, cpf, tamCamisa, sexo, telefoneFixo, telefoneCelular, rua, bairro, cidade, estado, pais, login, senha, email);
+            Atleta atleta = new Atleta(id, nome, dataNascimento, apelido, cpf, tamCamisa, sexo, telefoneFixo, telefoneCelular, rua, bairro, cidade, estado, pais, login, senha, email);
             atleta.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaAtletaController");
             view.forward(request, response);

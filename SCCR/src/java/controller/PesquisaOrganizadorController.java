@@ -1,3 +1,4 @@
+
 package controller;
 
 import java.io.IOException;
@@ -23,14 +24,12 @@ public class PesquisaOrganizadorController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         try {
-            request.setAttribute("organizadores",Organizador.obterOrganizadores());
-            RequestDispatcher view = request.getRequestDispatcher("/pesquisaOrganizador.jsp");
-            view.forward(request,response);
-           
-        }catch(ClassNotFoundException ex){
-            
+            request.setAttribute("organizadores", Organizador.obterOrganizadores());
+            RequestDispatcher view
+                    = request.getRequestDispatcher("/pesquisaOrganizador.jsp");
+            view.forward(request, response);
+        } catch (ClassNotFoundException ex) {
         }
     }
 
@@ -71,7 +70,6 @@ public class PesquisaOrganizadorController extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }
-
