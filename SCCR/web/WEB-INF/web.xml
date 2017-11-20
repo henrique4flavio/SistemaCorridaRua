@@ -17,10 +17,6 @@
         <servlet-class>controller.PesquisaInscricaoController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>PesquisaResultadoProvaController</servlet-name>
-        <servlet-class>controller.PesquisaResultadoProvaController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>PesquisaRankingController</servlet-name>
         <servlet-class>controller.PesquisaRankingController</servlet-class>
     </servlet>
@@ -53,10 +49,6 @@
         <servlet-class>controller.ManterItemController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ManterResultadoProvaController</servlet-name>
-        <servlet-class>controller.ManterResultadoProvaController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ManterRankingController</servlet-name>
         <servlet-class>controller.ManterRankingController</servlet-class>
     </servlet>
@@ -67,10 +59,6 @@
     <servlet>
         <servlet-name>ManterPercursoController</servlet-name>
         <servlet-class>controller.ManterPercursoController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ManterControleChipRetornavelController</servlet-name>
-        <servlet-class>controller.ManterControleChipRetornavelController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>PesquisaControleChipRetornavelController</servlet-name>
@@ -113,10 +101,6 @@
         <url-pattern>/PesquisaInscricaoController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>PesquisaResultadoProvaController</servlet-name>
-        <url-pattern>/PesquisaResultadoProvaController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>PesquisaRankingController</servlet-name>
         <url-pattern>/PesquisaRankingController</url-pattern>
     </servlet-mapping>
@@ -149,10 +133,6 @@
         <url-pattern>/ManterItemController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ManterResultadoProvaController</servlet-name>
-        <url-pattern>/ManterResultadoProvaController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ManterRankingController</servlet-name>
         <url-pattern>/ManterRankingController</url-pattern>
     </servlet-mapping>
@@ -163,10 +143,6 @@
     <servlet-mapping>
         <servlet-name>ManterPercursoController</servlet-name>
         <url-pattern>/ManterPercursoController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ManterControleChipRetornavelController</servlet-name>
-        <url-pattern>/ManterControleChipRetornavelController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PesquisaControleChipRetornavelController</servlet-name>

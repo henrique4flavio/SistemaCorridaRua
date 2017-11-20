@@ -1,89 +1,54 @@
 package modelo;
 
-import dao.ResultadoProvaDAO;
 import java.sql.SQLException;
 import java.util.*;
 
 public class ResultadoProva {
 
-    private String resultadoClassificacao;
-    
-    private String nomeProva;
-    //Variaveis do banco de dados
-    private int id;
-
-    public ResultadoProva(int id, String resultadoClassificacao, String nomeProva) {
-        this.resultadoClassificacao = resultadoClassificacao;
-        this.id = id;
-        this.nomeProva = nomeProva;
-        
-    }
-
-    public String getNomeProva() {
-        return nomeProva;
-    }
-
-    public void setNomeProva(String nomeProva) {
-        this.nomeProva = nomeProva;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getResultadoClassificacao() {
-        return resultadoClassificacao;
-    }
-
-    public void setResultadoClassificacao(String ResultadoClassificacao) {
-        this.resultadoClassificacao = ResultadoClassificacao;
-    }
-
     public void consultarResultadoIndividual() {
 
     }
 
-    public void importarInformacaoChip() {
+    public void importarEquipeMasculino() {
 
     }
 
-    public void divulgarResultado() {
+    public void importarEquipeFeminino() {
 
     }
 
-    public void AlterarResultado() {
+    public void importarFaixaEtariaMasculino() {
 
     }
 
-    public void consultarResultado() {
+    public void importarFaixaEtariaFeminino() {
 
     }
-
-    public static List<ResultadoProva> obterResultadoProvas()
-            throws ClassNotFoundException {
-        return ResultadoProvaDAO.obterResultadoProvas();
+    public void importarGeralMasculino(){
 
     }
-    public void gravar() throws SQLException, ClassNotFoundException {
-
-        ResultadoProvaDAO.gravar(this);
-    }
-
-    public void alterar() throws SQLException, ClassNotFoundException {
-        ResultadoProvaDAO.alterar(this);
+    public void importarGeralFeminino(){
 
     }
+    public void exportarEquipeMasculino(){
 
-    public void excluir() throws SQLException, ClassNotFoundException {
-        ResultadoProvaDAO.excluir(this);
     }
+    public void exportarEquipeFeminino(){
 
-    public static ResultadoProva obterResultadoProva(int id) throws ClassNotFoundException, SQLException {
-        return ResultadoProvaDAO.obterResultadoProva(id);
     }
+    public void exportarFaixaEtariaMasculino(){
+
+    }
+    public void exportarFaixaEtariaFeminino(){
+
+    }
+    public void exportarGeralMasculino(){
+
+    }
+    public void exportarGeralFeminino(){
+
+    }
+    
+   
 }
 

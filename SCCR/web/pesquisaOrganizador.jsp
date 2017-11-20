@@ -39,7 +39,7 @@
                 </tr>
             </c:forEach>
         </table>
-        <form action ="ManterAdministradorController?acao=prepararIncluir" method="post">
+        <form action ="ManterOrganizadorController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
 

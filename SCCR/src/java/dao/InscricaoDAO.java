@@ -27,10 +27,9 @@ public class InscricaoDAO {
                 rs.getString("dataInscricao"),
                 rs.getInt("numeroInscricao"),
                 rs.getString("formaPagamento"), 
-                null, null, null, null, null);
+                null, null, null,null);
                 
                 inscricao.setKit_id(rs.getString("kit_id"));
-                inscricao.setControleChipRetornavel_id(rs.getString("controleChipRetornavel_id"));
                 inscricao.setProva_id(rs.getString("prova_id"));
                 inscricao.setPercurso_id(rs.getString("percurso_id"));
                 inscricao.setAtleta_id(rs.getString("atleta_id"));
@@ -65,7 +64,7 @@ public class InscricaoDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into inscricao (id,dataInscricao,numeroInscricao,formaPagamento,kit_id,controlechipretornavel_id,prova_id,percurso_id,atleta_id) values(?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into inscricao (id,dataInscricao,numeroInscricao,formaPagamento,kit_id,prova_id,percurso_id,atleta_id) values(?,?,?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, inscricao.getId());
@@ -73,7 +72,6 @@ public class InscricaoDAO {
             comando.setInt(3, inscricao.getNumeroInscricao());
             comando.setString(4, inscricao.getFormaPagamento());
             comando.setString(5, inscricao.getKit_id());
-            comando.setString(6, inscricao.getControleChipRetornavel_id());
             comando.setString(7, inscricao.getProva_id());
             comando.setString(8, inscricao.getPercurso_id());
             comando.setString(9, inscricao.getAtleta_id());
@@ -93,13 +91,12 @@ public class InscricaoDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update inscricao set dataInscricao=?,numeroInscricao=?,formaPagamento=?,kit_id=?,controlechipretornavel_id=?,prova_id=?,percurso_id=?,atleta_id=? where id = ?";
+            String sql = "update inscricao set dataInscricao=?,numeroInscricao=?,formaPagamento=?,kit_id=?,prova_id=?,percurso_id=?,atleta_id=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, inscricao.getDataInscricao());
             comando.setInt(2, inscricao.getNumeroInscricao());
             comando.setString(3, inscricao.getFormaPagamento());
             comando.setString(4, inscricao.getKit_id());
-            comando.setString(5, inscricao.getControleChipRetornavel_id());
             comando.setString(6, inscricao.getProva_id());
             comando.setString(7, inscricao.getPercurso_id());
             comando.setString(8, inscricao.getAtleta_id());
@@ -144,9 +141,8 @@ public class InscricaoDAO {
 
             inscricao = new Inscricao(rs.getInt("id"), rs.getString("dataInscricao"),
                     rs.getInt("numeroInscricao"),
-                    rs.getString("formaPagamento"), null, null, null, null, null);
+                    rs.getString("formaPagamento"), null, null, null, null);
             inscricao.setKit_id(rs.getString("kit_id"));
-            inscricao.setControleChipRetornavel_id(rs.getString("controleChipRetornavel_id"));
             inscricao.setProva_id(rs.getString("prova_id"));
             inscricao.setPercurso_id(rs.getString("percurso_id"));
             inscricao.setAtleta_id(rs.getString("atleta_id"));
