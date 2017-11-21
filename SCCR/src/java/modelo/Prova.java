@@ -29,7 +29,7 @@ public class Prova {
     
     private String  ranking_id;
     
-
+   
     
 
     public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria, String organizador_id, String ranking_id) {
@@ -44,6 +44,7 @@ public class Prova {
         this.organizador_id = organizador_id;
         this.ranking_id = ranking_id;
         this.id = id;
+       
     }
 
     public int getId() {
@@ -207,6 +208,6 @@ public class Prova {
 
     public static Prova obterProva(int id) throws ClassNotFoundException, SQLException {
         return ProvaDAO.obterProva(id);
-    }
-
+    
+}
 }

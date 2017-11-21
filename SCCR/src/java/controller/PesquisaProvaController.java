@@ -13,7 +13,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Organizador;
 import modelo.Prova;
+import modelo.Ranking;
 
 /**
  *
@@ -36,6 +38,8 @@ public class PesquisaProvaController extends HttpServlet {
         try  {
           
             request.setAttribute("provas",Prova.obterProvas());
+            request.setAttribute("organizadores",Organizador.obterOrganizadores());
+            request.setAttribute("ranking",Ranking.obterRankings());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaProva.jsp");
             view.forward(request,response);
 

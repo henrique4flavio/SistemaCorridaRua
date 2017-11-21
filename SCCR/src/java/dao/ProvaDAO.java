@@ -11,7 +11,7 @@ import static javax.swing.UIManager.getString;
 import modelo.Prova;
 
 public class ProvaDAO {
-
+    
     public static List<Prova> obterProvas() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
