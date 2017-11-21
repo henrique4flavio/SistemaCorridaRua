@@ -20,7 +20,6 @@
                 <th>Numero de inscricao</th>
                 <th>Forma de pagamento</th>
                 <th>Código do kit</th>
-                <th>Código do chip retornavel</th>
                 <th>Código da prova</th>
                 <th>Código do percurso</th>
                 <th>Código do atleta</th>
@@ -35,7 +34,6 @@
                     <td> <c:out value= "${inscricao.numeroInscricao}"/></td>
                     <td> <c:out value="${inscricao.formaPagamento}"/> </td>
                     <td> <c:out value="${inscricao.kit_id}"/> </td>
-                    <td> <c:out value="${inscricao.controleChipRetornavel_id}"/> </td>
                     <td> <c:out value= "${inscricao.prova_id}"/></td>
                     <td> <c:out value= "${inscricao.percurso_id}"/></td>
                     <td> <c:out value="${inscricao.atleta_id}"/> </td>

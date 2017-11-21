@@ -43,12 +43,7 @@
                         <td><input type="text" name="txtKit_id" value="${inscricao.kit_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
 
-                    <tr>
-                        <td>Codigo do controle de chip retornavel:</td> 
-                        <td><input type="text" name="txtControleChipRetornavel_id" value="${inscricao.controleChipRetornavel_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-
-
+           
                     <tr>
                         <td>Codigo da prova:</td> 
                         <td><input type="text" name="txtProva_id" value="${inscricao.prova_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
