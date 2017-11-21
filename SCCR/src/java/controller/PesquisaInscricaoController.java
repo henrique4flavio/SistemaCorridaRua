@@ -8,7 +8,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Atleta;
 import modelo.Inscricao;
+import modelo.Kit;
+import modelo.Percurso;
+import modelo.Prova;
 
 
 public class PesquisaInscricaoController extends HttpServlet {
@@ -27,6 +31,10 @@ public class PesquisaInscricaoController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try  {
             request.setAttribute("inscricoes",Inscricao.obterInscricoes());
+            request.setAttribute("kits",Kit.obterKits());
+            request.setAttribute("provas",Prova.obterProvas());
+            request.setAttribute("percursos",Percurso.obterPercursos());
+            request.setAttribute("atletas",Atleta.obterAtletas());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaInscricao.jsp");
             view.forward(request,response);
 

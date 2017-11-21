@@ -5,6 +5,7 @@
  */
 package controller;
 
+import dao.ProvaDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Percurso;
+import modelo.Prova;
 
 /**
  *
@@ -34,6 +36,7 @@ public class PesquisaPercursoController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try  {
             request.setAttribute("percursos",Percurso.obterPercursos());
+            request.setAttribute("provas" , Prova.obterProvas());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaPercurso.jsp");
             view.forward(request,response);
 

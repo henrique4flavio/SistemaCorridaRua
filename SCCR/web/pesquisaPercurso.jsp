@@ -19,7 +19,7 @@
                 <th>Nome do percurso</th>
                 <th>Distancia</th>
                 <th>Faixa Etaria</th>
-                <th>Código da prova</th>
+                <th>Nome da Prova</th>
                             
             </tr>    
 
@@ -30,7 +30,13 @@
                     <td><c:out value = "${percurso.nome}" /></td>
                     <td><c:out value = "${percurso.distancia}" /></td>
                     <td><c:out value = "${percurso.faixaEtaria}" /></td>
-                    <td><c:out value = "${percurso.prova_id}" /></td>
+                    <td> 
+                    <c:forEach items="${provas}" var="prova">
+                               ${prova.nomeProva} <c:if test="${prova.id == percurso.prova_id}"> </c:if>
+                                 
+ 
+                            </c:forEach> 
+                    </td>
 
 
                     <td> <a href="ManterPercursoController?acao=prepararEditar&id=<c:out value="${percurso.id}"/>"> <button><span class="glyphicon glyphicon-pencil"></span></button></a></td>

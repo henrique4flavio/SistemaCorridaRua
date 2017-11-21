@@ -19,10 +19,10 @@
                 <th>Data da inscricao</th>
                 <th>Numero de inscricao</th>
                 <th>Forma de pagamento</th>
-                <th>Código do kit</th>
-                <th>Código da prova</th>
-                <th>Código do percurso</th>
-                <th>Código do atleta</th>
+                <th>Kit</th>
+                <th>Nome da prova</th>
+                <th>Percurso</th>
+                <th>Nome do atleta</th>
 
 
 
@@ -33,17 +33,42 @@
                     <td> <c:out value= "${inscricao.dataInscricao}"/></td>
                     <td> <c:out value= "${inscricao.numeroInscricao}"/></td>
                     <td> <c:out value="${inscricao.formaPagamento}"/> </td>
-                    <td> <c:out value="${inscricao.kit_id}"/> </td>
-                    <td> <c:out value= "${inscricao.prova_id}"/></td>
-                    <td> <c:out value= "${inscricao.percurso_id}"/></td>
-                    <td> <c:out value="${inscricao.atleta_id}"/> </td>
-                    
+                    <td> 
+                        <c:forEach items="${kits}" var="kit">
+                            ${kit.nomeKit} <c:if test="${kit.id == inscricao.kit_id}"> </c:if>
+                        </c:forEach> 
+                    </td>
+
+                    <td> 
+                        <c:forEach items="${provas}" var="prova">
+                            ${prova.nomeProva} <c:if test="${prova.id == inscricao.prova_id}"> </c:if>
+
+
+                        </c:forEach> 
+                    </td>
+                    <td> 
+                        <c:forEach items="${percursos}" var="percurso">
+                            ${percurso.nome} <c:if test="${percurso.id == inscricao.percurso_id}"> </c:if>
+
+
+                        </c:forEach> 
+                    </td>
+                    <td> 
+                        <c:forEach items="${atletas}" var="atleta">
+                            ${atleta.nome} <c:if test="${atleta.id == inscricao.atleta_id}"> </c:if>
+
+
+                        </c:forEach> 
+                    </td>
+                
+
+
                     <td><a href ="ManterInscricaoController?acao=prepararEditar&id=<c:out value="${inscricao.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                     <td><a href ="ManterInscricaoController?acao=prepararExcluir&id=<c:out value="${inscricao.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
-                </tr>
+              
             </c:forEach>
-        </table>
+        </tr>
         <form action ="ManterInscricaoController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    

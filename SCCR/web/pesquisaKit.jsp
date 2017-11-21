@@ -16,7 +16,7 @@
 
                 <th>Código do Kit</th>
                 <th>Nome do Kit</th>
-                <th>Itens</th>
+                
                 
             </tr>    
 
