@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Administrador;
 import modelo.Organizador;
 
 
@@ -26,8 +27,11 @@ public class PesquisaOrganizadorController extends HttpServlet {
             throws ServletException, IOException {
         try {
             request.setAttribute("organizadores", Organizador.obterOrganizadores());
+            // pegar o nome do administardor.
+            request.setAttribute("administradores", Administrador.obterAdministradores());
             RequestDispatcher view
                     = request.getRequestDispatcher("/pesquisaOrganizador.jsp");
+            
             view.forward(request, response);
         } catch (ClassNotFoundException ex) {
         }

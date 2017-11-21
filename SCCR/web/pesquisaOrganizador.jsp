@@ -16,11 +16,11 @@
             <tr>
 
                 <th>Código do organizador</th>
-                <th>Nome do organizadorr</th>
+                <th>Nome do organizador</th>
                 <th>Senha</th>
                 <th>Login</th>
                 <th>Email</th>
-                <th>Codigo do administrador</th>
+                <th>Nome do administrador</th>
             </tr>  
          </thead>
                 
@@ -32,12 +32,18 @@
                     <td><c:out value = "${organizador.senha}" /></td>
                     <td><c:out value = "${organizador.login}" /></td>
                     <td><c:out value = "${organizador.email}" /></td>
-                    <td><c:out value = "${organizador.administrador_id}" /></td>
+                    
+                    <td><c:forEach items="${administradores}" var ="administrador">
+                            ${administrador.nome} <c:if test="${administrador.id ==organizador.administrador_id}"></c:if>
+                               
+                       </td>
+                        </c:forEach>
                     <td><a href ="ManterOrganizadorController?acao=prepararEditar&id=<c:out value="${organizador.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                     <td><a href ="ManterOrganizadorController?acao=prepararExcluir&id=<c:out value="${organizador.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
-                </tr>
-            </c:forEach>
+                        </tr>
+          
+              </c:forEach>
         </table>
         <form action ="ManterOrganizadorController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>

@@ -24,8 +24,8 @@
                 <th>Inicio das inscrições</th>
                 <th>Fim das inscrições</th>
                 <th>Faixa etaria</th>
-                <th>Código do organizador</th>
-                <th>Código do ranking</th>
+                <th>Nome do organizador</th>
+                <th>Nome do ranking</th>
 
             </tr>    
 
@@ -41,8 +41,16 @@
                     <td><c:out value = "${prova.inicioInscricao}" /></td>
                     <td><c:out value = "${prova.fimInscricao}" /></td>
                     <td><c:out value = "${prova.faixaEtaria}" /></td>
-                    <td><c:out value = "${prova.organizador_id}" /></td>
-                    <td><c:out value = "${prova.ranking_id}" /></td>
+                    <td><c:forEach items="${organizadores}" var ="organizador">
+                            ${organizador.nome} <c:if test="${organizadar.id ==prova.organizador_id}"></c:if>
+                               
+                       </td>
+                        </c:forEach>
+                    <td><c:forEach items="${ranking}" var ="ranking">
+                            ${ranking.nome} <c:if test="${ranking.id ==prova.ranking_id}"></c:if>
+                               
+                       </td>
+                        </c:forEach>
 
                     <td> <a href="ManterProvaController?acao=prepararEditar&id=<c:out value="${prova.id}"/>"> <button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                     <td> <a href="ManterProvaController?acao=prepararExcluir&id=<c:out value="${prova.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
