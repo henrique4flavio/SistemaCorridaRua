@@ -89,7 +89,7 @@ public class ManterOrganizadorController extends HttpServlet {
             int codOrganizador = Integer.parseInt(request.getParameter("id"));
 
             Organizador organizador = Organizador.obterOrganizador(codOrganizador);
-            request.setAttribute("administrador", organizador);
+            request.setAttribute("organizador", organizador);
             RequestDispatcher view = request.getRequestDispatcher("/manterOrganizador.jsp");
             view.forward(request, response);
 
