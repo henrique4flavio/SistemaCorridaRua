@@ -103,10 +103,10 @@ public class ManterProvaController extends HttpServlet {
         String dataInicioInscricao = request.getParameter("txtInicioInscricao");
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
+        String localRetiradaKit= request.getParameter("txtLocalRetiradaKit");
         
-
-        String organizador_id = request.getParameter("txtOrganizador_id");
-        String ranking_id = request.getParameter("txtRanking_id");
+        String organizador_id = request.getParameter("optOrganizador");
+        String ranking_id = request.getParameter("optRanking");
        
     
    
@@ -114,7 +114,7 @@ public class ManterProvaController extends HttpServlet {
             Organizador organizador = Organizador.obterOrganizador(id);
             Ranking ranking = Ranking.obterRanking(id);
             
-            Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, organizador_id, ranking_id);
+            Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit,organizador_id, ranking_id);
             prova.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController");
             view.forward(request, response);
@@ -139,12 +139,12 @@ public class ManterProvaController extends HttpServlet {
         String dataInicioInscricao = request.getParameter("txtInicioInscricao");
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
-        
+        String localRetiradaKit= request.getParameter("txtLocalRetiradaKit");
 
-        String organizador_id = request.getParameter("txtOrganizador_id");
-        String ranking_id = request.getParameter("txtRanking_id");
+        String organizador_id = request.getParameter("optOrganizador");
+        String ranking_id = request.getParameter("optRanking");
         
-        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, organizador_id, ranking_id);
+        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria,localRetiradaKit, organizador_id, ranking_id);
 
     
    
@@ -197,12 +197,12 @@ public class ManterProvaController extends HttpServlet {
         String inicioInscricao = request.getParameter("txtInicioInscricao");
         String fimInscricao = request.getParameter("txtFimInscricao");      
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
-        String organizador_id = request.getParameter("txtOrganizador_id");
-        String ranking_id = request.getParameter("txtRanking_id");
+        String organizador_id = request.getParameter("optOrganizador");
+        String ranking_id = request.getParameter("optRanking");
+        String localRetiradaKit= request.getParameter("txtLocalRetiradaKit");
         
         
-        
-        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, inicioInscricao, fimInscricao, faixaEtaria, organizador_id, ranking_id);
+        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, inicioInscricao, fimInscricao, faixaEtaria,localRetiradaKit, organizador_id, ranking_id);
 
         try {
             prova.excluir();

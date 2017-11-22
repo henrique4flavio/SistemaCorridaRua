@@ -58,16 +58,16 @@ public class ManterOrganizadorController extends HttpServlet {
 
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));
-        String nomeAdministrador = request.getParameter("txtNomeOrganizador");
+        String nomeOrganizador = request.getParameter("txtNomeOrganizador");
         String email = request.getParameter("txtEmail");
         String senha = request.getParameter("txtSenha");
         String login = request.getParameter("txtLogin");
         
-        String administrador_id = request.getParameter("txtAdministrador_id");
+        String administrador_id = request.getParameter("optAdministrador");
 
         try {
             Administrador administrador = Administrador.obterAdministrador(id);
-            Organizador organizador = new Organizador(id, nomeAdministrador, senha, login, email, administrador_id);
+            Organizador organizador = new Organizador(id, nomeOrganizador, senha, login, email, administrador_id);
             organizador.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaOrganizadorController");
             view.forward(request, response);
@@ -156,7 +156,7 @@ public class ManterOrganizadorController extends HttpServlet {
         String email = request.getParameter("txtEmail");
         String login = request.getParameter("txtLogin");
         String senha = request.getParameter("txtSenha");
-        String administrador_id = request.getParameter("txtAdministrador_id");
+        String administrador_id = request.getParameter("optAdministrador");
         Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);
 
         try {
@@ -201,7 +201,7 @@ public class ManterOrganizadorController extends HttpServlet {
         String email = request.getParameter("txtEmail");
         String senha = request.getParameter("txtSenha");
         String login = request.getParameter("txtLogin");
-        String administrador_id = request.getParameter("txtAdministrador_id");
+        String administrador_id = request.getParameter("optAdministrador");
 
         try {
             Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);

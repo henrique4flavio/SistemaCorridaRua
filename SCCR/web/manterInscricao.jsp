@@ -41,7 +41,7 @@
                     <tr>
                         <td>Kit:</td> 
                         <td>
-                         <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                         <select name="optKit" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${inscricao.kit_id == null}"> selected</c:if>></option>  
                             <c:forEach items="${kit}" var="kit">
                                 <option value="${kit.id}" <c:if test="${kit.id == inscricao.kit_id}"> selected</c:if>>${kit.nomeKit}</option>  
@@ -67,7 +67,7 @@
                     <tr>
                         <td>Percurso:</td> 
                         <td>
-                         <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                         <select name="optPercurso" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${inscricao.percurso_id == null}"> selected</c:if>> </option>  
                             <c:forEach items="${percurso}" var="percurso">
                                 <option value="${percurso.id}" <c:if test="${percurso.id == inscricao.percurso_id}"> selected</c:if>>${percurso.nome}</option>  
@@ -76,16 +76,15 @@
                     </td>
                     </tr>
                     <tr>
-                        <td>Kit:</td> 
-                       
-                    <td>
-                        <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <option value="0" <c:if test="${inscricao.prova_id == null}"> selected</c:if>> </option>  
-                            <c:forEach items="${kit}" var="kit">
-                                <option value="${kit.id}" <c:if test="${kit.id == inscricao.prova_id}"> selected</c:if>>${kit.nomeKit}</option>  
+                    <td>Atleta</td> 
+                        <td>
+                         <select name="optAtleta" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <option value="0" <c:if test="${inscricao.atleta_id == null}"> selected</c:if>> </option>  
+                            <c:forEach items="${atleta}" var="atleta">
+                                <option value="${atleta.id}" <c:if test="${atleta.id == inscricao.atleta_id}"> selected</c:if>>${atleta.nome}</option>  
                             </c:forEach>
                         </select>
-                    </td>
+                    </td>    
                     
                 </tr>
              <tr>

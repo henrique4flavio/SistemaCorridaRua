@@ -18,6 +18,7 @@
                 <th>Código da prova</th>
                 <th>Nome da prova</th>
                 <th>Local de largada</th>
+                <th>Local de Retirada do Kit</th>
                 <th>Horario da largada</th>
                 <th>Data da prova</th>
                 <th>Maximo de participantes</th>
@@ -35,6 +36,7 @@
                     <td><c:out value = "${prova.id}" /></td>
                     <td><c:out value = "${prova.nomeProva}" /></td>
                     <td><c:out value = "${prova.localLargada}" /></td>
+                    <td><c:out value = "${prova.localRetiradaKit}" /></td>
                     <td><c:out value = "${prova.horarioLargada}" /></td>
                     <td><c:out value = "${prova.dataProva}" /></td>
                     <td><c:out value = "${prova.maxParticipantes}" /></td>

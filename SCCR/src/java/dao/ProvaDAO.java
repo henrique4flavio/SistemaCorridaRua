@@ -11,7 +11,7 @@ import static javax.swing.UIManager.getString;
 import modelo.Prova;
 
 public class ProvaDAO {
-    
+
     public static List<Prova> obterProvas() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
@@ -22,21 +22,21 @@ public class ProvaDAO {
             ResultSet rs = comando.executeQuery("select * from prova");
             while (rs.next()) {
 
-                    Prova prova = new Prova(
-                    rs.getInt("id"), 
-                    rs.getString("nomeProva"), 
-                    rs.getString("localLargada"),
-                    rs.getString("horarioLargada"), 
-                    rs.getString("dataProva"),
-                    rs.getString("maxParticipantes"),
-                    rs.getString("inicioInscricao"),
-                    rs.getString("fimInscricao"),
-                    rs.getString("faixaEtaria"), 
-                    null, null);
-            
+                Prova prova = new Prova(
+                        rs.getInt("id"),
+                        rs.getString("nomeProva"),
+                        rs.getString("localLargada"),
+                        rs.getString("horarioLargada"),
+                        rs.getString("dataProva"),
+                        rs.getString("maxParticipantes"),
+                        rs.getString("inicioInscricao"),
+                        rs.getString("fimInscricao"),
+                        rs.getString("faixaEtaria"),
+                        rs.getString("localRetiradaKit"),
+                        null, null);
+
                 prova.setOrganizador_id(rs.getString("organizador_id"));
                 prova.setRanking_id(rs.getString("ranking_id"));
-                
 
                 provas.add(prova);
 
@@ -69,7 +69,7 @@ public class ProvaDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into prova (id,nomeProva,localLargada,horarioLargada,dataProva,maxParticipantes,inicioInscricao,fimInscricao,faixaEtaria,organizador_id,ranking_id) values(?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into prova (id,nomeProva,localLargada,horarioLargada,dataProva,maxParticipantes,inicioInscricao,fimInscricao,faixaEtaria,localRetiradaKit,organizador_id,ranking_id,) values(?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, prova.getId());
@@ -81,9 +81,11 @@ public class ProvaDAO {
             comando.setString(7, prova.getInicioInscricao());
             comando.setString(8, prova.getFimInscricao());
             comando.setString(9, prova.getFaixaEtaria());
-            comando.setString(10, prova.getOrganizador_id());
-            comando.setString(11, prova.getRanking_id());
-            
+
+            comando.setString(10, prova.getLocalRetiradaKit());
+            comando.setString(11, prova.getOrganizador_id());
+            comando.setString(12, prova.getRanking_id());
+
             comando.execute();
             comando.close();
             conexao.close();
@@ -99,7 +101,7 @@ public class ProvaDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update prova set nomeProva=?,localLargada=?,horarioLargada=?,dataProva=?,maxParticipantes=?,inicioInscricao=?,fimInscricao=?,faixaEtaria=?,organizador_id=?,ranking_id=? where id = ?";
+            String sql = "update prova set nomeProva=?,localLargada=?,horarioLargada=?,dataProva=?,maxParticipantes=?,inicioInscricao=?,fimInscricao=?,faixaEtaria=?,localRetiradaKit=?,organizador_id=?,ranking_id=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, prova.getNomeProva());
             comando.setString(2, prova.getLocalLargada());
@@ -109,10 +111,12 @@ public class ProvaDAO {
             comando.setString(6, prova.getInicioInscricao());
             comando.setString(7, prova.getFimInscricao());
             comando.setString(8, prova.getFaixaEtaria());
-            comando.setString(9, prova.getOrganizador_id());
-            comando.setString(10, prova.getRanking_id());
-            comando.setInt(11, prova.getId());
-            
+
+            comando.setString(9, prova.getLocalRetiradaKit());
+            comando.setString(10, prova.getOrganizador_id());
+            comando.setString(11, prova.getRanking_id());
+            comando.setInt(12, prova.getId());
+
             comando.execute();
             comando.close();
             conexao.close();
@@ -152,20 +156,21 @@ public class ProvaDAO {
             rs.first();
 
             prova = new Prova(
-                    rs.getInt("id"), 
-                    rs.getString("nomeProva"), 
+                    rs.getInt("id"),
+                    rs.getString("nomeProva"),
                     rs.getString("localLargada"),
-                    rs.getString("horarioLargada"), 
+                    rs.getString("horarioLargada"),
                     rs.getString("dataProva"),
                     rs.getString("maxParticipantes"),
-                    rs.getString("inicioInscricao"), 
-                    rs.getString("fimInscricao"), 
-                    rs.getString("faixaEtaria"), 
+                    rs.getString("inicioInscricao"),
+                    rs.getString("fimInscricao"),
+                    rs.getString("faixaEtaria"),
+                    rs.getString("localRetiradaKit"),
                     null, null);
-            
-                prova.setOrganizador_id(rs.getString("organizador_id"));
-                prova.setRanking_id(rs.getString("ranking_id"));
-            
+
+            prova.setOrganizador_id(rs.getString("organizador_id"));
+            prova.setRanking_id(rs.getString("ranking_id"));
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

@@ -74,11 +74,11 @@ public class ManterInscricaoController extends HttpServlet {
         String dataInscricao = request.getParameter("txtDataInscricao");
         int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInscricao"));
         String formaPagamento = request.getParameter("optFormaPagamento");
-        String kit_id = request.getParameter("txtKit_id");
-        String prova_id = request.getParameter("txtProva_id");
-        String atleta_id = request.getParameter("txtAtleta_id");
-        String percurso_id = request.getParameter("txtPercurso_id");
-        
+        String kit_id = request.getParameter("optKit");
+        String prova_id = request.getParameter("optProva");
+        String atleta_id = request.getParameter("optAtleta");
+        String percurso_id = request.getParameter("optPercurso");
+
         Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, kit_id, prova_id, percurso_id, atleta_id);
 
         try {
@@ -100,7 +100,7 @@ public class ManterInscricaoController extends HttpServlet {
         try {
             request.setAttribute("operacao", "Incluir");
             request.setAttribute("kit", Kit.obterKits());
-            request.setAttribute("prova", Prova.obterProvas());            
+            request.setAttribute("prova", Prova.obterProvas());
             request.setAttribute("percurso", Percurso.obterPercursos());
             request.setAttribute("atleta", Atleta.obterAtletas());
 
@@ -119,19 +119,18 @@ public class ManterInscricaoController extends HttpServlet {
         String dataInscricao = request.getParameter("txtDataInscricao");
         int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInscricao"));
         String formaPagamento = request.getParameter("optFormaPagamento");
-        
-        String kit_id = request.getParameter("txtKit_id");
-        String prova_id = request.getParameter("txtProva_id");
-        String atleta_id = request.getParameter("txtAtleta_id");
-        String percurso_id = request.getParameter("txtPercurso_id");
-        
+
+        String kit_id = request.getParameter("optKit");
+        String prova_id = request.getParameter("optProva");
+        String atleta_id = request.getParameter("optAtleta");
+        String percurso_id = request.getParameter("optPercurso");
 
         try {
             Kit kit = Kit.obterKit(id);
             Prova prova = Prova.obterProva(id);
             Percurso percurso = Percurso.obterPercurso(id);
             Atleta atleta = Atleta.obterAtleta(id);
-            
+
             Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, kit_id, prova_id, percurso_id, atleta_id);
             inscricao.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
@@ -175,10 +174,10 @@ public class ManterInscricaoController extends HttpServlet {
         String dataInscricao = request.getParameter("txtDataInscricao");
         int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInscricao"));
         String formaPagamento = request.getParameter("optFormaPagamento");
-        String kit_id = request.getParameter("txtKit_id");
-        String prova_id = request.getParameter("txtProva_id");
-        String atleta_id = request.getParameter("txtAtleta_id");
-        String percurso_id = request.getParameter("txtPercurso_id");
+        String kit_id = request.getParameter("optKit");
+        String prova_id = request.getParameter("optProva");
+        String atleta_id = request.getParameter("optAtleta");
+        String percurso_id = request.getParameter("optPercurso");
         Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, kit_id, prova_id, percurso_id, atleta_id);
         try {
             inscricao.alterar();
