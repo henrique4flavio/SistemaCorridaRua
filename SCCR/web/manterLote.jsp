@@ -35,8 +35,15 @@
                         <td><input type="text" name="txtDataFimLote" value="${lote.dataFim}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                        <tr>
-                    <td>Código da Prova:</td> 
-                    <td><input type="text" name="txtIdProva" value="${lote.prova_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td> Prova:</td> 
+                     <td>
+                         <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <option value="0" <c:if test="${lote.prova_id == null}"> selected</c:if>> </option>  
+                            <c:forEach items="${prova}" var="prova">
+                                <option value="${prova.id}" <c:if test="${prova.id == lote.prova_id}"> selected</c:if>>${prova.nomeProva}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
                     </tr>               
                <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>

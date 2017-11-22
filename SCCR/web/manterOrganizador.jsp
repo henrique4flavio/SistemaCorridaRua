@@ -38,9 +38,17 @@
                         <td><input type="text" name="txtSenha" value="${organizador.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                 </tr>
                 <tr>
-                        <td>Codigo do administrador:</td> 
-                        <td><input type="text" name="txtAdministrador_id" value="${organizador.administrador_id}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                </tr>
+                        <td>Administrador:</td>
+                        <td>
+                         <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <option value="0" <c:if test="${organizador.administrador_id == null}"> selected</c:if>> </option>  
+                            <c:forEach items="${administrador}" var="administrador">
+                                <option value="${administrador.id}" <c:if test="${administrador.id == organizador.administrador_id}"> selected</c:if>>${administrador.nome}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
+                        
+                        </tr>
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>

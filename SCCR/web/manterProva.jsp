@@ -52,13 +52,30 @@
                     </tr>
                     
                     <tr>
-                    <td>Código do organizador:</td> 
-                    <td><input type="text" name="txtOrganizador_id" value="${prova.organizador_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td>Organizador:</td> 
+                    <td>
+                    <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <option value="0" <c:if test="${prova.organizador_id == null}"> selected</c:if>> </option>  
+                            <c:forEach items="${organizador}" var="organizador">
+                                <option value="${organizador.id}" <c:if test="${organizador.id == prova.organizador_id}"> selected</c:if>>${organizador.nome}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
                     </tr>
                     <tr>
-                    <td>Código do ranking:</td> 
-                    <td><input type="text" name="txtRanking_id" value="${prova.ranking_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-                    </tr>
+                    <td>Ranking:</td> 
+                    <td>
+                        <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <option value="0" <c:if test="${prova.organizador_id == null}"> selected</c:if>> </option>  
+                            <c:forEach items="${ranking}" var="ranking">
+                                <option value="${ranking.id}" <c:if test="${ranking.id == prova.ranking_id}"> selected</c:if>>${ranking.nome}</option>  
+                            </c:forEach>
+                        </select>
+                    
+                        
+                    </td>
+                    
+                     </tr>
                     <tr>
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
