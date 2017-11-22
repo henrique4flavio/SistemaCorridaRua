@@ -99,7 +99,7 @@ public void prepararExcluir(HttpServletRequest request, HttpServletResponse resp
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
-            request.setAttribute("prova", Prova.obterProvas());
+            request.setAttribute("provas", Prova.obterProvas());
 
             RequestDispatcher view = request.getRequestDispatcher("/manterPercurso.jsp");
 

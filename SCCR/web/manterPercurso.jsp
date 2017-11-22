@@ -35,8 +35,16 @@
                     <tr>
                   
                    <tr>
-                        <td>Codigo Prova </td> 
-                        <td><input type="text" name="txtProva" value="${percurso.prova_id}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>></td>
+                       <td>Prova:</td>
+                    <td>
+                        <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <option value="0" <c:if test="${percurso.prova_id == null}"> selected</c:if>> </option>  
+                            <c:forEach items="${provas}" var="prova">
+                                <option value="${prova.id}" <c:if test="${prova.id == percurso.prova_id}"> selected</c:if>>${prova.nomeProva}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
+                                      
                 </tr>
                                                      
                    
