@@ -15,7 +15,7 @@ public class Organizador extends Usuario {
     public Organizador(int id, String nome, String senha, String login, String email, String administrador_id) {
         super(nome, senha, login, email);
         this.id = id;
-
+        this.administrador_id = administrador_id;
     }
 
     public int getId() {
