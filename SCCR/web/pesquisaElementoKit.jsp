@@ -37,13 +37,13 @@
                     </td>
                     
 
-                    <td><a href ="ManterInscricaoController?acao=prepararEditar&id=<c:out value="${elementoKit.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-                    <td><a href ="ManterInscricaoController?acao=prepararExcluir&id=<c:out value="${elementoKit.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                    <td><a href ="ManterElementoKitController?acao=prepararEditar&id=<c:out value="${elementoKit.kit_id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                    <td><a href ="ManterElementoKitController?acao=prepararExcluir&id=<c:out value="${elementoKit.kit_id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
               
             </c:forEach>
         </tr>
-        <form action ="ManterInscricaoController?acao=prepararIncluir" method="post">
+        <form action ="ManterElementoKitController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    
     </body>

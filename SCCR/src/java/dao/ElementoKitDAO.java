@@ -24,8 +24,8 @@ public class ElementoKitDAO {
             while (rs.next()) {
 
                 ElementoKit elementoKit = new ElementoKit(
-                        rs.getString("item_id"),
-                        rs.getString("kit_id"));
+                        rs.getInt("item_id"),
+                        rs.getInt("kit_id"));
 
                 elementosKits.add(elementoKit);
 
@@ -58,11 +58,11 @@ public class ElementoKitDAO {
         try {
             conexao = BD.getConexao();
 
-            String sql = "insert into elementokit (item_id,kit_id) values(?,?)";
+            Int sql = "insert into elementokit (item_id,kit_id) values(?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
-            comando.setString(1, elementoKit.getItem_id());
-            comando.setString(2, elementoKit.getKit_id());
+            comando.setInt(1, elementoKit.getItem_id());
+            comando.setInt(2, elementoKit.getKit_id());
 
             comando.execute();
             comando.close();
@@ -79,10 +79,10 @@ public class ElementoKitDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update elementokit set item_id=?, kit_id=? where item_id=? and kit_id=?";
+            Int sql = "update elementokit set item_id=?, kit_id=? where item_id=? and kit_id=?";
             PreparedStatement comando = conexao.prepareStatement(sql);
-            comando.setString(1, elementoKit.getItem_id());
-            comando.setString(2, elementoKit.getKit_id());
+            comando.setInt(1, elementoKit.getItem_id());
+            comando.setInt(2, elementoKit.getKit_id());
             comando.execute();
             comando.close();
             conexao.close();
@@ -94,7 +94,7 @@ public class ElementoKitDAO {
     public static void excluir(ElementoKit elementoKit) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
-        String stringSQL;
+        Int stringSQL;
 
         try {
             conexao = BD.getConexao();
@@ -122,8 +122,8 @@ public class ElementoKitDAO {
             rs.first();
 
             elementoKit = new ElementoKit(
-                    rs.getString("elementoKit_id"),
-                    rs.getString("kit_id"));
+                    rs.getInt("elementoKit_id"),
+                    rs.getInt("kit_id"));
 
         } catch (SQLException e) {
             e.printStackTrace();
