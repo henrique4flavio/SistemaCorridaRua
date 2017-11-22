@@ -15,8 +15,6 @@ public class Inscricao {
     //Variaveis do banco de dados
     private int id;
 
-    
-
     private String kit_id;
 
     private String prova_id;
