@@ -75,19 +75,7 @@
                         </select>
                     </td>
                     </tr>
-                    <tr>
-                        <td>Kit:</td> 
-                       
-                    <td>
-                        <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <option value="0" <c:if test="${inscricao.prova_id == null}"> selected</c:if>> </option>  
-                            <c:forEach items="${kit}" var="kit">
-                                <option value="${kit.id}" <c:if test="${kit.id == inscricao.prova_id}"> selected</c:if>>${kit.nomeKit}</option>  
-                            </c:forEach>
-                        </select>
-                    </td>
-                    
-                </tr>
+                   
              <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>
