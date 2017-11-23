@@ -14,14 +14,14 @@
 
         <table class="table table-bordered"> 
             <tr>
-
+                <th>Codigo</th> 
                 <th>Item</th>
                 <th>Kit</th>
 
             </tr>   
             <c:forEach items="${elementosKits}" var="elementoKit">
                 <tr> 
-                    
+                    <td> <c:out value="${elementoKit.id}"/> </td>
                     <td> 
                         <c:forEach items="${kits}" var="kit">
                             ${kit.nomeKit} <c:if test="${kit.id == elementoKit.kit_id}"> </c:if>

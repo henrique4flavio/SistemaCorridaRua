@@ -30,6 +30,7 @@ public class PesquisaElementoKitController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try  {
+            request.setAttribute("elementosKits",ElementoKit.obterElementosKits());
             request.setAttribute("itens",Item.obterItens());
             request.setAttribute("kits",Kit.obterKits());
            

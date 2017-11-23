@@ -71,11 +71,12 @@ public class ManterElementoKitController extends HttpServlet {
     }
 
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtId"));
         int item_id = Integer.parseInt(request.getParameter("txtItem_id"));
         int kit_id = Integer.parseInt(request.getParameter("txtKit_id"));
         
         
-        ElementoKit elementoKit = new ElementoKit(item_id, kit_id);
+        ElementoKit elementoKit = new ElementoKit(id, item_id, kit_id);
 
         try {
             elementoKit.excluir();
@@ -109,6 +110,7 @@ public class ManterElementoKitController extends HttpServlet {
     }
 
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtId"));
         int item_id = Integer.parseInt(request.getParameter("txtItem_id"));
         int kit_id = Integer.parseInt(request.getParameter("txtKit_id"));
  
@@ -117,7 +119,7 @@ public class ManterElementoKitController extends HttpServlet {
             Kit kit = Kit.obterKit(kit_id);
             
             
-            ElementoKit elementoKit = new ElementoKit(item_id, kit_id);
+            ElementoKit elementoKit = new ElementoKit(id, item_id, kit_id);
             elementoKit.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaElementoKitController");
             view.forward(request, response);
@@ -138,7 +140,7 @@ public class ManterElementoKitController extends HttpServlet {
             request.setAttribute("Itens", Item.obterItens());
             request.setAttribute("kit", Kit.obterKits());
 
-            int codElementoKit = Integer.parseInt(request.getParameter("kit_id"));
+            int codElementoKit = Integer.parseInt(request.getParameter("id"));
             
             ElementoKit elementoKit = ElementoKit.obterElementoKit(codElementoKit);
             request.setAttribute("elementoKit", elementoKit);
@@ -154,10 +156,11 @@ public class ManterElementoKitController extends HttpServlet {
     }
 
     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtId"));
         int item_id = Integer.parseInt(request.getParameter("txtItem_id"));
         int kit_id = Integer.parseInt(request.getParameter("txtKit_id"));
         
-        ElementoKit elementoKit = new ElementoKit(item_id, kit_id);
+        ElementoKit elementoKit = new ElementoKit(id, item_id, kit_id);
         try {
             elementoKit.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaElementoKitController");

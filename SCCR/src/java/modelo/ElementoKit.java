@@ -1,5 +1,6 @@
 package modelo;
 
+import dao.ElementoKitDAO;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -7,10 +8,22 @@ public class ElementoKit {
 
     private int item_id;
     private int kit_id;
+    
+    //Variaveis do banco de dados
+    private int id;
 
-    public ElementoKit(int item_id, int kit_id) {
+    public ElementoKit(int id, int item_id, int kit_id) {
+        this.id = id;
         this.item_id = item_id;
         this.kit_id = kit_id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getItem_id() {

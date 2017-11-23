@@ -15,6 +15,7 @@
 
             <a href="PesquisaAdministradorController">Manter administradores</a><br>
             <a href="PesquisaAtletaController">Manter atletas</a><br>
+            <a href="PesquisaElementoKitController">Manter elementos kits</a><br>
             <a href="PesquisaInscricaoController">Manter inscrições</a><br>
             <a href="PesquisaItemController">Manter itens</a><br>
             <a href="PesquisaKitController">Manter kits</a><br>
@@ -23,6 +24,7 @@
             <a href="PesquisaPercursoController">Manter percursos</a><br>
             <a href="PesquisaProvaController">Manter provas</a><br>
             <a href="PesquisaRankingController">Manter rankings</a><br>
+            
 
 
         </div>
