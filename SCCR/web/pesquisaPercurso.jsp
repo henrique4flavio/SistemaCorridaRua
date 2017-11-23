@@ -32,7 +32,7 @@
                     <td><c:out value = "${percurso.faixaEtaria}" /></td>
                     <td> 
                     <c:forEach items="${provas}" var="prova">
-                               ${prova.nomeProva} <c:if test="${prova.id == percurso.prova_id}"> </c:if>
+                                <c:if test="${prova.id == percurso.prova_id}"> ${prova.nomeProva}</c:if>
                                  
  
                             </c:forEach> 

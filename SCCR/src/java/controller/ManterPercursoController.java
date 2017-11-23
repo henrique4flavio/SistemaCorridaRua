@@ -76,7 +76,7 @@ public void prepararExcluir(HttpServletRequest request, HttpServletResponse resp
         String nome = request.getParameter("txtNomePercurso");
         String distancia = request.getParameter("txtDistancia");
         String faixaEtaria = request.getParameter("txtfaixaEtaria");
-        String prova_id = request.getParameter("txtProva");
+        String prova_id = request.getParameter("optProva");
 
         Percurso percurso = new Percurso(id, nome, distancia, faixaEtaria, prova_id);
         try {
@@ -99,7 +99,7 @@ public void prepararExcluir(HttpServletRequest request, HttpServletResponse resp
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
-            request.setAttribute("provas", Prova.obterProvas());
+            request.setAttribute("prova", Prova.obterProvas());
 
             RequestDispatcher view = request.getRequestDispatcher("/manterPercurso.jsp");
 
@@ -163,7 +163,7 @@ public void prepararExcluir(HttpServletRequest request, HttpServletResponse resp
         String distancia = request.getParameter("txtDistancia");
         String faixaEtaria = request.getParameter("txtfaixaEtaria");
 
-        String prova_id = request.getParameter("txtProva");
+        String prova_id = request.getParameter("optProva");
  Percurso percurso = new Percurso(id, nome, distancia, faixaEtaria, prova_id);
         try {
             
