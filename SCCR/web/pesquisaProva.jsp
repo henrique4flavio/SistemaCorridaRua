@@ -44,12 +44,12 @@
                     <td><c:out value = "${prova.fimInscricao}" /></td>
                     <td><c:out value = "${prova.faixaEtaria}" /></td>
                     <td><c:forEach items="${organizadores}" var ="organizador">
-                            ${organizador.nome} <c:if test="${organizadar.id ==prova.organizador_id}"></c:if>
+                            <c:if test="${organizadar.id ==prova.organizador_id}">${organizador.nome} </c:if>
                                
                        </td>
                         </c:forEach>
                     <td><c:forEach items="${ranking}" var ="ranking">
-                            ${ranking.nome} <c:if test="${ranking.id ==prova.ranking_id}"></c:if>
+                            <c:if test="${ranking.id ==prova.ranking_id}">${ranking.nome} </c:if>
                                
                        </td>
                         </c:forEach>

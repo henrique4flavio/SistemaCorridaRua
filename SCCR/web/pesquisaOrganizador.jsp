@@ -34,10 +34,10 @@
                     <td><c:out value = "${organizador.email}" /></td>
                     
                     <td><c:forEach items="${administradores}" var ="administrador">
-                            <c:if test="${administrador.id ==organizador.administrador_id}">${administrador.nome} </c:if>
-                               
+                            <c:if test="${administrador.id ==organizador.administrador_id}">${administrador.nome}</c:if>
+                           </c:forEach>
                        </td>
-                        </c:forEach>
+                        
                     <td><a href ="ManterOrganizadorController?acao=prepararEditar&id=<c:out value="${organizador.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                     <td><a href ="ManterOrganizadorController?acao=prepararExcluir&id=<c:out value="${organizador.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 

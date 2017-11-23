@@ -86,7 +86,7 @@ public class ManterOrganizadorController extends HttpServlet {
     public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Excluir");
-            request.setAttribute("administradores", Administrador.obterAdministradores());
+            request.setAttribute("administrador", Administrador.obterAdministradores());
 
             int codOrganizador = Integer.parseInt(request.getParameter("id"));
 
