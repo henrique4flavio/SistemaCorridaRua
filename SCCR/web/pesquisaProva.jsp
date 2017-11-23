@@ -44,20 +44,20 @@
                     <td><c:out value = "${prova.fimInscricao}" /></td>
                     <td><c:out value = "${prova.faixaEtaria}" /></td>
                     <td><c:forEach items="${organizadores}" var ="organizador">
-                            <c:if test="${organizadar.id ==prova.organizador_id}">${organizador.nome} </c:if>
-                               
-                       </td>
+                            <c:if test="${organizador.id ==prova.organizador_id}">${organizador.nome} </c:if>
                         </c:forEach>
+                    </td>
+
                     <td><c:forEach items="${ranking}" var ="ranking">
                             <c:if test="${ranking.id ==prova.ranking_id}">${ranking.nome} </c:if>
-                               
-                       </td>
                         </c:forEach>
+                    </td>
+
 
                     <td> <a href="ManterProvaController?acao=prepararEditar&id=<c:out value="${prova.id}"/>"> <button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                     <td> <a href="ManterProvaController?acao=prepararExcluir&id=<c:out value="${prova.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
-               </tr>                                                                  
+                </tr>                                                                  
             </c:forEach>
         </table>
         <form action ="ManterProvaController?acao=prepararIncluir" method="post">

@@ -35,32 +35,25 @@
                     <td> <c:out value="${inscricao.formaPagamento}"/> </td>
                     <td> 
                         <c:forEach items="${kits}" var="kit">
-                            ${kit.nomeKit} <c:if test="${kit.id == inscricao.kit_id}"> </c:if>
+                            <c:if test="${kit.id == inscricao.kit_id}"> ${kit.nomeKit} </c:if>
                         </c:forEach> 
                     </td>
 
                     <td> 
                         <c:forEach items="${provas}" var="prova">
-                            ${prova.nomeProva} <c:if test="${prova.id == inscricao.prova_id}"> </c:if>
+                             <c:if test="${prova.id == inscricao.prova_id}">${prova.nomeProva} </c:if>
 
 
                         </c:forEach> 
                     </td>
                     <td> 
                         <c:forEach items="${percursos}" var="percurso">
-                            ${percurso.nome} <c:if test="${percurso.id == inscricao.percurso_id}"> </c:if>
+                            <c:if test="${percurso.id == inscricao.percurso_id}"> ${percurso.nome} </c:if>
 
 
                         </c:forEach> 
                     </td>
-                    <td> 
-                        <c:forEach items="${atletas}" var="atleta">
-                            ${atleta.nome} <c:if test="${atleta.id == inscricao.atleta_id}"> </c:if>
-
-
-                        </c:forEach> 
-                    </td>
-                
+                    <td> <c:out value="${inscricao.atleta_id}"/> </td>
 
 
                     <td><a href ="ManterInscricaoController?acao=prepararEditar&id=<c:out value="${inscricao.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
