@@ -23,40 +23,42 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h3>${operacao}</h3>
+    <center><h3>${operacao}</h3></center>
+    <div class="col-md-6">
+            <form action="ManterAdministradorController?acao=confirmar${operacao}" method="post" name="frmManterAdministrador">
+                <div class="form-group">
 
-        <form class="form-horizontal" action="ManterAdministradorController?acao=confirmar${operacao}" method="post" name="frmManterAdministrador">
-            <table>
-                <tr>
-                    <td>Código do Administrador:</td> 
-                    <td><input type="text" name="txtIdAdministrador" value="${administrador.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Nome do administrador:</td> 
-                        <td><input type="text" name="txtNomeAdministrador" value="${administrador.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
+                    <label for="exampleInputEmail1">Código do Administrador:</label>
+                    <input type="text" name="txtIdAdministrador" class="form-control" value="${administrador.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
 
-                    <tr>
-                        <td>Email:</td> 
-                        <td><input type="text" name="txtEmail" value="${administrador.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Login:</td> 
-                        <td><input type="text" name="txtLoginAdm" value="${administrador.login}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Senha:</td> 
-                        <td><input type="password" id="senha" name="txtSenhaAdm" value="${administrador.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Confirmar Senha:</td> 
-                        <td><input type="password" name="txtValidadaSenha" oninput="validaSenha(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
-                </tr>
-            </table>
-        </form>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Nome:</label>
+                        <input type="text" name="txtNomeAdministrador" class="form-control" value="${administrador.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Email:</label>
+                        <input type="text" name="txtEmail" class="form-control" value="${administrador.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Login:</label>
+                        <input type="text" name="txtLoginAdm" class="form-control" value="${administrador.login}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </div>
+                    <div class="form-group">
+                        <label>Senha:</label>
+                        <input type="password" id="senha" name="txtSenhaAdm" class="form-control" value="${administrador.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Confirmar Senha:</label>
+                        <input type="password" name="txtValidadaSenha" class="form-control" oninput="validaSenha(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                </div>
 
-    </body>
+                <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
+                <a href="PesquisaAdministradorController" class="btn btn-default">Cancelar</a>
+
+            </form>                   
+        </div> 	
+
+</body>
+
 </html>
