@@ -34,7 +34,7 @@
                     <td><c:out value = "${organizador.email}" /></td>
                     
                     <td><c:forEach items="${administradores}" var ="administrador">
-                            ${administrador.nome} <c:if test="${administrador.id ==organizador.administrador_id}"></c:if>
+                            <c:if test="${administrador.id ==organizador.administrador_id}">${administrador.nome} </c:if>
                                
                        </td>
                         </c:forEach>
