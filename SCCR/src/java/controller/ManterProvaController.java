@@ -94,7 +94,7 @@ public class ManterProvaController extends HttpServlet {
     
     
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtId"));
+     int id = Integer.parseInt(request.getParameter("txtId"));
         String nomeProva = request.getParameter("txtNomeProva");
         String localLargada = request.getParameter("txtLocalLargada");
         String horarioLargada = request.getParameter("txtHorarioLargada");
@@ -104,11 +104,9 @@ public class ManterProvaController extends HttpServlet {
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
         String localRetiradaKit= request.getParameter("txtLocalRetiradaKit");
-        
+
         String organizador_id = request.getParameter("optOrganizador");
         String ranking_id = request.getParameter("optRanking");
-       
-    
    
         try {
             Organizador organizador = Organizador.obterOrganizador(id);

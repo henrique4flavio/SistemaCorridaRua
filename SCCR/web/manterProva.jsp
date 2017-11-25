@@ -80,7 +80,7 @@
                     </td>
 
                 </tr>
-               
+
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>
