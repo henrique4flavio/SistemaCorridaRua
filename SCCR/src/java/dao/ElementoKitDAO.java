@@ -123,7 +123,7 @@ public class ElementoKitDAO {
         try{
             conexao = BD.getConexao();
             comando= conexao.createStatement();
-            ResultSet rs = comando.executeQuery( "select *from elementokit where id = "+id);
+            ResultSet rs = comando.executeQuery( "select * from elementokit where id = "+id);
             rs.first();
             
             elementoKit = new ElementoKit (

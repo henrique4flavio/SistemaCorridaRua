@@ -85,16 +85,12 @@
         <servlet-class>controller.PesquisaOrganizadorController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ManterElementosKit</servlet-name>
-        <servlet-class>controller.ManterElementoKit</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PesquisaElementosKit</servlet-name>
-        <servlet-class>controller.PesquisaElementoKit</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ManterElementoKitController</servlet-name>
         <servlet-class>controller.ManterElementoKitController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PesquisaElementoKitController</servlet-name>
+        <servlet-class>controller.PesquisaElementoKitController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
@@ -191,6 +187,10 @@
     <servlet-mapping>
         <servlet-name>ManterElementoKitController</servlet-name>
         <url-pattern>/ManterElementoKitController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaElementoKitController</servlet-name>
+        <url-pattern>/PesquisaElementoKitController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
