@@ -9,6 +9,8 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
+           
+        
         <h3>${operacao}</h3>
 
         <form action="ManterInscricaoController?acao=confirmar${operacao}" method="post" name="frmManterInscricao">
