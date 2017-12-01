@@ -36,7 +36,7 @@
 
         <div class="container">
             <c:if test="${operacao != 'Incluir'}"> <h3>${operacao} Atleta</h3></c:if>
-            <c:if test="${operacao == 'Incluir'}"> <h3 class="titAlterarDados">Cadastre-se</h3></c:if>
+            <c:if test="${operacao == 'Incluir'}"> <h3><span class="glyphicon glyphicon-edit"></span> Cadastre-se</h3><br></c:if>
 
                 <form action="ManterAtletaController?acao=confirmar${operacao}" method="post" name="frmManterAtleta">
                 <div class="row">
