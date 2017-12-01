@@ -96,6 +96,10 @@
         <servlet-name>ManterElementoKitController</servlet-name>
         <servlet-class>controller.ManterElementoKitController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ResultadoProva</servlet-name>
+        <servlet-class>controller.ResultadoProva</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -191,6 +195,10 @@
     <servlet-mapping>
         <servlet-name>ManterElementoKitController</servlet-name>
         <url-pattern>/ManterElementoKitController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResultadoProva</servlet-name>
+        <url-pattern>/ResultadoProva</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
