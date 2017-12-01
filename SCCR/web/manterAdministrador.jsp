@@ -23,7 +23,7 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-    <center><h3>${operacao}</h3></center>
+    <center><h3>${operacao} Administrador</h3></center>
     <div class="col-md-6">
             <form action="ManterAdministradorController?acao=confirmar${operacao}" method="post" name="frmManterAdministrador">
                 <div class="form-group">

@@ -11,53 +11,101 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-   
-        <table class="table table-bordered">
-            <tr>
-                <th> Código do atleta  </th>
-                <th> Nome do atleta </th>
-<!--                <th> Data de nascimento</th> -->
-<!--                <th> Apelido</th>-->
-                <th> CPF</th>
-                <th> Tamanho da camisa</th>
-                <th> Sexo</th>
-<!--                <th> Telefone fixo</th>
-                <th> Telefone celular</th>
-                <th> Rua </th>
-                <th> Bairro</th>
-                <th> Estado </th>
-                <th> Pais </th>
-                <th> Cidade </th>       -->
-                <th> Login</th>
-                <th> Email </th>       
-            </tr>
-            <c:forEach items="${atletas}" var="atleta">
-                <tr> 
-                    <td> <c:out value="${atleta.id}"/> </td>
-                    <td> <c:out value= "${atleta.nome}"/></td>
-<!--                    <td>  value="${atleta.dataNascimento}"/> </td>-->
-<!--                    <td>  value="${atleta.apelido}"/> </td>-->
-                    <td> <c:out value="${atleta.cpf}"/> </td>
-                    <td> <c:out value="${atleta.tamCamisa}"/> </td>
-                    <td> <c:out value="${atleta.sexo}"/> </td>
-<!--                <td>  value="${atleta.telefoneFixo}"/> </td>
-                    <td>  value="${atleta.telefoneCel}"/> </td>
-                    <td>  value="${atleta.rua}"/> </td>
-                    <td>  value="${atleta.bairro}"/> </td>
-                    <td>  value="${atleta.estado}"/> </td>
-                    <td>  value="${atleta.pais}"/> </td>
-                    <td>  value="${atleta.cidade}"/> </td>-->
-                    <td> <c:out value="${atleta.login}"/> </td>
-                    <td> <c:out value="${atleta.email}"/> </td>
-                    <td> <a href="ManterAtletaController?acao=prepararEditar&Editar&id=<c:out value="${atleta.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-                    <td> <a href="ManterAtletaController?acao=prepararExcluir&id=<c:out value="${atleta.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
-                </tr>
-            </c:forEach>
-        </table>
-        <form action ="ManterAtletaController?acao=prepararIncluir" method="post">
-            <input type="submit" name="btIncluir" value="Incluir"/>
-        </form>     
+        
+         <div id="main" class="container-fluid" style="margin-top: 50px">
 
+            <div id="top" class="row">
+                <div class="col-sm-3">
+                    <h2>Atletas</h2>
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="input-group h2">
+                        <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Atleta">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <form action ="ManterAtletaController?acao=prepararIncluir" method="post">
+                        <input type="submit" name="btIncluir" value="Novo Atleta" class="btn btn-primary pull-right h2">
+
+
+                    </form> 
+                </div>
+            </div> <!-- /#top -->
+
+
+            <hr />
+            <div id="list" class="row">
+
+                <div class="table-responsive col-md-12">
+                    <table class="table table-striped" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>Código do atleta</th>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Login</th>
+                                <th>Email</th>
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <c:forEach items="${atletas}" var="atleta">
+                                <tr>
+
+                                    <td><c:out value = "${atleta.id}" /></td>
+                                    <td><c:out value = "${atleta.nome}" /></td>
+                                    <td> <c:out value="${atleta.cpf}"/> </td>
+                                    <td><c:out value = "${atleta.login}" /></td>
+                                    <td><c:out value = "${atleta.email}" /></td>
+
+                                    
+
+                                    <td class="actions">
+                                        <a class="btn btn-success btn-xs" href="#">Visualizar</a>
+                                        <a class="btn btn-warning btn-xs" href="ManterAtletaController?acao=prepararEditar&id=<c:out value="${atleta.id}"/>">Editar</a>
+                                        <a class="btn btn-danger btn-xs"  href="ManterAtletaController?acao=prepararExcluir&id=<c:out value="${atleta.id}"/>" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div> <!-- /#list -->
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="modalLabel">Excluir Item</h4>
+                        </div>
+                        <div class="modal-body">
+                            Deseja realmente excluir este item?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Sim</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="js/jquery.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
 
     </body>
 </html>
+   
