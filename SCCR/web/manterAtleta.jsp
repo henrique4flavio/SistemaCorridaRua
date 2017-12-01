@@ -11,11 +11,19 @@
         <title>Manter Atleta</title>
 
         <script> function validaSenha(input) {
-            if (input.value != document.getElementById('senha').value) {
-            input.setCustomValidity('Repita a senha corretamente');
-            } else {
-            input.setCustomValidity('');
+                if (input.value != document.getElementById('senha').value) {
+                    input.setCustomValidity('Repita a senha corretamente');
+                } else {
+                    input.setCustomValidity('');
+                }
             }
+        </script>
+        <script> function validaEmail(input) {
+                if (input.value != document.getElementById('email').value) {
+                    input.setCustomValidity('Repita o email corretamente');
+                } else {
+                    input.setCustomValidity('');
+                }
             }
         </script>
 
@@ -42,7 +50,7 @@
                             <label for="exampleInputPassword1">Nome Completo:</label>
                             <input type="text" name="txtNomeAtleta" class="form-control" value="${atleta.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Apelido:</label>
                             <input type="text" name="txtApelido" class="form-control" value="${atleta.apelido}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
@@ -51,9 +59,9 @@
                             <label for="exampleInputPassword1">CPF:</label>
                             <input type="text" name="txtCpf" class="form-control" value="${atleta.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
-                        
-                          <div class="col-md-2">
-                              
+
+                        <div class="col-md-2">
+
                             <label for="exampleInputPassword1">Sexo:</label>
                             <select class="form-control" name="optSexo" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="Masculino" <c:if test="${atleta.sexo == 'Masculino'}"> selected</c:if>>Masculino</option>
@@ -61,13 +69,13 @@
                             </select>
 
                         </div>
-                        
+
                         <div class="col-md-2">
                             <label for="exampleInputPassword1">Data de Nascimento:</label>
                             <input type="text" name="txtDataNascimento" class="form-control" value="${atleta.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
-                        
-                        
+
+
 
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Tamanho da Camisa:</label>
@@ -80,12 +88,12 @@
                             </select>
 
                         </div>
-                             <div class="col-md-4">
+                        <div class="col-md-4">
                             <label for="exampleInputPassword1">Pais:</label>
                             <input type="text" name="txtPais" class="form-control" value="${atleta.pais}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
-                            
-                            <div class="col-md-4">
+
+                        <div class="col-md-4">
                             <label for="exampleInputPassword1">Cidade:</label>
                             <input type="text" name="txtCidadeAtleta" class="form-control" value="${atleta.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
@@ -101,8 +109,8 @@
                             <label for="exampleInputPassword1">Bairro:</label>
                             <input type="text" name="txtBairroAtleta" class="form-control" value="${atleta.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
-                       
-                      
+
+
                     </div>
                     <div class="row">
                         <div class="col-md-2">
@@ -113,15 +121,15 @@
                             <label for="exampleInputPassword1">Telefone Celular:</label>
                             <input type="text" name="txtTelefoneCelular" class="form-control" value="${atleta.telefoneCel}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Email:</label>
                             <input type="text" name="txtEmail" class="form-control" value="${atleta.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Confirmar Email:</label>
-                            <input type="text" name="txtEmail" class="form-control" value="${atleta.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" id="email" name="txtEmail" class="form-control" oninput="validaEmail(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
 
 
@@ -147,7 +155,7 @@
         </div>
 
 
-</body>
+    </body>
 
 </html>
 
