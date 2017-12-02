@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="bootstrap.jspf"/>
         <title>Manter elemento Kit</title>
     </head>
@@ -19,20 +20,17 @@
                     </tr>
                     
                      <tr>
-                        <td>item:</td> 
+                        <td>Item:</td> 
                         <td>
                          <select name="optItem" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${elementoKit.item_id == null}"> selected</c:if>> </option>  
                             <c:forEach items="${item}" var="item">
-                                <option value="${item.id}" <c:if test="${item.id == elementoKit.item_id}"> selected</c:if>>${item.nome}</option>  
+                                <option value="${item.id}" <c:if test="${item.id == elementoKit.item_id}"> selected</c:if>>${item.nomeItem}</option>  
                             </c:forEach>
                         </select>
                     </td>
                     </tr>
-                    
-                    
-                    
-                    
+                   
                     <tr>
                         <td>Kit:</td> 
                         <td>
