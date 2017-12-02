@@ -71,7 +71,7 @@
 
 
                                     <td class="actions">
-                                        <a class="btn btn-success btn-xs" href="#">Visualizar</a>
+                                        
                                         <a class="btn btn-warning btn-xs" href="ManterOrganizadorController?acao=prepararEditar&id=<c:out value="${organizador.id}"/>">Editar</a>
                                         <a class="btn btn-danger btn-xs"  href="ManterOrganizadorController?acao=prepararExcluir&id=<c:out value="${organizador.id}"/>" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                                     </td>

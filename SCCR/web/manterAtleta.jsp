@@ -35,20 +35,22 @@
 
 
         <div class="container">
-            <c:if test="${operacao != 'Incluir'}"> <h3>${operacao} Atleta</h3></c:if>
-            <c:if test="${operacao == 'Incluir'}"> <h3><span class="glyphicon glyphicon-edit"></span> Cadastre-se</h3><br></c:if>
-
+            
+            <c:if test="${operacao == 'Incluir'}"> <h3><span class="glyphicon glyphicon-check"></span> Cadastre-se</h3><br></c:if>
+            <c:if test="${operacao == 'Editar'}"> <h3><span class="glyphicon glyphicon-edit"></span> Alterar dados</h3><br></c:if>
+            <c:if test="${operacao == 'Excluir'}"> <h3><span class="glyphicon glyphicon-floppy-remove"></span> Excluir Atleta</h3><br></c:if>
+            
                 <form action="ManterAtletaController?acao=confirmar${operacao}" method="post" name="frmManterAtleta">
                 <div class="row">
                     <div class="col-md-2">
 
                         <label for="exampleInputEmail1">Código do Atleta:</label>
-                        <input type="text" name="txtIdAtleta" class="form-control" value="${atleta.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+                        <input type="text" required name="txtIdAtleta" class="form-control" value="${atleta.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
 
                         </div>
                         <div class="col-md-6">
                             <label for="exampleInputPassword1">Nome Completo:</label>
-                            <input type="text" name="txtNomeAtleta" class="form-control" value="${atleta.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtNomeAtleta" class="form-control" value="${atleta.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
 
                         <div class="col-md-4">
@@ -57,7 +59,7 @@
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">CPF:</label>
-                            <input type="text" name="txtCpf" class="form-control" value="${atleta.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtCpf" class="form-control" value="${atleta.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
 
                         <div class="col-md-2">
@@ -72,7 +74,7 @@
 
                         <div class="col-md-2">
                             <label for="exampleInputPassword1">Data de Nascimento:</label>
-                            <input type="text" name="txtDataNascimento" class="form-control" value="${atleta.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtDataNascimento" class="form-control" value="${atleta.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
 
 
@@ -342,19 +344,19 @@
 
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Cidade:</label>
-                            <input type="text" name="txtCidadeAtleta" class="form-control" value="${atleta.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtCidadeAtleta" class="form-control" value="${atleta.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Estado:</label>
-                            <input type="text" name="txtEstadoAtleta" class="form-control" value="${atleta.estado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtEstadoAtleta" class="form-control" value="${atleta.estado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
                         <div class="col-md-6">
                             <label for="exampleInputPassword1">Endereço:</label>
-                            <input type="text" name="txtRuaAtleta" class="form-control" value="${atleta.rua}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtRuaAtleta" class="form-control" value="${atleta.rua}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
                         <div class="col-md-6">
                             <label for="exampleInputPassword1">Bairro:</label>
-                            <input type="text" name="txtBairroAtleta" class="form-control" value="${atleta.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtBairroAtleta" class="form-control" value="${atleta.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
 
 
@@ -371,31 +373,32 @@
 
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Email:</label>
-                            <input type="text" name="txtEmail" class="form-control" value="${atleta.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtEmail" class="form-control" value="${atleta.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
 
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Confirmar Email:</label>
-                            <input type="text" id="email" name="txtEmail" class="form-control" oninput="validaEmail(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required id="email" name="txtEmail" class="form-control" oninput="validaEmail(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
 
 
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Login:</label>
-                            <input type="text" name="txtLoginAtleta" class="form-control" value="${atleta.login}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtLoginAtleta" class="form-control" value="${atleta.login}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
                         <div class="col-md-4">
                             <label>Senha:</label>
-                            <input type="password" id="senha" name="txtSenhaAtleta" class="form-control" value="${atleta.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="password" required id="senha" name="txtSenhaAtleta" class="form-control" value="${atleta.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Confirmar Senha:</label>
-                            <input type="password" name="txtValidadaSenha" class="form-control" oninput="validaSenha(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="password" required name="txtValidadaSenha" class="form-control" oninput="validaSenha(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </div>
 
                     <div class="col-md-6">
                         <br>
                         <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
+                        
                         <a href="PesquisaAtletaController" class="btn btn-default">Cancelar</a>
                     </div>
             </form>                   

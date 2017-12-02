@@ -69,7 +69,7 @@
                                     
 
                                     <td class="actions">
-                                        <a class="btn btn-success btn-xs" href="#">Visualizar</a>
+                                        
                                         <a class="btn btn-warning btn-xs" href="ManterAtletaController?acao=prepararEditar&id=<c:out value="${atleta.id}"/>">Editar</a>
                                         <a class="btn btn-danger btn-xs"  href="ManterAtletaController?acao=prepararExcluir&id=<c:out value="${atleta.id}"/>" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                                     </td>

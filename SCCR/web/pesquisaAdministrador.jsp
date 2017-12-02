@@ -67,7 +67,7 @@
                                     <td><c:out value = "${administrador.email}" /></td>
                                  
                                     <td class="actions">
-                                        <a class="btn btn-success btn-xs" href="#">Visualizar</a>
+                                        
                                         <a class="btn btn-warning btn-xs" href="ManterAdministradorController?acao=prepararEditar&id=<c:out value="${administrador.id}"/>">Editar</a>
                                         <a class="btn btn-danger btn-xs"  href="ManterAdministradorController?acao=prepararExcluir&id=<c:out value="${administrador.id}"/>" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                                     </td>
