@@ -51,10 +51,10 @@ public class ManterElementoKitController extends HttpServlet {
         try {
             request.setAttribute("operacao", "Excluir");
             request.setAttribute("Itens", Item.obterItens());
-            request.setAttribute("kits", Kit.obterKits());
+            request.setAttribute("kit", Kit.obterKits());
            
 
-            int codElementoKit = Integer.parseInt(request.getParameter("id"));
+            int codElementoKit = Integer.parseInt(request.getParameter("item_id"));
 
 
             ElementoKit elementoKit = ElementoKit.obterElementoKit(codElementoKit);
@@ -72,8 +72,8 @@ public class ManterElementoKitController extends HttpServlet {
 
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtId"));
-        int item_id = Integer.parseInt(request.getParameter("optItem_id"));
-        int kit_id = Integer.parseInt(request.getParameter("optKit_id"));
+        int item_id = Integer.parseInt(request.getParameter("txtItem_id"));
+        int kit_id = Integer.parseInt(request.getParameter("txtKit_id"));
         
         
         ElementoKit elementoKit = new ElementoKit(id, item_id, kit_id);
@@ -111,12 +111,12 @@ public class ManterElementoKitController extends HttpServlet {
 
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtId"));
-        int item_id = Integer.parseInt(request.getParameter("optItem_id"));
-        int kit_id = Integer.parseInt(request.getParameter("optKit_id"));
+        int item_id = Integer.parseInt(request.getParameter("txtItem_id"));
+        int kit_id = Integer.parseInt(request.getParameter("txtKit_id"));
  
         try {
-            Item item = Item.obterItem(id);
-            Kit kit = Kit.obterKit(id);
+            Item item = Item.obterItem(item_id);
+            Kit kit = Kit.obterKit(kit_id);
             
             
             ElementoKit elementoKit = new ElementoKit(id, item_id, kit_id);
@@ -157,8 +157,8 @@ public class ManterElementoKitController extends HttpServlet {
 
     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtId"));
-        int item_id = Integer.parseInt(request.getParameter("optItem_id"));
-        int kit_id = Integer.parseInt(request.getParameter("optKit_id"));
+        int item_id = Integer.parseInt(request.getParameter("txtItem_id"));
+        int kit_id = Integer.parseInt(request.getParameter("txtKit_id"));
         
         ElementoKit elementoKit = new ElementoKit(id, item_id, kit_id);
         try {
