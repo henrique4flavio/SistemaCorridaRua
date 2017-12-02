@@ -1,12 +1,9 @@
 package modelo;
 
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.SQLException;
+import java.util.*;
+
 public class ResultadoProva {
-    
 
     public void consultarResultadoIndividual() {
 
@@ -38,12 +35,6 @@ public class ResultadoProva {
     }
     public void exportarEquipeFeminino(){
 
-Desktop desktop = Desktop.getDesktop();  
-        try {
-            desktop.open(new File("C:\equipeFeminino.pdf"));
-        } catch (IOException ex) {
-            Logger.getLogger(ResultadoProva.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
     public void exportarFaixaEtariaMasculino(){
 

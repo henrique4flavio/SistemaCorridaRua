@@ -122,7 +122,7 @@ public class ManterInscricaoController extends HttpServlet {
 
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("optProva");
-        String atleta_id = request.getParameter("optAtleta");
+        String atleta_id = request.getParameter("txtAtleta");
         String percurso_id = request.getParameter("optPercurso");
 
         try {
@@ -176,7 +176,7 @@ public class ManterInscricaoController extends HttpServlet {
         String formaPagamento = request.getParameter("optFormaPagamento");
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("optProva");
-        String atleta_id = request.getParameter("optAtleta");
+        String atleta_id = request.getParameter("txtAtleta");
         String percurso_id = request.getParameter("optPercurso");
         Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, kit_id, prova_id, percurso_id, atleta_id);
         try {
