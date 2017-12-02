@@ -139,9 +139,7 @@ public class ManterElementoKitController extends HttpServlet {
             request.setAttribute("operacao", "Editar");
             request.setAttribute("Itens", Item.obterItens());
             request.setAttribute("kit", Kit.obterKits());
-
-            int codElementoKit = Integer.parseInt(request.getParameter("id"));
-            
+            int codElementoKit = Integer.parseInt(request.getParameter("id"));  
             ElementoKit elementoKit = ElementoKit.obterElementoKit(codElementoKit);
             request.setAttribute("elementoKit", elementoKit);
             RequestDispatcher view = request.getRequestDispatcher("/manterElementoKit.jsp");

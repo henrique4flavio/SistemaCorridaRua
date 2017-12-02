@@ -33,7 +33,6 @@
                         <c:forEach items="${itens}" var="item">
                             <c:if test="${item.id == elementoKit.item_id}"> </c:if>
 
-
                         </c:forEach> 
                     </td>
                     
