@@ -7,7 +7,7 @@
 <html>
     <head>
         <jsp:include page="bootstrap.jspf"/>
-        <title>Manter inscrição</title>
+        <title>Manter elemento kit</title>
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
@@ -21,28 +21,29 @@
             </tr>   
             <c:forEach items="${elementosKits}" var="elementoKit">
                 <tr> 
+                    
                     <td> <c:out value="${elementoKit.id}"/> </td>
                     <td> 
                         <c:forEach items="${kits}" var="kit">
-                            ${kit.nomeKit} <c:if test="${kit.id == elementoKit.kit_id}"> </c:if>
+                            <c:if test="${kit.id == elementoKit.kit_id}"> </c:if>
                         </c:forEach> 
                     </td>
 
                     <td> 
                         <c:forEach items="${itens}" var="item">
-                            ${item.nomeItem} <c:if test="${item.id == elementoKit.item_id}"> </c:if>
+                            <c:if test="${item.id == elementoKit.item_id}"> </c:if>
 
 
                         </c:forEach> 
                     </td>
                     
 
-                    <td><a href ="ManterElementoKitController?acao=prepararEditar&id=<c:out value="${elementoKit.kit_id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-                    <td><a href ="ManterElementoKitController?acao=prepararExcluir&id=<c:out value="${elementoKit.kit_id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                    <td><a href ="ManterElementoKitController?acao=prepararEditar&id=<c:out value="${elementoKit.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                    <td><a href ="ManterElementoKitController?acao=prepararExcluir&id=<c:out value="${elementoKit.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
-              
+              </tr>
             </c:forEach>
-        </tr>
+        </table>
         <form action ="ManterElementoKitController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    

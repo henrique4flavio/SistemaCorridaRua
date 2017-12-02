@@ -77,13 +77,18 @@
                         </select>
                     </td>
                     </tr>
-                    <tr>
+                    
                         <td>Atleta:</td> 
-                        <td><input type="text" name="txtAtleta" value="${inscricao.atleta_id}" <c:if test="${operacao != 'Incluir'}"> </c:if>></td>
+                        <td>
+                         <select name="optAtleta" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <option value="0" <c:if test="${inscricao.atleta_id == null}"> selected</c:if>> </option>  
+                            <c:forEach items="${atleta}" var="atleta">
+                                <option value="${atleta.id}" <c:if test="${atleta.id == inscricao.atleta_id}"> selected</c:if>>${atleta.nome}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
                     </tr>
-
-                    
-                    
+      
                    
              <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
