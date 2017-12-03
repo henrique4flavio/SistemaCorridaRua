@@ -8,7 +8,7 @@
 
     <head>
         <jsp:include page="bootstrap.jspf"/>
-        <title>Minha Conta</title>
+        <title>Administrador</title>
 
         <script> function validaSenha(input) {
                 if (input.value != document.getElementById('senha').value) {
@@ -28,16 +28,14 @@
     
         
             <div class="panel-title">
-                <h3><span class="glyphicon glyphicon-user"></span> <strong>Bem Vindo Atleta</strong> </h3>
+                <h3><span class="glyphicon glyphicon-user"></span> <strong>Painel Administrativo</strong> </h3>
                 
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-10">
-                          <a href="#" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Minhas Inscrições</a>
-                          <a href="#" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Alterar dados Pessoais</a>
-                          <a href="#" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Consultar Resultados</a> 
-                          <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Rankings</a>
-                          <a href="#" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a>
+                          <a href="PesquisaAtletaController" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Listar Atletas</a>
+                          <a href="PesquisaOrganizadorController" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Gerenciar Organizadores</a>
+                          <a href="PesquisaAdministradorController" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Gerenciar Administradores</a>
                         </div>
                        
                     </div>

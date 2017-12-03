@@ -30,13 +30,7 @@
                     </div>
 
                 </div>
-                <div class="col-sm-3">
-                    <form action ="ManterAtletaController?acao=prepararIncluir" method="post">
-                        <input type="submit" name="btIncluir" value="Novo Atleta" class="btn btn-primary pull-right h2">
-
-
-                    </form> 
-                </div>
+                
             </div> <!-- /#top -->
 
 

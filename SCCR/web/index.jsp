@@ -6,29 +6,35 @@
     <head>
         <jsp:include page="bootstrap.jspf"/>
         <title>SCCR</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="./resources/bootstrap/js/bootstrap.min.js"></script>
 
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
 
+
         <div class="container">
 
-            <a href="PesquisaAdministradorController">Manter administradores</a><br>
-            <a href="PesquisaAtletaController">Manter atletas</a><br>
+            <a href="atletaHome.jsp">Menu do Atleta - login</a><br>
+            <a href="administradorHome.jsp">Menu do Administrador - login</a><br>
+            <a href="organizadorHome.jsp">Menu do Organizador - login</a><br> 
+            
+            
             <a href="PesquisaElementoKitController">Manter elementos kits</a><br>
             <a href="PesquisaInscricaoController">Manter inscrições</a><br>
             <a href="PesquisaItemController">Manter itens</a><br>
             <a href="PesquisaKitController">Manter kits</a><br>
             <a href="PesquisaLoteController">Manter lotes</a><br>
-            <a href="PesquisaOrganizadorController">Manter organizadores</a><br>
+   
             <a href="PesquisaPercursoController">Manter percursos</a><br>
             <a href="PesquisaProvaController">Manter provas</a><br>
             <a href="PesquisaRankingController">Manter rankings</a><br>
-            
-
 
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="./resources/bootstrap/js/bootstrap.min.js"></script>
-    </body>
+
+        <jsp:include page="footer.jspf"/>
+
+</body>
+
 </html>

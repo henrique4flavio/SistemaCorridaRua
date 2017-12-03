@@ -403,8 +403,10 @@
                     </div>
             </form>                   
         </div>
+        </div> <br><br>
+                    
 
-
+<jsp:include page="footer.jspf"/>
     </body>
 
 </html>
