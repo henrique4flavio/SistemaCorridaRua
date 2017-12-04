@@ -43,7 +43,7 @@
                     <tr>
                         <td>Kit:</td> 
                         <td>
-                         <select name="optKit" <c:if test="${operacao != 'Excluir'}"> readonly</c:if>>
+                         <select name="optKit" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${inscricao.kit_id == null}"> selected</c:if>></option>  
                             <c:forEach items="${kit}" var="kit">
                                 <option value="${kit.id}" <c:if test="${kit.id == inscricao.kit_id}"> selected</c:if>>${kit.nomeKit}</option>  
@@ -79,7 +79,7 @@
                     </tr>
                     <tr>
                         <td>Atleta:</td> 
-                        <td><input type="text" name="txtAtleta" value="${inscricao.atleta_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtAtleta" value="${inscricao.atleta_id}" <c:if test="${operacao != 'Incluir'}"> </c:if>></td>
                     </tr>
 
                     
