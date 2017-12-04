@@ -48,25 +48,24 @@ public class ManterProvaController extends HttpServlet {
                         } else {
                             if (acao.equals("confirmarEditar")) {
                                 confirmarEditar(request, response);
-<<<<<<< HEAD
+
                             } else {
                                 if (acao.equals("visualizarProva")) {
                                     visualizarProva(request, response);
 
                                 }
                             }
-=======
-                            }
 
->>>>>>> 4cf232f56efa0c71c00ca205548772f3117434c7
                         }
+
                     }
                 }
             }
         }
     }
+}
 
-    public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
+public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
             request.setAttribute("organizador", Organizador.obterOrganizadores());
@@ -172,11 +171,11 @@ public class ManterProvaController extends HttpServlet {
         try {
             request.setAttribute("operacao", "Excluir");
             request.setAttribute("organizador", Organizador.obterOrganizadores());
-<<<<<<< HEAD
+
             request.setAttribute("kit", Kit.obterKits());
-=======
+
             request.setAttribute("ranking", Ranking.obterRankings());
->>>>>>> 4cf232f56efa0c71c00ca205548772f3117434c7
+
 
             int codProva = Integer.parseInt(request.getParameter("id"));
 
@@ -222,7 +221,7 @@ public class ManterProvaController extends HttpServlet {
 
         }
     }
-<<<<<<< HEAD
+
 
     public void visualizarProva(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
@@ -256,12 +255,15 @@ public class ManterProvaController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(ManterProvaController.class.getName()).log(Level.SEVERE, null, ex);
+        
+
+} catch (SQLException ex) {
+            Logger.getLogger(ManterProvaController.class
+.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -274,12 +276,15 @@ public class ManterProvaController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(ManterProvaController.class.getName()).log(Level.SEVERE, null, ex);
+        
+
+} catch (SQLException ex) {
+            Logger.getLogger(ManterProvaController.class
+.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -289,7 +294,7 @@ public class ManterProvaController extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo() {
+        public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
