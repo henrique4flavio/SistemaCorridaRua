@@ -191,7 +191,7 @@ public class ManterProvaController extends HttpServlet {
         String localLargada = request.getParameter("txtLocalLargada");
         String horarioLargada = request.getParameter("txtHorarioLargada");
         String dataProva = request.getParameter("txtDataProva");
-        String maxParticipantes = request.getParameter("txtMaxParticipantes");
+        String maxParticipantes = request.getParameter("txtmaxParticipantes");
         String inicioInscricao = request.getParameter("txtInicioInscricao");
         String fimInscricao = request.getParameter("txtFimInscricao");      
         String faixaEtaria = request.getParameter("txtFaixaEtaria");

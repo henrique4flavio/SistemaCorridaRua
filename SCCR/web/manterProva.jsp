@@ -40,7 +40,7 @@
                     </tr>
                     <tr>
                         <td>Maximo de participantes:</td> 
-                        <td><input type="text" name="txtMaxParticipantes" value="${prova.maxParticipantes}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtmaxParticipantes" value="${prova.maxParticipantes}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Inicio das incrições:</td> 
