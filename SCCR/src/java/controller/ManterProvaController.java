@@ -28,8 +28,8 @@ public class ManterProvaController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException{
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException, SQLException {
         String acao = request.getParameter("acao");
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
@@ -43,20 +43,24 @@ public class ManterProvaController extends HttpServlet {
                     if (acao.equals("confirmarExcluir")) {
                         confirmarExcluir(request, response);
                     } else {
-                if (acao.equals("prepararEditar")) {
-                    prepararEditar(request, response);
-                } else {
-                    if (acao.equals("confirmarEditar")) {
-                        confirmarEditar(request, response);
-                    }
-                    
-                }
+                        if (acao.equals("prepararEditar")) {
+                            prepararEditar(request, response);
+                        } else {
+                            if (acao.equals("confirmarEditar")) {
+                                confirmarEditar(request, response);
+                            } else {
+                                if (acao.equals("visualizarProva")) {
+                                    visualizarProva(request, response);
+
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
     }
-   
+
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
@@ -72,16 +76,17 @@ public class ManterProvaController extends HttpServlet {
         }
 
     }
+
     public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Editar");
             request.setAttribute("organizador", Organizador.obterOrganizadores());
             request.setAttribute("ranking", Ranking.obterRankings());
-            
+
             int codProva = Integer.parseInt(request.getParameter("id"));
-            
+
             Prova prova = Prova.obterProva(codProva);
-            request.setAttribute ("prova", prova);
+            request.setAttribute("prova", prova);
             RequestDispatcher view = request.getRequestDispatcher("/manterProva.jsp");
 
             view.forward(request, response);
@@ -91,10 +96,9 @@ public class ManterProvaController extends HttpServlet {
         }
 
     }
-    
-    
+
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
-     int id = Integer.parseInt(request.getParameter("txtId"));
+        int id = Integer.parseInt(request.getParameter("txtId"));
         String nomeProva = request.getParameter("txtNomeProva");
         String localLargada = request.getParameter("txtLocalLargada");
         String horarioLargada = request.getParameter("txtHorarioLargada");
@@ -103,16 +107,16 @@ public class ManterProvaController extends HttpServlet {
         String dataInicioInscricao = request.getParameter("txtInicioInscricao");
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
-        String localRetiradaKit= request.getParameter("txtLocalRetiradaKit");
+        String localRetiradaKit = request.getParameter("txtLocalRetiradaKit");
 
         String organizador_id = request.getParameter("optOrganizador");
         String ranking_id = request.getParameter("optRanking");
-   
+
         try {
             Organizador organizador = Organizador.obterOrganizador(id);
             Ranking ranking = Ranking.obterRanking(id);
-            
-            Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit,organizador_id, ranking_id);
+
+            Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit, organizador_id, ranking_id);
             prova.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController");
             view.forward(request, response);
@@ -126,8 +130,8 @@ public class ManterProvaController extends HttpServlet {
 
         }
     }
-    
-     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
+
+    public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtId"));
         String nomeProva = request.getParameter("txtNomeProva");
         String localLargada = request.getParameter("txtLocalLargada");
@@ -137,17 +141,15 @@ public class ManterProvaController extends HttpServlet {
         String dataInicioInscricao = request.getParameter("txtInicioInscricao");
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
-        String localRetiradaKit= request.getParameter("txtLocalRetiradaKit");
+        String localRetiradaKit = request.getParameter("txtLocalRetiradaKit");
 
         String organizador_id = request.getParameter("optOrganizador");
         String ranking_id = request.getParameter("optRanking");
-        
-        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria,localRetiradaKit, organizador_id, ranking_id);
 
-    
-   
-        try {         
-           prova.alterar();
+        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit, organizador_id, ranking_id);
+
+        try {
+            prova.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController");
             view.forward(request, response);
         } catch (IOException ex) {
@@ -160,22 +162,18 @@ public class ManterProvaController extends HttpServlet {
 
         }
     }
-    
-    
-    
+
     public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Excluir");
             request.setAttribute("organizador", Organizador.obterOrganizadores());
             request.setAttribute("kit", Kit.obterKits());
-            
 
             int codProva = Integer.parseInt(request.getParameter("id"));
 
             Prova prova = Prova.obterProva(codProva);
             request.setAttribute("prova", prova);
             RequestDispatcher view = request.getRequestDispatcher("/manterProva.jsp");
-   
 
             view.forward(request, response);
         } catch (ServletException ex) {
@@ -184,8 +182,8 @@ public class ManterProvaController extends HttpServlet {
         }
 
     }
-    
-     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
+
+    public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtId"));
         String nomeProva = request.getParameter("txtNomeProva");
         String localLargada = request.getParameter("txtLocalLargada");
@@ -193,14 +191,13 @@ public class ManterProvaController extends HttpServlet {
         String dataProva = request.getParameter("txtDataProva");
         String maxParticipantes = request.getParameter("txtMaxParticipantes");
         String inicioInscricao = request.getParameter("txtInicioInscricao");
-        String fimInscricao = request.getParameter("txtFimInscricao");      
+        String fimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
         String organizador_id = request.getParameter("optOrganizador");
         String ranking_id = request.getParameter("optRanking");
-        String localRetiradaKit= request.getParameter("txtLocalRetiradaKit");
-        
-        
-        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, inicioInscricao, fimInscricao, faixaEtaria,localRetiradaKit, organizador_id, ranking_id);
+        String localRetiradaKit = request.getParameter("txtLocalRetiradaKit");
+
+        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, inicioInscricao, fimInscricao, faixaEtaria, localRetiradaKit, organizador_id, ranking_id);
 
         try {
             prova.excluir();
@@ -216,11 +213,26 @@ public class ManterProvaController extends HttpServlet {
 
         }
     }
-    
-    
-    
-    
-    
+
+    public void visualizarProva(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Visualizar");
+            request.setAttribute("organizador", Organizador.obterOrganizadores());
+            request.setAttribute("kit", Kit.obterKits());
+
+            int codProva = Integer.parseInt(request.getParameter("id"));
+
+            Prova prova = Prova.obterProva(codProva);
+            request.setAttribute("prova", prova);
+            RequestDispatcher view = request.getRequestDispatcher("/viewProva.jsp");
+
+            view.forward(request, response);
+        } catch (ServletException ex) {
+        } catch (IOException ex) {
+        } catch (ClassNotFoundException ex) {
+        }
+
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -234,11 +246,11 @@ public class ManterProvaController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       try {
-           processRequest(request, response);
-       } catch (SQLException ex) {
-           Logger.getLogger(ManterProvaController.class.getName()).log(Level.SEVERE, null, ex);
-       }
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterProvaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -252,11 +264,11 @@ public class ManterProvaController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       try {
-           processRequest(request, response);
-       } catch (SQLException ex) {
-           Logger.getLogger(ManterProvaController.class.getName()).log(Level.SEVERE, null, ex);
-       }
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterProvaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
