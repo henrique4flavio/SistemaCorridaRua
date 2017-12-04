@@ -57,8 +57,8 @@
 
                     <tr>
                         <td>Organizador:</td> 
-                    <td>
-                         <select name="optOrganizador" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <td>
+                            <select name="optOrganizador" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${prova.organizador_id == null}"> selected</c:if>></option>  
                             <c:forEach items="${organizador}" var="organizador">
                                 <option value="${organizador.id}" <c:if test="${organizador.id == prova.organizador_id }"> selected</c:if>>${organizador.nome}</option>  
@@ -80,9 +80,9 @@
                     </td>
 
                 </tr>
- <tr>
-                        
-                   
+                <tr>
+
+
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>

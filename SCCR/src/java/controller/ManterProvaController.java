@@ -111,8 +111,8 @@ public class ManterProvaController extends HttpServlet {
         try {
             Organizador organizador = Organizador.obterOrganizador(id);
             Ranking ranking = Ranking.obterRanking(id);
-
             Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit, organizador_id, ranking_id);
+
             prova.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController");
             view.forward(request, response);
