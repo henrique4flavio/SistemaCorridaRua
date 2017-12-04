@@ -58,6 +58,8 @@
 
             </form>                   
         </div> 	
+    
+    <jsp:include page="footer.jspf"/>
 
 </body>
 
