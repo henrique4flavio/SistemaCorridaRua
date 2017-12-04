@@ -40,7 +40,7 @@
                     </tr>
                     <tr>
                         <td>Maximo de participantes:</td> 
-                        <td><input type="text" name="txtmaxParticipantes" value="${prova.maxParticipantes}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtMaxParticipantes" value="${prova.maxParticipantes}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Inicio das incrições:</td> 
@@ -58,7 +58,7 @@
                     <tr>
                         <td>Organizador:</td> 
                     <td>
-                         <select name="optKit" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                         <select name="optOrganizador" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${prova.organizador_id == null}"> selected</c:if>></option>  
                             <c:forEach items="${organizador}" var="organizador">
                                 <option value="${organizador.id}" <c:if test="${organizador.id == prova.organizador_id }"> selected</c:if>>${organizador.nome}</option>  
