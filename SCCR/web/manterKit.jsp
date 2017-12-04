@@ -10,23 +10,30 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h3>${operacao}</h3>
+      
 
-        <form action="ManterKitController?acao=confirmar${operacao}" method="post" name="frmManterKit">
-            <table>
-                <tr>
-                    <td>Id do Kit</td> 
-                    <td><input type="text" name="txtIdKit" value="${kit.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Nome do kit:</td> 
-                        <td><input type="text" name="txtNomeKit" value="${kit.nomeKit}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                <tr>
-                    <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
-                </tr>    
-            </table>
-        </form>
+    <center><h3>${operacao} Kit</h3></center>
+    <div class="col-md-6">
+            <form action="ManterKitController?acao=confirmar${operacao}" method="post" name="frmManterKit">
+                <div class="form-group">
 
-    </body>
-</html>
+                    <label for="exampleInputEmail1">Código do Kit:</label>
+                    <input type="text" name="txtIdKit" class="form-control" value="${kit.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Nome:</label>
+                        <input type="text" name="txtNomeKit" class="form-control" value="${kit.nomeKit}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </div>
+                    
+                
+
+                <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
+                <a href="PesquisaKitController" class="btn btn-default">Cancelar</a>
+
+            </form>                   
+        </div> 	
+    
+    <jsp:include page="footer.jspf"/>
+
+</body>
