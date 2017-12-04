@@ -167,7 +167,7 @@ public class ManterProvaController extends HttpServlet {
         try {
             request.setAttribute("operacao", "Excluir");
             request.setAttribute("organizador", Organizador.obterOrganizadores());
-            request.setAttribute("kit", Kit.obterKits());
+            request.setAttribute("ranking", Ranking.obterRankings());
             
 
             int codProva = Integer.parseInt(request.getParameter("id"));
