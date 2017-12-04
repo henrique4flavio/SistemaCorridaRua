@@ -104,6 +104,7 @@ public class ManterProvaController extends HttpServlet {
         String horarioLargada = request.getParameter("txtHorarioLargada");
         String dataProva = request.getParameter("txtDataProva");
         String maxParticipantes = request.getParameter("txtmaxParticipantes");
+        String maxParticipantes = request.getParameter("txtMaxParticipantes");
         String dataInicioInscricao = request.getParameter("txtInicioInscricao");
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
@@ -138,6 +139,7 @@ public class ManterProvaController extends HttpServlet {
         String horarioLargada = request.getParameter("txtHorarioLargada");
         String dataProva = request.getParameter("txtDataProva");
         String maxParticipantes = request.getParameter("txtmaxParticipantes");
+        String maxParticipantes = request.getParameter("txtMaxParticipantes");
         String dataInicioInscricao = request.getParameter("txtInicioInscricao");
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
