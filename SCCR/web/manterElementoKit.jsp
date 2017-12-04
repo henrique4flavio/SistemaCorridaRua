@@ -29,10 +29,7 @@
                         </select>
                     </td>
                     </tr>
-                    
-                    
-                    
-                    
+                 
                     <tr>
                         <td>Kit:</td> 
                         <td>
