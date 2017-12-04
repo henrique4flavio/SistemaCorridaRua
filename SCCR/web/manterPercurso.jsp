@@ -11,48 +11,44 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        <h3>${operacao}</h3>
+       
+   <center><h3>${operacao} Percurso</h3></center>
+    <div class="col-md-6">
+            <form action="ManterPercursoController?acao=confirmar${operacao}" method="post" name="frmManterPercurso">
+                <div class="form-group">
 
-        <form action="ManterPercursoController?acao=confirmar${operacao}" method="post" name="frmManterPercurso">
-            <table>
-                <tr>
-                    <td>Código do percurso:</td> 
-                    <td><input type="text" name="txtIdPercurso" value="${percurso.id}" <c:if test="${operacao != 'Incluir'}"> readonly </c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Nome do percurso:</td> 
-                        <td><input type="text" name="txtNomePercurso" value="${percurso.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Distancia:</td> 
-                        <td><input type="text" name="txtDistancia" value="${percurso.distancia}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Faixa etaria:</td> 
-                        <td><input type="text" name="txtfaixaEtaria" value="${percurso.faixaEtaria}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
+                    <label for="exampleInputEmail1">Código do Percurso:</label>
+                    <input type="text" name="txtIdPercurso" class="form-control" value="${percurso.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
 
-                    <tr>
-
-                    <tr>
-                        <td>Prova:</td>
-                        <td>
-                            <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Nome:</label>
+                        <input type="text" name="txtNomePercurso" class="form-control" value="${percurso.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </div>
+                     <div class="form-group">
+                        <label for="exampleInputPassword1">Distância:</label>
+                        <input type="text" name="txtDistancia" class="form-control" value="${percurso.distancia}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </div>
+                     <div class="form-group">
+                        <label for="exampleInputPassword1">Faixa Etaria:</label>
+                        <input type="text" name="txtfaixaEtaria" class="form-control" value="${percurso.faixaEtaria}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </div>
+                    <div class="form-group">
+                    <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${percurso.prova_id == null}"> selected</c:if>> </option>  
                             <c:forEach items="${prova}" var="prova">
                                 <option value="${prova.id}" <c:if test="${prova.id == percurso.prova_id}"> selected</c:if>>${prova.nomeProva}</option>  
                             </c:forEach>
                         </select>
-                    </td>
+                    </div>
+                
 
-                </tr>
+                <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
+                <a href="PesquisaPercursoController" class="btn btn-default">Cancelar</a>
 
+            </form>                   
+        </div> 	
+    
+    <jsp:include page="footer.jspf"/>
 
-                <tr>
-                    <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
-                </tr>
-            </table>
-        </form>
-
-    </body>
-</html>
+</body>
