@@ -63,7 +63,8 @@ public class ManterProvaController extends HttpServlet {
             }
         }
     }
-}
+
+
 
 public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
@@ -242,8 +243,7 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
         }
 
     }
-=======
->>>>>>> 4cf232f56efa0c71c00ca205548772f3117434c7
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
