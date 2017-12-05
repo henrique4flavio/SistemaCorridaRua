@@ -79,12 +79,9 @@
                     </tr>
                     <tr>
                         <td>Atleta:</td> 
-                        <td><input type="text" name="txtAtleta" value="${inscricao.atleta_id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtAtleta" value="${inscricao.atleta_id}" <c:if test="${operacao =!'Incluir'}"> readonly</c:if>></td>
                     </tr>
-
-                    
-                    
-                   
+            
              <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>
