@@ -399,7 +399,8 @@
                         <br>
                         <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
                         
-                        <a href="PesquisaAtletaController" class="btn btn-default">Cancelar</a>
+                        <a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
+
                     </div>
             </form>                   
         </div>
