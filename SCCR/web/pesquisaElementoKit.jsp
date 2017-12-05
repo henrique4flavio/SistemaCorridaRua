@@ -24,7 +24,7 @@
                     <td> <c:out value="${elementoKit.id}"/> </td>
                     <td> 
                         <c:forEach items="${kits}" var="kit">
-                            ${kit.nomeKit} <c:if test="${kit.id == elementoKit.kit_id}"> </c:if>
+                                ${kit.nomeKit} <c:if test="${kit.id == elementoKit.kit_id}"> </c:if>
                         </c:forEach> 
                     </td>
 
@@ -39,9 +39,9 @@
                     <td><a href ="ManterElementoKitController?acao=prepararEditar&id=<c:out value="${elementoKit.kit_id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                     <td><a href ="ManterElementoKitController?acao=prepararExcluir&id=<c:out value="${elementoKit.kit_id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
-              
+              </tr>
             </c:forEach>
-        </tr>
+              </table>
         <form action ="ManterElementoKitController?acao=prepararIncluir" method="post">
             <input type="submit" name="btIncluir" value="Incluir"/>
         </form>                    

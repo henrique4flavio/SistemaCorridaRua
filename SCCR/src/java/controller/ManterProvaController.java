@@ -48,16 +48,25 @@ public class ManterProvaController extends HttpServlet {
                         } else {
                             if (acao.equals("confirmarEditar")) {
                                 confirmarEditar(request, response);
+
+                            } else {
+                                if (acao.equals("visualizarProva")) {
+                                    visualizarProva(request, response);
+
+                                }
                             }
 
                         }
+
                     }
                 }
             }
         }
     }
 
-    public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
+
+
+public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
             request.setAttribute("organizador", Organizador.obterOrganizadores());
@@ -163,7 +172,11 @@ public class ManterProvaController extends HttpServlet {
         try {
             request.setAttribute("operacao", "Excluir");
             request.setAttribute("organizador", Organizador.obterOrganizadores());
+
+            request.setAttribute("kit", Kit.obterKits());
+
             request.setAttribute("ranking", Ranking.obterRankings());
+
 
             int codProva = Integer.parseInt(request.getParameter("id"));
 
@@ -210,6 +223,28 @@ public class ManterProvaController extends HttpServlet {
         }
     }
 
+
+    public void visualizarProva(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Visualizar");
+            request.setAttribute("organizador", Organizador.obterOrganizadores());
+            request.setAttribute("kit", Kit.obterKits());
+
+            int codProva = Integer.parseInt(request.getParameter("id"));
+
+            Prova prova = Prova.obterProva(codProva);
+            request.setAttribute("prova", prova);
+            RequestDispatcher view = request.getRequestDispatcher("/viewProva.jsp");
+
+            view.forward(request, response);
+        } catch (ServletException ex) {
+        } catch (IOException ex) {
+        } catch (ClassNotFoundException ex) {
+        }
+
+    }
+
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -220,12 +255,15 @@ public class ManterProvaController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(ManterProvaController.class.getName()).log(Level.SEVERE, null, ex);
+        
+
+} catch (SQLException ex) {
+            Logger.getLogger(ManterProvaController.class
+.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -238,12 +276,15 @@ public class ManterProvaController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(ManterProvaController.class.getName()).log(Level.SEVERE, null, ex);
+        
+
+} catch (SQLException ex) {
+            Logger.getLogger(ManterProvaController.class
+.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -253,7 +294,7 @@ public class ManterProvaController extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo() {
+        public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

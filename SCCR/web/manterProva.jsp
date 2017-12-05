@@ -40,7 +40,7 @@
                     </tr>
                     <tr>
                         <td>Maximo de participantes:</td> 
-                        <td><input type="text" name="txtMaxParticipantes" value="${prova.maxParticipantes}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text" name="txtmaxParticipantes" value="${prova.maxParticipantes}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Inicio das incrições:</td> 
@@ -59,18 +59,22 @@
                         <td>Organizador:</td> 
                         <td>
                             <select name="optOrganizador" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+<<<<<<< HEAD
                             <option value="0" <c:if test="${prova.organizador_id == null}"> selected</c:if>></option>  
+=======
+                            <option value="0" <c:if test="${prova.organizador_id == null}"> selected</c:if>> </option>  
+>>>>>>> 4bf7dadb535844970d524782cde6d95141967037
                             <c:forEach items="${organizador}" var="organizador">
-                                <option value="${organizador.id}" <c:if test="${organizador.id == prova.organizador_id }"> selected</c:if>>${organizador.nome}</option>  
+                                <option value="${organizador.id}" <c:if test="${organizador.id == prova.organizador_id}"> selected</c:if>>${organizador.nome}</option>  
                             </c:forEach>
                         </select>
-                    </td>    
+                    </td>
                 </tr>
                 <tr>
                     <td>Ranking:</td> 
                     <td>
                         <select name="optRanking" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <option value="0" <c:if test="${prova.ranking_id == null}"> selected</c:if>> </option>  
+                            <option value="0" <c:if test="${prova.organizador_id == null}"> selected</c:if>> </option>  
                             <c:forEach items="${ranking}" var="ranking">
                                 <option value="${ranking.id}" <c:if test="${ranking.id == prova.ranking_id}"> selected</c:if>>${ranking.nome}</option>  
                             </c:forEach>
@@ -80,8 +84,11 @@
                     </td>
 
                 </tr>
+<<<<<<< HEAD
                 <tr>
 
+=======
+>>>>>>> 4bf7dadb535844970d524782cde6d95141967037
 
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
