@@ -6,15 +6,15 @@ import java.util.*;
 
 public class Inscricao {
 
-    private String dataInscricao;
-
-    private int numeroInscricao;
-
     private String formaPagamento;
-
+    
+   // private Atleta cpf;
+    
     //Variaveis do banco de dados
-    private int id;
+    private int numeroPeito;
 
+    private String total;
+    
     private String kit_id;
 
     private String prova_id;
@@ -23,32 +23,23 @@ public class Inscricao {
 
     private String atleta_id;
 
-    public Inscricao(int id, String dataInscricao, int numeroInscricao, String formaPagamento, 
-            String kit_id, String prova_id, String percurso_id, String atleta_id) {
-        this.dataInscricao = dataInscricao;
-        this.numeroInscricao = numeroInscricao;
+    public Inscricao(int numeroPeito, String formaPagamento, String total,
+            String kit_id, String prova_id, String percurso_id) {
+        this.numeroPeito = numeroPeito;
         this.formaPagamento = formaPagamento;
         this.kit_id = kit_id;
         this.prova_id = prova_id;
         this.percurso_id = percurso_id;
         this.atleta_id = atleta_id;
-        this.id = id;
+        this.total = total;
     }
 
-    public String getDataInscricao() {
-        return dataInscricao;
+    public String getTotal() {
+        return total;
     }
 
-    public void setDataInscricao(String dataInscricao) {
-        this.dataInscricao = dataInscricao;
-    }
-
-    public int getNumeroInscricao() {
-        return numeroInscricao;
-    }
-
-    public void setNumeroInscricao(int numeroInscricao) {
-        this.numeroInscricao = numeroInscricao;
+    public void setTotal(String total) {
+        this.total = total;
     }
 
     public String getFormaPagamento() {
@@ -61,6 +52,14 @@ public class Inscricao {
 
     public String getKit_id() {
         return kit_id;
+    }
+
+    public int getNumeroPeito() {
+        return numeroPeito;
+    }
+
+    public void setNumeroPeito(int numeroPeito) {
+        this.numeroPeito = numeroPeito;
     }
 
     public void setKit_id(String kit_id) {
@@ -136,11 +135,7 @@ public class Inscricao {
     public static Inscricao obterInscricao(int id) throws ClassNotFoundException, SQLException {
         return InscricaoDAO.obterInscricao(id);
     }
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    
+    
 }

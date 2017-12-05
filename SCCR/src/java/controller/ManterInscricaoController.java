@@ -75,16 +75,14 @@ public class ManterInscricaoController extends HttpServlet {
     }
 
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtId"));
-        String dataInscricao = request.getParameter("txtDataInscricao");
-        int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInscricao"));
+        int numeroPeito = Integer.parseInt(request.getParameter("txtnumeroPeito"));
+        String total = request.getParameter("txtTotal");
         String formaPagamento = request.getParameter("optFormaPagamento");
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("optProva");
-        String atleta_id = request.getParameter("txtAtleta");
         String percurso_id = request.getParameter("optPercurso");
 
-        Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, kit_id, prova_id, percurso_id, atleta_id);
+        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total, kit_id, prova_id, percurso_id);
 
         try {
             inscricao.excluir();
@@ -120,23 +118,23 @@ public class ManterInscricaoController extends HttpServlet {
     }
 
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtId"));
-        String dataInscricao = request.getParameter("txtDataInscricao");
-        int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInscricao"));
+        int numeroPeito = Integer.parseInt(request.getParameter("txtnumeroPeito"));
+        String total = request.getParameter("txtTotal");
         String formaPagamento = request.getParameter("optFormaPagamento");
-
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("optProva");
-        String atleta_id = request.getParameter("txtAtleta");
         String percurso_id = request.getParameter("optPercurso");
 
-        try {
-            Kit kit = Kit.obterKit(id);
-            Prova prova = Prova.obterProva(id);
-            Percurso percurso = Percurso.obterPercurso(id);
-            Atleta atleta = Atleta.obterAtleta(id);
 
-            Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, kit_id, prova_id, percurso_id, atleta_id);
+
+        try {
+            Kit kit = Kit.obterKit(numeroPeito);
+            Prova prova = Prova.obterProva(numeroPeito);
+            Percurso percurso = Percurso.obterPercurso(numeroPeito);
+            
+
+        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total, kit_id, prova_id, percurso_id);
+            
             inscricao.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
             view.forward(request, response);
@@ -159,7 +157,7 @@ public class ManterInscricaoController extends HttpServlet {
             request.setAttribute("percurso", Percurso.obterPercursos());
             request.setAttribute("atleta", Atleta.obterAtletas());
 
-            int codInscricao = Integer.parseInt(request.getParameter("id"));
+            int codInscricao = Integer.parseInt(request.getParameter("numeroPeito"));
 
             Inscricao inscricao = Inscricao.obterInscricao(codInscricao);
             request.setAttribute("inscricao", inscricao);
@@ -175,15 +173,14 @@ public class ManterInscricaoController extends HttpServlet {
     }
 
     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtId"));
-        String dataInscricao = request.getParameter("txtDataInscricao");
-        int numeroInscricao = Integer.parseInt(request.getParameter("txtNumeroInscricao"));
+         int numeroPeito = Integer.parseInt(request.getParameter("txtnumeroPeito"));
+        String total = request.getParameter("txtTotal");
         String formaPagamento = request.getParameter("optFormaPagamento");
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("optProva");
-        String atleta_id = request.getParameter("txtAtleta");
         String percurso_id = request.getParameter("optPercurso");
-        Inscricao inscricao = new Inscricao(id, dataInscricao, numeroInscricao, formaPagamento, kit_id, prova_id, percurso_id, atleta_id);
+
+        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total, kit_id, prova_id, percurso_id);
         try {
             inscricao.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");

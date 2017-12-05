@@ -7,7 +7,9 @@ import java.util.*;
 public class Prova {
 
     private String nomeProva;
+    private String valorTotal;
 
+   
     private String localLargada;
 
     private String horarioLargada;
@@ -33,7 +35,7 @@ public class Prova {
    
     
 
-    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria,String localRetiradaKit, String organizador_id, String ranking_id) {
+    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria,String localRetiradaKit,String valorTotal, String organizador_id, String ranking_id) {
         this.nomeProva = nomeProva;
         this.localLargada = localLargada;
         this.horarioLargada = horarioLargada;
@@ -45,6 +47,7 @@ public class Prova {
         this.organizador_id = organizador_id;
         this.ranking_id = ranking_id;
         this.id = id;
+        this.valorTotal = valorTotal;
        this.localRetiradaKit = localRetiradaKit;
     }
 
@@ -219,4 +222,11 @@ public class Prova {
         return ProvaDAO.obterProva(id);
     
 }
+     public String getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(String valorTotal) {
+        this.valorTotal = valorTotal;
+    }
 }

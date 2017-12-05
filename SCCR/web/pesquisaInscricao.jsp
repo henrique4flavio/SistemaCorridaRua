@@ -16,22 +16,18 @@
             <tr>
 
                 <th>Código da inscrição</th>
-                <th>Data da inscricao</th>
-                <th>Numero de inscricao</th>
+
+
                 <th>Forma de pagamento</th>
                 <th>Kit</th>
                 <th>Nome da prova</th>
                 <th>Percurso</th>
-                <th>Nome do atleta</th>
-
-
+                <th>Valor Total</th>
 
             </tr>   
             <c:forEach items="${inscricoes}" var="inscricao">
                 <tr> 
-                    <td> <c:out value="${inscricao.id}"/> </td>
-                    <td> <c:out value= "${inscricao.dataInscricao}"/></td>
-                    <td> <c:out value= "${inscricao.numeroInscricao}"/></td>
+                    <td> <c:out value="${inscricao.numeroPeito}"/> </td>
                     <td> <c:out value="${inscricao.formaPagamento}"/> </td>
                     <td> 
                         <c:forEach items="${kits}" var="kit">
@@ -41,7 +37,7 @@
 
                     <td> 
                         <c:forEach items="${provas}" var="prova">
-                             <c:if test="${prova.id == inscricao.prova_id}">${prova.nomeProva} </c:if>
+                            <c:if test="${prova.id == inscricao.prova_id}">${prova.nomeProva} </c:if>
 
 
                         </c:forEach> 
@@ -53,13 +49,11 @@
 
                         </c:forEach> 
                     </td>
-                    <td> <c:out value="${inscricao.atleta_id}"/> </td>
-
-
+                    <td> <c:out value="${inscricao.total}"/> </td>
                     <td><a href ="ManterInscricaoController?acao=prepararEditar&id=<c:out value="${inscricao.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                     <td><a href ="ManterInscricaoController?acao=prepararExcluir&id=<c:out value="${inscricao.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
-              </tr>
+                </tr>
             </c:forEach>
         </table>
         <form action ="ManterInscricaoController?acao=prepararIncluir" method="post">

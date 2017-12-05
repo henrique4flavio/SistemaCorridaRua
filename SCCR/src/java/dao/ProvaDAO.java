@@ -24,6 +24,7 @@ public class ProvaDAO {
 
                 Prova prova = new Prova(
                         rs.getInt("id"),
+                       
                         rs.getString("nomeProva"),
                         rs.getString("localLargada"),
                         rs.getString("horarioLargada"),
@@ -33,6 +34,7 @@ public class ProvaDAO {
                         rs.getString("fimInscricao"),
                         rs.getString("faixaEtaria"),
                         rs.getString("localRetiradaKit"),
+                        rs.getString("valorProva"),
                         null, null);
 
                 prova.setOrganizador_id(rs.getString("organizador_id"));
@@ -69,7 +71,7 @@ public class ProvaDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into prova (id,nomeProva,localLargada,horarioLargada,dataProva,maxParticipantes,inicioInscricao,fimInscricao,faixaEtaria,localRetiradaKit,organizador_id,ranking_id,) values(?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into prova (id,nomeProva,localLargada,horarioLargada,dataProva,maxParticipantes,inicioInscricao,fimInscricao,faixaEtaria,localRetiradaKit,valorProva,organizador_id,ranking_id,) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, prova.getId());
@@ -81,10 +83,10 @@ public class ProvaDAO {
             comando.setString(7, prova.getInicioInscricao());
             comando.setString(8, prova.getFimInscricao());
             comando.setString(9, prova.getFaixaEtaria());
-
-            comando.setString(10, prova.getLocalRetiradaKit());
-            comando.setString(11, prova.getOrganizador_id());
-            comando.setString(12, prova.getRanking_id());
+            comando.setString(10, prova.getValorTotal());
+            comando.setString(11, prova.getLocalRetiradaKit());
+            comando.setString(12, prova.getOrganizador_id());
+            comando.setString(13, prova.getRanking_id());
 
             comando.execute();
             comando.close();
@@ -166,6 +168,7 @@ public class ProvaDAO {
                     rs.getString("fimInscricao"),
                     rs.getString("faixaEtaria"),
                     rs.getString("localRetiradaKit"),
+                     rs.getString("valorProva"),
                     null, null);
 
             prova.setOrganizador_id(rs.getString("organizador_id"));

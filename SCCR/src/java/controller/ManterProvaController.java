@@ -114,14 +114,15 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
         String localRetiradaKit = request.getParameter("txtLocalRetiradaKit");
-
+        String valorProva = request.getParameter("txtValorProva");
         String organizador_id = request.getParameter("optOrganizador");
         String ranking_id = request.getParameter("optRanking");
 
         try {
             Organizador organizador = Organizador.obterOrganizador(id);
             Ranking ranking = Ranking.obterRanking(id);
-            Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit, organizador_id, ranking_id);
+            
+            Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit,valorProva, organizador_id, ranking_id);
 
             prova.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController");
@@ -148,11 +149,11 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
         String localRetiradaKit = request.getParameter("txtLocalRetiradaKit");
-
+        String valorProva = request.getParameter("txtValorProva");
         String organizador_id = request.getParameter("optOrganizador");
         String ranking_id = request.getParameter("optRanking");
 
-        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit, organizador_id, ranking_id);
+        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit,valorProva, organizador_id, ranking_id);
 
         try {
             prova.alterar();
@@ -206,8 +207,8 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
         String organizador_id = request.getParameter("optOrganizador");
         String ranking_id = request.getParameter("optRanking");
         String localRetiradaKit = request.getParameter("txtLocalRetiradaKit");
-
-        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, inicioInscricao, fimInscricao, faixaEtaria, localRetiradaKit, organizador_id, ranking_id);
+        String valorProva = request.getParameter("txtValorProva");
+        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, inicioInscricao, fimInscricao, faixaEtaria, localRetiradaKit,valorProva, organizador_id, ranking_id);
 
         try {
             prova.excluir();

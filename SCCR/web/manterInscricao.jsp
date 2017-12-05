@@ -9,25 +9,15 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-           
-        
+
+
         <h3>${operacao}</h3>
 
         <form action="ManterInscricaoController?acao=confirmar${operacao}" method="post" name="frmManterInscricao">
             <table>
                 <tr>
                     <td>Codigo da Inscrição:</td> 
-                    <td><input type="text" name="txtId" value="${inscricao.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-                    </tr>
-            
-                <tr>
-                    <td>Data da Inscrição:</td> 
-                    <td><input type="text" name="txtDataInscricao" value="${inscricao.dataInscricao}" <c:if test="${operacao != 'Incluir'}"></c:if>></td>
-                    </tr>
-
-                    <tr>
-                        <td>Numero da Inscrição:</td> 
-                        <td><input type="text" name="txtNumeroInscricao" value="${inscricao.numeroInscricao}" <c:if test="${operacao != 'Incluir'}"> </c:if>></td>
+                    <td><input type="text" name="txtnumeroPeito" value="${inscricao.numeroPeito}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
 
                     <tr> 
@@ -43,50 +33,47 @@
                     <tr>
                         <td>Kit:</td> 
                         <td>
-                         <select name="optKit" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <select name="optKit" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${inscricao.kit_id == null}"> selected</c:if>></option>  
                             <c:forEach items="${kit}" var="kit">
                                 <option value="${kit.id}" <c:if test="${kit.id == inscricao.kit_id}"> selected</c:if>>${kit.nomeKit}</option>  
                             </c:forEach>
                         </select>
                     </td>
-                         </tr>
+                </tr>
 
-           
-                    <tr>
-                        <td>Prova:</td> 
-                        <td>
-                         <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+
+                <tr>
+                    <td>Prova:</td> 
+                    <td>
+                        <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${inscricao.prova_id == null}"> selected</c:if>> </option>  
                             <c:forEach items="${prova}" var="prova">
                                 <option value="${prova.id}" <c:if test="${prova.id == inscricao.prova_id}"> selected</c:if>>${prova.nomeProva}</option>  
                             </c:forEach>
                         </select>
                     </td>
-                       </tr>
+                </tr>
 
 
-                    <tr>
-                        <td>Percurso:</td> 
-                        <td>
-                         <select name="optPercurso" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                <tr>
+                    <td>Percurso:</td> 
+                    <td>
+                        <select name="optPercurso" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${inscricao.percurso_id == null}"> selected</c:if>> </option>  
                             <c:forEach items="${percurso}" var="percurso">
                                 <option value="${percurso.id}" <c:if test="${percurso.id == inscricao.percurso_id}"> selected</c:if>>${percurso.nome}</option>  
                             </c:forEach>
                         </select>
                     </td>
-                    </tr>
-                    <tr>
-                        <td>Atleta:</td> 
-
-                        <td><input type="text" name="txtAtleta" value="${inscricao.atleta_id}" <c:if test="${operacao =!'Incluir'}"> readonly</c:if>></td>
-
-                        <td><input type="text" name="txtAtleta" value="${inscricao.atleta_id}" <c:if test="${operacao != 'Incluir'}"> </c:if>></td>
-
-                    </tr>
-            
-             <tr>
+                </tr>
+                <tr>
+                    <td> Total: </td>
+             <td><input type="text" name="txtTotal" value="${inscricao.total}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                           
+                    
+                </tr>
+                <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
                 </tr>
             </table>

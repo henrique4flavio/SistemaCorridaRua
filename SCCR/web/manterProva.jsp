@@ -54,16 +54,19 @@
                         <td>Faixa etaria:</td> 
                         <td><input type="text" name="txtFaixaEtaria" value="${prova.faixaEtaria}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
-
+                    <tr>
+                        <td>Valor Total:</td> 
+                        <td><input type="text" name="txtValorProva" value="${prova.faixaEtaria}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
                     <tr>
                         <td>Organizador:</td> 
                         <td>
                             <select name="optOrganizador" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-<<<<<<< HEAD
+
                             <option value="0" <c:if test="${prova.organizador_id == null}"> selected</c:if>></option>  
-=======
+
                             <option value="0" <c:if test="${prova.organizador_id == null}"> selected</c:if>> </option>  
->>>>>>> 4bf7dadb535844970d524782cde6d95141967037
+
                             <c:forEach items="${organizador}" var="organizador">
                                 <option value="${organizador.id}" <c:if test="${organizador.id == prova.organizador_id}"> selected</c:if>>${organizador.nome}</option>  
                             </c:forEach>
