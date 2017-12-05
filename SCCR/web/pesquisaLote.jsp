@@ -30,10 +30,10 @@
                     <td><c:out value = "${lote.identificacao}" /></td>
                     
                     <td><c:forEach items="${provas}" var ="prova">
-                            ${prova.nomeProva} <c:if test="${prova.id ==Lote.prova_id}"></c:if>
-                               
-                       </td>
+                            <c:if test="${prova.id ==lote.prova_id}"> ${prova.nomeProva}</c:if>
+
                         </c:forEach>
+                         </td>
                     <td><c:out value = "${lote.dataInicio}" /></td>
                     <td><c:out value = "${lote.dataFim}" /></td>
                     <td><c:out value = "${lote.valor}" /></td>

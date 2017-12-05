@@ -79,11 +79,11 @@
                     </tr>
                     <tr>
                         <td>Atleta:</td> 
-<<<<<<< HEAD
+
                         <td><input type="text" name="txtAtleta" value="${inscricao.atleta_id}" <c:if test="${operacao =!'Incluir'}"> readonly</c:if>></td>
-=======
+
                         <td><input type="text" name="txtAtleta" value="${inscricao.atleta_id}" <c:if test="${operacao != 'Incluir'}"> </c:if>></td>
->>>>>>> 4bf7dadb535844970d524782cde6d95141967037
+
                     </tr>
             
              <tr>
