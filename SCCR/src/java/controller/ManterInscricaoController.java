@@ -38,6 +38,10 @@ public class ManterInscricaoController extends HttpServlet {
                         } else {
                             if (acao.equals("confirmarEditar")) {
                                 confirmarEditar(request, response);
+                            } else {
+                                if (acao.equals("escolherProva")) {
+                                    escolherProva(request, response);
+                                }
                             }
                         }
                     }
@@ -45,6 +49,7 @@ public class ManterInscricaoController extends HttpServlet {
             }
         }
     }
+    
 
     public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
@@ -193,7 +198,29 @@ public class ManterInscricaoController extends HttpServlet {
 
         }
     }
+    
+     public void escolherProva(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.setAttribute("operacao", "Incluir");
+            request.setAttribute("kit", Kit.obterKits());
+            request.setAttribute("prova", Prova.obterProvas());
+            request.setAttribute("percurso", Percurso.obterPercursos());
+            request.setAttribute("atleta", Atleta.obterAtletas());
 
+            RequestDispatcher view = request.getRequestDispatcher("/listaDeProva.jsp");
+
+            view.forward(request, response);
+        } catch (ServletException ex) {
+        } catch (IOException ex) {
+        } catch (ClassNotFoundException ex) {
+        }
+
+    }
+
+    
+
+    
+        
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

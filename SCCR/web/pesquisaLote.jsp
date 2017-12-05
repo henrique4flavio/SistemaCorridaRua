@@ -29,7 +29,7 @@
                     <td><c:out value = "${lote.id}" /></td>
                     <td><c:out value = "${lote.identificacao}" /></td>
                     
-                    <td><c:forEach items="${provas}" var ="prova">
+                    <td><c:forEach items="${prova}" var ="prova">
                             <c:if test="${prova.id ==lote.prova_id}"> ${prova.nomeProva}</c:if>
 
                         </c:forEach>

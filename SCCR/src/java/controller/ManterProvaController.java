@@ -52,6 +52,7 @@ public class ManterProvaController extends HttpServlet {
                             } else {
                                 if (acao.equals("visualizarProva")) {
                                     visualizarProva(request, response);
+                                    
 
                                 }
                             }

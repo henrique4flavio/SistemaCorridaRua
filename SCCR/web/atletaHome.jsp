@@ -19,17 +19,31 @@
             }
         </script>
         <script>
-function idAtleta() {
-    
-    var id = prompt("Digite o id do Atleta:", "id");
-    if (id == null || id == "") {
-        txt = "User cancelled the prompt.";
-    } else {
-        location.href='ManterAtletaController?acao=prepararEditar&id=' +id;
-    }
-    
-}
-</script>
+            function idAtleta1() {
+
+                var id = prompt("Digite o id do Atleta:", "id");
+                if (id == null || id == "") {
+                    txt = "User cancelled the prompt.";
+                } else {
+                    location.href = 'ManterAtletaController?acao=prepararEditar&id=' + id;
+                }
+
+            }
+        </script>
+
+        <script>
+            function idAtleta2() {
+
+                var id = prompt("Digite o id do Atleta:", "id");
+                if (id == null || id == "") {
+                    txt = "User cancelled the prompt.";
+                } else {
+                    location.href = 'ManterAtletaController?acao=prepararExcluir&id=' + id;
+                }
+
+            }
+        </script>
+
 
 
     </head>
@@ -46,10 +60,10 @@ function idAtleta() {
                     <div class="row">
                         <div class="col-md-10">
                             <a href="#" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Minhas Inscrições</a>
-                            <button onclick="idAtleta()" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Alterar dados Pessoais</a></button>
+                            <button onclick="idAtleta1()" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Alterar dados Pessoais</a></button>
                             <a href="#" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Consultar Resultados</a> 
                             <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Rankings</a>
-                            <a href="#" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a>
+                            <button onclick="idAtleta2()" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a></button>
                         </div>
 
                     </div>
