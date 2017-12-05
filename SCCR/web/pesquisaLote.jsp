@@ -19,7 +19,7 @@
                 <th>Prova</th>
                 <th>Data de Inicio</th>
                 <th>Data do Fim</th>
-                <th>Valor</th>
+                <th>Desconto</th>
 
             </tr>    
 
@@ -36,8 +36,7 @@
                          </td>
                     <td><c:out value = "${lote.dataInicio}" /></td>
                     <td><c:out value = "${lote.dataFim}" /></td>
-                    <td><c:out value = "${lote.valor}" /></td>
-
+                    <td><c:out value = "${lote.desconto}" /></td>
 
                     <td> <a href="ManterLoteController?acao=prepararEditar&id=<c:out value="${lote.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
                     <td> <a href="ManterLoteController?acao=prepararExcluir&id=<c:out value="${lote.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>

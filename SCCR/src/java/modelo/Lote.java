@@ -14,18 +14,28 @@ public class Lote {
 
     private String valor;
 
+    public double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(double desconto) {
+        this.desconto = desconto;
+    }
+
     //Variaveis do banco de dados
     private int id;
+    private double desconto;
     
     private String prova_id;
 
-    public Lote(int id, String dataInicio, String dataFim, String valor, String identificacao, String prova_id) {
+    public Lote(int id, String dataInicio, String dataFim, String identificacao, double desconto,String prova_id) {
         this.valor = valor;
         this.dataFim = dataFim;
         this.dataInicio = dataInicio;
         this.prova_id = prova_id;
         this.identificacao = identificacao;
         this.id = id;
+        this.desconto= desconto;
 
     }
 

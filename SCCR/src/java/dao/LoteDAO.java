@@ -18,14 +18,14 @@ public class LoteDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select *from lote");
+            ResultSet rs = comando.executeQuery("select * from lote");
             while (rs.next()) {
                 Lote lote = new Lote(
                 rs.getInt("id"), 
                 rs.getString("dataInicio"),
-                rs.getString("dataFim"), 
-                rs.getString("valor"),
+                rs.getString("dataFim"),               
                 rs.getString("identificacao"), 
+                rs.getDouble("desconto"),
                 null);
 
                 lote.setProva_id(rs.getString("prova_id"));
@@ -61,13 +61,13 @@ public class LoteDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into lote (id,identificacao,dataInicio,dataFim,valor,prova_id) values(?,?,?,?,?,?)";
+            String sql = "insert into lote (id,identificacao,dataInicio,dataFim,desconto,prova_id) values(?,?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setInt(1, lote.getId());
             comando.setString(2, lote.getIdentificacao());
             comando.setString(3, lote.getDataInicio());
-            comando.setString(4, lote.getDataFim());
-            comando.setString(5, lote.getValor());
+            comando.setString(4, lote.getDataFim());       
+            comando.setDouble(5, lote.getDesconto());           
             comando.setString(6, lote.getprova_id());
 
             
@@ -86,12 +86,12 @@ public class LoteDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update lote set identificacao=?,dataInicio=?,dataFim=?,valor=?,prova_id=? where id = ?";
+            String sql = "update lote set identificacao=?,dataInicio=?,dataFim=?,desconto=?,prova_id=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, lote.getIdentificacao());
             comando.setString(2, lote.getDataInicio());
             comando.setString(3, lote.getDataFim());
-            comando.setString(4, lote.getValor());
+            comando.setDouble(4, lote.getDesconto());
             comando.setString(5, lote.getprova_id());
             comando.setInt(6, lote.getId());
             
@@ -135,9 +135,8 @@ public class LoteDAO {
 
             lote = new Lote(rs.getInt("id"),
                     rs.getString("dataInicio"),
-                    rs.getString("dataFim"), 
-                    rs.getString("valor"),
-                    rs.getString("identificacao"), null);
+                    rs.getString("dataFim"),         
+                    rs.getString("identificacao"),rs.getDouble("desconto"), null);
 
             lote.setProva_id(rs.getString("prova_id"));
         } catch (SQLException e) {

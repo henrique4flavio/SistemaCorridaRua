@@ -61,12 +61,13 @@ public class ManterLoteController extends HttpServlet {
         String identificacao = request.getParameter("txtIdentificacaoLote");
         String dataInicio = request.getParameter("txtDataInicioLote");
         String dataFim = request.getParameter("txtDataFimLote");
-        String valor = request.getParameter("txtValorLote");
+     Double desconto;
+        desconto = (double)Integer.parseInt(request.getParameter("txtDesconto"));
         String prova_id = request.getParameter("optProva");
 
         try {
             Prova prova = Prova.obterProva(id);
-            Lote lote = new Lote(id, dataInicio, dataFim, valor, identificacao, prova_id);
+            Lote lote = new Lote(id, dataInicio, dataFim, identificacao,desconto, prova_id);
 
             lote.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaLoteController");
@@ -101,16 +102,16 @@ public class ManterLoteController extends HttpServlet {
     }
 
     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtIdLote"));
+ int id = Integer.parseInt(request.getParameter("txtIdLote"));
         String identificacao = request.getParameter("txtIdentificacaoLote");
         String dataInicio = request.getParameter("txtDataInicioLote");
         String dataFim = request.getParameter("txtDataFimLote");
-        String valor = request.getParameter("txtValorLote");
+    Double desconto;
+        desconto = (double)Integer.parseInt(request.getParameter("txtDesconto"));
         String prova_id = request.getParameter("optProva");
-
         try {
             Prova prova = Prova.obterProva(id);
-            Lote lote = new Lote(id, dataInicio, dataFim, valor, identificacao, prova_id);
+            Lote lote = new Lote(id, dataInicio, dataFim, identificacao,desconto, prova_id);
 
             lote.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaLoteController");
@@ -149,14 +150,15 @@ public class ManterLoteController extends HttpServlet {
     }
 
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
-       int id = Integer.parseInt(request.getParameter("txtIdLote"));
+        int id = Integer.parseInt(request.getParameter("txtIdLote"));
         String identificacao = request.getParameter("txtIdentificacaoLote");
         String dataInicio = request.getParameter("txtDataInicioLote");
         String dataFim = request.getParameter("txtDataFimLote");
-        String valor = request.getParameter("txtValorLote");
+        Double desconto;
+        desconto = (double)Integer.parseInt(request.getParameter("txtDesconto"));
         String prova_id = request.getParameter("optProva");
         
-        Lote lote = new Lote(id, dataInicio, dataFim, valor, identificacao, prova_id);
+        Lote lote = new Lote(id, dataInicio, dataFim, identificacao,desconto, prova_id);
 
         try {
             lote.excluir();
