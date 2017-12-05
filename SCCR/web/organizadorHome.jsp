@@ -19,13 +19,25 @@
             }
         </script>
         <script>
-            function idOrganizador() {
+            function idOrganizador1() {
 
                 var id = prompt("Digite o id do Organizador:", "id");
                 if (id == null || id == "") {
                     txt = "User cancelled the prompt.";
                 } else {
                     location.href = 'ManterOrganizadorController?acao=prepararEditar&id=' + id;
+                }
+
+            }
+        </script>
+        <script>
+            function idOrganizador2() {
+
+                var id = prompt("Digite o id do Organizador:", "id");
+                if (id == null || id == "") {
+                    txt = "User cancelled the prompt.";
+                } else {
+                    location.href = 'ManterOrganizadorController?acao=prepararExcluir&id=' + id;
                 }
 
             }
@@ -46,10 +58,12 @@
                     <div class="row">
                         <div class="col-md-10">
                             <a href="#" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Minhas Provas</a>
-                            <button onclick="idOrganizador()" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Alterar dados Pessoais</a></button>
-                            <a href="#" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Cadastrar Rankings</a> 
+                            <button onclick="idOrganizador1()" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Alterar dados Pessoais</a></button>
+                            <a href="PesquisaRankingController" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Cadastrar Rankings</a> 
 
-                            <a href="#" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a>
+                            
+                            <button onclick="idOrganizador2()" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a>
+
                         </div>
 
                     </div>
