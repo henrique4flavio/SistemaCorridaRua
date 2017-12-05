@@ -27,15 +27,6 @@
             }
         </script>
         
-        <script type="text/javascript">
-
-            function MudaDePagina() {
-              window.setTimeout("location.href = 'atletaHome.jsp'",15);
-
-            }
-
-        </script> 
-        
 
     </head>
     <body>
@@ -407,7 +398,7 @@
 
                     <div class="col-md-6">
                         <br>
-                        <input type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar" onclick="MudaDePagina();" />
+                        <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
                         
                         <a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
 
