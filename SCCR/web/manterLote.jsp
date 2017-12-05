@@ -30,25 +30,19 @@
                         <td>Data Fim</td> 
                         <td><input type="text" name="txtDataFimLote" value="${lote.dataFim}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
-<<<<<<< HEAD
+
                     
                     <tr>
                         <td>Desconto</td> 
                         <td><input type="text" name="txtDesconto" value="${lote.desconto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
-                    <tr>
+                   
                         
-                        <td> Prova:</td> 
-                        <td>
-                            <select name="optProva" <c:if test="${operacao =='Excluir'}"> readonly</c:if>>
-                            <option value="0" <c:if test="${lote.prova_id == null}"> selected</c:if>> </option>  
-=======
                        <tr>
                     <td> Prova:</td> 
                      <td>
                          <select name="optProva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${percurso.prova_id == null}"> selected</c:if>> </option>  
->>>>>>> c7b6c94bb4b5cd47cd2e8e2db175e1398b75402d
                             <c:forEach items="${prova}" var="prova">
                                 <option value="${prova.id}" <c:if test="${prova.id == percurso.prova_id}"> selected</c:if>>${prova.nomeProva}</option>  
                             </c:forEach>

@@ -25,7 +25,7 @@ public class LoteDAO {
                 rs.getString("dataInicio"),
                 rs.getString("dataFim"),               
                 rs.getString("identificacao"), 
-                rs.getDouble("desconto"),
+                rs.getString("desconto"),
                 null);
 
                 lote.setProva_id(rs.getString("prova_id"));
@@ -61,13 +61,13 @@ public class LoteDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into lote (id,identificacao,dataInicio,dataFim,desconto,prova_id) values(?,?,?,?,?,?,?)";
+            String sql = "insert into lote (id,identificacao,dataInicio,dataFim,desconto,prova_id) values(?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setInt(1, lote.getId());
             comando.setString(2, lote.getIdentificacao());
             comando.setString(3, lote.getDataInicio());
             comando.setString(4, lote.getDataFim());       
-            comando.setDouble(5, lote.getDesconto());           
+            comando.setString(5, lote.getDesconto());           
             comando.setString(6, lote.getprova_id());
 
             
@@ -91,7 +91,7 @@ public class LoteDAO {
             comando.setString(1, lote.getIdentificacao());
             comando.setString(2, lote.getDataInicio());
             comando.setString(3, lote.getDataFim());
-            comando.setDouble(4, lote.getDesconto());
+            comando.setString(4, lote.getDesconto());
             comando.setString(5, lote.getprova_id());
             comando.setInt(6, lote.getId());
             
@@ -136,7 +136,7 @@ public class LoteDAO {
             lote = new Lote(rs.getInt("id"),
                     rs.getString("dataInicio"),
                     rs.getString("dataFim"),         
-                    rs.getString("identificacao"),rs.getDouble("desconto"), null);
+                    rs.getString("identificacao"),rs.getString("desconto"), null);
 
             lote.setProva_id(rs.getString("prova_id"));
         } catch (SQLException e) {

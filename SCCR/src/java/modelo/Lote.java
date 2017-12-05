@@ -12,24 +12,24 @@ public class Lote {
 
     private String dataFim;
 
-    private String valor;
+   
 
-    public double getDesconto() {
+    public String getDesconto() {
         return desconto;
     }
 
-    public void setDesconto(double desconto) {
+    public void setDesconto(String desconto) {
         this.desconto = desconto;
     }
 
     //Variaveis do banco de dados
     private int id;
-    private double desconto;
+    private String desconto;
     
     private String prova_id;
 
-    public Lote(int id, String dataInicio, String dataFim, String identificacao, double desconto,String prova_id) {
-        this.valor = valor;
+    public Lote(int id, String dataInicio, String dataFim, String identificacao, String desconto,String prova_id) {
+     
         this.dataFim = dataFim;
         this.dataInicio = dataInicio;
         this.prova_id = prova_id;
@@ -71,13 +71,6 @@ public class Lote {
         this.dataFim = dataFim;
     }
 
-    public String getValor() {
-        return valor;
-    }
-
-    public void setValor(String valor) {
-        this.valor = valor;
-    }
 
     public void CadastrarLote() {
 

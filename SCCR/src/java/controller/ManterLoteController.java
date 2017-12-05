@@ -61,8 +61,8 @@ public class ManterLoteController extends HttpServlet {
         String identificacao = request.getParameter("txtIdentificacaoLote");
         String dataInicio = request.getParameter("txtDataInicioLote");
         String dataFim = request.getParameter("txtDataFimLote");
-     Double desconto;
-        desconto = (double)Integer.parseInt(request.getParameter("txtDesconto"));
+        String  desconto=
+        request.getParameter("txtDesconto");
         String prova_id = request.getParameter("optProva");
 
         try {
@@ -106,8 +106,8 @@ public class ManterLoteController extends HttpServlet {
         String identificacao = request.getParameter("txtIdentificacaoLote");
         String dataInicio = request.getParameter("txtDataInicioLote");
         String dataFim = request.getParameter("txtDataFimLote");
-    Double desconto;
-        desconto = (double)Integer.parseInt(request.getParameter("txtDesconto"));
+    
+       String desconto = request.getParameter("txtDesconto");
         String prova_id = request.getParameter("optProva");
         try {
             Prova prova = Prova.obterProva(id);
@@ -154,8 +154,7 @@ public class ManterLoteController extends HttpServlet {
         String identificacao = request.getParameter("txtIdentificacaoLote");
         String dataInicio = request.getParameter("txtDataInicioLote");
         String dataFim = request.getParameter("txtDataFimLote");
-        Double desconto;
-        desconto = (double)Integer.parseInt(request.getParameter("txtDesconto"));
+        String desconto=request.getParameter("txtDesconto");
         String prova_id = request.getParameter("optProva");
         
         Lote lote = new Lote(id, dataInicio, dataFim, identificacao,desconto, prova_id);
