@@ -11,6 +11,7 @@
         <jsp:include page="bootstrap.jspf"/>
 
     <body>
+        <jsp:include page="barra_superior.jspf"/> 
         <div class="container">
 
             <c:forEach items="${provas}" var="prova">
@@ -27,7 +28,7 @@
                                 <div class="row">
                                     <div class="col-xs-12 col-md-6">
                                         <p class="lead">
-                                            </p>
+                                        </p>
                                     </div>
                                     <div class="col-xs-12 col-md-6">
                                         <a class="btn btn-success" href="PesquisaProvaController?acao=visualizarProva&id=${prova.id}" >Mais informações</a>
@@ -37,11 +38,12 @@
                         </div>
                     </div>
 
-                
 
-            </c:forEach>
+
+                </c:forEach>
+            </div>
         </div>
-
+        <jsp:include page="footer.jspf"/>
     </body>
 
 </head>
