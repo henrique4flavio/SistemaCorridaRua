@@ -68,6 +68,20 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>Atleta</td> 
+                    <td>
+                        <select name="optAtleta" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <option value="0" <c:if test="${inscricao.atleta_id == null}"> selected</c:if>> </option>  
+                            <c:forEach items="${atleta}" var="atleta">
+                                <option value="${atleta.id}" <c:if test="${atleta.id == inscricao.atleta_id}"> selected</c:if>>${atleta.nome}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                
+                <tr>
+                    
                     <td> Total: </td>
              <td><input type="text" name="txtTotal" value="${inscricao.total}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                            

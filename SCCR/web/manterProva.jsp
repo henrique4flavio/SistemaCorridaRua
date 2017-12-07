@@ -87,11 +87,9 @@
                     </td>
 
                 </tr>
-<<<<<<< HEAD
+
                 <tr>
 
-=======
->>>>>>> 4bf7dadb535844970d524782cde6d95141967037
 
                 <tr>
                     <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>

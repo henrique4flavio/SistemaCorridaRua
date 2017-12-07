@@ -24,7 +24,7 @@ public class Inscricao {
     private String atleta_id;
 
     public Inscricao(int numeroPeito, String formaPagamento, String total,
-            String kit_id, String prova_id, String percurso_id) {
+            String kit_id, String prova_id, String percurso_id,String atleta_id) {
         this.numeroPeito = numeroPeito;
         this.formaPagamento = formaPagamento;
         this.kit_id = kit_id;

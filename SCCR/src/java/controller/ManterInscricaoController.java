@@ -59,7 +59,7 @@ public class ManterInscricaoController extends HttpServlet {
             request.setAttribute("percurso", Percurso.obterPercursos());
             request.setAttribute("atleta", Atleta.obterAtletas());
 
-            int codInscricao = Integer.parseInt(request.getParameter("id"));
+            int codInscricao = Integer.parseInt(request.getParameter("numeroPeito"));
 
             Inscricao inscricao = Inscricao.obterInscricao(codInscricao);
             request.setAttribute("inscricao", inscricao);
@@ -81,8 +81,9 @@ public class ManterInscricaoController extends HttpServlet {
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("optProva");
         String percurso_id = request.getParameter("optPercurso");
+        String atleta_id=request.getParameter("optAtleta");
 
-        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total, kit_id, prova_id, percurso_id);
+        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total, kit_id, prova_id, percurso_id,atleta_id);
 
         try {
             inscricao.excluir();
@@ -124,6 +125,7 @@ public class ManterInscricaoController extends HttpServlet {
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("optProva");
         String percurso_id = request.getParameter("optPercurso");
+        String atleta_id=request.getParameter("optAtleta");
 
 
 
@@ -133,7 +135,7 @@ public class ManterInscricaoController extends HttpServlet {
             Percurso percurso = Percurso.obterPercurso(numeroPeito);
             
 
-        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total, kit_id, prova_id, percurso_id);
+        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total, kit_id, prova_id, percurso_id,atleta_id);
             
             inscricao.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
@@ -179,8 +181,9 @@ public class ManterInscricaoController extends HttpServlet {
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("optProva");
         String percurso_id = request.getParameter("optPercurso");
+        String atleta_id=request.getParameter("optAtleta");
 
-        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total, kit_id, prova_id, percurso_id);
+        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total, kit_id, prova_id, percurso_id,atleta_id);
         try {
             inscricao.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");

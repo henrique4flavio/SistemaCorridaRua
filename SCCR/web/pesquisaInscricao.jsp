@@ -50,8 +50,8 @@
                         </c:forEach> 
                     </td>
                     <td> <c:out value="${inscricao.total}"/> </td>
-                    <td><a href ="ManterInscricaoController?acao=prepararEditar&id=<c:out value="${inscricao.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-                    <td><a href ="ManterInscricaoController?acao=prepararExcluir&id=<c:out value="${inscricao.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                    <td><a href ="ManterInscricaoController?acao=prepararEditar&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                    <td><a href ="ManterInscricaoController?acao=prepararExcluir&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
 
                 </tr>
             </c:forEach>
