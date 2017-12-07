@@ -18,11 +18,12 @@
                 <th>Código da inscrição</th>
 
 
-                <th>Forma de pagamento</th>
+                <th>Total</th>
                 <th>Kit</th>
                 <th>Nome da prova</th>
                 <th>Percurso</th>
-                <th>Valor Total</th>
+                <th> Forma de Pagamento</th>
+                
 
             </tr>   
             <c:forEach items="${inscricoes}" var="inscricao">

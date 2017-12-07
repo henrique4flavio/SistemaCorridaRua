@@ -78,9 +78,6 @@
                         </select>
                     </td>
                 </tr>
-                <tr>
-                
-                <tr>
                     
                     <td> Total: </td>
              <td><input type="text" name="txtTotal" value="${inscricao.total}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
