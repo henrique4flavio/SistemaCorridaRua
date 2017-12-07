@@ -28,7 +28,7 @@
             <a href="PesquisaLoteController">Manter lotes</a><br>
    
             <a href="PesquisaPercursoController">Manter percursos</a><br>
-            <a href="PesquisaProvaController">Manter provas</a><br>
+            <a href="PesquisaProvaController?acao=listarProvas">Manter provas</a><br>
             <a href="PesquisaRankingController">Manter rankings</a><br>
 
         </div>

@@ -7,12 +7,16 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Kit;
 import modelo.Organizador;
 import modelo.Prova;
 import modelo.Ranking;
@@ -34,19 +38,86 @@ public class PesquisaProvaController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try  {
-          
-            request.setAttribute("provas",Prova.obterProvas());
-            request.setAttribute("organizadores",Organizador.obterOrganizadores());
-            request.setAttribute("ranking",Ranking.obterRankings());
-            RequestDispatcher view = request.getRequestDispatcher("/pesquisaProva.jsp");
-            view.forward(request,response);
+        String acao = request.getParameter("acao");
+        if (acao.equals("listarProvas")) {
+            listarProvas(request, response);
+        } else {
+            if (acao.equals("gridProvas")) {
+                gridProvas(request, response);
+            } else {
+                if (acao.equals("visualizarProva")) {
+                    try {
+                        visualizarProva(request, response);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
 
-            
-                   }catch(ClassNotFoundException ex){
-                       
-                   }
+                }
+
+            }
+        }
+    }
+
+    
+
+    public void listarProvas(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.setAttribute("provas", Prova.obterProvas());
+            request.setAttribute("organizadores", Organizador.obterOrganizadores());
+            request.setAttribute("ranking", Ranking.obterRankings());
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaProva.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
+        }
+
+    }
+
+    public void visualizarProva(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("operacao", "Visualizar");
+            request.setAttribute("organizador", Organizador.obterOrganizadores());
+            request.setAttribute("kit", Kit.obterKits());
+
+            int codProva = Integer.parseInt(request.getParameter("id"));
+
+            Prova prova = Prova.obterProva(codProva);
+            request.setAttribute("prova", prova);
+            RequestDispatcher view = request.getRequestDispatcher("/viewProva.jsp");
+
+            view.forward(request, response);
+        } catch (ServletException ex) {
+        } catch (IOException ex) {
+        } catch (ClassNotFoundException ex) {
+        }
+
+    }
+
+    public void gridProvas(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.setAttribute("provas", Prova.obterProvas());
+            request.setAttribute("organizadores", Organizador.obterOrganizadores());
+            request.setAttribute("ranking", Ranking.obterRankings());
+            RequestDispatcher view = request.getRequestDispatcher("/escolherProva.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
