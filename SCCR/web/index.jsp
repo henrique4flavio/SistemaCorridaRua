@@ -30,6 +30,11 @@
             <a href="PesquisaPercursoController">Manter percursos</a><br>
             <a href="PesquisaProvaController?acao=listarProvas">Manter provas</a><br>
             <a href="PesquisaRankingController">Manter rankings</a><br>
+            
+            <br><br>
+            
+            <a href="PesquisaProvaController?acao=gridProvas">Provas</a>
+            
 
         </div>
 
