@@ -71,7 +71,7 @@ public class ProvaDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into prova (id,nomeProva,localLargada,horarioLargada,dataProva,maxParticipantes,inicioInscricao,fimInscricao,faixaEtaria,localRetiradaKit,valorProva,organizador_id,ranking_id,) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into prova (id,nomeProva,localLargada,horarioLargada,dataProva,maxParticipantes,inicioInscricao,fimInscricao,faixaEtaria,localRetiradaKit,organizador_id,ranking_id,valorProva) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, prova.getId());
@@ -83,11 +83,11 @@ public class ProvaDAO {
             comando.setString(7, prova.getInicioInscricao());
             comando.setString(8, prova.getFimInscricao());
             comando.setString(9, prova.getFaixaEtaria());
-            comando.setString(10, prova.getValorTotal());
-            comando.setString(11, prova.getLocalRetiradaKit());
-            comando.setString(12, prova.getOrganizador_id());
-            comando.setString(13, prova.getRanking_id());
-
+            
+            comando.setString(10, prova.getLocalRetiradaKit());
+            comando.setString(11, prova.getOrganizador_id());
+            comando.setString(12, prova.getRanking_id());
+            comando.setString(13, prova.getValorTotal());
             comando.execute();
             comando.close();
             conexao.close();
@@ -113,11 +113,11 @@ public class ProvaDAO {
             comando.setString(6, prova.getInicioInscricao());
             comando.setString(7, prova.getFimInscricao());
             comando.setString(8, prova.getFaixaEtaria());
-
             comando.setString(9, prova.getLocalRetiradaKit());
             comando.setString(10, prova.getOrganizador_id());
-            comando.setString(11, prova.getRanking_id());
-            comando.setInt(12, prova.getId());
+            comando.setString(11,prova.getValorTotal());
+            comando.setString(12, prova.getRanking_id());
+            comando.setInt(13, prova.getId());
 
             comando.execute();
             comando.close();
@@ -154,7 +154,7 @@ public class ProvaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select *from prova where id = " + id);
+            ResultSet rs = comando.executeQuery("select * from prova where id = " + id);
             rs.first();
 
             prova = new Prova(

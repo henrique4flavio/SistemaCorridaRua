@@ -109,7 +109,7 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
         String localLargada = request.getParameter("txtLocalLargada");
         String horarioLargada = request.getParameter("txtHorarioLargada");
         String dataProva = request.getParameter("txtDataProva");
-        String maxParticipantes = request.getParameter("txtMaxParticipantes");
+        String maxParticipantes = request.getParameter("txtmaxParticipantes");
         String dataInicioInscricao = request.getParameter("txtInicioInscricao");
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
@@ -125,7 +125,7 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
             Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit,valorProva, organizador_id, ranking_id);
 
             prova.gravar();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController");
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController?acao=listarProvas");
             view.forward(request, response);
         } catch (IOException ex) {
 
@@ -144,7 +144,7 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
         String localLargada = request.getParameter("txtLocalLargada");
         String horarioLargada = request.getParameter("txtHorarioLargada");
         String dataProva = request.getParameter("txtDataProva");
-        String maxParticipantes = request.getParameter("txtMaxParticipantes");
+        String maxParticipantes = request.getParameter("txtmaxParticipantes");
         String dataInicioInscricao = request.getParameter("txtInicioInscricao");
         String dataFimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
@@ -153,11 +153,10 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
         String organizador_id = request.getParameter("optOrganizador");
         String ranking_id = request.getParameter("optRanking");
 
-        Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit,valorProva, organizador_id, ranking_id);
-
+             Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit,valorProva, organizador_id, ranking_id);
         try {
             prova.alterar();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController");
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController?acao=listarProvas");
             view.forward(request, response);
         } catch (IOException ex) {
 
@@ -174,8 +173,6 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
         try {
             request.setAttribute("operacao", "Excluir");
             request.setAttribute("organizador", Organizador.obterOrganizadores());
-
-            request.setAttribute("kit", Kit.obterKits());
 
             request.setAttribute("ranking", Ranking.obterRankings());
 
@@ -200,7 +197,7 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
         String localLargada = request.getParameter("txtLocalLargada");
         String horarioLargada = request.getParameter("txtHorarioLargada");
         String dataProva = request.getParameter("txtDataProva");
-        String maxParticipantes = request.getParameter("txtMaxParticipantes");
+        String maxParticipantes = request.getParameter("txtmaxParticipantes");
         String inicioInscricao = request.getParameter("txtInicioInscricao");
         String fimInscricao = request.getParameter("txtFimInscricao");
         String faixaEtaria = request.getParameter("txtFaixaEtaria");
@@ -212,7 +209,7 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
 
         try {
             prova.excluir();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController");
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController?acao=listarProvas");
             view.forward(request, response);
         } catch (IOException ex) {
 

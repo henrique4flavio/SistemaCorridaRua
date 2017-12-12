@@ -24,7 +24,8 @@ public class KitDAO {
 
                 Kit kit = new Kit(
                         rs.getInt("id"), 
-                        rs.getString("nomeKit"));
+                        rs.getString("nomeKit"),
+                        rs.getFloat("valor"));
 
                 
                 kits.add(kit);
@@ -58,10 +59,11 @@ public class KitDAO {
         try {
             conexao = BD.getConexao();
             // caso de herança tem qeu fazer para as duas classes .
-            String sql = "insert into kit (id, nomeKit) values(?,?)";
+            String sql = "insert into kit (id, nomeKit, valor) values(?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setInt(1, kit.getId());
             comando.setString(2, kit.getNomeKit());
+            comando.setFloat(3, kit.getValor());
            
             comando.execute();
             comando.close();
@@ -78,10 +80,11 @@ public class KitDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update kit set nomeKit=? where id = ?";
+            String sql = "update kit set nomeKit=?, set valor=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, kit.getNomeKit());
-            comando.setInt(2, kit.getId());
+            comando.setFloat(2, kit.getValor());
+            comando.setInt(3, kit.getId());
  
             comando.execute();
             comando.close();
@@ -121,7 +124,9 @@ public class KitDAO {
             ResultSet rs = comando.executeQuery("select * from kit where id = " + id);
             rs.next();
 
-            kit = new Kit(rs.getInt("id"), rs.getString("nomeKit"));
+            kit = new Kit(rs.getInt("id"), 
+                    rs.getString("nomeKit"),
+                    rs.getFloat("valor"));
 
         } catch (SQLException e) {
             e.printStackTrace();

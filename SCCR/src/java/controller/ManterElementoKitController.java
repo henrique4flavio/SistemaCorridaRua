@@ -50,7 +50,7 @@ public class ManterElementoKitController extends HttpServlet {
     public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Excluir");
-            request.setAttribute("Itens", Item.obterItens());
+            request.setAttribute("item", Item.obterItens());
             request.setAttribute("kit", Kit.obterKits());
            
 
@@ -72,7 +72,7 @@ public class ManterElementoKitController extends HttpServlet {
 
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtId"));
-        int item_id = Integer.parseInt(request.getParameter("opttItem_id"));
+        int item_id = Integer.parseInt(request.getParameter("optItem_id"));
         int kit_id = Integer.parseInt(request.getParameter("optKit_id"));
         
         
@@ -115,8 +115,8 @@ public class ManterElementoKitController extends HttpServlet {
         int kit_id = Integer.parseInt(request.getParameter("optKit_id"));
  
         try {
-            Item item = Item.obterItem(item_id);
-            Kit kit = Kit.obterKit(kit_id);
+            Item item = Item.obterItem(id);
+            Kit kit = Kit.obterKit(id);
             
             
             ElementoKit elementoKit = new ElementoKit(id, item_id, kit_id);
@@ -137,7 +137,7 @@ public class ManterElementoKitController extends HttpServlet {
     public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Editar");
-            request.setAttribute("Itens", Item.obterItens());
+            request.setAttribute("item", Item.obterItens());
             request.setAttribute("kit", Kit.obterKits());
             int codElementoKit = Integer.parseInt(request.getParameter("id"));  
             ElementoKit elementoKit = ElementoKit.obterElementoKit(codElementoKit);

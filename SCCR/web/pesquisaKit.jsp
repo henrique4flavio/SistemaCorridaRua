@@ -48,6 +48,7 @@
                             <tr>
                                 <th>Código do kit</th>
                                 <th>Nome do kit</th>
+                                <th>Valor</th>
                                
                             </tr>
                         </thead>
@@ -59,6 +60,7 @@
 
                                     <td><c:out value = "${kit.id}" /></td>
                                     <td><c:out value = "${kit.nomeKit}" /></td>
+                                    <td><c:out value = "${kit.valor}" /></td>
                                     
                                  
                                     <td class="actions">

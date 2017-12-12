@@ -64,8 +64,9 @@ public class ManterKitController extends HttpServlet {
      }
      public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdKit"));
-        String nome = request.getParameter("txtNomeKit");
-        Kit kit = new Kit(id, nome);
+        String nomeKit = request.getParameter("txtNomeKit");
+        Float valor = Float.parseFloat(request.getParameter("txtValor"));
+        Kit kit = new Kit(id, nomeKit, valor);
         try {
             kit.excluir();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaKitController");
@@ -87,10 +88,12 @@ public class ManterKitController extends HttpServlet {
      public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdKit"));
         String nomeKit = request.getParameter("txtNomeKit");
+        Float valor = Float.parseFloat(request.getParameter("txtValor"));
+
         
         
         try {
-            Kit kit = new Kit(id, nomeKit);
+            Kit kit = new Kit(id, nomeKit, valor);
             kit.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaKitController");
             view.forward(request, response);
@@ -142,9 +145,11 @@ public class ManterKitController extends HttpServlet {
     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("txtIdKit"));
         String nomeKit = request.getParameter("txtNomeKit");
+        Float valor = Float.parseFloat(request.getParameter("txtValor"));
+
         
 
-        Kit kit = new Kit(id, nomeKit);
+        Kit kit = new Kit(id, nomeKit, valor);
 
         try {
             kit.alterar();

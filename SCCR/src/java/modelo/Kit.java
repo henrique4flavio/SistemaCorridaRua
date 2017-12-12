@@ -9,10 +9,13 @@ public class Kit {
     private String nomeKit;
     //Variaveis do banco de dados
     private int id;
+    
+    private float valor;
 
-    public Kit(int id, String nomeKit) {
+    public Kit(int id, String nomeKit, float valor) {
         this.nomeKit = nomeKit;
         this.id = id;
+        this.valor = valor;
     }
 
     public int getId() {
@@ -21,6 +24,14 @@ public class Kit {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public float getValor() {
+        return valor;
+    }
+
+    public void setValor(float valor) {
+        this.valor = valor;
     }
 
     public String getNomeKit() {

@@ -26,8 +26,8 @@ public class ElementoKitDAO {
 
                 ElementoKit elementoKit = new ElementoKit(
                         rs.getInt("id"), 
-                        rs.getInt("Item_id"), 
-                        rs.getInt("Kit_id"));
+                        rs.getInt("item_id"), 
+                        rs.getInt("kit_id"));
 
                 elementosKits.add(elementoKit);
 
@@ -60,7 +60,7 @@ public class ElementoKitDAO {
         try {
             conexao = BD.getConexao();
 
-            String sql = "insert into elementokit (id, item_id,kit_id) values(?,?,?)";
+            String sql = "insert into elementokit (id,item_id,kit_id) values(?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
 
             comando.setInt(1, elementoKit.getId());
@@ -128,8 +128,8 @@ public class ElementoKitDAO {
             
             elementoKit = new ElementoKit (
                     rs.getInt("id"), 
-                    rs.getInt("Item_id"), 
-                    rs.getInt("Kit_id"));
+                    rs.getInt("item_id"), 
+                    rs.getInt("kit_id"));
             
             
         } catch (SQLException e) {
