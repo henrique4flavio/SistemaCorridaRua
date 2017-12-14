@@ -103,7 +103,7 @@ public class ProvaDAO {
         Connection conexao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update prova set nomeProva=?,localLargada=?,horarioLargada=?,dataProva=?,maxParticipantes=?,inicioInscricao=?,fimInscricao=?,faixaEtaria=?,localRetiradaKit=?,organizador_id=?,ranking_id=? where id = ?";
+            String sql = "update prova set nomeProva=?,localLargada=?,horarioLargada=?,dataProva=?,maxParticipantes=?,inicioInscricao=?,fimInscricao=?,faixaEtaria=?,localRetiradaKit=?,organizador_id=?,ranking_id=?,valorProva=? where id = ?";
             PreparedStatement comando = conexao.prepareStatement(sql);
             comando.setString(1, prova.getNomeProva());
             comando.setString(2, prova.getLocalLargada());
@@ -115,8 +115,10 @@ public class ProvaDAO {
             comando.setString(8, prova.getFaixaEtaria());
             comando.setString(9, prova.getLocalRetiradaKit());
             comando.setString(10, prova.getOrganizador_id());
-            comando.setString(11,prova.getValorTotal());
-            comando.setString(12, prova.getRanking_id());
+            
+            comando.setString(11, prova.getRanking_id());
+            
+            comando.setString(12,prova.getValorTotal());
             comando.setInt(13, prova.getId());
 
             comando.execute();

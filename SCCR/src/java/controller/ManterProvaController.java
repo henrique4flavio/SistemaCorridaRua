@@ -139,7 +139,8 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
     }
 
     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtId"));
+       
+     int id = Integer.parseInt(request.getParameter("txtId"));
         String nomeProva = request.getParameter("txtNomeProva");
         String localLargada = request.getParameter("txtLocalLargada");
         String horarioLargada = request.getParameter("txtHorarioLargada");
@@ -153,8 +154,12 @@ public void prepararIncluir(HttpServletRequest request, HttpServletResponse resp
         String organizador_id = request.getParameter("optOrganizador");
         String ranking_id = request.getParameter("optRanking");
 
-             Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit,valorProva, organizador_id, ranking_id);
         try {
+            Organizador organizador = Organizador.obterOrganizador(id);
+            Ranking ranking = Ranking.obterRanking(id);
+            
+            Prova prova = new Prova(id, nomeProva, localLargada, horarioLargada, dataProva, maxParticipantes, dataInicioInscricao, dataFimInscricao, faixaEtaria, localRetiradaKit,valorProva, organizador_id, ranking_id);
+
             prova.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaProvaController?acao=listarProvas");
             view.forward(request, response);
