@@ -100,11 +100,13 @@ public class ManterInscricaoController extends HttpServlet {
         }
     }
 
-    public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
+    public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
+            int prova_id = Integer.parseInt(request.getParameter("prova_id"));
+          
             request.setAttribute("operacao", "Incluir");
             request.setAttribute("kit", Kit.obterKits());
-            request.setAttribute("prova", Prova.obterProvas());
+            request.setAttribute("prova", Prova.obterProva(prova_id));
             request.setAttribute("percurso", Percurso.obterPercursos());
             request.setAttribute("atleta", Atleta.obterAtletas());
 

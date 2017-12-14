@@ -89,6 +89,9 @@
                 </tr>
             </table>
         </form>
+                            
+                            
+                          id da prova=  ${inscricao.prova_id} 
 
     </body>
 </html>

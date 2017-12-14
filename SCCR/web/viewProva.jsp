@@ -13,7 +13,7 @@
     if (id == null || id == "") {
         txt = "User cancelled the prompt.";
     } else {
-        location.href='ManterInscricaoController';
+        location.href='ManterInscricaoController?acao=prepararIncluir&prova_id=' +${prova.id};
     }
     
 }
