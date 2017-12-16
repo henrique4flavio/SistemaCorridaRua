@@ -8,13 +8,13 @@
         <title>Manter Inscrição</title>
 
         <!-- If you're using Stripe for payments -->
-      
+
         <script>
             function mostrar_abas(obj) {
 
                 document.getElementById('div_aba1').style.display = "none";
                 document.getElementById('div_aba2').style.display = "none";
-     
+
                 switch (obj.id) {
                     case 'mostra_aba1':
                         document.getElementById('div_aba1').style.display = "block";
@@ -26,7 +26,7 @@
             }
 
         </script>
-        
+
         <script>
             function mostrar_itens(obj) {
 
@@ -163,7 +163,7 @@
                                                                 name="cardNumber"
                                                                 placeholder="Numero do cartão"
                                                                 autocomplete="cc-number"
-                                                                 
+
                                                                 />
                                                             <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
                                                         </div>
@@ -180,7 +180,7 @@
                                                             name="cardExpiry"
                                                             placeholder="MM/AA"
                                                             autocomplete="cc-exp"
-                                                            
+
                                                             />
                                                     </div>
                                                 </div>
@@ -193,7 +193,7 @@
                                                             name="cardCVC"
                                                             placeholder="CVC"
                                                             autocomplete="cc-csc"
-                                                           
+
                                                             />
                                                     </div>
                                                 </div>
@@ -224,12 +224,12 @@
                                     </div>
                                 </div>
                             </div>
-                                    <INPUT TYPE="hidden" NAME="prova_id" value="${prova_id.id}">
-                                 
+                            <INPUT TYPE="hidden" NAME="prova_id" value="${prova_id.id}">
 
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Total:</label>
-                                <input type="text" name="txtTotal" class="form-control" value="${inscricao.total}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Total:</label>
+                            <input type="text" name="txtTotal" class="form-control" value="${inscricao.total}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                                 <br>
                                 <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
                                 <a href="PesquisaAdministradorController" class="btn btn-default">Cancelar</a>

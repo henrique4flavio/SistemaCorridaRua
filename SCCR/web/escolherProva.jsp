@@ -17,7 +17,7 @@
             <c:forEach items="${provas}" var="prova">
 
                 <div id="products" class="row list-group">
-                    <div class="item  col-xs-4 col-lg-4">
+                    <div class="item  col-md-3">
                         <div class="thumbnail">
                             <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
                             <div class="caption">
