@@ -26,11 +26,11 @@
                                 <p class="group inner list-group-item-text">
                                     Data: <c:out value = "${prova.dataProva}" /> <br> Horário: <c:out value = "${prova.horarioLargada}" /> </p>
                                 <div class="row">
-                                    <div class="col-xs-12 col-md-6">
+                                    <div class="col-md-5">
                                         <p class="lead">
                                         </p>
                                     </div>
-                                    <div class="col-xs-12 col-md-6">
+                                    <div class="col-md-5">
                                         <a class="btn btn-success" href="PesquisaProvaController?acao=visualizarProva&id=${prova.id}" >Mais informações</a>
                                     </div>
                                 </div>
