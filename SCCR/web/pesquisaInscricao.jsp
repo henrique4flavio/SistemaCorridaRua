@@ -23,37 +23,38 @@
                 <th>Nome da prova</th>
                 <th>Percurso</th>
                 <th> Forma de Pagamento</th>
-                
+
 
             </tr>   
             <c:forEach items="${inscricoes}" var="inscricao">
-                <tr> 
-                    <td> <c:out value="${inscricao.numeroPeito}"/> </td>
-                    <td> <c:out value="${inscricao.formaPagamento}"/> </td>
-                    <td> 
-                        <c:forEach items="${kits}" var="kit">
-                            <c:if test="${kit.id == inscricao.kit_id}"> ${kit.nomeKit} </c:if>
-                        </c:forEach> 
-                    </td>
+                <c:forEach items="${provas}" var="prova">
+                    <tr> 
+                        <td> <c:out value="${inscricao.numeroPeito}"/> </td>
+                        <td> <c:out value="${inscricao.formaPagamento}"/> </td>
+                        <td> 
+                            <c:forEach items="${kits}" var="kit">
+                                <c:if test="${kit.id == inscricao.kit_id}"> ${kit.nomeKit} </c:if>
+                            </c:forEach> 
+                        </td>
 
-                    <td> 
-                        <c:forEach items="${provas}" var="prova">
+                        <td> 
+
                             <c:if test="${prova.id == inscricao.prova_id}">${prova.nomeProva} </c:if>
 
 
-                        </c:forEach> 
-                    </td>
-                    <td> 
-                        <c:forEach items="${percursos}" var="percurso">
-                            <c:if test="${percurso.id == inscricao.percurso_id}"> ${percurso.nome} </c:if>
+
+                            </td>
+                            <td> 
+                            <c:forEach items="${percursos}" var="percurso">
+                                <c:if test="${percurso.id == inscricao.percurso_id}"> ${percurso.nome} </c:if>
 
 
-                        </c:forEach> 
-                    </td>
-                    <td> <c:out value="${inscricao.total}"/> </td>
-                    <td><a href ="ManterInscricaoController?acao=prepararEditar&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-                    <td><a href ="ManterInscricaoController?acao=prepararExcluir&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
-
+                            </c:forEach> 
+                        </td>
+                        <td> <c:out value="${inscricao.total}"/> </td>
+                        <td><a href ="ManterInscricaoController?acao=prepararEditar&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>&prova_id=<c:out value="${prova.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                        <td><a href ="ManterInscricaoController?acao=prepararExcluir&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>&prova_id=<c:out value="${prova.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                                    </c:forEach> 
                 </tr>
             </c:forEach>
         </table>
