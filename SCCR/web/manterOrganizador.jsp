@@ -52,7 +52,7 @@
 
                         <div class="form-group">
                             <label>Administrador:</label>
-                            <select name="optAdministrador"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <select class="form-control" name="optAdministrador"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${organizador.administrador_id == null}"> selected</c:if>> </option>  
                             <c:forEach items="${administrador}" var="administrador">
                                 <option value="${administrador.id}" <c:if test="${administrador.id == organizador.administrador_id}"> selected</c:if>>${administrador.nome}</option>  

@@ -24,7 +24,6 @@ public class ProvaDAO {
 
                 Prova prova = new Prova(
                         rs.getInt("id"),
-                       
                         rs.getString("nomeProva"),
                         rs.getString("localLargada"),
                         rs.getString("horarioLargada"),
@@ -83,7 +82,7 @@ public class ProvaDAO {
             comando.setString(7, prova.getInicioInscricao());
             comando.setString(8, prova.getFimInscricao());
             comando.setString(9, prova.getFaixaEtaria());
-            
+
             comando.setString(10, prova.getLocalRetiradaKit());
             comando.setString(11, prova.getOrganizador_id());
             comando.setString(12, prova.getRanking_id());
@@ -115,10 +114,10 @@ public class ProvaDAO {
             comando.setString(8, prova.getFaixaEtaria());
             comando.setString(9, prova.getLocalRetiradaKit());
             comando.setString(10, prova.getOrganizador_id());
-            
+
             comando.setString(11, prova.getRanking_id());
-            
-            comando.setString(12,prova.getValorTotal());
+
+            comando.setString(12, prova.getValorTotal());
             comando.setInt(13, prova.getId());
 
             comando.execute();
@@ -170,7 +169,7 @@ public class ProvaDAO {
                     rs.getString("fimInscricao"),
                     rs.getString("faixaEtaria"),
                     rs.getString("localRetiradaKit"),
-                     rs.getString("valorProva"),
+                    rs.getString("valorProva"),
                     null, null);
 
             prova.setOrganizador_id(rs.getString("organizador_id"));
@@ -183,6 +182,46 @@ public class ProvaDAO {
         }
 
         return prova;
+    }
+
+    public static List<Prova> pesquisaProva(String nome) throws ClassNotFoundException, SQLException {
+         Connection conexao = null;
+        Statement comando = null;
+        List<Prova> provas = new ArrayList<Prova>();
+        try {
+            conexao = BD.getConexao();
+            comando = conexao.createStatement();
+            ResultSet rs = comando.executeQuery("select * from prova where nomeProva like '%"+nome+"%'");
+            while (rs.next()) {
+
+                Prova prova = new Prova(
+                        rs.getInt("id"),
+                        rs.getString("nomeProva"),
+                        rs.getString("localLargada"),
+                        rs.getString("horarioLargada"),
+                        rs.getString("dataProva"),
+                        rs.getString("maxParticipantes"),
+                        rs.getString("inicioInscricao"),
+                        rs.getString("fimInscricao"),
+                        rs.getString("faixaEtaria"),
+                        rs.getString("localRetiradaKit"),
+                        rs.getString("valorProva"),
+                        null, null);
+
+                prova.setOrganizador_id(rs.getString("organizador_id"));
+                prova.setRanking_id(rs.getString("ranking_id"));
+
+                provas.add(prova);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao(conexao, comando);
+
+        }
+        return provas;
     }
 
 }

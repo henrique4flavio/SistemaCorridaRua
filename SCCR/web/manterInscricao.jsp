@@ -251,7 +251,7 @@
                             </li>
                             <li>Kit:
                             </li>
-                            <li><h4>Total: </h4>
+                            <li><h4>Total:  </h4>
                             </li>
                         </ul>
                     </div>

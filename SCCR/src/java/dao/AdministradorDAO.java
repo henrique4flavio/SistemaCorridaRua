@@ -153,5 +153,36 @@ public class AdministradorDAO {
            
         return administrador;
     }
+    
+      public static List<Administrador> pesquisarAdministrador(String nome) throws ClassNotFoundException {
+        Connection conexao = null;
+        Statement comando = null;
+        List<Administrador> administradores = new ArrayList<Administrador>();
+        try {
+            conexao = BD.getConexao();
+            comando = conexao.createStatement();
+            ResultSet rs = comando.executeQuery("select * from administrador where nome like '%"+nome+"%'");
+            while (rs.next()) {
+
+                Administrador administrador = new Administrador(
+                        rs.getInt("id"),
+                        rs.getString("nome"),
+                        rs.getString("senha"),
+                        rs.getString("login"),
+                        rs.getString("email"));
+                
+
+                administradores.add(administrador);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao(conexao, comando);
+
+        }
+        return administradores;
+    }
+
 
 }

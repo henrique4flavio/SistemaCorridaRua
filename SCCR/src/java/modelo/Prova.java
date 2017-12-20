@@ -229,4 +229,10 @@ public class Prova {
     public void setValorTotal(String valorTotal) {
         this.valorTotal = valorTotal;
     }
+    
+     public static List<Prova> pesquisaProva(String nome)
+            throws ClassNotFoundException, SQLException {
+        return ProvaDAO.pesquisaProva(nome);
+
+    }
 }

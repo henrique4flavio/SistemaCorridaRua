@@ -37,7 +37,7 @@ public class PesquisaProvaController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         String acao = request.getParameter("acao");
         if (acao.equals("listarProvas")) {
             listarProvas(request, response);
@@ -52,13 +52,15 @@ public class PesquisaProvaController extends HttpServlet {
                         Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
-                }
+                } else {
+                    if (acao.equals("pesquisa")) {
+                        pesquisaProva(request, response);
 
+                    }
+                }
             }
         }
     }
-
-    
 
     public void listarProvas(HttpServletRequest request, HttpServletResponse response) {
         try {
@@ -119,6 +121,34 @@ public class PesquisaProvaController extends HttpServlet {
         }
 
     }
+    
+     public void pesquisaProva(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            String nome = request.getParameter("nome");
+            try {
+                request.setAttribute("provas", Prova.pesquisaProva(nome));
+            } catch (SQLException ex) {
+                Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            request.setAttribute("organizadores", Organizador.obterOrganizadores());
+            request.setAttribute("ranking", Ranking.obterRankings());
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaProva.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
+        }
+
+    }
+
+
+ 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -132,7 +162,11 @@ public class PesquisaProvaController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -146,7 +180,11 @@ public class PesquisaProvaController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

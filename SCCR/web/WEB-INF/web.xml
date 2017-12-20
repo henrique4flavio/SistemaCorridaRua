@@ -100,6 +100,10 @@
         <servlet-name>PesquisaElementoKitController</servlet-name>
         <servlet-class>controller.PesquisaElementoKitController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManterPagamentoController</servlet-name>
+        <servlet-class>controller.ManterPagamentoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -199,6 +203,10 @@
     <servlet-mapping>
         <servlet-name>PesquisaElementoKitController</servlet-name>
         <url-pattern>/PesquisaElementoKitController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterPagamentoController</servlet-name>
+        <url-pattern>/ManterPagamentoController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

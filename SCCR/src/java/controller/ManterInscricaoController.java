@@ -16,6 +16,7 @@ import modelo.Percurso;
 import modelo.Atleta;
 import modelo.Inscricao;
 import modelo.Item;
+import modelo.Lote;
 
 public class ManterInscricaoController extends HttpServlet {
 
@@ -116,6 +117,7 @@ public class ManterInscricaoController extends HttpServlet {
             request.setAttribute("item", Item.obterItens());
             request.setAttribute("percurso", Percurso.obterPercursos());
             request.setAttribute("atleta", Atleta.obterAtletas());
+            request.setAttribute("lote", Lote.obterLotes());
             
             int prova_id = Integer.parseInt(request.getParameter("prova_id"));
             

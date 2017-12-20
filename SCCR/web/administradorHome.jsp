@@ -35,7 +35,7 @@
                         <div class="col-md-10">
                           <a href="PesquisaAtletaController" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Listar Atletas</a>
                           <a href="PesquisaOrganizadorController" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Gerenciar Organizadores</a>
-                          <a href="PesquisaAdministradorController" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Gerenciar Administradores</a>
+                          <a href="PesquisaAdministradorController?acao=listar" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Gerenciar Administradores</a>
                         </div>
                        
                     </div>

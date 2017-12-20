@@ -26,6 +26,10 @@ public class Administrador extends Usuario {
             throws ClassNotFoundException {
         return AdministradorDAO.obterAdministradores();
     }
+    public static List<Administrador> pesquisarAdministrador(String nome)
+            throws ClassNotFoundException {
+        return AdministradorDAO.pesquisarAdministrador(nome);
+    }
 
     public void gravar() throws SQLException, ClassNotFoundException {
 

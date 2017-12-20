@@ -9,6 +9,16 @@
     <head>
         <jsp:include page="bootstrap.jspf"/>
         <title>Manter administrador</title>
+
+
+        <script>
+            function pesquisa(input) {
+
+                var pesquisa = document.getElementById('search');
+                location.href = 'PesquisaAdministradorController?acao=pesquisa&nome=' + pesquisa.value;
+            }
+        </script>
+
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
@@ -24,10 +34,10 @@
                 <div class="col-sm-6">
 
                     <div class="input-group h2">
-                        <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Administrador">
+                        <input name="pesquisa" class="form-control" id="search" type="text" placeholder="Pesquisar Administrador">
                         <span class="input-group-btn">
-                            <button class="btn btn-primary" type="submit">
-                                <span class="glyphicon glyphicon-search"></span>
+                            <button class="btn btn-primary" type="submit" onclick="pesquisa()">
+                                <span class="glyphicon glyphicon-search"></span></a> 
                             </button>
                         </span>
                     </div>
@@ -35,10 +45,10 @@
                 </div>
                 <div class="col-sm-3">
                     <form action ="ManterAdministradorController?acao=prepararIncluir" method="post">
-                    <input type="submit" name="btIncluir" value="Novo Administrador" class="btn btn-primary pull-right h2">
-                    
-    
-            </form> 
+                        <input type="submit" name="btIncluir" value="Novo Administrador" class="btn btn-primary pull-right h2">
+
+
+                    </form> 
                 </div>
             </div> <!-- /#top -->
 
@@ -59,30 +69,30 @@
                         </thead>
                         <tbody>
                             <c:forEach items="${administradores}" var="administrador">
-                            <tr>
-                                
+                                <tr>
+
 
 
                                     <td><c:out value = "${administrador.id}" /></td>
                                     <td><c:out value = "${administrador.nome}" /></td>
                                     <td><c:out value = "${administrador.login}" /></td>
                                     <td><c:out value = "${administrador.email}" /></td>
-                                 
+
                                     <td class="actions">
-                                        
+
                                         <a class="btn btn-warning btn-xs" href="ManterAdministradorController?acao=prepararEditar&id=<c:out value="${administrador.id}"/>">Editar</a>
                                         <a class="btn btn-danger btn-xs"  href="ManterAdministradorController?acao=prepararExcluir&id=<c:out value="${administrador.id}"/>" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                                     </td>
                                 </tr>
-                                </c:forEach>
-                                
-                            </tbody>
-                        </table>
-                    </div>
+                            </c:forEach>
 
-                </div> <!-- /#list -->
+                        </tbody>
+                    </table>
+                </div>
 
-              
+            </div> <!-- /#list -->
+
+
 
             <!-- Modal -->
             <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
@@ -105,9 +115,9 @@
 
             <script src="js/jquery.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
-            
+
             <jsp:include page="footer.jspf"/>
 
-        </body>
-    </html>
+    </body>
+</html>
 
