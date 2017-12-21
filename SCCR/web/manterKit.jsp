@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Valor:</label>
-                        <input type="text" name="txtNomeKit" class="form-control" value="${kit.valor}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text" name="txtValor" class="form-control" value="${kit.valor}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </div>
                     
                 

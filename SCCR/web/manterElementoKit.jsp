@@ -21,7 +21,7 @@
                      <tr>
                         <td>item:</td> 
                         <td>
-                         <select name="optItem" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                         <select name="optItem_id" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${elementoKit.item_id == null}"> selected</c:if>> </option>  
                             <c:forEach items="${item}" var="item">
                                 <option value="${item.id}" <c:if test="${item.id == elementoKit.item_id}"> selected</c:if>>${item.nomeItem}</option>  
@@ -33,7 +33,7 @@
                     <tr>
                         <td>Kit:</td> 
                         <td>
-                         <select name="optKit" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                         <select name="optKit_id" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <option value="0" <c:if test="${elementoKit.kit_id == null}"> selected</c:if>></option>  
                             <c:forEach items="${kit}" var="kit">
                                 <option value="${kit.id}" <c:if test="${kit.id == elementoKit.kit_id}"> selected</c:if>>${kit.nomeKit}</option>  

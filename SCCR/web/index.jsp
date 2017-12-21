@@ -33,7 +33,8 @@
             
             <br><br>
             
-            <a href="PesquisaProvaController?acao=gridProvas">Provas</a>
+            <a href="PesquisaProvaController?acao=gridProvas">Provas</a><br>
+             <a href="ResultadoProvas.jsp">Resultado Provas</a>
             
 
         </div>
