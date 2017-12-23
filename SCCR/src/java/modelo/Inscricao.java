@@ -136,6 +136,11 @@ public class Inscricao {
         return InscricaoDAO.obterInscricao(id);
     }
 
-    
+    public static List<Inscricao> pesquisaInscricao(String numero)
+            throws ClassNotFoundException, SQLException {
+        return InscricaoDAO.pesquisaInscricao(numero);
+
+    }
+
     
 }

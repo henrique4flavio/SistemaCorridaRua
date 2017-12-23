@@ -3,6 +3,9 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -41,7 +44,39 @@ public class PesquisaInscricaoController extends HttpServlet {
            
         }catch(ClassNotFoundException ex){
             
+        
+               String acao = request.getParameter("acao");
+                if (acao.equals("pesquisa")) {
+                        pesquisaInscricao(request, response);
+
+                    }
+    }
+    }
+    public void pesquisaInscricao(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            String  numero = request.getParameter("numero");
+            try {
+                request.setAttribute("inscricoes", Inscricao.pesquisaInscricao(numero));
+            } catch (SQLException ex) {
+                Logger.getLogger(PesquisaInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            request.setAttribute("kits", Kit.obterKits());
+            request.setAttribute("provas", Prova.obterProvas());
+            request.setAttribute("percursos", Percurso.obterPercursos());
+            request.setAttribute("atletas", Atleta.obterAtletas());
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaInscricao.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

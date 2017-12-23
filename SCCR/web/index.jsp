@@ -31,10 +31,11 @@
             <a href="PesquisaProvaController?acao=listarProvas">Manter provas</a><br>
             <a href="PesquisaRankingController">Manter rankings</a><br>
             
-            <br><br>
+            <br><br><a href="PesquisaProvaController?acao=gridProvas">Provas</a><br>
             
-            <a href="PesquisaProvaController?acao=gridProvas">Provas</a><br>
-             <a href="ResultadoProvas.jsp">Resultado Provas</a>
+            <a href="PesquisaResultadoProvasController?acao=visualizarProvas"> Resultados Provas </a><br>
+            <a hrf="PaginaRankingGeral"> Rancking das Corridas de Rua</a> <br>
+            
             
 
         </div>

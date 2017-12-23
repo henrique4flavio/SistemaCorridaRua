@@ -154,5 +154,40 @@ public class InscricaoDAO {
 
         return inscricao;
     }
+    public static List<Inscricao> pesquisaInscricao(String numero) throws ClassNotFoundException, SQLException {
+         Connection conexao = null;
+        Statement comando = null;
+        List<Inscricao> inscricoes = new ArrayList<Inscricao>();
+        try {
+            conexao = BD.getConexao();
+            comando = conexao.createStatement();
+            ResultSet rs = comando.executeQuery("select * from inscricao where numeroPeito like '%"+numero+"%'");
+            while (rs.next()) {
+ Inscricao inscricao = new Inscricao(
+                rs.getInt("numeroPeito"), 
+                rs.getString("total"),
+                rs.getString("formaPagamento"), 
+                null, null, null,null);
+                
+                inscricao.setKit_id(rs.getString("kit_id"));
+                inscricao.setProva_id(rs.getString("prova_id"));
+                inscricao.setPercurso_id(rs.getString("percurso_id"));
+                 inscricao.setPercurso_id(rs.getString("atleta_id"));
+                
+
+                
+                inscricoes.add(inscricao);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao(conexao, comando);
+
+        }
+        return inscricoes;
+    }
+
 
 }
