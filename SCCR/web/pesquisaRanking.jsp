@@ -34,6 +34,7 @@
                 
 
                    <div class="col-sm-6">
+                       <br>
                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
 
 

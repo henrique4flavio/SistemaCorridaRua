@@ -45,6 +45,7 @@
                     <h2>Provas</h2>
                 </div>
                 <div class="col-sm-6">
+                    <br>
                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
 
 
@@ -72,10 +73,6 @@
                                 <th>Local de Retirada do Kit</th>
                                 <th>Horario da largada</th>
                                 <th>Data da prova</th>
-
-                                <th>Inicio das inscrições</th>
-                                <th>Fim das inscrições</th>
-                                <th>Faixa etaria</th>
                                 <th>Nome do organizador</th>
                                 <th>Nome do ranking</th>
                                 <th class="actions">Ações</th>
@@ -94,9 +91,7 @@
                                     <td><c:out value = "${prova.horarioLargada}" /></td>
                                     <td><c:out value = "${prova.dataProva}" /></td>
 
-                                    <td><c:out value = "${prova.inicioInscricao}" /></td>
-                                    <td><c:out value = "${prova.fimInscricao}" /></td>
-                                    <td><c:out value = "${prova.faixaEtaria}" /></td>
+                                    
                                     <td><c:forEach items="${organizadores}" var ="organizador">
                                             <c:if test="${organizador.id ==prova.organizador_id}">${organizador.nome} </c:if>
                                         </c:forEach>
