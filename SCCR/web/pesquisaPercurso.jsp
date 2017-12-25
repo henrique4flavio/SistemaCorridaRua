@@ -55,7 +55,7 @@
                             <tr>
                                 <th>Código do percurso</th>
                                 <th>Nome do percurso</th>
-                                <th>Nome do percurso</th>
+                               
                                 <th>Distancia</th>
                                 <th>Faixa Etaria</th>
                                 <th>Prova</th>
