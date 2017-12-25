@@ -33,7 +33,8 @@
                 <div class="col-sm-6">
 
                     <div class="col-sm-6">
-            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                        <br>
+                        <input class="form-control" id="myInput" type="text" placeholder="Search..">
 
 
         </div> <!-- /#top -->
