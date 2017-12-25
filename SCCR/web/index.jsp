@@ -8,14 +8,13 @@
         <title>SCCR</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="./resources/bootstrap/js/bootstrap.min.js"></script>
-
+        
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
 
 
         <div class="container">
-
             <a href="atletaHome.jsp">Menu do Atleta - login</a><br>
             <a href="administradorHome.jsp">Menu do Administrador - login</a><br>
             <a href="organizadorHome.jsp">Menu do Organizador - login</a><br> 
@@ -34,7 +33,7 @@
             <br><br><a href="PesquisaProvaController?acao=gridProvas">Provas</a><br>
             
             <a href="PesquisaResultadoProvasController?acao=visualizarProvas"> Resultados Provas </a><br>
-            <a hrf="PaginaRankingGeral"> Rancking das Corridas de Rua</a> <br>
+            <a hrf="PaginaRankingGeral?acao=visualizarRanking> Ranking das Corridas de Rua</a> <br>
             
             
 

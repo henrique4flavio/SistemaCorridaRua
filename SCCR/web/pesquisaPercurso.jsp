@@ -8,6 +8,18 @@
     <head>
         <jsp:include page="bootstrap.jspf"/>
         <title>Manter percursos</title>
+        <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#idTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
@@ -18,18 +30,11 @@
                 <div class="col-sm-3">
                     <h2>Percursos</h2>
                 </div>
-                <div class="col-sm-6">
+               <div class="col-sm-6">
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
 
-                    <div class="input-group h2">
-                        <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Percurso">
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" type="submit">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                    </div>
 
-                </div>
+        </div>
                 <div class="col-sm-3">
                     <form action ="ManterPercursoController?acao=prepararIncluir" method="post">
                         <input type="submit" name="btIncluir" value="Novo Percurso" class="btn btn-primary pull-right h2">
@@ -48,7 +53,7 @@
                         <thead>
                             <tr>
                                 <th>Código do percurso</th>
-                                <th>Nome do percurso</th
+                                <th>Nome do percurso</th>
                                 <th>Nome do percurso</th>
                                 <th>Distancia</th>
                                 <th>Faixa Etaria</th>
@@ -57,7 +62,7 @@
 
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="idTable">
                             <c:forEach items="${percursos}" var="percurso">
                                 <tr>
 

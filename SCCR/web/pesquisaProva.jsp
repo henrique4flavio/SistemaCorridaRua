@@ -9,7 +9,20 @@
     <head>
         <jsp:include page="bootstrap.jspf"/>
         <title>Manter prova</title>
-        
+
+        <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#idTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>              
+
+
         <script>
             function pesquisa(input) {
 
@@ -17,8 +30,8 @@
                 location.href = 'PesquisaProvaController?acao=pesquisa&nome=' + pesquisa.value;
             }
         </script>
-        
-        
+
+
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
@@ -32,15 +45,8 @@
                     <h2>Provas</h2>
                 </div>
                 <div class="col-sm-6">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
 
-                    <div class="input-group h2">
-                        <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Prova">
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" type="submit" onclick="pesquisa()">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                    </div>
 
                 </div>
                 <div class="col-sm-3">
@@ -66,7 +72,7 @@
                                 <th>Local de Retirada do Kit</th>
                                 <th>Horario da largada</th>
                                 <th>Data da prova</th>
-                               
+
                                 <th>Inicio das inscrições</th>
                                 <th>Fim das inscrições</th>
                                 <th>Faixa etaria</th>
@@ -75,31 +81,31 @@
                                 <th class="actions">Ações</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="idTable">
                             <c:forEach items="${provas}" var="prova">
                                 <tr>
 
 
 
-                                   <td><c:out value = "${prova.id}" /></td>
-            <td><c:out value = "${prova.nomeProva}" /></td>
-            <td><c:out value = "${prova.localLargada}" /></td>
-            <td><c:out value = "${prova.localRetiradaKit}" /></td>
-            <td><c:out value = "${prova.horarioLargada}" /></td>
-            <td><c:out value = "${prova.dataProva}" /></td>
-           
-            <td><c:out value = "${prova.inicioInscricao}" /></td>
-            <td><c:out value = "${prova.fimInscricao}" /></td>
-            <td><c:out value = "${prova.faixaEtaria}" /></td>
-            <td><c:forEach items="${organizadores}" var ="organizador">
-                    <c:if test="${organizador.id ==prova.organizador_id}">${organizador.nome} </c:if>
-                </c:forEach>
-            </td>
+                                    <td><c:out value = "${prova.id}" /></td>
+                                    <td><c:out value = "${prova.nomeProva}" /></td>
+                                    <td><c:out value = "${prova.localLargada}" /></td>
+                                    <td><c:out value = "${prova.localRetiradaKit}" /></td>
+                                    <td><c:out value = "${prova.horarioLargada}" /></td>
+                                    <td><c:out value = "${prova.dataProva}" /></td>
 
-            <td><c:forEach items="${ranking}" var ="ranking">
-                    <c:if test="${ranking.id ==prova.ranking_id}">${ranking.nome} </c:if>
-                </c:forEach>
-            </td>
+                                    <td><c:out value = "${prova.inicioInscricao}" /></td>
+                                    <td><c:out value = "${prova.fimInscricao}" /></td>
+                                    <td><c:out value = "${prova.faixaEtaria}" /></td>
+                                    <td><c:forEach items="${organizadores}" var ="organizador">
+                                            <c:if test="${organizador.id ==prova.organizador_id}">${organizador.nome} </c:if>
+                                        </c:forEach>
+                                    </td>
+
+                                    <td><c:forEach items="${ranking}" var ="ranking">
+                                            <c:if test="${ranking.id ==prova.ranking_id}">${ranking.nome} </c:if>
+                                        </c:forEach>
+                                    </td>
 
 
                                     <td class="actions">

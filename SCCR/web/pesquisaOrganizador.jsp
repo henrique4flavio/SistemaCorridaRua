@@ -7,7 +7,20 @@
     <head>
         <jsp:include page="bootstrap.jspf"/>
         <title>Manter organizador</title>
+        <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#idTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
     </head>
+    
     <body>
         <jsp:include page="barra_superior.jspf"/>
 
@@ -19,17 +32,12 @@
                     <h2>Organizadores</h2>
                 </div>
                 <div class="col-sm-6">
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
 
-                    <div class="input-group h2">
-                        <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Organizador">
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" type="submit">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                    </div>
 
+        </div>
                 </div>
+            
                 <div class="col-sm-3">
                     <form action ="ManterOrganizadorController?acao=prepararIncluir" method="post">
                         <input type="submit" name="btIncluir" value="Novo Organizador" class="btn btn-primary pull-right h2">
@@ -39,8 +47,8 @@
                 </div>
             </div> <!-- /#top -->
 
-
-            <hr />
+        </hr>
+           
             <div id="list" class="row">
 
                 <div class="table-responsive col-md-12">
@@ -54,7 +62,7 @@
                                 <th>Nome do administrador</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="idTable">
 
                             <c:forEach items="${organizadores}" var="organizador">
                                 <tr>
@@ -104,10 +112,7 @@
                     </div>
                 </div>
             </div>
-
-            <script src="js/jquery.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            
+   
             <jsp:include page="footer.jspf"/>
 
     </body>

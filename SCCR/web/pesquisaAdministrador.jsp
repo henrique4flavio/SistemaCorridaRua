@@ -10,7 +10,17 @@
         <jsp:include page="bootstrap.jspf"/>
         <title>Manter administrador</title>
 
-
+<script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#idTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>  
         <script>
             function pesquisa(input) {
 
@@ -31,17 +41,12 @@
                 <div class="col-sm-3">
                     <h2>Administradores</h2>
                 </div>
-                <div class="col-sm-6">
-
-                    <div class="input-group h2">
-                        <input name="pesquisa" class="form-control" id="search" type="text" placeholder="Pesquisar Administrador">
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" type="submit" onclick="pesquisa()">
-                                <span class="glyphicon glyphicon-search"></span></a> 
-                            </button>
-                        </span>
-                    </div>
-
+                <div class="col-sm-3">
+                    <form action ="ManterAtletaController?acao=prepararIncluir" method="post">
+                    <input type="submit" name="btIncluir" value="Novo Atleta" class="btn btn-primary pull-right h2">
+                    
+    
+            </form> 
                 </div>
                 <div class="col-sm-3">
                     <form action ="ManterAdministradorController?acao=prepararIncluir" method="post">
@@ -67,7 +72,7 @@
                                 <th class="actions">Ações</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="idTable">
                             <c:forEach items="${administradores}" var="administrador">
                                 <tr>
 

@@ -8,29 +8,40 @@
     <head>
         <jsp:include page="bootstrap.jspf"/>
         <title>Manter Atleta</title>
+        <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#idTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>    
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-        
-         <div id="main" class="container-fluid" style="margin-top: 50px">
+
+        <div id="main" class="container-fluid" style="margin-top: 50px">
 
             <div id="top" class="row">
                 <div class="col-sm-3">
                     <h2>Atletas</h2>
                 </div>
-                <div class="col-sm-6">
 
-                    <div class="input-group h2">
-                        <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Atleta">
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" type="submit">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                    </div>
+
+                <div class="col-sm-6">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
 
                 </div>
-                
+ <div class="col-sm-3">
+                    <form action ="ManterAtletaController?acao=prepararIncluir" method="post">
+                    <input type="submit" name="btIncluir" value="Novo Atleta" class="btn btn-primary pull-right h2">
+                    
+    
+            </form> 
+                </div>
             </div> <!-- /#top -->
 
 
@@ -46,10 +57,10 @@
                                 <th>CPF</th>
                                 <th>Login</th>
                                 <th>Email</th>
-                            
+
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="idTable">
 
                             <c:forEach items="${atletas}" var="atleta">
                                 <tr>
@@ -60,10 +71,10 @@
                                     <td><c:out value = "${atleta.login}" /></td>
                                     <td><c:out value = "${atleta.email}" /></td>
 
-                                    
+
 
                                     <td class="actions">
-                                        
+
                                         <a class="btn btn-warning btn-xs" href="ManterAtletaController?acao=prepararEditar&id=<c:out value="${atleta.id}"/>">Editar</a>
                                         <a class="btn btn-danger btn-xs"  href="ManterAtletaController?acao=prepararExcluir&id=<c:out value="${atleta.id}"/>" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                                     </td>
@@ -102,4 +113,4 @@
 
     </body>
 </html>
-   
+

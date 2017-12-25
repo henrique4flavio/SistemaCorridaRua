@@ -8,6 +8,18 @@
     <head>
         <jsp:include page="bootstrap.jspf"/>
         <title>Manter item</title>
+        <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#idTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
@@ -20,14 +32,11 @@
                 </div>
                 <div class="col-sm-6">
 
-                    <div class="input-group h2">
-                        <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Item">
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" type="submit">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                    </div>
+                    <div class="col-sm-6">
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+
+
+        </div> <!-- /#top -->
 
                 </div>
                 <div class="col-sm-3">
@@ -52,7 +61,7 @@
                                
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="idTable">
                             <c:forEach items="${itens}" var="item">
                             <tr>
                                 
@@ -97,8 +106,6 @@
                 </div>
             </div>
 
-            <script src="js/jquery.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
             
             <jsp:include page="footer.jspf"/>
 

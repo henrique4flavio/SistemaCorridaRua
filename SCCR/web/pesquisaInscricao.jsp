@@ -8,7 +8,19 @@
     <head>
         <jsp:include page="bootstrap.jspf"/>
         <title>Manter inscrição</title>
+        <meta charset="UTF-8">
+        <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
 
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#idTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
         <script>
             function pesquisa(input) {
 
@@ -22,73 +34,75 @@
         <jsp:include page="barra_superior.jspf"/>
 
 
-        <div id="top" class="row">
-            <div class="col-sm-3">
-                <h2>Inscrições</h2>
-            </div>
-            <div class="col-sm-6">
 
-                <div class="input-group h2">
-                    <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Inscricao">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="submit" onclick="pesquisa()">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
+        <div class="col-sm-3">
+            <h2>Inscrições</h2>
+        </div>
+        <div class="col-sm-6">
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
 
-            </div>
 
         </div> <!-- /#top -->
+        <div class="col-sm-3">
+            <form action ="ManterInscricaoController?acao=prepararIncluir" method="post">
+                <input type="submit" name="btIncluir" value="Nova Inscrição" class="btn btn-primary pull-right h2">
 
 
-        <table class="table table-bordered"> 
-            <tr>
+            </form> 
+        </div>
+        <div id="list" class="row">
+            <div class="table-responsive col-md-12">
+                <table class="table table-striped" cellspacing="0" cellpadding="0" >
+                    <thead>
+                        <tr>
 
-                <th>Número da inscrição</th>
-
-
-                <th>Total</th>
-                <th>Kit</th>
-                <th>Nome da prova</th>
-                <th>Percurso</th>
-                <th> Forma de Pagamento</th>
+                            <th>Número da inscrição</th>
 
 
-            </tr>   
-            <c:forEach items="${inscricoes}" var="inscricao">
-                <tr> 
-                    <td> <c:out value="${inscricao.numeroPeito}"/> </td>
-                    <td> <c:out value="${inscricao.formaPagamento}"/> </td>
-                    <td> 
-                        <c:forEach items="${kits}" var="kit">
-                            <c:if test="${kit.id == inscricao.kit_id}"> ${kit.nomeKit} </c:if>
-                        </c:forEach> 
-                    </td>
-
-                    <td> 
-                        <c:forEach items="${provas}" var="prova">
-
-                            <c:if test="${prova.id == inscricao.prova_id}">${prova.nomeProva} </c:if>
-                        </c:forEach> 
+                            <th>Total</th>
+                            <th>Kit</th>
+                            <th>Nome da prova</th>
+                            <th>Percurso</th>
+                            <th> Forma de Pagamento</th>
 
 
+                        </tr>   
+                        </thread>
+                    <tbody id="idTable">
+                        <c:forEach items="${inscricoes}" var="inscricao">
+                            <tr> 
+                                <td> <c:out value="${inscricao.numeroPeito}"/> </td>
+                                <td> <c:out value="${inscricao.formaPagamento}"/> </td>
+                                <td> 
+                                    <c:forEach items="${kits}" var="kit">
+                                        <c:if test="${kit.id == inscricao.kit_id}"> ${kit.nomeKit} </c:if>
+                                    </c:forEach> 
+                                </td>
 
-                    </td>
-                    <td> 
-                        <c:forEach items="${percursos}" var="percurso">
-                            <c:if test="${percurso.id == inscricao.percurso_id}"> ${percurso.nome} </c:if>
+                                <td> 
+                                    <c:forEach items="${provas}" var="prova">
+
+                                        <c:if test="${prova.id == inscricao.prova_id}">${prova.nomeProva} </c:if>
+                                    </c:forEach> 
 
 
-                        </c:forEach> 
-                    </td>
-                    <td> <c:out value="${inscricao.total}"/> </td>
-                    <td><a href ="ManterInscricaoController?acao=prepararEditar&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>&prova_id=<c:out value="${prova.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-                    <td><a href ="ManterInscricaoController?acao=prepararExcluir&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>&prova_id=<c:out value="${prova.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
-                </tr>
-            </c:forEach>
-        </table>
+
+                                </td>
+                                <td> 
+                                    <c:forEach items="${percursos}" var="percurso">
+                                        <c:if test="${percurso.id == inscricao.percurso_id}"> ${percurso.nome} </c:if>
 
 
-    </body>
-</html>
+                                    </c:forEach> 
+                                </td>
+                                <td> <c:out value="${inscricao.total}"/> </td>
+                                <td><a href ="ManterInscricaoController?acao=prepararEditar&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>&prova_id=<c:out value="${prova.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                                <td><a href ="ManterInscricaoController?acao=prepararExcluir&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>&prova_id=<c:out value="${prova.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+
+
+                </body>
+                </html>
