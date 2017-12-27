@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <label>Data da Prova:</label>
-                        <input type="text" name="txtDataProva" value="${prova.dataProva}" class="form-control" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="date" name="txtDataProva" value="${prova.dataProva}" class="form-control" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </div>
                     <div class="form-group">
                         <label>Máximo de Participantes:</label>

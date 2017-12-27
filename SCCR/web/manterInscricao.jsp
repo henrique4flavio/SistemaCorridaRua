@@ -24,7 +24,7 @@
                         break
                 }
             }
-
+            
         </script>
 
         <script>
@@ -42,7 +42,41 @@
 
         </script>
 
+        <script>
+        function MascaraCPF(cpf){
+        if(mascaraInteiro(cpf)==false){
+                event.returnValue = false;
+        }       
+        return formataCampo(cpf, '000.000.000-00', event);
+}
+function limpa_formulário_cpf() {
+    //Limpa valores do formulário de cep.
+    document.getElementById('cpf').value = ("");
+    }
+function ValidarCPF(Objcpf){
+        var cpf = Objcpf.value;
+        exp = /\.|\-/g
+        cpf = cpf.toString().replace( exp, "" ); 
+        var digitoDigitado = eval(cpf.charAt(9)+cpf.charAt(10));
+        var soma1=0, soma2=0;
+        var vlr =11;
 
+        for(i=0;i<9;i++){
+                soma1+=eval(cpf.charAt(i)*(vlr-1));
+                soma2+=eval(cpf.charAt(i)*vlr);
+                vlr--;
+        }       
+        soma1 = (((soma1*10)%11)==10 ? 0:((soma1*10)%11));
+        soma2=(((soma2+(2*soma1))*10)%11);
+
+        var digitoGerado=(soma1*10)+soma2;
+        if(digitoGerado!=digitoDigitado)   
+        
+                alert('CPF Invalido!');     
+        limpa_formulário_cpf();    
+}
+
+    </script>"
     </head>
 
     <body>
@@ -126,7 +160,7 @@
                         <div id="div_aba2" style="display:none;">
                             <div class="col-md-3 form-group">
                                 <label >CPF:</label>
-                                <input type="text" name="" class="form-control" value="${inscricao.numeroPeito}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+                                <input type="text" id="cpf" onkeyPress =""onKeyPress="MascaraCPF(this)"onBlur="ValidarCPF(this)"class="form-control" value="${inscricao.numeroPeito}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
                                 </div>
                                 <div class="col-md-9 form-group">
                                     <label >Nome:</label>

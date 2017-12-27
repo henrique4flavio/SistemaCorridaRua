@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Email:</label>
-                            <input type="text" name="txtEmail" class="form-control" value="${organizador.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="email" name="txtEmail" class="form-control" value="${organizador.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Login:</label>

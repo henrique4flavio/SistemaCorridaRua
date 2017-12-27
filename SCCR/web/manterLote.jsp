@@ -24,11 +24,11 @@
                     </tr>
                     <tr>
                         <td>Data Inicio</td> 
-                        <td><input type="text" name="txtDataInicioLote" value="${lote.dataInicio}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="date" name="txtDataInicioLote" value="${lote.dataInicio}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Data Fim</td> 
-                        <td><input type="text" name="txtDataFimLote" value="${lote.dataFim}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="date" name="txtDataFimLote" value="${lote.dataFim}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
 
                     
