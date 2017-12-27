@@ -67,5 +67,8 @@ public class Organizador extends Usuario {
     public static Organizador obterOrganizador(int id) throws ClassNotFoundException, SQLException {
         return OrganizadorDAO.obterOrganizador(id);
     }
+    public static Organizador logar(String login, String senha) throws ClassNotFoundException,SQLException {
+        return OrganizadorDAO.logar(login, senha);
+    }
 
 }

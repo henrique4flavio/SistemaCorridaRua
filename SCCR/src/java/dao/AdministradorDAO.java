@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import static javax.swing.UIManager.getString;
 import modelo.Administrador;
+import static sun.security.jgss.GSSUtil.login;
 
 public class AdministradorDAO {
 
@@ -182,6 +183,37 @@ public class AdministradorDAO {
 
         }
         return administradores;
+    }
+
+    public static Administrador logar(String login, String senha) throws ClassNotFoundException {
+       
+     Connection conexao = null;
+        Administrador administrador = null;
+        PreparedStatement comando = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "select * from administrador WHERE login = ? and senha = ?";
+            comando = conexao.prepareStatement(sql);
+            comando.setString(1, login);
+            comando.setString(2, senha);
+            ResultSet rs = comando.executeQuery();
+            if (rs.first()) {
+               administrador = new Administrador(
+                    rs.getInt("id"),
+                    rs.getString("nome"),
+                       rs.getString("senha"),
+                    rs.getString("login"),
+                    rs.getString("email"));
+            }
+
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+        } finally {
+            fecharConexao(conexao, comando);
+        }
+        return administrador;
+    
     }
 
 

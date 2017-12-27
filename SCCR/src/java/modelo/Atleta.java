@@ -202,4 +202,7 @@ public class Atleta extends Usuario {
     public static Atleta obterAtleta(int id) throws ClassNotFoundException, SQLException {
         return AtletaDAO.obterAtleta(id);
     }
+    public static Atleta logar(String email, String senha) throws ClassNotFoundException {
+        return AtletaDAO.logar(email, senha);
+    }
 }

@@ -123,7 +123,7 @@ public class OrganizadorDAO {
 
     }
 
-    public static Organizador obterOrganizador(int id) throws ClassNotFoundException {
+    public static Organizador obterOrganizador(int id) throws ClassNotFoundException,SQLException {
         Connection conexao = null;
         Statement comando = null;
         Organizador organizador = null;
@@ -150,4 +150,45 @@ public class OrganizadorDAO {
         return organizador;
     }
 
+    public static Organizador logar(String login, String senha) throws ClassNotFoundException,SQLException{
+        Connection conexao = null;
+        Organizador organizador=null;
+         PreparedStatement  comando = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "SELECT * FROM organizador WHERE login = ? and senha = ?";
+          comando = conexao.prepareStatement(sql);
+            comando.setString(1, login);
+            comando.setString(2, senha);
+            ResultSet rs = comando.executeQuery();
+            if (rs.first()) {
+            
+            
+                   organizador = new Organizador(
+                        rs.getInt("id"),
+                        rs.getString("nome"),
+                        rs.getString("senha"),
+                        rs.getString("login"),
+                        rs.getString("email"),
+                        null);
+
+                organizador.setAdministrador_id(rs.getString("administrador_id"));
+                
+            }
+            comando.close();
+            conexao.close();
+              
+                    
+            }catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao(conexao, comando);
+        }
+        return organizador;
+        
+        
+       
+   
+
+}
 }

@@ -48,4 +48,7 @@ public class Administrador extends Usuario {
     public static Administrador obterAdministrador(int id) throws ClassNotFoundException, SQLException {
         return AdministradorDAO.obterAdministrador(id);
     }
+    public static Administrador logar(String login, String senha) throws ClassNotFoundException {
+        return AdministradorDAO.logar(login, senha);
+    }
 }

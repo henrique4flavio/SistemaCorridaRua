@@ -203,4 +203,46 @@ public class AtletaDAO {
         return atleta;
     }
 
+    public static Atleta logar(String login, String senha) throws ClassNotFoundException {
+        Connection conexao = null;
+        Atleta atleta = null;
+        PreparedStatement comando = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "SELECT * FROM atleta WHERE login = ? AND senha = ?";
+            comando = conexao.prepareStatement(sql);
+            comando.setString(1, login);
+            comando.setString(2, senha);
+            ResultSet rs = comando.executeQuery();
+            if (rs.first()) {
+                 atleta = new Atleta(
+                        rs.getInt("id"), 
+                        rs.getString("nome"), 
+                        rs.getString("dtNascimento"), 
+                        rs.getString("apelido"), 
+                        rs.getString("cpf"),
+                        rs.getString("tamCamisa"), 
+                        rs.getString("sexo"), 
+                        rs.getString("telefoneFixo"),
+                        rs.getString("telefoneCelular"), 
+                        rs.getString("rua"),
+                        rs.getString("bairro"),
+                        rs.getString("cidade"), 
+                        rs.getString("estado"), 
+                        rs.getString("pais"), 
+                        rs.getString("login"), 
+                        rs.getString("senha"), 
+                        rs.getString("email"));
+            }
+
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao(conexao, comando);
+        }
+        return atleta;
+       }
+
 }
