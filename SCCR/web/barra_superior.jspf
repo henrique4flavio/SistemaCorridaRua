@@ -1,3 +1,6 @@
+
+
+
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
@@ -26,10 +29,23 @@
                    
                 </li>
 
-
-              
+    <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login
+      
+        </a>
+                    <div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
+                        <form class="form-horizontal"  method="post" accept-charset="UTF-8">
+                      <input class="btn btn-primary" type="submit" name="submit" value="login" />
+                        </form>
+                    </div>
+                </li>
                
             </ul>
+              
+            </ul>
         </div>
+          
     </div>
+          
 </nav>
+          
+           

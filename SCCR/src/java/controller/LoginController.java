@@ -38,23 +38,69 @@ public class LoginController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+       
         
         String acao = request.getParameter("acao");
-        if (acao.equals("logar")) {
-            logar(request,response);
+        if (acao.equals("logarAtleta")) {
+           logarAtleta(request,response);
         } else if(acao.equals("logout")) {
             logout(request, response);
+        }else if(acao.equals("logarAdministrativo")){
+            logarAdministrativo(request,response);
         }
-        }
+  
+         }
 
-    private String logar(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, ServletException, IOException, SQLException {
+    private int logarAtleta(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, ServletException, IOException, SQLException {
        
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
           String Usuario = request.getParameter("optUsuario");
-       try {
-      if (Usuario.equals("administrador")) {
+          Atleta atleta = Atleta.logar(login, senha);
+          Organizador organizador = Organizador.logar(login, senha);
+                   
+          int idUsuario = 0;
+       
                 try {
+                     if (atleta != null) {
+                        HttpSession session = request.getSession(true);
+                        session.setAttribute("atleta", atleta);
+                        session.setAttribute("usuario", "atleta");
+                        RequestDispatcher view = request.getRequestDispatcher("/atletaHome.jsp");
+                        view.forward(request, response);
+                        idUsuario = atleta.getId();
+                    
+                     }
+             
+                else 
+                     {
+        
+                        request.setAttribute("mensagemErro", "Usuario não encontrado");
+                        RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
+                        view.forward(request, response);
+                    }
+
+                } catch (IOException | ServletException ex) {
+                }
+        return 0;
+  
+   
+    
+    
+            }
+    
+    
+ private int logarAdministrativo(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, ServletException, IOException, SQLException {
+       
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
+              Atleta atleta = Atleta.logar(login, senha);
+          Organizador organizador = Organizador.logar(login, senha);
+                   
+          int idUsuario = 0;
+       
+                try {
+                    
                     Administrador administrador = Administrador.logar(login, senha);
                     if (administrador != null) {
                         HttpSession session = request.getSession(true);
@@ -62,64 +108,44 @@ public class LoginController extends HttpServlet {
                         session.setAttribute("usuario", "administrador");
                         RequestDispatcher view = request.getRequestDispatcher("/administradorHome.jsp");
                         view.forward(request, response);
-                    } else {
-                        request.setAttribute("mensagemErro", "Usuário não encontrado");
-                        RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
-                        view.forward(request, response);
+                        idUsuario= administrador.getId();
                     }
-
-                } catch (IOException | ClassNotFoundException | ServletException ex) {
-                }
-            } else if (Usuario.equals("organizador")) {
-                try {
-                    Organizador organizador = Organizador.logar(login, senha);
-                    if (organizador != null) {
+                     else
+                   
+                
+             
+                
+                     if (organizador != null) {
                         HttpSession session = request.getSession(true);
                         session.setAttribute("organizador", organizador);
                         session.setAttribute("usuario", "organizador");
                         RequestDispatcher view = request.getRequestDispatcher("/organizadorHome.jsp");
                         view.forward(request, response);
-                    } else {
-                        request.setAttribute("mensagemErro", "Usuário não encontrado");
-                        RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
-                        view.forward(request, response);
-                    }
+                         idUsuario= organizador.getId();
+                         
+                    }else 
 
-                } catch (IOException | ClassNotFoundException | ServletException ex) {
-                }
-            }else if (Usuario.equals("atleta")) {
-                try {
-                    Atleta atleta = Atleta.logar(login, senha);
-                    if (atleta != null) {
-                        HttpSession session = request.getSession(true);
-                        session.setAttribute("atleta", atleta);
-                        session.setAttribute("usuario", "atleta");
-                        RequestDispatcher view = request.getRequestDispatcher("/atletaHome.jsp");
-                        view.forward(request, response);
-                    } else {
+                       
+                     {
                         request.setAttribute("mensagemErro", "Usuario não encontrado");
                         RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
                         view.forward(request, response);
                     }
 
-                } catch (IOException | ClassNotFoundException | ServletException ex) {
+                } catch (IOException | ServletException ex) {
                 }
+        return 0;
   
    
     
     
             }
-        
-    }
+    
+    
 
-    catch (NullPointerException ex) {
-            try {
-                response.sendRedirect("index.jsp");
-            } catch (IOException ex1) {
-            }
-        }         
-        return null;
-}
+  
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

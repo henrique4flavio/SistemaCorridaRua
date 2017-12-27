@@ -17,14 +17,15 @@
                         <c:when test="${mensagemErro!=null}">
                             <div class="alert alert-danger alert-dismissable fade in">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong>Erro de Utilização</strong> ${mensagemErro}.
+                                <strong>Erro de Utilização:</strong> ${mensagemErro}.
                             </div>
                         </c:when>    
                     </c:choose>
+                            <div class="col-md-6">
                     <div class="panel panel-success">
-                        <div class="panel-heading">Login</div>
+                        <div class="panel-heading">Área do Atleta</div>
                         <div class="panel-body">
-                            <form action="LoginController?acao=logar" method="post" name="frmManterAtleta">
+                            <form action="LoginController?acao=logarAtleta" method="post" name="frmManterAtleta">
                                 <div class="form-group">
                                     <label for="email">Login:</label>
                                     <input  class="form-control" id="login" name="login" data-dismiss="alert" aria-label="close">
@@ -34,24 +35,36 @@
                                     <label for="senha">Senha:</label>
                                     <input type="password" class="form-control" id="senha" name="senha">
                                 </div>
-                                 <div class="form-group">
-                                    <label for="email">Tipo Usuário:</label>
-                                     </div>
-                                <div class="form-group"  align="center">
-                                   <div class="radio-inline">
-                                        <label><input type="radio" name="optUsuario" checked="checked" value="atleta">Atleta</label>
-                                    </div>
-                                    <div class="radio-inline">
-                                        <label><input type="radio" name="optUsuario" value="organizador" >Organizador</label>
-                                    </div>
-                                    
-                                     <div class="radio-inline">
-                                        <label><input type="radio" name="optUsuario" value="administrador">Administrador</label>
-                                    </div>
-                                </div>
+                                 
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <button type="submit" class="btn btn-secondary btn-lg btn-block"">Acessar</button>
+                                        <button type="submit" class="btn btn-secondary btn-lg btn-block">Acessar</button>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                            </div>
+                            <div class="col-md-6">
+                            <div class="panel panel-success">
+                        <div class="panel-heading">Área Administrativa</div>
+                        <div class="panel-body">
+                            <form action="LoginController?acao=logarAdministrativo" method="post" name="frmManterAtleta">
+                                <div class="form-group">
+                                    <label for="email">Login:</label>
+                                    <input  class="form-control" id="login" name="login" data-dismiss="alert" aria-label="close">
+                                </div>
+                               
+                                <div class="form-group">
+                                    <label for="senha">Senha:</label>
+                                    <input type="password" class="form-control" id="senha" name="senha">
+                                </div>
+                                 
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <button type="submit" class="btn btn-secondary btn-lg btn-block">Acessar</button>
 
                                     </div>
                                 </div>
@@ -59,7 +72,7 @@
                         </div>
                     </div>
         </div>
-
+        </div>
         <jsp:include page="footer.jspf"/>
 
 </body>
