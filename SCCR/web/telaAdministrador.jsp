@@ -1,8 +1,3 @@
-<%-- 
-    Document   : telaAdministrador
-    Created on : 22/11/2017, 17:58:16
-    Author     : Familia
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
