@@ -38,28 +38,30 @@ public class LoginController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         String acao = request.getParameter("acao");
         if (acao.equals("logar")) {
-            logar(request,response);
-        } else if(acao.equals("logout")) {
-            logout(request, response);
+            logar(request, response);
+        } else {
+            if (acao.equals("logout")) {
+                logout(request, response);
+            }
         }
-        }
+    }
 
     private String logar(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, ServletException, IOException, SQLException {
-       
+
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
-          String Usuario = request.getParameter("optUsuario");
-       try {
-      if (Usuario.equals("administrador")) {
+        String Usuario = request.getParameter("optUsuario");
+        try {
+            if (Usuario.equals("administrador")) {
                 try {
                     Administrador administrador = Administrador.logar(login, senha);
                     if (administrador != null) {
-                        HttpSession session = request.getSession(true);
+                        HttpSession session = request.getSession();
                         session.setAttribute("administrador", administrador);
-                        session.setAttribute("usuario", "administrador");
+                        session.setAttribute("usuario", administrador);
                         RequestDispatcher view = request.getRequestDispatcher("/administradorHome.jsp");
                         view.forward(request, response);
                     } else {
@@ -74,7 +76,7 @@ public class LoginController extends HttpServlet {
                 try {
                     Organizador organizador = Organizador.logar(login, senha);
                     if (organizador != null) {
-                        HttpSession session = request.getSession(true);
+                        HttpSession session = request.getSession();
                         session.setAttribute("organizador", organizador);
                         session.setAttribute("usuario", "organizador");
                         RequestDispatcher view = request.getRequestDispatcher("/organizadorHome.jsp");
@@ -87,11 +89,11 @@ public class LoginController extends HttpServlet {
 
                 } catch (IOException | ClassNotFoundException | ServletException ex) {
                 }
-            }else if (Usuario.equals("atleta")) {
+            } else if (Usuario.equals("atleta")) {
                 try {
                     Atleta atleta = Atleta.logar(login, senha);
                     if (atleta != null) {
-                        HttpSession session = request.getSession(true);
+                        HttpSession session = request.getSession();
                         session.setAttribute("atleta", atleta);
                         session.setAttribute("usuario", "atleta");
                         RequestDispatcher view = request.getRequestDispatcher("/atletaHome.jsp");
@@ -104,22 +106,17 @@ public class LoginController extends HttpServlet {
 
                 } catch (IOException | ClassNotFoundException | ServletException ex) {
                 }
-  
-   
-    
-    
-            }
-        
-    }
 
-    catch (NullPointerException ex) {
+            }
+
+        } catch (NullPointerException ex) {
             try {
                 response.sendRedirect("index.jsp");
             } catch (IOException ex1) {
             }
-        }         
+        }
         return null;
-}
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -132,7 +129,8 @@ public class LoginController extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException { try {
+            throws ServletException, IOException {
+        try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
@@ -171,5 +169,18 @@ public class LoginController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    private void logout(HttpServletRequest request, HttpServletResponse response) {
 
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+
+        }
+        try {
+            response.sendRedirect("index.jsp");
+        } catch (IOException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 }
