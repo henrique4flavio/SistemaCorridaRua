@@ -50,6 +50,7 @@
                             <div class="col-md-6">
                             <div class="panel panel-success">
                         <div class="panel-heading">Área Administrativa</div>
+                        
                         <div class="panel-body">
                             <form action="LoginController?acao=logarAdministrativo" method="post" name="frmManterAtleta">
                                 <div class="form-group">
@@ -61,6 +62,20 @@
                                     <label for="senha">Senha:</label>
                                     <input type="password" class="form-control" id="senha" name="senha">
                                 </div>
+                                
+                                   <div class="form-group"  align="center">
+                                   
+                                    <div class="radio-inline">
+                                        <label><input type="radio" name="optUsuario" value="organizador" >Organizador</label>
+                                    </div>
+                                    
+                                     <div class="radio-inline">
+                                        <label><input type="radio" name="optUsuario" value="administrador">Administrador</label>
+                                    </div>
+                                </div>
+                                
+                                
+                                
                                  
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
