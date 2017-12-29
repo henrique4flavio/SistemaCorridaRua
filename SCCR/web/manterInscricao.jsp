@@ -108,6 +108,15 @@ function ValidarCPF(Objcpf){
                             </select>
 
                         </div>
+                                 <div class="form-group">
+                                     <label> Escolha a Categoria:  </label><br>
+                                     <label>   <input type="radio" name="optCategoria"  id="mostra_aba1" value="infantil-5 a 12 anos"  /> Infantil:5 a 12 anos </label> <br>
+                          <label>  <input type="radio"  name="optCategoria" id="mostra_aba2" value="adulto-18 a 59 anos" />Adulto:18 a 59 anos</label><br>
+                        <label>   <input type="radio"  name="optCategoria" id="mostra_aba2" value="idoso acima de 60 anos" />Idoso:acima de 60 anos</label><br>
+                         <label>   <input type="radio"  name="optCategoria" id="mostra_aba2" value="Adolescente:13 a 17 anos" />Adolescente:13 a 17 anos </label><br>
+
+                        </div>
+
 
 
                         <div class="form-group">
@@ -152,8 +161,8 @@ function ValidarCPF(Objcpf){
 
                         <div class="form-group">
                             <label> Escolha a Forma de Pagamento:  </label>
-                            <input type="radio" name="optFormaPagamento"  id="mostra_aba1" value="Cartão de Credito" onchange="mostrar_abas(this)" /> Cartão de credito 
-                            <input type="radio"  name="optFormaPagamento" id="mostra_aba2" value="Boleto Bancário"onchange="mostrar_abas(this)" /> Boleto Bancario 
+                            <label> <input type="radio" name="optFormaPagamento"  id="mostra_aba1" value="Cartão de Credito" onchange="mostrar_abas(this)" /> Cartão de credito </label>
+                            <label> <input type="radio"  name="optFormaPagamento" id="mostra_aba2" value="Boleto Bancário"onchange="mostrar_abas(this)" /> Boleto Bancario </label>
 
                         </div>
 

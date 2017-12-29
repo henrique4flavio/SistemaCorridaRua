@@ -6,9 +6,9 @@
     <head>
         <jsp:include page="bootstrap.jspf"/>
         <title>SCCR</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="./resources/bootstrap/js/bootstrap.min.js"></script>
         
+        <script src="./resources/bootstrap/js/bootstrap.min.js"></script>
+         <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
@@ -88,6 +88,7 @@
                     </div>
         </div>
         </div>
+    
         <jsp:include page="footer.jspf"/>
 
 </body>

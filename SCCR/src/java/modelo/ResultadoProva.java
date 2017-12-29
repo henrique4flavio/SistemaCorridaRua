@@ -6,40 +6,34 @@ import java.util.*;
 
 public class ResultadoProva {
 
-    private int id;
-    private int classificacao;
-    private String id_atleta;
-    private String tempo;
-       private String nome;
- private String id_prova;
+   
+private int id;
+private String nomeAtleta;
+private int numeroPeito;
+private String tempo;
+private String categoria;
+private int classificacao;
+private String sexo;
+private String prova;
 
-    public String getId_prova() {
-        return id_prova;
+    public String getProva() {
+        return prova;
     }
 
-    public void setId_prova(String id_prova) {
-        this.id_prova = id_prova;
+    public void setProva(String prova) {
+        this.prova = prova;
     }
-    
-    private String numeroPeito;
-
-    public ResultadoProva(int id, int classificacao,String tempo, String id_atleta,  String numeroPeito,String id_prova) {
+    public ResultadoProva(int id, String nomeAtleta, int numeroPeito, String tempo, String categoria, int classificacao, String sexo,String prova) {
         this.id = id;
-        this.classificacao = classificacao;
-        this.id_atleta = id_atleta;
-        this.tempo = tempo;
+        this.nomeAtleta = nomeAtleta;
         this.numeroPeito = numeroPeito;
-        this.nome= nome;
-        this.id_prova = id_prova;
-    }
-    
-public String getNome() {
-        return nome;
+        this.tempo = tempo;
+        this.categoria = categoria;
+        this.classificacao = classificacao;
+        this.sexo = sexo;
+        this.prova=prova;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
     public int getId() {
         return id;
     }
@@ -48,20 +42,20 @@ public String getNome() {
         this.id = id;
     }
 
-    public int getClassificacao() {
-        return classificacao;
+    public String getNomeAtleta() {
+        return nomeAtleta;
     }
 
-    public void setClassificacao(int classificacao) {
-        this.classificacao = classificacao;
+    public void setNomeAtleta(String nomeAtleta) {
+        this.nomeAtleta = nomeAtleta;
     }
 
-    public String getId_atleta() {
-        return id_atleta;
+    public int getNumeroPeito() {
+        return numeroPeito;
     }
 
-    public void setId_atleta(String id_atleta) {
-        this.id_atleta = id_atleta;
+    public void setNumeroPeito(int numeroPeito) {
+        this.numeroPeito = numeroPeito;
     }
 
     public String getTempo() {
@@ -72,66 +66,76 @@ public String getNome() {
         this.tempo = tempo;
     }
 
-    public String getNumeroPeito() {
-        return numeroPeito;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public void setNumeroPeito(String numeroPeito) {
-        this.numeroPeito = numeroPeito;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public int getClassificacao() {
+        return classificacao;
+    }
+
+    public void setClassificacao(int classificacao) {
+        this.classificacao = classificacao;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
     
-    public void consultarResultadoIndividual() {
-
+    public static List<ResultadoProva> obterResultadoGeralMasculinoInfantilProva(String nome)throws ClassNotFoundException, SQLException{
+        return ResultadoProvaDAO.obterResultadoGeralMasculinoInfantilProva(nome);
     }
-
-    public void importarEquipeMasculino() {
-
+    
+    public static List<ResultadoProva> obterResultadoGeralFemininoInfantilProva(String nome) throws ClassNotFoundException,SQLException{
+        return ResultadoProvaDAO.obterResultadoGeralFemininoInfantilProva(nome);
     }
+     public static List<ResultadoProva> obterResultadoGeralFemininoAdultoProva(String nome)throws ClassNotFoundException,SQLException{
+   
+         return ResultadoProvaDAO.obterResultadoGeralFemininoAdultoProva(nome);
+         
+         
+       }
+ public static List<ResultadoProva> obterResultadoGeralMasculinoAdultoProva(String nome)throws ClassNotFoundException,SQLException{
+   
+         return ResultadoProvaDAO.obterResultadoGeralMasculinoAdultoProva(nome);
+         
+         
+       }
+ public static List<ResultadoProva> obterResultadoGeralMasculinoIdosoProva(String nome)throws ClassNotFoundException,SQLException{
+   
+         return ResultadoProvaDAO.obterResultadoGeralMasculinoIdosoProva(nome);
+         
+         
+       }
+ 
+ public static List<ResultadoProva> obterResultadoGeralFemininoIdosoProva(String nome)throws ClassNotFoundException,SQLException{
+   
+         return ResultadoProvaDAO.obterResultadoGeralFemininoIdosoProva(nome);
+         
+         
+       }
+ public static List<ResultadoProva> obterResultadoGeralFemininoProva(String nome)throws ClassNotFoundException,SQLException{
+   
+         return ResultadoProvaDAO.obterResultadoGeralFemininoProva(nome);
+         
+         
+       }
+ 
+  public static List<ResultadoProva> obterResultadoGeralMasculinoProva(String nome)throws ClassNotFoundException,SQLException{
+   
+         return ResultadoProvaDAO.obterResultadoGeralMasculinoProva(nome);
+         
+         
+       }
 
-    public void importarEquipeFeminino() {
 
-    }
-
-    public void importarFaixaEtariaMasculino() {
-
-    }
-
-    public void importarFaixaEtariaFeminino() {
-
-    }
-    public void importarGeralMasculino(){
-
-    }
-    public void importarGeralFeminino(){
-
-    }
-    public void exportarEquipeMasculino(){
-
-    }
-    public void exportarEquipeFeminino(){
-
-    }
-    public void exportarFaixaEtariaMasculino(){
-
-    }
-    public void exportarFaixaEtariaFeminino(){
-
-    }
-    public void exportarGeralMasculino(){
-
-    }
-    public void exportarGeralFeminino(){
-
-    }
-     
-    public static List<ResultadoProva> obterResultadoGeralFemininoProva(int id) throws ClassNotFoundException, SQLException {
-        return ResultadoProvaDAO.obterResultadoGeralFemininoProva(id);
-}
-    public static List<ResultadoProva> obterResultadoGeralMasculinoProva(int id) throws ClassNotFoundException, SQLException {
-        return ResultadoProvaDAO.obterResultadoGeralMasculinoProva(id);
-}
-     public static List<ResultadoProva> obterResultadoGeralProva(int id) throws ClassNotFoundException, SQLException {
-        return ResultadoProvaDAO.obterResultadoGeralProva(id);
-}
 }
 

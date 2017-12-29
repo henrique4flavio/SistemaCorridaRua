@@ -8,7 +8,7 @@
 <html>
     <head>
         <jsp:include page="bootstrap.jspf"/>
-        <title>Resultado Provas</title>
+        <title>MResultado Ranking</title>
 
         <script>
             function pesquisa(input) {
@@ -25,10 +25,10 @@
 
         <div id="main" class="container-fluid" style="margin-top: 50px">
 
-            <h2>Prova - Asconcer - Resultado  - 01 Junho 2017</h2>
+            <h2>Ranking JF 2017</h2>
         </div>
         <div id="main" class="container-fluid" style="margin-top: 50px">
-            <h3> Resultado</h3>
+            <h3> Resultados</h3>
         </div>
         <hr />
         <div id="list" class="row">
@@ -39,23 +39,21 @@
                         <tr>
                             <th>Classificação</th>
                             <th>Atleta</th>
-                            <th> Categoria</th>
-                            <th>Tempo</th>
-                            <th>Numero de Peito</th>
+                            <th>Pontuação</th> 
+                           
 
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${resultadoProvas}" var="resultadoProvas">
+                        <c:forEach items="${resultadoRanking}" var="resultadoRanking">
                             <tr>
-                                <td><c:out value = "${resultadoProvas.classificacao}" /></td>
-                                <td><c:out value = "${resultadoProvas.nomeAtleta}" />
+                                <td><c:out value = "${resultadoRanking.classificacao}" /></td>
+                                <td><c:out value = "${resultadoRanking.nomeAtleta}" />
                                 </td>
 
 
-                                <td><c:out value = "${resultadoProvas.categoria}" /></td>
-                                <td><c:out value = "${resultadoProvas.tempo}" /></td>
-                                <td>  <c:out value = "${resultadoProvas.numeroPeito}" /></td>
+                                <td><c:out value = "${resultadoRanking.pontuacao}" /></td>
+                              
                             </tr>
                         </c:forEach>
 

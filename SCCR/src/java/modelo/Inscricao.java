@@ -12,7 +12,15 @@ public class Inscricao {
     
     //Variaveis do banco de dados
     private int numeroPeito;
+    private String categoria;
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
     private String total;
     
     private String kit_id;
@@ -23,7 +31,7 @@ public class Inscricao {
 
     private String atleta_id;
 
-    public Inscricao(int numeroPeito, String formaPagamento, String total,
+    public Inscricao(int numeroPeito, String formaPagamento, String total,String categoria,
             String kit_id, String prova_id, String percurso_id,String atleta_id) {
         this.numeroPeito = numeroPeito;
         this.formaPagamento = formaPagamento;
@@ -32,6 +40,7 @@ public class Inscricao {
         this.percurso_id = percurso_id;
         this.atleta_id = atleta_id;
         this.total = total;
+        this.categoria=categoria;
     }
 
     public String getTotal() {
