@@ -13,14 +13,7 @@
     <body>
         <jsp:include page="barra_superior.jspf"/>
         <div class="container corpo">
-        <c:choose>
-                        <c:when test="${mensagemErro!=null}">
-                            <div class="alert alert-danger alert-dismissable fade in">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong>Erro de Utilização:</strong> ${mensagemErro}.
-                            </div>
-                        </c:when>    
-                    </c:choose>
+       
                             <div class="col-md-6">
                     <div class="panel panel-success">
                         <div class="panel-heading">Área do Atleta</div>
@@ -35,7 +28,12 @@
                                     <label for="senha">Senha:</label>
                                     <input type="password" class="form-control" id="senha" name="senha">
                                 </div>
-                                 
+                                
+                                
+                                
+                                
+                                <br>                                <br>
+
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
                                         <button type="submit" class="btn btn-secondary btn-lg btn-block">Acessar</button>
