@@ -57,7 +57,7 @@
                         <tr>
 
                             <th>Número da inscrição</th>
-
+                            <th> Categoria </th>
 
                             <th>Total</th>
                             <th>Kit</th>
@@ -78,7 +78,7 @@
                                         <c:if test="${kit.id == inscricao.kit_id}"> ${kit.nomeKit} </c:if>
                                     </c:forEach> 
                                 </td>
-
+                                 <td><c:out value = "${inscricao.categoria}" /></td>
                                 <td> 
                                     <c:forEach items="${provas}" var="prova">
 

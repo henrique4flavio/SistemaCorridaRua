@@ -48,7 +48,12 @@
 
 
                         <li><a href="ManterAtletaController?acao=prepararIncluir" ><span class="glyphicon glyphicon-user"></span> 
-                               
+                                <%
+                                    Usuario usuario = (Usuario) session.getAttribute("usuario");
+                                    String nome = usuario.getNome();
+                                %>
+                                <%=nome%> 
+                                
                             </a> </li>
 
                         </li>
@@ -64,7 +69,7 @@
 
 
 
-                <h3> Bem Vindo(a)   </h3>
+                <h3> Bem Vindo(a) <%=nome%>  </h3>
 
                 <div class="panel-body">
                     <div class="row">

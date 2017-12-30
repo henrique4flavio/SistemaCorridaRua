@@ -16,7 +16,15 @@ public class Inscricao {
     // private Atleta cpf;
     //Variaveis do banco de dados
     private int numeroPeito;
+    private String categoria;
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
     private String total;
 
     private String kit_id;
@@ -27,8 +35,13 @@ public class Inscricao {
 
     private String atleta_id;
 
+<<<<<<< HEAD
     public Inscricao(int numeroPeito, boolean pago, boolean kitRetirado, String formaPagamento, String total,
             String kit_id, String prova_id, String percurso_id, String atleta_id) {
+=======
+    public Inscricao(int numeroPeito, String formaPagamento, String total,String categoria,
+            String kit_id, String prova_id, String percurso_id,String atleta_id) {
+>>>>>>> f29c89457f02d3ddb95ce68d507585bf10bc69b4
         this.numeroPeito = numeroPeito;
         this.pago = pago;
         this.formaPagamento = formaPagamento;
@@ -37,6 +50,7 @@ public class Inscricao {
         this.percurso_id = percurso_id;
         this.atleta_id = atleta_id;
         this.total = total;
+<<<<<<< HEAD
         this.kitRetirado = kitRetirado;
     }
 
@@ -50,6 +64,9 @@ public class Inscricao {
         this.numeroPeito = 0;
         this.pago = false;
         this.kitRetirado = false;
+=======
+        this.categoria=categoria;
+>>>>>>> f29c89457f02d3ddb95ce68d507585bf10bc69b4
     }
 
     public String getTotal() {

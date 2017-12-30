@@ -68,7 +68,7 @@ public class LoginController extends HttpServlet {
             if (atleta != null) {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("atleta", atleta);
-                session.setAttribute("usuario", "atleta");
+                session.setAttribute("usuario", atleta);
                 RequestDispatcher view = request.getRequestDispatcher("/atletaHome.jsp");
                 view.forward(request, response);
                 idUsuario = atleta.getId();
@@ -97,10 +97,18 @@ public class LoginController extends HttpServlet {
                     if (administrador != null) {
                         HttpSession session = request.getSession(true);
                         session.setAttribute("administrador", administrador);
-                        session.setAttribute("usuario", "administrador");
+                        session.setAttribute("usuario", administrador);
                         RequestDispatcher view = request.getRequestDispatcher("/administradorHome.jsp");
                         view.forward(request, response);
                     } else {
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         request.setAttribute("mensagemErro", "Usuário não encontrado");
                         RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
                         view.forward(request, response);
@@ -114,11 +122,10 @@ public class LoginController extends HttpServlet {
                     if (organizador != null) {
                         HttpSession session = request.getSession(true);
                         session.setAttribute("organizador", organizador);
-                        session.setAttribute("usuario", "organizador");
+                        session.setAttribute("usuario", organizador);
                         RequestDispatcher view = request.getRequestDispatcher("/organizadorHome.jsp");
                         view.forward(request, response);
                     } else {
-                        request.setAttribute("mensagemErro", "Usuário não encontrado");
                         RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
                         view.forward(request, response);
                     }

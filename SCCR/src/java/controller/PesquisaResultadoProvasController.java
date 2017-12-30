@@ -37,14 +37,29 @@ public class PesquisaResultadoProvasController extends HttpServlet {
      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         String acao = request.getParameter("acao");
-        if (acao.equals("geralFemininoAsconcer")) {
-            geralFemininoAsconcer(request, response);
-        } 
+        if(acao.equals("geralFemininoAsconcer")){
+            geralFemininoAsconcer(request,response);
+        }
         if(acao.equals("geralMasculinoAsconcer")){
             geralMasculinoAsconcer(request,response);
         }
-        if(acao.equals("geralAsconcer")){
-            geralAsconcer(request,response);
+        if(acao.equals("geralMasculinoInfantilAsconcer")){
+            geralMasculinoInfantilAsconcer(request,response);
+        }
+        if(acao.equals("geralFemininoInfantilAsconcer")){
+            geralFemininoInfantilAsconcer(request,response);
+        }
+        if(acao.equals("geralFemininoAdultoAsconcer")){
+            geralFemininoAdultoAsconcer(request,response);
+        }
+        if(acao.equals("geralMasculinoAdultoAsconcer")){
+            geralMasculinoAdultoAsconcer(request,response);
+        }
+        if(acao.equals("geralMasculinoIdosoAsconcer")){
+            geralMasculinoIdosoAsconcer(request,response);
+        }
+        if(acao.equals("geralFemininoIdosoAsconcer")){
+            geralFemininoIdosoAsconcer(request,response);
         }
         if(acao.equals("visualizarProvas")){
             visualizarProvas(request,response);
@@ -71,12 +86,138 @@ public class PesquisaResultadoProvasController extends HttpServlet {
          }
 
     }
-      public void geralAsconcer(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+     
+     
+      public void geralMasculinoInfantilAsconcer(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
+            String prova = "Asconcer";
+            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoGeralMasculinoInfantilProva(prova));
             
-            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoGeralProva(1));
-            request.setAttribute("atleta", Atleta.obterAtletas());
-            request.setAttribute("inscricao", Inscricao.obterInscricoes());
+           
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
+        }
+
+    }
+      
+    public void geralFemininoInfantilAsconcer(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            String prova = "Asconcer";
+            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoGeralFemininoInfantilProva(prova));
+            
+           
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
+        }
+
+    }
+    public void geralFemininoAdultoAsconcer(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            String prova = "Asconcer";
+            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoGeralFemininoAdultoProva(prova));
+            
+           
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
+        }
+
+    }
+    public void geralMasculinoAdultoAsconcer(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            String prova = "Asconcer";
+            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoGeralMasculinoIdosoProva(prova));
+            
+           
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
+        }
+
+    }
+    
+     public void geralFemininoIdosoAsconcer(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            String prova = "Asconcer";
+            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoGeralFemininoIdosoProva(prova));
+            
+           
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
+        }
+
+    }
+      
+     public void geralMasculinoIdosoAsconcer(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            String prova = "Asconcer";
+            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoGeralMasculinoIdosoProva(prova));
+            
+           
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
+        }
+
+    }
+    
+     
+     public void geralMasculinoAsconcer(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            String prova = "Asconcer";
+            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoGeralMasculinoProva(prova));
+            
            
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
             try {
@@ -93,33 +234,11 @@ public class PesquisaResultadoProvasController extends HttpServlet {
 
     }
      
-      public void geralMasculinoAsconcer(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+     public void geralFemininoAsconcer(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             String prova = "Asconcer";
-            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoGeralMasculinoProva(1));
-            request.setAttribute("atleta", Atleta.obterAtletas());
-            request.setAttribute("inscricao", Inscricao.obterInscricoes());
-           
-            RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
-            try {
-                view.forward(request, response);
-            } catch (ServletException ex) {
-                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-                Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-        } catch (ClassNotFoundException ex) {
-
-        }
-
-    }
-      public void geralFemininoAsconcer(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-        try {
-            String prova = "Asconcer";
-            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoGeralFemininoProva(1));
-            request.setAttribute("atleta", Atleta.obterAtletas());
-            request.setAttribute("inscricao", Inscricao.obterInscricoes());
+            request.setAttribute("resultadoProvas",ResultadoProva.obterResultadoGeralFemininoProva(prova));
+            
            
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
             try {
@@ -144,6 +263,7 @@ public class PesquisaResultadoProvasController extends HttpServlet {
             Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
 
     /**
      * Handles the HTTP <code>POST</code> method.

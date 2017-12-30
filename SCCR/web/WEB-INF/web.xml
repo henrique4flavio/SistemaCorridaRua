@@ -124,6 +124,10 @@
         <servlet-name>AutenticadorController</servlet-name>
         <servlet-class>controller.AutenticadorController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PesquisaResultadoRanking</servlet-name>
+        <servlet-class>controller.PesquisaResultadoRankingController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -239,6 +243,10 @@
     <servlet-mapping>
         <servlet-name>AutenticadorController</servlet-name>
         <url-pattern>/AutenticadorController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaResultadoRanking</servlet-name>
+        <url-pattern>/PesquisaResultadoRanking</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

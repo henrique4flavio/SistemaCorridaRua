@@ -90,11 +90,15 @@ public class ManterInscricaoController extends HttpServlet {
         String formaPagamento = request.getParameter("optFormaPagamento");
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("prova_id");
-        
+        String categoria = request.getParameter("optCategoria");
         String percurso_id = request.getParameter("optPercurso");
         String atleta_id=request.getParameter("optAtleta");
 
+<<<<<<< HEAD
         Inscricao inscricao = new Inscricao(numeroPeito, pago, kitRetirado, formaPagamento, total, kit_id, prova_id, percurso_id, atleta_id);
+=======
+        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total,categoria, kit_id, prova_id, percurso_id,atleta_id);
+>>>>>>> f29c89457f02d3ddb95ce68d507585bf10bc69b4
 
         try {
             inscricao.excluir();
@@ -143,7 +147,7 @@ public class ManterInscricaoController extends HttpServlet {
         String percurso_id = request.getParameter("optPercurso");
         String atleta_id = request.getParameter("optAtleta");
 
-
+String categoria = request.getParameter("optCategoria");
 
         try {
             Kit kit = Kit.obterKit(0);
@@ -153,7 +157,11 @@ public class ManterInscricaoController extends HttpServlet {
             Atleta atleta = Atleta.obterAtleta(0);
             
 
+<<<<<<< HEAD
            Inscricao inscricao = new Inscricao(kit_id, prova_id, percurso_id, atleta_id);
+=======
+        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total,categoria, kit_id, prova_id, percurso_id,atleta_id);
+>>>>>>> f29c89457f02d3ddb95ce68d507585bf10bc69b4
             
             inscricao.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
@@ -205,8 +213,13 @@ public class ManterInscricaoController extends HttpServlet {
         String prova_id = request.getParameter("optProva");
         String percurso_id = request.getParameter("optPercurso");
         String atleta_id=request.getParameter("optAtleta");
+<<<<<<< HEAD
 
         Inscricao inscricao = new Inscricao(numeroPeito, true, true, formaPagamento, total, kit_id, prova_id, percurso_id, atleta_id);
+=======
+    String categoria = request.getParameter("optCategoria");
+        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total,categoria, kit_id, prova_id, percurso_id,atleta_id);
+>>>>>>> f29c89457f02d3ddb95ce68d507585bf10bc69b4
         try {
             inscricao.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");

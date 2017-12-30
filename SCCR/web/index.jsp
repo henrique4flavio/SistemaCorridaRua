@@ -6,21 +6,14 @@
     <head>
         <jsp:include page="bootstrap.jspf"/>
         <title>SCCR</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="./resources/bootstrap/js/bootstrap.min.js"></script>
         
+        <script src="./resources/bootstrap/js/bootstrap.min.js"></script>
+         <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
         <div class="container corpo">
-        <c:choose>
-                        <c:when test="${mensagemErro!=null}">
-                            <div class="alert alert-danger alert-dismissable fade in">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong>Erro de Utilização:</strong> ${mensagemErro}.
-                            </div>
-                        </c:when>    
-                    </c:choose>
+       
                             <div class="col-md-6">
                     <div class="panel panel-success">
                         <div class="panel-heading">Área do Atleta</div>
@@ -35,7 +28,12 @@
                                     <label for="senha">Senha:</label>
                                     <input type="password" class="form-control" id="senha" name="senha">
                                 </div>
-                                 
+                                
+                                
+                                
+                                
+                                <br>                                <br>
+
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
                                         <button type="submit" class="btn btn-secondary btn-lg btn-block">Acessar</button>
@@ -88,6 +86,7 @@
                     </div>
         </div>
         </div>
+    
         <jsp:include page="footer.jspf"/>
 
 </body>
