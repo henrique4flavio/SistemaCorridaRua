@@ -63,7 +63,7 @@
                             <a href="PesquisaInscricaoController" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Manter Inscrições</a> 
                             <a href="PesquisaItemController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter itens</a><br><br>
                             <a href="PesquisaKitController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter kits</a>
-                            <a href="PesquisaElementoKitController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>>Manter elementos kits</a>
+                            <a href="PesquisaElementoKitController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter elementos kits</a>
 
 
                             <a href="PesquisaLoteController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter lotes</a>

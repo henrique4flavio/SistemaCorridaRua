@@ -7,14 +7,18 @@ import java.util.*;
 public class Inscricao {
 
     private String formaPagamento;
+
+    private boolean pago;
     
-   // private Atleta cpf;
-    
+    private boolean kitRetirado;
+
+
+    // private Atleta cpf;
     //Variaveis do banco de dados
     private int numeroPeito;
 
     private String total;
-    
+
     private String kit_id;
 
     private String prova_id;
@@ -23,15 +27,29 @@ public class Inscricao {
 
     private String atleta_id;
 
-    public Inscricao(int numeroPeito, String formaPagamento, String total,
-            String kit_id, String prova_id, String percurso_id,String atleta_id) {
+    public Inscricao(int numeroPeito, boolean pago, boolean kitRetirado, String formaPagamento, String total,
+            String kit_id, String prova_id, String percurso_id, String atleta_id) {
         this.numeroPeito = numeroPeito;
+        this.pago = pago;
         this.formaPagamento = formaPagamento;
         this.kit_id = kit_id;
         this.prova_id = prova_id;
         this.percurso_id = percurso_id;
         this.atleta_id = atleta_id;
         this.total = total;
+        this.kitRetirado = kitRetirado;
+    }
+
+   
+    public Inscricao(String kit_id, String prova_id, String percurso_id, String atleta_id) {
+        this.kit_id = kit_id;
+        this.prova_id = prova_id;
+        this.percurso_id = percurso_id;
+        this.atleta_id = atleta_id;
+        
+        this.numeroPeito = 0;
+        this.pago = false;
+        this.kitRetirado = false;
     }
 
     public String getTotal() {
@@ -90,27 +108,21 @@ public class Inscricao {
         this.atleta_id = atleta_id;
     }
 
-    public void inscreverAtleta(Atleta atleta, Prova prova) {
-
+    public boolean isPago() {
+        return pago;
     }
 
-    /*
-    public void alterarInscricao(Atleta atleta, Prova prova) {
-
+    public void setPago(boolean pago) {
+        this.pago = pago;
     }
-     */
-    public void consultarInscricao(Atleta atleta, Prova prova) {
-
+    public boolean isKitRetirado() {
+        return kitRetirado;
     }
 
-    /*
-    public void excluirInscricao(Atleta atleta, Prova prova) {
-
+    public void setKitRetirado(boolean kitRetirado) {
+        this.kitRetirado = kitRetirado;
     }
-     */
-    public void emitirComprovanteIncricao() {
-
-    }
+    
 
     public static List<Inscricao> obterInscricoes()
             throws ClassNotFoundException {
@@ -141,6 +153,23 @@ public class Inscricao {
         return InscricaoDAO.pesquisaInscricao(numero);
 
     }
-
+    public void pagarInscricao() throws SQLException, ClassNotFoundException {
+        InscricaoDAO.pagarInscricao(this);
+    }
+    public void retirarKit() throws SQLException, ClassNotFoundException {
+        InscricaoDAO.retirarKit(this);
+    }
     
+    public static List<Inscricao> obterInscricoesPagas(int prova_id) throws ClassNotFoundException {
+        return InscricaoDAO.obterInscricoesPagas(prova_id);
+    }
+
+    public static List<Inscricao> obterInscricoesNaoPagas(int prova_id) throws ClassNotFoundException {
+        return InscricaoDAO.obterInscricoesNaoPagas(prova_id);
+    }
+    
+    
+    
+    
+
 }
