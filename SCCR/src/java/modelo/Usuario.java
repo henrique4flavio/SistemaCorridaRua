@@ -51,24 +51,4 @@ public class Usuario {
         this.email = email;
     }
 
-    public void login(String login, String senha) {
-
-    }
-
-    public void alterarDadosUsuario() {
-
-    }
-
-    public Usuario consultarUsuario() {
-        return null;
-    }
-
-    public void excluirConta() {
-
-    }
-
-    public void recuperarSenha() {
-
-    }
-
 }

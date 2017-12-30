@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import modelo.Kit;
 import modelo.Prova;
 import modelo.Percurso;
@@ -84,6 +85,8 @@ public class ManterInscricaoController extends HttpServlet {
     public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
         int numeroPeito = Integer.parseInt(request.getParameter("txtnumeroPeito"));
         String total = request.getParameter("txtTotal");
+        Boolean pago = Boolean.parseBoolean(request.getParameter("optPago"));
+        Boolean kitRetirado = Boolean.parseBoolean(request.getParameter("optKitRetirado"));
         String formaPagamento = request.getParameter("optFormaPagamento");
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("prova_id");
@@ -91,7 +94,11 @@ public class ManterInscricaoController extends HttpServlet {
         String percurso_id = request.getParameter("optPercurso");
         String atleta_id=request.getParameter("optAtleta");
 
+<<<<<<< HEAD
+        Inscricao inscricao = new Inscricao(numeroPeito, pago, kitRetirado, formaPagamento, total, kit_id, prova_id, percurso_id, atleta_id);
+=======
         Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total,categoria, kit_id, prova_id, percurso_id,atleta_id);
+>>>>>>> f29c89457f02d3ddb95ce68d507585bf10bc69b4
 
         try {
             inscricao.excluir();
@@ -134,23 +141,27 @@ public class ManterInscricaoController extends HttpServlet {
     }
 
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
-        int numeroPeito = Integer.parseInt(request.getParameter("txtnumeroPeito"));
-        String total = request.getParameter("txtTotal");
-        String formaPagamento = request.getParameter("optFormaPagamento");
+            
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("prova_id");
         String percurso_id = request.getParameter("optPercurso");
-        String atleta_id=request.getParameter("optAtleta");
+        String atleta_id = request.getParameter("optAtleta");
 
 String categoria = request.getParameter("optCategoria");
 
         try {
-            Kit kit = Kit.obterKit(numeroPeito);
-            Prova prova = Prova.obterProva(numeroPeito);
-            Percurso percurso = Percurso.obterPercurso(numeroPeito);
+            Kit kit = Kit.obterKit(0);
+            HttpSession session = request.getSession(true);
+            Prova prova = Prova.obterProva(0);
+            Percurso percurso = Percurso.obterPercurso(0);
+            Atleta atleta = Atleta.obterAtleta(0);
             
 
+<<<<<<< HEAD
+           Inscricao inscricao = new Inscricao(kit_id, prova_id, percurso_id, atleta_id);
+=======
         Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total,categoria, kit_id, prova_id, percurso_id,atleta_id);
+>>>>>>> f29c89457f02d3ddb95ce68d507585bf10bc69b4
             
             inscricao.gravar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
@@ -202,8 +213,13 @@ String categoria = request.getParameter("optCategoria");
         String prova_id = request.getParameter("optProva");
         String percurso_id = request.getParameter("optPercurso");
         String atleta_id=request.getParameter("optAtleta");
+<<<<<<< HEAD
+
+        Inscricao inscricao = new Inscricao(numeroPeito, true, true, formaPagamento, total, kit_id, prova_id, percurso_id, atleta_id);
+=======
     String categoria = request.getParameter("optCategoria");
         Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total,categoria, kit_id, prova_id, percurso_id,atleta_id);
+>>>>>>> f29c89457f02d3ddb95ce68d507585bf10bc69b4
         try {
             inscricao.alterar();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
