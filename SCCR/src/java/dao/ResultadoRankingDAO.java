@@ -300,7 +300,7 @@ public static List<ResultadoRanking> obterResultadoGeralMasculinoRanking(String 
             conexao = BD.getConexao();
             comando = conexao.createStatement();
 
-            ResultSet rs = comando.executeQuery("SELECT * FROM resultadoranking where sexo='masculino' and prova like '%" + nomeRanking + "%' order by classificacao asc");
+            ResultSet rs = comando.executeQuery("SELECT * FROM resultadoranking where sexo='masculino' and ranking like '%" + nomeRanking + "%' order by classificacao asc");
 
             while (rs.next()) {
 
@@ -339,7 +339,7 @@ public static List<ResultadoRanking> obterResultadoGeralFemininoRanking(String n
             conexao = BD.getConexao();
             comando = conexao.createStatement();
 
-            ResultSet rs = comando.executeQuery("SELECT * FROM resultadoranking where sexo='feminino' and prova like '%" + nomeRanking + "%' order by classificacao asc");
+            ResultSet rs = comando.executeQuery("SELECT * FROM resultadoranking where sexo='feminino' and ranking like '%" + nomeRanking + "%' order by classificacao asc");
 
             while (rs.next()) {
 

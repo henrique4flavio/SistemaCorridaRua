@@ -34,28 +34,28 @@
 
                             <tr class="texto_tabela">
                                 <td align="left">&bull; Feminino-Infantil</td>
-                                <td><a href="PesquisaResultadoRankingController?acao=geralFemininoInfantilRankingJF">Abrir</a></td>
+                                <td><a href="PesquisaResultadoRanking?acao=geralFemininoInfantilRankingJF">Abrir</a></td>
                             </tr>
 
                             <tr class="texto_tabela">
                                 <td align="left">&bull; Masculino-Infantil</td>
-                                <td><a href="PesquisaResultadoRankingController?acao=geralMasculinoInfantilRankingJF" >Abrir</a></td>
+                                <td><a href="PesquisaResultadoRanking?acao=geralMasculinoInfantilRankingJF" >Abrir</a></td>
                             </tr>
                             <tr class="texto_tabela">
                                 <td align="left">&bull; Feminino-Adulto</td>
-                                <td><a href="PesquisaResultadoRankingController?acao=geralFemininoAdultoRankingJF">Abrir</a></td>
+                                <td><a href="PesquisaResultadoRanking?acao=geralFemininoAdultoRankingJF">Abrir</a></td>
                             </tr>
                                 <tr class="texto_tabela">
                                 <td align="left">&bull; Masculino-Adulto</td>
-                                <td><a href="PesquisaResultadoRankingController?acao=geralMasculinoAdultoRankingJF" >Abrir</a></td>
+                                <td><a href="PesquisaResultadoRanking?acao=geralMasculinoAdultoRankingJF" >Abrir</a></td>
                             </tr>
                             <tr class="texto_tabela">
                                 <td align="left">&bull; Masculino-Idoso</td>
-                                <td><a href="PesquisaResultadoRankingController?acao=geralMasculinoIdosoRankingJF" >Abrir</a></td>
+                                <td><a href="PesquisaResultadoRanking?acao=geralMasculinoIdosoRankingJF" >Abrir</a></td>
                             </tr>
                             <tr class="texto_tabela">
                                 <td align="left">&bull; Feminino-Idoso</td>
-                                <td><a href="PesquisaResultadoRankingController?acao=geralFemininoIdosoRankingJF">Abrir</a></td>
+                                <td><a href="PesquisaResultadoRanking?acao=geralFemininoIdosoRankingJF">Abrir</a></td>
                             </tr>
                             <tr class="texto_tabela">
                                 <td colspan="2" bgcolor="#cccccc"><b>GERAL</b></td>
@@ -63,14 +63,15 @@
 
                             <tr class="texto_tabela">
                                 <td align="left">&bull; Feminino</td>
-                                <td><a href="PesquisaResultaRankingController?acao=geralFemininoRankingJF">Abrir</a></td>
+                                <td><a href="PesquisaResultadoRanking?acao=geralFemininoRankingJF">Abrir</a></td>
                             </tr>
 
                             <tr class="texto_tabela">
                                 <td align="left">&bull; Masculino</td>
-                                <td><a href="PesquisaResultadoRankingController?acao=geralMasculinoRankingJF">Abrir</a></
+                                <td><a href="PesquisaResultadoRanking?acao=geralMasculinoRankingJF">Abrir</a></td>
+                                      </tr>
                     </table>
-                            </tr>
+                          
             </div>
         </div>
 

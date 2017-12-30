@@ -10,14 +10,7 @@
         <jsp:include page="bootstrap.jspf"/>
         <title>MResultado Ranking</title>
 
-        <script>
-            function pesquisa(input) {
-
-                var pesquisa = document.getElementById('search');
-                location.href = 'PesquisaProvaController?acao=pesquisa&nome=' + pesquisa.value;
-            }
-        </script>
-
+       
 
     </head>
     <body>

@@ -5,7 +5,7 @@
 <html>
     <head>
         <jsp:include page="bootstrap.jspf"/>
-        <title>SCCR</title>>
+        <title>SCCR</title>
         <script src="./resources/bootstrap/js/bootstrap.min.js"></script>
  <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
     </head>

@@ -42,7 +42,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="PesquisaProvaController?acao=gridProvas" ><span class=" glyphicon glyphicon-th"></span>  Provas</a> </li>
 
-                        <li><a href="PaginaRankingGeral?acao=visualizarRanking"><span class="glyphicon glyphicon-list-alt"></span> Ranking</a> </li>
+                        <li><a href="PesquisaResultadoRanking?acao=visualizarRanking"><span class="glyphicon glyphicon-list-alt"></span> Ranking</a> </li>
                         <li><a href="PesquisaResultadoProvasController?acao=visualizarProvas" ><span class="
                                                                                                      glyphicon glyphicon-expand"></span> Resultado Provas</a> </li>
 
