@@ -8,9 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Administrador;
-import modelo.Atleta;
 import modelo.Inscricao;
-import modelo.Prova;
 
 public class InscricaoDAO {
 
@@ -428,30 +426,6 @@ public class InscricaoDAO {
 
         }
 
-    }
-    
-     public static boolean atletaEstaInscrito(Atleta atleta, Prova prova) throws ClassNotFoundException {
-        Connection conexao = null;
-        Statement comando = null;
-        boolean estaInscrito = false;
-        int inscrito = 0;
-        try {
-            conexao = BD.getConexao();
-            comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("SELECT COUNT(*) as inscrito FROM inscricao WHERE atleta_id = " + atleta.getId() + " AND prova_id = " + prova.getId());
-            rs.first();
-            inscrito = rs.getInt("inscrito");
-            if (inscrito >= 1) {
-                estaInscrito = true;
-            } else {
-                estaInscrito = false;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            fecharConexao(conexao, comando);
-        }
-        return estaInscrito;
     }
 
 }
