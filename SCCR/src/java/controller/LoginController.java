@@ -19,6 +19,8 @@ import javax.servlet.http.HttpSession;
 import modelo.Administrador;
 import modelo.Atleta;
 import modelo.Organizador;
+import modelo.UsuarioLogado;
+
 
 /**
  *
@@ -71,7 +73,9 @@ public class LoginController extends HttpServlet {
                 session.setAttribute("usuario", atleta);
                 RequestDispatcher view = request.getRequestDispatcher("/atletaHome.jsp");
                 view.forward(request, response);
-                idUsuario = atleta.getId();
+              UsuarioLogado.setId(atleta.getId());
+              
+                
 
             } else {
 
@@ -102,12 +106,7 @@ public class LoginController extends HttpServlet {
                         view.forward(request, response);
                     } else {
                         
-                        
-                        
-                        
-                        
-                        
-                        
+     
                         
                         request.setAttribute("mensagemErro", "Usuário não encontrado");
                         RequestDispatcher view = request.getRequestDispatcher("/index.jsp");

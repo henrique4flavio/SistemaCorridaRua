@@ -128,6 +128,10 @@
         <servlet-name>PesquisaResultadoRanking</servlet-name>
         <servlet-class>controller.PesquisaResultadoRanking</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ObterInscricaoAtletaController</servlet-name>
+        <servlet-class>controller.ObterInscricaoAtletaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -247,6 +251,10 @@
     <servlet-mapping>
         <servlet-name>PesquisaResultadoRanking</servlet-name>
         <url-pattern>/PesquisaResultadoRanking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ObterInscricaoAtletaController</servlet-name>
+        <url-pattern>/ObterInscricaoAtletaController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
