@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
@@ -22,9 +23,9 @@
                  <li><a href="PesquisaProvaController?acao=gridProvas" ><span class="
                 glyphicon glyphicon-th"></span>  Provas</a> </li>
                    
-                            
+                      
                    
-                </li>
+               
 
 
               
@@ -33,3 +34,4 @@
         </div>
     </div>
 </nav>
+                                

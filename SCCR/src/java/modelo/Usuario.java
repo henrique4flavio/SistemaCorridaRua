@@ -11,7 +11,7 @@ public class Usuario {
     private String login;
 
     private String email;
-
+  
     public Usuario(String nome, String senha, String login, String email) {
         this.nome = nome;
         this.email = email;

@@ -2,7 +2,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
+<%@page import="modelo.Usuario"%>
+<%@page import="modelo.Administrador"%>
 
 <!DOCTYPE html>
 <html>
@@ -22,7 +23,7 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
-
+       
         <div id="main" class="container-fluid" style="margin-top: 50px">
 
             <h2>Prova - Asconcer - Resultado  - 01 Junho 2017</h2>

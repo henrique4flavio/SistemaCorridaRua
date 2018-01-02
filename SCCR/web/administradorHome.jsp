@@ -47,7 +47,7 @@
                                                                                                      glyphicon glyphicon-expand"></span> Resultado Provas</a> </li>
 
 
-                        <li><a href="ManterAtletaController?acao=prepararIncluir" ><span class="glyphicon glyphicon-user"></span> 
+                        <li><a href="administradorHome.jsp" ><span class="glyphicon glyphicon-user"></span> 
                                 <%
                                     Usuario usuario = (Usuario) session.getAttribute("usuario");
                                     String nome = usuario.getNome();
