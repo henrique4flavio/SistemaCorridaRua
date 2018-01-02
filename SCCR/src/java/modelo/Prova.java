@@ -7,9 +7,9 @@ import java.util.*;
 public class Prova {
 
     private String nomeProva;
+
     private String valorTotal;
 
-   
     private String localLargada;
 
     private String horarioLargada;
@@ -23,19 +23,17 @@ public class Prova {
     private String fimInscricao;
 
     private String faixaEtaria;
-    
+
     //Variaveis do banco de dados
     private int id;
-    
-    private String organizador_id;
-    
-    private String  ranking_id;
-    private String  localRetiradaKit;
-    
-   
-    
 
-    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria,String localRetiradaKit,String valorTotal, String organizador_id, String ranking_id) {
+    private String organizador_id;
+
+    private String ranking_id;
+
+    private String localRetiradaKit;
+
+    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria, String localRetiradaKit, String valorTotal, String organizador_id, String ranking_id) {
         this.nomeProva = nomeProva;
         this.localLargada = localLargada;
         this.horarioLargada = horarioLargada;
@@ -48,7 +46,7 @@ public class Prova {
         this.ranking_id = ranking_id;
         this.id = id;
         this.valorTotal = valorTotal;
-       this.localRetiradaKit = localRetiradaKit;
+        this.localRetiradaKit = localRetiradaKit;
     }
 
     public String getLocalRetiradaKit() {
@@ -83,11 +81,10 @@ public class Prova {
         this.ranking_id = ranking_id;
     }
 
-    public void setRanking_id(String  ranking_id) {
+    public void setRanking_id(String ranking_id) {
         this.ranking_id = ranking_id;
     }
 
-    
     public void setFaixaEtaria(String faixaEtaria) {
         this.faixaEtaria = faixaEtaria;
     }
@@ -96,7 +93,6 @@ public class Prova {
         return nomeProva;
     }
 
-    
     public void setNomeProva(String nomeProva) {
         this.nomeProva = nomeProva;
     }
@@ -152,6 +148,7 @@ public class Prova {
     public String getFaixaEtaria() {
         return faixaEtaria;
     }
+
     public String getOrganizador_id() {
         return organizador_id;
     }
@@ -168,42 +165,12 @@ public class Prova {
         this.ranking_id = ranking_id;
     }
 
-    public void cadastrarProva() {
-
-    }
-
-    public void alterarProva() {
-
-    }
-
-    public Prova consultarProva() {
-        return null;
-    }
-
-    public void excluirProva() {
-
-    }
-
-    public void cadastrarPercursosProva(Percurso percurso) {
-
-    }
-
-    public void controlarEmprestimoChip() {
-
-    }
-
-    public void excluirKitProva(Kit kit) {
-
-    }
-
-    public void cadastrarProvaRanking(Ranking ranking) {
-
-    }
     public static List<Prova> obterProvas()
             throws ClassNotFoundException {
         return ProvaDAO.obterProvas();
 
     }
+
     public void gravar() throws SQLException, ClassNotFoundException {
 
         ProvaDAO.gravar(this);
@@ -220,17 +187,18 @@ public class Prova {
 
     public static Prova obterProva(int id) throws ClassNotFoundException, SQLException {
         return ProvaDAO.obterProva(id);
-    
-}
-     public String getValorTotal() {
+
+    }
+
+    public String getValorTotal() {
         return valorTotal;
     }
 
     public void setValorTotal(String valorTotal) {
         this.valorTotal = valorTotal;
     }
-    
-     public static List<Prova> pesquisaProva(String nome)
+
+    public static List<Prova> pesquisaProva(String nome)
             throws ClassNotFoundException, SQLException {
         return ProvaDAO.pesquisaProva(nome);
 

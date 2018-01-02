@@ -11,10 +11,10 @@ public class Percurso {
     private String distancia;
 
     private String faixaEtaria;
-    
+
     //Variaveis do banco de dados
     private int id;
-    
+
     private String prova_id;
 
     public Percurso(int id, String nome, String distancia, String faixaEtaria, String prova_id) {
@@ -60,40 +60,17 @@ public class Percurso {
     public String getProva_id() {
         return prova_id;
     }
-    
+
     public void setProva_id(String prova_id) {
         this.prova_id = prova_id;
     }
 
-    
-    public void cadastrarPercurso() {
-
-    }
-
-    public void alterarPercurso() {
-
-    }
-
-    public Percurso consultarPercurso() {
-        return null;
-    }
-
-    public void excluirPercurso() {
-
-    }
-
-    public void importarMapeamento() {
-
-    }
-
-    public void divulgarPercurso() {
-
-    }
     public static List<Percurso> obterPercursos()
             throws ClassNotFoundException {
         return PercursoDAO.obterPercursos();
 
     }
+
     public void gravar() throws SQLException, ClassNotFoundException {
 
         PercursoDAO.gravar(this);

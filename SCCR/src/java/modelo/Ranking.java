@@ -31,22 +31,6 @@ public class Ranking {
         this.nome = nome;
     }
 
-    public String consultarRanking() {
-        return "";
-    }
-
-    public boolean cadastrarRanking() {
-        return false;
-    }
-
-    public void cadastrarAtletaRanking() {
-
-    }
-
-    public void divulgarRanking() {
-
-    }
-
     public static List<Ranking> obterRankings()
             throws ClassNotFoundException {
         return RankingDAO.obterRankings();

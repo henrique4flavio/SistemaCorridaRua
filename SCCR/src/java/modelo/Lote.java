@@ -12,8 +12,6 @@ public class Lote {
 
     private String dataFim;
 
-   
-
     public String getDesconto() {
         return desconto;
     }
@@ -25,17 +23,17 @@ public class Lote {
     //Variaveis do banco de dados
     private int id;
     private String desconto;
-    
+
     private String prova_id;
 
-    public Lote(int id, String dataInicio, String dataFim, String identificacao, String desconto,String prova_id) {
-     
+    public Lote(int id, String dataInicio, String dataFim, String identificacao, String desconto, String prova_id) {
+
         this.dataFim = dataFim;
         this.dataInicio = dataInicio;
         this.prova_id = prova_id;
         this.identificacao = identificacao;
         this.id = id;
-        this.desconto= desconto;
+        this.desconto = desconto;
 
     }
 
@@ -46,7 +44,7 @@ public class Lote {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getIdentificacao() {
         return identificacao;
     }
@@ -71,7 +69,6 @@ public class Lote {
         this.dataFim = dataFim;
     }
 
-
     public void CadastrarLote() {
 
     }
@@ -83,12 +80,13 @@ public class Lote {
     public void setProva_id(String prova_id) {
         this.prova_id = prova_id;
     }
-    
+
     public static List<Lote> obterLotes()
             throws ClassNotFoundException {
         return LoteDAO.obterLotes();
     }
-     public void gravar() throws SQLException, ClassNotFoundException {
+
+    public void gravar() throws SQLException, ClassNotFoundException {
 
         LoteDAO.gravar(this);
     }

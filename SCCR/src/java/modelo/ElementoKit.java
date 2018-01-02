@@ -8,7 +8,7 @@ public class ElementoKit {
 
     private int item_id;
     private int kit_id;
-    
+
     //Variaveis do banco de dados
     private int id;
 

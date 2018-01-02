@@ -26,6 +26,7 @@ public class Administrador extends Usuario {
             throws ClassNotFoundException {
         return AdministradorDAO.obterAdministradores();
     }
+
     public static List<Administrador> pesquisarAdministrador(String nome)
             throws ClassNotFoundException {
         return AdministradorDAO.pesquisarAdministrador(nome);
@@ -48,6 +49,7 @@ public class Administrador extends Usuario {
     public static Administrador obterAdministrador(int id) throws ClassNotFoundException, SQLException {
         return AdministradorDAO.obterAdministrador(id);
     }
+
     public static Administrador logar(String login, String senha) throws ClassNotFoundException {
         return AdministradorDAO.logar(login, senha);
     }

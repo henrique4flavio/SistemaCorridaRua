@@ -33,15 +33,6 @@ public class Item {
         this.nomeItem = nomeItem;
     }
 
-    public void cadastrarItem() {
-
-    }
-
-    public Item consultarItem() {
-
-        return null;
-    }
-
     public static List<Item> obterItens()
             throws ClassNotFoundException {
         return ItemDAO.obterItens();

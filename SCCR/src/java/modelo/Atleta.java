@@ -6,6 +6,8 @@ import java.util.*;
 
 public class Atleta extends Usuario {
 
+    public String nome;
+
     private String dataNascimento;
 
     private String sexo;
@@ -165,21 +167,6 @@ public class Atleta extends Usuario {
         this.nome = nome;
     }
 
-    public String nome;
-
-    public String visualizarClassificacao() {
-
-        return "";
-    }
-
-    public String visualizarRanking() {
-        return "";
-    }
-
-    public String cadastrarAtleta() {
-        return "";
-    }
-
     public static List<Atleta> obterAtletas()
             throws ClassNotFoundException {
         return AtletaDAO.obterAtletas();
@@ -202,6 +189,7 @@ public class Atleta extends Usuario {
     public static Atleta obterAtleta(int id) throws ClassNotFoundException, SQLException {
         return AtletaDAO.obterAtleta(id);
     }
+
     public static Atleta logar(String email, String senha) throws ClassNotFoundException {
         return AtletaDAO.logar(email, senha);
     }

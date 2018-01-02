@@ -9,7 +9,7 @@ public class Kit {
     private String nomeKit;
     //Variaveis do banco de dados
     private int id;
-    
+
     private float valor;
 
     public Kit(int id, String nomeKit, float valor) {
@@ -42,18 +42,13 @@ public class Kit {
         this.nomeKit = nomeKit;
     }
 
-    public void adicionarElementoKit(Item item) {
-    }
-
-    public void excluirElementoKit() {
-    }
-
     public static List<Kit> obterKits()
             throws ClassNotFoundException {
         return KitDAO.obterKits();
 
     }
-     public void gravar() throws SQLException, ClassNotFoundException {
+
+    public void gravar() throws SQLException, ClassNotFoundException {
 
         KitDAO.gravar(this);
     }

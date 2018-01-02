@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class Organizador extends Usuario {
-    
+
     //Variaveis do banco de dados
     private int id;
     private String administrador_id;
@@ -25,7 +25,7 @@ public class Organizador extends Usuario {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getAdministrador_id() {
         return administrador_id;
     }
@@ -33,24 +33,13 @@ public class Organizador extends Usuario {
     public void setAdministrador_id(String administrador_id) {
         this.administrador_id = administrador_id;
     }
-    
- 
-    
-    public void cadastrarOrganizador() {
-    }
 
-    public String visualizarRanking() {
-        return "";
-    }
-
-    public String visualizarClassificacao() {
-        return "";
-    }
     public static List<Organizador> obterOrganizadores()
             throws ClassNotFoundException {
         return OrganizadorDAO.obterOrganizadores();
     }
-      public void gravar() throws SQLException, ClassNotFoundException {
+
+    public void gravar() throws SQLException, ClassNotFoundException {
 
         OrganizadorDAO.gravar(this);
     }
@@ -67,7 +56,8 @@ public class Organizador extends Usuario {
     public static Organizador obterOrganizador(int id) throws ClassNotFoundException, SQLException {
         return OrganizadorDAO.obterOrganizador(id);
     }
-    public static Organizador logar(String login, String senha) throws ClassNotFoundException,SQLException {
+
+    public static Organizador logar(String login, String senha) throws ClassNotFoundException, SQLException {
         return OrganizadorDAO.logar(login, senha);
     }
 
