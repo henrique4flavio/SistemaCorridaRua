@@ -18,6 +18,7 @@ import modelo.Atleta;
 import modelo.Inscricao;
 import modelo.Item;
 import modelo.Lote;
+import modelo.Usuario;
 
 public class ManterInscricaoController extends HttpServlet {
 
@@ -114,17 +115,26 @@ public class ManterInscricaoController extends HttpServlet {
     }
 
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+            HttpSession session = request.getSession(true);
+            Atleta atleta = (Atleta) session.getAttribute("atleta");
+
+            if (!Usuario.isLogado(atleta)) {
+            try {
+                request.setAttribute("mensagemAviso", "Você precisa estar logado para se inscrever.");
+                RequestDispatcher view = request.getRequestDispatcher("/");
+                view.forward(request, response);
+            } catch (IOException ex) {
+            } catch (ServletException ex) {
+            }
+
+        
         try {
-            
-          
             request.setAttribute("operacao", "Incluir");
             request.setAttribute("kit", Kit.obterKits());
-            request.setAttribute("item", Item.obterItens());
-            request.setAttribute("percurso", Percurso.obterPercursos());
-            request.setAttribute("atleta", Atleta.obterAtletas());
-            request.setAttribute("lote", Lote.obterLotes());
+            request.setAttribute("percursos", Percurso.obterPercursos());
+            request.setAttribute("atletas", Atleta.obterAtletas());
+            request.setAttribute("lotes", Lote.obterLotes());
             
-            int prova_id = Integer.parseInt(request.getParameter("prova_id"));
             
             Prova prova = Prova.obterProva(prova_id);
             request.setAttribute("prova_id", prova);
@@ -210,7 +220,7 @@ String categoria = request.getParameter("optCategoria");
         String prova_id = request.getParameter("optProva");
         String percurso_id = request.getParameter("optPercurso");
         String atleta_id=request.getParameter("optAtleta");
-
+        String categoria = request.getParameter("optCategoria");
 
         Inscricao inscricao = new Inscricao(numeroPeito, true, true, formaPagamento, total, kit_id, prova_id, percurso_id, atleta_id);
 
