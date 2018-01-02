@@ -11,16 +11,16 @@ public class CartaoCredito extends Pagamento {
     private String validade;
     private String nomeTitular;
 
-    public CartaoCredito(int id, String numero, String codigoSeguranca, String validade, String nomeTitular, Inscricao inscricao) {
-        super(inscricao);
+    public CartaoCredito(int id, String numero, String codigoSeguranca, String validade, String nomeTitular, Inscricao inscricao, Prova inscricaoProva) {
+        super(id, inscricao, inscricaoProva);
         this.numero = numero;
         this.codigoSeguranca = codigoSeguranca;
         this.validade = validade;
         this.nomeTitular = nomeTitular;
     }
     
-    public CartaoCredito(String numero, String codigoSeguranca, String validade, String nomeTitular, Inscricao inscricao) {
-        super(inscricao);
+    public CartaoCredito(String numero, String codigoSeguranca, String validade, String nomeTitular, Inscricao inscricao, Prova inscricaoProva) {
+        super(inscricao, inscricaoProva);
         this.numero = numero;
         this.codigoSeguranca = codigoSeguranca;
         this.validade = validade;
