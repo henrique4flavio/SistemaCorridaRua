@@ -15,16 +15,12 @@ public class Inscricao {
 
     // private Atleta cpf;
     //Variaveis do banco de dados
+    private int id;
+    
     private int numeroPeito;
+    
     private String categoria;
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
+    
     private String total;
 
     private String kit_id;
@@ -36,21 +32,19 @@ public class Inscricao {
     private String atleta_id;
 
 
-    public Inscricao(int numeroPeito, boolean pago, boolean kitRetirado, String formaPagamento, String total,
+    public Inscricao(int id, int numeroPeito,boolean pago, boolean kitRetirado, String formaPagamento, String total,String categoria,
             String kit_id, String prova_id, String percurso_id, String atleta_id) {
-
-    public Inscricao(int numeroPeito, String formaPagamento, String total,String categoria,
-            String kit_id, String prova_id, String percurso_id,String atleta_id) {
-
+        
+        this.id = id;
         this.numeroPeito = numeroPeito;
         this.pago = pago;
         this.formaPagamento = formaPagamento;
+        this.categoria = categoria;
         this.kit_id = kit_id;
         this.prova_id = prova_id;
         this.percurso_id = percurso_id;
         this.atleta_id = atleta_id;
         this.total = total;
-
         this.kitRetirado = kitRetirado;
     }
 
@@ -68,6 +62,14 @@ public class Inscricao {
         this.categoria=categoria;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getTotal() {
         return total;
     }
@@ -133,6 +135,14 @@ public class Inscricao {
     }
     public boolean isKitRetirado() {
         return kitRetirado;
+    }
+    
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public void setKitRetirado(boolean kitRetirado) {
