@@ -4,15 +4,19 @@ public abstract class Pagamento {
 
     private int id;
     private Inscricao inscricao;
+    private Prova inscricaoProva;
     private int inscricao_id;
+    private int inscricaoProva_id;
 
-    public Pagamento(int id, Inscricao inscricao, int inscricaoNumeroPeito) {
+    Pagamento(int id, Inscricao inscricao, Prova inscricaoProva) {
         this.id = id;
         this.inscricao = inscricao;
+        this.inscricaoProva = inscricaoProva;
     }
 
-    Pagamento(Inscricao inscricao) {
+    Pagamento(Inscricao inscricao, Prova inscricaoProva) {
         this.inscricao = inscricao;
+        this.inscricaoProva = inscricaoProva;
     }
 
     public int getId() {
@@ -39,6 +43,22 @@ public abstract class Pagamento {
         this.inscricao_id = inscricao_id;
     }
 
+    public Prova getInscricaoProva() {
+        return inscricaoProva;
+    }
+
+    public void setInscricaoProva(Prova inscricaoProva) {
+        this.inscricaoProva = inscricaoProva;
+    }
+
+    public int getInscricaoProva_id() {
+        return inscricaoProva_id;
+    }
+
+    public void setInscricaoProva_id(int inscricaoProva_id) {
+        this.inscricaoProva_id = inscricaoProva_id;
+    }
+    
     public abstract void confirmarPagamento();
 
 }
