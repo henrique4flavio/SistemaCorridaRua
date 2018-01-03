@@ -77,7 +77,7 @@
 
 
             <div class="panel-title">
-                <h3><span class="glyphicon glyphicon-user"></span> <strong>Bem Vindo Organizador(a)</strong> </h3>
+                <h3><span class="glyphicon glyphicon-user"></span> <strong>Bem Vindo(a) <%=nome%></strong> </h3>
 
                 <div class="panel-body">
                     <div class="row">
