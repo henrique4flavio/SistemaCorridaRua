@@ -82,20 +82,19 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-10">
-                            <a href="#" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Minhas Provas</a>
+                            <a href="PesquisaProvaController?acao=listarProvas" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Minhas Provas</a>
                             <a href="ManterOrganizadorController?acao=prepararEditar&id=${organizador.id}" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Alterar dados Pessoais</a>
-                            <a href="PesquisaRankingController" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Cadastrar Rankings</a> 
-                            <a href="PesquisaInscricaoController" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Listar Inscrições</a> 
-                            <a href="PesquisaItemController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter itens</a><br><br>
-                            <a href="PesquisaKitController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter kits</a>
-                            <a href="PesquisaElementoKitController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter elementos kits</a>
+                           <a href="PesquisaRankingController" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Cadastrar Rankings</a> 
+                            <a href="PesquisaInscricaoController" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> <br/>Listar Inscrições</a> 
+                            <a href="PesquisaItemController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-th-list"></span> </br>Manter itens</a><br><br>
+                            <a href="PesquisaKitController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter kits</a>
+                            <a href="PesquisaElementoKitController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-th-list"></span> </br>Manter elementos kits</a>
 
 
-                            <a href="PesquisaLoteController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter lotes</a>
+                            <a href="PesquisaElementoKitController"cl <a href="PesquisaLoteController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> </br>Manter lotes</a>
 
-                            <a href="PesquisaPercursoController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter percursos</a>
-                            <a href="PesquisaProvaController?acao=listarProvas"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter provas</a> <br><br>
-                            <a href="PesquisaRankingController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter rankings</a>
+                             <a href="PesquisaPercursoController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter percursos</a>
+                            <a href="PesquisaProvaController?acao=listarProvas"class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter provas</a> <br><br>
 
 
 
@@ -117,3 +116,7 @@
 
     </body>
 </html>
+
+
+
+
