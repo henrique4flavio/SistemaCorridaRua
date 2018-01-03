@@ -83,6 +83,7 @@
         </div> <!-- /#top -->
         <div class="col-sm-3">
             <form action ="ManterInscricaoController?acao=prepararIncluir" method="post">
+                <input type="submit" name="btIncluir" value="Nova Inscrição" class="btn btn-primary pull-right h2">
 
 
             </form> 
@@ -133,7 +134,8 @@
                                     </c:forEach> 
                                 </td>
                                 <td> <c:out value="${inscricao.total}"/> </td>
-                                
+                                <td><a href ="ManterInscricaoController?acao=prepararEditar&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>&prova_id=<c:out value="${prova.id}"/>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+                                <td><a href ="ManterInscricaoController?acao=prepararExcluir&numeroPeito=<c:out value="${inscricao.numeroPeito}"/>&prova_id=<c:out value="${prova.id}"/>"><button><span class="glyphicon glyphicon-trash"></span></button></a></td>
                             </tr>
                         </c:forEach>
                     </tbody>
