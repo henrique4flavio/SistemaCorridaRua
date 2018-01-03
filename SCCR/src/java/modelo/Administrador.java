@@ -8,10 +8,13 @@ public class Administrador extends Usuario {
 
     //Variaveis do banco de dados
     private int id;
+    
+    
 
     public Administrador(int id, String nome, String senha, String login, String email) {
         super(nome, senha, login, email);
         this.id = id;
+        
     }
 
     public int getId() {
