@@ -95,7 +95,6 @@
 
                             <a href="PesquisaPercursoController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter percursos</a>
                             <a href="PesquisaProvaController?acao=listarProvas"class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter provas</a> <br><br>
-                            <a href="PesquisaRankingController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter rankings</a>
 
 
 
