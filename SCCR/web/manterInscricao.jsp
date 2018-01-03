@@ -58,7 +58,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                       <li> <c:if test="${tipo != null}"> <a href="${tipo}Home.jsp">Sistema de Corrida de Rua</a></c:if> 
+                        <li ><a href="index.jsp">Sistema de Corrida de Rua</a></li>
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -92,15 +92,16 @@
             <br>
 
             <div>
+                <form action="ManterInscricaoController?acao=confirmar${operacao}" method="post" name="frmManterInscricao">
 
                     <div class="col-xs-8">
                         <div class="form-group">
-                            <label >Código da inscrição:</label>
+                            <label >Código da Inscrição:</label>
                             <input type="text" name="txtnumeroPeito" class="form-control" value="${inscricao.numeroPeito}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
                             </div>
                             <INPUT TYPE="hidden" NAME="optAtleta" value="${usuario.id}">
                                  <div class="form-group">
-                                     <label> Escolha a categoria:  </label><br>
+                                     <label> Escolha a Categoria:  </label><br>
                                      <label>   <input type="radio" name="optCategoria"  id="mostra_aba1" value="infantil-5 a 12 anos"  /> Infantil:5 a 12 anos </label> <br>
                           <label>  <input type="radio"  name="optCategoria" id="mostra_aba2" value="adulto-18 a 59 anos" />Adulto:18 a 59 anos</label><br>
                         <label>   <input type="radio"  name="optCategoria" id="mostra_aba2" value="idoso acima de 60 anos" />Idoso:acima de 60 anos</label><br>
@@ -111,7 +112,7 @@
 
 
                         <div class="form-group">
-                            <label>Selecione o kit:</label>
+                            <label>Selecione o Kit:</label>
                             <select name="optKit" class="form-control selectpicker" id="mostra_aba3" onchange="mostrar_itens(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                                 <option value="0" id="mostra_itens" <c:if test="${inscricao.kit_id == null}" > selected</c:if>></option>                    
                                 <c:forEach items="${kit}" var="kit"> 
@@ -122,9 +123,9 @@
                             <div class="well" style="display:none;" id="div_aba3">
 
                                 <ul class="nav ">
-                                    <li class="nav-header"><strong>Elementos constituintes do kit:</strong></li>
+                                    <li class="nav-header"><strong>Itens do Kit:</strong></li>
 
-                                    
+                                    </li>
                                     <li class="nav-header"><c:forEach items="${item}" var="item">
                                             ${item.nomeItem}<br>
                                     </c:forEach></li>
@@ -141,7 +142,7 @@
 
 
                         <div class="form-group">
-                            <label>Selecione o percurso:</label>
+                            <label>Selecione o Percurso:</label>
                             <select name="optPercurso" class="form-control selectpicker" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                                 <option value="0" <c:if test="${inscricao.percurso_id == null}"> selected</c:if>> </option>  
                                 <c:forEach items="${percurso}" var="percurso">
@@ -151,7 +152,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label> Escolha a Forma de pagamento:  </label>
+                            <label> Escolha a Forma de Pagamento:  </label>
                             <label> <input type="radio" name="optFormaPagamento"  id="mostra_aba1" value="Cartão de Credito" onchange="mostrar_abas(this)" /> Cartão de credito </label>
                             <label> <input type="radio"  name="optFormaPagamento" id="mostra_aba2" value="Boleto Bancário"onchange="mostrar_abas(this)" /> Boleto Bancario </label>
 
@@ -189,7 +190,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <div class="form-group">
-                                                        <label for="cardNumber">Número do cartão</label>
+                                                        <label for="cardNumber">Número do Cartão</label>
                                                         <div class="input-group">
                                                             <input 
                                                                 type="tel"
@@ -207,7 +208,7 @@
                                             <div class="row">
                                                 <div class="col-xs-7 col-md-7">
                                                     <div class="form-group">
-                                                        <label for="cardExpiry"><span class="hidden-xs">Data de validade</span><span class="visible-xs-inline">EXP</span> </label>
+                                                        <label for="cardExpiry"><span class="hidden-xs">Data de Validade</span><span class="visible-xs-inline">EXP</span> </label>
                                                         <input 
                                                             type="tel" 
                                                             class="form-control" 
@@ -220,7 +221,7 @@
                                                 </div>
                                                 <div class="col-xs-5 col-md-5 pull-right">
                                                     <div class="form-group">
-                                                        <label for="cardCVC">Codigo de segurança</label>
+                                                        <label for="cardCVC">Codigo de Segurança</label>
                                                         <input 
                                                             type="tel" 
                                                             class="form-control"
@@ -280,10 +281,15 @@
                                 <li class="nav-header"><h4>Resumo do pedido:</li>
 
                                 </li>
-                                <li class="nav-header"> Prova: ${prova_id.nomeProva}</li>
-                                <li class="nav-header"> Data da prova: ${prova_id.dataProva}</li>
-                                <li class="nav-header"> Retirada do kit: ${prova_id.localRetiradaKit}</li>
-
+                                <li class="nav-header">${prova_id.nomeProva}</li>
+                            <li>Lote: 
+                            </li>
+                            <li>Kit: 
+                               <option value="0" id="mostra_itens" <c:if test="${inscricao.kit_id == null}" > selected</c:if>></option>                    
+                                <c:forEach items="${kit}" var="kit"> 
+                                    <option value="${kit.id}"  <c:if test="${kit.id == inscricao.kit_id}"> selected</c:if>>${kit.valor}</option>  
+                                </c:forEach>
+                            </li>
                             <li><h4>Total:  </h4>
                             </li>
                         </ul>

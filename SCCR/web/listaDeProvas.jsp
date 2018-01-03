@@ -9,41 +9,51 @@
     </head>
     <body>
         <jsp:include page="barra_superior.jspf"/>
+           
+        
+         <div id="list" class="row">
 
-
-        <div id="list" class="row">
-
-            <div class="table-responsive col-md-12">
-                <table class="table table-striped" cellspacing="0" cellpadding="0">
-                    <thead>
-                        <tr>
-                            <th>Codigo da Prova</th>
-                            <th>Nome da Prova</th>
-
-                            <th class="actions">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach items="${prova}" var="prova">
+                <div class="table-responsive col-md-12">
+                    <table class="table table-striped" cellspacing="0" cellpadding="0">
+                        <thead>
                             <tr>
-
-                                <td><c:out value = "${prova.id}" /></td>
-                                <td><c:out value = "${prova.nomeProva}" /></td>
-                                ${prova.id} = id;
-
-
-                                <td class="actions">
-                                    ManterAtletaController?acao=prepararEditar&id=' +id;
-                                    <a class="btn-success" href="ManterInscricaoController?acao=prepararIncluir&prova_id=" +id  <c:out value="${administrador.id}"/>">Inscrever-se</a>
-
-                                </td>
+                                <th>Codigo da Prova</th>
+                                <th>Nome da Prova</th>
+                               
+                                <th class="actions">Ações</th>
                             </tr>
-                        </c:forEach>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${prova}" var="prova">
+                            <tr>
+                                
+                                    <td><c:out value = "${prova.id}" /></td>
+                                    <td><c:out value = "${prova.nomeProva}" /></td>
+                                        ${prova.id} = id;
+                                    
+                                 
+                                    <td class="actions">
+                                        ManterAtletaController?acao=prepararEditar&id=' +id;
+                                        <a class="btn-success" href="ManterInscricaoController?acao=prepararIncluir&prova_id=" +id  <c:out value="${administrador.id}"/>">Inscrever-se</a>
+                 
+                                    </td>
+                                </tr>
+                                </c:forEach>
+                                
+                            </tbody>
+                        </table>
+                    </div>
 
-                    </tbody>
-                </table>
-            </div>
+                </div> <!-- /#list -->
 
-        </div> <!-- /#list -->      
+        
+           
+                      
+
+
+                    
+                    
+            
+           
     </body>
 </html>
