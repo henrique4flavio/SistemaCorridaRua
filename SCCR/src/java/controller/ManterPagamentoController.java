@@ -10,7 +10,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.CartaoCredito;
 import modelo.Inscricao;
+import modelo.Pagamento;
+import modelo.Percurso;
 import modelo.Prova;
 
 
@@ -29,6 +32,9 @@ public class ManterPagamentoController extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         String acao = request.getParameter("acao");
+        if(acao.equals("prepararCartaoCredito")){
+            prepararCartaoCredito(request,response);
+        }
         if (acao.equals("prepararPagamento")) {
             prepararPagamento(request, response);
         } else if (acao.equals("confirmarPagamento")) {
@@ -36,6 +42,32 @@ public class ManterPagamentoController extends HttpServlet {
         } else if (acao.equals("escolherProva")) {
             escolherProva(request, response);
         }
+    }
+    public void prepararCartaoCredito(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException {
+   /**
+   int id = Integer.parseInt(request.getParameter("txtIdPercurso"));
+        String nome = request.getParameter("txtNomePercurso");
+        String distancia = request.getParameter("txtDistancia");
+        String faixaEtaria = request.getParameter("txtfaixaEtaria");
+
+        String prova_id = request.getParameter("optProva");
+
+        try {
+           CartaoCredito cartaoCredito  = new CartaoCredito();
+            
+            cartaoCredito.gravar();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaPercursoController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        } 
+    */
     }
 
     public void prepararPagamento(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException {
@@ -53,6 +85,7 @@ public class ManterPagamentoController extends HttpServlet {
     }
 
     private void confirmarPagamento(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException {
+        /**
         int id = Integer.parseInt(request.getParameter("id"));
 
         Inscricao inscricao = Inscricao.obterInscricao(id);
@@ -67,6 +100,7 @@ public class ManterPagamentoController extends HttpServlet {
         } catch (ServletException ex) {
         } catch (SQLException ex) {
         }
+        */
     }
 
     private void escolherProva(HttpServletRequest request, HttpServletResponse response) {

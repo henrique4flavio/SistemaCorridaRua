@@ -161,7 +161,7 @@ public class ManterOrganizadorController extends HttpServlet {
 
         try {
             organizador.excluir();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaOrganizadorController");
+            RequestDispatcher view = request.getRequestDispatcher("LoginController?acao=logout");
             view.forward(request, response);
         } catch (IOException ex) {
 
