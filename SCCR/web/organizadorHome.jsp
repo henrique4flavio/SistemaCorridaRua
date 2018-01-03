@@ -31,19 +31,7 @@
 
             }
         </script>
-        <script>
-            function idOrganizador2() {
-
-                var id = prompt("Digite o id do Organizador:", "id");
-                if (id == null || id == "") {
-                    txt = "User cancelled the prompt.";
-                } else {
-                    location.href = 'ManterOrganizadorController?acao=prepararExcluir&id=' + id;
-                }
-
-            }
-        </script>
-
+       
 
     </head>
     <body>
@@ -95,9 +83,9 @@
                     <div class="row">
                         <div class="col-md-10">
                             <a href="#" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Minhas Provas</a>
-                            <button onclick="idOrganizador1()" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Alterar dados Pessoais</a></button>
+                            <a href="ManterOrganizadorController?acao=prepararEditar&id=${organizador.id}" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Alterar dados Pessoais</a>
                             <a href="PesquisaRankingController" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Cadastrar Rankings</a> 
-                            <a href="PesquisaInscricaoController" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Manter Inscrições</a> 
+                            <a href="PesquisaInscricaoController" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Listar Inscrições</a> 
                             <a href="PesquisaItemController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter itens</a><br><br>
                             <a href="PesquisaKitController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter kits</a>
                             <a href="PesquisaElementoKitController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter elementos kits</a>
@@ -111,7 +99,7 @@
 
 
 
-                            <button onclick="idOrganizador2()" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a></button>
+                             <a href="ManterOrganizadorController?acao=prepararExcluir&id=${organizador.id}" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a></button>
                             <a href="LoginController?acao=logout" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-log-out"></span> <br/>Sair</a>
 
 
