@@ -68,7 +68,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li ><a href="index.jsp">Sistema de Corrida de Rua</a></li>
+                        <li> <c:if test="${tipo != null}"> <a href="${tipo}Home.jsp">Sistema de Corrida de Rua</a></c:if> 
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
