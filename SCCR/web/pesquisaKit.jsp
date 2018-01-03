@@ -47,7 +47,7 @@
                                                                                                          glyphicon glyphicon-expand"></span> Resultado Provas</a> </li>
 
 
-                            <li><a href="administradorHome.jsp" ><span class="glyphicon glyphicon-user"></span> 
+                            <li><a href="${tipo}Home.jsp"><span class="glyphicon glyphicon-user"></span> 
                                 <%
                                     Usuario usuario = (Usuario) session.getAttribute("usuario");
                                     String nome = usuario.getNome();
@@ -56,7 +56,7 @@
 
                             </a> </li>
 
-                        </li>
+                       
                     </ul>
                 </div>
             </div>

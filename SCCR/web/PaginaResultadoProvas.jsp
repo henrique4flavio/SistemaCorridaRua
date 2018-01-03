@@ -1,7 +1,6 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@page import="modelo.Usuario"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
@@ -11,7 +10,7 @@
  <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-inverse">
+        <jsp:include page="barra_superior.jspf"/><nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -34,8 +33,7 @@
                             <li><a href="PesquisaResultadoProvasController?acao=visualizarProvas" ><span class="
                                                                                                          glyphicon glyphicon-expand"></span> Resultado Provas</a> </li>
 
-
-                            <li><a href="administradorHome.jsp" ><span class="glyphicon glyphicon-user"></span> 
+                            <li><a href="${tipo}Home.jsp"><span class="glyphicon glyphicon-user"></span> 
                                 <%
                                     Usuario usuario = (Usuario) session.getAttribute("usuario");
                                     String nome = usuario.getNome();

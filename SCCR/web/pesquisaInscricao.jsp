@@ -1,4 +1,5 @@
 
+<%@page import="modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -55,7 +56,7 @@
                                                                                                          glyphicon glyphicon-expand"></span> Resultado Provas</a> </li>
 
 
-                            <li><a href="administradorHome.jsp" ><span class="glyphicon glyphicon-user"></span> 
+                            <li><a href="${tipo}Home.jsp"><span class="glyphicon glyphicon-user"></span> 
                                 <%
                                     Usuario usuario = (Usuario) session.getAttribute("usuario");
                                     String nome = usuario.getNome();
