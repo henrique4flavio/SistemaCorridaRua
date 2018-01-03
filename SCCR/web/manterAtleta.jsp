@@ -31,8 +31,10 @@
 
     </head>
     <body>
-        <jsp:include page="barra_superior.jspf"/>
+        <c:if test="${operacao == null}"><jsp:include page="barra_superior.jspf"/>
+        </c:if>
         
+        <c:if test="${operacao != null}">
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
@@ -71,7 +73,7 @@
                 </div>
             </div>
         </nav>
-
+</c:if>
 
 
         <div class="container">
