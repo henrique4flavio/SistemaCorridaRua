@@ -72,12 +72,12 @@
         </nav>
 
 
-
+                                <div class="container">
         <div class="col-sm-3">
             <h2>Inscrições</h2>
         </div>
         <div class="col-sm-6">
-            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+            <br> <input class="form-control" id="myInput" type="text" placeholder="Search..">
 
 
         </div> <!-- /#top -->
@@ -112,6 +112,10 @@
                         </c:forEach>
                   </tbody>
                 </table>
+                
+            </div>
+        </div>
+                                </div>
 
 
                 </body>
