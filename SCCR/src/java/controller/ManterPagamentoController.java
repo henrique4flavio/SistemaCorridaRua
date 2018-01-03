@@ -1,21 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Inscricao;
+import modelo.Prova;
 
-/**
- *
- * @author Familia
- */
+
 public class ManterPagamentoController extends HttpServlet {
 
     /**
@@ -28,19 +26,57 @@ public class ManterPagamentoController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ManterPagamentoController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ManterPagamentoController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String acao = request.getParameter("acao");
+        if (acao.equals("prepararPagamento")) {
+            prepararPagamento(request, response);
+        } else if (acao.equals("confirmarPagamento")) {
+            confirmarPagamento(request, response);
+        } else if (acao.equals("escolherProva")) {
+            escolherProva(request, response);
+        }
+    }
+
+    public void prepararPagamento(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException {
+        try {
+            int prova_id = Integer.parseInt(request.getParameter("prova_id"));
+            request.setAttribute("inscricoes", Inscricao.obterInscricoesNaoPagas(prova_id));
+            request.setAttribute("prova", Prova.obterProva(prova_id));
+            RequestDispatcher view = request.getRequestDispatcher("/manterPagamento.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex) {
+        } catch (ClassNotFoundException ex) {
+        } catch (IOException ex) {
+
+        }
+    }
+
+    private void confirmarPagamento(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException {
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        Inscricao inscricao = Inscricao.obterInscricao(id);
+
+        inscricao.setPago(true);
+
+        try {
+            inscricao.pagarInscricao();
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaPagamentoController");
+            view.forward(request, response);
+        } catch (IOException ex) {
+        } catch (ServletException ex) {
+        } catch (SQLException ex) {
+        }
+    }
+
+    private void escolherProva(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.setAttribute("provas", Prova.obterProvas());
+            RequestDispatcher view = request.getRequestDispatcher("/escolherProvaPagamento.jsp");
+            view.forward(request, response);
+        } catch (IOException ex) {
+        } catch (ClassNotFoundException ex) {
+        } catch (ServletException ex) {
         }
     }
 
@@ -56,7 +92,13 @@ public class ManterPagamentoController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterPagamentoController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterPagamentoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -70,7 +112,13 @@ public class ManterPagamentoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterPagamentoController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterPagamentoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

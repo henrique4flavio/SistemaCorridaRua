@@ -132,6 +132,10 @@
         <servlet-name>ObterInscricaoAtletaController</servlet-name>
         <servlet-class>controller.ObterInscricaoAtletaController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PesquisaPagamentoController</servlet-name>
+        <servlet-class>controller.PesquisaPagamentoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -255,6 +259,10 @@
     <servlet-mapping>
         <servlet-name>ObterInscricaoAtletaController</servlet-name>
         <url-pattern>/ObterInscricaoAtletaController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaPagamentoController</servlet-name>
+        <url-pattern>/PesquisaPagamentoController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
