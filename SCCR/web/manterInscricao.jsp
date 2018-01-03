@@ -260,7 +260,11 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
 
+<<<<<<< HEAD
             <a href ="ManterPagamentoController?acao=prepararCartaoCredito" name="buttonPagamento"class="subscribe btn btn-success btn-lg btn-block" type="button">Salvar</a>
+=======
+            <butto name="buttonPagamento"class="subscribe btn btn-success btn-lg btn-block" type="button">Pagar R$</button>
+>>>>>>> 4af6d2da03c2b1c09e76c4ff2436ce486d277c96
 
 
                                                 </div>
@@ -284,6 +288,10 @@
                                 <br>
                                 <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
                                
+<<<<<<< HEAD
+=======
+                              <a href="ManterInscricaoController?acao=visualizarPagamento" class="btn btn-default">Proximo</a>
+>>>>>>> 4af6d2da03c2b1c09e76c4ff2436ce486d277c96
                                 <a href="PesquisaAdministradorController" class="btn btn-default">Cancelar</a>
 
                                 </form>                   
