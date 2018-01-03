@@ -194,63 +194,7 @@ public class ManterAtletaController extends HttpServlet {
         try {
             Atleta atleta = new Atleta(id, nome, dataNascimento, apelido, cpf, tamCamisa, sexo, telefoneFixo, telefoneCelular, rua, bairro, cidade, estado, pais, login, senha, email);
             atleta.alterar();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaAtletaController");
-            view.forward(request, response);
-        } catch (IOException ex) {
-
-        } catch (SQLException ex) {
-
-        } catch (ClassNotFoundException ex) {
-
-        } catch (ServletException ex) {
-
-        }
-
-    }
-    public void editarAtleta(HttpServletRequest request, HttpServletResponse response) throws SQLException{
-         try {
-            request.setAttribute("operacao", "EditarAtleta");
-            // para chave estrangeira
-            //request.setAttribute("administrador", Administrador.obterAdministrador());
-
-            int codAtleta = Integer.parseInt(request.getParameter("id"));
-
-            Atleta atleta = Atleta.obterAtleta(codAtleta);
-            request.setAttribute("atleta", atleta);
-            RequestDispatcher view = request.getRequestDispatcher("/alterarDadosPessoais.jsp");
-            view.forward(request, response);
-
-        } catch (ServletException ex) {
-
-        } catch (IOException ex) {
-
-        } catch (ClassNotFoundException ex) {
-        }
-    }
-    public void confirmarEditarAtleta(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtIdAtleta"));
-        String sexo = request.getParameter("optSexo");
-        String rua = request.getParameter("txtRuaAtleta");
-        String bairro = request.getParameter("txtBairroAtleta");
-        String cidade = request.getParameter("txtCidadeAtleta");
-        String estado = request.getParameter("txtEstadoAtleta");
-        String pais = request.getParameter("txtPais");
-        String tamCamisa = request.getParameter("optTamanhoCamisa");
-        String telefoneFixo = request.getParameter("txtTelefoneFixo");
-        String telefoneCelular = request.getParameter("txtTelefoneCelular");
-        String cpf = request.getParameter("txtCpf");
-        String apelido = request.getParameter("txtApelido");
-        String nomeDaEquipe = request.getParameter("txtNomeEquipe");
-        String dataNascimento = request.getParameter("txtDataNascimento");
-        String nome = request.getParameter("txtNomeAtleta");
-        String email = request.getParameter("txtEmail");
-        String login = request.getParameter("txtLoginAtleta");
-        String senha = request.getParameter("txtSenhaAtleta");
-
-        try {
-            Atleta atleta = new Atleta(id, nome, dataNascimento, apelido, cpf, tamCamisa, sexo, telefoneFixo, telefoneCelular, rua, bairro, cidade, estado, pais, login, senha, email);
-            atleta.alterar();
-            RequestDispatcher view = request.getRequestDispatcher("/atletaHome.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("atletaHome.jsp");
             view.forward(request, response);
         } catch (IOException ex) {
 
@@ -264,6 +208,7 @@ public class ManterAtletaController extends HttpServlet {
 
     }
     
+   
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
