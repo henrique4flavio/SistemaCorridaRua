@@ -33,7 +33,7 @@ public class FiltroPaginas implements Filter {
 		HttpSession session = httpServletRequest.getSession();
 		
 		if (session.getAttribute("usuario")!=null || url.lastIndexOf("index.jsp")>-1 ||
-		url.lastIndexOf("LoginController") >-1 ){
+		url.lastIndexOf("LoginController") >-1  || url.endsWith("manterAtleta.jsp")){
 		chain.doFilter(request, response); 
 		}else{
 		((HttpServletResponse) response).sendRedirect("index.jsp");

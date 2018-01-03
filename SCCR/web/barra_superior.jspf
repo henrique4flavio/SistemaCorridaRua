@@ -15,14 +15,8 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 
-                 <li><a href="ManterAtletaController?acao=prepararIncluir" ><span class="glyphicon glyphicon-user"></span> Registrar-se</a> </li>
-                  <li><a href="PesquisaResultadoProvasController?acao=visualizarProvas" ><span class="
-                glyphicon glyphicon-expand"></span> Resultado Provas</a> </li>
-                  <li><a href="PesquisaResultadoRanking?acao=visualizarRanking"><span class="glyphicon glyphicon-expand"></span> Ranking</a> </li>
-                   
-                 <li><a href="PesquisaProvaController?acao=gridProvas" ><span class="
-                glyphicon glyphicon-th"></span>  Provas</a> </li>
-                   
+                 <li><a href="manterAtleta.jsp" ><span class="glyphicon glyphicon-user"></span> Registrar-se</a> </li>
+                  
                       
                    
                

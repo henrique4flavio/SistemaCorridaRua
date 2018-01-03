@@ -41,12 +41,12 @@
             <c:if test="${operacao == 'Editar'}"> <h3><span class="glyphicon glyphicon-edit"></span> Alterar dados</h3><br></c:if>
             <c:if test="${operacao == 'Excluir'}"> <h3><span class="glyphicon glyphicon-floppy-remove"></span> Excluir Atleta</h3><br></c:if>
             
-                <form action="ManterAtletaController?acao=confirmar${operacao}" method="post" name="frmManterAtleta">
+                <form action="ManterAtletaController?acao=confirmar$<c:if test="${operacao!= null}">${operacao}</c:if> <c:if test="${operacao== null}">Incluir"</c:if>  method="post" name="frmManterAtleta">
                 <div class="row">
                     <div class="col-md-2">
 
                         <label for="exampleInputEmail1">Código do Atleta:</label>
-                        <input type="text" required name="txtIdAtleta" class="form-control" value="${atleta.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+                        <input type="text" required name="txtIdAtleta" class="form-control" value="${atleta.id}" <c:if test="${operacao != 'Incluir' && operacao!= null}"> readonly</c:if>>
 
                         </div>
                         <div class="col-md-6">
