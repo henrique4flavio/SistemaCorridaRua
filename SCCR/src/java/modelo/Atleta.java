@@ -31,6 +31,8 @@ public class Atleta extends Usuario {
     private String cpf;
 
     private String apelido;
+    
+    private String tipo = "atleta";
 
     //Variaveis do banco de dados
     private int id;

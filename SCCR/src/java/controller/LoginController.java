@@ -71,6 +71,7 @@ public class LoginController extends HttpServlet {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("atleta", atleta);
                 session.setAttribute("usuario", atleta);
+                session.setAttribute("tipo", "atleta");
                 RequestDispatcher view = request.getRequestDispatcher("/atletaHome.jsp");
                 view.forward(request, response);
               UsuarioLogado.setId(atleta.getId());
@@ -102,6 +103,7 @@ public class LoginController extends HttpServlet {
                         HttpSession session = request.getSession(true);
                         session.setAttribute("administrador", administrador);
                         session.setAttribute("usuario", administrador);
+                        session.setAttribute("tipo", "administrador");
                         RequestDispatcher view = request.getRequestDispatcher("/administradorHome.jsp");
                         view.forward(request, response);
                     } else {
@@ -122,6 +124,7 @@ public class LoginController extends HttpServlet {
                         HttpSession session = request.getSession(true);
                         session.setAttribute("organizador", organizador);
                         session.setAttribute("usuario", organizador);
+                        session.setAttribute("tipo", "organizador");
                         RequestDispatcher view = request.getRequestDispatcher("/organizadorHome.jsp");
                         view.forward(request, response);
                     } else {
