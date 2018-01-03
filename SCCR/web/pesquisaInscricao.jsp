@@ -81,13 +81,7 @@
 
 
         </div> <!-- /#top -->
-        <div class="col-sm-3">
-            <form action ="ManterInscricaoController?acao=prepararIncluir" method="post">
-                <input type="submit" name="btIncluir" value="Nova Inscrição" class="btn btn-primary pull-right h2">
-
-
-            </form> 
-        </div>
+        
         <div id="list" class="row">
             <div class="table-responsive col-md-12">
                 <table class="table table-striped" cellspacing="0" cellpadding="0" >
@@ -95,13 +89,13 @@
                         <tr>
 
                             <th>Número da inscrição</th>
-                            <th> Categoria </th>
+                            <th> Forma de Pagamento </th>
 
-                            <th>Total</th>
                             <th>Kit</th>
+                            <th>Categoria</th>
                             <th>Nome da prova</th>
                             <th>Percurso</th>
-                            <th> Forma de Pagamento</th>
+                            <th>Total</th>
 
 
                         </tr>   

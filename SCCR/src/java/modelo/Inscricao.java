@@ -8,9 +8,9 @@ public class Inscricao {
 
     private String formaPagamento;
 
-    private boolean pago;
+    private int pago;
     
-    private boolean kitRetirado;
+    private int kitRetirado;
 
 
     // private Atleta cpf;
@@ -30,9 +30,37 @@ public class Inscricao {
     private String percurso_id;
 
     private String atleta_id;
-
-
-    public Inscricao(int id, int numeroPeito,boolean pago, boolean kitRetirado, String formaPagamento, String total,String categoria,
+ public Inscricao(int id,int numeroPeito,int pago, String formaPagamento, String total,String categoria,
+            String kit_id, String prova_id, String percurso_id, String atleta_id) {
+        
+        this.id = id;
+        this.numeroPeito =GerarNumeroPeito();
+        this.pago = pago;
+        this.formaPagamento = formaPagamento;
+        this.categoria = categoria;
+        this.kit_id = kit_id;
+        this.prova_id = prova_id;
+        this.percurso_id = percurso_id;
+        this.atleta_id = atleta_id;
+        this.total = total;
+        this.kitRetirado = kitRetirado;
+    }
+ public Inscricao(int id,String formaPagamento, String total,String categoria,
+            String kit_id, String prova_id, String percurso_id, String atleta_id) {
+        
+        this.id = id;
+        this.numeroPeito = GerarNumeroPeito();
+        this.pago = pago;
+        this.formaPagamento = formaPagamento;
+        this.categoria = categoria;
+        this.kit_id = kit_id;
+        this.prova_id = prova_id;
+        this.percurso_id = percurso_id;
+        this.atleta_id = atleta_id;
+        this.total = total;
+        this.kitRetirado = kitRetirado;
+    }
+    public Inscricao(int id,int pago, String formaPagamento, String total,String categoria,
             String kit_id, String prova_id, String percurso_id, String atleta_id) {
         
         this.id = id;
@@ -46,6 +74,7 @@ public class Inscricao {
         this.atleta_id = atleta_id;
         this.total = total;
         this.kitRetirado = kitRetirado;
+        this.numeroPeito=GerarNumeroPeito();
     }
 
    
@@ -101,6 +130,10 @@ public class Inscricao {
         return percurso_id;
     }
 
+    public int getPago() {
+        return pago;
+    }
+
     public void setPercurso_id(String percurso_id) {
         this.percurso_id = percurso_id;
     }
@@ -113,14 +146,10 @@ public class Inscricao {
         this.atleta_id = atleta_id;
     }
 
-    public boolean isPago() {
-        return pago;
-    }
-
-    public void setPago(boolean pago) {
+    public void setPago(int pago) {
         this.pago = pago;
     }
-    public boolean isKitRetirado() {
+    public int isKitRetirado() {
         return kitRetirado;
     }
     
@@ -132,9 +161,7 @@ public class Inscricao {
         this.categoria = categoria;
     }
 
-    public void setKitRetirado(boolean kitRetirado) {
-        this.kitRetirado = kitRetirado;
-    }
+    
     
 
     public static List<Inscricao> obterInscricoes()
@@ -166,12 +193,15 @@ public class Inscricao {
         return InscricaoDAO.pesquisaInscricao(numero);
 
     }
-    public void pagarInscricao() throws SQLException, ClassNotFoundException {
-        InscricaoDAO.pagarInscricao(this);
+
+    public int getKitRetirado() {
+        return kitRetirado;
     }
-    public void retirarKit() throws SQLException, ClassNotFoundException {
-        InscricaoDAO.retirarKit(this);
+
+    public void setKitRetirado(int kitRetirado) {
+        this.kitRetirado = kitRetirado;
     }
+    
     
     public static List<Inscricao> obterInscricoesPagas(int prova_id) throws ClassNotFoundException {
         return InscricaoDAO.obterInscricoesPagas(prova_id);
@@ -182,7 +212,10 @@ public class Inscricao {
     }
     
     
-    
+    public int GerarNumeroPeito (){
+        int valor = (int) (Math.random() * 199999999);
+        return valor;
+    }
     
 
 }

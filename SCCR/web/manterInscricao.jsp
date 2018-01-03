@@ -9,7 +9,18 @@
         <title>Manter Inscrição</title>
 
         <!-- If you're using Stripe for payments -->
-
+        <script>
+          function atualizaPrecoKit(kit){
+           var valorKit=   document.getElementById('kit'+kit).value;
+             document.getElementById('mostraKit').innerHTML=valorKit;
+             var valorProva= document.getElementById('mostraProva').innerHTML;
+              document.getElementById('mostraTotal').innerHTML=parseInt(valorProva)+parseInt(valorKit);
+               document.getElementById('txtTotal').value=parseInt(valorProva)+parseInt(valorKit);
+             
+             
+           
+          }  
+    </script>
         <script>
             function mostrar_abas(obj) {
 
@@ -27,7 +38,6 @@
             }
             
         </script>
-
         <script>
             function mostrar_itens(obj) {
 
@@ -113,12 +123,18 @@
 
                         <div class="form-group">
                             <label>Selecione o Kit:</label>
-                            <select name="optKit" class="form-control selectpicker" id="mostra_aba3" onchange="mostrar_itens(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <select name="optKit"onChange="atualizaPrecoKit(this.value)" class="form-control selectpicker" id="mostra_aba3" onchange="mostrar_itens(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                                 <option value="0" id="mostra_itens" <c:if test="${inscricao.kit_id == null}" > selected</c:if>></option>                    
                                 <c:forEach items="${kit}" var="kit"> 
-                                    <option value="${kit.id}"  <c:if test="${kit.id == inscricao.kit_id}"> selected</c:if>>${kit.nomeKit}</option>  
+                                    <option value="${kit.id}"  <c:if test="${kit.id == inscricao.kit_id}"> selected</c:if>>${kit.nomeKit}-${kit.valor}</option>  
+                              
                                 </c:forEach>
-                            </select>
+                                                                </select>
+
+                            <c:forEach items="${kit}" var="kit"> 
+                                    <input type="hidden" value ="${kit.valor}" id="kit${kit.id}"/>
+                              
+                                </c:forEach>
 
                             <div class="well" style="display:none;" id="div_aba3">
 
@@ -153,7 +169,7 @@
 
                         <div class="form-group">
                             <label> Escolha a Forma de Pagamento:  </label>
-                            <label> <input type="radio" name="optFormaPagamento"  id="mostra_aba1" value="Cartão de Credito" onchange="mostrar_abas(this)" /> Cartão de credito </label>
+                            <label> <input type="radio"  name="optFormaPagamento" id="mostra_aba1" value="Cartão de Credito" onchange="mostrar_abas(this)" /> Cartão de credito </label>
                             <label> <input type="radio"  name="optFormaPagamento" id="mostra_aba2" value="Boleto Bancário"onchange="mostrar_abas(this)" /> Boleto Bancario </label>
 
                         </div>
@@ -244,7 +260,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
 
-                                                    <button class="subscribe btn btn-success btn-lg btn-block" type="button">Pagar R$</button>
+            <a href ="ManterPagamentoController?acao=prepararCartaoCredito" name="buttonPagamento"class="subscribe btn btn-success btn-lg btn-block" type="button">Salvar</a>
 
 
                                                 </div>
@@ -263,10 +279,11 @@
 
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Total:</label>
-                            <input type="text" name="txtTotal" class="form-control" value="${inscricao.total}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                           
+                            <input type="hidden" id="txtTotal" name="txtTotal" class="form-control" value="${inscricao.total}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                                 <br>
                                 <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
+                               
                                 <a href="PesquisaAdministradorController" class="btn btn-default">Cancelar</a>
 
                                 </form>                   
@@ -282,15 +299,12 @@
 
                                 </li>
                                 <li class="nav-header">${prova_id.nomeProva}</li>
-                            <li>Lote: 
+        <li>Prova: R$ <span id="mostraProva">${prova_id.valorTotal}</span>
                             </li>
                             <li>Kit: 
-                               <option value="0" id="mostra_itens" <c:if test="${inscricao.kit_id == null}" > selected</c:if>></option>                    
-                                <c:forEach items="${kit}" var="kit"> 
-                                    <option value="${kit.id}"  <c:if test="${kit.id == inscricao.kit_id}"> selected</c:if>>${kit.valor}</option>  
-                                </c:forEach>
+                                <span id="mostraKit"> </span>
                             </li>
-                            <li><h4>Total:  </h4>
+                            <li><h4>Total:<span id="mostraTotal"></span>  </h4>
                             </li>
                         </ul>
                     </div>

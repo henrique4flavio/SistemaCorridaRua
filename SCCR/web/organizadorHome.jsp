@@ -97,6 +97,7 @@
                             <a href="PesquisaProvaController?acao=listarProvas"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter provas</a> <br><br>
                             <a href="PesquisaRankingController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Manter rankings</a>
 
+        <a href="PesquisaPagamentoController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Controle Pagamento</a>
 
 
                              <a href="ManterOrganizadorController?acao=prepararExcluir&id=${organizador.id}" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a></button>
