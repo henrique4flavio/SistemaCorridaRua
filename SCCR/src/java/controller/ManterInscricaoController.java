@@ -192,7 +192,7 @@ int pago;
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
+        RequestDispatcher view = request.getRequestDispatcher("ObterInscricaoAtletaController?acao=exibirInscricoes&id="+atleta_id);
         view.forward(request, response);
 
     }
