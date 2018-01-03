@@ -10,7 +10,7 @@
  <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
     </head>
     <body>
-        <jsp:include page="barra_superior.jspf"/><nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
