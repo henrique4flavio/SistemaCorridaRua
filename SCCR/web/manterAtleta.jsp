@@ -12,29 +12,34 @@
         <title>Manter Atleta</title>
 
         <script> function validaSenha(input) {
-                if (input.value != document.getElementById('senha').value) {
-                    input.setCustomValidity('Repita a senha corretamente');
-                } else {
-                    input.setCustomValidity('');
-                }
+            if (input.value != document.getElementById('senha').value) {
+            input.setCustomValidity('Repita a senha corretamente');
+            } else {
+            input.setCustomValidity('');
+            }
             }
         </script>
         <script> function validaEmail(input) {
-                if (input.value != document.getElementById('email').value) {
-                    input.setCustomValidity('Repita o email corretamente');
-                } else {
-                    input.setCustomValidity('');
-                }
+            if (input.value != document.getElementById('email').value) {
+            input.setCustomValidity('Repita o email corretamente');
+            } else {
+            input.setCustomValidity('');
+            }
             }
         </script>
+
+        <script>
+
+            function sair((var operacao)) {
+            if (operacao == 'Excluir'){
+            window.setTimeout("location.href = 'LoginController?acao=logout'", 3500);
+            }
+            }
+        </script> 
 
 
     </head>
     <body>
-        <c:if test="${operacao == null}"><jsp:include page="barra_superior.jspf"/>
-        </c:if>
-        
-        <c:if test="${operacao != null}">
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
@@ -46,9 +51,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                       <li> <c:if test="${tipo != null}"> <a href="${tipo}Home.jsp">Sistema de Corrida de Rua</a></c:if> 
-                        <c:if test="${tipo == null}"> <a href="index.jsp">Sistema de Corrida de Rua</a></c:if>
-                             </li>
+                        <li> <c:if test="${tipo != null}"> <a href="${tipo}Home.jsp">Sistema de Corrida de Rua</a></c:if> 
+                            <c:if test="${tipo == null}"> <a href="index.jsp">Sistema de Corrida de Rua</a></c:if>
+                            </li>
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -73,20 +78,17 @@
                 </div>
             </div>
         </nav>
-</c:if>
+
+
 
 
         <div class="container">
 
-            <c:if test="${operacao == null}"> <h3><span class="glyphicon glyphicon-check"></span> Cadastre-se</h3><br></c:if>
+            <c:if test="${operacao == 'Incluir'}"> <h3><span class="glyphicon glyphicon-check"></span> Cadastre-se</h3><br></c:if>
             <c:if test="${operacao == 'Editar'}"> <h3><span class="glyphicon glyphicon-edit"></span> Alterar dados</h3><br></c:if>
             <c:if test="${operacao == 'Excluir'}"> <h3><span class="glyphicon glyphicon-floppy-remove"></span> Excluir Atleta</h3><br></c:if>
 
-            <c:if test="${operacao == null}"><form action="ManterAtletaController?acao=confirmarIncluir" method="post" name="frmManterAtleta"> </c:if>
-            <c:if test="${operacao == 'Editar'}"><form action="ManterAtletaController?acao=confirmarEditar" method="post" name="frmManterAtleta"> </c:if>
-            <c:if test="${operacao == 'Excluir'}"> <form action="ManterAtletaController?acao=confirmarExcluir" method="post" name="frmManterAtleta"> </c:if>
-            
-                
+                <form action="ManterAtletaController?acao=confirmar<c:if test="${operacao!= null}">${operacao}</c:if><c:if test="${operacao== null}">Incluir"</c:if>  method="post" name="frmManterAtleta" onclick="sair();"/>
                     <div class="row">
                         <div class="col-md-2">
 
@@ -443,7 +445,8 @@
 
                         <div class="col-md-6">
                             <br>
-                            <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
+                            
+                            <input type="submit" name="btnConfirmar" onClick="window.location = 'http://www.google.com';">
 
                             <a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
 

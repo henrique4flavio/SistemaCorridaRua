@@ -63,6 +63,7 @@ public class LoginController extends HttpServlet {
         String senha = request.getParameter("senha");
         Atleta atleta = Atleta.logar(login, senha);
         Organizador organizador = Organizador.logar(login, senha);
+         request.setAttribute("msgErro1", null);
 
         int idUsuario = 0;
 
@@ -80,7 +81,7 @@ public class LoginController extends HttpServlet {
 
             } else {
 
-                request.setAttribute("mensagemErro", "Usuario não encontrado");
+               request.setAttribute("msgErro1", "Usuário/Senha inválidos!"); 
                 RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
                 view.forward(request, response);
             }
