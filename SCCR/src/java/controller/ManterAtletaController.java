@@ -89,7 +89,7 @@ public class ManterAtletaController extends HttpServlet {
 
         try {
             atleta.excluir();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaAtletaController");
+            RequestDispatcher view = request.getRequestDispatcher("LoginController?acao=logout");
             view.forward(request, response);
         } catch (IOException ex) {
 
