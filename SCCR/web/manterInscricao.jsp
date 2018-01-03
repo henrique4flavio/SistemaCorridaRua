@@ -135,8 +135,8 @@ function ValidarCPF(Objcpf){
 
                                     </li>
                                     <li class="nav-header"><c:forEach items="${item}" var="item">
-                                            ${item.nomeItem}
-                                        </c:forEach></li>
+                                            ${item.nomeItem}<br>
+                                    </c:forEach></li>
 
 
                                 </ul>
@@ -292,7 +292,11 @@ function ValidarCPF(Objcpf){
                                 <li class="nav-header">${prova_id.nomeProva}</li>
                             <li>Lote: 
                             </li>
-                            <li>Kit:
+                            <li>Kit: 
+                               <option value="0" id="mostra_itens" <c:if test="${inscricao.kit_id == null}" > selected</c:if>></option>                    
+                                <c:forEach items="${kit}" var="kit"> 
+                                    <option value="${kit.id}"  <c:if test="${kit.id == inscricao.kit_id}"> selected</c:if>>${kit.valor}</option>  
+                                </c:forEach>
                             </li>
                             <li><h4>Total:  </h4>
                             </li>
