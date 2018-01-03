@@ -57,7 +57,7 @@
 
                         </tr>   
                         </thread>
-                  
+                  <tbody id="idTable">
                         <c:forEach items="${inscricaoAtleta}" var="inscricaoAtleta">
                             <tr> 
                                 <td> <c:out value="${inscricaoAtleta.numeroPeito}"/> </td>
@@ -72,7 +72,7 @@
                                 </td>
                                    </tr>
                         </c:forEach>
-                    
+                  </tbody>
                 </table>
 
 
