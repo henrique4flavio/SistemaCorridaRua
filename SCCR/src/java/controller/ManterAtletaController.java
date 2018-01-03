@@ -17,12 +17,7 @@ public class ManterAtletaController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         String acao = request.getParameter("acao");
-        if(acao.equals("confirmarEditarAtleta")){
-            confirmarEditarAtleta(request,response);
-        }
-        if(acao.equals("editarAtleta")){
-            editarAtleta(request,response);
-        }
+        
         if (acao.equals("prepararIncluir")) {
             prepararIncluir(request, response);
         } else {

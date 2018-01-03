@@ -82,8 +82,8 @@
                  <div class="row">
                         <div class="col-md-10">
                             <a  class="btn btn-warning btn-lg"  href="ObterInscricaoAtletaController?acao=exibirInscricoes&id=<c:out value="${atleta.id}"/>"><span class="glyphicon glyphicon-list-alt"></span> <br/>Minhas Inscrições</a></span>
-                             <a class="btn btn-success btn-lg" href="ManterAtletaController?acao=editarAtleta&id=<c:out value="${atleta.id}"/>"><span class="glyphicon glyphicon-user"></span> <br/>Alterar Dados Pessoais</a></span>
-                             <a class="btn btn-danger btn-lg" href="ManterAtletaController?acao=excluirAtleta&id=<c:out value="${atleta.id}"/>"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a></span><br><br>
+                             <a class="btn btn-success btn-lg" href="ManterAtletaController?acao=prepararEditar&id=<c:out value="${atleta.id}"/>"><span class="glyphicon glyphicon-user"></span> <br/>Alterar Dados Pessoais</a></span>
+                             <a class="btn btn-danger btn-lg" href="ManterAtletaController?acao=prepararExcluir&id=<c:out value="${atleta.id}"/>"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a></span><br><br>
                     <a href="LoginController?acao=logout" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-log-out"></span> <br/>Sair</a>
 
                                    
