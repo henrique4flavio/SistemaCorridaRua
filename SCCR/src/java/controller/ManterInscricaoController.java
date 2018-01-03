@@ -52,7 +52,6 @@ public class ManterInscricaoController extends HttpServlet {
             }
         }
     }
-    
 
     public void prepararExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
@@ -65,7 +64,7 @@ public class ManterInscricaoController extends HttpServlet {
 
             int codInscricao = Integer.parseInt(request.getParameter("numeroPeito"));
             int prova_id = Integer.parseInt(request.getParameter("prova_id"));
-            
+
             Prova prova = Prova.obterProva(prova_id);
             request.setAttribute("prova_id", prova);
 
@@ -92,11 +91,9 @@ public class ManterInscricaoController extends HttpServlet {
         String prova_id = request.getParameter("prova_id");
         String categoria = request.getParameter("optCategoria");
         String percurso_id = request.getParameter("optPercurso");
-        String atleta_id=request.getParameter("optAtleta");
+        String atleta_id = request.getParameter("optAtleta");
 
-
-           Inscricao inscricao = new Inscricao(numeroPeito, numeroPeito, false, false, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
-
+        Inscricao inscricao = new Inscricao(numeroPeito, numeroPeito, false, false, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
 
         try {
             inscricao.excluir();
@@ -115,22 +112,21 @@ public class ManterInscricaoController extends HttpServlet {
 
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
-            
-          
+
             request.setAttribute("operacao", "Incluir");
             request.setAttribute("kit", Kit.obterKits());
             request.setAttribute("item", Item.obterItens());
             request.setAttribute("percurso", Percurso.obterPercursos());
             request.setAttribute("atleta", Atleta.obterAtletas());
             request.setAttribute("lote", Lote.obterLotes());
-            
+
             int prova_id = Integer.parseInt(request.getParameter("prova_id"));
-            
+
             Prova prova = Prova.obterProva(prova_id);
             request.setAttribute("prova_id", prova);
             RequestDispatcher view = request.getRequestDispatcher("/manterInscricao.jsp");
             view.forward(request, response);
-          
+
         } catch (ServletException ex) {
         } catch (IOException ex) {
         } catch (ClassNotFoundException ex) {
@@ -139,7 +135,7 @@ public class ManterInscricaoController extends HttpServlet {
     }
 
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            
+
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("prova_id");
         String percurso_id = request.getParameter("optPercurso");
@@ -147,15 +143,11 @@ public class ManterInscricaoController extends HttpServlet {
         int numeroPeito = Integer.parseInt(request.getParameter("txtnumeroPeito"));
         String total = request.getParameter("txtTotal");
         String formaPagamento = request.getParameter("optFormaPagamento");
-        
 
         String categoria = request.getParameter("optCategoria");
 
-      
-   
+        Inscricao inscricao = new Inscricao(numeroPeito, numeroPeito, false, false, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
 
-           Inscricao inscricao = new Inscricao(numeroPeito, numeroPeito, false, false, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
-          
         try {
             inscricao.gravar();
         } catch (SQLException ex) {
@@ -163,9 +155,9 @@ public class ManterInscricaoController extends HttpServlet {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
         }
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
-            view.forward(request, response);
-        
+        RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
+        view.forward(request, response);
+
     }
 
     public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
@@ -179,7 +171,7 @@ public class ManterInscricaoController extends HttpServlet {
 
             int codInscricao = Integer.parseInt(request.getParameter("numeroPeito"));
             int prova_id = Integer.parseInt(request.getParameter("prova_id"));
-            
+
             Prova prova = Prova.obterProva(prova_id);
             request.setAttribute("prova_id", prova);
 
@@ -197,19 +189,16 @@ public class ManterInscricaoController extends HttpServlet {
     }
 
     public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
-         int numeroPeito = Integer.parseInt(request.getParameter("txtnumeroPeito"));
+        int numeroPeito = Integer.parseInt(request.getParameter("txtnumeroPeito"));
         String total = request.getParameter("txtTotal");
         String formaPagamento = request.getParameter("optFormaPagamento");
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("optProva");
         String percurso_id = request.getParameter("optPercurso");
-        String atleta_id=request.getParameter("optAtleta");
+        String atleta_id = request.getParameter("optAtleta");
+        String categoria = request.getParameter("optCategoria");
 
-
-
-    String categoria = request.getParameter("optCategoria");
-
- Inscricao inscricao = new Inscricao(numeroPeito, numeroPeito, false, false, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
+        Inscricao inscricao = new Inscricao(numeroPeito, numeroPeito, false, false, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
 
         try {
             inscricao.alterar();
@@ -225,8 +214,8 @@ public class ManterInscricaoController extends HttpServlet {
 
         }
     }
-    
-     public void escolherProva(HttpServletRequest request, HttpServletResponse response) {
+
+    public void escolherProva(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setAttribute("operacao", "Incluir");
             request.setAttribute("kit", Kit.obterKits());
@@ -244,10 +233,6 @@ public class ManterInscricaoController extends HttpServlet {
 
     }
 
-    
-
-    
-        
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
