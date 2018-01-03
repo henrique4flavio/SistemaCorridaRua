@@ -27,7 +27,7 @@ import modelo.ResultadoRanking;
  *
  * @author LaisAlves
  */
-public class PesquisaResultadoRanking extends HttpServlet {
+public class PesquisaResultadoRankingController extends HttpServlet {
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -73,7 +73,7 @@ public class PesquisaResultadoRanking extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -91,7 +91,7 @@ public class PesquisaResultadoRanking extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -123,16 +123,16 @@ public class PesquisaResultadoRanking extends HttpServlet {
         try{
         request.setAttribute("resultadoRanking",ResultadoRanking.obterResultadoGeralFemininoRanking(ranking));
         }catch (SQLException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
            
         RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoRanking.jsp");
         try {
             view.forward(request, response);
         } catch (ServletException ex) {
-            Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
        }catch (ClassNotFoundException ex) {
@@ -145,16 +145,16 @@ public class PesquisaResultadoRanking extends HttpServlet {
         try{
         request.setAttribute("resultadoRanking",ResultadoRanking.obterResultadoGeralMasculinoRanking(ranking));
         }catch (SQLException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
            
         RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoRanking.jsp");
         try {
             view.forward(request, response);
         } catch (ServletException ex) {
-            Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
        }catch (ClassNotFoundException ex) {
@@ -169,16 +169,16 @@ public class PesquisaResultadoRanking extends HttpServlet {
         try{
         request.setAttribute("resultadoRanking",ResultadoRanking.obterResultadoGeralMasculinoAdultoRanking(ranking));
         }catch (SQLException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
            
         RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoRanking.jsp");
         try {
             view.forward(request, response);
         } catch (ServletException ex) {
-            Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
        }catch (ClassNotFoundException ex) {
@@ -191,16 +191,16 @@ public class PesquisaResultadoRanking extends HttpServlet {
             try{
             request.setAttribute("resultadoRanking",ResultadoRanking.obterResultadoGeralFemininoAdultoRanking(ranking));
             }catch (SQLException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
            
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoRanking.jsp");
             try {
                 view.forward(request, response);
             } catch (ServletException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException ex) {
@@ -215,16 +215,16 @@ public class PesquisaResultadoRanking extends HttpServlet {
             try {
                 request.setAttribute("resultadoRanking", ResultadoRanking.obterResultadoGeralMasculinoInfantilRanking(numero));
             } catch (SQLException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoRanking.jsp");
             try {
                 view.forward(request, response);
             } catch (ServletException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException ex) {
@@ -241,16 +241,16 @@ public class PesquisaResultadoRanking extends HttpServlet {
            try{
             request.setAttribute("resultadoRanking",ResultadoRanking.obterResultadoGeralFemininoInfantilRanking(ranking));
          }catch (SQLException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
            
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoRanking.jsp");
             try {
                 view.forward(request, response);
             } catch (ServletException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException ex) {
@@ -265,16 +265,16 @@ public class PesquisaResultadoRanking extends HttpServlet {
            try{
             request.setAttribute("resultadoRanking",ResultadoRanking.obterResultadoGeralFemininoIdosoRanking(ranking));
          }catch (SQLException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
            
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoRanking.jsp");
             try {
                 view.forward(request, response);
             } catch (ServletException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException ex) {
@@ -289,16 +289,16 @@ public class PesquisaResultadoRanking extends HttpServlet {
            try{
             request.setAttribute("resultadoRanking",ResultadoRanking.obterResultadoGeralMasculinoIdosoRanking(ranking));
          }catch (SQLException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
            
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoRanking.jsp");
             try {
                 view.forward(request, response);
             } catch (ServletException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-                Logger.getLogger(PesquisaResultadoRanking.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PesquisaResultadoRankingController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException ex) {

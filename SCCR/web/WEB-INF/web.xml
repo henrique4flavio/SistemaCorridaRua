@@ -126,7 +126,7 @@
     </servlet>
     <servlet>
         <servlet-name>PesquisaResultadoRanking</servlet-name>
-        <servlet-class>controller.PesquisaResultadoRanking</servlet-class>
+        <servlet-class>controller.PesquisaResultadoRankingController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ObterInscricaoAtletaController</servlet-name>
