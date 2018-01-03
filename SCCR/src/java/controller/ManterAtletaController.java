@@ -141,7 +141,7 @@ public class ManterAtletaController extends HttpServlet {
         try {
             Atleta atleta = new Atleta(id, nome, dataNascimento, apelido, cpf, tamCamisa, sexo, telefoneFixo, telefoneCelular, rua, bairro, cidade, estado, pais, login, senha, email);
             atleta.gravar();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaAtletaController");
+            RequestDispatcher view = request.getRequestDispatcher("index.jsp");
             view.forward(request, response);
         } catch (IOException ex) {
 
