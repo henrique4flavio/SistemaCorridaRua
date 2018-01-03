@@ -95,7 +95,7 @@ public class ManterInscricaoController extends HttpServlet {
         String atleta_id=request.getParameter("optAtleta");
 
 
-        Inscricao inscricao = new Inscricao(numeroPeito, pago, kitRetirado, formaPagamento, total, kit_id, prova_id, percurso_id, atleta_id);        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total,categoria, kit_id, prova_id, percurso_id,atleta_id);
+           Inscricao inscricao = new Inscricao(numeroPeito, numeroPeito, false, false, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
 
 
         try {
@@ -138,40 +138,34 @@ public class ManterInscricaoController extends HttpServlet {
 
     }
 
-    public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) {
+    public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("prova_id");
         String percurso_id = request.getParameter("optPercurso");
         String atleta_id = request.getParameter("optAtleta");
+        int numeroPeito = Integer.parseInt(request.getParameter("txtnumeroPeito"));
+        String total = request.getParameter("txtTotal");
+        String formaPagamento = request.getParameter("optFormaPagamento");
+        
 
-String categoria = request.getParameter("optCategoria");
+        String categoria = request.getParameter("optCategoria");
 
-        try {
-            Kit kit = Kit.obterKit(0);
-            HttpSession session = request.getSession(true);
-            Prova prova = Prova.obterProva(0);
-            Percurso percurso = Percurso.obterPercurso(0);
-            Atleta atleta = Atleta.obterAtleta(0);
-            
+      
+   
 
-
-           Inscricao inscricao = new Inscricao(kit_id, prova_id, percurso_id, atleta_id);
-
-        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total,categoria, kit_id, prova_id, percurso_id,atleta_id);
+           Inscricao inscricao = new Inscricao(numeroPeito, numeroPeito, false, false, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
           
+        try {
             inscricao.gravar();
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
             view.forward(request, response);
-        } catch (IOException ex) {
-
-        } catch (SQLException ex) {
-
-        } catch (ClassNotFoundException ex) {
-
-        } catch (ServletException ex) {
-
-        }
+        
     }
 
     public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
@@ -212,10 +206,10 @@ String categoria = request.getParameter("optCategoria");
         String atleta_id=request.getParameter("optAtleta");
 
 
-        Inscricao inscricao = new Inscricao(numeroPeito, true, true, formaPagamento, total, kit_id, prova_id, percurso_id, atleta_id);
 
     String categoria = request.getParameter("optCategoria");
-        Inscricao inscricao = new Inscricao(numeroPeito, formaPagamento, total,categoria, kit_id, prova_id, percurso_id,atleta_id);
+
+ Inscricao inscricao = new Inscricao(numeroPeito, numeroPeito, false, false, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
 
         try {
             inscricao.alterar();

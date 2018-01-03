@@ -43,41 +43,7 @@
 
         </script>
 
-        <script>
-        function MascaraCPF(cpf){
-        if(mascaraInteiro(cpf)==false){
-                event.returnValue = false;
-        }       
-        return formataCampo(cpf, '000.000.000-00', event);
-}
-function limpa_formulário_cpf() {
-    //Limpa valores do formulário de cep.
-    document.getElementById('cpf').value = ("");
-    }
-function ValidarCPF(Objcpf){
-        var cpf = Objcpf.value;
-        exp = /\.|\-/g
-        cpf = cpf.toString().replace( exp, "" ); 
-        var digitoDigitado = eval(cpf.charAt(9)+cpf.charAt(10));
-        var soma1=0, soma2=0;
-        var vlr =11;
-
-        for(i=0;i<9;i++){
-                soma1+=eval(cpf.charAt(i)*(vlr-1));
-                soma2+=eval(cpf.charAt(i)*vlr);
-                vlr--;
-        }       
-        soma1 = (((soma1*10)%11)==10 ? 0:((soma1*10)%11));
-        soma2=(((soma2+(2*soma1))*10)%11);
-
-        var digitoGerado=(soma1*10)+soma2;
-        if(digitoGerado!=digitoDigitado)   
         
-                alert('CPF Invalido!');     
-        limpa_formulário_cpf();    
-}
-
-    </script>"
     </head>
 
     <body>
@@ -133,17 +99,7 @@ function ValidarCPF(Objcpf){
                             <label >Código da Inscrição:</label>
                             <input type="text" name="txtnumeroPeito" class="form-control" value="${inscricao.numeroPeito}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
                             </div>
-                            <div class="form-group">
-                                <label>Atleta:</label>
-                                <select name="optAtleta" class="form-control selectpicker" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                                <option value="0" <c:if test="${inscricao.atleta_id == null}"> selected</c:if>> </option>  
-                                <c:forEach items="${atleta}" var="atleta">
-                                    <option value="${atleta.id}" <c:if test="${atleta.id == inscricao.atleta_id}"> selected</c:if>>${atleta.nome}</option>  
-
-                                </c:forEach>
-                            </select>
-
-                        </div>
+                            <INPUT TYPE="hidden" NAME="optAtleta" value="${usuario.id}">
                                  <div class="form-group">
                                      <label> Escolha a Categoria:  </label><br>
                                      <label>   <input type="radio" name="optCategoria"  id="mostra_aba1" value="infantil-5 a 12 anos"  /> Infantil:5 a 12 anos </label> <br>

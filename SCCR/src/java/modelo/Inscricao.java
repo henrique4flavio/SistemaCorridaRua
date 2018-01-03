@@ -49,19 +49,6 @@ public class Inscricao {
     }
 
    
-    public Inscricao(String kit_id, String prova_id, String percurso_id, String atleta_id) {
-        this.kit_id = kit_id;
-        this.prova_id = prova_id;
-        this.percurso_id = percurso_id;
-        this.atleta_id = atleta_id;
-        
-        this.numeroPeito = 0;
-        this.pago = false;
-        this.kitRetirado = false;
-
-        this.categoria=categoria;
-    }
-
     public int getId() {
         return id;
     }
