@@ -33,8 +33,6 @@ public class ManterPagamentoController extends HttpServlet {
             prepararPagamento(request, response);
         } else if (acao.equals("confirmarPagamento")) {
             confirmarPagamento(request, response);
-        } else if (acao.equals("escolherProva")) {
-            escolherProva(request, response);
         }
     }
 
@@ -69,16 +67,6 @@ public class ManterPagamentoController extends HttpServlet {
         }
     }
 
-    private void escolherProva(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            request.setAttribute("provas", Prova.obterProvas());
-            RequestDispatcher view = request.getRequestDispatcher("/escolherProvaPagamento.jsp");
-            view.forward(request, response);
-        } catch (IOException ex) {
-        } catch (ClassNotFoundException ex) {
-        } catch (ServletException ex) {
-        }
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
