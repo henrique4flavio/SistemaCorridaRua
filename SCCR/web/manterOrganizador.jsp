@@ -108,7 +108,7 @@
                     </div>
 
                     <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
-                    <a href="PesquisaOrganizadorController" class="btn btn-default">Cancelar</a>
+                    <a href="organizadorHome.jsp" class="btn btn-default">Cancelar</a>
 
                 </form>                   
             </div> 

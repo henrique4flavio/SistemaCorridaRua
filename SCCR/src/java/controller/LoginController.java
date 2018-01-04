@@ -129,6 +129,7 @@ public class LoginController extends HttpServlet {
                         RequestDispatcher view = request.getRequestDispatcher("/organizadorHome.jsp");
                         view.forward(request, response);
                     } else {
+                        request.setAttribute("msgErro2", "Usuário/Senha inválidos!"); 
                         RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
                         view.forward(request, response);
                     }

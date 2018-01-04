@@ -31,12 +31,12 @@
                         <form action="LoginController?acao=logarAtleta" method="post" name="frmManterAtleta">
                             <div class="form-group">
                                 <label for="email">Login:</label>
-                                <input  class="form-control" id="login" name="login" data-dismiss="alert" aria-label="close">
+                                <input  class="form-control" id="login" required name="login" data-dismiss="alert" aria-label="close">
                             </div>
 
                             <div class="form-group">
                                 <label for="senha">Senha:</label>
-                                <input type="password" class="form-control" id="senha" name="senha">
+                                <input type="password" class="form-control" id="senha" required name="senha">
                             </div>
 
 
@@ -69,12 +69,12 @@
                         <form action="LoginController?acao=logarAdministrativo" method="post" name="frmManterAtleta">
                             <div class="form-group">
                                 <label for="email">Login:</label>
-                                <input  class="form-control" id="login" name="login" data-dismiss="alert" aria-label="close">
+                                <input  class="form-control" id="login" name="login" required data-dismiss="alert" aria-label="close">
                             </div>
 
                             <div class="form-group">
                                 <label for="senha">Senha:</label>
-                                <input type="password" class="form-control" id="senha" name="senha">
+                                <input type="password" class="form-control" id="senha" required name="senha">
                             </div>
 
                             <div class="form-group"  align="center">
