@@ -261,7 +261,6 @@
                                                 <div class="col-xs-12">
 
 
-                                                    <a href ="ManterPagamentoController?acao=prepararCartaoCredito" name="buttonPagamento"class="subscribe btn btn-success btn-lg btn-block" type="button">Salvar</a>
 
                                                     <button name="buttonPagamento"class="subscribe btn btn-success btn-lg btn-block" type="button">Pagar R$</button>
 
@@ -320,6 +319,8 @@
                 <!--/sidebar-nav-fixed -->
             </div>
         </div>
+                            <br><br><br>
+                            
 
         <jsp:include page="footer.jspf"/>
 
