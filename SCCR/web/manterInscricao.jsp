@@ -107,7 +107,7 @@
                     <div class="col-xs-8">
                         <div class="form-group">
                             <label >Código da Inscrição:</label>
-                            <input type="text" name="txtnumeroPeito" class="form-control" value="${inscricao.numeroPeito}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+                            <input type="text" name="txtnumeroPeito" required class="form-control" value="${inscricao.numeroPeito}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
                             </div>
                             <INPUT TYPE="hidden" NAME="optAtleta" value="${usuario.id}">
                         <div class="form-group">

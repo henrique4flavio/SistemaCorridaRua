@@ -88,7 +88,7 @@
                     <thead>
                         <tr>
 
-                            <th>Número da inscrição</th>
+                            <th>Número de Peito</th>
                             <th> Corridas </th>
 
                            

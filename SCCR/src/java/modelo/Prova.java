@@ -30,10 +30,11 @@ public class Prova {
     private String organizador_id;
 
     private String ranking_id;
-
+private int inicioIdade;
+private int fimIdade;
     private String localRetiradaKit;
 
-    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String faixaEtaria, String localRetiradaKit, String valorTotal, String organizador_id, String ranking_id) {
+    public Prova(int id, String nomeProva, String localLargada, String horarioLargada, String dataProva, String maxParticipantes, String inicioInscricao, String fimInscricao, String localRetiradaKit, String valorTotal, int inicioIdade,int fimIdade, String organizador_id, String ranking_id) {
         this.nomeProva = nomeProva;
         this.localLargada = localLargada;
         this.horarioLargada = horarioLargada;
@@ -47,6 +48,24 @@ public class Prova {
         this.id = id;
         this.valorTotal = valorTotal;
         this.localRetiradaKit = localRetiradaKit;
+                this.inicioIdade=inicioIdade;
+                this.fimIdade = fimIdade;
+    }
+
+    public int getInicioIdade() {
+        return inicioIdade;
+    }
+
+    public void setInicioIdade(int inicioIdade) {
+        this.inicioIdade = inicioIdade;
+    }
+
+    public int getFimIdade() {
+        return fimIdade;
+    }
+
+    public void setFimIdade(int fimIdade) {
+        this.fimIdade = fimIdade;
     }
 
     public String getLocalRetiradaKit() {

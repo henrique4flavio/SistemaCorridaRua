@@ -31,7 +31,7 @@
 
             }
         </script>
-       
+
 
     </head>
     <body>
@@ -46,9 +46,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                       <li> <c:if test="${tipo != null}"> <a href="${tipo}Home.jsp">Sistema de Corrida de Rua</a></c:if> 
-                        <c:if test="${tipo == null}"> <a href="index.jsp">Sistema de Corrida de Rua</a></c:if>
-                             </li>
+                        <li> <c:if test="${tipo != null}"> <a href="${tipo}Home.jsp">Sistema de Corrida de Rua</a></c:if> 
+                            <c:if test="${tipo == null}"> <a href="index.jsp">Sistema de Corrida de Rua</a></c:if>
+                            </li>
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -57,6 +57,7 @@
                             <li><a href="PesquisaResultadoRanking?acao=visualizarRanking"><span class="glyphicon glyphicon-list-alt"></span> Ranking</a> </li>
                             <li><a href="PesquisaResultadoProvasController?acao=visualizarProvas" ><span class="
                                                                                                          glyphicon glyphicon-expand"></span> Resultado Provas</a> </li>
+<li><a href="PesquisaProvaController?acao=gridProvas" ><span class=" glyphicon glyphicon-th"></span> Cadastrar Provas</a> </li>
 
 
                             <li><a href="${tipo}Home.jsp"><span class="glyphicon glyphicon-user"></span> 
@@ -84,7 +85,7 @@
                         <div class="col-md-10">
                             <a href="PesquisaProvaController?acao=listarProvas" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Minhas Provas</a>
                             <a href="ManterOrganizadorController?acao=prepararEditar&id=${organizador.id}" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Alterar dados Pessoais</a>
-                           <a href="PesquisaRankingController" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Cadastrar Rankings</a> 
+                            <a href="PesquisaRankingController" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Cadastrar Rankings</a> 
                             <a href="PesquisaInscricaoController" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> <br/>Listar Inscrições</a> 
                             <a href="PesquisaItemController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-th-list"></span> </br>Manter itens</a><br><br>
                             <a href="PesquisaKitController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter kits</a>
@@ -93,14 +94,14 @@
 
                             <a href="PesquisaElementoKitController"cl <a href="PesquisaLoteController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> </br>Manter lotes</a>
 
-                             <a href="PesquisaPercursoController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter percursos</a>
-                            <a href="PesquisaProvaController?acao=listarProvas"class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter provas</a> <br><br>
+                                <a href="PesquisaPercursoController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter percursos</a>
+                                <a href="PesquisaProvaController?acao=listarProvas"class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter provas</a> <br><br>
 
-        <a href="PesquisaPagamentoController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Controle Pagamento</a>
+                                <a href="PesquisaPagamentoController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-th-list"></span> </br>Controle Pagamento</a>
 
 
-                             <a href="ManterOrganizadorController?acao=prepararExcluir&id=${organizador.id}" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a></button>
-                            <a href="LoginController?acao=logout" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-log-out"></span> <br/>Sair</a>
+                                <a href="ManterOrganizadorController?acao=prepararExcluir&id=${organizador.id}" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-floppy-remove"></span> <br/>Excluir Conta</a></button>
+                                <a href="LoginController?acao=logout" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-log-out"></span> <br/>Sair</a>
 
 
                         </div>
