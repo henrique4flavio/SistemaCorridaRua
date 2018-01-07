@@ -96,7 +96,11 @@
                     </div>
                     <div class="form-group">
                         <label>Faixa Etária:</label>
-                        <input type="text" name="txtFaixaEtaria" value="${prova.faixaEtaria}" class="form-control" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <h4> De  <input type="text" name="txtInicioIdade" value="${prova.inicioIdade}" class="form-control" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></h4>
+                    </div>
+                    <div class="form-group">
+                       
+                        <h4> Ás  <input type="text" name="txtFimIdade" value="${prova.fimIdade}" class="form-control" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></h4>
                     </div>
                     <div class="form-group">
                         <label>Valor da Prova:</label>
@@ -122,7 +126,7 @@
                 </div>
 
                 <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
-                <a href="PesquisaProvaController" class="btn btn-default">Cancelar</a> <br><br><br><br><br><br>
+                <a href="PesquisaProvaController?acao=listarProvas" class="btn btn-default">Cancelar</a> <br><br><br><br><br><br>
 
             </form>                   
         </div> 	
