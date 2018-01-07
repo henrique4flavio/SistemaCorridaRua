@@ -54,11 +54,11 @@
         <form action="LoginController?acao=logar" method="post" name="frmLogar">
           <div class="form-group">
             <label for="exampleInputEmail1">Login</label>
-            <input class="form-control" id="login" required name="login" type="text"  placeholder="Enter email">
+            <input class="form-control" id="login" required name="login" type="text"  placeholder="Digite o login">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
-            <input class="form-control" id="senha" required name="senha" type="password" placeholder="Password">
+            <input class="form-control" id="senha" required name="senha" type="password" placeholder="Digite a senha">
           </div>
           <div class="form-group">
             <div class="form-check">

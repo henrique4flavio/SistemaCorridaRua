@@ -21,6 +21,49 @@ public class ProvaDAO {
             conexao = BD.getConexao();
             int usuarioId = UsuarioLogado.getId();
             comando = conexao.createStatement();
+            ResultSet rs = comando.executeQuery("select * from prova");
+            while (rs.next()) {
+
+                Prova prova = new Prova(
+                        rs.getInt("id"),
+                        rs.getString("nomeProva"),
+                        rs.getString("localLargada"),
+                        rs.getString("horarioLargada"),
+                        rs.getString("dataProva"),
+                        rs.getString("maxParticipantes"),
+                        rs.getString("inicioInscricao"),
+                        rs.getString("fimInscricao"),
+                        
+                        rs.getString("localRetiradaKit"),
+                        rs.getString("valorProva"),
+                        rs.getInt("inicioIdade"),
+                        rs.getInt("fimIdade"),
+                        null, null);
+
+                prova.setOrganizador_id(rs.getString("organizador_id"));
+                prova.setRanking_id(rs.getString("ranking_id"));
+
+                provas.add(prova);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao(conexao, comando);
+
+        }
+        return provas;
+    }
+    
+     public static List<Prova> obterProvasOrganizador() throws ClassNotFoundException {
+        Connection conexao = null;
+        Statement comando = null;
+        List<Prova> provas = new ArrayList<Prova>();
+        try {
+            conexao = BD.getConexao();
+            int usuarioId = UsuarioLogado.getId();
+            comando = conexao.createStatement();
             ResultSet rs = comando.executeQuery("select * from prova where organizador_id = " +usuarioId);
             while (rs.next()) {
 
