@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import static javax.swing.UIManager.getString;
 import modelo.Prova;
+import modelo.UsuarioLogado;
 
 public class ProvaDAO {
 
@@ -18,8 +19,9 @@ public class ProvaDAO {
         List<Prova> provas = new ArrayList<Prova>();
         try {
             conexao = BD.getConexao();
+            int usuarioId = UsuarioLogado.getId();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from prova");
+            ResultSet rs = comando.executeQuery("select * from prova where organizador_id = " +usuarioId);
             while (rs.next()) {
 
                 Prova prova = new Prova(
