@@ -107,7 +107,7 @@ public class PesquisaProvaController extends HttpServlet {
             request.setAttribute("provas", Prova.obterProvas());
             request.setAttribute("organizadores", Organizador.obterOrganizadores());
             request.setAttribute("ranking", Ranking.obterRankings());
-            RequestDispatcher view = request.getRequestDispatcher("/escolherProva.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/index2.jsp");
             try {
                 view.forward(request, response);
             } catch (ServletException ex) {
