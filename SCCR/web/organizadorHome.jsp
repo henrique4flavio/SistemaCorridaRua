@@ -52,10 +52,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="navbar.html">Manter Provas</a>
+              <a href="PesquisaProvaController?acao=listarProvas">Manter Provas</a>
             </li>
             <li>
-              <a href="navbar.html">Manter Percursos</a>
+              <a href="PesquisaPercursoController?acao=">Manter Percursos</a>
             </li>
             
             <li>

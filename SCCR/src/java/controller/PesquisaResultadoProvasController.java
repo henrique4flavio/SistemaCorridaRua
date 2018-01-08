@@ -36,6 +36,10 @@ public class PesquisaResultadoProvasController extends HttpServlet {
      */
      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
+         request.setAttribute("resultadoProva",ResultadoProva.obterResultados());
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
+           view.forward(request,response);
+        
         String acao = request.getParameter("acao");
         if(acao.equals("geralFemininoAsconcer")){
             geralFemininoAsconcer(request,response);
@@ -64,9 +68,6 @@ public class PesquisaResultadoProvasController extends HttpServlet {
         if(acao.equals("visualizarResultado")){
             visualizarResultado(request,response);
         }
-        request.setAttribute("resultadoProva",ResultadoProva.obterResultados());
-            RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
-         
         
    
   
