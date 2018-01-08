@@ -22,7 +22,7 @@
 <body class="bg-dark">
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Sistema de Corrida de Rua</a>
+        <a class="navbar-brand" href="PesquisaProvaController?acao=gridProvas">Sistema de Corrida de Rua</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -418,8 +418,8 @@
       </div>
     
       
-      <center><a class="d-block small mt-3" href="login.html">Pagina de Login</a>
-          <a class="d-block small" href="forgot-password.html">Esqueci minha senha</a></center>
+      <center><a class="d-block small mt-3" href="login.jsp">Pagina de Login</a>
+          <a class="d-block small" href="recuperaSenha.jsp">Esqueci minha senha</a></center>
      </div>
   </div>
  </div>

@@ -5,12 +5,6 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class Inscricao {
-<<<<<<< HEAD
- 
-    private Pagamento pagamento;
-<<<<<<< HEAD
-=======
-=======
 
     private String formaPagamento;
 
@@ -18,18 +12,9 @@ public class Inscricao {
     
     private int kitRetirado;
 
->>>>>>> parent of 6a607e4... upgrade
->>>>>>> f4d2fc1aa9bb26005045f43f0c014390d18bccf8
 
     // private Atleta cpf;
     //Variaveis do banco de dados
-    private Atleta atleta;
-    private Percurso percurso;
-    private Prova prova;
-    private Kit kit;
-    
-    
-    
     private int id;
     
     private int numeroPeito;
@@ -45,59 +30,6 @@ public class Inscricao {
     private String percurso_id;
 
     private String atleta_id;
-<<<<<<< HEAD
-    
-    private int codPagamento;
-
-    
- public Inscricao(int id,int numeroPeito, String categoria,String total,Pagamento pagamento,
-            Kit kit, Prova prova, Percurso percurso, Atleta atleta) {
-        
-        this.id = id;
-        this.numeroPeito = GerarNumeroPeito();
-        this.categoria = categoria;
-        this.total = total;
-        
-        this.pagamento = pagamento;
-        this.atleta = atleta;
-        this.percurso = percurso;
-        this.prova = prova;
-        this.kit = kit;
-     
-        
-<<<<<<< HEAD
-    }
-        
-    
- public Inscricao(int id,int numeroPeito,String categoria,
-            Kit kit, Prova prova, Percurso percurso, Atleta atleta) {
-        
-        this.id = id;
-        this.numeroPeito = GerarNumeroPeito();
-        this.categoria = categoria;         
-        
-        this.pagamento = pagamento;
-        this.atleta = atleta;
-        this.percurso = percurso;
-        this.prova = prova;
-        this.kit = kit;
-=======
-    }
-        
-    
- public Inscricao(int id,int numeroPeito,String categoria,
-            Kit kit, Prova prova, Percurso percurso, Atleta atleta) {
-        
-        this.id = id;
-        this.numeroPeito = GerarNumeroPeito();
-        this.categoria = categoria;         
-        
-        this.pagamento = pagamento;
-        this.atleta = atleta;
-        this.percurso = percurso;
-        this.prova = prova;
-        this.kit = kit;
-=======
  public Inscricao(int id,int numeroPeito,int pago, String formaPagamento, String total,String categoria,
             String kit_id, String prova_id, String percurso_id, String atleta_id) {
         
@@ -127,8 +59,6 @@ public class Inscricao {
         this.atleta_id = atleta_id;
         this.total = total;
         this.kitRetirado = kitRetirado;
->>>>>>> parent of 6a607e4... upgrade
->>>>>>> f4d2fc1aa9bb26005045f43f0c014390d18bccf8
     }
     public Inscricao(int id,int pago, String formaPagamento, String total,String categoria,
             String kit_id, String prova_id, String percurso_id, String atleta_id) {
@@ -163,26 +93,13 @@ public class Inscricao {
     public void setTotal(String total) {
         this.total = total;
     }
-    public int getCodPagamento() {
-        return codPagamento;
-    }
 
-<<<<<<< HEAD
-    public void setCodPagamento(int codPagamento) {
-        this.codPagamento = codPagamento;
-=======
-<<<<<<< HEAD
-    public void setCodPagamento(int codPagamento) {
-        this.codPagamento = codPagamento;
-=======
     public String getFormaPagamento() {
         return formaPagamento;
     }
 
     public void setFormaPagamento(String formaPagamento) {
         this.formaPagamento = formaPagamento;
->>>>>>> parent of 6a607e4... upgrade
->>>>>>> f4d2fc1aa9bb26005045f43f0c014390d18bccf8
     }
 
     public String getKit_id() {
@@ -213,50 +130,9 @@ public class Inscricao {
         return percurso_id;
     }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f4d2fc1aa9bb26005045f43f0c014390d18bccf8
-    public Atleta getAtleta() {
-        return atleta;
-    }
-
-    public void setAtleta(Atleta atleta) {
-        this.atleta = atleta;
-    }
-
-    public Percurso getPercurso() {
-        return percurso;
-    }
-
-    public void setPercurso(Percurso percurso) {
-        this.percurso = percurso;
-    }
-
-    public Prova getProva() {
-        return prova;
-    }
-
-    public void setProva(Prova prova) {
-        this.prova = prova;
-    }
-
-    public Kit getKit() {
-        return kit;
-    }
-
-    public void setKit(Kit kit) {
-        this.kit = kit;
-    }
-
-<<<<<<< HEAD
-=======
-=======
     public int getPago() {
         return pago;
     }
->>>>>>> parent of 6a607e4... upgrade
->>>>>>> f4d2fc1aa9bb26005045f43f0c014390d18bccf8
 
     public void setPercurso_id(String percurso_id) {
         this.percurso_id = percurso_id;
@@ -286,13 +162,14 @@ public class Inscricao {
     }
 
     
+    
 
     public static List<Inscricao> obterInscricoes()
             throws ClassNotFoundException {
         return InscricaoDAO.obterInscricoes();
 
     }
-    
+
     public void gravar() throws SQLException, ClassNotFoundException {
 
         InscricaoDAO.gravar(this);
@@ -311,12 +188,6 @@ public class Inscricao {
         return InscricaoDAO.obterInscricao(id);
     }
 
-<<<<<<< HEAD
-  
-=======
-<<<<<<< HEAD
-  
-=======
     public static List<Inscricao> pesquisaInscricao(String numero)
             throws ClassNotFoundException, SQLException {
         return InscricaoDAO.pesquisaInscricao(numero);
@@ -341,13 +212,10 @@ public class Inscricao {
     }
     
     
->>>>>>> parent of 6a607e4... upgrade
->>>>>>> f4d2fc1aa9bb26005045f43f0c014390d18bccf8
     public int GerarNumeroPeito (){
         int valor = (int) (Math.random() * 199999999);
         return valor;
     }
-    
     
 
 }

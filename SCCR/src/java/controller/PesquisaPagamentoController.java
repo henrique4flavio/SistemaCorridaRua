@@ -7,11 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Atleta;
 import modelo.Inscricao;
-import modelo.Kit;
-import modelo.Percurso;
-import modelo.Prova;
 
 
 public class PesquisaPagamentoController extends HttpServlet {
@@ -30,10 +26,6 @@ public class PesquisaPagamentoController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try {
             request.setAttribute("inscricoes", Inscricao.obterInscricoes());
-            request.setAttribute("kit",Kit.obterKits());
-            request.setAttribute("prova", Prova.obterProvas());
-            request.setAttribute("percurso",Percurso.obterPercursos());
-            request.setAttribute("atleta", Atleta.obterAtletas());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaPagamento.jsp");
             view.forward(request, response);
         } catch(ClassNotFoundException ex) {

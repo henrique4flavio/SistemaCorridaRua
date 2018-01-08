@@ -182,7 +182,8 @@ int pago;
         
         //int pago=0;
         String categoria = request.getParameter("optCategoria");
-        Inscricao inscricao = new Inscricao(id,categoria, kit_id, prova_id, percurso_id, atleta_id);
+        int numero = 222;
+        Inscricao inscricao = new Inscricao(id,pago,formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
 
         try {
             inscricao.gravar();
@@ -191,7 +192,7 @@ int pago;
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        RequestDispatcher view = request.getRequestDispatcher("ObterInscricaoAtletaController?acao=exibirInscricoes&id="+atleta_id);
+        RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
         view.forward(request, response);
 
     }

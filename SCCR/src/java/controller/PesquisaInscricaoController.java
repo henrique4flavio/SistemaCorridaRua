@@ -56,7 +56,7 @@ public class PesquisaInscricaoController extends HttpServlet {
         try {
             String  numero = request.getParameter("numero");
             try {
-                request.setAttribute("inscricoes", Inscricao.obterInscricao(0));
+                request.setAttribute("inscricoes", Inscricao.pesquisaInscricao(numero));
             } catch (SQLException ex) {
                 Logger.getLogger(PesquisaInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
             }

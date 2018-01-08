@@ -17,6 +17,37 @@
 </head>
 
 <body class="bg-dark">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="PesquisaProvaController?acao=gridProvas">Sistema de Corrida de Rua</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Rankings</a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="registro.jsp"> <span class="glyphicon glyphicon-user"></span> Registrar-se</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.jsp"> <span class="glyphicon glyphicon-user"></span> Entrar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    
+    
+    
   <div class="container">
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Redefinir Senha</div>
@@ -33,8 +64,8 @@
              <a class="nav-link btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal" href="login.html">Redefinir Senha</a>
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="register.html">Registrar-se</a>
-          <a class="d-block small" href="login.html">Pagina de Login</a>
+          <a class="d-block small mt-3" href="registro.jsp">Registrar-se</a>
+          <a class="d-block small" href="login.jsp">Pagina de Login</a>
         </div>
       </div>
     </div>

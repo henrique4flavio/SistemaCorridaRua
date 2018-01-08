@@ -10,17 +10,17 @@
 
         <!-- If you're using Stripe for payments -->
         <script>
-            function atualizaPrecoKit(kit) {
-                var valorKit = document.getElementById('kit' + kit).value;
-                document.getElementById('mostraKit').innerHTML = valorKit;
-                var valorProva = document.getElementById('mostraProva').innerHTML;
-                document.getElementById('mostraTotal').innerHTML = parseInt(valorProva) + parseInt(valorKit);
-                document.getElementById('txtTotal').value = parseInt(valorProva) + parseInt(valorKit);
-
-
-
-            }
-        </script>
+          function atualizaPrecoKit(kit){
+           var valorKit=   document.getElementById('kit'+kit).value;
+             document.getElementById('mostraKit').innerHTML=valorKit;
+             var valorProva= document.getElementById('mostraProva').innerHTML;
+              document.getElementById('mostraTotal').innerHTML=parseInt(valorProva)+parseInt(valorKit);
+               document.getElementById('txtTotal').value=parseInt(valorProva)+parseInt(valorKit);
+             
+             
+           
+          }  
+    </script>
         <script>
             function mostrar_abas(obj) {
 
@@ -36,7 +36,7 @@
                         break
                 }
             }
-
+            
         </script>
         <script>
             function mostrar_itens(obj) {
@@ -53,7 +53,7 @@
 
         </script>
 
-
+        
     </head>
 
     <body>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li> <c:if test="${tipo != null}"> <a href="${tipo}Home.jsp">Sistema de Corrida de Rua</a></c:if> 
+                        <li ><a href="index.jsp">Sistema de Corrida de Rua</a></li>
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -79,13 +79,13 @@
                                                                                                      glyphicon glyphicon-expand"></span> Resultado Provas</a> </li>
 
 
-                        <li><a href="${tipo}Home.jsp"><span class="glyphicon glyphicon-user"></span> 
+                            <li><a href="${tipo}Home.jsp"><span class="glyphicon glyphicon-user"></span> 
                                 <%
                                     Usuario usuario = (Usuario) session.getAttribute("usuario");
                                     String nome = usuario.getNome();
                                 %>
                                 <%=nome%> 
-
+                                
                             </a> </li>
 
                         </li>
@@ -107,15 +107,15 @@
                     <div class="col-xs-8">
                         <div class="form-group">
                             <label >Código da Inscrição:</label>
-                            <input type="text" name="txtnumeroPeito" required class="form-control" value="${inscricao.numeroPeito}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+                            <input type="text" name="txtnumeroPeito" class="form-control" value="${inscricao.numeroPeito}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
                             </div>
                             <INPUT TYPE="hidden" NAME="optAtleta" value="${usuario.id}">
-                        <div class="form-group">
-                            <label> Escolha a Categoria:  </label><br>
-                            <label>   <input type="radio" name="optCategoria"  id="mostra_aba1" value="infantil-5 a 12 anos"  /> Infantil:5 a 12 anos </label> <br>
-                            <label>  <input type="radio"  name="optCategoria" id="mostra_aba2" value="adulto-18 a 59 anos" />Adulto:18 a 59 anos</label><br>
-                            <label>   <input type="radio"  name="optCategoria" id="mostra_aba2" value="idoso acima de 60 anos" />Idoso:acima de 60 anos</label><br>
-                            <label>   <input type="radio"  name="optCategoria" id="mostra_aba2" value="Adolescente:13 a 17 anos" />Adolescente:13 a 17 anos </label><br>
+                                 <div class="form-group">
+                                     <label> Escolha a Categoria:  </label><br>
+                                     <label>   <input type="radio" name="optCategoria"  id="mostra_aba1" value="infantil-5 a 12 anos"  /> Infantil:5 a 12 anos </label> <br>
+                          <label>  <input type="radio"  name="optCategoria" id="mostra_aba2" value="adulto-18 a 59 anos" />Adulto:18 a 59 anos</label><br>
+                        <label>   <input type="radio"  name="optCategoria" id="mostra_aba2" value="idoso acima de 60 anos" />Idoso:acima de 60 anos</label><br>
+                         <label>   <input type="radio"  name="optCategoria" id="mostra_aba2" value="Adolescente:13 a 17 anos" />Adolescente:13 a 17 anos </label><br>
 
                         </div>
 
@@ -127,14 +127,14 @@
                                 <option value="0" id="mostra_itens" <c:if test="${inscricao.kit_id == null}" > selected</c:if>></option>                    
                                 <c:forEach items="${kit}" var="kit"> 
                                     <option value="${kit.id}"  <c:if test="${kit.id == inscricao.kit_id}"> selected</c:if>>${kit.nomeKit}-${kit.valor}</option>  
-
+                              
                                 </c:forEach>
-                            </select>
+                                                                </select>
 
                             <c:forEach items="${kit}" var="kit"> 
-                                <input type="hidden" value ="${kit.valor}" id="kit${kit.id}"/>
-
-                            </c:forEach>
+                                    <input type="hidden" value ="${kit.valor}" id="kit${kit.id}"/>
+                              
+                                </c:forEach>
 
                             <div class="well" style="display:none;" id="div_aba3">
 
@@ -144,7 +144,7 @@
                                     </li>
                                     <li class="nav-header"><c:forEach items="${item}" var="item">
                                             ${item.nomeItem}<br>
-                                        </c:forEach></li>
+                                    </c:forEach></li>
 
 
                                 </ul>
@@ -260,10 +260,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
 
-
-
-                                                    <button name="buttonPagamento"class="subscribe btn btn-success btn-lg btn-block" type="button">Pagar R$</button>
-
+            <butto name="buttonPagamento"class="subscribe btn btn-success btn-lg btn-block" type="button">Pagar R$</button>
 
 
                                                 </div>
@@ -282,15 +279,13 @@
 
 
                         <div class="form-group">
-
+                           
                             <input type="hidden" id="txtTotal" name="txtTotal" class="form-control" value="${inscricao.total}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                                 <br>
                                 <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
-
-
-
-
-                               <a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
+                               
+                              <a href="ManterInscricaoController?acao=visualizarPagamento" class="btn btn-default">Proximo</a>
+                                <a href="PesquisaAdministradorController" class="btn btn-default">Cancelar</a>
 
                                 </form>                   
                             </div>
@@ -305,7 +300,7 @@
 
                                 </li>
                                 <li class="nav-header">${prova_id.nomeProva}</li>
-                            <li>Prova: R$ <span id="mostraProva">${prova_id.valorTotal}</span>
+        <li>Prova: R$ <span id="mostraProva">${prova_id.valorTotal}</span>
                             </li>
                             <li>Kit: 
                                 <span id="mostraKit"> </span>
@@ -319,10 +314,5 @@
                 <!--/sidebar-nav-fixed -->
             </div>
         </div>
-                            <br><br><br>
-                            
-
-        <jsp:include page="footer.jspf"/>
-
     </body>
 </html>

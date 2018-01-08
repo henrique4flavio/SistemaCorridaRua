@@ -1,4 +1,3 @@
-
 <%@page import="modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -7,30 +6,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/grid.css" />
+
+
         <jsp:include page="bootstrap.jspf"/>
-        <title>Inscricoes do Atleta</title>
-        <meta charset="UTF-8">
-        <script src="./resources/bootstrap/js/jquery-3.2.1.min.js"></script>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#myInput").on("keyup", function () {
-                    var value = $(this).val().toLowerCase();
-                    $("#idTable tr").filter(function () {
-                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                    });
-                });
-            });
-        </script>
-        <script>
-            function pesquisa(input) {
-
-                var pesquisa = document.getElementById('search');
-                location.href = 'PesquisaInscricaoController?acao=pesquisa&numero=' + pesquisa.value;
-            }
-        </script>
-
-    </head>
     <body>
         <nav class="navbar navbar-inverse">
             <div class="container">
@@ -64,55 +44,47 @@
                                 <%=nome%> 
 
                             </a> </li>
-
-                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div class="container">
+
+            <c:forEach items="${provas}" var="prova">
+
+                <div id="products" class="row list-group">
+                    <div class="item  col-md-3">
+                        <div class="thumbnail">
+                            <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    <c:out value = "${prova.nomeProva}" /></h4>
+                                <p class="group inner list-group-item-text">
+                                    Data: <c:out value = "${prova.dataProva}" /> <br> Horário: <c:out value = "${prova.horarioLargada}" /> </p>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <p class="lead">
+                                        </p>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <a class="btn btn-success" href="PesquisaProvaController?acao=visualizarProva&id=${prova.id}" >Mais informações</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
 
-        <div class="col-sm-3">
-            <h2>Inscrições</h2>
+                </c:forEach>
+            </div>
         </div>
-        <div class="col-sm-6">
-            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <jsp:include page="footer.jspf"/>
+    </body>
+
+</head>
 
 
-        </div> <!-- /#top -->
-       
-        <div id="list" class="row">
-            <div class="table-responsive col-md-12">
-                <table class="table table-striped" cellspacing="0" cellpadding="0" >
-                    <thead>
-                        <tr>
-
-                            <th>Número da inscrição</th>
-                            <th> Corridas </th>
-
-                           
-
-                        </tr>   
-                        </thread>
-                  <tbody id="idTable">
-                        <c:forEach items="${inscricaoAtleta}" var="inscricaoAtleta">
-                            <tr> 
-                                <td> <c:out value="${inscricaoAtleta.numeroPeito}"/> </td>
-                                <td>
-                                    <c:forEach items="${provas}" var="provas">
-
-                                        <c:if test="${provas.id == inscricaoAtleta.idProva}">${provas.nomeProva} </c:if>
-                                    </c:forEach> 
+</html>
 
 
-
-                                </td>
-                                   </tr>
-                        </c:forEach>
-                  </tbody>
-                </table>
-
-
-                </body>
-                </html>

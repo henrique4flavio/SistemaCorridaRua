@@ -24,7 +24,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">Sistema de Corrida de Rua</a>
+                <a class="navbar-brand" href="PesquisaProvaController?acao=gridProvas">Sistema de Corrida de Rua</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,7 +40,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="manterAtleta.jsp"> <span class="glyphicon glyphicon-user"></span> Registrar-se</a>
+                            <a class="nav-link" href="registro.jsp"> <span class="glyphicon glyphicon-user"></span> Registrar-se</a>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +48,6 @@
         </nav>
         <br>    <br>
 
-<<<<<<< HEAD
         <div class="container">
             <div class="card card-login mx-auto mt-5">
                  <c:if test="${msgErro != null}">
@@ -76,29 +75,10 @@
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </form>
                     <div class="text-center">
-                        <a class="d-block small mt-3" href="manterAtleta.jsp">Registrar-se</a>
+                        <a class="d-block small mt-3" href="registro.jsp">Registrar-se</a>
                         <a class="d-block small" href="recuperaSenha.jsp">Esqueci minha senha?</a>
                     </div>
                 </div>
-=======
-  <div class="container">
-    <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Login</div>
-      <div class="card-body">
-        <form action="LoginController?acao=logar" method="post" name="frmLogar">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Login</label>
-            <input class="form-control" id="login" required name="login" type="text"  placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Senha</label>
-            <input class="form-control" id="senha" required name="senha" type="password" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Lembrar Senha</label>
->>>>>>> parent of be06671... up
             </div>
         </div>
         <!-- Bootstrap core JavaScript-->
