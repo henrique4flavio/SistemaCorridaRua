@@ -73,6 +73,7 @@
                 <table class="table table-striped" cellspacing="0" cellpadding="0">
                     <thead>
                         <tr>
+                            <th>Nome do Atleta</th>
                             <th>Classificação</th>
                             <th>Atleta</th>
                             <th> Categoria</th>
@@ -82,7 +83,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${resultadoProvas}" var="resultadoProvas">
+                        <c:forEach items="${resultadoProva}" var="resultadoProvas">
                             <tr>
                                 <td><c:out value = "${resultadoProvas.classificacao}" /></td>
                                 <td><c:out value = "${resultadoProvas.nomeAtleta}" />
