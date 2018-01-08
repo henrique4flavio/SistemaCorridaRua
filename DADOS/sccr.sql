@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 07, 2018 at 05:31 AM
+-- Generation Time: Jan 08, 2018 at 11:11 PM
 -- Server version: 5.7.19-log
 -- PHP Version: 7.1.8
 
@@ -346,31 +346,31 @@ INSERT INTO `ranking` (`id`, `nome`) VALUES
 
 CREATE TABLE `resultadoprovas` (
   `id` int(11) NOT NULL,
-  `nomeAtleta` varchar(45) NOT NULL,
-  `numeroPeito` int(11) NOT NULL,
-  `tempo` varchar(45) NOT NULL,
-  `categoria` varchar(45) NOT NULL,
-  `classificacao` int(11) NOT NULL,
-  `sexo` varchar(45) NOT NULL,
-  `prova` varchar(45) NOT NULL
+  `nomeAtleta` varchar(45) DEFAULT NULL,
+  `numeroPeito` int(11) DEFAULT NULL,
+  `categoria` varchar(45) DEFAULT NULL,
+  `classificacao` int(11) DEFAULT NULL,
+  `sexo` varchar(45) DEFAULT NULL,
+  `prova` varchar(45) DEFAULT NULL,
+  `tempo` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `resultadoprovas`
 --
 
-INSERT INTO `resultadoprovas` (`id`, `nomeAtleta`, `numeroPeito`, `tempo`, `categoria`, `classificacao`, `sexo`, `prova`) VALUES
-(1, 'lais', 1523, '45Minutos', 'adulto', 5, 'Feminino', 'Asconcer'),
-(2, 'Lais Alves da Silva', 1569, '10min', 'adulto', 2, 'Feminino', 'Asconcer'),
-(3, 'Romulo Oliveira ', 1669, '30min', 'idoso', 6, 'maculino', 'Asconcer '),
-(4, 'Giovane Silva ', 55698, '30min', 'infantil', 6, 'maculino', 'Asconcer '),
-(5, 'Romulo Oliveira ', 5511000, '60min', 'idoso', 16, 'masculino', 'asconcer'),
-(6, 'Alice', 99, '60min', 'infantil', 16, 'feminino', 'asconcer'),
-(7, 'Camila Rodrigues', 558920, '55minutos', 'infantil', 6, 'feminino', 'Asconcer'),
-(8, 'Millena Silva', 210, '1h40minutos', 'idoso', 8, 'feminino', 'Asconcer'),
-(9, 'Gilberto Magahaes Pereira', 502020, '1h55minutos', 'adulto', 10, 'masculino', 'Asconcer'),
-(10, 'carolina machado da silva', 502020, '2h30minutos', 'adulto', 30, 'feminino', 'Asconcer'),
-(12, 'Mateus Siquiera Mombache ', 226589, '3h55minutos', 'infantil', 60, 'masculino', 'Asconcer');
+INSERT INTO `resultadoprovas` (`id`, `nomeAtleta`, `numeroPeito`, `categoria`, `classificacao`, `sexo`, `prova`, `tempo`) VALUES
+(1, 'lais', 1523, 'adulto', 5, 'Feminino', 'Asconcer', 0),
+(2, 'Lais Alves da Silva', 1569, 'adulto', 2, 'Feminino', 'Asconcer', 0),
+(3, 'Romulo Oliveira ', 1669, 'idoso', 6, 'maculino', 'Asconcer ', 0),
+(4, 'Giovane Silva ', 55698, 'infantil', 6, 'maculino', 'Asconcer ', 0),
+(5, 'Romulo Oliveira ', 5511000, 'idoso', 16, 'masculino', 'asconcer', 0),
+(6, 'Alice', 99, 'infantil', 16, 'feminino', 'asconcer', 0),
+(7, 'Camila Rodrigues', 558920, 'infantil', 6, 'feminino', 'Asconcer', 0),
+(8, 'Millena Silva', 210, 'idoso', 8, 'feminino', 'Asconcer', 0),
+(9, 'Gilberto Magahaes Pereira', 502020, 'adulto', 10, 'masculino', 'Asconcer', 0),
+(10, 'carolina machado da silva', 502020, 'adulto', 30, 'feminino', 'Asconcer', 0),
+(12, 'Mateus Siquiera Mombache ', 226589, 'infantil', 60, 'masculino', 'Asconcer', 0);
 
 -- --------------------------------------------------------
 
@@ -502,7 +502,7 @@ ALTER TABLE `inscricao`
 -- AUTO_INCREMENT for table `resultadoprovas`
 --
 ALTER TABLE `resultadoprovas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100000000;
 --
 -- AUTO_INCREMENT for table `resultadoranking`
 --

@@ -13,14 +13,14 @@
     <body>
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Sistema de Corrida de Rua</a>
+        <a class="navbar-brand" href="PesquisaProvaController?acao=gridProvas">Sistema de Corrida de Rua</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="PesquisaProvaController?acao=gridProvas">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -128,8 +128,8 @@
                 </div>
                 
             </div>
-       
-                        <a href="ManterInscricaoController?acao=prepararIncluir&prova_id=${prova.id}" class="btn btn-success btn-lg" role="button"> Inscrever-se</a>
+     <c:if test="${usuario.id == null}"> <a href="login.jsp" class="btn btn-success btn-lg" role="button"> Inscrever-se</a>  </c:if> 
+     <c:if test="${usuario.id != null}"> <a href="ManterInscricaoController?acao=prepararIncluir&prova_id=${prova.id}" class="btn btn-success btn-lg" role="button"> Inscrever-se</a>  </c:if>   
             
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL1SURBVGhD7dlZyExhHMfxsS8XyL5lT5GtlJAtkSUlXHlTXLkSZb9wqSy5EVFKolyQG3vInpIUCldSliwpZN/C9/dOTz09/c/M0JxnzmF+9akz03k7/+fMeZbzvIV66vk3MxAH8RY/cBtLkKsMw2v8MmxDbnINViOcsch8+sAq3rcdmc8YWMX7DiPz6Y6fsBrgbEHN0hrNiodlcwpWA0QjmAaD6GmDHfiOT7gCjTwL0AtWeuMhwkbol1qB6BmBewgL8j3FEazCKLh0wmbcgRp1FJMRNU2gO/cZVvFJdMcPYRBqnm4o9YxX4is2oGaZiRcIC9OdVr+YiK14gPAcSwOiZyWsYfM5ZiCM+s91hOf71HeipgU0IoWFnEBXWBmMLwj/xncAUdMUr+AKUCdfDnX6pJyDX7RlGqJHQ6PmiGMYri9KZCGswn1XobRH8+JhtqLCnsEq3jcVykbMLx5mK5rlrcJ9l6FoUnyHC42fMpTR0FrJKt43Bcom6LNGw6H6IgvRgHADYdGh81C64D3c9/uhGxEaCa3nomUp/IKTTIDSGdaQbtEkHO0XewKrCN9Z+NkD6zzLLqSeHrAuHhoPP1o8foN1bmgdUk87WMsX32Po5SvMPFzEzQRa5mj91gpRchpWA3yaBDsic9GMvLh4WOiLSvrJfejcTGU19G4xrvFT8W7vQ7nHTDO//7ZY0wzAB6gwbXvOhYveS+4ibIBPM/p0pJoOmAStTpNYq1vtR7k+0BLr8RHheY5GLDfLVz1zoLtlXbicW1AD/PTDcVjnS2qbcY9gXbAczdKlZl+tcK3BQH2q6tGL0p/ujDjLUC47Ef5davtYWryFFytnN0q9LbpYu/Cp7WVpBl0LPdfq0EnOYC9moZJoO9WNco6Gaa0KcpUh8Bsh2jbKXRYhbEj07aBqRBt4YUNqutv4t9F7edgQzVm5ika0Nwgb0hO5Sn+EjXiJ3EVvgmFDTiJ30aN1Ca4Rmj9mI5dpizXQMiX6f6bqqef/TaHwG14j8o3n++h2AAAAAElFTkSuQmCC">
         </div>

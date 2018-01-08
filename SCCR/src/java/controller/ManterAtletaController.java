@@ -89,7 +89,7 @@ public class ManterAtletaController extends HttpServlet {
 
         try {
             atleta.excluir();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaAtletaController");
+            RequestDispatcher view = request.getRequestDispatcher("LoginController?acao=logout");
             view.forward(request, response);
         } catch (IOException ex) {
 
@@ -194,7 +194,7 @@ public class ManterAtletaController extends HttpServlet {
         try {
             Atleta atleta = new Atleta(id, nome, dataNascimento, apelido, cpf, tamCamisa, sexo, telefoneFixo, telefoneCelular, rua, bairro, cidade, estado, pais, login, senha, email);
             atleta.alterar();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaAtletaController");
+            RequestDispatcher view = request.getRequestDispatcher("atletaHome.jsp");
             view.forward(request, response);
         } catch (IOException ex) {
 
