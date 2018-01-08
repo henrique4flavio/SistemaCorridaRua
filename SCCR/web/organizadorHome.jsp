@@ -55,15 +55,15 @@
               <a href="PesquisaProvaController?acao=listarProvas">Manter Provas</a>
             </li>
             <li>
-<<<<<<< HEAD
-              <a href="PesquisaPercursoController?acao=">Manter Percursos</a>
-=======
-              <a href="PesquisaPercursoController?acao=prepararEditar">Manter Percursos</a>
->>>>>>> 07141d127879456c88c0206e68509662e34f3ff1
+
+              <a href="PesquisaPercursoController">Manter Percursos</a>
+
+              
+
             </li>
             
             <li>
-              <a href="PesquisaLoteController?acao=prepararEditar">Manter Lotes</a>
+              <a href="PesquisaLoteController">Manter Lotes</a>
             </li>
             
             
@@ -80,16 +80,13 @@
               <a href="PesquisaKitController">Manter Kits</a>
             </li>
             <li>
-              <a href="PesquisaItensController">Manter Itens</a>
+              <a href="PesquisaItemController">Manter Itens</a>
             </li> 
           </ul>
          </li>
         
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-             <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Rankings</span>
-          </a>
+          
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
               <a href="cards.html">Manter Rankings</a>
@@ -217,7 +214,7 @@
               </div>
               <div class="mr-5">Importar Resultado Provas</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="ManterResultadoProvasController?acao=importarResultadoProvas">
+            <a class="card-footer text-white clearfix small z-1" href="PesquisaInscricaoControlle">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -227,6 +224,23 @@
         </div>  
        
       </div>
+       
+          <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-danger o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-list"></i>
+              </div>
+              <div class="mr-5">Listar Inscrições Atletas</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="PesquisaInscricaoController">
+              <span class="float-left">View Details</span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
       <!-- Area Chart Example-->
      
       <!-- Example DataTables Card-->
@@ -282,34 +296,6 @@
   </div>
 
 
-            <div class="panel-title">
-                <h3><span class="glyphicon glyphicon-user"></span> <strong>Bem Vindo(a) <%=nome%></strong> </h3>
-
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-10">
-                            <a href="PesquisaProvaController?acao=listarProvas" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Minhas Provas</a>
-                           <a href="PesquisaRankingController" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Cadastrar Rankings</a> 
-                            <a href="PesquisaInscricaoController" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> <br/>Listar Inscrições</a> 
-                            <a href="PesquisaElementoKitController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-th-list"></span> </br>Manter elementos kits</a>
-
-
-                            <a href="PesquisaElementoKitController"cl <a href="PesquisaLoteController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> </br>Manter lotes</a>
-
-                             <a href="PesquisaPercursoController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter percursos</a>
-                            <a href="PesquisaProvaController?acao=listarProvas"class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-list"></span> </br>Manter provas</a> <br><br>
-
-        <a href="PesquisaPagamentoController"class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> </br>Controle Pagamento</a>
-
-
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
         </div>
 
 
