@@ -29,14 +29,14 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Sistema de Corrida de Rua</a>
+    <a class="navbar-brand" href="organizadorHome.jsp">Sistema de Corrida de Rua</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="organizadorHome.jsp">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Painel Administrativo</span>
           </a>
@@ -55,16 +55,18 @@
               <a href="PesquisaProvaController?acao=listarProvas">Manter Provas</a>
             </li>
             <li>
+<<<<<<< HEAD
               <a href="PesquisaPercursoController?acao=">Manter Percursos</a>
+=======
+              <a href="PesquisaPercursoController?acao=prepararEditar">Manter Percursos</a>
+>>>>>>> 07141d127879456c88c0206e68509662e34f3ff1
             </li>
             
             <li>
-              <a href="navbar.html">Manter Lotes</a>
+              <a href="PesquisaLoteController?acao=prepararEditar">Manter Lotes</a>
             </li>
             
-            <li>
-              <a href="navbar.html">Manter Resultados</a>
-            </li>
+            
           </ul>
         </li>
         
