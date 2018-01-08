@@ -1,7 +1,7 @@
 <%-- 
-    Document   : confirmacaoInscricao
-    Created on : 25/12/2017, 22:32:01
-    Author     : LaisAlves
+    Document   : manterPagamento
+    Created on : 07/01/2018, 23:27:42
+    Author     : flavi
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
