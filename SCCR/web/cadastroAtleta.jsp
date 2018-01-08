@@ -1,8 +1,4 @@
-<%-- 
-    Document   : cadastroAtleta
-    Created on : 22/11/2017, 13:44:51
-    Author     : Familia
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -5,14 +5,9 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class Inscricao {
-
-    private String formaPagamento;
-
-    private int pago;
+ 
+    private Pagamento pagamento;
     
-    private int kitRetirado;
-
-
     // private Atleta cpf;
     //Variaveis do banco de dados
     private int id;
@@ -30,54 +25,44 @@ public class Inscricao {
     private String percurso_id;
 
     private String atleta_id;
- public Inscricao(int id,int numeroPeito,int pago, String formaPagamento, String total,String categoria,
-            String kit_id, String prova_id, String percurso_id, String atleta_id) {
-        
-        this.id = id;
-        this.numeroPeito =GerarNumeroPeito();
-        this.pago = pago;
-        this.formaPagamento = formaPagamento;
-        this.categoria = categoria;
-        this.kit_id = kit_id;
-        this.prova_id = prova_id;
-        this.percurso_id = percurso_id;
-        this.atleta_id = atleta_id;
-        this.total = total;
-        this.kitRetirado = kitRetirado;
-    }
- public Inscricao(int id,String formaPagamento, String total,String categoria,
+    
+ public Inscricao(int id,int numeroPeito, Pagamento pagamento, String total,String categoria,
             String kit_id, String prova_id, String percurso_id, String atleta_id) {
         
         this.id = id;
         this.numeroPeito = GerarNumeroPeito();
-        this.pago = pago;
-        this.formaPagamento = formaPagamento;
+        this.pagamento = pagamento;  
         this.categoria = categoria;
+        this.total = total;
+
+        
         this.kit_id = kit_id;
         this.prova_id = prova_id;
         this.percurso_id = percurso_id;
         this.atleta_id = atleta_id;
-        this.total = total;
-        this.kitRetirado = kitRetirado;
     }
-    public Inscricao(int id,int pago, String formaPagamento, String total,String categoria,
+ public Inscricao(int id,int numeroPeito,String categoria,Pagamento pagamento,
             String kit_id, String prova_id, String percurso_id, String atleta_id) {
         
         this.id = id;
-        this.numeroPeito = numeroPeito;
-        this.pago = pago;
-        this.formaPagamento = formaPagamento;
+        this.numeroPeito = GerarNumeroPeito();
+        this.pagamento = pagamento;
         this.categoria = categoria;
+        
         this.kit_id = kit_id;
         this.prova_id = prova_id;
         this.percurso_id = percurso_id;
         this.atleta_id = atleta_id;
-        this.total = total;
-        this.kitRetirado = kitRetirado;
-        this.numeroPeito=GerarNumeroPeito();
     }
 
-   
+    public Pagamento getPagamento() {
+        return pagamento;
+    }
+
+    public void setPagamento(Pagamento pagamento) {
+        this.pagamento = pagamento;
+    }
+    
     public int getId() {
         return id;
     }
@@ -94,13 +79,6 @@ public class Inscricao {
         this.total = total;
     }
 
-    public String getFormaPagamento() {
-        return formaPagamento;
-    }
-
-    public void setFormaPagamento(String formaPagamento) {
-        this.formaPagamento = formaPagamento;
-    }
 
     public String getKit_id() {
         return kit_id;
@@ -130,9 +108,6 @@ public class Inscricao {
         return percurso_id;
     }
 
-    public int getPago() {
-        return pago;
-    }
 
     public void setPercurso_id(String percurso_id) {
         this.percurso_id = percurso_id;
@@ -146,12 +121,7 @@ public class Inscricao {
         this.atleta_id = atleta_id;
     }
 
-    public void setPago(int pago) {
-        this.pago = pago;
-    }
-    public int isKitRetirado() {
-        return kitRetirado;
-    }
+  
     
     public String getCategoria() {
         return categoria;
@@ -194,15 +164,7 @@ public class Inscricao {
 
     }
 
-    public int getKitRetirado() {
-        return kitRetirado;
-    }
-
-    public void setKitRetirado(int kitRetirado) {
-        this.kitRetirado = kitRetirado;
-    }
-    
-    
+   
     public static List<Inscricao> obterInscricoesPagas(int prova_id) throws ClassNotFoundException {
         return InscricaoDAO.obterInscricoesPagas(prova_id);
     }

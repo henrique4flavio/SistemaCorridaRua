@@ -1,64 +1,107 @@
 package modelo;
 
-public abstract class Pagamento {
+import dao.PagamentoDAO;
+import java.sql.SQLException;
+import java.util.List;
 
-    private int id;
-    private Inscricao inscricao;
-    private Prova inscricaoProva;
-    private int inscricao_id;
-    private int inscricaoProva_id;
+public class Pagamento {
 
-    Pagamento(int id, Inscricao inscricao, Prova inscricaoProva) {
-        this.id = id;
-        this.inscricao = inscricao;
-        this.inscricaoProva = inscricaoProva;
+    private int codPagamento;
+    private float valorTotal;
+    private boolean status;
+    private String tipoPagamento;
+    private String codigoBarra;
+
+    public Pagamento(int codPagamento, float valorTotal, boolean status, String tipoPagamento, String codigoBarra) {
+        this.codPagamento = codPagamento;
+        this.valorTotal = valorTotal;
+        this.status = status;
+        this.tipoPagamento = tipoPagamento;
+        this.codigoBarra = codigoBarra;
     }
 
-    Pagamento(Inscricao inscricao, Prova inscricaoProva) {
-        this.inscricao = inscricao;
-        this.inscricaoProva = inscricaoProva;
+    public Pagamento(int codPagamento, float valorTotal, String tipoPagamento, String codigoBarra) {
+        this.codPagamento = codPagamento;
+        this.valorTotal = valorTotal;
+        this.tipoPagamento = tipoPagamento;
+        this.codigoBarra = codigoBarra;
     }
 
-    public int getId() {
-        return id;
+    public Pagamento(int codPagamento) {
+        this.codPagamento = codPagamento;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Pagamento(int codPagamento, String codBarras) {
+        this.codPagamento = codPagamento;
+        this.codigoBarra = codBarras;
     }
 
-    public Inscricao getInscricao() {
-        return inscricao;
+    public String getTipoPagamento() {
+        return tipoPagamento;
     }
 
-    public void setInscricao(Inscricao inscricao) {
-        this.inscricao = inscricao;
+    public void setTipoPagamento(String tipoPagamento) {
+        this.tipoPagamento = tipoPagamento;
     }
 
-    public int getInscricao_id() {
-        return inscricao_id;
+    public String getCodigoBarra() {
+        return codigoBarra;
     }
 
-    public void setInscricao_id(int inscricao_id) {
-        this.inscricao_id = inscricao_id;
+    public void setCodigoBarra(String codigoBarra) {
+        this.codigoBarra = codigoBarra;
     }
 
-    public Prova getInscricaoProva() {
-        return inscricaoProva;
+    public int getCodPagamento() {
+        return codPagamento;
     }
 
-    public void setInscricaoProva(Prova inscricaoProva) {
-        this.inscricaoProva = inscricaoProva;
+    public void setCodPagamento(int codPagamento) {
+        this.codPagamento = codPagamento;
     }
 
-    public int getInscricaoProva_id() {
-        return inscricaoProva_id;
+    public float getValorTotal() {
+        return valorTotal;
     }
 
-    public void setInscricaoProva_id(int inscricaoProva_id) {
-        this.inscricaoProva_id = inscricaoProva_id;
+    public void setValorTotal(float valorTotal) {
+        this.valorTotal = valorTotal;
     }
-    
-    public abstract void confirmarPagamento();
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public static List<Pagamento> obterPagamento()
+            throws ClassNotFoundException {
+        return PagamentoDAO.obterPagamentos();
+    }
+
+    public void gravar() throws SQLException,
+            ClassNotFoundException {
+        PagamentoDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException,
+            ClassNotFoundException {
+        PagamentoDAO.alterar(this);
+    }
+
+    public void excluir() throws SQLException,
+            ClassNotFoundException {
+        PagamentoDAO.excluir(this);
+    }
+
+    public static Pagamento obterPagamento(int codPagamento) throws ClassNotFoundException {
+        return PagamentoDAO.obterPagamento(codPagamento);
+    }
+
+    public static void alterarStatus(int codigoBarra) throws SQLException,
+            ClassNotFoundException {
+        PagamentoDAO.alterarStatus(codigoBarra);
+    }
 }
