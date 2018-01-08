@@ -125,8 +125,13 @@
         <servlet-class>controller.PesquisaPagamentoController</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< HEAD
+        <servlet-name>EntregaDeKitController</servlet-name>
+        <servlet-class>controller.PesquisaEntregaDeKitController</servlet-class>
+=======
         <servlet-name>ManterPagamentoController</servlet-name>
         <servlet-class>controller.ManterPagamentoController</servlet-class>
+>>>>>>> 6a607e4503a44b5c4f5c65960603a6a2b91780ea
     </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
@@ -253,8 +258,13 @@
         <url-pattern>/PesquisaPagamentoController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+<<<<<<< HEAD
+        <servlet-name>EntregaDeKitController</servlet-name>
+        <url-pattern>/EntregaDeKitController</url-pattern>
+=======
         <servlet-name>ManterPagamentoController</servlet-name>
         <url-pattern>/ManterPagamentoController</url-pattern>
+>>>>>>> 6a607e4503a44b5c4f5c65960603a6a2b91780ea
     </servlet-mapping>
     <session-config>
         <session-timeout>

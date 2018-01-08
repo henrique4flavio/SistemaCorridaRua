@@ -41,6 +41,7 @@
     </head>
     <body>
          <c:if test="${operacao != null}">
+             
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
