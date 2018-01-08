@@ -48,6 +48,7 @@
         </nav>
         <br>    <br>
 
+<<<<<<< HEAD
         <div class="container">
             <div class="card card-login mx-auto mt-5">
                  <c:if test="${msgErro != null}">
@@ -79,6 +80,25 @@
                         <a class="d-block small" href="recuperaSenha.jsp">Esqueci minha senha?</a>
                     </div>
                 </div>
+=======
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+        <form action="LoginController?acao=logar" method="post" name="frmLogar">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Login</label>
+            <input class="form-control" id="login" required name="login" type="text"  placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Senha</label>
+            <input class="form-control" id="senha" required name="senha" type="password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Lembrar Senha</label>
+>>>>>>> parent of be06671... up
             </div>
         </div>
         <!-- Bootstrap core JavaScript-->

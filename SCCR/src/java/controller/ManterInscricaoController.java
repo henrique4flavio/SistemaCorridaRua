@@ -182,8 +182,7 @@ int pago;
         
         //int pago=0;
         String categoria = request.getParameter("optCategoria");
-        int numero = 222;
-        Inscricao inscricao = new Inscricao(id,pago,formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
+        Inscricao inscricao = new Inscricao(id,categoria, kit_id, prova_id, percurso_id, atleta_id);
 
         try {
             inscricao.gravar();
