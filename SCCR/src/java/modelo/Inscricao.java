@@ -7,9 +7,16 @@ import java.util.*;
 public class Inscricao {
  
     private Pagamento pagamento;
-    
+
     // private Atleta cpf;
     //Variaveis do banco de dados
+    private Atleta atleta;
+    private Percurso percurso;
+    private Prova prova;
+    private Kit kit;
+    
+    
+    
     private int id;
     
     private int numeroPeito;
@@ -26,33 +33,39 @@ public class Inscricao {
 
     private String atleta_id;
     
- public Inscricao(int id,int numeroPeito, Pagamento pagamento, String total,String categoria,
-            String kit_id, String prova_id, String percurso_id, String atleta_id) {
+    private int codPagamento;
+
+    
+ public Inscricao(int id,int numeroPeito, String categoria,String total,Pagamento pagamento,
+            Kit kit, Prova prova, Percurso percurso, Atleta atleta) {
         
         this.id = id;
         this.numeroPeito = GerarNumeroPeito();
-        this.pagamento = pagamento;  
         this.categoria = categoria;
         this.total = total;
-
         
-        this.kit_id = kit_id;
-        this.prova_id = prova_id;
-        this.percurso_id = percurso_id;
-        this.atleta_id = atleta_id;
+        this.pagamento = pagamento;
+        this.atleta = atleta;
+        this.percurso = percurso;
+        this.prova = prova;
+        this.kit = kit;
+     
+        
     }
- public Inscricao(int id,int numeroPeito,String categoria,Pagamento pagamento,
-            String kit_id, String prova_id, String percurso_id, String atleta_id) {
+        
+    
+ public Inscricao(int id,int numeroPeito,String categoria,
+            Kit kit, Prova prova, Percurso percurso, Atleta atleta) {
         
         this.id = id;
         this.numeroPeito = GerarNumeroPeito();
-        this.pagamento = pagamento;
-        this.categoria = categoria;
+        this.categoria = categoria;         
         
-        this.kit_id = kit_id;
-        this.prova_id = prova_id;
-        this.percurso_id = percurso_id;
-        this.atleta_id = atleta_id;
+        this.pagamento = pagamento;
+        this.atleta = atleta;
+        this.percurso = percurso;
+        this.prova = prova;
+        this.kit = kit;
     }
 
     public Pagamento getPagamento() {
@@ -78,7 +91,13 @@ public class Inscricao {
     public void setTotal(String total) {
         this.total = total;
     }
+    public int getCodPagamento() {
+        return codPagamento;
+    }
 
+    public void setCodPagamento(int codPagamento) {
+        this.codPagamento = codPagamento;
+    }
 
     public String getKit_id() {
         return kit_id;
@@ -108,6 +127,38 @@ public class Inscricao {
         return percurso_id;
     }
 
+    public Atleta getAtleta() {
+        return atleta;
+    }
+
+    public void setAtleta(Atleta atleta) {
+        this.atleta = atleta;
+    }
+
+    public Percurso getPercurso() {
+        return percurso;
+    }
+
+    public void setPercurso(Percurso percurso) {
+        this.percurso = percurso;
+    }
+
+    public Prova getProva() {
+        return prova;
+    }
+
+    public void setProva(Prova prova) {
+        this.prova = prova;
+    }
+
+    public Kit getKit() {
+        return kit;
+    }
+
+    public void setKit(Kit kit) {
+        this.kit = kit;
+    }
+
 
     public void setPercurso_id(String percurso_id) {
         this.percurso_id = percurso_id;
@@ -132,14 +183,13 @@ public class Inscricao {
     }
 
     
-    
 
     public static List<Inscricao> obterInscricoes()
             throws ClassNotFoundException {
         return InscricaoDAO.obterInscricoes();
 
     }
-
+    
     public void gravar() throws SQLException, ClassNotFoundException {
 
         InscricaoDAO.gravar(this);
@@ -158,26 +208,12 @@ public class Inscricao {
         return InscricaoDAO.obterInscricao(id);
     }
 
-    public static List<Inscricao> pesquisaInscricao(String numero)
-            throws ClassNotFoundException, SQLException {
-        return InscricaoDAO.pesquisaInscricao(numero);
-
-    }
-
-   
-    public static List<Inscricao> obterInscricoesPagas(int prova_id) throws ClassNotFoundException {
-        return InscricaoDAO.obterInscricoesPagas(prova_id);
-    }
-
-    public static List<Inscricao> obterInscricoesNaoPagas(int prova_id) throws ClassNotFoundException {
-        return InscricaoDAO.obterInscricoesNaoPagas(prova_id);
-    }
-    
-    
+  
     public int GerarNumeroPeito (){
         int valor = (int) (Math.random() * 199999999);
         return valor;
     }
+    
     
 
 }
