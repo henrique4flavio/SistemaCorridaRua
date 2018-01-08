@@ -45,7 +45,7 @@
             </li>
            
             <li class="nav-item">
-              <a class="nav-link" href="#"> <span class="glyphicon glyphicon-user"></span> Registrar-se</a>
+              <a class="nav-link" href="registro.jsp"> <span class="glyphicon glyphicon-user"></span> Registrar-se</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="login.jsp"> <span class="glyphicon glyphicon-user"></span> Entrar</a>

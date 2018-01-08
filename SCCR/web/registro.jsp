@@ -1,155 +1,110 @@
 
-
-<%@page import="modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
-<html>
-    <head>
-        <jsp:include page="bootstrap.jspf"/>
-        <title>Manter Atleta</title>
+<html lang="en">
 
-        <script> function validaSenha(input) {
-            if (input.value != document.getElementById('senha').value) {
-            input.setCustomValidity('Repita a senha corretamente');
-            } else {
-            input.setCustomValidity('');
-            }
-            }
-        </script>
-        <script> function validaEmail(input) {
-            if (input.value != document.getElementById('email').value) {
-            input.setCustomValidity('Repita o email corretamente');
-            } else {
-            input.setCustomValidity('');
-            }
-            }
-        </script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SB Admin - Start Bootstrap Template</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+  <!-- Custom styles for this template-->
+</head>
 
-        <script>
+<body class="bg-dark">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Sistema de Corrida de Rua</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Rankings</a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="manterAtleta.jsp"> <span class="glyphicon glyphicon-user"></span> Registrar-se</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br>    <br>
+    
+ <div class="container">
 
-            function sair((var operacao)) {
-            if (operacao == 'Excluir'){
-            window.setTimeout("location.href = 'LoginController?acao=logout'", 3500);
-            }
-            }
-        </script> 
-
-
-    </head>
-    <body>
-         <c:if test="${operacao != null}">
-             
-        <nav class="navbar navbar-inverse">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li> <c:if test="${tipo != null}"> <a href="${tipo}Home.jsp">Sistema de Corrida de Rua</a></c:if> 
-                            <c:if test="${tipo == null}"> <a href="index.jsp">Sistema de Corrida de Rua</a></c:if>
-                            </li>
-
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="PesquisaProvaController?acao=gridProvas" ><span class=" glyphicon glyphicon-th"></span>  Provas</a> </li>
-
-                            <li><a href="PesquisaResultadoRanking?acao=visualizarRanking"><span class="glyphicon glyphicon-list-alt"></span> Ranking</a> </li>
-                            <li><a href="PesquisaResultadoProvasController?acao=visualizarProvas" ><span class="
-                                                                                                         glyphicon glyphicon-expand"></span> Resultado Provas</a> </li>
-
-
-                            <li><a href="${tipo}Home.jsp"><span class="glyphicon glyphicon-user"></span> 
-                                <%
-                                    Usuario usuario = (Usuario) session.getAttribute("usuario");
-                                    String nome = usuario.getNome();
-                                %>
-                                <%=nome%> 
-
-                            </a> </li>
-
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-         </c:if>
-        
-         <c:if test="${operacao == null}">
-             <jsp:include page="barra_superior.jspf"/>
-         </c:if>
-
-
-
-        <div class="container">
-
-            <c:if test="${operacao == null}"> <h3><span class="glyphicon glyphicon-check"></span> Cadastre-se</h3><br></c:if>
-            <c:if test="${operacao == 'Editar'}"> <h3><span class="glyphicon glyphicon-edit"></span> Alterar dados</h3><br></c:if>
-            <c:if test="${operacao == 'Excluir'}"> <h3><span class="glyphicon glyphicon-floppy-remove"></span> Excluir Atleta</h3><br></c:if>
-            
-            <c:if test="${operacao == null}"> <form action="ManterAtletaController?acao=confirmarIncluir" method="post" name="frmManterAtleta"/></c:if>
-            <c:if test="${operacao == 'Editar'}"> <form action="ManterAtletaController?acao=confirmarEditar" method="post" name="frmManterAtleta"/></c:if>
-            <c:if test="${operacao == 'Excluir'}"> <form action="ManterAtletaController?acao=confirmarExcluir" method="post" name="frmManterAtleta"/></c:if>
-
+            <div class="card card-register mx-auto mt-5">
+      <div class="card-header">Register an Account</div>
+      <div class="card-body">
+          
+          <form action="ManterAtletaController?acao=confirmarIncluir" method="post" name="frmManterAtleta"/>
                     <div class="row">
                         <div class="col-md-2">
 
                             <label for="exampleInputEmail1">Código do Atleta:</label>
-                                <input type="text" required name="txtIdAtleta" class="form-control" value="${atleta.id}" <c:if test="${operacao != 'Incluir' && operacao!= null}"> readonly</c:if>>
+                                <input type="text" required name="txtIdAtleta" class="form-control" >
 
                         </div>
                         <div class="col-md-6">
                             <label for="exampleInputPassword1">Nome Completo:</label>
-                            <input type="text" required name="txtNomeAtleta" class="form-control" value="${atleta.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtNomeAtleta" class="form-control">
                         </div>
 
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Apelido:</label>
-                            <input type="text" name="txtApelido" class="form-control" value="${atleta.apelido}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" name="txtApelido" class="form-control">
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">CPF:</label>
-                            <input type="text" required name="txtCpf" class="form-control" value="${atleta.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtCpf" class="form-control">
                         </div>
 
                         <div class="col-md-2">
 
                             <label for="exampleInputPassword1">Sexo:</label>
-                            <select class="form-control" name="optSexo" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <option value="Masculino" <c:if test="${atleta.sexo == 'Masculino'}"> selected</c:if>>Masculino</option>
-                            <option value="Feminino" <c:if test="${atleta.sexo == 'Feminino'}"> selected</c:if>>Feminino</option>
+                            <select class="form-control" name="optSexo" >
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino" >Feminino</option>
                             </select>
 
                         </div>
 
                         <div class="col-md-2">
                             <label for="exampleInputPassword1">Data de Nascimento:</label>
-                            <input type="text" required name="txtDataNascimento" class="form-control" value="${atleta.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtDataNascimento" class="form-control">
                         </div>
 
 
 
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Tamanho da Camisa:</label>
-                            <select class="form-control" name="optTamanhoCamisa" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <option value="M" <c:if test="${tamCamisa == 'M'}"> selected</c:if>>M</option>
-                            <option value="P" <c:if test="${tamCamisa == 'P'}"> selected</c:if>>P</option>
-                            <option value="PP" <c:if test="${tamCamisa == 'PP'}"> selected</c:if>>PP</option>
-                            <option value="G" <c:if test="${tamCamisa == 'G'}"> selected</c:if>>G</option>
-                            <option value="GG" <c:if test="${tamCamisa == 'GG'}"> selected</c:if>>GG</option>
+                            <select class="form-control" name="optTamanhoCamisa">
+                            <option>M</option>
+                            <option>P</option>
+                            <option>PP</option>
+                            <option>G</option>
+                            <option>GG</option>
                             </select>
 
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Pais:</label>
-                            <select class="form-control" name="optPais" value="${atleta.pais}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <select class="form-control" name="optPais">
 
                                 <option value="2">África do Sul</option>
                                 <option value="4">Albânia</option>
@@ -401,19 +356,19 @@
 
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Cidade:</label>
-                            <input type="text" required name="txtCidadeAtleta" class="form-control" value="${atleta.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtCidadeAtleta" class="form-control">
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Estado:</label>
-                            <input type="text" required name="txtEstadoAtleta" class="form-control" value="${atleta.estado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtEstadoAtleta" class="form-control">
                         </div>
                         <div class="col-md-6">
                             <label for="exampleInputPassword1">Endereço:</label>
-                            <input type="text" required name="txtRuaAtleta" class="form-control" value="${atleta.rua}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtRuaAtleta" class="form-control">
                         </div>
                         <div class="col-md-6">
                             <label for="exampleInputPassword1">Bairro:</label>
-                            <input type="text" required name="txtBairroAtleta" class="form-control" value="${atleta.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtBairroAtleta" class="form-control" >
                         </div>
 
 
@@ -421,53 +376,60 @@
                     <div class="row">
                         <div class="col-md-2">
                             <label for="exampleInputPassword1">Telefone Fixo:</label>
-                            <input type="text" name="txtTelefoneFixo" class="form-control" value="${atleta.telefoneFixo}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" name="txtTelefoneFixo" class="form-control" >
                         </div>
                         <div class="col-md-2">
                             <label for="exampleInputPassword1">Telefone Celular:</label>
-                            <input type="text" name="txtTelefoneCelular" class="form-control" value="${atleta.telefoneCel}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" name="txtTelefoneCelular" class="form-control" >
                         </div>
 
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Email:</label>
-                            <input type="text" required name="txtEmail" class="form-control" value="${atleta.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtEmail" class="form-control" >
                         </div>
 
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Confirmar Email:</label>
-                            <input type="text" required id="email" name="txtEmail" class="form-control" oninput="validaEmail(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required id="email" name="txtEmail" class="form-control" oninput="validaEmail(this)">
                         </div>
 
 
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Login:</label>
-                            <input type="text" required name="txtLoginAtleta" class="form-control" value="${atleta.login}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="text" required name="txtLoginAtleta" class="form-control">
                         </div>
                         <div class="col-md-4">
                             <label>Senha:</label>
-                            <input type="password" required id="senha" name="txtSenhaAtleta" class="form-control" value="${atleta.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="password" required id="senha" name="txtSenhaAtleta" class="form-control">
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Confirmar Senha:</label>
-                            <input type="password" required name="txtValidadaSenha" class="form-control" oninput="validaSenha(this)" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <input type="password" required name="txtValidadaSenha" class="form-control" oninput="validaSenha(this)">
+                        <br> <br>
                         </div>
+                        
+                        
+                      <button type="submit" class="btn btn-primary btn-block">Registrar</button>
 
-                        <div class="col-md-6">
-                            <br>
-                            
-                            <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
-
-                            <a href="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</a>
-
-                        </div>
-                </form>                   
-            </div>
-        </div> <br><br>
-
-
-    <jsp:include page="footer.jspf"/>
+        </form>
+        
+          
+           
+      </div>
+    
+      
+      <center><a class="d-block small mt-3" href="login.html">Pagina de Login</a>
+          <a class="d-block small" href="forgot-password.html">Esqueci minha senha</a></center>
+     </div>
+  </div>
+ </div>
+    
+    <br><br> <br>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
 
 </html>
-
-
