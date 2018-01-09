@@ -57,42 +57,7 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-inverse">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li ><a href="index.jsp">Sistema de Corrida de Rua</a></li>
-
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="PesquisaProvaController?acao=gridProvas" ><span class=" glyphicon glyphicon-th"></span>  Provas</a> </li>
-
-                        <li><a href="PesquisaResultadoRanking?acao=visualizarRanking"><span class="glyphicon glyphicon-list-alt"></span> Ranking</a> </li>
-                        <li><a href="PesquisaResultadoProvasController?acao=visualizarProvas" ><span class="
-                                                                                                     glyphicon glyphicon-expand"></span> Resultado Provas</a> </li>
-
-
-                            <li><a href="${tipo}Home.jsp"><span class="glyphicon glyphicon-user"></span> 
-                                <%
-                                    Usuario usuario = (Usuario) session.getAttribute("usuario");
-                                    String nome = usuario.getNome();
-                                %>
-                                <%=nome%> 
-                                
-                            </a> </li>
-
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        
 
 
 
@@ -107,7 +72,7 @@
                     <div class="col-xs-8">
                         <div class="form-group">
                             <label >Código da Inscrição:</label>
-                            <input type="text" name="txtnumeroPeito" class="form-control" value="${inscricao.numeroPeito}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+                            <input type="text" name="txtid" class="form-control" value="${inscricao.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
                             </div>
                             <INPUT TYPE="hidden" NAME="optAtleta" value="${usuario.id}">
                                  <div class="form-group">
@@ -169,8 +134,8 @@
 
                         <div class="form-group">
                             <label> Escolha a Forma de Pagamento:  </label>
-                            <label> <input type="radio"  name="optFormaPagamento" id="mostra_aba1" value="Cartão de Credito" onchange="mostrar_abas(this)" /> Cartão de credito </label>
-                            <label> <input type="radio"  name="optFormaPagamento" id="mostra_aba2" value="Boleto Bancário"onchange="mostrar_abas(this)" /> Boleto Bancario </label>
+                            <label> <input type="radio"  name="optFormaPagamento" id="mostra_aba1" value="1" onchange="mostrar_abas(this)" /> Cartão de credito </label>
+                            <label> <input type="radio"  name="optFormaPagamento" id="mostra_aba2" value="0"onchange="mostrar_abas(this)" /> Boleto Bancario </label>
 
                         </div>
 
@@ -184,16 +149,9 @@
                                     <input type="text" name="" class="form-control" value="${inscricao.numeroPeito}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
                                 </div>
                             </div>
-
-                            <div id="div_aba1" style="display:none;">
-
-
-                                <div class="row">
-
-
-
-
-                                    <!-- CREDIT CARD FORM STARTS HERE -->
+  <div id="div_aba1" style="display:none;">
+                                
+                                <!-- CREDIT CARD FORM STARTS HERE -->
 
                                     <h3 class="panel-title display-td" >Dados do Cartão</h3>
 
@@ -204,7 +162,7 @@
                                     <div class="panel-body">
                                         <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
                                             <div class="row">
-                                                <div class="col-xs-12">
+                                                <div class="col-md-9">
                                                     <div class="form-group">
                                                         <label for="cardNumber">Número do Cartão</label>
                                                         <div class="input-group">
@@ -215,14 +173,14 @@
                                                                 placeholder="Numero do cartão"
                                                                 autocomplete="cc-number"
 
-                                                                />
+                                                               
                                                             <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
                                                         </div>
                                                     </div>                            
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-xs-7 col-md-7">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="cardExpiry"><span class="hidden-xs">Data de Validade</span><span class="visible-xs-inline">EXP</span> </label>
                                                         <input 
@@ -232,10 +190,10 @@
                                                             placeholder="MM/AA"
                                                             autocomplete="cc-exp"
 
-                                                            />
+                                                          
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-5 col-md-5 pull-right">
+                                                <div class="col-md-7">
                                                     <div class="form-group">
                                                         <label for="cardCVC">Codigo de Segurança</label>
                                                         <input 
@@ -249,18 +207,18 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-xs-12">
+                                            
+                                                <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="couponCode">Nome como no cartão</label>
                                                         <input type="text" class="form-control" name="couponCode" />
                                                     </div>
                                                 </div>                        
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xs-12">
+                                          
+                                            
+                                                <div class="col-md-7">
+             <a class="nav-link btn btn-success btn-block" data-toggle="modal" data-target="#exampleModal" href="login.html">Pagar com Cartão</a>
 
-            <butto name="buttonPagamento"class="subscribe btn btn-success btn-lg btn-block" type="button">Pagar R$</button>
 
 
                                                 </div>
@@ -271,48 +229,79 @@
                                                     <p class="payment-errors"></p>
                                                 </div>
                                             </div>
-                                        </form>
+                                       
                                     </div>
                                 </div>
                             </div>
                             <INPUT TYPE="hidden" NAME="prova_id" value="${prova_id.id}">
-
-
+   
                         <div class="form-group">
                            
                             <input type="hidden" id="txtTotal" name="txtTotal" class="form-control" value="${inscricao.total}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                                 <br>
-                                <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
-                               
-                              <a href="ManterInscricaoController?acao=visualizarPagamento" class="btn btn-default">Proximo</a>
-                                <a href="PesquisaAdministradorController" class="btn btn-default">Cancelar</a>
-
-                                </form>                   
-                            </div>
+                                
+                                <br>
+                                <button type="submit" name="btnConfirmar" class="btn btn-success" value="Confirmar">Finalizar</button>
                         </div>
-                </div>
 
+                        
+                                <a href="PesquisaAdministradorController" class="btn btn-default">Cancelar</a>
+                            
+                            </form>                     
+                            </div>
+                       
+					   </form>
+                        <br> <br>
                 <div class="col-md-3">
-                    <div class="sidebar-nav-fixed pull-right affix">
+                    <span class="border-0">
                         <div class="well">
                             <ul class="nav ">
                                 <li class="nav-header"><h4>Resumo do pedido:</li>
 
                                 </li>
                                 <li class="nav-header">${prova_id.nomeProva}</li>
-        <li>Prova: R$ <span id="mostraProva">${prova_id.valorTotal}</span>
+        <li>: R$ <span id="mostraProva">${prova_id.valorTotal}</span>
                             </li>
-                            <li>Kit: 
+                            <li> Kit: 
                                 <span id="mostraKit"> </span>
                             </li>
                             <li><h4>Total:<span id="mostraTotal"></span>  </h4>
                             </li>
                         </ul>
                     </div>
+                            <br> <br
+                                <br> <br
                     <!--/.well -->
-                </div>
+                </span></div>
                 <!--/sidebar-nav-fixed -->
-            </div>
         </div>
-    </body>
+		 </form>
+              <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Pagamento Efetuado com Sucesso!</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Pressione "Finalizar" logo abaixo para concluir sua inscrição.</div>
+          <div class="modal-footer">
+            <button class="btn btn-success" type="button" data-dismiss="modal">Fechar</button>
+           
+          </div>
+        </div>
+      </div>
+    </div>               
+                            
+    
+    
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+</body>
+
 </html>

@@ -22,7 +22,7 @@ import modelo.Lote;
 public class ManterInscricaoController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         if(acao.equals("visualziarPagamento")){
             visualizarPagamento(request,response);
@@ -40,10 +40,10 @@ public class ManterInscricaoController extends HttpServlet {
                         confirmarExcluir(request, response);
                     } else {
                         if (acao.equals("prepararEditar")) {
-                            prepararEditar(request, response);
+                            prepararPagar(request, response);
                         } else {
-                            if (acao.equals("confirmarEditar")) {
-                                confirmarEditar(request, response);
+                            if (acao.equals("pagar")) {
+                                pagarInscricao(request, response);
                             } else {
                                 if (acao.equals("escolherProva")) {
                                     escolherProva(request, response);
@@ -110,10 +110,10 @@ public class ManterInscricaoController extends HttpServlet {
 
     }
 
-    public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) {
+    public void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException {
         int id = Integer.parseInt(request.getParameter("txtnumeroPeito"));
         String total = request.getParameter("txtTotal");
-        Boolean pago = Boolean.parseBoolean(request.getParameter("optPago"));
+        int pago = Integer.parseInt(request.getParameter("optPago"));
         Boolean kitRetirado = Boolean.parseBoolean(request.getParameter("optKitRetirado"));
         String formaPagamento = request.getParameter("optFormaPagamento");
         String kit_id = request.getParameter("optKit");
@@ -122,20 +122,17 @@ public class ManterInscricaoController extends HttpServlet {
         String percurso_id = request.getParameter("optPercurso");
         String atleta_id = request.getParameter("optAtleta");
 
-        Inscricao inscricao = new Inscricao(id,formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
-
-        try {
+        Inscricao inscricao = new Inscricao(id, pago, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
+      {
             inscricao.excluir();
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
-            view.forward(request, response);
-        } catch (IOException ex) {
-
-        } catch (SQLException ex) {
-
-        } catch (ClassNotFoundException ex) {
-
-        } catch (ServletException ex) {
-
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
+            } 
         }
     }
 
@@ -164,26 +161,34 @@ public class ManterInscricaoController extends HttpServlet {
     }
 
     public void confirmarIncluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-int pago;
+        int pago = 1;
         String kit_id = request.getParameter("optKit");
         String prova_id = request.getParameter("prova_id");
         String percurso_id = request.getParameter("optPercurso");
         String atleta_id = request.getParameter("optAtleta");
-        int id= Integer.parseInt(request.getParameter("txtnumeroPeito"));
+        int id= Integer.parseInt(request.getParameter("txtid"));
         String total = request.getParameter("txtTotal");
         String formaPagamento = request.getParameter("optFormaPagamento");
       
-        
-        if(formaPagamento.equals("Boleto Bancário")){
-            pago = 0;
-        }else{
-            pago=1;
-        }
-        
+       if(Integer.parseInt(request.getParameter("optFormaPagamento"))==0){
+           
+           pago = 0;
+       }
+       
+       
+       if(formaPagamento.equals("1")){
+           formaPagamento = "Cartão de Credito";
+       }else{
+            formaPagamento = "Boleto Bancario";
+       }
+           
+           
+       
+       
         //int pago=0;
         String categoria = request.getParameter("optCategoria");
         int numero = 222;
-        Inscricao inscricao = new Inscricao(id,pago,formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
+        Inscricao inscricao = new Inscricao(id, pago, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
 
         try {
             inscricao.gravar();
@@ -197,7 +202,7 @@ int pago;
 
     }
 
-    public void prepararEditar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+    public void prepararPagar(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         try {
             request.setAttribute("operacao", "Editar");
             request.setAttribute("prova", Prova.obterProvas());
@@ -206,7 +211,7 @@ int pago;
             request.setAttribute("atleta", Atleta.obterAtletas());
             request.setAttribute("item", Item.obterItens());
 
-            int codInscricao = Integer.parseInt(request.getParameter("numeroPeito"));
+            int codInscricao = Integer.parseInt(request.getParameter("id"));
             int prova_id = Integer.parseInt(request.getParameter("prova_id"));
 
             Prova prova = Prova.obterProva(prova_id);
@@ -214,7 +219,7 @@ int pago;
 
             Inscricao inscricao = Inscricao.obterInscricao(codInscricao);
             request.setAttribute("inscricao", inscricao);
-            RequestDispatcher view = request.getRequestDispatcher("/manterInscricao.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
             view.forward(request, response);
 
             view.forward(request, response);
@@ -225,31 +230,23 @@ int pago;
 
     }
 
-    public void confirmarEditar(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtnumeroPeito"));
-        String total = request.getParameter("txtTotal");
-        String formaPagamento = request.getParameter("optFormaPagamento");
-        String kit_id = request.getParameter("optKit");
-        String prova_id = request.getParameter("optProva");
-        String percurso_id = request.getParameter("optPercurso");
-        String atleta_id = request.getParameter("optAtleta");
-        String categoria = request.getParameter("optCategoria");
-
-        Inscricao inscricao = new Inscricao(id, formaPagamento, total, categoria, kit_id, prova_id, percurso_id, atleta_id);
-
-        try {
-            inscricao.alterar();
+    public void pagarInscricao(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException, ServletException {
+        
+        int codInscricao = Integer.parseInt(request.getParameter("id"));
+        Inscricao inscricao = Inscricao.obterInscricao(codInscricao);
+        
+        inscricao.setPago(1);
+        
+        inscricao.alterar();
+        
+       
             RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
+        try {
             view.forward(request, response);
         } catch (IOException ex) {
-
-        } catch (SQLException ex) {
-
-        } catch (ClassNotFoundException ex) {
-
-        } catch (ServletException ex) {
-
+            Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
     }
 
     public void escolherProva(HttpServletRequest request, HttpServletResponse response) {
@@ -283,7 +280,11 @@ int pago;
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            processRequest(request, response);
+            try {
+                processRequest(request, response);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -301,7 +302,11 @@ int pago;
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            processRequest(request, response);
+            try {
+                processRequest(request, response);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
         }

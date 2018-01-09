@@ -30,11 +30,11 @@ public class Inscricao {
     private String percurso_id;
 
     private String atleta_id;
- public Inscricao(int id,int numeroPeito,int pago, String formaPagamento, String total,String categoria,
+    
+ public Inscricao(int id,int pago, String formaPagamento, String total,String categoria,
             String kit_id, String prova_id, String percurso_id, String atleta_id) {
         
         this.id = id;
-        this.numeroPeito =GerarNumeroPeito();
         this.pago = pago;
         this.formaPagamento = formaPagamento;
         this.categoria = categoria;
@@ -45,38 +45,7 @@ public class Inscricao {
         this.total = total;
         this.kitRetirado = kitRetirado;
     }
- public Inscricao(int id,String formaPagamento, String total,String categoria,
-            String kit_id, String prova_id, String percurso_id, String atleta_id) {
-        
-        this.id = id;
-        this.numeroPeito = GerarNumeroPeito();
-        this.pago = pago;
-        this.formaPagamento = formaPagamento;
-        this.categoria = categoria;
-        this.kit_id = kit_id;
-        this.prova_id = prova_id;
-        this.percurso_id = percurso_id;
-        this.atleta_id = atleta_id;
-        this.total = total;
-        this.kitRetirado = kitRetirado;
-    }
-    public Inscricao(int id,int pago, String formaPagamento, String total,String categoria,
-            String kit_id, String prova_id, String percurso_id, String atleta_id) {
-        
-        this.id = id;
-        this.numeroPeito = numeroPeito;
-        this.pago = pago;
-        this.formaPagamento = formaPagamento;
-        this.categoria = categoria;
-        this.kit_id = kit_id;
-        this.prova_id = prova_id;
-        this.percurso_id = percurso_id;
-        this.atleta_id = atleta_id;
-        this.total = total;
-        this.kitRetirado = kitRetirado;
-        this.numeroPeito=GerarNumeroPeito();
-    }
-
+ 
    
     public int getId() {
         return id;
