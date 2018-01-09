@@ -41,7 +41,7 @@
                                 
         <div class="container">
 
-            <strong><h2> ${prova.nomeProva} </h2>  </strong>                 
+            <strong> <h2> ${prova.nomeProva} </h2>  </strong>                 
                             
         <div class="col-md-9 col-sm-10 no-padding-xs">
             <div class="row">  

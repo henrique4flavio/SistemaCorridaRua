@@ -180,7 +180,7 @@
               </div>
               <div class="mr-5">Gerenciar Pagamento</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="PesquisaInscricaoController">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
