@@ -77,10 +77,10 @@
                             <INPUT TYPE="hidden" NAME="optAtleta" value="${usuario.id}">
                                  <div class="form-group">
                                      <label> Escolha a Categoria:  </label><br>
-                                     <label>   <input type="radio" name="optCategoria"  id="mostra_aba1" value="infantil-5 a 12 anos"  /> Infantil:5 a 12 anos </label> <br>
-                          <label>  <input type="radio"  name="optCategoria" id="mostra_aba2" value="adulto-18 a 59 anos" />Adulto:18 a 59 anos</label><br>
-                        <label>   <input type="radio"  name="optCategoria" id="mostra_aba2" value="idoso acima de 60 anos" />Idoso:acima de 60 anos</label><br>
-                         <label>   <input type="radio"  name="optCategoria" id="mostra_aba2" value="Adolescente:13 a 17 anos" />Adolescente:13 a 17 anos </label><br>
+                                     <label>   <input type="radio" name="optCategoria"  id="mostra_aba1" value="infantil"  /> Infantil</label> <br>
+                          <label>  <input type="radio"  name="optCategoria" id="mostra_aba2" value="Adulto" />Adulto</label><br>
+                        <label>   <input type="radio"  name="optCategoria" id="mostra_aba2" value="Idoso" />Idoso</label><br>
+                         <label>   <input type="radio"  name="optCategoria" id="mostra_aba2" value="Adolescente" />Adolescente</label><br>
 
                         </div>
 

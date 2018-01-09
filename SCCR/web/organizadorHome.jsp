@@ -51,9 +51,7 @@
             <span class="nav-link-text">Provas</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
-            <li>
-              <a href="PesquisaProvaController?acao=listarProvas">Manter Provas</a>
-            </li>
+           
             <li>
 
               <a href="PesquisaPercursoController">Manter Percursos</a>
