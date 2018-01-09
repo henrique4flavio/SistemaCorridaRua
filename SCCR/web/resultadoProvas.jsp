@@ -54,17 +54,7 @@
     </div>
   </nav>
         <div class="container">
-            <div id="main" class="container-fluid" style="margin-top: 50px">
-
-                <h2>Importação Resultados Provas</h2>
-            </div><br>
-            <div class="col-sm-3">
-                <form action ="ManterResultadosProvaController" method="post">
-                    <input type="submit" name="btIncluir" value="Importar Resultados" class="btn btn-primary pull-right h2">
-
-
-                </form> 
-            </div>
+            
             <div id="main" class="container-fluid" style="margin-top: 50px">
 
             </div>

@@ -42,7 +42,6 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link" href="resultadoProvas.jsp"> <span class="glyphicon glyphicon-user"></span> Resultado Provas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="registro.jsp"> <span class="glyphicon glyphicon-user"></span> Registrar-se</a>

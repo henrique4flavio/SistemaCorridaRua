@@ -206,6 +206,7 @@ public class ManterOrganizadorController extends HttpServlet {
         try {
             Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);
             organizador.alterar();
+          
             RequestDispatcher view = request.getRequestDispatcher("organizadorHome.jsp");
             view.forward(request, response);
         } catch (IOException ex) {
