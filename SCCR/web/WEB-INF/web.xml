@@ -109,10 +109,6 @@
         <servlet-class>controller.PesquisaElementoKitController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ManterPagamentoController</servlet-name>
-        <servlet-class>controller.ManterPagamentoController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>PesquisaResultadoProvasController</servlet-name>
         <servlet-class>controller.PesquisaResultadoProvasController</servlet-class>
     </servlet>
@@ -131,10 +127,6 @@
     <servlet>
         <servlet-name>ObterInscricaoAtletaController</servlet-name>
         <servlet-class>controller.ObterInscricaoAtletaController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PesquisaPagamentoController</servlet-name>
-        <servlet-class>controller.PesquisaPagamentoController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ManterResultadoProvasController</servlet-name>
@@ -241,10 +233,6 @@
         <url-pattern>/PesquisaElementoKitController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ManterPagamentoController</servlet-name>
-        <url-pattern>/ManterPagamentoController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>PesquisaResultadoProvasController</servlet-name>
         <url-pattern>/PesquisaResultadoProvasController</url-pattern>
     </servlet-mapping>
@@ -263,10 +251,6 @@
     <servlet-mapping>
         <servlet-name>ObterInscricaoAtletaController</servlet-name>
         <url-pattern>/ObterInscricaoAtletaController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PesquisaPagamentoController</servlet-name>
-        <url-pattern>/PesquisaPagamentoController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ManterResultadoProvasController</servlet-name>
