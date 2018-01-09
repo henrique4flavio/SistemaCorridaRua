@@ -108,7 +108,7 @@
               <div class="card-body-icon">
                  <i class="fa fa-fw fa-list"></i>
               </div>
-              <div class="mr-5">Provas</div>
+              <div class="mr-5">Minhas inscrições</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="ObterInscricaoAtletaController?acao=exibirInscricoes&id=${atleta.id}">
               <span class="float-left">View Details</span>

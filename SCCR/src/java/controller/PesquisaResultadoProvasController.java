@@ -37,7 +37,8 @@ public class PesquisaResultadoProvasController extends HttpServlet {
      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
          request.setAttribute("resultadoProva",ResultadoProva.obterResultados());
-            RequestDispatcher view = request.getRequestDispatcher("pesquisaResultadoProvas.jsp");
+         
+          RequestDispatcher view = request.getRequestDispatcher("pesquisaResultadoProvas.jsp");
            view.forward(request,response);
         
         String acao = request.getParameter("acao");
@@ -85,9 +86,12 @@ public class PesquisaResultadoProvasController extends HttpServlet {
          }
 
     }
-     public void visualizarResultado(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException {
-            RequestDispatcher view = request.getRequestDispatcher("manterResultadoProvas.jsp");
-         
+     public void visualizarResultado(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException, IOException {
+          
+         request.setAttribute("resultadoProva",ResultadoProva.obterResultados());
+          
+         RequestDispatcher view = request.getRequestDispatcher("pesquisaResultadoProvas.jsp");
+            view.forward(request,response);
          try {
              view.forward(request, response);
          } catch (ServletException ex) {

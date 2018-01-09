@@ -161,7 +161,7 @@ public class ManterOrganizadorController extends HttpServlet {
 
         try {
             organizador.excluir();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaOrganizadorController");
+            RequestDispatcher view = request.getRequestDispatcher("LoginControllera?acao=logout");
             view.forward(request, response);
         } catch (IOException ex) {
 
@@ -206,7 +206,7 @@ public class ManterOrganizadorController extends HttpServlet {
         try {
             Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);
             organizador.alterar();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaOrganizadorController");
+            RequestDispatcher view = request.getRequestDispatcher("organizadorHome.jsp");
             view.forward(request, response);
         } catch (IOException ex) {
 

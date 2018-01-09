@@ -38,7 +38,7 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="organizadorHome.jsp">
             <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Painel Administrativo</span>
+            <span class="nav-link-text">Painel do organizador</span>
           </a>
         </li>
         
@@ -162,7 +162,7 @@
               </div>
               <div class="mr-5">Minhas Provas</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="PesquisaAdministradorController?acao=listar">
+            <a class="card-footer text-white clearfix small z-1" href="PesquisaProvaController?acao=listarProvas">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -177,7 +177,7 @@
               <div class="card-body-icon">
                  <i class="fa fa-fw fa-list"></i>
               </div>
-              <div class="mr-5">Gerenciar Pagamento</div>
+              <div class="mr-5">Gerenciar inscrições</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="PesquisaInscricaoController">
               <span class="float-left">View Details</span>
@@ -190,22 +190,7 @@
           
           
           
-          <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-warning o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
-              </div>
-              <div class="mr-5">Gerenciar Entrega de Kit</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="PesquisaOrganizadorController">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
+         
           <div class="col-xl-3 col-sm-6 mb-3">
           <div class="card text-white bg-success o-hidden h-100">
             <div class="card-body">
@@ -225,22 +210,7 @@
        
       </div>
        
-          <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-danger o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
-              </div>
-              <div class="mr-5">Listar Inscrições Atletas</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="PesquisaInscricaoController">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
+        
       <!-- Area Chart Example-->
      
       <!-- Example DataTables Card-->
@@ -299,7 +269,6 @@
         </div>
 
 
-        <jsp:include page="footer.jspf"/>
 
 
     </body>

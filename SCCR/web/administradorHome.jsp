@@ -28,14 +28,14 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Sistema de Corrida de Rua</a>
+    <a class="navbar-brand" href="administradorHome.jsp">Sistema de Corrida de Rua</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="administradorHome.jsp">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Painel Administrativo</span>
           </a>
@@ -44,54 +44,9 @@
         
         
         
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Organizadores</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents">
-            <li>
-              <a href="navbar.html">Manter Provas</a>
-            </li>
-            <li>
-              <a href="navbar.html">Manter Percursos</a>
-            </li>
-            <li>
-              <a href="navbar.html">Manter Kits </a>
-            </li>
-            <li>
-              <a href="navbar.html">Manter Lotes</a>
-            </li>
-            <li>
-              <a href="cards.html">Manter Rankings</a>
-            </li>
-            <li>
-              <a href="navbar.html">Manter Resultados</a>
-            </li>
-          </ul>
-        </li>
+       
         
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-             <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Atletas</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-            <li>
-              <a href="login.html">Manter Inscrições</a>
-            </li>
-            <li>
-              <a href="register.html">Registration </a>
-            </li>
-            <li>
-              <a href="forgot-password.html">Forgot Password Page</a>
-            </li>
-            <li>
-              <a href="blank.html">Blank Page</a>
-            </li>
-          </ul>
-        </li>
-        
+       
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -130,23 +85,7 @@
         <li class="breadcrumb-item active">My Dashboard</li>
       </ol>
       <!-- Icon Cards-->
-      <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-primary o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                 <i class="fa fa-fw fa-list"></i>
-              </div>
-              <div class="mr-5">Gerenciar Administradores</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="PesquisaAdministradorController?acao=listar">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
+      
         <div class="col-xl-3 col-sm-6 mb-3">
           <div class="card text-white bg-warning o-hidden h-100">
             <div class="card-body">
@@ -163,22 +102,7 @@
             </a>
           </div>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-success o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                 <i class="fa fa-fw fa-list"></i>
-              </div>
-              <div class="mr-5">Gerenciar Atletas</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
+       
        
       </div>
       <!-- Area Chart Example-->
