@@ -55,7 +55,7 @@
     <center><h3>Incluir Resultados Provas</h3></center>
     <div class="container">
         <div class="col-md-6">
-            <form action="ManterResultadoProvasController?acao=confirmarImportacaoProva" method="post" name="frmManterProva">
+            <form action="PesquisaResultadoProvasController" method="post" name="frmManterProva">
                 <div class="form-group">
 
                     <label for="exampleInputEmail1">Id Resultado Prova:</label>

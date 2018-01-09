@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 08, 2018 at 11:11 PM
--- Server version: 5.7.19-log
+-- Generation Time: 09-Jan-2018 às 14:09
+-- Versão do servidor: 5.7.19-log
 -- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administrador`
+-- Estrutura da tabela `administrador`
 --
 
 CREATE TABLE `administrador` (
@@ -37,7 +37,7 @@ CREATE TABLE `administrador` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `administrador`
+-- Extraindo dados da tabela `administrador`
 --
 
 INSERT INTO `administrador` (`id`, `nome`, `senha`, `login`, `email`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `administrador` (`id`, `nome`, `senha`, `login`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `atleta`
+-- Estrutura da tabela `atleta`
 --
 
 CREATE TABLE `atleta` (
@@ -74,7 +74,7 @@ CREATE TABLE `atleta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `atleta`
+-- Extraindo dados da tabela `atleta`
 --
 
 INSERT INTO `atleta` (`id`, `nome`, `nomeEquipe`, `dtNascimento`, `apelido`, `cpf`, `tamCamisa`, `sexo`, `telefoneFixo`, `telefoneCelular`, `rua`, `bairro`, `cidade`, `estado`, `pais`, `login`, `senha`, `email`) VALUES
@@ -103,7 +103,7 @@ INSERT INTO `atleta` (`id`, `nome`, `nomeEquipe`, `dtNascimento`, `apelido`, `cp
 -- --------------------------------------------------------
 
 --
--- Table structure for table `elementokit`
+-- Estrutura da tabela `elementokit`
 --
 
 CREATE TABLE `elementokit` (
@@ -113,7 +113,7 @@ CREATE TABLE `elementokit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `elementokit`
+-- Extraindo dados da tabela `elementokit`
 --
 
 INSERT INTO `elementokit` (`id`, `item_id`, `kit_id`) VALUES
@@ -126,12 +126,11 @@ INSERT INTO `elementokit` (`id`, `item_id`, `kit_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inscricao`
+-- Estrutura da tabela `inscricao`
 --
 
 CREATE TABLE `inscricao` (
   `id` int(11) NOT NULL,
-  `numeroPeito` int(11) NOT NULL,
   `pago` int(1) NOT NULL,
   `total` varchar(40) DEFAULT NULL,
   `formaPagamento` varchar(45) DEFAULT NULL,
@@ -143,36 +142,36 @@ CREATE TABLE `inscricao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `inscricao`
+-- Extraindo dados da tabela `inscricao`
 --
 
-INSERT INTO `inscricao` (`id`, `numeroPeito`, `pago`, `total`, `formaPagamento`, `categoria`, `kit_id`, `prova_id`, `percurso_id`, `atleta_id`) VALUES
-(1, 1523, 1, '100', 'cartao de credito', 'adulto', 1, 1, 1, 1),
-(2, 1569, 1, '100', 'cartao de credito', 'adulto', 3, 2, 1, 4),
-(3, 1669, 1, '70', 'cartao de credito', 'idoso', 2, 2, 1, 12),
-(4, 55698, 1, '70', 'Boleto BancÃ¡rio', 'infantil', 1, 2, 1, 18),
-(5, 226589, 1, '70', 'cartao de credito', 'infantil', 1, 2, 1, 17),
-(6, 5511000, 1, '70', 'cartao de credito', 'idoso', 3, 2, 1, 12),
-(8, 558920, 1, '70', 'cartao de credito', 'infantil', 1, 2, 1, 15),
-(9, 55029, 1, '70', 'cartao de credito', 'infantil', 1, 1, 1, 15),
-(10, 210, 1, '70', 'cartao de credito', 'idoso', 3, 2, 1, 13),
-(12, 66500, 1, '70', 'cartao de credito', 'idoso', 1, 2, 1, 19),
-(15, 502020, 1, '70', 'cartao de credito', 'adulto', 1, 2, 1, 20),
-(17, 556, 1, '70', 'cartao de credito', 'adulto', 2, 1, 1, 21),
-(19, 102323, 1, '70', 'cartao de credito', 'adulto', 2, 2, 1, 2),
-(20, 33660, 1, '70', 'boleto bancario', 'adulto', 1, 2, 1, 2),
-(21, 556, 1, '70', 'cartao de credito', 'adulto', 2, 1, 1, 21),
-(22, 33660, 1, '70', 'boleto bancario', 'adulto', 1, 2, 1, 2),
-(23, 30100, 1, '90', 'cartao de credito', 'adulto', 1, 2, 1, 8),
-(24, 7887, 1, '95', 'cartao de credito', 'adulto', 1, 2, 1, 9),
-(88, 28458872, 1, '', 'CartÃ£o de Credito', 'infantil-5 a 12 anos', 2, 1, 1, 3),
-(900, 43697188, 1, '170', 'CartÃ£o de Credito', 'infantil-5 a 12 anos', 3, 1, 2, 300),
-(50000, 148696947, 1, '300', 'Boleto BancÃ¡rio', 'adulto-18 a 59 anos', 3, 30, 2, 1);
+INSERT INTO `inscricao` (`id`, `pago`, `total`, `formaPagamento`, `categoria`, `kit_id`, `prova_id`, `percurso_id`, `atleta_id`) VALUES
+(1, 1, '100', 'cartao de credito', 'adulto', 1, 1, 1, 1),
+(2, 1, '100', 'cartao de credito', 'adulto', 3, 2, 1, 4),
+(3, 1, '70', 'cartao de credito', 'idoso', 2, 2, 1, 12),
+(4, 1, '70', 'Boleto BancÃ¡rio', 'infantil', 1, 2, 1, 18),
+(5, 1, '70', 'cartao de credito', 'infantil', 1, 2, 1, 17),
+(6, 1, '70', 'cartao de credito', 'idoso', 3, 2, 1, 12),
+(8, 1, '70', 'cartao de credito', 'infantil', 1, 2, 1, 15),
+(9, 1, '70', 'cartao de credito', 'infantil', 1, 1, 1, 15),
+(10, 1, '70', 'cartao de credito', 'idoso', 3, 2, 1, 13),
+(12, 1, '70', 'cartao de credito', 'idoso', 1, 2, 1, 19),
+(15, 1, '70', 'cartao de credito', 'adulto', 1, 2, 1, 20),
+(17, 1, '70', 'cartao de credito', 'adulto', 2, 1, 1, 21),
+(19, 1, '70', 'cartao de credito', 'adulto', 2, 2, 1, 2),
+(20, 1, '70', 'boleto bancario', 'adulto', 1, 2, 1, 2),
+(21, 1, '70', 'cartao de credito', 'adulto', 2, 1, 1, 21),
+(22, 1, '70', 'boleto bancario', 'adulto', 1, 2, 1, 2),
+(23, 1, '90', 'cartao de credito', 'adulto', 1, 2, 1, 8),
+(24, 1, '95', 'cartao de credito', 'adulto', 1, 2, 1, 9),
+(88, 1, '', 'CartÃ£o de Credito', 'infantil-5 a 12 anos', 2, 1, 1, 3),
+(900, 1, '170', 'CartÃ£o de Credito', 'infantil-5 a 12 anos', 3, 1, 2, 300),
+(50000, 1, '300', 'Boleto BancÃ¡rio', 'adulto-18 a 59 anos', 3, 30, 2, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `item`
+-- Estrutura da tabela `item`
 --
 
 CREATE TABLE `item` (
@@ -181,7 +180,7 @@ CREATE TABLE `item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `item`
+-- Extraindo dados da tabela `item`
 --
 
 INSERT INTO `item` (`id`, `nomeItem`) VALUES
@@ -198,7 +197,7 @@ INSERT INTO `item` (`id`, `nomeItem`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kit`
+-- Estrutura da tabela `kit`
 --
 
 CREATE TABLE `kit` (
@@ -208,7 +207,7 @@ CREATE TABLE `kit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kit`
+-- Extraindo dados da tabela `kit`
 --
 
 INSERT INTO `kit` (`id`, `nomeKit`, `valor`) VALUES
@@ -220,7 +219,7 @@ INSERT INTO `kit` (`id`, `nomeKit`, `valor`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lote`
+-- Estrutura da tabela `lote`
 --
 
 CREATE TABLE `lote` (
@@ -233,7 +232,7 @@ CREATE TABLE `lote` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `lote`
+-- Extraindo dados da tabela `lote`
 --
 
 INSERT INTO `lote` (`id`, `identificacao`, `desconto`, `dataInicio`, `dataFim`, `prova_id`) VALUES
@@ -246,7 +245,7 @@ INSERT INTO `lote` (`id`, `identificacao`, `desconto`, `dataInicio`, `dataFim`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `organizador`
+-- Estrutura da tabela `organizador`
 --
 
 CREATE TABLE `organizador` (
@@ -259,7 +258,7 @@ CREATE TABLE `organizador` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `organizador`
+-- Extraindo dados da tabela `organizador`
 --
 
 INSERT INTO `organizador` (`id`, `nome`, `senha`, `login`, `email`, `administrador_id`) VALUES
@@ -269,7 +268,7 @@ INSERT INTO `organizador` (`id`, `nome`, `senha`, `login`, `email`, `administrad
 -- --------------------------------------------------------
 
 --
--- Table structure for table `percurso`
+-- Estrutura da tabela `percurso`
 --
 
 CREATE TABLE `percurso` (
@@ -281,7 +280,7 @@ CREATE TABLE `percurso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `percurso`
+-- Extraindo dados da tabela `percurso`
 --
 
 INSERT INTO `percurso` (`id`, `nome`, `distancia`, `faixaEtaria`, `prova_id`) VALUES
@@ -291,7 +290,7 @@ INSERT INTO `percurso` (`id`, `nome`, `distancia`, `faixaEtaria`, `prova_id`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prova`
+-- Estrutura da tabela `prova`
 --
 
 CREATE TABLE `prova` (
@@ -312,7 +311,7 @@ CREATE TABLE `prova` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `prova`
+-- Extraindo dados da tabela `prova`
 --
 
 INSERT INTO `prova` (`id`, `nomeProva`, `localLargada`, `horarioLargada`, `dataProva`, `maxParticipantes`, `inicioInscricao`, `fimInscricao`, `localRetiradaKit`, `organizador_id`, `ranking_id`, `valorProva`, `inicioIdade`, `fimIdade`) VALUES
@@ -323,7 +322,7 @@ INSERT INTO `prova` (`id`, `nomeProva`, `localLargada`, `horarioLargada`, `dataP
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ranking`
+-- Estrutura da tabela `ranking`
 --
 
 CREATE TABLE `ranking` (
@@ -332,7 +331,7 @@ CREATE TABLE `ranking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ranking`
+-- Extraindo dados da tabela `ranking`
 --
 
 INSERT INTO `ranking` (`id`, `nome`) VALUES
@@ -341,7 +340,7 @@ INSERT INTO `ranking` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `resultadoprovas`
+-- Estrutura da tabela `resultadoprovas`
 --
 
 CREATE TABLE `resultadoprovas` (
@@ -356,7 +355,7 @@ CREATE TABLE `resultadoprovas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `resultadoprovas`
+-- Extraindo dados da tabela `resultadoprovas`
 --
 
 INSERT INTO `resultadoprovas` (`id`, `nomeAtleta`, `numeroPeito`, `categoria`, `classificacao`, `sexo`, `prova`, `tempo`) VALUES
@@ -375,7 +374,7 @@ INSERT INTO `resultadoprovas` (`id`, `nomeAtleta`, `numeroPeito`, `categoria`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `resultadoranking`
+-- Estrutura da tabela `resultadoranking`
 --
 
 CREATE TABLE `resultadoranking` (
@@ -389,7 +388,7 @@ CREATE TABLE `resultadoranking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `resultadoranking`
+-- Extraindo dados da tabela `resultadoranking`
 --
 
 INSERT INTO `resultadoranking` (`id`, `nomeAtleta`, `classificacao`, `pontuacao`, `categoria`, `ranking`, `sexo`) VALUES
@@ -513,14 +512,14 @@ ALTER TABLE `resultadoranking`
 --
 
 --
--- Constraints for table `elementokit`
+-- Limitadores para a tabela `elementokit`
 --
 ALTER TABLE `elementokit`
   ADD CONSTRAINT `elementoKit_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
   ADD CONSTRAINT `elementoKit_ibfk_2` FOREIGN KEY (`kit_id`) REFERENCES `kit` (`id`);
 
 --
--- Constraints for table `inscricao`
+-- Limitadores para a tabela `inscricao`
 --
 ALTER TABLE `inscricao`
   ADD CONSTRAINT `inscricao_ibfk_1` FOREIGN KEY (`kit_id`) REFERENCES `kit` (`id`),
@@ -529,26 +528,26 @@ ALTER TABLE `inscricao`
   ADD CONSTRAINT `inscricao_ibfk_5` FOREIGN KEY (`atleta_id`) REFERENCES `atleta` (`id`);
 
 --
--- Constraints for table `lote`
+-- Limitadores para a tabela `lote`
 --
 ALTER TABLE `lote`
   ADD CONSTRAINT `lote_ibfk_1` FOREIGN KEY (`prova_id`) REFERENCES `prova` (`id`),
   ADD CONSTRAINT `organizador_id` FOREIGN KEY (`prova_id`) REFERENCES `organizador` (`id`);
 
 --
--- Constraints for table `organizador`
+-- Limitadores para a tabela `organizador`
 --
 ALTER TABLE `organizador`
   ADD CONSTRAINT `organizador_ibfk_1` FOREIGN KEY (`administrador_id`) REFERENCES `administrador` (`id`);
 
 --
--- Constraints for table `percurso`
+-- Limitadores para a tabela `percurso`
 --
 ALTER TABLE `percurso`
   ADD CONSTRAINT `percurso_ibfk_1` FOREIGN KEY (`prova_id`) REFERENCES `prova` (`id`);
 
 --
--- Constraints for table `prova`
+-- Limitadores para a tabela `prova`
 --
 ALTER TABLE `prova`
   ADD CONSTRAINT `prova_ibfk_1` FOREIGN KEY (`organizador_id`) REFERENCES `organizador` (`id`),

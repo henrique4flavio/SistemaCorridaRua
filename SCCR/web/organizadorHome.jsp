@@ -214,7 +214,7 @@
               </div>
               <div class="mr-5">Importar Resultado Provas</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="PesquisaInscricaoControlle">
+            <a class="card-footer text-white clearfix small z-1" href="manterResultadoProvas.jsp">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>

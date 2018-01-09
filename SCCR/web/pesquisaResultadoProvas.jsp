@@ -64,8 +64,8 @@
                 <h2>Importação Resultados Provas</h2>
             </div><br>
             <div class="col-sm-3">
-                <form action ="ManterResultadoProvasController?acao=importarResultadoProvas" method="post">
-                    <input type="submit" name="btIncluir" value="Novo Elemento Kit" class="btn btn-primary pull-right h2">
+                <form action ="manterResultadoProvas.jsp" method="post">
+                    <input type="submit" name="btIncluir" value="Importar Resultados" class="btn btn-primary pull-right h2">
 
 
                 </form> 
