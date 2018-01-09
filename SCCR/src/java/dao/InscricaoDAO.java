@@ -25,7 +25,7 @@ public class InscricaoDAO {
                 Inscricao inscricao = new Inscricao(
                         
                         rs.getInt("id"),
-                        rs.getInt("numeroPeito"),
+                       
                         rs.getInt("pago"),
                        
                         rs.getString("formaPagamento"),
@@ -36,7 +36,7 @@ public class InscricaoDAO {
                 inscricao.setKit_id(rs.getString("kit_id"));
                 inscricao.setProva_id(rs.getString("prova_id"));
                 inscricao.setPercurso_id(rs.getString("percurso_id"));
-                inscricao.setPercurso_id(rs.getString("atleta_id"));
+                inscricao.setAtleta_id(rs.getString("atleta_id"));
 
                 inscricoes.add(inscricao);
 
@@ -50,43 +50,6 @@ public class InscricaoDAO {
         return inscricoes;
     }
     
-    public static List<Inscricao> obterInscricoes(int prova_id) throws ClassNotFoundException {
-        Connection conexao = null;
-        Statement comando = null;
-        List<Inscricao> inscricoes = new ArrayList<Inscricao>();
-        try {
-            conexao = BD.getConexao();
-            comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from inscricao WHERE kit_prova_id = " + prova_id);
-            while (rs.next()) {
-
-                Inscricao inscricao = new Inscricao(
-                        
-                        rs.getInt("id"),
-                        rs.getInt("numeroPeito"),
-                        rs.getInt("pago"),
-                        
-                        rs.getString("formaPagamento"),
-                        rs.getString("total"),
-                        rs.getString("categoria"),
-                        null, null, null, null);
-
-                inscricao.setKit_id(rs.getString("kit_id"));
-                inscricao.setProva_id(rs.getString("prova_id"));
-                inscricao.setPercurso_id(rs.getString("percurso_id"));
-                inscricao.setPercurso_id(rs.getString("atleta_id"));
-
-                inscricoes.add(inscricao);
-
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            fecharConexao(conexao, comando);
-
-        }
-        return inscricoes;
-    }
     
     public static List<Inscricao> obterInscricoesAtleta(int id) throws ClassNotFoundException {
         Connection conexao = null;
@@ -101,7 +64,7 @@ public class InscricaoDAO {
                 Inscricao inscricao = new Inscricao(
                         
                         rs.getInt("id"),
-                        rs.getInt("numeroPeito"),
+                  
                         rs.getInt("pago"),
                        
                         rs.getString("formaPagamento"),
@@ -139,7 +102,7 @@ public class InscricaoDAO {
 
                 Inscricao inscricao = new Inscricao(
                         rs.getInt("id"),
-                        rs.getInt("numeroPeito"),
+                   
                         rs.getInt("pago"),
                         
                         rs.getString("formaPagamento"),
@@ -174,7 +137,7 @@ public class InscricaoDAO {
 
                 Inscricao inscricao = new Inscricao(
                         rs.getInt("id"),
-                        rs.getInt("numeroPeito"),
+                   
                         rs.getInt("pago"),
                        
                         rs.getString("formaPagamento"),
@@ -205,20 +168,19 @@ public class InscricaoDAO {
         try {
             conexao = BD.getConexao();
 
-            String sql = "insert into inscricao (id, numeroPeito, pago,formaPagamento, categoria, total, kit_id, prova_id, percurso_id, atleta_id) values(?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into inscricao (id, pago,formaPagamento, categoria, total, kit_id, prova_id, percurso_id, atleta_id) values(?,?,?,?,?,?,?,?,?)";
             PreparedStatement comando = conexao.prepareStatement(sql);
             
             comando.setInt(1, inscricao.getId());
-            comando.setInt(2, inscricao.getNumeroPeito());
-            comando.setInt(3, inscricao.getPago());
-             comando.setString(4, inscricao.getFormaPagamento());
-            comando.setString(5, inscricao.getCategoria());
-            comando.setString(6, inscricao.getTotal());
+            comando.setInt(2, inscricao.getPago());
+             comando.setString(3, inscricao.getFormaPagamento());
+            comando.setString(4, inscricao.getCategoria());
+            comando.setString(5, inscricao.getTotal());
            
-            comando.setString(7, inscricao.getKit_id());
-            comando.setString(8, inscricao.getProva_id());
-            comando.setString(9, inscricao.getPercurso_id());
-            comando.setString(10, inscricao.getAtleta_id());
+            comando.setString(6, inscricao.getKit_id());
+            comando.setString(7, inscricao.getProva_id());
+            comando.setString(8, inscricao.getPercurso_id());
+            comando.setString(9, inscricao.getAtleta_id());
            
             comando.execute();
             comando.close();
@@ -235,22 +197,15 @@ public class InscricaoDAO {
         try {
             conexao = BD.getConexao();
 
-            String sql = "update inscricao set numeroPeito=?,pago=?,total=?,formaPagamento=?,categoria=?,kit_id=?,prova_id=?,percurso_id=?,atleta_id=? where id  = ?";
+            String sql = "update inscricao set pago=? where id  = ?";
 
             PreparedStatement comando = conexao.prepareStatement(sql);
             
-            comando.setInt(1, inscricao.getNumeroPeito());
-            comando.setInt(2, inscricao.getPago());
           
-            comando.setString(3, inscricao.getTotal());
-            comando.setString(4, inscricao.getFormaPagamento());
-            comando.setString(5, inscricao.getCategoria());
-            comando.setString(6, inscricao.getKit_id());
-            comando.setString(7, inscricao.getProva_id());
-            comando.setString(8, inscricao.getPercurso_id());
-            comando.setString(9, inscricao.getAtleta_id());
-            comando.setInt(10, inscricao.getId());
-
+            comando.setInt(1, inscricao.getPago());
+            comando.setInt(2, inscricao.getId());
+          
+          
            
            comando.execute();
             comando.close();
@@ -286,12 +241,12 @@ public class InscricaoDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            ResultSet rs = comando.executeQuery("select * from inscricao where numeroPeito = " + id);
+            ResultSet rs = comando.executeQuery("select * from inscricao where id= " + id);
             rs.first();
 
             inscricao = new Inscricao(
                         rs.getInt("id"),
-                        rs.getInt("numeroPeito"),
+                       
                         rs.getInt("pago"),
                        
                         rs.getString("formaPagamento"),
@@ -324,7 +279,7 @@ public class InscricaoDAO {
             rs.last();
             inscricao = new Inscricao(
                         rs.getInt("id"),
-                        rs.getInt("numeroPeito"),
+                    
                         rs.getInt("pago"),
                        
                         rs.getString("formaPagamento"),
@@ -358,7 +313,7 @@ public class InscricaoDAO {
             while (rs.next()) {
                 Inscricao inscricao = new Inscricao(
                         rs.getInt("id"),
-                        rs.getInt("numeroPeito"),
+                     
                         rs.getInt("pago"),
                         
                         rs.getString("formaPagamento"),
