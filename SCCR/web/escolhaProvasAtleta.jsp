@@ -27,43 +27,48 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="PesquisaProvaController?acao=gridProvas">Sistema de Corrida de Rua</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="resultadoProvas.jsp"> <span class="glyphicon glyphicon-user"></span> Resultado Provas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="registro.jsp"> <span class="glyphicon glyphicon-user"></span> Registrar-se</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.jsp"> <span class="glyphicon glyphicon-user"></span> Entrar</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="${tipo}Home.jsp">Sistema de Corrida de Rua</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+       
+
+        
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        
+          <li class="nav-item">
+          <a class="nav-link" href="${tipo}Home.jsp">
+              <i class="fa fa-user-o"></i>
+                                <%
+                                    Usuario usuario = (Usuario) session.getAttribute("usuario");
+                                    String nome = usuario.getNome();
+                                %>
+                                <%=nome%> </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
     <!-- Page Content -->
     <div class="container">
 
-      <!-- Jumbotron Header -->
-      <header class="jumbotron my-4">
-        <h1 class="display-3">Bem Vindo!</h1>
-        <p class="lead">Sistema de Controle de Corrida de Rua desenvolvido para obtenção de nota na disciplina de Laboratório de Programação II.</p>
-        <a href="registro.jsp" class="btn btn-primary btn-lg">Registrar</a>
-      </header>
+      
 
       <!-- Page Features -->
       <div class="row text-center">
@@ -90,7 +95,9 @@
     </div>
     <!-- /.container -->
 
-    <!-- Footer -->
+   
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Sccr 2017</p>

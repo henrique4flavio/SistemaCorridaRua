@@ -222,4 +222,7 @@ private int fimIdade;
         return ProvaDAO.pesquisaProva(nome);
 
     }
+    public static List<Prova>obterProvasOrganizador()throws ClassNotFoundException, SQLException{
+        return ProvaDAO.obterProvasOrganizador();
+    }
 }

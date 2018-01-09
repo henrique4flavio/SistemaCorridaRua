@@ -33,9 +33,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                       <li> <c:if test="${tipo != null}"> <a href="${tipo}Home.jsp">Sistema de Corrida de Rua</a></c:if> 
-                        <c:if test="${tipo == null}"> <a href="index.jsp">Sistema de Corrida de Rua</a></c:if>
-                             </li>
+                        <li> <c:if test="${tipo != null}"> <a href="${tipo}Home.jsp">Sistema de Corrida de Rua</a></c:if> 
+                            <c:if test="${tipo == null}"> <a href="index.jsp">Sistema de Corrida de Rua</a></c:if>
+                            </li>
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -58,49 +58,55 @@
                 </div>
             </div>
         </nav>
-       
-        <div id="main" class="container-fluid" style="margin-top: 50px">
+        <div class="container">
+            <div id="main" class="container-fluid" style="margin-top: 50px">
 
-            <h2>Prova - Asconcer - Resultado  - 01 Junho 2017</h2>
-        </div>
-        <div id="main" class="container-fluid" style="margin-top: 50px">
-            <h3> Resultado</h3>
+                <h2>Importação Resultados Provas</h2>
+            </div><br>
+            <div class="col-sm-3">
+                <form action ="ManterResultadoProvasController?acao=importarResultadoProvas" method="post">
+                    <input type="submit" name="btIncluir" value="Novo Elemento Kit" class="btn btn-primary pull-right h2">
+
+
+                </form> 
+            </div>
+            <div id="main" class="container-fluid" style="margin-top: 50px">
+
+            </div>
         </div>
         <hr />
-        <div id="list" class="row">
+        <div class="container">
+            <div id="list" class="row">
 
-            <div class="table-responsive col-md-12">
-                <table class="table table-striped" cellspacing="0" cellpadding="0">
-                    <thead>
-                        <tr>
-                            <th>Classificação</th>
-                            <th>Atleta</th>
-                            <th> Categoria</th>
-                            <th>Tempo</th>
-                            <th>Numero de Peito</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach items="${resultadoProvas}" var="resultadoProvas">
+                <div class="table-responsive col-md-12">
+                    <table class="table table-striped" cellspacing="0" cellpadding="0">
+                        <thead>
                             <tr>
-                                <td><c:out value = "${resultadoProvas.classificacao}" /></td>
-                                <td><c:out value = "${resultadoProvas.nomeAtleta}" />
-                                </td>
+                                <th>Nome do Atleta</th>
+                                <th>Número Peito</th>
+                                <th> Prova </th>
+                                <th> Tempo </th>
 
 
-                                <td><c:out value = "${resultadoProvas.categoria}" /></td>
-                                <td><c:out value = "${resultadoProvas.tempo}" /></td>
-                                <td>  <c:out value = "${resultadoProvas.numeroPeito}" /></td>
                             </tr>
-                        </c:forEach>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${resultadoProva}" var="resultadoProva">
+                                <tr>
+                                    <td><c:out value = "${resultadoProva.nomeAtleta}" /></td>
+                                    <td><c:out value = "${resultadoProva.numeroPeito}" /></td>
+                                    <td><c:out value = "${resultadoProva.tempo}" /></td>
+                                    <td><c:out value = "${resultadoProva.prova}" /></td>
 
-                    </tbody>
-                </table>
-            </div>
 
-        </div> <!-- /#list -->
+                                </c:forEach>
 
+                        </tbody>
+                    </table>
+                </div>
+
+            </div> <!-- /#list -->
+        </div>
 
 
         <!-- Modal -->

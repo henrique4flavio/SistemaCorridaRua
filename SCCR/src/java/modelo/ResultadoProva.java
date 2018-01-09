@@ -10,20 +10,14 @@ public class ResultadoProva {
 private int id;
 private String nomeAtleta;
 private int numeroPeito;
-private String tempo;
+private int tempo;
 private String categoria;
 private int classificacao;
 private String sexo;
 private String prova;
 
-    public String getProva() {
-        return prova;
-    }
-
-    public void setProva(String prova) {
-        this.prova = prova;
-    }
-    public ResultadoProva(int id, String nomeAtleta, int numeroPeito, String tempo, String categoria, int classificacao, String sexo,String prova) {
+    
+    public ResultadoProva(int id, String nomeAtleta, int numeroPeito, int tempo, String categoria, int classificacao, String sexo,String prova) {
         this.id = id;
         this.nomeAtleta = nomeAtleta;
         this.numeroPeito = numeroPeito;
@@ -32,8 +26,15 @@ private String prova;
         this.classificacao = classificacao;
         this.sexo = sexo;
         this.prova=prova;
+        
+    }
+public String getProva() {
+        return prova;
     }
 
+    public void setProva(String prova) {
+        this.prova = prova;
+    }
     public int getId() {
         return id;
     }
@@ -58,11 +59,11 @@ private String prova;
         this.numeroPeito = numeroPeito;
     }
 
-    public String getTempo() {
+    public int getTempo() {
         return tempo;
     }
 
-    public void setTempo(String tempo) {
+    public void setTempo(int tempo) {
         this.tempo = tempo;
     }
 
@@ -135,6 +136,18 @@ private String prova;
          
          
        }
+
+    public static List<ResultadoProva> obterResultados()throws ClassNotFoundException,SQLException{
+   
+         return ResultadoProvaDAO.obterResultados();
+         
+         
+       }
+
+
+    public  void gravar()throws ClassNotFoundException,SQLException{
+     ResultadoProvaDAO.gravar(this);
+           }
 
 
 }

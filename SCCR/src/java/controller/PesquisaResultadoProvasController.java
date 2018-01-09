@@ -35,7 +35,11 @@ public class PesquisaResultadoProvasController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
+         request.setAttribute("resultadoProva",ResultadoProva.obterResultados());
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
+           view.forward(request,response);
+        
         String acao = request.getParameter("acao");
         if(acao.equals("geralFemininoAsconcer")){
             geralFemininoAsconcer(request,response);
@@ -61,22 +65,17 @@ public class PesquisaResultadoProvasController extends HttpServlet {
         if(acao.equals("geralFemininoIdosoAsconcer")){
             geralFemininoIdosoAsconcer(request,response);
         }
-        if(acao.equals("visualizarProvas")){
-            visualizarProvas(request,response);
+        if(acao.equals("visualizarResultado")){
+            visualizarResultado(request,response);
         }
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+        
+   
   
 }
-     public void visualizarProvas(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-         RequestDispatcher view = request.getRequestDispatcher("/PaginaResultadoProvas.jsp");
+     public void visualizarResultado(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException {
+         request.setAttribute("resultadoProva",ResultadoProva.obterResultados());
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaResultadoProvas.jsp");
+         
          try {
              view.forward(request, response);
          } catch (ServletException ex) {
@@ -261,7 +260,9 @@ public class PesquisaResultadoProvasController extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (ClassNotFoundException ex) {
+             Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }
     
 
@@ -280,7 +281,9 @@ public class PesquisaResultadoProvasController extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (ClassNotFoundException ex) {
+             Logger.getLogger(PesquisaResultadoProvasController.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }
 
     /**

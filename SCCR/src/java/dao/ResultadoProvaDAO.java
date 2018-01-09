@@ -73,7 +73,7 @@ public class ResultadoProvaDAO {
                         rs.getInt("id"),
                         rs.getString("nomeAtleta"),
                         rs.getInt("numeroPeito"),
-                        rs.getString("tempo"),
+                        rs.getInt("tempo"),
                         rs.getString("categoria"),
                         rs.getInt("classificacao"),
                         rs.getString("sexo"),
@@ -92,44 +92,42 @@ public class ResultadoProvaDAO {
     }
 
     public static List<ResultadoProva> obterResultadoGeralFemininoInfantilProva(String nomeProva) throws ClassNotFoundException, SQLException {
-        
 
-            Connection conexao = null;
-            Statement comando = null;
-            List<ResultadoProva> resultados = new ArrayList<ResultadoProva>();
-            PreparedStatement pm = null;
+        Connection conexao = null;
+        Statement comando = null;
+        List<ResultadoProva> resultados = new ArrayList<ResultadoProva>();
+        PreparedStatement pm = null;
 
-            try {
-                conexao = BD.getConexao();
-                comando = conexao.createStatement();
+        try {
+            conexao = BD.getConexao();
+            comando = conexao.createStatement();
 
-                ResultSet rs = comando.executeQuery("SELECT * FROM resultadoprovas where sexo='feminino' and categoria ='infantil' and prova like '%" + nomeProva + "%' order by classificacao asc");
+            ResultSet rs = comando.executeQuery("SELECT * FROM resultadoprovas where sexo='feminino' and categoria ='infantil' and prova like '%" + nomeProva + "%' order by classificacao asc");
 
-                while (rs.next()) {
+            while (rs.next()) {
 
-                    ResultadoProva resultadoProva = new ResultadoProva(
-                            rs.getInt("id"),
-                            rs.getString("nomeAtleta"),
-                            rs.getInt("numeroPeito"),
-                            rs.getString("tempo"),
-                            rs.getString("categoria"),
-                            rs.getInt("classificacao"),
-                            rs.getString("sexo"),
-                            rs.getString("prova"));
+                ResultadoProva resultadoProva = new ResultadoProva(
+                        rs.getInt("id"),
+                        rs.getString("nomeAtleta"),
+                        rs.getInt("numeroPeito"),
+                        rs.getInt("tempo"),
+                        rs.getString("categoria"),
+                        rs.getInt("classificacao"),
+                        rs.getString("sexo"),
+                        rs.getString("prova"));
 
-                    resultados.add(resultadoProva);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } finally {
-                fecharConexao(conexao, comando);
-
+                resultados.add(resultadoProva);
             }
-
-            return resultados;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao(conexao, comando);
 
         }
 
+        return resultados;
+
+    }
 
     public static List<ResultadoProva> obterResultadoGeralFemininoAdultoProva(String nomeProva) throws ClassNotFoundException, SQLException {
 
@@ -150,7 +148,7 @@ public class ResultadoProvaDAO {
                         rs.getInt("id"),
                         rs.getString("nomeAtleta"),
                         rs.getInt("numeroPeito"),
-                        rs.getString("tempo"),
+                        rs.getInt("tempo"),
                         rs.getString("categoria"),
                         rs.getInt("classificacao"),
                         rs.getString("sexo"),
@@ -168,7 +166,8 @@ public class ResultadoProvaDAO {
         return resultados;
 
     }
-public static List<ResultadoProva> obterResultadoGeralMasculinoAdultoProva(String nomeProva) throws ClassNotFoundException, SQLException {
+
+    public static List<ResultadoProva> obterResultadoGeralMasculinoAdultoProva(String nomeProva) throws ClassNotFoundException, SQLException {
 
         Connection conexao = null;
         Statement comando = null;
@@ -187,7 +186,7 @@ public static List<ResultadoProva> obterResultadoGeralMasculinoAdultoProva(Strin
                         rs.getInt("id"),
                         rs.getString("nomeAtleta"),
                         rs.getInt("numeroPeito"),
-                        rs.getString("tempo"),
+                        rs.getInt("tempo"),
                         rs.getString("categoria"),
                         rs.getInt("classificacao"),
                         rs.getString("sexo"),
@@ -206,7 +205,7 @@ public static List<ResultadoProva> obterResultadoGeralMasculinoAdultoProva(Strin
 
     }
 
-public static List<ResultadoProva> obterResultadoGeralMasculinoIdosoProva(String nomeProva) throws ClassNotFoundException, SQLException {
+    public static List<ResultadoProva> obterResultadoGeralMasculinoIdosoProva(String nomeProva) throws ClassNotFoundException, SQLException {
 
         Connection conexao = null;
         Statement comando = null;
@@ -225,7 +224,7 @@ public static List<ResultadoProva> obterResultadoGeralMasculinoIdosoProva(String
                         rs.getInt("id"),
                         rs.getString("nomeAtleta"),
                         rs.getInt("numeroPeito"),
-                        rs.getString("tempo"),
+                        rs.getInt("tempo"),
                         rs.getString("categoria"),
                         rs.getInt("classificacao"),
                         rs.getString("sexo"),
@@ -244,9 +243,7 @@ public static List<ResultadoProva> obterResultadoGeralMasculinoIdosoProva(String
 
     }
 
-
-
-public static List<ResultadoProva> obterResultadoGeralFemininoIdosoProva(String nomeProva) throws ClassNotFoundException, SQLException {
+    public static List<ResultadoProva> obterResultadoGeralFemininoIdosoProva(String nomeProva) throws ClassNotFoundException, SQLException {
 
         Connection conexao = null;
         Statement comando = null;
@@ -265,7 +262,7 @@ public static List<ResultadoProva> obterResultadoGeralFemininoIdosoProva(String 
                         rs.getInt("id"),
                         rs.getString("nomeAtleta"),
                         rs.getInt("numeroPeito"),
-                        rs.getString("tempo"),
+                        rs.getInt("tempo"),
                         rs.getString("categoria"),
                         rs.getInt("classificacao"),
                         rs.getString("sexo"),
@@ -284,9 +281,7 @@ public static List<ResultadoProva> obterResultadoGeralFemininoIdosoProva(String 
 
     }
 
-
-
-public static List<ResultadoProva> obterResultadoGeralMasculinoProva(String nomeProva) throws ClassNotFoundException, SQLException {
+    public static List<ResultadoProva> obterResultadoGeralMasculinoProva(String nomeProva) throws ClassNotFoundException, SQLException {
 
         Connection conexao = null;
         Statement comando = null;
@@ -305,7 +300,7 @@ public static List<ResultadoProva> obterResultadoGeralMasculinoProva(String nome
                         rs.getInt("id"),
                         rs.getString("nomeAtleta"),
                         rs.getInt("numeroPeito"),
-                        rs.getString("tempo"),
+                        rs.getInt("tempo"),
                         rs.getString("categoria"),
                         rs.getInt("classificacao"),
                         rs.getString("sexo"),
@@ -324,7 +319,7 @@ public static List<ResultadoProva> obterResultadoGeralMasculinoProva(String nome
 
     }
 
-public static List<ResultadoProva> obterResultadoGeralFemininoProva(String nomeProva) throws ClassNotFoundException, SQLException {
+    public static List<ResultadoProva> obterResultadoGeralFemininoProva(String nomeProva) throws ClassNotFoundException, SQLException {
 
         Connection conexao = null;
         Statement comando = null;
@@ -343,7 +338,7 @@ public static List<ResultadoProva> obterResultadoGeralFemininoProva(String nomeP
                         rs.getInt("id"),
                         rs.getString("nomeAtleta"),
                         rs.getInt("numeroPeito"),
-                        rs.getString("tempo"),
+                        rs.getInt("tempo"),
                         rs.getString("categoria"),
                         rs.getInt("classificacao"),
                         rs.getString("sexo"),
@@ -362,7 +357,69 @@ public static List<ResultadoProva> obterResultadoGeralFemininoProva(String nomeP
 
     }
 
+    public static void gravar(ResultadoProva resultadoProva) throws SQLException, ClassNotFoundException {
+        Connection conexao = null;
+        try {
+            conexao = BD.getConexao();
+            // caso de herança tem qeu fazer para as duas classes .
+            String sql = "insert into resultadoprovas (id,nomeAtleta,numeroPeito,categoria,classificacao,sexo,prova,tempo) values(?,?,?,?,?,?,?,?)";
+            PreparedStatement comando = conexao.prepareStatement(sql);
 
+            comando.setInt(1, resultadoProva.getId());
+            comando.setString(2, resultadoProva.getNomeAtleta());
+            comando.setInt(3, resultadoProva.getNumeroPeito());
+            comando.setString(4, resultadoProva.getCategoria());
+            comando.setInt(5, resultadoProva.getClassificacao());
+            comando.setString(6, resultadoProva.getSexo());
+            comando.setString(7, resultadoProva.getProva());
+            comando.setInt(8, resultadoProva.getTempo());
 
+            comando.execute();
+            comando.close();
+            conexao.close();
+
+        } catch (SQLException e) {
+
+            throw e;
+        }
+
+    }
+    public static List<ResultadoProva> obterResultados() throws ClassNotFoundException, SQLException {
+
+        Connection conexao = null;
+        Statement comando = null;
+        List<ResultadoProva> resultados = new ArrayList<ResultadoProva>();
+        PreparedStatement pm = null;
+
+        try {
+            conexao = BD.getConexao();
+            comando = conexao.createStatement();
+
+            ResultSet rs = comando.executeQuery("select * from resultadoprovas");
+
+            while (rs.next()) {
+
+                ResultadoProva resultadoProva = new ResultadoProva(
+                        rs.getInt("id"),
+                        rs.getString("nomeAtleta"),
+                        rs.getInt("numeroPeito"),
+                        rs.getInt("tempo"),
+                        rs.getString("categoria"),
+                        rs.getInt("classificacao"),
+                        rs.getString("sexo"),
+                        rs.getString("prova"));
+
+                resultados.add(resultadoProva);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            fecharConexao(conexao, comando);
+
+        }
+
+        return resultados;
+
+    }
 
 }

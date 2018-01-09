@@ -136,6 +136,10 @@
         <servlet-name>PesquisaPagamentoController</servlet-name>
         <servlet-class>controller.PesquisaPagamentoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManterResultadoProvasController</servlet-name>
+        <servlet-class>controller.ManterResultadoProvasController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -263,6 +267,10 @@
     <servlet-mapping>
         <servlet-name>PesquisaPagamentoController</servlet-name>
         <url-pattern>/PesquisaPagamentoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterResultadoProvasController</servlet-name>
+        <url-pattern>/ManterResultadoProvasController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

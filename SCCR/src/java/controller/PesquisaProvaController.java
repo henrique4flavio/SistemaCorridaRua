@@ -56,10 +56,33 @@ public class PesquisaProvaController extends HttpServlet {
                     if (acao.equals("pesquisa")) {
                         pesquisaProva(request, response);
 
+                    }if (acao.equals("escolhaProvasAtleta")) {
+                        escolhaProvasAtleta(request, response);
+                        
+
                     }
                 }
             }
         }
+    }
+     public void listarProvasOrganizador(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        try {
+            request.setAttribute("provas", Prova.obterProvasOrganizador());
+            request.setAttribute("organizadores", Organizador.obterOrganizadores());
+            request.setAttribute("ranking", Ranking.obterRankings());
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaProva.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
+        }
+
     }
 
     public void listarProvas(HttpServletRequest request, HttpServletResponse response) {
@@ -121,6 +144,26 @@ public class PesquisaProvaController extends HttpServlet {
         }
 
     }
+     public void escolhaProvasAtleta(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.setAttribute("provas", Prova.obterProvas());
+            request.setAttribute("organizadores", Organizador.obterOrganizadores());
+            request.setAttribute("ranking", Ranking.obterRankings());
+            RequestDispatcher view = request.getRequestDispatcher("escolhaProvasAtleta.jsp");
+            try {
+                view.forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PesquisaProvaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException ex) {
+
+        }
+
+    }
+    
     
      public void pesquisaProva(HttpServletRequest request, HttpServletResponse response) {
         try {
