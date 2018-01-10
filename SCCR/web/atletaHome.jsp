@@ -197,31 +197,9 @@
   </div>
 
 
-            <div class="panel-title">
-                <h3><span class="glyphicon glyphicon-user"></span> <strong>Bem Vindo(a) <%=nome%></strong> </h3>
-
-                
+            
 
 
-        <jsp:include page="footer.jspf"/>
-
-
-   
-            <div class="panel-title">
-                <h3><span class="glyphicon glyphicon-user"></span> <strong>Bem Vindo(a) <%=nome%> </strong> </h3>
-
-                 <div class="row">
-                        <div class="col-md-10">
-
-
-                                   
-                        </div>
-
-                    </div>
-
-                </div>
-                
-            </div>
         </div>
     
 
