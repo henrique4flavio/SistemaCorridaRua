@@ -15,6 +15,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Atleta;
+import modelo.Inscricao;
 import modelo.InscricoesAtletas;
 import modelo.Prova;
 import modelo.UsuarioLogado;
@@ -47,7 +49,8 @@ private void prepararExibirInscricoes(HttpServletRequest request, HttpServletRes
     
             int codAtleta = Integer.parseInt(request.getParameter("id"));
             
-    request.setAttribute("inscricaoAtleta",InscricoesAtletas.obterInscricoesAtletas(codAtleta));
+            request.setAttribute("inscricao",Inscricao.obterInscricoes());
+            request.setAttribute("atletas",Atleta.obterAtletas());
             request.setAttribute("provas",Prova.obterProvas());
             
            

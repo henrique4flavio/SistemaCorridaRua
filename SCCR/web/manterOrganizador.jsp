@@ -65,7 +65,12 @@
 
             
                 <div class="col-md-6">
-                    <form action="ManterOrganizadorController?acao=confirmar${operacao}" method="post" name="frmManterOrganizador">
+                    
+                    
+                <c:if test="${tipo == 'organizador'}"><form action="ManterOrganizadorController?acao=confirmar${operacao}" method="post" name="frmManterOrganizador"></c:if>
+                <c:if test="${tipo == 'administrador'}"><form action="ManterOrganizadorController?acao=confirmar${operacao}B" method="post" name="frmManterOrganizador"></c:if>
+
+                    
                     <div class="form-group">
 
                         <label for="exampleInputEmail1">Código do organizador:</label>
@@ -106,7 +111,7 @@
                     </div>
 
                     <button type="submit" name="btnConfirmar" class="btn btn-primary" value="Confirmar">Confirmar</button>
-                    <a href="organizadorHome.jsp" class="btn btn-default">Cancelar</a>
+                    <a href="${tipo}Home.jsp" class="btn btn-default">Cancelar</a>
 
                 </form>                   
             </div> 

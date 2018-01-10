@@ -35,12 +35,17 @@ public class ManterOrganizadorController extends HttpServlet {
                         } else {
                             if (acao.equals("confirmarEditar")) {
                                 confirmarEditar(request, response);
+                            } else {
+                                if (acao.equals("confirmarEditarB")) {
+                                    confirmarEditarB(request, response);
+                                }
                             }
                         }
                     }
                 }
             }
         }
+
     }
 
     public void prepararIncluir(HttpServletRequest request, HttpServletResponse response) {
@@ -62,7 +67,7 @@ public class ManterOrganizadorController extends HttpServlet {
         String email = request.getParameter("txtEmail");
         String senha = request.getParameter("txtSenha");
         String login = request.getParameter("txtLogin");
-        
+
         String administrador_id = request.getParameter("optAdministrador");
 
         try {
@@ -179,7 +184,6 @@ public class ManterOrganizadorController extends HttpServlet {
             request.setAttribute("operacao", "Editar");
             request.setAttribute("administrador", Administrador.obterAdministradores());
 
-
             int codOrganizador = Integer.parseInt(request.getParameter("id"));
 
             Organizador organizador = Organizador.obterOrganizador(codOrganizador);
@@ -206,8 +210,33 @@ public class ManterOrganizadorController extends HttpServlet {
         try {
             Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);
             organizador.alterar();
-          
+
             RequestDispatcher view = request.getRequestDispatcher("organizadorHome.jsp");
+            view.forward(request, response);
+        } catch (IOException ex) {
+
+        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+
+        } catch (ServletException ex) {
+
+        }
+    }
+
+    public void confirmarEditarB(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("txtIdOrganizador"));
+        String nome = request.getParameter("txtNomeOrganizador");
+        String email = request.getParameter("txtEmail");
+        String senha = request.getParameter("txtSenha");
+        String login = request.getParameter("txtLogin");
+        String administrador_id = request.getParameter("optAdministrador");
+
+        try {
+            Organizador organizador = new Organizador(id, nome, senha, login, email, administrador_id);
+            organizador.alterar();
+
+            RequestDispatcher view = request.getRequestDispatcher("administradorHome.jsp");
             view.forward(request, response);
         } catch (IOException ex) {
 

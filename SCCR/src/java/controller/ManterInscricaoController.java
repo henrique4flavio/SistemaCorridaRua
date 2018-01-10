@@ -18,6 +18,7 @@ import modelo.Atleta;
 import modelo.Inscricao;
 import modelo.Item;
 import modelo.Lote;
+import modelo.Usuario;
 
 public class ManterInscricaoController extends HttpServlet {
 
@@ -197,7 +198,10 @@ public class ManterInscricaoController extends HttpServlet {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ManterInscricaoController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        RequestDispatcher view = request.getRequestDispatcher("PesquisaInscricaoController");
+        HttpSession session = request.getSession(true);
+         Atleta atleta= (Atleta) session.getAttribute("atleta");
+                                    
+        RequestDispatcher view = request.getRequestDispatcher("ObterInscricaoAtletaController?acao=exibirInscricoes&id="+atleta.getId());
         view.forward(request, response);
 
     }

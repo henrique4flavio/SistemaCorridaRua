@@ -94,20 +94,26 @@
                         </tr>   
                         </thread>
                   <tbody id="idTable">
-                        <c:forEach items="${inscricaoAtleta}" var="inscricaoAtleta">
+                      
+                        
+                                <c:forEach items="${inscricao}" var="inscricao">
+                            
                             <tr> 
-                                <td> <c:out value="${inscricaoAtleta.numeroPeito}"/> </td>
+                                <c:if test="${atleta.id == inscricao.atleta_id}"> </c:if>
+                                <td> <c:out value="${inscricao.id}"/> </td>
                                 <td>
                                     <c:forEach items="${provas}" var="provas">
 
-                                        <c:if test="${provas.id == inscricaoAtleta.idProva}">${provas.nomeProva} </c:if>
+                                        <c:if test="${provas.id == inscricao.prova_id}">${provas.nomeProva} </c:if>
                                     </c:forEach> 
 
 
 
                                 </td>
                                    </tr>
-                        </c:forEach>
+                       
+                                   </c:forEach>
+                                   
                   </tbody>
                 </table>
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
