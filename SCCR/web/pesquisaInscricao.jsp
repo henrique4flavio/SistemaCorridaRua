@@ -113,7 +113,7 @@
                                 
                                 <c:if test="${inscricao.pago == 0}">
                                 
-                                <tr bgcolor="#d28e98"> </c:if>
+                               <tr class="table-danger"> </c:if>
                                     
                                     <c:if test="${inscricao.pago == 1}">
                                 
