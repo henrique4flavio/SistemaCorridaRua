@@ -19,5 +19,9 @@
 
 * O trabalho poderá ser desenvolvido em no máximo 3 pessoas.
 
+### Especificações:
+* O arquivo SQL está dentro da pasta DADOS. 
+* Criar uma base de dados chamada sccr, e logo em seguida importar o arquivo SQL. 
+* Verificar se o acesso ao banco de dados da sua maquina tem senha, caso tenha, alterar o arquivo BD.java
 
 
