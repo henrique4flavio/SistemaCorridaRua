@@ -23,44 +23,42 @@
         </script>
     </head>
     <body>
-         <nav class="navbar navbar-inverse">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                       <li> <c:if test="${tipo != null}"> <a href="${tipo}Home.jsp">Sistema de Corrida de Rua</a></c:if> 
-                        <c:if test="${tipo == null}"> <a href="index.jsp">Sistema de Corrida de Rua</a></c:if>
-                             </li>
-
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="PesquisaProvaController?acao=gridProvas" ><span class=" glyphicon glyphicon-th"></span>  Provas</a> </li>
-
-                            <li><a href="PesquisaResultadoRanking?acao=visualizarRanking"><span class="glyphicon glyphicon-list-alt"></span> Ranking</a> </li>
-                            <li><a href="PesquisaResultadoProvasController?acao=visualizarProvas" ><span class="
-                                                                                                         glyphicon glyphicon-expand"></span> Resultado Provas</a> </li>
-
-
-                            <li><a href="${tipo}Home.jsp"><span class="glyphicon glyphicon-user"></span> 
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="${tipo}Home.jsp">Sistema de Corrida de Rua</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+        
+  
+        
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        
+          <li class="nav-item">
+          <a class="nav-link" href="${tipo}Home.jsp">
+              <i class="fa fa-user-o"></i>
                                 <%
                                     Usuario usuario = (Usuario) session.getAttribute("usuario");
                                     String nome = usuario.getNome();
                                 %>
-                                <%=nome%> 
-
-                            </a> </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+                                <%=nome%> </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
         <div id="main" class="container-fluid" style="margin-top: 50px">
 
             <div id="top" class="row">

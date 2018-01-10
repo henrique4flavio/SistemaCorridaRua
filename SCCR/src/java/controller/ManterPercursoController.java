@@ -127,7 +127,7 @@ public void prepararExcluir(HttpServletRequest request, HttpServletResponse resp
             Percurso percurso = new Percurso(id, nome, distancia, faixaEtaria, prova_id);
 
             percurso.gravar();
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaPercursoController");
+            RequestDispatcher view = request.getRequestDispatcher("organizadorHome.jps");
             view.forward(request, response);
         } catch (IOException ex) {
 
