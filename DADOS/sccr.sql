@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: 09-Jan-2018 às 14:09
--- Versão do servidor: 5.7.19-log
--- PHP Version: 7.1.8
+-- Host: 127.0.0.1
+-- Generation Time: 08-Mar-2018 às 10:38
+-- Versão do servidor: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -133,7 +131,6 @@ CREATE TABLE `inscricao` (
 INSERT INTO `inscricao` (`id`, `pago`, `total`, `formaPagamento`, `categoria`, `kit_id`, `prova_id`, `percurso_id`, `atleta_id`) VALUES
 (1, 1, '100', 'cartao de credito', 'adulto', 1, 1, 1, 1);
 
-
 -- --------------------------------------------------------
 
 --
@@ -204,7 +201,6 @@ INSERT INTO `lote` (`id`, `identificacao`, `desconto`, `dataInicio`, `dataFim`, 
 (1, 'Lote 1', '0', '31-10-2017', '31-12-2017', 1),
 (2, 'Lote 2', '20', '15-11-2017', '28-11-2017', 1),
 (3, 'Lote 3', '10', '30-11-2017', '15-12-2017', 1);
-
 
 -- --------------------------------------------------------
 
@@ -301,62 +297,6 @@ CREATE TABLE `ranking` (
 INSERT INTO `ranking` (`id`, `nome`) VALUES
 (1, 'Ranking JF');
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `resultadoprovas`
---
-
-CREATE TABLE `resultadoprovas` (
-  `id` int(11) NOT NULL,
-  `nomeAtleta` varchar(45) DEFAULT NULL,
-  `numeroPeito` int(11) DEFAULT NULL,
-  `categoria` varchar(45) DEFAULT NULL,
-  `classificacao` int(11) DEFAULT NULL,
-  `sexo` varchar(45) DEFAULT NULL,
-  `prova` varchar(45) DEFAULT NULL,
-  `tempo` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `resultadoprovas`
---
-
-INSERT INTO `resultadoprovas` (`id`, `nomeAtleta`, `numeroPeito`, `categoria`, `classificacao`, `sexo`, `prova`, `tempo`) VALUES
-(1, 'Romulo Oliveira ', 1669, 'idoso', 6, 'maculino', 'Asconcer ', 0),
-(2, 'Giovane Silva ', 55698, 'infantil', 6, 'maculino', 'Asconcer ', 0),
-(3, 'Romulo Oliveira ', 5511000, 'idoso', 16, 'masculino', 'asconcer', 0),
-(4, 'Alice', 99, 'infantil', 16, 'feminino', 'asconcer', 0),
-(5, 'Camila Rodrigues', 558920, 'infantil', 6, 'feminino', 'Asconcer', 0),
-(6, 'Millena Silva', 210, 'idoso', 8, 'feminino', 'Asconcer', 0),
-(7, 'Gilberto Magahaes Pereira', 502020, 'adulto', 10, 'masculino', 'Asconcer', 0),
-(8, 'Carolina Machado da Silva', 502020, 'adulto', 30, 'feminino', 'Asconcer', 0),
-(9, 'Mateus Siquiera Mombache ', 226589, 'infantil', 60, 'masculino', 'Asconcer', 0);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `resultadoranking`
---
-
-CREATE TABLE `resultadoranking` (
-  `id` int(11) NOT NULL,
-  `nomeAtleta` varchar(45) NOT NULL,
-  `classificacao` int(11) NOT NULL,
-  `pontuacao` int(11) NOT NULL,
-  `categoria` varchar(45) NOT NULL,
-  `ranking` varchar(45) NOT NULL,
-  `sexo` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `resultadoranking`
---
-
-INSERT INTO `resultadoranking` (`id`, `nomeAtleta`, `classificacao`, `pontuacao`, `categoria`, `ranking`, `sexo`) VALUES
-(1, 'Larissa Almeida', 5, 66, 'idoso', 'RankingJF', 'feminino'),
-(2, 'Paulo Almeida', 5, 66, 'idoso', 'RankingJF', 'masculino');
-
 --
 -- Indexes for dumped tables
 --
@@ -439,18 +379,6 @@ ALTER TABLE `ranking`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `resultadoprovas`
---
-ALTER TABLE `resultadoprovas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `resultadoranking`
---
-ALTER TABLE `resultadoranking`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -459,16 +387,6 @@ ALTER TABLE `resultadoranking`
 --
 ALTER TABLE `inscricao`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50001;
---
--- AUTO_INCREMENT for table `resultadoprovas`
---
-ALTER TABLE `resultadoprovas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100000000;
---
--- AUTO_INCREMENT for table `resultadoranking`
---
-ALTER TABLE `resultadoranking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
@@ -514,7 +432,6 @@ ALTER TABLE `percurso`
 ALTER TABLE `prova`
   ADD CONSTRAINT `prova_ibfk_1` FOREIGN KEY (`organizador_id`) REFERENCES `organizador` (`id`),
   ADD CONSTRAINT `prova_ibfk_2` FOREIGN KEY (`ranking_id`) REFERENCES `ranking` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
