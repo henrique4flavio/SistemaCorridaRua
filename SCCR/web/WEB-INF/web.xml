@@ -132,6 +132,10 @@
         <servlet-name>ManterResultadoProvasController</servlet-name>
         <servlet-class>controller.ManterResultadoProvasController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RelatorioController</servlet-name>
+        <servlet-class>relatorio.RelatorioController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -255,6 +259,10 @@
     <servlet-mapping>
         <servlet-name>ManterResultadoProvasController</servlet-name>
         <url-pattern>/ManterResultadoProvasController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioController</servlet-name>
+        <url-pattern>/RelatorioController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
