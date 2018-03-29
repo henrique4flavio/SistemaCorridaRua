@@ -41,6 +41,22 @@
           </a>
         </li>
         
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="kits">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapsekits" data-parent="#exampleAccordion">
+             <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">Gerar Relatórios</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapsekits">
+            <li>
+              <a href="RelatorioAtletaController">Relatorio de Atletas</a>
+            </li>
+            <li>
+                <a data-toggle="modal" data-target="#parametro">Relatório de Organizadores</a>
+            </li>
+            
+          </ul>
+        </li>
+        
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -97,22 +113,7 @@
           </div>
         </div>
       
-      <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-warning o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
-              </div>
-              <div class="mr-5">Exemplo Relatorio</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="RelatorioController">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
+
        
        
       </div>
@@ -137,7 +138,7 @@
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal parametro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -152,6 +153,28 @@
             <a class="btn btn-primary" href="LoginController?acao=logout">Logout</a>
           </div>
         </div>
+      </div>
+    </div>
+          
+          <!-- Relatorio Organizadores Modal-->
+    <div class="modal fade" id="parametro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Digite o Nome do Organizador</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+            <div class="modal-body"><input type="text" name="mail" size="60" placeholder="Nome do Organizador"></div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <a class="btn btn-primary" href="RelatorioAtletaController">Gerar Relatório</a>
+          </div>
+        </div>
+          
+         
+        
       </div>
     </div>
     <!-- Bootstrap core JavaScript-->

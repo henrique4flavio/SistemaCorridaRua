@@ -22,7 +22,7 @@ import net.sf.jasperreports.engine.JasperPrint;
  *
  * @author Marco
  */
-public class RelatorioController extends HttpServlet {
+public class RelatorioAtletaController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) {
  Connection conexao = null;
         try {

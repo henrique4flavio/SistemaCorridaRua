@@ -136,6 +136,14 @@
         <servlet-name>RelatorioController</servlet-name>
         <servlet-class>relatorio.RelatorioController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RelatorioAtletasController</servlet-name>
+        <servlet-class>relatorio.RelatorioAtletasController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioAtletaController</servlet-name>
+        <servlet-class>relatorio.RelatorioAtletaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -263,6 +271,14 @@
     <servlet-mapping>
         <servlet-name>RelatorioController</servlet-name>
         <url-pattern>/RelatorioController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioAtletasController</servlet-name>
+        <url-pattern>/RelatorioAtletasController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioAtletaController</servlet-name>
+        <url-pattern>/RelatorioAtletaController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
