@@ -55,7 +55,7 @@
                                 </a>
                                 <ul class="sidenav-second-level collapse" id="collapseatletas">
                                     <li>
-                                        <a href="RelatorioAtletaController">Lista de Atletas</a>
+                                        <a href="RelatorioAtletaController?acao=todosAtletas">Lista de Atletas</a>
                                     </li>
                                     <li>
                                         <a data-toggle="modal" data-target="#parametroEstado">Atletas por Estado</a>
@@ -76,7 +76,7 @@
                                 </a>
                                 <ul class="sidenav-second-level collapse" id="collapseprovas">
                                     <li>
-                                        <a href="RelatorioAtletaController">Lista de Organizadores</a>
+                                        <a href="RelatorioOrganizadorController?acao=todosOrganizadores">Lista de Organizadores</a>
                                     </li>
 
 

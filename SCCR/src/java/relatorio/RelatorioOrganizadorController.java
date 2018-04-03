@@ -24,31 +24,25 @@ import net.sf.jasperreports.engine.JasperPrint;
  *
  * @author Marco
  */
-public class RelatorioAtletaController extends HttpServlet {
+public class RelatorioOrganizadorController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
-        if (acao.equals("todosAtletas")) {
-            todosAtletas(request, response);
+        if (acao.equals("todosOrganizadores")) {
+            todosOrganizadores(request, response);
         }
-        if (acao.equals("atletasPorEstado")) {
-            atletasPorEstado(request, response);
-        } else {
-            if (acao.equals("atletasPorCidade")) {
-                atletasPorCidade(request, response);
-            }
-        }
+
     }
 
-    protected void todosAtletas(HttpServletRequest request, HttpServletResponse response) {
+    protected void todosOrganizadores(HttpServletRequest request, HttpServletResponse response) {
         Connection conexao = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conexao = DriverManager.getConnection("jdbc:mysql://localhost/sccr", "root", "");
             HashMap parametros = new HashMap();
             // parametros.put("PAR_codCurso", Integer.parseInt(request.getParameter("txtCodCurso"))); //  relatorio que precisa de parametro
-            String relatorio = getServletContext().getRealPath("/WEB-INF/relatorios") + "/Relatorio_Atletas.jasper";
+            String relatorio = getServletContext().getRealPath("/WEB-INF/relatorios") + "/Relatorio_Organizadores.jasper";
             JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
             byte[] relat = JasperExportManager.exportReportToPdf(jp); // exportar para pdf
             response.setHeader("Content-Disposition", "attachment;filename=relatorio.pdf");
@@ -71,65 +65,7 @@ public class RelatorioAtletaController extends HttpServlet {
         }
     }
 
-    protected void atletasPorEstado(HttpServletRequest request, HttpServletResponse response) {
-        Connection conexao = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost/sccr", "root", "");
-            HashMap parametros = new HashMap();
-            parametros.put("estado", request.getParameter("optEstado")); //  relatorio que precisa de parametro
-            String relatorio = getServletContext().getRealPath("/WEB-INF/relatorios") + "/RelatorioAtleta_estado.jasper";
-            JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
-            byte[] relat = JasperExportManager.exportReportToPdf(jp); // exportar para pdf
-            response.setHeader("Content-Disposition", "attachment;filename=relatorio.pdf");
-            response.setContentType("application/pdf");
-            response.getOutputStream().write(relat);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } catch (ClassNotFoundException ex) {
-        } catch (JRException ex) {
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            try {
-                if (!conexao.isClosed()) {
-                    conexao.close();
-                }
-            } catch (SQLException ex) {
-            }
-        }
-    }
-
-    protected void atletasPorCidade(HttpServletRequest request, HttpServletResponse response) {
-        Connection conexao = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost/sccr", "root", "");
-            HashMap parametros = new HashMap();
-            // parametros.put("PAR_codCurso", Integer.parseInt(request.getParameter("txtCodCurso"))); //  relatorio que precisa de parametro
-            String relatorio = getServletContext().getRealPath("/WEB-INF/relatorios") + "/Relatorio_Atletas.jasper";
-            JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
-            byte[] relat = JasperExportManager.exportReportToPdf(jp); // exportar para pdf
-            response.setHeader("Content-Disposition", "attachment;filename=relatorio.pdf");
-            response.setContentType("application/pdf");
-            response.getOutputStream().write(relat);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } catch (ClassNotFoundException ex) {
-        } catch (JRException ex) {
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            try {
-                if (!conexao.isClosed()) {
-                    conexao.close();
-                }
-            } catch (SQLException ex) {
-            }
-        }
-    }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
