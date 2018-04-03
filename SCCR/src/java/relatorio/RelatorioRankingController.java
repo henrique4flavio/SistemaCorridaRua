@@ -24,18 +24,18 @@ import net.sf.jasperreports.engine.JasperPrint;
  *
  * @author Marco
  */
-public class RelatorioProvaController extends HttpServlet {
+public class RelatorioRankingController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
-        if (acao.equals("todasProvas")) {
-            todasProvas(request, response);
+        if (acao.equals("todosRankings")) {
+            todosRankings(request, response);
         }
 
     }
 
-    protected void todasProvas(HttpServletRequest request, HttpServletResponse response) {
+    protected void todosRankings(HttpServletRequest request, HttpServletResponse response) {
         Connection conexao = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -65,7 +65,7 @@ public class RelatorioProvaController extends HttpServlet {
         }
         }
     
-      
+       
     
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

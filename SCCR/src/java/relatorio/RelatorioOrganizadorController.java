@@ -63,6 +63,66 @@ public class RelatorioOrganizadorController extends HttpServlet {
             } catch (SQLException ex) {
             }
         }
+        }
+    
+        protected void listaDeKits(HttpServletRequest request, HttpServletResponse response) {
+        Connection conexao = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost/sccr", "root", "");
+            HashMap parametros = new HashMap();
+            // parametros.put("PAR_codCurso", Integer.parseInt(request.getParameter("txtCodCurso"))); //  relatorio que precisa de parametro
+            String relatorio = getServletContext().getRealPath("/WEB-INF/relatorios") + "/Relatorio_Organizadores.jasper";
+            JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
+            byte[] relat = JasperExportManager.exportReportToPdf(jp); // exportar para pdf
+            response.setHeader("Content-Disposition", "attachment;filename=relatorio.pdf");
+            response.setContentType("application/pdf");
+            response.getOutputStream().write(relat);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+        } catch (JRException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (!conexao.isClosed()) {
+                    conexao.close();
+                }
+            } catch (SQLException ex) {
+            }
+        }
+    }
+       
+        protected void relatorioDeElementoKit(HttpServletRequest request, HttpServletResponse response) {
+        Connection conexao = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost/sccr", "root", "");
+            HashMap parametros = new HashMap();
+            // parametros.put("PAR_codCurso", Integer.parseInt(request.getParameter("txtCodCurso"))); //  relatorio que precisa de parametro
+            String relatorio = getServletContext().getRealPath("/WEB-INF/relatorios") + "/Relatorio_Organizadores.jasper";
+            JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
+            byte[] relat = JasperExportManager.exportReportToPdf(jp); // exportar para pdf
+            response.setHeader("Content-Disposition", "attachment;filename=relatorio.pdf");
+            response.setContentType("application/pdf");
+            response.getOutputStream().write(relat);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+        } catch (JRException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (!conexao.isClosed()) {
+                    conexao.close();
+                }
+            } catch (SQLException ex) {
+            }
+        }
     }
 
     

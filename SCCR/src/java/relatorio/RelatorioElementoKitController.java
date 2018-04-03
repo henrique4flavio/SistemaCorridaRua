@@ -24,18 +24,18 @@ import net.sf.jasperreports.engine.JasperPrint;
  *
  * @author Marco
  */
-public class RelatorioProvaController extends HttpServlet {
+public class RelatorioElementoKitController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
-        if (acao.equals("todasProvas")) {
-            todasProvas(request, response);
+        if (acao.equals("listaDeElementosKit")) {
+            listaDeElementosKit(request, response);
         }
 
     }
 
-    protected void todasProvas(HttpServletRequest request, HttpServletResponse response) {
+    protected void listaDeElementosKit(HttpServletRequest request, HttpServletResponse response) {
         Connection conexao = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -65,7 +65,66 @@ public class RelatorioProvaController extends HttpServlet {
         }
         }
     
-      
+        protected void listaDeKits(HttpServletRequest request, HttpServletResponse response) {
+        Connection conexao = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost/sccr", "root", "");
+            HashMap parametros = new HashMap();
+            // parametros.put("PAR_codCurso", Integer.parseInt(request.getParameter("txtCodCurso"))); //  relatorio que precisa de parametro
+            String relatorio = getServletContext().getRealPath("/WEB-INF/relatorios") + "/Relatorio_Organizadores.jasper";
+            JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
+            byte[] relat = JasperExportManager.exportReportToPdf(jp); // exportar para pdf
+            response.setHeader("Content-Disposition", "attachment;filename=relatorio.pdf");
+            response.setContentType("application/pdf");
+            response.getOutputStream().write(relat);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+        } catch (JRException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (!conexao.isClosed()) {
+                    conexao.close();
+                }
+            } catch (SQLException ex) {
+            }
+        }
+    }
+       
+        protected void relatorioDeElementoKit(HttpServletRequest request, HttpServletResponse response) {
+        Connection conexao = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost/sccr", "root", "");
+            HashMap parametros = new HashMap();
+            // parametros.put("PAR_codCurso", Integer.parseInt(request.getParameter("txtCodCurso"))); //  relatorio que precisa de parametro
+            String relatorio = getServletContext().getRealPath("/WEB-INF/relatorios") + "/Relatorio_Organizadores.jasper";
+            JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
+            byte[] relat = JasperExportManager.exportReportToPdf(jp); // exportar para pdf
+            response.setHeader("Content-Disposition", "attachment;filename=relatorio.pdf");
+            response.setContentType("application/pdf");
+            response.getOutputStream().write(relat);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+        } catch (JRException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (!conexao.isClosed()) {
+                    conexao.close();
+                }
+            } catch (SQLException ex) {
+            }
+        }
+    }
+
     
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
