@@ -166,6 +166,7 @@
         <i class="fa fa-angle-up"></i>
     </a>
     
+    <!-- Modais para digitação dos parametros-->
     <jsp:include page="modalParametros.jspf"/>
 
 
