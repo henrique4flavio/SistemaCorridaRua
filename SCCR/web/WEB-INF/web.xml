@@ -164,6 +164,10 @@
         <servlet-name>RelatorioRankingController</servlet-name>
         <servlet-class>relatorio.RelatorioRankingController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RelatorioProvaController</servlet-name>
+        <servlet-class>relatorio.RelatorioProvaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaAdministradorController</servlet-name>
         <url-pattern>/PesquisaAdministradorController</url-pattern>
@@ -319,6 +323,10 @@
     <servlet-mapping>
         <servlet-name>RelatorioRankingController</servlet-name>
         <url-pattern>/RelatorioRankingController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioProvaController</servlet-name>
+        <url-pattern>/RelatorioProvaController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

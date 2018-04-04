@@ -44,7 +44,7 @@ public class RelatorioKitController extends HttpServlet {
             conexao = DriverManager.getConnection("jdbc:mysql://localhost/sccr", "root", "");
             HashMap parametros = new HashMap();
             // parametros.put("PAR_codCurso", Integer.parseInt(request.getParameter("txtCodCurso"))); //  relatorio que precisa de parametro
-            String relatorio = getServletContext().getRealPath("/WEB-INF/relatorios") + "/Relatorio_Organizadores.jasper";
+            String relatorio = getServletContext().getRealPath("/WEB-INF/relatorios") + "/Relatorio_Kit.jasper";
             JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
             byte[] relat = JasperExportManager.exportReportToPdf(jp); // exportar para pdf
             response.setHeader("Content-Disposition", "attachment;filename=relatorio.pdf");

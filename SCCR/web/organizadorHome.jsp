@@ -141,7 +141,32 @@
 
                                 </ul>
                             </li>
+<li class="nav-item" data-toggle="tooltip" data-placement="right" title="organizador">
+                                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInscricoes">
 
+                                    <span class="nav-link-text">Relatório de Inscrições</span>
+                                </a>
+                                <ul class="sidenav-second-level collapse" id="collapseInscricoes">
+                                    <li>
+                                        <a href="RelatorioInscricaoController?acao=todasInscricoes">Todas Inscrições</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="modal" data-target="#parametroProva">Inscrição por prova</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-toggle="modal" data-target="#parametroAtleta">Inscrição por atleta</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="modal" data-target="#parametroPagamento">Inscrição por pagamento realizado</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-toggle="modal" data-target="#parametroFormaPagamento">Inscrição por forma de pagamento</a>
+                                    </li>
+
+                                </ul>
+                            </li>
                             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="kits">
                                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseprovas">
 
