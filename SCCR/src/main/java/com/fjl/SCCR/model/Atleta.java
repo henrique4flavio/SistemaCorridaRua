@@ -1,4 +1,5 @@
-package com.kmv.goforrest.model;
+package com.fjl.SCCR.model;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
