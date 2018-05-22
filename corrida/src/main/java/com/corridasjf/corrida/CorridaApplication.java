@@ -1,12 +1,12 @@
-package com.fjl.SCCR;
+package com.corridasjf.corrida;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SccrApplication {
+public class CorridaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SccrApplication.class, args);
+		SpringApplication.run(CorridaApplication.class, args);
 	}
 }
