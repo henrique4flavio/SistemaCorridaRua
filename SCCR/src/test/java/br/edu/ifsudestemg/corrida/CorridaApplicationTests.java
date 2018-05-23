@@ -1,4 +1,4 @@
-package com.corridasjf.corrida;
+package br.edu.ifsudestemg.corrida;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
