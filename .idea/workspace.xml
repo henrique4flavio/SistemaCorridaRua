@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0014c481-8a04-455d-bbe4-774129bfd362" name="Default" comment="" />
+    <list default="true" id="0014c481-8a04-455d-bbe4-774129bfd362" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,125 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CorridaRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/CorridaRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="43" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EnderecoRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/EnderecoRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-end-line="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InscricaoRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/InscricaoRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="69" selection-end-line="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KitRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/KitRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="57" selection-end-line="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocalRetiradaRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/LocalRetiradaRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="77" selection-end-line="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoteRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/LoteRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="59" selection-end-line="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrganizadorRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/OrganizadorRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="73" selection-end-line="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PagamentoRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/PagamentoRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="69" selection-end-line="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RankingRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/RankingRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="65" selection-end-line="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioRepository.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/UsuarioRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -178,11 +62,20 @@
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="MavenProjectNavigator">
     <treeState>
       <expand />
       <select />
     </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -196,8 +89,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -277,11 +169,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/go-forrest" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -358,8 +253,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526952042388</updated>
+      <workItem from="1527157970912" duration="24000" />
+      <workItem from="1527158019154" duration="62000" />
+      <workItem from="1527159004612" duration="1129000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -370,19 +271,21 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.32064423" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.32064423" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24304539" />
+      <window_info anchor="right" id="Database" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.24963397" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -392,20 +295,20 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3290938" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.24963397" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24304539" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3290938" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -413,313 +316,61 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Capture Tool" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32064423" />
       <window_info id="Favorites" order="6" side_tool="true" />
     </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Endereco.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="34" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1450#1451#0" expanded="true" />
-            <element signature="e#1506#1507#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Lote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" lean-forward="true" selection-end-line="1" />
-          <folding>
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/AdministradorRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="55" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/AtletaRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Endereco.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Lote.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/AdministradorRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/AtletaRepository.java" />
     <entry file="file://$PROJECT_DIR$/corrida/pom.xml" />
     <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/CorridaApplication.java" />
     <entry file="file://$PROJECT_DIR$/corrida/pom.xml" />
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml" />
     <entry file="file://$PROJECT_DIR$/.idea/SistemaCorridaRua.iml" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/CorridaApplication.java" />
     <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Pontuacao.java" />
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Usuario.java" />
     <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Organizador" />
     <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Percurso.java" />
     <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/PontoAtleta.java" />
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Ranking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret column="12" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Ranking.java" />
     <entry file="file://$PROJECT_DIR$/corrida/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/LocalRetirada.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Kit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Organizador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" lean-forward="true" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Pagamento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-830">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Inscricao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Chip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Atleta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Administrador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Corrida.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Lote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-end-line="1" />
-          <folding>
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/AdministradorRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="55" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/AtletaRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/ChipRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Endereco.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1450#1451#0" expanded="true" />
-            <element signature="e#1506#1507#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/ChipRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/CorridaRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="43" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/EnderecoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/InscricaoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="69" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/KitRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="57" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/LocalRetiradaRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="77" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/LoteRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="59" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/OrganizadorRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="73" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/PagamentoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="69" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/RankingRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="65" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/UsuarioRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/LocalRetirada.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Kit.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Organizador.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Pagamento.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Inscricao.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Chip.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Atleta.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Administrador.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Corrida.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Lote.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/AdministradorRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/AtletaRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/ChipRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/model/Endereco.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/ChipRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/CorridaRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/EnderecoRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/InscricaoRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/KitRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/LocalRetiradaRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/LoteRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/OrganizadorRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/PagamentoRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/RankingRepository.java" />
+    <entry file="file://$PROJECT_DIR$/corrida/src/main/java/com/corridasjf/corrida/repository/UsuarioRepository.java" />
+    <entry file="file://$PROJECT_DIR$/README.md" />
   </component>
   <component name="masterDetails">
     <states>
