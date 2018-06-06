@@ -1,10 +1,14 @@
 package com.projeto.corrida.model;
 
+import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+@Data
 public class Administrador {
 
     @Id
@@ -14,6 +18,7 @@ public class Administrador {
     private String login;
     private String senha;
 
+    @Autowired
     public Administrador(Long id, String login, String senha) {
         this.id = id;
         this.login = login;
