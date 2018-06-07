@@ -26,13 +26,13 @@ public class AtletaController {
     @GetMapping(value = "add")
     public String displayCorredorForm(Model model) {
         model.addAttribute("tittle", "Adicionar Atleta");
-        return "atletas/add";
+        return "atleta/add";
     }
 
     @PostMapping(value = "add")
     public String processCorredorForm(@ModelAttribute Atleta Atleta) {
         AtletaRepository.save(Atleta);
-        return "redirect:/atletas/add"; // url para qual página quero voltar.
+        return "redirect:/atleta/add"; // url para qual página quero voltar.
     }
 
     @GetMapping(value = "edit/{id}") // site.com/corredor/edit
