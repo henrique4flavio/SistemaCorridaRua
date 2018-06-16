@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments :: head">
+        <meta charset="UTF-8"/>
+        <title th:text="${title}"> Organizador </title>
+    </head>
+<body>
+
+<div class="container ">
+    <div class="row">
+        <h1 th:text="${title}">Organizador</h1>
+
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>DESCRIÇÃO</th>
+                        <th>TIPO CHIP</th>
+                        <th>PREÇO</th>
+                        <th>ORGANIZADOR</th>
+                        <th colspan="2"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="kit : ${kits}">
+                        <td th:text="${kit.id}">Codigo</td>
+                        <td th:text="${kit.nome}">Nome</td>
+                        <td th:text="${kit.descricao}">DESCRIÇÃO</td>
+                        <td th:text="${kit.tipoChip}">TIPO CHIP</td>
+                        <td th:text="${kit.preco}">PREÇO</td>
+                        <td th:text="${kit.getOrganizador().getNome()}">ORGANIZADOR</td>
+                        <td><a class="btn btn-outline-success" th:href="@{'/kit/edit/' + ${kit.id}}">Editar</a></td>
+                        <td><a class="btn btn-outline-danger" th:href="@{'/kit/delete/' + ${kit.id}}">Excluir</a></td>
+                    </tr>
+                </table>
+                <a  class="btn btn-outline-warning"  th:href="@{'~/kit/add/'}">Adicionar</a>
+                <a  class="btn btn-outline-warning"  th:href="@{'~/organizador/home/'}">Voltar</a>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

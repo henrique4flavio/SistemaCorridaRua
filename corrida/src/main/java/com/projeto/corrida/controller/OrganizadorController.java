@@ -59,7 +59,7 @@ public class OrganizadorController {
     @PostMapping(value = "add")
     public String processCorredorForm(@ModelAttribute Organizador organizador) {
         organizadorRepository.save(organizador);
-        return "redirect:/organizador/"; // url para qual página quero voltar.
+        return "redirect:/organizador/listar"; // url para qual página quero voltar.
     }
 
     @GetMapping(value = "edit/{id}") // site.com/corredor/edit
@@ -84,7 +84,7 @@ public class OrganizadorController {
         } else {
             model.addAttribute("error", "Dados incorretos");
         }
-        return "redirect:/organizador";
+        return "redirect:/organizador/listar";
     }
 
     @GetMapping(value = "delete/{id}") // site.com/corredor/delete/1
@@ -104,7 +104,7 @@ public class OrganizadorController {
     @PostMapping(value = "delete/{id}") // site.com/corredor/delete/1
     public String delete(@PathVariable Long id, @ModelAttribute Organizador organizador) {
         organizadorRepository.delete(organizador);
-        return "redirect:/organizador";
+        return "redirect:/organizador/listar";
     }
 
 }

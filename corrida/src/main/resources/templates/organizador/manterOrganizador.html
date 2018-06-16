@@ -3,7 +3,7 @@
 <head>
     <head th:replace="fragments :: head">
         <meta charset="UTF-8"/>
-        <title>Administrador</title>
+        <title>Organizador</title>
     </head>
 <body>
 <h1 th:text="${title}"> Operação </h1>
@@ -19,7 +19,7 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="nome">Nome Completo:</label>
+                            <label for="nome">Nome:</label>
                             <input type="text" required class="form-control" id="nome" name="nome"
                                    th:value="${organizador?.nome}" th:disabled="${operacao} == deletarpublicpublic"/>
                         </div>
@@ -51,7 +51,7 @@
 
                                 <option th:if="${operacao} != adicionar" th:each="administrador : ${administradores}"
                                         th:value="${administrador?.id}"   th:text="${administrador.nome}"
-                                        th:selected="${administrador?.id==organizador.organizador.getId()}"></option>
+                                        th:selected="${administrador?.id==organizador.administrador.getId()}"></option>
                             </select>
                         </div>
 

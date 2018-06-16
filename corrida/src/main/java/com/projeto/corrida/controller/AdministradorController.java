@@ -26,7 +26,7 @@ public class AdministradorController {
         model.addAttribute("title", "Lista Administrador");
         model.addAttribute("botaoOperacao", "Listar Admin");
 
-        return "admin/administradorHome";
+        return "admin/pesquisaAdministrador";
     }
     @GetMapping(value = "")
     public String administradorHome1(Model model) {
@@ -75,7 +75,7 @@ public class AdministradorController {
         } else {
             model.addAttribute("error", "Dados incorretos");
         }
-        return "redirect:/admin";
+        return "redirect:/admin/listar";
     }
 
     @GetMapping(value = "delete/{id}") // site.com/corredor/delete/1
@@ -94,7 +94,7 @@ public class AdministradorController {
     @PostMapping(value = "delete/{id}") // site.com/corredor/delete/1
     public String delete(@PathVariable Long id, @ModelAttribute Administrador administrador) {
         administradorRepository.delete(administrador);
-        return "redirect:/admin";
+        return "redirect:/admin/listar";
     }
 
 }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <head th:replace="fragments :: head">
+        <meta charset="UTF-8"/>
+        <title>Kit</title>
+    </head>
+<body>
+<h1 th:text="${title}"> Operação </h1>
+
+<div class="container"align="center">
+
+    <div class="row-center">
+
+
+        <div align="center">
+            <div class="panel panel-primary">
+                <form th:object="${kit}" method="post">
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" required class="form-control" id="nome" name="nome"
+                                   th:value="${kit?.nome}" th:disabled="${operacao} == deletarpublicpublic"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preco">Preço:</label>
+                            <input type="text" class="form-control" id="preco" name="preco" required
+                                   th:value="${kit?.preco}" th:disabled="${operacao} == deletar"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipoChip">Tipo Chip:</label>
+                            <input type="text" class="form-control" id="tipoChip" name="tipoChip" required
+                                   autocomplete th:value="${kit?.tipoChip}"
+                                   th:disabled="${operacao} == deletar"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="descricao">Descrição:</label>
+                            <input type="text" required class="form-control" id="descricao"
+                                   name="descricao" th:value="${kit?.descricao}"
+                                   th:disabled="${operacao} == deletar"/>
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="organizador">Organizador:</label>
+                            <select name="organizador" id="organizador" th:disabled="${operacao} == deletar">
+                                <option th:if="${operacao} == adicionar" th:each="organizador : ${organizadores}"
+                                        th:value="${organizador.id}" th:text="${organizador.nome}"></option>
+
+                                <option th:if="${operacao} != adicionar" th:each="organizador : ${organizadores}"
+                                        th:value="${organizador?.id}"   th:text="${organizador.nome}"
+                                        th:selected="${organizador?.id==kit.organizador.getId()}"></option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+
+                            <input type="submit" class="btn btn-outline-success"th:value="${botaoOperacao}"
+                                   name="btnConfirmar"/>
+
+                            <a href="/kit/listar/">
+                                <button type="button" class="btn btn-outline-secondary">Voltar</button>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
