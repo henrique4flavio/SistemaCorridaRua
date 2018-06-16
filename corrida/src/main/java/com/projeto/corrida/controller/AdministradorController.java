@@ -19,16 +19,27 @@ public class AdministradorController {
     @Autowired
     private AdministradorRepository administradorRepository;
 
-    @GetMapping(value = "")
+    @GetMapping(value = "listar")
     public String administradores(Model model) {
         model.addAttribute("administradores", administradorRepository.findAll());
         model.addAttribute("operacao", "listar");
         model.addAttribute("title", "Lista Administrador");
         model.addAttribute("botaoOperacao", "Listar Admin");
 
-        return "admin/pesquisaAdministrador";
+        return "admin/administradorHome";
     }
+    @GetMapping(value = "")
+    public String administradorHome1(Model model) {
 
+
+        return "admin/administradorHome";
+    }
+    @GetMapping(value = "home")
+    public String administradorHome2(Model model) {
+
+
+        return "admin/administradorHome";
+    }
     @GetMapping(value = "add")
     public String displayCorredorForm(Model model) {
         model.addAttribute("tittle", "Adicionar administrador");
@@ -40,7 +51,7 @@ public class AdministradorController {
     @PostMapping(value = "add")
     public String processCorredorForm(@ModelAttribute Administrador administrador) {
         administradorRepository.save(administrador);
-        return "redirect:/admin/"; // url para qual página quero voltar.
+        return "redirect:/admin/listar"; // url para qual página quero voltar.
     }
 
     @GetMapping(value = "edit/{id}") // site.com/corredor/edit
