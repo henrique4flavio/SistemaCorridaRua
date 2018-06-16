@@ -34,11 +34,11 @@ public class AdministradorController {
     @PostMapping(value = "add")
     public String processCorredorForm(@ModelAttribute Administrador administrador) {
         administradorRepository.save(administrador);
-        return "redirect:/admin/add"; // url para qual página quero voltar.
+        return "redirect:/admin/"; // url para qual página quero voltar.
     }
 
     @GetMapping(value = "edit/{id}") // site.com/corredor/edit
-    public String corredorEdit(Model model, @PathVariable Long id) {
+    public String administradorEdit(Model model, @PathVariable Long id) {
         Optional<Administrador> administrador = administradorRepository.findById(id);
         if (administrador.isPresent()){
             model.addAttribute("administrador", administrador.get());

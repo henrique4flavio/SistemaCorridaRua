@@ -1,6 +1,7 @@
 package com.projeto.corrida.model;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Entity;
@@ -10,9 +11,9 @@ import java.io.Serializable;
 
 @Data
 @Entity
-public class Administrador extends Usuario {
 
-    public Administrador(Long id, String nome, String cpf, String senha, String email, String celular) {
-        super(id, nome, cpf, senha, email, celular);
-    }
+@Accessors(chain = true)
+public class Administrador extends Usuario implements Serializable {
+
+
 }

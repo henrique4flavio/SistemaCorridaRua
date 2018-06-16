@@ -1,6 +1,7 @@
 package com.projeto.corrida.model;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +12,7 @@ import javax.persistence.MappedSuperclass;
 
 @Data
 @MappedSuperclass
+@Accessors(chain = true)
 public class Usuario implements Serializable {
 
     @Id
@@ -23,15 +25,6 @@ public class Usuario implements Serializable {
     private String email;
     private String celular;
 
-    public Usuario(Long id, String nome, String cpf, String senha, String email, String celular) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.senha = senha;
-        this.email = email;
-        this.celular = celular;
-
-    }
 
 
 

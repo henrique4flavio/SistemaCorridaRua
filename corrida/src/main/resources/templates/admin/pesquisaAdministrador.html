@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments :: head">
+        <meta charset="UTF-8"/>
+        <title th:text="${title}"> Administrador </title>
+    </head>
+<body>
+
+<div >
+    <div>
+        <h1 th:text="${title}">Administrador</h1>
+
+        <div>
+            <div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th colspan="2">Acão</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="administrador : ${administradores}">
+                        <td th:text="${administrador.id}">Codigo</td>
+                        <td th:text="${administrador.nome}">Nome</td>
+                        <td th:text="${administrador.email}">Email</td>
+                        <td><a th:href="@{'/administrador/edit/' + ${administrador.id}}">Editar</a></td>
+                        <td><a th:href="@{'/administrador/delete/' + ${administrador.id}}">Excluir</a></td>
+                    </tr>
+                </table>
+
+
+                <button class="btn btn-default"><a  style="text-decoration: none" th:href="@{'~/admin/add/'}">Adicionar</a> </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
