@@ -22,13 +22,19 @@ public class AdministradorController {
     @GetMapping(value = "")
     public String administradores(Model model) {
         model.addAttribute("administradores", administradorRepository.findAll());
-        return "admin/administradores";
+        model.addAttribute("operacao", "listar");
+        model.addAttribute("title", "Lista Administrador");
+        model.addAttribute("botaoOperacao", "Listar Admin");
+
+        return "admin/pesquisaAdministrador";
     }
 
     @GetMapping(value = "add")
     public String displayCorredorForm(Model model) {
         model.addAttribute("tittle", "Adicionar administrador");
-        return "admin/add";
+        model.addAttribute("operacao", "adicionar");
+        model.addAttribute("botaoOperacao", "Adicionar Administrador");
+        return "admin/manterAdministrador";
     }
 
     @PostMapping(value = "add")
@@ -40,11 +46,14 @@ public class AdministradorController {
     @GetMapping(value = "edit/{id}") // site.com/corredor/edit
     public String administradorEdit(Model model, @PathVariable Long id) {
         Optional<Administrador> administrador = administradorRepository.findById(id);
+        model.addAttribute("operacao", "editar");
+        model.addAttribute("botaoOperacao", "Editar Administrador");
+        model.addAttribute("title", "Editar Administrador");
         if (administrador.isPresent()){
             model.addAttribute("administrador", administrador.get());
         }
         model.addAttribute("title", "Editar administrador");
-        return "admin/edit";
+        return "admin/manterAdministrador";
     }
 
     @PostMapping(value = "edit/{id}") // site.com/corredor/edit/1/
@@ -61,11 +70,14 @@ public class AdministradorController {
     @GetMapping(value = "delete/{id}") // site.com/corredor/delete/1
     public String administradorDelete(Model model, @PathVariable Long id) {
         Optional<Administrador> administrador = administradorRepository.findById(id);
+        model.addAttribute("operacao", "deletar");
+        model.addAttribute("botaoOperacao", "Excluir Administrador");
+        model.addAttribute("title", "Excluir Administrador");
         if (administrador.isPresent()) {
             model.addAttribute("administrador", administrador.get());
         }
         model.addAttribute("tittle", "Excluir administrador");
-        return "admin/delete";
+        return "admin/manterAdministrador";
     }
 
     @PostMapping(value = "delete/{id}") // site.com/corredor/delete/1
