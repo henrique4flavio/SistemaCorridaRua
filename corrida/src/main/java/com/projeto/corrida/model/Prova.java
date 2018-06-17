@@ -16,7 +16,6 @@ public class Prova implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String nome;
     private String localLargada;
     private String dataEvento;

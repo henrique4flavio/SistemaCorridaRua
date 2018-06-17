@@ -15,7 +15,7 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>ID</th>
+
                         <th>Nome</th>
                         <th>DESCRIÇÃO</th>
                         <th>TIPO CHIP</th>
@@ -26,7 +26,7 @@
                     </thead>
                     <tbody>
                     <tr th:each="kit : ${kits}">
-                        <td th:text="${kit.id}">Codigo</td>
+
                         <td th:text="${kit.nome}">Nome</td>
                         <td th:text="${kit.descricao}">DESCRIÇÃO</td>
                         <td th:text="${kit.tipoChip}">TIPO CHIP</td>
