@@ -15,30 +15,30 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Administrador</th>
-                        <th colspan="2">Acão</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="organizador : ${organizadores}">
-                        <td th:text="${organizador.id}">Codigo</td>
-                        <td th:text="${organizador.nome}">Nome</td>
-                        <td th:text="${organizador.email}">Email</td>
-                        <td th:text="${organizador.getAdministrador().getNome()}">Administrador</td>
-                        <td><a class="btn btn-outline-success" th:href="@{'/organizador/edit/' + ${organizador.id}}">Editar</a></td>
-                        <td><a class="btn btn-outline-danger" th:href="@{'/organizador/delete/' + ${organizador.id}}">Excluir</a></td>
-                    </tr>
-                </table>
-                <a  class="btn btn-outline-warning"  th:href="@{'~/organizador/add/'}">Adicionar</a>
-                <a  class="btn btn-outline-warning"  th:href="@{'~/admin/home/'}">Voltar</a>
+                        <!-- <th>ID</th> -->
+                       <th>Nome</th>
+                       <th>E-mail</th>
+                       <th>Administrador responsável</th>
+                       <th colspan="2">Acão</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <tr th:each="organizador : ${organizadores}">
+                       <td th:text="${organizador.id}">Codigo</td>
+                       <td th:text="${organizador.nome}">Nome</td>
+                       <td th:text="${organizador.email}">Email</td>
+                       <td th:text="${organizador.getAdministrador().getNome()}">Administrador</td>
+                       <td><a class="btn btn-outline-success" th:href="@{'/organizador/edit/' + ${organizador.id}}">Editar</a></td>
+                       <td><a class="btn btn-outline-danger" th:href="@{'/organizador/delete/' + ${organizador.id}}">Excluir</a></td>
+                   </tr>
+               </table>
+               <a  class="btn btn-outline-warning"  th:href="@{'~/organizador/add/'}">Adicionar</a>
+               <a  class="btn btn-outline-warning"  th:href="@{'~/admin/home/'}">Voltar</a>
 
 
-            </div>
-        </div>
-    </div>
+           </div>
+       </div>
+   </div>
 </div>
 </body>
 </html>

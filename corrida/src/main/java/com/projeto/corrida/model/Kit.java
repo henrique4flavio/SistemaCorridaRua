@@ -4,10 +4,7 @@ package com.projeto.corrida.model;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 
 @Data
@@ -25,5 +22,9 @@ public class Kit {
     @ManyToOne
     private Organizador organizador;
 
+    @ManyToOne
+
+    @JoinColumn(name = "prova_id")
+    private Prova prova;
 
 }

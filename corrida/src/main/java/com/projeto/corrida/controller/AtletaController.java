@@ -12,64 +12,64 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/atleta")
 public class AtletaController {
-
-
     @Autowired
-    private AtletaRepository AtletaRepository;
+    private AtletaRepository atletaRepository;
 
-    @GetMapping(value = "")
+    @GetMapping
     public String atletas(Model model) {
-        model.addAttribute("atletas", AtletaRepository.findAll());
-        return "atletas/atletas";
+        model.addAttribute("atletas", atletaRepository.findAll());
+        return "atleta/atletas";
     }
 
-    @GetMapping(value = "add")
-    public String displayCorredorForm(Model model) {
-        model.addAttribute("tittle", "Adicionar Atleta");
+    @GetMapping(value = "/add") // site.com/atleta/add
+    public String displayAtletaForm(Model model) {
+        model.addAttribute("tittle", "Adicionar atleta");
         return "atleta/add";
     }
 
-    @PostMapping(value = "add")
-    public String processCorredorForm(@ModelAttribute Atleta Atleta) {
-        AtletaRepository.save(Atleta);
-        return "redirect:/atleta/add"; // url para qual página quero voltar.
+    @PostMapping(value = "/add")
+    public String processaAtletaForm(@ModelAttribute Atleta atleta, Model model) {
+        atletaRepository.save(atleta);
+
+        return "redirect:/atleta"; // url para qual página quero voltar.
     }
 
-    @GetMapping(value = "edit/{id}") // site.com/corredor/edit
-    public String corredorEdit(Model model, @PathVariable Long id) {
-        Optional<Atleta> Atleta = AtletaRepository.findById(id);
-        if (Atleta.isPresent()){
-            model.addAttribute("Atleta", Atleta.get());
+    @GetMapping(value = "/edit/{id}") // site.com/corredor/edit
+    public String atletaEdit(Model model, @PathVariable Long id) {
+        Optional<Atleta> atleta = atletaRepository.findById(id);
+        model.addAttribute("tittle", "Editar atleta");
+
+        if (atleta.isPresent()){
+            model.addAttribute("atleta", atleta.get());
         }
-        model.addAttribute("title", "Editar Atleta");
-        return "atletas/edit";
+        return "atleta/edit";
     }
 
-    @PostMapping(value = "edit/{id}") // site.com/corredor/edit/1/
-    public String edit(@ModelAttribute Atleta Atleta, Model model,
+    @PostMapping(value = "/edit/{id}") // site.com/atleta/edit/1/
+    public String edit(@ModelAttribute Atleta atleta, Model model,
                        @PathVariable Long id) throws Exception {
-        if (id.equals(Atleta.getId())) {
-            AtletaRepository.save(Atleta);
+        if (id.equals(atleta.getId())) {
+            atletaRepository.save(atleta);
         } else {
             model.addAttribute("error", "Dados incorretos");
         }
-        return "redirect:/atletas";
+        return "redirect:/atleta";
     }
 
-    @GetMapping(value = "delete/{id}") // site.com/corredor/delete/1
-    public String AtletaDelete(Model model, @PathVariable Long id) {
-        Optional<Atleta> Atleta = AtletaRepository.findById(id);
-        if (Atleta.isPresent()) {
-            model.addAttribute("Atleta", Atleta.get());
+    @GetMapping(value = "/delete/{id}") // site.com/corredor/delete/1
+    public String atletaDelete(Model model, @PathVariable Long id) {
+        Optional<Atleta> atleta = atletaRepository.findById(id);
+        if (atleta.isPresent()) {
+            model.addAttribute("atleta", atleta.get());
         }
-        model.addAttribute("tittle", "Excluir Atleta");
-        return "atletas/delete";
+        model.addAttribute("tittle", "Excluir atleta");
+        return "atleta/delete";
     }
 
     @PostMapping(value = "delete/{id}") // site.com/corredor/delete/1
-    public String delete(@PathVariable Long id, @ModelAttribute Atleta Atleta) {
-        AtletaRepository.delete(Atleta);
-        return "redirect:/atletas";
+    public String delete(@PathVariable Long id, @ModelAttribute Atleta atleta) {
+        atletaRepository.delete(atleta);
+        return "redirect:/atleta";
     }
 
 }
