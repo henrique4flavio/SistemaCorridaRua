@@ -13,7 +13,7 @@ import java.util.Optional;
 
 
 @Controller
-@RequestMapping(value = "prova")
+@RequestMapping(value = "/prova")
 public class ProvaController {
     @Autowired
     private ProvaRepository provaRepository;
@@ -22,71 +22,81 @@ public class ProvaController {
     @Autowired
     private KitRepository kitRepository;
 
-    @GetMapping
-    public String get(Model model) {
+    @GetMapping(value = "listar")
+    public String listaProva(Model model) {
         model.addAttribute("provas", provaRepository.findAll());
-        return "prova/listarProvas";
+        model.addAttribute("operacao", "listar");
+        model.addAttribute("title", "Lista de provas");
+        model.addAttribute("botaoOperacao", "Adicionar Prova");
+
+        return "prova/pesquisaProva";
     }
 
-    @GetMapping(value = "/add")
-    public String getAdd(Model model) {
-        model.addAttribute("tittle", "Adicionar prova");
+    @GetMapping(value = "add")
+    public String displayCorredorForm(Model model) {
+        model.addAttribute("tittle", "Adicionar kit");
         model.addAttribute("operacao", "adicionar");
-        model.addAttribute("botaoOperacao", "Cadastrar prova");
         model.addAttribute("organizadores", organizadorRepository.findAll());
         model.addAttribute("kits", kitRepository.findAll());
-
-        return "prova/formProvas";
+        model.addAttribute("botaoOperacao", "Adicionar prova");
+        return "prova/manterProva";
     }
 
-    @PostMapping(value = "/add")
-    public String postAdd(@ModelAttribute Prova prova) {
-
+    @PostMapping(value = "add")
+    public String processKitForm(@ModelAttribute Prova prova) {
         provaRepository.save(prova);
-        return "redirect:/prova";
+        return "redirect:/prova/listar"; // url para qual página quero voltar.
     }
 
-    @GetMapping(value = "/edit/{id}")
-    public String getEdit(Model model, @PathVariable Long id) {
+    @GetMapping(value = "edit/{id}") // site.com/corredor/edit
+    public String provaEdit(Model model, @PathVariable Long id) {
         Optional<Prova> prova = provaRepository.findById(id);
-        model.addAttribute("tittle", "Editar prova");
         model.addAttribute("operacao", "editar");
-        model.addAttribute("botaoOperacao", "Editar prova");
-        model.addAttribute("eventos", provaRepository.findAll());
+        model.addAttribute("botaoOperacao", "Editar Prova");
+        model.addAttribute("title", "Editar Prova");
         model.addAttribute("organizadores", organizadorRepository.findAll());
         model.addAttribute("kits", kitRepository.findAll());
 
-        if (prova.isPresent()) {
+
+        model.addAttribute("provas",provaRepository.findAll());
+
+        if (prova.isPresent()){
             model.addAttribute("prova", prova.get());
         }
-        return "prova/formProva";
+        model.addAttribute("title", "Editar Prova");
+        return "prova/manterProva";
     }
 
-    @PostMapping(value = "/edit/{id}")
-    public String postEdit(@ModelAttribute Prova prova, Model model,
-                           @PathVariable Long id) throws Exception {
-
-        provaRepository.save(prova);
-        return "redirect:/prova";
+    @PostMapping(value = "edit/{id}") // site.com/corredor/edit/1/
+    public String edit(@ModelAttribute Prova prova, Model model,
+                       @PathVariable Long id) throws Exception {
+        if (id.equals(prova.getId())) {
+            provaRepository.save(prova);
+        } else {
+            model.addAttribute("error", "Dados incorretos");
+        }
+        return "redirect:/prova/listar";
     }
 
-    @GetMapping(value = "/delete/{id}")
-    public String getDelete(Model model, @PathVariable Long id) {
+    @GetMapping(value = "delete/{id}") // site.com/corredor/delete/1
+    public String provaDelete(Model model, @PathVariable Long id) {
         Optional<Prova> prova = provaRepository.findById(id);
-
+        model.addAttribute("organizadores", organizadorRepository.findAll());
+        model.addAttribute("kits", kitRepository.findAll());
+        model.addAttribute("operacao", "deletar");
+        model.addAttribute("botaoOperacao", "Excluir Prova");
+        model.addAttribute("title", "Excluir Prova");
         if (prova.isPresent()) {
             model.addAttribute("prova", prova.get());
         }
-        model.addAttribute("tittle", "Excluir evento");
-        model.addAttribute("operacao", "excluir");
-        model.addAttribute("botaoOperacao", "Excluir evento");
-        return "prova/formProvas";
+        model.addAttribute("tittle", "Excluir prova");
+        return "prova/manterProva";
     }
 
-    @PostMapping(value = "/delete/{id}")
-    public String postDelete(@PathVariable Long id, @ModelAttribute Prova prova) {
+    @PostMapping(value = "delete/{id}") // site.com/corredor/delete/1
+    public String delete(@PathVariable Long id, @ModelAttribute Prova prova) {
         provaRepository.delete(prova);
-        return "redirect:/prova";
+        return "redirect:/prova/listar";
     }
-}
 
+}

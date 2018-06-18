@@ -19,7 +19,7 @@ public class Prova implements Serializable {
     private String nome;
     private String localLargada;
     private String dataEvento;
-    private String horalargada;
+    private String horaLargada;
     private int maxParticipantes;
 
     @ManyToOne
