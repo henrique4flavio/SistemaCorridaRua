@@ -23,7 +23,7 @@
                     </thead>
                     <tbody>
                     <tr th:each="administrador : ${administradores}">
-                        <td th:text="${administrador.id}">Codigo</td>
+
                         <td th:text="${administrador.nome}">Nome</td>
                         <td th:text="${administrador.email}">Email</td>
                         <td><a class="btn btn-outline-success" th:href="@{'/admin/edit/' + ${administrador.id}}">Editar</a></td>
