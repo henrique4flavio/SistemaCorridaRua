@@ -25,7 +25,7 @@ public class OrganizadorController {
     public String listarOrganizadores(Model model) {
         model.addAttribute("organizadores", organizadorRepository.findAll());
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista Organizadors");
+        model.addAttribute("title", "Lista Organizadores");
         model.addAttribute("botaoOperacao", "Listar Organizador");
 
         return "organizador/pesquisaOrganizador";
