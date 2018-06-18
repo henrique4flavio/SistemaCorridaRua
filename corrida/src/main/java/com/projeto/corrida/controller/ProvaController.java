@@ -34,7 +34,7 @@ public class ProvaController {
 
     @GetMapping(value = "add")
     public String displayCorredorForm(Model model) {
-        model.addAttribute("tittle", "Adicionar kit");
+        model.addAttribute("title", "Adicionar kit");
         model.addAttribute("operacao", "adicionar");
         model.addAttribute("organizadores", organizadorRepository.findAll());
         model.addAttribute("kits", kitRepository.findAll());
@@ -89,7 +89,7 @@ public class ProvaController {
         if (prova.isPresent()) {
             model.addAttribute("prova", prova.get());
         }
-        model.addAttribute("tittle", "Excluir prova");
+        model.addAttribute("title", "Excluir prova");
         return "prova/manterProva";
     }
 

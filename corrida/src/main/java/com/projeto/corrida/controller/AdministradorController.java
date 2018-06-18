@@ -42,7 +42,7 @@ public class AdministradorController {
     }
     @GetMapping(value = "add")
     public String displayCorredorForm(Model model) {
-        model.addAttribute("tittle", "Adicionar administrador");
+        model.addAttribute("title", "Adicionar administrador");
         model.addAttribute("operacao", "adicionar");
         model.addAttribute("botaoOperacao", "Adicionar Administrador");
         return "admin/manterAdministrador";

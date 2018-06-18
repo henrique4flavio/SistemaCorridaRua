@@ -25,7 +25,7 @@ public class PercursoController {
 
     @GetMapping(value = "/add")
     public String getAdd(Model model) {
-        model.addAttribute("tittle", "Adicionar percurso");
+        model.addAttribute("title", "Adicionar percurso");
         model.addAttribute("operacao", "adicionar");
         model.addAttribute("botaoOperacao", "Cadastrar percurso");
         return "percurso/formPercursos";
@@ -40,7 +40,7 @@ public class PercursoController {
     @GetMapping(value = "/edit/{codPercurso}")
     public String getEdit(Model model, @PathVariable Long codPercurso) {
         Optional<Percurso> percurso = percursoRepository.findById(codPercurso);
-        model.addAttribute("tittle", "Editar percurso");
+        model.addAttribute("title", "Editar percurso");
         model.addAttribute("operacao", "editar");
         model.addAttribute("botaoOperacao", "Editar percurso");
         if (percurso.isPresent()) {
@@ -64,7 +64,7 @@ public class PercursoController {
         if (percurso.isPresent()) {
             model.addAttribute("percurso", percurso.get());
         }
-        model.addAttribute("tittle", "Excluir percurso");
+        model.addAttribute("title", "Excluir percurso");
         model.addAttribute("operacao", "excluir");
         model.addAttribute("botaoOperacao", "Excluir percurso");
         return "percurso/formPercursos";

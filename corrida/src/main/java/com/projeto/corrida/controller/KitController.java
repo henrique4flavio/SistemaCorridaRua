@@ -34,7 +34,7 @@ public class KitController {
 
     @GetMapping(value = "add")
     public String displayCorredorForm(Model model) {
-        model.addAttribute("tittle", "Adicionar kit");
+        model.addAttribute("title", "Adicionar kit");
         model.addAttribute("operacao", "adicionar");
         model.addAttribute("organizadores", organizadorRepository.findAll());
         model.addAttribute("botaoOperacao", "Adicionar kit");

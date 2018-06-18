@@ -40,7 +40,7 @@ public class OrganizadorController {
     public String organizadorHome(Model model) {
         model.addAttribute("organizadores", organizadorRepository.findAll());
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista Organizadors");
+        model.addAttribute("title", "Lista Organizadores");
         model.addAttribute("botaoOperacao", "Listar Organizador");
 
         return "organizador/organizadorHome";
@@ -48,7 +48,7 @@ public class OrganizadorController {
 
     @GetMapping(value = "add")
     public String displayCorredorForm(Model model) {
-        model.addAttribute("tittle", "Adicionar organizador");
+        model.addAttribute("title", "Adicionar organizador");
         model.addAttribute("administradores", administradorRepository.findAll());
         model.addAttribute("operacao", "adicionar");
         model.addAttribute("botaoOperacao", "Adicionar Organizador");
@@ -67,7 +67,7 @@ public class OrganizadorController {
         Optional<Organizador> organizador = organizadorRepository.findById(id);
         model.addAttribute("operacao", "editar");
         model.addAttribute("botaoOperacao", "Editar Organizador");
-        model.addAttribute("title", "Editar Organizador");
+        model.addAttribute("tittle", "Editar Organizador");
         model.addAttribute("administradores", administradorRepository.findAll());
         if (organizador.isPresent()){
             model.addAttribute("organizador", organizador.get());
@@ -97,7 +97,7 @@ public class OrganizadorController {
         if (organizador.isPresent()) {
             model.addAttribute("organizador", organizador.get());
         }
-        model.addAttribute("tittle", "Excluir organizador");
+        model.addAttribute("title", "Excluir organizador");
         return "organizador/manterOrganizador";
     }
 

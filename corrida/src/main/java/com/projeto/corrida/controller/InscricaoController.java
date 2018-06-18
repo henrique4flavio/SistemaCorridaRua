@@ -28,7 +28,7 @@ public class InscricaoController {
 
     @GetMapping(value = "/add")
     public String getAdd(Model model) {
-        model.addAttribute("tittle", "Adicionar inscricao");
+        model.addAttribute("title", "Adicionar inscricao");
         model.addAttribute("operacao", "adicionar");
         model.addAttribute("botaoOperacao", "Cadastrar inscricao");
         model.addAttribute("percursos", percursoRepository.findAll());
@@ -45,7 +45,7 @@ public class InscricaoController {
     @GetMapping(value = "/edit/{codInscricao}")
     public String getEdit(Model model, @PathVariable Long codInscricao) {
         Optional<Inscricao> inscricao = inscricaoRepository.findById(codInscricao);
-        model.addAttribute("tittle", "Editar inscricao");
+        model.addAttribute("title", "Editar inscricao");
         model.addAttribute("operacao", "editar");
         model.addAttribute("botaoOperacao", "Editar inscricao");
         model.addAttribute("percursos", percursoRepository.findAll());
@@ -72,7 +72,7 @@ public class InscricaoController {
         if (inscricao.isPresent()) {
             model.addAttribute("inscricao", inscricao.get());
         }
-        model.addAttribute("tittle", "Excluir inscricao");
+        model.addAttribute("title", "Excluir inscricao");
         model.addAttribute("operacao", "excluir");
         model.addAttribute("botaoOperacao", "Excluir inscricao");
         return "inscricao/formInscricoes";

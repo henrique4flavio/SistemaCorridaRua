@@ -23,7 +23,7 @@ public class AtletaController {
 
     @GetMapping(value = "/add") // site.com/atleta/add
     public String displayAtletaForm(Model model) {
-        model.addAttribute("tittle", "Adicionar atleta");
+        model.addAttribute("title", "Adicionar atleta");
         return "atleta/add";
     }
 
@@ -37,7 +37,7 @@ public class AtletaController {
     @GetMapping(value = "/edit/{id}") // site.com/corredor/edit
     public String atletaEdit(Model model, @PathVariable Long id) {
         Optional<Atleta> atleta = atletaRepository.findById(id);
-        model.addAttribute("tittle", "Editar atleta");
+        model.addAttribute("title", "Editar atleta");
 
         if (atleta.isPresent()){
             model.addAttribute("atleta", atleta.get());
@@ -62,7 +62,7 @@ public class AtletaController {
         if (atleta.isPresent()) {
             model.addAttribute("atleta", atleta.get());
         }
-        model.addAttribute("tittle", "Excluir atleta");
+        model.addAttribute("title", "Excluir atleta");
         return "atleta/delete";
     }
 

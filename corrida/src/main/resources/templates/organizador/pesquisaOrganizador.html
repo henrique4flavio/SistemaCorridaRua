@@ -24,7 +24,7 @@
                    </thead>
                    <tbody>
                    <tr th:each="organizador : ${organizadores}">
-                      
+
                        <td th:text="${organizador.nome}">Nome</td>
                        <td th:text="${organizador.email}">Email</td>
                        <td th:text="${organizador.getAdministrador().getNome()}">Administrador</td>
