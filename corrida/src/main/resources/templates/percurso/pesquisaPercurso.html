@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments :: head">
+        <meta charset="UTF-8"/>
+        <title th:text="${title}"> Percurso </title>
+    </head>
+<body>
+
+<div class="container " th:background="black">
+    <div class="row">
+        <h1 th:text="${title}">Percurso</h1>
+
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                       <th>Nome</th>
+                       <th>Distancia</th>
+                        <th>Prova equivalente</th>
+
+
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <tr th:each="percurso : ${percursos}">
+                       <td th:text="${percurso.id}">Codigo</td>
+                       <td th:text="${percurso.nome}">Nome</td>
+                       <td th:text="${percurso.distancia;}">Distancia</td>
+
+                       <td th:text="${percurso.getProva().getNome()}">Prova</td>
+
+                       <td><a class="btn btn-outline-success" th:href="@{'/percurso/edit/' + ${percurso.id}}">Editar</a></td>
+                       <td><a class="btn btn-outline-danger" th:href="@{'/percurso/delete/' + ${percurso.id}}">Excluir</a></td>
+                   </tr>
+               </table>
+               <a  class="btn btn-outline-warning"  th:href="@{'~/percurso/add/'}">Adicionar</a>
+               <a  class="btn btn-outline-warning"  th:href="@{'~/organizador/home/'}">Voltar</a>
+
+
+           </div>
+       </div>
+   </div>
+</div>
+</body>
+</html>
