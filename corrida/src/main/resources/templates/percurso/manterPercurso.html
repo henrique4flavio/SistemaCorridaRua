@@ -38,7 +38,7 @@
 
                             <label for="prova">Prova:</label>
                             <select name="prova" id="prova" th:disabled="${operacao} == deletar">
-                                <option th:if="${operacao} == adicionar" th:each="prova : ${prova}"
+                                <option th:if="${operacao} == adicionar" th:each="prova : ${provas}"
                                         th:value="${prova.id}" th:text="${prova.nome}"></option>
 
                                 <option th:if="${operacao} != adicionar" th:each="prova : ${provas}"
