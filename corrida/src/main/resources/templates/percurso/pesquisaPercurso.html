@@ -1,47 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="fragments :: head">
-        <meta charset="UTF-8"/>
-        <title th:text="${title}"> Percurso </title>
-    </head>
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"> Percurso da Prova</title>
+</head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="/admin/home/">Sistema de Corrida de Rua</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="administradorHome.jsp">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <!-- <span class="nav-link-text">Painel Administrativo</span> -->
+                </a>
+            </li>
 
-<div class="container " th:background="black">
+        </ul>
+        <ul class="navbar-nav sidenav-toggler">
+            <li class="nav-item">
+                <a class="nav-link text-center" id="sidenavToggler">
+                    <i class="fa fa-fw fa-angle-left"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br><br><br>
+
+<div class="container ">
     <div class="row">
-        <h1 th:text="${title}">Percurso</h1>
+        <h3 th:text="${title}">Percurso</h3>
 
         <div class="col-md-12">
             <div class="panel panel-primary">
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>ID</th>
-                       <th>Nome</th>
-                       <th>Distancia</th>
-                        <th>Prova equivalente</th>
+
+                        <th>Nome</th>
+                        <th>Dist�ncia</th>
+                        <th>Prova Relacionada</th>
+                        <th colspan="2"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="percurso : ${percursos}">
+
+                        <td th:text="${percurso.nome}">Nome</td>
+                        <td th:text="${percurso.distancia}">Dist�ncia</td>
+                        <td th:text="${percurso.getProva().getNome()}">Prova Relacionada</td>
+                        <td><a class="btn btn-outline-success" th:href="@{'/percurso/edit/' + ${percurso.id}}">Editar</a></td>
+                        <td><a class="btn btn-outline-danger" th:href="@{'/percurso/delete/' + ${percurso.id}}">Excluir</a></td>
+                    </tr>
+                </table>
+                <a  class="btn btn-outline-warning"  th:href="@{'~/percurso/add/'}">Adicionar</a>
+                <a  class="btn btn-outline-warning"  th:href="@{'~/admin/home/'}">Voltar</a>
 
 
-                   </tr>
-                   </thead>
-                   <tbody>
-                   <tr th:each="percurso : ${percursos}">
-                       <td th:text="${percurso.id}">Codigo</td>
-                       <td th:text="${percurso.nome}">Nome</td>
-                       <td th:text="${percurso.distancia;}">Distancia</td>
-
-                       <td th:text="${percurso.getProva().getNome()}">Prova</td>
-
-                       <td><a class="btn btn-outline-success" th:href="@{'/percurso/edit/' + ${percurso.id}}">Editar</a></td>
-                       <td><a class="btn btn-outline-danger" th:href="@{'/percurso/delete/' + ${percurso.id}}">Excluir</a></td>
-                   </tr>
-               </table>
-               <a  class="btn btn-outline-warning"  th:href="@{'~/percurso/add/'}">Adicionar</a>
-               <a  class="btn btn-outline-warning"  th:href="@{'~/organizador/home/'}">Voltar</a>
-
-
-           </div>
-       </div>
-   </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-copyright bg-dark text-white text-center py-3 fixed-bottom">� 2018 Copyright:
+    <a href=""> SCCR II</a>
 </div>
 </body>
 </html>

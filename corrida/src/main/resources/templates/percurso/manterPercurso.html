@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
@@ -6,61 +7,91 @@
         <title>Percurso</title>
     </head>
 <body>
-<h1 th:text="${title}"> Operação </h1>
 
-<div class="container"align="center">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="/admin/home/">Sistema de Corrida de Rua</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="administradorHome.jsp">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <!-- <span class="nav-link-text">Painel Administrativo</span> -->
+                </a>
+            </li>
 
-    <div class="row-center">
-
-
-        <div align="center">
-            <div class="panel panel-primary">
-                <form th:object="${percurso}" method="post">
-
-                    <div class="col-md-4">
-
-                        <div class="form-group">
-                            <label for="nome">Nome:</label>
-                            <input type="text" required class="form-control" id="nome" name="nome"
-                                   th:value="${percurso?.nome}" th:disabled="${operacao} == deletarpublicpublic"/>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="distancia;">Distancia:</label>
-                            <input type="text" class="form-control" id="distancia;" name="distancia;" required
-                                   th:value="${percurso?.distancia;}" th:disabled="${operacao} == deletar"/>
-                        </div>
-
+        </ul>
+        <ul class="navbar-nav sidenav-toggler">
+            <li class="nav-item">
+                <a class="nav-link text-center" id="sidenavToggler">
+                    <i class="fa fa-fw fa-angle-left"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
 
 
-                        <div class="form-group">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-                            <label for="prova">Prova:</label>
-                            <select name="prova" id="prova" th:disabled="${operacao} == deletar">
-                                <option th:if="${operacao} == adicionar" th:each="prova : ${prova}"
-                                        th:value="${prova.id}" th:text="${prova.nome}"></option>
+<div class="container">
+    <br><br>
 
-                                <option th:if="${operacao} != adicionar" th:each="prova : ${provas}"
-                                        th:value="${prova?.id}"   th:text="${prova.nome}"
-                                        th:selected="${prova?.id==percurso.prova.getId()}"></option>
-                            </select>
-                        </div>
+    <h3 th:text="${title}"> Opera��o </h3>
+
+    <div class="container">
+        <br><br><br>
 
 
+        <div class="panel panel-primary">
+            <form th:object="${percurso}" method="post">
 
-                        <div class="form-group">
-
-                            <input type="submit" class="btn btn-outline-success"th:value="${botaoOperacao}"
-                                   name="btnConfirmar"/>
-
-                            <a href="/admin/">
-                                <button type="button" class="btn btn-outline-secondary">Voltar</button>
-                            </a>
-                        </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" required class="form-control" id="nome" name="nome"
+                               th:value="${percurso?.nome}" th:disabled="${operacao} == deletarpublicpublic"/>
                     </div>
-                </form>
-            </div>
+
+                    <div class="form-group">
+                        <label for="distancia">Dist�ncia</label>
+                        <input type="text" class="form-control" id="distancia" name="distancia" required
+                               th:value="${percurso?.distancia}" th:disabled="${operacao} == deletar"/>
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="prova">Prova:</label>
+                        <select name="prova" id="prova" th:disabled="${operacao} == deletar">
+                            <option th:if="${operacao} == adicionar" th:each="prova : ${provas}"
+                                    th:value="${prova.id}" th:text="${prova.nome}"></option>
+
+                            <option th:if="${operacao} != adicionar" th:each="prova : ${provas}"
+                                    th:value="${prova?.id}"   th:text="${prova.nome}"
+                                    th:selected="${prova?.id==percurso.prova.getId()}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="submit" class="btn btn-outline-success"th:value="${botaoOperacao}"
+                               name="btnConfirmar"/>
+
+                        <a href="/admin/">
+                            <button type="button" class="btn btn-outline-secondary">Voltar</button>
+                        </a>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
