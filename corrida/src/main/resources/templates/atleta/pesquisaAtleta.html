@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: head">
     <meta charset="UTF-8"/>
-    <title th:text="${title}"> Atleta</title>
+    <title th:text="${tittle}"> Atleta </title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -42,7 +41,7 @@
 
 <div class="container ">
     <div class="row">
-        <h3 th:text="${title}">Atleta</h3>
+        <h3 th:text="${title}"> Atletas</h3>
 
         <div class="col-md-12">
             <div class="panel panel-primary">
@@ -50,26 +49,24 @@
                     <thead>
                     <tr>
 
-                        <th>Nome Completo</th>
+                        <th>Nome</th>
                         <th>Tamanho da camisa</th>
                         <th>Apelido</th>
                         <th>E-mail</th>
-
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="atleta : ${atletas}">
 
-                        <td th:text="${atleta.nome}">Nome Completo</td>
+                        <td th:text="${atleta.nome}">Nome</td>
                         <td th:text="${atleta.tamanhoCamisa}">Tamanho da camisa</td>
-                        <td th:text="${atleta.apelido">Apelido</td>
-                        <td th:text="${atleta.email">E-mail</td>
-
+                        <td th:text="${atleta.apelido}">Apelido</td>
+                        <td th:text="${atleta.email}">Email</td>
                         <td><a class="btn btn-outline-success" th:href="@{'/atleta/edit/' + ${atleta.id}}">Editar</a></td>
                         <td><a class="btn btn-outline-danger" th:href="@{'/atleta/delete/' + ${atleta.id}}">Excluir</a></td>
                     </tr>
                 </table>
-                <a  class="btn btn-outline-warning"  th:href="@{'~/atleta/add/'}">Adicionar</a>
+                <a  class="btn btn-outline-warning"  th:href="@{'~/atleta/add'}">Adicionar</a>
                 <a  class="btn btn-outline-warning"  th:href="@{'~/admin/home/'}">Voltar</a>
 
 
@@ -77,8 +74,24 @@
         </div>
     </div>
 </div>
-<div class="footer-copyright bg-dark text-white text-center py-3 fixed-bottom">2018 Copyright:
+
+<div class="footer-copyright bg-dark text-white text-center py-3 fixed-bottom">© 2018 Copyright:
     <a href=""> SCCR II</a>
 </div>
+<!-- Copyright -->
+<!-- Footer -->
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

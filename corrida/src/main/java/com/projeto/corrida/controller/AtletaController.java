@@ -14,6 +14,7 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/atleta")
 public class AtletaController {
+
     @Autowired
     private AtletaRepository atletaRepository;
 
@@ -26,6 +27,7 @@ public class AtletaController {
 
         return "atleta/pesquisaAtleta";
     }
+
 
     @GetMapping(value = "add")
     public String displayCorredorForm(Model model) {
