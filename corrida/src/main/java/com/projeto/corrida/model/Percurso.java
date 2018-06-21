@@ -19,7 +19,7 @@ public class Percurso implements Serializable{
     private Long id;
 
     private String nome;
-    private float distancia;
+    private String distancia;
 
     @ManyToOne
     @JoinColumn(name = "prova_id")

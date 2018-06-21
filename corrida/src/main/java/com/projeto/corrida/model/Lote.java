@@ -22,7 +22,7 @@ public class Lote implements Serializable {
     Locale localeBR = new Locale("pt","BR");
 
     private String nome;
-    private Float preco;
+    private String preco;
 
     private String dataInicio;
     private String dataFinal;

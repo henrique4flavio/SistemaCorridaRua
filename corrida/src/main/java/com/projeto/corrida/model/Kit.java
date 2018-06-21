@@ -18,7 +18,7 @@ public class Kit {
     private String descricao;
 
     private String tipoChip;
-    private Double preco;
+    private String preco;
     @ManyToOne
     private Organizador organizador;
 

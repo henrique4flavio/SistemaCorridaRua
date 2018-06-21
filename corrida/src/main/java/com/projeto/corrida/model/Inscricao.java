@@ -14,7 +14,7 @@ public class Inscricao implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String tamanhoCamisa;
-    private float precoTotal;
+    private String precoTotal;
     private String dataInscricao;
 
     @OneToOne
