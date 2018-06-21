@@ -1,8 +1,6 @@
 package com.projeto.corrida.controller;
 
-import com.projeto.corrida.model.Administrador;
 import com.projeto.corrida.model.Kit;
-import com.projeto.corrida.repository.AdministradorRepository;
 import com.projeto.corrida.repository.KitRepository;
 import com.projeto.corrida.repository.OrganizadorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,12 +79,12 @@ public class KitController {
         model.addAttribute("organizadores", organizadorRepository.findAll());
 
         model.addAttribute("operacao", "deletar");
-        model.addAttribute("botaoOperacao", "Excluir Administrador");
-        model.addAttribute("title", "Excluir Administrador");
+        model.addAttribute("botaoOperacao", "Excluir ");
+        model.addAttribute("title", "Excluir kit");
         if (kit.isPresent()) {
             model.addAttribute("kit", kit.get());
         }
-        model.addAttribute("tittle", "Excluir administrador");
+        model.addAttribute("tittle", "Excluir kit");
         return "kit/manterKit";
     }
 
