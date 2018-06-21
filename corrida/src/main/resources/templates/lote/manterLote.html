@@ -44,33 +44,38 @@
 <div class="container">
     <br><br>
 
-    <h3 th:text="${title}"> Operação </h3>
+    <h3 th:text="${title}"> Operaçãoo </h3>
 
     <div class="container">
         <br><br><br>
 
 
         <div class="panel panel-primary">
-            <form th:object="${percurso}" method="post">
+            <form th:object="${lote}" method="post">
 
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="nome">Nome:</label>
                         <input type="text" required class="form-control" id="nome" name="nome"
-                               th:value="${percurso?.nome}" th:disabled="${operacao} == deletarpublicpublic"/>
+                               th:value="${lote?.nome}" th:disabled="${operacao} == deletarpublicpublic"/>
                     </div>
 
                     <div class="form-group">
-                        <label for="distancia">Distância</label>
-                        <input type="text" class="form-control" id="distancia" name="distancia" required
-                               th:value="${percurso?.distancia}" th:disabled="${operacao} == deletar"/>
+                        <label for="preco">Preço</label>
+                        <input type="text" class="form-control" id="preco" name="preco" required
+                               th:value="${lote?.preco}" th:disabled="${operacao} == deletar"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataInicio">Data Início:</label>
+                        <input type="date" class="form-control" id="dataInicio" name="dataInicio" required
+                               th:value="${lote?.dataInicio}" th:disabled="${operacao} == deletar"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataFinal">Data Fim:</label>
+                        <input type="date" class="form-control" id="dataFinal" name="dataFinal" required
+                               th:value="${lote?.dataFinal}" th:disabled="${operacao} == deletar"/>
                     </div>
 
-
-                            <label for="prova">Prova:</label>
-                            <select name="prova" id="prova" th:disabled="${operacao} == deletar">
-                                <option th:if="${operacao} == adicionar" th:each="prova : ${provas}"
-                                        th:value="${prova.id}" th:text="${prova.nome}"></option>
 
 
                     <div class="form-group">
@@ -82,7 +87,7 @@
 
                             <option th:if="${operacao} != adicionar" th:each="prova : ${provas}"
                                     th:value="${prova?.id}"   th:text="${prova.nome}"
-                                    th:selected="${prova?.id==percurso.prova.getId()}"></option>
+                                    th:selected="${prova?.id==lote.prova.getId()}"></option>
                         </select>
                     </div>
 

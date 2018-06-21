@@ -3,7 +3,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: head">
     <meta charset="UTF-8"/>
-    <title th:text="${title}"> Percurso da Prova</title>
+    <title th:text="${title}"> Lotes </title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -42,7 +42,7 @@
 
 <div class="container ">
     <div class="row">
-        <h3 th:text="${title}">Percurso</h3>
+        <h3 th:text="${title}">Lote</h3>
 
         <div class="col-md-12">
             <div class="panel panel-primary">
@@ -51,22 +51,26 @@
                     <tr>
 
                         <th>Nome</th>
-                        <th>Distância</th>
-                        <th>Prova Relacionada</th>
+                        <th>Preço</th>
+                        <th>Data Início</th>
+                        <th>Data Fim</th>
+                        <th>Prova</th>
                         <th colspan="2"></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="percurso : ${percursos}">
+                    <tr th:each="lote : ${lotes}">
 
-                        <td th:text="${percurso.nome}">Nome</td>
-                        <td th:text="${percurso.distancia}">Dist�ncia</td>
-                        <td th:text="${percurso.getProva().getNome()}">Prova Relacionada</td>
-                        <td><a class="btn btn-outline-success" th:href="@{'/percurso/edit/' + ${percurso.id}}">Editar</a></td>
-                        <td><a class="btn btn-outline-danger" th:href="@{'/percurso/delete/' + ${percurso.id}}">Excluir</a></td>
+                        <td th:text="${lote.nome}">Nome</td>
+                        <td th:text="${lote.preco}">Preço</td>
+                        <td th:text="${lote.dataInicio}">Data Início</td>
+                        <td th:text="${lote.dataFinal}">Data Fim</td>
+                        <td th:text="${lote.getProva().getNome()}">Prova</td>
+                        <td><a class="btn btn-outline-success" th:href="@{'/lote/edit/' + ${lote.id}}">Editar</a></td>
+                        <td><a class="btn btn-outline-danger" th:href="@{'/lote/delete/' + ${lote.id}}">Excluir</a></td>
                     </tr>
                 </table>
-                <a  class="btn btn-outline-warning"  th:href="@{'~/percurso/add/'}">Adicionar</a>
+                <a  class="btn btn-outline-warning"  th:href="@{'~/lote/add/'}">Adicionar</a>
                 <a  class="btn btn-outline-warning"  th:href="@{'~/admin/home/'}">Voltar</a>
 
 
@@ -74,7 +78,7 @@
         </div>
     </div>
 </div>
-<div class="footer-copyright bg-dark text-white text-center py-3 fixed-bottom">� 2018 Copyright:
+<div class="footer-copyright bg-dark text-white text-center py-3 fixed-bottom"> 2018 Copyright:
     <a href=""> SCCR II</a>
 </div>
 </body>
