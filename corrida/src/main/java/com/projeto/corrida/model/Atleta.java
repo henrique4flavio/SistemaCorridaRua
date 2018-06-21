@@ -14,7 +14,6 @@ import java.util.List;
 @Accessors(chain = true)
 public class Atleta extends Usuario implements Serializable {
 
-    private String tamanhoCamisa;
     private String apelido;
 
     @OneToMany(mappedBy = "atleta")

@@ -23,7 +23,7 @@ public class AdministradorController {
     public String administradores(Model model) {
         model.addAttribute("administradores", administradorRepository.findAll());
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista Administrador");
+        model.addAttribute("title", "Administradores");
         model.addAttribute("botaoOperacao", "Listar Admin");
 
         return "admin/pesquisaAdministrador";
@@ -44,7 +44,7 @@ public class AdministradorController {
     public String displayCorredorForm(Model model) {
         model.addAttribute("title", "Adicionar administrador");
         model.addAttribute("operacao", "adicionar");
-        model.addAttribute("botaoOperacao", "Adicionar Administrador");
+        model.addAttribute("botaoOperacao", "Adicionar administrador");
         return "admin/manterAdministrador";
     }
 
@@ -58,8 +58,8 @@ public class AdministradorController {
     public String administradorEdit(Model model, @PathVariable Long id) {
         Optional<Administrador> administrador = administradorRepository.findById(id);
         model.addAttribute("operacao", "editar");
-        model.addAttribute("botaoOperacao", "Editar Administrador");
-        model.addAttribute("title", "Editar Administrador");
+        model.addAttribute("botaoOperacao", "Editar administrador");
+        model.addAttribute("title", "Editar administrador");
         if (administrador.isPresent()){
             model.addAttribute("administrador", administrador.get());
         }
@@ -82,8 +82,8 @@ public class AdministradorController {
     public String administradorDelete(Model model, @PathVariable Long id) {
         Optional<Administrador> administrador = administradorRepository.findById(id);
         model.addAttribute("operacao", "deletar");
-        model.addAttribute("botaoOperacao", "Excluir Administrador");
-        model.addAttribute("title", "Excluir Administrador");
+        model.addAttribute("botaoOperacao", "Excluir administrador");
+        model.addAttribute("title", "Excluir administrador");
         if (administrador.isPresent()) {
             model.addAttribute("administrador", administrador.get());
         }
