@@ -18,69 +18,91 @@ public class InscricaoController {
     private InscricaoRepository inscricaoRepository;
     @Autowired
     private PercursoRepository percursoRepository;
+    @Autowired
+    private PercursoRepository kitRepository;
+    @Autowired
+    private PercursoRepository atletaRepository;
 
 
-    @GetMapping
-    public String get(Model model) {
-        model.addAttribute("inscricoes", inscricaoRepository.findAll());
-        return "inscricao/listarInscricoes";
+    @GetMapping(value = "listar")
+    public String listaInscricao(Model model) {
+        model.addAttribute("percursos", inscricaoRepository.findAll());
+        model.addAttribute("operacao", "listar");
+        model.addAttribute("title", "Lista de percursos");
+        model.addAttribute("botaoOperacao", "Adicionar percurso");
+
+        return "inscricao/pesquisaInscricao";
     }
 
-    @GetMapping(value = "/add")
-    public String getAdd(Model model) {
-        model.addAttribute("title", "Adicionar inscricao");
+    @GetMapping(value = "add")
+    public String displayCorredorForm(Model model) {
+        model.addAttribute("title", "Adicionar inscrição");
         model.addAttribute("operacao", "adicionar");
-        model.addAttribute("botaoOperacao", "Cadastrar inscricao");
+        model.addAttribute("atletas", atletaRepository.findAll());
+        model.addAttribute("kits", kitRepository.findAll());
         model.addAttribute("percursos", percursoRepository.findAll());
-        return "inscricao/formInscricoes";
+        model.addAttribute("botaoOperacao", "Adicionar inscricao");
+        return "inscricao/manterInscricao";
     }
 
-    @PostMapping(value = "/add")
-    public String postAdd(@ModelAttribute Inscricao inscricao) {
-
+    @PostMapping(value = "add")
+    public String processInscricaoForm(@ModelAttribute Inscricao inscricao) {
         inscricaoRepository.save(inscricao);
-        return "redirect:/inscricao";
+        return "redirect:/inscricao/listar"; // url para qual página quero voltar.
     }
 
-    @GetMapping(value = "/edit/{codInscricao}")
-    public String getEdit(Model model, @PathVariable Long codInscricao) {
-        Optional<Inscricao> inscricao = inscricaoRepository.findById(codInscricao);
-        model.addAttribute("title", "Editar inscricao");
+    @GetMapping(value = "edit/{id}") // site.com/corredor/edit
+    public String inscricaoEdit(Model model, @PathVariable Long id) {
+        Optional<Inscricao> inscricao = inscricaoRepository.findById(id);
         model.addAttribute("operacao", "editar");
         model.addAttribute("botaoOperacao", "Editar inscricao");
+        model.addAttribute("title", "Editar inscricao");
+        model.addAttribute("atletas", atletaRepository.findAll());
+        model.addAttribute("kits", kitRepository.findAll());
         model.addAttribute("percursos", percursoRepository.findAll());
 
-        if (inscricao.isPresent()) {
+        model.addAttribute("percursos",inscricaoRepository.findAll());
+
+        if (inscricao.isPresent()){
             model.addAttribute("inscricao", inscricao.get());
         }
-        return "inscricao/formInscricoes";
+        model.addAttribute("title", "Editar inscricao");
+        return "inscricao/manterInscricao";
     }
 
-    @PostMapping(value = "/edit/{codInscricao}")
-    public String postEdit(@ModelAttribute Inscricao inscricao, Model model,
-                           @PathVariable Long codInscricao) throws Exception {
-
-
-        inscricaoRepository.save(inscricao);
-        return "redirect:/inscricao";
-    }
-
-    @GetMapping(value = "/delete/{codInscricao}")
-    public String getDelete(Model model, @PathVariable Long codInscricao) {
-        Optional<Inscricao> inscricao = inscricaoRepository.findById(codInscricao);
-
-        if (inscricao.isPresent()) {
-            model.addAttribute("inscricao", inscricao.get());
+    @PostMapping(value = "edit/{id}") // site.com/corredor/edit/1/
+    public String edit(@ModelAttribute Inscricao inscricao, Model model,
+                       @PathVariable Long id) throws Exception {
+        if (id.equals(inscricao.getId())) {
+            inscricaoRepository.save(inscricao);
+        } else {
+            model.addAttribute("error", "Dados incorretos");
         }
-        model.addAttribute("title", "Excluir inscricao");
-        model.addAttribute("operacao", "excluir");
+        return "redirect:/inscricao/listar";
+    }
+
+    @GetMapping(value = "delete/{id}") // site.com/corredor/delete/1
+    public String inscricaoDelete(Model model, @PathVariable Long id) {
+        Optional<Inscricao> inscricao = inscricaoRepository.findById(id);
+
+        model.addAttribute("atletas", atletaRepository.findAll());
+        model.addAttribute("kits", kitRepository.findAll());
+        model.addAttribute("percursos", percursoRepository.findAll());
+
+        model.addAttribute("operacao", "deletar");
         model.addAttribute("botaoOperacao", "Excluir inscricao");
-        return "inscricao/formInscricoes";
+        model.addAttribute("title", "Excluir inscricao");
+        if (inscricao.isPresent()) {
+            model.addAttribute("inscricao", inscricao.get());
+        }
+        model.addAttribute("tittle", "Excluir inscricao");
+        return "inscricao/manterInscricao";
     }
 
-    @PostMapping(value = "/delete/{codInscricao}")
-    public String postDelete(@PathVariable Long codInscricao, @ModelAttribute Inscricao inscricao) {
+    @PostMapping(value = "delete/{id}") // site.com/corredor/delete/1
+    public String delete(@PathVariable Long id, @ModelAttribute Inscricao inscricao) {
         inscricaoRepository.delete(inscricao);
-        return "redirect:/inscricao";
+        return "redirect:/inscricao/listar";
     }
+
 }

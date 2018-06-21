@@ -49,47 +49,73 @@
     <br>
 
     <div class="panel panel-primary">
-        <form th:object="${atleta}" method="post">
+        <form th:object="${inscricao}" method="post">
 
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" required class="form-control" id="nome" name="nome"
-                           th:value="${atleta?.nome}" th:disabled="${operacao} == deletarpublicpublic"/>
-                </div>
-
-
-                <div class="form-group">
-                    <label for="apelido">Apelido:</label>
-                    <input type="text" required class="form-control" id="apelido" name="apelido"
-                           th:value="${atleta?.apelido}" th:disabled="${operacao} == deletarpublicpublic"/>
+                    <label for="tamanhoCamisa">Tamanho da camisa:</label>
+                    <input type="text" required class="form-control" id="tamanhoCamisa" name="tamanhoCamisa"
+                           th:value="${inscricao?.tamanhoCamisa}" th:disabled="${operacao} == deletarpublicpublic"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" class="form-control" id="email" name="email" required
-                           th:value="${atleta?.email}" th:disabled="${operacao} == deletar"/>
+                    <label for="precoTotal">Preço:</label>
+                    <input type="text" class="form-control" id="precoTotal" name="precoTotal" required
+                           th:value="${inscricao?.precoTotal}" th:disabled="${operacao} == deletar"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="senha1">Senha:</label>
-                    <input type="password" class="form-control" id="senha1" name="senha" required
-                           autocomplete th:value="${atleta?.senha}"
-                           th:disabled="${operacao} == deletar"/>
+                    <label for="dataInscricao">Data Início:</label>
+                    <input type="date" class="form-control" id="dataInscricao" name="dataInscricao" required
+                           th:value="${inscricao?.dataInscricao}" th:disabled="${operacao} == deletar"/>
                 </div>
+
                 <div class="form-group">
-                    <label for="senha2">Confirmar Senha:</label>
-                    <input type="password" class="form-control" id="senha2" name="senha2" required
-                           oninput="validaSenha(this)" th:value="${atleta?.senha}"
-                           th:disabled="${operacao} == deletar"/>
+
+                    <label for="atleta">Atleta:</label>
+                    <select name="atleta" class="form-control" id="atleta" th:disabled="${operacao} == deletar">
+                        <option th:if="${operacao} == adicionar" th:each="atleta : ${atletas}"
+                                th:value="${atleta.id}" th:text="${atleta.nome}"></option>
+
+                        <option th:if="${operacao} != adicionar" th:each="atleta : ${atletas}"
+                                th:value="${atleta?.id}"   th:text="${atleta.nome}"
+                                th:selected="${atleta?.id==inscricao.atleta.getId()}"></option>
+                    </select>
                 </div>
+
+                <div class="form-group">
+
+                    <label for="kit">Kit:</label>
+                    <select name="kit" class="form-control" id="kit" th:disabled="${operacao} == deletar">
+                        <option th:if="${operacao} == adicionar" th:each="kit : ${kits}"
+                                th:value="${kit.id}" th:text="${kit.nome}"></option>
+
+                        <option th:if="${operacao} != adicionar" th:each="kit : ${kits}"
+                                th:value="${kit?.id}"   th:text="${atleta.nome}"
+                                th:selected="${kit?.id==inscricao.kit.getId()}"></option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+
+                    <label for="percurso">Percurso:</label>
+                    <select name="percurso" class="form-control" id="percurso" th:disabled="${operacao} == deletar">
+                        <option th:if="${operacao} == adicionar" th:each="percurso : ${percursos}"
+                                th:value="${percurso.id}" th:text="${percurso.nome}"></option>
+
+                        <option th:if="${operacao} != adicionar" th:each="percurso : ${percursos}"
+                                th:value="${percurso?.id}"   th:text="${percurso.nome}"
+                                th:selected="${percurso?.id==inscricao.percurso.getId()}"></option>
+                    </select>
+                </div>
+
 
                 <div class="form-group">
 
                     <input type="submit" class="btn btn-outline-success"th:value="${botaoOperacao}"
                            name="btnConfirmar"/>
 
-                    <a href="/atleta/listar">
+                    <a href="/inscricao/listar">
                         <button type="button" class="btn btn-outline-secondary">Voltar</button>
                     </a>
                 </div>
