@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <head th:replace="fragments :: head">
+        <meta charset="UTF-8"/>
+        <title>Atleta</title>
+    </head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="/admin/home/">Sistema de Corrida de Rua</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="administradorHome.jsp">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <!-- <span class="nav-link-text">Painel Administrativo</span> -->
+                </a>
+            </li>
+
+        </ul>
+        <ul class="navbar-nav sidenav-toggler">
+            <li class="nav-item">
+                <a class="nav-link text-center" id="sidenavToggler">
+                    <i class="fa fa-fw fa-angle-left"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <br><br>
+
+    <h3 th:text="${title}"> Operação </h3>
+
+    <div class="container">
+        <br><br><br>
+
+
+        <div class="panel panel-primary">
+            <form th:object="${atleta}" method="post">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" required class="form-control" id="nome" name="nome"
+                               th:value="${atleta?.nome}" th:disabled="${operacao} == deletarpublicpublic"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tamanhoCamisa">Tamanho da camisa:</label>
+                        <input type="text" required class="form-control" id="tamanhoCamisa" name="tamanhoCamisa"
+                               th:value="${atleta?.tamanhoCamisa}" th:disabled="${operacao} == deletarpublicpublic"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apelido">Apelido:</label>
+                        <input type="text" required class="form-control" id="apelido" name="apelido"
+                               th:value="${atleta?.apelido}" th:disabled="${operacao} == deletarpublicpublic"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" class="form-control" id="email" name="email" required
+                               th:value="${atleta?.email}" th:disabled="${operacao} == deletar"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha1">Senha:</label>
+                        <input type="password" class="form-control" id="senha1" name="senha" required
+                               autocomplete th:value="${atleta?.senha}"
+                               th:disabled="${operacao} == deletar"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha2">Confirmar Senha:</label>
+                        <input type="password" class="form-control" id="senha2" name="senha2" required
+                               oninput="validaSenha(this)" th:value="${atleta?.senha}"
+                               th:disabled="${operacao} == deletar"/>
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="submit" class="btn btn-outline-success"th:value="${botaoOperacao}"
+                               name="btnConfirmar"/>
+
+                        <a href="/atleta/">
+                            <button type="button" class="btn btn-outline-secondary">Voltar</button>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

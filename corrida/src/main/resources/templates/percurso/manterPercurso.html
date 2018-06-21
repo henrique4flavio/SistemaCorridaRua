@@ -44,7 +44,7 @@
 <div class="container">
     <br><br>
 
-    <h3 th:text="${title}"> Opera��o </h3>
+    <h3 th:text="${title}"> Operação </h3>
 
     <div class="container">
         <br><br><br>
@@ -61,19 +61,17 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="distancia">Dist�ncia</label>
+                        <label for="distancia">Distância</label>
                         <input type="text" class="form-control" id="distancia" name="distancia" required
                                th:value="${percurso?.distancia}" th:disabled="${operacao} == deletar"/>
                     </div>
 
 
-<<<<<<< HEAD
-=======
+
                             <label for="prova">Prova:</label>
                             <select name="prova" id="prova" th:disabled="${operacao} == deletar">
                                 <option th:if="${operacao} == adicionar" th:each="prova : ${provas}"
                                         th:value="${prova.id}" th:text="${prova.nome}"></option>
->>>>>>> f0dd0688383ab9315c66fecd30aa16bba993822c
 
                     <div class="form-group">
 
