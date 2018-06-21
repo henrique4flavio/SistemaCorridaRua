@@ -45,7 +45,7 @@
     <br>
 
     <h3 th:text="${title}"> Operação </h3>
-
+    <br>
 
     <div class="panel panel-primary">
         <form th:object="${atleta}" method="post">
@@ -93,7 +93,7 @@
                     <input type="submit" class="btn btn-outline-success"th:value="${botaoOperacao}"
                            name="btnConfirmar"/>
 
-                    <a href="/atleta/">
+                    <a href="/atleta/listar">
                         <button type="button" class="btn btn-outline-secondary">Voltar</button>
                     </a>
                 </div>

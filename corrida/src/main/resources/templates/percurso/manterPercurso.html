@@ -42,12 +42,12 @@
 </nav>
 
 <div class="container">
-    <br><br>
+    <br>
 
     <h3 th:text="${title}"> Operação </h3>
 
     <div class="container">
-        <br><br><br>
+        <br>
 
 
         <div class="panel panel-primary">
@@ -67,18 +67,10 @@
                     </div>
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> f32910e3e1306c7959d1e6bee40463b987b2a5d0
                             <label for="prova">Prova:</label>
                             <select name="prova" id="prova" th:disabled="${operacao} == deletar">
                                 <option th:if="${operacao} == adicionar" th:each="prova : ${provas}"
                                         th:value="${prova.id}" th:text="${prova.nome}"></option>
-<<<<<<< HEAD
-
-=======
->>>>>>> f32910e3e1306c7959d1e6bee40463b987b2a5d0
 
                     <div class="form-group">
 
