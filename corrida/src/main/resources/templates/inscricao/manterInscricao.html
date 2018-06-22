@@ -91,7 +91,7 @@
                                 th:value="${kit.id}" th:text="${kit.nome}"></option>
 
                         <option th:if="${operacao} != adicionar" th:each="kit : ${kits}"
-                                th:value="${kit?.id}"   th:text="${atleta.nome}"
+                                th:value="${kit?.id}"   th:text="${kit.nome}"
                                 th:selected="${kit?.id==inscricao.kit.getId()}"></option>
                     </select>
                 </div>

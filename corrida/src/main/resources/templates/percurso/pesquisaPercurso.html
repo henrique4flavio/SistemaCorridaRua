@@ -62,6 +62,7 @@
                         <td th:text="${percurso.nome}">Nome</td>
                         <td th:text="${percurso.distancia}">Distância</td>
                         <td th:text="${percurso.getProva().getNome()}">Prova Relacionada</td>
+
                         <td><a class="btn btn-outline-success" th:href="@{'/percurso/edit/' + ${percurso.id}}">Editar</a></td>
                         <td><a class="btn btn-outline-danger" th:href="@{'/percurso/delete/' + ${percurso.id}}">Excluir</a></td>
                     </tr>

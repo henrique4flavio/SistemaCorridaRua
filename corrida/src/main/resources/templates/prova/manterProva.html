@@ -64,10 +64,13 @@
                         </div>
                         <div class="form-group">
                             <label for="dataEvento">Data do evento:</label>
-                            <input type="text" class="form-control" id="dataEvento" name="dataEvento" required
+                            <input type="date" class="form-control" id="dataEvento" name="dataEvento" required
                                    th:value="${prova?.dataEvento}" th:disabled="${operacao} == deletar"/>
 
                         </div>
+
+
+
                         <div class="form-group">
                             <label for="horaLargada">Hora da largada</label>
                             <input type="text" class="form-control" id="horaLargada" name="horaLargada" required

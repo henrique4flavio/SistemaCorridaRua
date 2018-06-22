@@ -65,16 +65,10 @@
                                th:value="${percurso?.distancia}" th:disabled="${operacao} == deletar"/>
                     </div>
 
-
-                            <label for="prova">Prova:</label>
-                            <select name="prova" id="prova" th:disabled="${operacao} == deletar">
-                                <option th:if="${operacao} == adicionar" th:each="prova : ${provas}"
-                                        th:value="${prova.id}" th:text="${prova.nome}"></option>
-
                     <div class="form-group">
 
                         <label for="prova">Prova:</label>
-                        <select name="prova" id="prova" th:disabled="${operacao} == deletar">
+                        <select name="prova" class="form-control" id="prova" th:disabled="${operacao} == deletar">
                             <option th:if="${operacao} == adicionar" th:each="prova : ${provas}"
                                     th:value="${prova.id}" th:text="${prova.nome}"></option>
 

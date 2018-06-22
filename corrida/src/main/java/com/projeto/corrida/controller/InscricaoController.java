@@ -28,8 +28,8 @@ public class InscricaoController {
     public String listaInscricao(Model model) {
         model.addAttribute("percursos", inscricaoRepository.findAll());
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista de percursos");
-        model.addAttribute("botaoOperacao", "Adicionar percurso");
+        model.addAttribute("title", "Lista de inscrição");
+        model.addAttribute("botaoOperacao", "Adicionar inscrição");
 
         return "inscricao/pesquisaInscricao";
     }
