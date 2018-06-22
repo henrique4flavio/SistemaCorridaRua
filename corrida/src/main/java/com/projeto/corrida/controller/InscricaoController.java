@@ -61,7 +61,7 @@ public class InscricaoController {
         model.addAttribute("kits", kitRepository.findAll());
         model.addAttribute("percursos", percursoRepository.findAll());
 
-        model.addAttribute("percursos",inscricaoRepository.findAll());
+        model.addAttribute("inscricoes",inscricaoRepository.findAll());
 
         if (inscricao.isPresent()){
             model.addAttribute("inscricao", inscricao.get());

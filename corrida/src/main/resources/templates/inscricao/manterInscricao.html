@@ -72,7 +72,7 @@
 
                 <div class="form-group">
 
-                    <label for="atleta">Atleta:</label>
+                    <label for="atleta">Atleta correspondente:</label>
                     <select name="atleta" class="form-control" id="atleta" th:disabled="${operacao} == deletar">
                         <option th:if="${operacao} == adicionar" th:each="atleta : ${atletas}"
                                 th:value="${atleta.id}" th:text="${atleta.nome}"></option>
@@ -85,7 +85,7 @@
 
                 <div class="form-group">
 
-                    <label for="kit">Kit:</label>
+                    <label for="kit">Kit correspondente:</label>
                     <select name="kit" class="form-control" id="kit" th:disabled="${operacao} == deletar">
                         <option th:if="${operacao} == adicionar" th:each="kit : ${kits}"
                                 th:value="${kit.id}" th:text="${kit.nome}"></option>
@@ -98,7 +98,7 @@
 
                 <div class="form-group">
 
-                    <label for="percurso">Percurso:</label>
+                    <label for="percurso">Percurso correspondente:</label>
                     <select name="percurso" class="form-control" id="percurso" th:disabled="${operacao} == deletar">
                         <option th:if="${operacao} == adicionar" th:each="percurso : ${percursos}"
                                 th:value="${percurso.id}" th:text="${percurso.nome}"></option>

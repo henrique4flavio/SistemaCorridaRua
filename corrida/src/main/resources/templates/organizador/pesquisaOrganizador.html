@@ -61,6 +61,8 @@
                        <td th:text="${organizador.nome}">Nome</td>
                        <td th:text="${organizador.email}">Email</td>
                        <td th:text="${organizador.getAdministrador().getNome()}">Administrador</td>
+
+
                        <td><a class="btn btn-outline-success" th:href="@{'/organizador/edit/' + ${organizador.id}}">Editar</a></td>
                        <td><a class="btn btn-outline-danger" th:href="@{'/organizador/delete/' + ${organizador.id}}">Excluir</a></td>
                    </tr>

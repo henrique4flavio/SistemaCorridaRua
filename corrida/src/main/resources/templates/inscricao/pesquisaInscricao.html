@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: head">
     <meta charset="UTF-8"/>
-    <title th:text="${tittle}"> inscricao </title>
+    <title th:text="${title}"> Inscrição </title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -41,7 +41,7 @@
 
 <div class="container ">
     <div class="row">
-        <h3 th:text="${title}"> Inscricao </h3>
+        <h3 th:text="${title}">Inscrição</h3>
 
         <div class="col-md-12">
             <div class="panel panel-primary">
@@ -50,8 +50,8 @@
                     <tr>
 
                         <th>Tamanho da camisa</th>
-                        <th>Preço</th>
-                        <th>Data Início</th>
+                        <th>Preço total</th>
+                        <th>Data</th>
                         <th>Atleta correspondente</th>
                         <th>Kit correspondente</th>
                         <th>Percurso correspondente</th>
@@ -63,23 +63,21 @@
                     <tr th:each="inscricao : ${inscricoes}">
 
                         <td th:text="${inscricao.tamanhoCamisa}">Tamanho da camisa</td>
-                        <td th:text="${inscricao.precoTotal}">Preço</td>
-                        <td th:text="${inscricao.dataInscricao}">Data Início</td>
-                        <td th:text="${inscricao.getAtleta().getNome()}">Atleta correspondente</td>
+                        <td th:text="${inscricao.precoTotal}">Preço total</td>
+                        <td th:text="${inscricao.dataInscricao}">Data</td>
+
+
+
                         <td th:text="${inscricao.getKit().getNome()}">Kit correspondente</td>
                         <td th:text="${inscricao.getPercurso().getNome()}">Percurso correspondente</td>
-
-
-
-
-
+                        <td th:text="${inscricao.getAtleta().getNome()}">Atleta correspondente</td>
 
 
                         <td><a class="btn btn-outline-success" th:href="@{'/inscricao/edit/' + ${inscricao.id}}">Editar</a></td>
                         <td><a class="btn btn-outline-danger" th:href="@{'/inscricao/delete/' + ${inscricao.id}}">Excluir</a></td>
                     </tr>
                 </table>
-                <a  class="btn btn-outline-warning"  th:href="@{'~/inscricao/add'}">Adicionar</a>
+                <a  class="btn btn-outline-warning"  th:href="@{'~/inscricao/add/'}">Adicionar</a>
                 <a  class="btn btn-outline-warning"  th:href="@{'~/admin/home/'}">Voltar</a>
 
 
@@ -87,24 +85,8 @@
         </div>
     </div>
 </div>
-
 <div class="footer-copyright bg-dark text-white text-center py-3 fixed-bottom">© 2018 Copyright:
     <a href=""> SCCR II</a>
 </div>
-<!-- Copyright -->
-<!-- Footer -->
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
