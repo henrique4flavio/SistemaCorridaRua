@@ -70,9 +70,9 @@
                 <div class="card-body-icon">
                     <i class="fa fa-fw fa-list"></i>
                 </div>
-                <div class="mr-5">Manter Lotes</div>
+                <div class="mr-5">Baixar Lista de Provas</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" th:href="@{'~/admin/add'}">
+            <a class="card-footer text-white clearfix small z-1" th:href="@{'~/relatorioProvas/provas'}">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                                 <i class="fa fa-angle-right"></i>
@@ -89,9 +89,9 @@
             <div class="card-body-icon">
                 <i class="fa fa-fw fa-list"></i>
             </div>
-            <div class="mr-5">Manter Kit</div>
+            <div class="mr-5">Baixar Lista de Kits</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" th:href="@{'~/organizador/listar'}">
+        <a class="card-footer text-white clearfix small z-1" th:href="@{'~/organizador/relatorio'}">
             <span class="float-left">View Details</span>
             <span class="float-right">
                                 <i class="fa fa-angle-right"></i>
@@ -100,6 +100,22 @@
     </div>
 </div>
 </div>
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-warning o-hidden h-100">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fa fa-fw fa-list"></i>
+                </div>
+                <div class="mr-5">Baixar Lista de Lotes</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" th:href="@{'~/relatorioLote/lotes'}">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                                <i class="fa fa-angle-right"></i>
+                            </span>
+            </a>
+        </div>
+    </div>
 
     <div class="row">
 
