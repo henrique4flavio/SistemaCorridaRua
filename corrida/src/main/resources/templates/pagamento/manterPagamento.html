@@ -3,7 +3,7 @@
 <head>
     <head th:replace="fragments :: head">
         <meta charset="UTF-8"/>
-        <title>Inscricao</title>
+        <title>Pagamento</title>
     </head>
 <body>
 
@@ -49,48 +49,40 @@
     <br>
 
     <div class="panel panel-primary">
-        <form th:object="${inscricao}" method="post">
+
+        <form th:object="${pagamento}" method="post">
 
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="tamanhoCamisa">Tamanho da camisa:</label>
-                    <input type="text" required class="form-control" id="tamanhoCamisa" name="tamanhoCamisa"
-                           th:value="${inscricao?.tamanhoCamisa}" th:disabled="${operacao} == deletarpublicpublic"/>
+                    <label for="codigo">Código de Barra:</label>
+                    <input type="text" required class="form-control" id="codigo" name="codigo"
+                           th:value="${pagamento?.codigo}" th:disabled="${operacao} == deletarpublicpublic"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="precoTotal">Preço:</label>
-                    <input type="text" class="form-control" id="precoTotal" name="precoTotal" required
-                           th:value="${inscricao?.precoTotal}" th:disabled="${operacao} == deletar"/>
+                    <label for="tipoPagamento">Tipo do Pagamento:</label>
+                    <input type="tipoPagamento" class="form-control" id="tipoPagamento" name="tipoPagamento" required
+                           th:value="${pagamento?.tipoPagamento}" th:disabled="${operacao} == deletar"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="dataInscricao">Data Início:</label>
-                    <input type="date" class="form-control" id="dataInscricao" name="dataInscricao" required
-                           th:value="${inscricao?.dataInscricao}" th:disabled="${operacao} == deletar"/>
+                    <label for="total">Valor Total:</label>
+                    <input type="total" class="form-control" id="total" name="total" required
+                           th:value="${pagamento?.total}" th:disabled="${operacao} == deletar"/>
                 </div>
 
-
-                <div class="form-group">
-
-                    <label for="percurso">Percurso correspondente:</label>
-                    <select name="percurso" class="form-control" id="percurso" th:disabled="${operacao} == deletar">
-                        <option th:if="${operacao} == adicionar" th:each="percurso : ${percursos}"
-                                th:value="${percurso.id}" th:text="${percurso.nome}"></option>
-
-                        <option th:if="${operacao} != adicionar" th:each="percurso : ${percursos}"
-                                th:value="${percurso?.id}"   th:text="${percurso.nome}"
-                                th:selected="${percurso?.id==inscricao.percurso.getId()}"></option>
-                    </select>
+                <div class="custom-control custom-checkbox">
+                    <label for="status">Confirmado</label>
+                    <input type="checkbox" class="custom-control-input" id="status" value="true" id="status"
+                           th:checked="${pagamento?.status}" th:disabled="${operacao} == deletar"/>
                 </div>
-
 
                 <div class="form-group">
 
                     <input type="submit" class="btn btn-outline-success"th:value="${botaoOperacao}"
                            name="btnConfirmar"/>
 
-                    <a href="/inscricao/listar">
+                    <a href="/pagamento/listar">
                         <button type="button" class="btn btn-outline-secondary">Voltar</button>
                     </a>
                 </div>
@@ -99,8 +91,10 @@
     </div>
 </div>
 </div>
+</div>
+
+</body>
 <div class="footer-copyright bg-dark text-white text-center py-3 fixed-bottom">© 2018 Copyright:
     <a href=""> SCCR II</a>
 </div>
-</body>
 </html>

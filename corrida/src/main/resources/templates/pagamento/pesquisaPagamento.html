@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: head">
     <meta charset="UTF-8"/>
-    <title th:text="${title}"> Inscrição </title>
+    <title th:text="${title}"> Pagamento </title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -41,7 +41,7 @@
 
 <div class="container ">
     <div class="row">
-        <h3 th:text="${title}">Inscrição</h3>
+        <h3 th:text="${title}">Pagamento</h3>
 
         <div class="col-md-12">
             <div class="panel panel-primary">
@@ -49,32 +49,21 @@
                     <thead>
                     <tr>
 
-                        <th>Tamanho da camisa</th>
-                        <th>Preço total</th>
-                        <th>Data</th>
-                        <th>Percurso correspondente</th>
-
+                        <th>Tipo de pagamento</th>
 
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="inscricao : ${inscricoes}">
+                    <tr th:each="pagamento : ${pagamentos}">
 
-                        <td th:text="${inscricao.tamanhoCamisa}">Tamanho da camisa</td>
-                        <td th:text="${inscricao.precoTotal}">Preço total</td>
-                        <td th:text="${inscricao.dataInscricao}">Data</td>
+                        <td th:text="${pagamento.tipoPagamento}">Tipo de pagamento</td>
 
 
-
-                        <td th:text="${inscricao.getPercurso().getNome()}">Percurso correspondente</td>
-
-
-
-                        <td><a class="btn btn-outline-success" th:href="@{'/inscricao/edit/' + ${inscricao.id}}">Editar</a></td>
-                        <td><a class="btn btn-outline-danger" th:href="@{'/inscricao/delete/' + ${inscricao.id}}">Excluir</a></td>
+                        <td><a class="btn btn-outline-success" th:href="@{'/pagamento/edit/' + ${pagamento.id}}">Editar</a></td>
+                        <td><a class="btn btn-outline-danger" th:href="@{'/pagamento/delete/' + ${pagamento.id}}">Excluir</a></td>
                     </tr>
                 </table>
-                <a  class="btn btn-outline-warning"  th:href="@{'~/inscricao/add/'}">Adicionar</a>
+                <a  class="btn btn-outline-warning"  th:href="@{'~/pagamento/add/'}">Adicionar</a>
                 <a  class="btn btn-outline-warning"  th:href="@{'~/admin/home/'}">Voltar</a>
 
 
