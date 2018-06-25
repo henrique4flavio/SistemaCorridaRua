@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Prova</title>
+</head>
+<body class="app sidebar-mini rtl">>
+
+<header class="app-header"><a class="app-header__logo" th:href="@{'~/prova/gridProvas'}"><font face="verdana" color="#f0ffff">SCCR</font>
+</a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
+    <ul class="app-nav">
+
+
+        <!-- User Menu-->
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+            <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                <li><a class="dropdown-item" href="/login/logout"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+</header>
+<br><br><br>
+
+<div class="container ">
+    <div class="row">
+        <h1 th:text="${title}">Prova</h1>
+
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <table class="table table-hover table-responsive">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Local da largada</th>
+                        <th>Data do evento</th>
+                        <th>Hora da largada</th>
+                        <th>Maximo de participantes</th>
+                        <th>Organizador responsável</th>
+
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <tr th:each="prova : ${provas}">
+                       <td th:text="${prova.nome}">Nome</td>
+                       <td th:text="${prova.localLargada}">Local da largada</td>
+                       <td th:text="${prova.dataEvento}">Data do evento</td>
+                       <td th:text="${prova.horaLargada}">Hora da largada</td>
+                       <td th:text="${prova.maxParticipantes}">Maximo de participantes</td>
+
+                       <td th:text="${prova.getOrganizador().getNome()}">Organizador</td>
+
+                       <td><a class="btn btn-outline-success" th:href="@{'/prova/edit/' + ${prova.id}}">Inscrever</a></td>
+                   </tr>
+               </table>
+               <a  class="btn btn-outline-warning"  th:href="@{'~/organizador/home/'}">Voltar</a>
+
+
+           </div>
+       </div>
+   </div>
+</div>
+
+<div th:replace="fragments :: body"/>
+</body>
+</html>
