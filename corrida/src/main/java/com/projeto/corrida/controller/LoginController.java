@@ -131,6 +131,8 @@ public class LoginController extends HttpServlet {
             };
             session.setAttribute("tipoLogin", "atleta");
             session.setAttribute("id", atleta.getId());
+            model.addAttribute("atleta", atleta);
+
             return "atleta/atletaHome";
         }
         if(organizadorRepository.existsOrganizadorByEmailAndSenha(login,senha)){
@@ -223,6 +225,8 @@ public class LoginController extends HttpServlet {
             };
             session.setAttribute("tipoLogin", "organizador");
             session.setAttribute("id", organizador.getId());
+            model.addAttribute("organizador", organizador);
+
             return "organizador/organizadorHome";
         }
         if(administradorRepository.existsAdministradorByEmailAndSenha(login,senha)){
