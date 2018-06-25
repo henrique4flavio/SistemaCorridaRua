@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"> Prova </title>
+</head>
+<body>
+<!-- Navbar-->
+<header class="app-header"><a class="app-header__logo" href="index.html"><font face="verdana" color="#f0ffff">SCCR</font>
+</a>
+    <!-- Sidebar toggle button-->
+    <!-- Navbar Right Menu-->
+    <a class="app-nav__item leftIcon" href="/login/" data-toggle="dropdown" aria-label="Open Profile Menu">ENTRAR &nbsp;<i class="fa fa-user fa-lg"></i></a>
+
+</header>
+<br>
+
+<div class="container ">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+        <h1 class="display-3">Seja bem vindo!</h1>
+        <p class="lead">Sistema de Controle de Corrida de Rua</p>
+        <a href="/atleta/add" class="btn btn-primary btn-lg">Registrar</a>
+    </header>
+
+
+    <div class="row text-center">
+
+        <div class="col-lg-3 col-md-6 mb-4"th:each="prova: ${provas}">
+
+
+                    <div class="card">
+                        <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">Nome: <span th:text="${prova.nome}"></span></h4>
+                            <p class="card-text">Data: <span th:text="${prova.dataEvento}"></span> <br> Horário: <span th:text="${prova.horaLargada}"></span> </p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-outline-primary"href="" >Mais informações</a>
+                        </div>
+                    </div>
+
+                </div>
+
+        </div>
+
+</div>
+
+
+</body>
+</html>
