@@ -8,15 +8,12 @@
 
 <body class="app sidebar-mini rtl">>
 <!-- Navbar-->
-<header class="app-header"><a class="app-header__logo" href="index.html"><font face="verdana" color="#f0ffff">SCCR</font>
+<header class="app-header"><a class="app-header__logo" href="#"><font face="verdana" color="#f0ffff">SCCR</font>
 </a>
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
-        <li class="app-search">
-            <input class="app-search__input" type="search" placeholder="Search">
-            <button class="app-search__button"><i class="fa fa-search"></i></button>
-        </li>
+
 
         <!-- User Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
@@ -63,21 +60,13 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 col-lg-3">
-            <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
-                <div class="info">
-                    <a th:href="@{'~/prova/add'}"><h5>Cadastrar Prova</h5></a>
-                    <p><b>5</b></p>
-                </div>
-            </div>
-        </div>
+
 
 
             <div class="col-md-6 col-lg-3">
                 <div class="widget-small warning coloured-icon"><i class="icon fa fa-users fa-3x"></i>
                     <div class="info">
                         <a th:href="@{'~/prova/listar'}"><h5>Manter Prova</h5></a>
-                        <p><b>5</b></p>
                     </div>
                 </div>
             </div>
@@ -87,7 +76,6 @@
             <div class="widget-small danger coloured-icon"><i class="icon fa fa-users fa-3x"></i>
                 <div class="info">
                     <a th:href="@{'~/kit/listar'}"><h5>Manter Kit</h5></a>
-                    <p><b>5</b></p>
                 </div>
             </div>
         </div>
@@ -97,15 +85,13 @@
             <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
                 <div class="info">
                     <a th:href="@{'~/lote/listar'}"><h5>Manter Lote</h5></a>
-                    <p><b>5</b></p>
                 </div>
             </div>
         </div>
         <div class="col-md-6 col-lg-3">
             <div class="widget-small warning coloured-icon"><i class="icon fa fa-users fa-3x"></i>
                 <div class="info">
-                    <a href="/percurso/listar/"><h5>Manter Percurso</h5></a>
-                    <p><b>25</b></p>
+                    <a th:href="@{'~/percurso/listar'}"><h5>Manter Percurso</h5></a>
                 </div>
             </div>
         </div>

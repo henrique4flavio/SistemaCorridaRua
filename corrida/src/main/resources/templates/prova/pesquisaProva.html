@@ -7,7 +7,7 @@
 </head>
 <body class="app sidebar-mini rtl">>
 
-<header class="app-header"><a class="app-header__logo" th:href="@{'~/prova/gridProvas'}"><font face="verdana" color="#f0ffff">SCCR</font>
+<header class="app-header"><a class="app-header__logo" href="#"><font face="verdana" color="#f0ffff">SCCR</font>
 </a>
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
@@ -57,7 +57,9 @@
                    </tr>
                </table>
                <a  class="btn btn-outline-warning"  th:href="@{'~/prova/add/'}">Adicionar</a>
-               <a  class="btn btn-outline-warning"  th:href="@{'~/organizador/home/'}">Voltar</a>
+                <a href="javascript:window.history.go(-1)">
+                    <button type="button" class="btn btn-outline-warning">Voltar</button>
+                </a>
 
 
            </div>
