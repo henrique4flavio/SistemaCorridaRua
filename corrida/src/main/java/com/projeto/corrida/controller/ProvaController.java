@@ -26,8 +26,8 @@ public class ProvaController {
     public String listaProva(Model model) {
         model.addAttribute("provas", provaRepository.findAll());
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista de provas");
-        model.addAttribute("botaoOperacao", "Adicionar Prova");
+        model.addAttribute("title", "Provas");
+        model.addAttribute("botaoOperacao", "Adicionar prova");
 
         return "prova/pesquisaProva";
     }
@@ -37,7 +37,7 @@ public class ProvaController {
         model.addAttribute("provas", provaRepository.findAll());
         model.addAttribute("operacao", "listar");
         model.addAttribute("title", "Lista de provas");
-        model.addAttribute("botaoOperacao", "Adicionar Prova");
+        model.addAttribute("botaoOperacao", "Adicionar prova");
 
         return "prova/gridProvas";
     }
@@ -64,8 +64,8 @@ public class ProvaController {
     public String provaEdit(Model model, @PathVariable Long id) {
         Optional<Prova> prova = provaRepository.findById(id);
         model.addAttribute("operacao", "editar");
-        model.addAttribute("botaoOperacao", "Editar Prova");
-        model.addAttribute("title", "Editar Prova");
+        model.addAttribute("botaoOperacao", "Editar prova");
+        model.addAttribute("title", "Editar prova");
         model.addAttribute("organizadores", organizadorRepository.findAll());
         model.addAttribute("kits", kitRepository.findAll());
 
@@ -75,7 +75,7 @@ public class ProvaController {
         if (prova.isPresent()){
             model.addAttribute("prova", prova.get());
         }
-        model.addAttribute("title", "Editar Prova");
+        model.addAttribute("title", "Editar prova");
         return "prova/manterProva";
     }
 
@@ -96,8 +96,8 @@ public class ProvaController {
         model.addAttribute("organizadores", organizadorRepository.findAll());
         model.addAttribute("kits", kitRepository.findAll());
         model.addAttribute("operacao", "deletar");
-        model.addAttribute("botaoOperacao", "Excluir Prova");
-        model.addAttribute("title", "Excluir Prova");
+        model.addAttribute("botaoOperacao", "Excluir prova");
+        model.addAttribute("title", "Excluir prova");
         if (prova.isPresent()) {
             model.addAttribute("prova", prova.get());
         }

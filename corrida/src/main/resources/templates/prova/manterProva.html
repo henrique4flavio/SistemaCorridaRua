@@ -40,9 +40,11 @@
     </div>
 </nav>
 
-
-<div class="container">
-    <br>
+<div class="container corpo">
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
 
     <h3 th:text="${title}"> Operação </h3>
 <br>
@@ -85,16 +87,15 @@
                         </div>
 
 
-                        <div class="form-group">
-
-                            <label for="organizador">Organizador:</label>
-                            <select name="organizador" id="organizador" th:disabled="${operacao} == deletar">
+                        <div class="form-group input-group">
+                            <select class="form-control custom-select" name="organizador" id="organizador" th:disabled="${operacao} == deletar">
+                                <option value="" class="d-none">Organizador correspondente</option>
                                 <option th:if="${operacao} == adicionar" th:each="organizador : ${organizadores}"
                                         th:value="${organizador.id}" th:text="${organizador.nome}"></option>
 
                                 <option th:if="${operacao} != adicionar" th:each="organizador : ${organizadores}"
                                         th:value="${organizador?.id}"   th:text="${organizador.nome}"
-                                        th:selected="${organizador?.id==prova.organizador.getId()}"></option>
+                                        th:selected="${organizador?.id==prova?.organizador.getId()}"></option>
                             </select>
                         </div>
 

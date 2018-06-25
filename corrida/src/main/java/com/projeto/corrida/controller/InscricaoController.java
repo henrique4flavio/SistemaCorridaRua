@@ -34,9 +34,9 @@ public class InscricaoController {
     @GetMapping(value = "")
     public String inscricoes(Model model){
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista de inscrições");
+        model.addAttribute("title", "Inscrições");
         model.addAttribute("inscricoes", inscricaoRepository.findAll());
-        model.addAttribute("botaoOperacao", "Listar Inscrições");
+        model.addAttribute("botaoOperacao", "Listar inscrições");
         return "inscricao/pesquisar";
     }
 
@@ -47,7 +47,7 @@ public class InscricaoController {
         model.addAttribute("percursos", percursoRepository.findAll());
         model.addAttribute("kits", kitRepository.findAll());
         model.addAttribute("title", "Adicionar inscrição");
-        model.addAttribute("botaoOperacao", "Adicionar Inscrição");
+        model.addAttribute("botaoOperacao", "Adicionar inscrição");
         return "inscricao/manter";
     }
 
@@ -64,8 +64,8 @@ public class InscricaoController {
         model.addAttribute("percursos", percursoRepository.findAll());
         model.addAttribute("kits", kitRepository.findAll());
         model.addAttribute("operacao", "editar");
-        model.addAttribute("botaoOperacao", "Editar Inscrição");
-        model.addAttribute("title", "Editar Inscrição");
+        model.addAttribute("botaoOperacao", "Editar inscrição");
+        model.addAttribute("title", "Editar inscrição");
         Optional<Inscricao> inscricao = inscricaoRepository.findById(id);
         if (inscricao.isPresent()){
             model.addAttribute("inscricao", inscricao.get());
@@ -87,8 +87,8 @@ public class InscricaoController {
     @GetMapping(value = "delete/{id}")
     public String getInscricaoDelete(Model model, @PathVariable Long id) {
         model.addAttribute("operacao", "deletar");
-        model.addAttribute("title", "Excluir Inscrição");
-        model.addAttribute("botaoOperacao", "Excluir Inscrição");
+        model.addAttribute("title", "Excluir inscrição");
+        model.addAttribute("botaoOperacao", "Excluir inscrição");
         model.addAttribute("atletas", atletaRepository.findAll());
         model.addAttribute("percursos", percursoRepository.findAll());
         model.addAttribute("kits", kitRepository.findAll());

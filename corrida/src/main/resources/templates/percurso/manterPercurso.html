@@ -41,15 +41,11 @@
 </nav>
 
 
-<div class="container">
-    <br>
-
-    <h3 th:text="${title}"> Operação </h3>
-
-        <br>
-
-
-        <div class="panel panel-primary">
+<div class="container corpo">
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
             <form th:object="${percurso}" method="post">
 
                 <div class="col-md-4">
@@ -65,16 +61,15 @@
                                th:value="${percurso?.distancia}" th:disabled="${operacao} == deletar"/>
                     </div>
 
-                    <div class="form-group">
-
-                        <label for="prova">Prova:</label>
-                        <select name="prova" class="form-control" id="prova" th:disabled="${operacao} == deletar">
+                    <div class="form-group input-group">
+                        <select class="form-control custom-select" name="prova" id="prova" th:disabled="${operacao} == deletar">
+                            <option value="" class="d-none">Prova correspondente</option>
                             <option th:if="${operacao} == adicionar" th:each="prova : ${provas}"
                                     th:value="${prova.id}" th:text="${prova.nome}"></option>
 
                             <option th:if="${operacao} != adicionar" th:each="prova : ${provas}"
-                                    th:value="${prova?.id}"   th:text="${prova.nome}"
-                                    th:selected="${prova?.id==percurso.prova.getId()}"></option>
+                                    th:value="${administrador?.id}"   th:text="${prova.nome}"
+                                    th:selected="${prova?.id==percurso?.prova.getId()}"></option>
                         </select>
                     </div>
 

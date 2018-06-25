@@ -25,7 +25,7 @@ public class KitController {
         model.addAttribute("kits", kitRepository.findAll());
         model.addAttribute("operacao", "listar");
         model.addAttribute("title", "Kits");
-        model.addAttribute("botaoOperacao", "Adicionar Kit");
+        model.addAttribute("botaoOperacao", "Adicionar kit");
 
         return "kit/pesquisaKit";
     }

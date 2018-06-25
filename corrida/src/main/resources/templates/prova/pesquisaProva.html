@@ -46,12 +46,11 @@
 
         <div class="col-md-12">
             <div class="panel panel-primary">
-                <table class="table table-bordered">
+                <table class="table table-hover table-responsive">
                     <thead>
                     <tr>
-                        <th>ID</th>
-                       <th>Nome</th>
-                       <th>Local da largada</th>
+                        <th>Nome</th>
+                        <th>Local da largada</th>
                         <th>Data do evento</th>
                         <th>Hora da largada</th>
                         <th>Maximo de participantes</th>
@@ -61,7 +60,6 @@
                    </thead>
                    <tbody>
                    <tr th:each="prova : ${provas}">
-                       <td th:text="${prova.id}">Codigo</td>
                        <td th:text="${prova.nome}">Nome</td>
                        <td th:text="${prova.localLargada}">Local da largada</td>
                        <td th:text="${prova.dataEvento}">Data do evento</td>
