@@ -24,8 +24,6 @@ public class Kit {
     private Organizador organizador;
 
     @ManyToOne
-
-    @JoinColumn(name = "prova_id")
     private Prova prova;
 
 }

@@ -23,12 +23,7 @@ public class Prova implements Serializable {
     private int maxParticipantes;
 
     @ManyToOne
-    @JoinColumn(name = "organizador_id")
     private Organizador organizador;
 
-    @OneToMany(mappedBy = "prova")
-    private List<Kit> listaKits;
 
-    @OneToMany(mappedBy = "prova")
-    private List<Percurso> listaPercursos;
 }

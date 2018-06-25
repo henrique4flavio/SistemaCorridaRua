@@ -22,9 +22,7 @@ public class Percurso implements Serializable{
     private String distancia;
 
     @ManyToOne
-    @JoinColumn(name = "prova_id")
     private Prova prova;
 
-    @OneToMany(mappedBy = "percurso")
-    private List<Inscricao> listaIncricoes;
+
 }

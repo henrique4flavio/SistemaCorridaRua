@@ -17,21 +17,17 @@ public class Inscricao implements Serializable {
     private String tamanhoCamisa;
     private String precoTotal;
     private String dataInscricao;
+    private boolean pago;
+    private boolean kitRetirado;
 
-    @OneToOne(optional = true)
-    @JoinColumn(name = "pagamento_codPagamento")
-    private Pagamento pagamento;
 
-    @OneToOne
-    @JoinColumn(name = "kit_id")
+    @ManyToOne
     private Kit kit;
 
     @ManyToOne
-    @JoinColumn(name = "atleta_id")
     private Atleta atleta;
 
     @ManyToOne
-    @JoinColumn(name = "percurso_id")
     private Percurso percurso;
 
 

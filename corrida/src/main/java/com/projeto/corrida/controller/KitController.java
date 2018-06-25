@@ -24,7 +24,7 @@ public class KitController {
     public String listaKit(Model model) {
         model.addAttribute("kits", kitRepository.findAll());
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista de Kits");
+        model.addAttribute("title", "Kits");
         model.addAttribute("botaoOperacao", "Adicionar Kit");
 
         return "kit/pesquisaKit";
@@ -49,8 +49,8 @@ public class KitController {
     public String kitEdit(Model model, @PathVariable Long id) {
         Optional<Kit> kit = kitRepository.findById(id);
         model.addAttribute("operacao", "editar");
-        model.addAttribute("botaoOperacao", "Editar Kit");
-        model.addAttribute("title", "Editar Kit");
+        model.addAttribute("botaoOperacao", "Editar kit");
+        model.addAttribute("title", "Editar kit");
         model.addAttribute("organizadores", organizadorRepository.findAll());
 
         model.addAttribute("kits",kitRepository.findAll());
@@ -58,7 +58,7 @@ public class KitController {
         if (kit.isPresent()){
             model.addAttribute("kit", kit.get());
         }
-        model.addAttribute("title", "Editar Kit");
+        model.addAttribute("title", "Editar kit");
         return "kit/manterKit";
     }
 

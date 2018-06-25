@@ -1,7 +1,9 @@
 package com.projeto.corrida.controller;
 
 import com.projeto.corrida.model.Inscricao;
+import com.projeto.corrida.repository.AtletaRepository;
 import com.projeto.corrida.repository.InscricaoRepository;
+import com.projeto.corrida.repository.KitRepository;
 import com.projeto.corrida.repository.PercursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,98 +13,97 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(value = "inscricao")
-
+@RequestMapping(value = "/inscricao")
 public class InscricaoController {
-    @Autowired
     private InscricaoRepository inscricaoRepository;
-    @Autowired
+    private AtletaRepository atletaRepository;
     private PercursoRepository percursoRepository;
-    @Autowired
-    private PercursoRepository kitRepository;
-    @Autowired
-    private PercursoRepository atletaRepository;
+    private KitRepository kitRepository;
 
+    @Autowired
+    public InscricaoController(InscricaoRepository inscricaoRepository,
+                               AtletaRepository atletaRepository,
+                               PercursoRepository percursoRepository,
+                               KitRepository kitRepository) {
+        this.inscricaoRepository = inscricaoRepository;
+        this.atletaRepository = atletaRepository;
+        this.percursoRepository = percursoRepository;
+        this.kitRepository = kitRepository;
+    }
 
-    @GetMapping(value = "listar")
-    public String listaInscricao(Model model) {
-        model.addAttribute("percursos", inscricaoRepository.findAll());
+    @GetMapping(value = "")
+    public String inscricoes(Model model){
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista de inscrição");
-        model.addAttribute("botaoOperacao", "Adicionar inscrição");
-
-        return "inscricao/pesquisaInscricao";
+        model.addAttribute("title", "Lista de inscrições");
+        model.addAttribute("inscricoes", inscricaoRepository.findAll());
+        model.addAttribute("botaoOperacao", "Listar Inscrições");
+        return "inscricao/pesquisar";
     }
 
     @GetMapping(value = "add")
-    public String displayCorredorForm(Model model) {
-        model.addAttribute("title", "Adicionar inscrição");
+    public String getInscricoesAdd(Model model){
         model.addAttribute("operacao", "adicionar");
         model.addAttribute("atletas", atletaRepository.findAll());
-        model.addAttribute("kits", kitRepository.findAll());
         model.addAttribute("percursos", percursoRepository.findAll());
-        model.addAttribute("botaoOperacao", "Adicionar inscricao");
-        return "inscricao/manterInscricao";
+        model.addAttribute("kits", kitRepository.findAll());
+        model.addAttribute("title", "Adicionar inscrição");
+        model.addAttribute("botaoOperacao", "Adicionar Inscrição");
+        return "inscricao/manter";
     }
 
     @PostMapping(value = "add")
-    public String processInscricaoForm(@ModelAttribute Inscricao inscricao) {
+    public String postInscricoesAdd(Model model, @ModelAttribute Inscricao inscricao){
+        model.addAttribute("title", "Adicionar inscrição");
         inscricaoRepository.save(inscricao);
-        return "redirect:/inscricao/listar"; // url para qual página quero voltar.
+        return "redirect:/inscricao";
     }
 
-    @GetMapping(value = "edit/{id}") // site.com/corredor/edit
-    public String inscricaoEdit(Model model, @PathVariable Long id) {
-        Optional<Inscricao> inscricao = inscricaoRepository.findById(id);
-        model.addAttribute("operacao", "editar");
-        model.addAttribute("botaoOperacao", "Editar inscricao");
-        model.addAttribute("title", "Editar inscricao");
+    @GetMapping(value = "edit/{id}")
+    public String getCorridaEdit(Model model, @PathVariable Long id) {
         model.addAttribute("atletas", atletaRepository.findAll());
-        model.addAttribute("kits", kitRepository.findAll());
         model.addAttribute("percursos", percursoRepository.findAll());
-
-        model.addAttribute("inscricoes",inscricaoRepository.findAll());
-
+        model.addAttribute("kits", kitRepository.findAll());
+        model.addAttribute("operacao", "editar");
+        model.addAttribute("botaoOperacao", "Editar Inscrição");
+        model.addAttribute("title", "Editar Inscrição");
+        Optional<Inscricao> inscricao = inscricaoRepository.findById(id);
         if (inscricao.isPresent()){
             model.addAttribute("inscricao", inscricao.get());
         }
-        model.addAttribute("title", "Editar inscricao");
-        return "inscricao/manterInscricao";
+        return "inscricao/manter";
     }
 
-    @PostMapping(value = "edit/{id}") // site.com/corredor/edit/1/
-    public String edit(@ModelAttribute Inscricao inscricao, Model model,
-                       @PathVariable Long id) throws Exception {
+    @PostMapping(value = "edit/{id}")
+    public String postInscricaoEdit(@ModelAttribute Inscricao inscricao, Model model,
+                                    @PathVariable Long id) throws Exception {
         if (id.equals(inscricao.getId())) {
             inscricaoRepository.save(inscricao);
         } else {
             model.addAttribute("error", "Dados incorretos");
         }
-        return "redirect:/inscricao/listar";
+        return "redirect:/inscricao";
     }
 
-    @GetMapping(value = "delete/{id}") // site.com/corredor/delete/1
-    public String inscricaoDelete(Model model, @PathVariable Long id) {
-        Optional<Inscricao> inscricao = inscricaoRepository.findById(id);
-
-        model.addAttribute("atletas", atletaRepository.findAll());
-        model.addAttribute("kits", kitRepository.findAll());
-        model.addAttribute("percursos", percursoRepository.findAll());
-
+    @GetMapping(value = "delete/{id}")
+    public String getInscricaoDelete(Model model, @PathVariable Long id) {
         model.addAttribute("operacao", "deletar");
-        model.addAttribute("botaoOperacao", "Excluir inscricao");
-        model.addAttribute("title", "Excluir inscricao");
+        model.addAttribute("title", "Excluir Inscrição");
+        model.addAttribute("botaoOperacao", "Excluir Inscrição");
+        model.addAttribute("atletas", atletaRepository.findAll());
+        model.addAttribute("percursos", percursoRepository.findAll());
+        model.addAttribute("kits", kitRepository.findAll());
+        Optional<Inscricao> inscricao = inscricaoRepository.findById(id);
         if (inscricao.isPresent()) {
             model.addAttribute("inscricao", inscricao.get());
         }
-        model.addAttribute("tittle", "Excluir inscricao");
-        return "inscricao/manterInscricao";
+
+        return "inscricao/manter";
     }
 
-    @PostMapping(value = "delete/{id}") // site.com/corredor/delete/1
-    public String delete(@PathVariable Long id, @ModelAttribute Inscricao inscricao) {
+    @PostMapping(value = "delete/{id}")
+    public String postInscricaoDelete(@PathVariable Long id, @ModelAttribute Inscricao inscricao) {
         inscricaoRepository.delete(inscricao);
-        return "redirect:/inscricao/listar";
+        return "redirect:/inscricao";
     }
 
 }
