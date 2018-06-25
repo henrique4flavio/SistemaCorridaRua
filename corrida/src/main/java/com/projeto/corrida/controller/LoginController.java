@@ -319,8 +319,10 @@ public class LoginController extends HttpServlet {
 
             return "admin/administradorHome";
         }
-        model.addAttribute("msg", "Erro inesperado!");
-        return "index";
+        else {
+            model.addAttribute("msg", "Erro inesperado!");
+            return "login";
+        }
     }
 
     @GetMapping(value = "/logout")
