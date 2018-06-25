@@ -316,6 +316,7 @@ public class LoginController extends HttpServlet {
             session.setAttribute("tipoLogin", "administrador");
             session.setAttribute("id", administrador.getId());
             session.setAttribute("nome", administrador.getNome());
+            model.addAttribute("administrador", administrador);
 
             return "admin/administradorHome";
         }
