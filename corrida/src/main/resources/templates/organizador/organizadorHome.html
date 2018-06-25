@@ -1,181 +1,121 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <head th:replace="fragments :: head">
-        <meta charset="UTF-8"/>
-        <title>Administrador</title>
-    </head>
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8"/>
+    <title>Organizador</title>
+</head>
 
 
-<body class="fixed-nav sticky-footer" id="page-top">
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="/admin/home/">Sistema de Corrida de Rua</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="administradorHome.jsp">
-                    <i class="fa fa-fw fa-dashboard"></i>
-                    <!-- <span class="nav-link-text">Painel Administrativo</span> -->
-                </a>
-            </li>
+<body class="app sidebar-mini rtl">>
+<!-- Navbar-->
+<header class="app-header"><a class="app-header__logo" href="index.html"><font face="verdana" color="#f0ffff">SCCR</font>
+</a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
+    <ul class="app-nav">
+        <li class="app-search">
+            <input class="app-search__input" type="search" placeholder="Search">
+            <button class="app-search__button"><i class="fa fa-search"></i></button>
+        </li>
 
-        </ul>
-        <ul class="navbar-nav sidenav-toggler">
-            <li class="nav-item">
-                <a class="nav-link text-center" id="sidenavToggler">
-                    <i class="fa fa-fw fa-angle-left"></i>
-                </a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
+        <!-- User Menu-->
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+            <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+                <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+</header>
+<!-- Sidebar menu-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
+        <div>
+            <p  th:text="${session.nome}"th:unless="session == null">
 
-
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="container">
-    <!-- Icon Cards-->
-    <br><br><br>
-
-        <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-warning o-hidden h-100">
-                <div class="card-body">
-                    <div class="card-body-icon">
-                        <i class="fa fa-fw fa-list"></i>
-                    </div>
-                    <div class="mr-5">Manter Kit</div>
-                </div>
-                <a class="card-footer text-white clearfix small z-1" th:href="@{'~/kit/listar'}">
-                    <span class="float-left">View Details</span>
-                    <span class="float-right">
-                                <i class="fa fa-angle-right"></i>
-                            </span>
-                </a>
-            </div>
-        </div>
-
-
-    <div class="col-xl-3 col-sm-6 mb-3">
-        <div class="card text-white bg-warning o-hidden h-100">
-            <div class="card-body">
-                <div class="card-body-icon">
-                    <i class="fa fa-fw fa-list"></i>
-                </div>
-                <div class="mr-5">Baixar Lista de Provas</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" th:href="@{'~/relatorioProvas/provas'}">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                                <i class="fa fa-angle-right"></i>
-                            </span>
-            </a>
+            </p>
+            <p class="app-sidebar__user-designation">Frontend Developer</p>
         </div>
     </div>
+    <ul class="app-menu">
+        <li><a class="app-menu__item active" th:href="@{'~/prova/gridProvas'}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Relatórios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item"th:href="@{'~/relatorioProvas/provas'}"><i class="icon fa fa-circle-o"></i>Baixar Lista de Provas</a></li>
+                <li><a class="treeview-item"  th:href="@{'~/organizador/relatorio'}"target="_blank" rel="noopener"><i class="icon fa fa-circle-o"></i> Baixar Lista de Kits</a></li>
+                <li><a class="treeview-item" th:href="@{'~/relatorioLote/lotes'}"><i class="icon fa fa-circle-o"></i> Baixar Lista de Lotes</a></li>
+
+            </ul>
+        </li>
 
 
-
-<div class="col-xl-3 col-sm-6 mb-3">
-    <div class="card text-white bg-warning o-hidden h-100">
-        <div class="card-body">
-            <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
-            </div>
-            <div class="mr-5">Baixar Lista de Kits</div>
+    </ul>
+</aside>
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
         </div>
-        <a class="card-footer text-white clearfix small z-1" th:href="@{'~/organizador/relatorio'}">
-            <span class="float-left">View Details</span>
-            <span class="float-right">
-                                <i class="fa fa-angle-right"></i>
-                            </span>
-        </a>
-    </div>
-</div>
-</div>
-    <div class="col-xl-3 col-sm-6 mb-3">
-        <div class="card text-white bg-warning o-hidden h-100">
-            <div class="card-body">
-                <div class="card-body-icon">
-                    <i class="fa fa-fw fa-list"></i>
-                </div>
-                <div class="mr-5">Baixar Lista de Lotes</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" th:href="@{'~/relatorioLote/lotes'}">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                                <i class="fa fa-angle-right"></i>
-                            </span>
-            </a>
-        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item"><a>Dashboard</a></li>
+        </ul>
     </div>
 
     <div class="row">
-
-<div class="col-xl-3 col-sm-6 mb-3">
-    <div class="card text-white bg-warning o-hidden h-100">
-        <div class="card-body">
-            <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
+                <div class="info">
+                    <a th:href="@{'~/kit/listar'}"><h5>Cadastrar Prova</h5></a>
+                    <p><b>5</b></p>
+                </div>
             </div>
-            <div class="mr-5">Manter Itens</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" th:href="@{'~/organizador/listar'}">
-            <span class="float-left">View Details</span>
-            <span class="float-right">
-                                <i class="fa fa-angle-right"></i>
-                            </span>
-        </a>
-    </div>
-</div>
 
 
-<div class="col-xl-3 col-sm-6 mb-3">
-    <div class="card text-white bg-warning o-hidden h-100">
-        <div class="card-body">
-            <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small warning coloured-icon"><i class="icon fa fa-users fa-3x"></i>
+                    <div class="info">
+                        <a th:href="@{'~/prova/listar'}"><h5>Manter Prova</h5></a>
+                        <p><b>5</b></p>
+                    </div>
+                </div>
             </div>
-            <div class="mr-5">Inscrições Realizadas</div>
+
+
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small danger coloured-icon"><i class="icon fa fa-users fa-3x"></i>
+                <div class="info">
+                    <a th:href="@{'~/kit/listar'}"><h5>Manter Kit</h5></a>
+                    <p><b>5</b></p>
+                </div>
+            </div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" th:href="@{'~/organizador/listar'}">
-            <span class="float-left">View Details</span>
-            <span class="float-right">
-                                <i class="fa fa-angle-right"></i>
-                            </span>
-        </a>
+
+
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
+                <div class="info">
+                    <a th:href="@{'~/lote/listar'}"><h5>Manter Lote</h5></a>
+                    <p><b>5</b></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small warning coloured-icon"><i class="icon fa fa-users fa-3x"></i>
+                <div class="info">
+                    <a href="/percurso/listar/"><h5>Manter Percurso</h5></a>
+                    <p><b>25</b></p>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-</div>
+    </div>
+</main>
 
+<div th:replace="fragments :: body"/>
 
-<!-- Area Chart Example-->
-
-<!-- Example DataTables Card-->
-
-<div class="card-footer small text-muted"></div>
-</div>
-</div>
-<!-- /.container-fluid-->
-<!-- /.content-wrapper-->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fa fa-angle-up"></i>
-</a>
-
-
-</div>
-<div class="footer-copyright bg-dark text-white text-center py-3 fixed-bottom">© 2018 Copyright:
-    <a href=""> SCCR II</a>
-</div>
 </body>
-
 </html>
