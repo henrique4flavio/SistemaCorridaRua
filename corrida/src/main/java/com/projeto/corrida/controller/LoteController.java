@@ -28,7 +28,7 @@ public class LoteController {
     public String listaPercurso(Model model) {
         model.addAttribute("lotes", loteRepository.findAll());
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista de lotes");
+        model.addAttribute("title", "Lotes");
         model.addAttribute("botaoOperacao", "Adicionar Lote");
 
         return "lote/pesquisaLote";
@@ -36,11 +36,11 @@ public class LoteController {
 
     @GetMapping(value = "add")
     public String displayCorredorForm(Model model) {
-        model.addAttribute("title", "Adicionar Lote");
+        model.addAttribute("title", "Adicionar lote");
         model.addAttribute("operacao", "adicionar");
         model.addAttribute("provas", provaRepository.findAll());
 
-        model.addAttribute("botaoOperacao", "Adicionar Lote");
+        model.addAttribute("botaoOperacao", "Adicionar lote");
         return "lote/manterLote";
     }
 
@@ -54,8 +54,8 @@ public class LoteController {
     public String percursoEdit(Model model, @PathVariable Long id) {
         Optional<Lote> lote = loteRepository.findById(id);
         model.addAttribute("operacao", "editar");
-        model.addAttribute("botaoOperacao", "Editar Lote");
-        model.addAttribute("title", "Editar Lote");
+        model.addAttribute("botaoOperacao", "Editar lote");
+        model.addAttribute("title", "Editar lote");
         model.addAttribute("provas", provaRepository.findAll());
 
         model.addAttribute("lotes",loteRepository.findAll());
@@ -63,7 +63,7 @@ public class LoteController {
         if (lote.isPresent()){
             model.addAttribute("lote", lote.get());
         }
-        model.addAttribute("title", "Editar Lote");
+        model.addAttribute("title", "Editar lote");
         return "lote/manterLote";
     }
 
@@ -85,11 +85,11 @@ public class LoteController {
 
         model.addAttribute("operacao", "deletar");
         model.addAttribute("botaoOperacao", "Excluir lote");
-        model.addAttribute("title", "Excluir percurso");
+        model.addAttribute("title", "Excluir lote");
         if (lote.isPresent()) {
             model.addAttribute("lote", lote.get());
         }
-        model.addAttribute("tittle", "Excluir percurso");
+        model.addAttribute("tittle", "Excluir lote");
         return "lote/manterLote";
     }
 

@@ -23,7 +23,7 @@ public class PercursoController {
     public String listaPercurso(Model model) {
         model.addAttribute("percursos", percursoRepository.findAll());
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista de percursos");
+        model.addAttribute("title", "Percursos");
         model.addAttribute("botaoOperacao", "Adicionar percurso");
 
         return "percurso/pesquisaPercurso";
@@ -48,8 +48,8 @@ public class PercursoController {
     public String percursoEdit(Model model, @PathVariable Long id) {
         Optional<Percurso> percurso = percursoRepository.findById(id);
         model.addAttribute("operacao", "editar");
-        model.addAttribute("botaoOperacao", "Editar Kit");
-        model.addAttribute("title", "Editar Kit");
+        model.addAttribute("botaoOperacao", "Editar percurso");
+        model.addAttribute("title", "Editar percurso");
         model.addAttribute("provas", provaRepository.findAll());
 
         model.addAttribute("percursos",percursoRepository.findAll());

@@ -39,8 +39,8 @@ public class OrganizadorController {
     public String listarOrganizadores(Model model) {
         model.addAttribute("organizadores", organizadorRepository.findAll());
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista Organizadores");
-        model.addAttribute("botaoOperacao", "Listar Organizador");
+        model.addAttribute("title", "Organizadores");
+        model.addAttribute("botaoOperacao", "Listar organizador");
 
         return "organizador/pesquisaOrganizador";
     }
@@ -54,8 +54,8 @@ public class OrganizadorController {
     public String organizadorHome(Model model) {
         model.addAttribute("organizadores", organizadorRepository.findAll());
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista Organizadores");
-        model.addAttribute("botaoOperacao", "Listar Organizador");
+        model.addAttribute("title", "Lista organizadores");
+        model.addAttribute("botaoOperacao", "Listar organizador");
 
         return "organizador/organizadorHome";
     }
@@ -65,7 +65,7 @@ public class OrganizadorController {
         model.addAttribute("title", "Adicionar organizador");
         model.addAttribute("administradores", administradorRepository.findAll());
         model.addAttribute("operacao", "adicionar");
-        model.addAttribute("botaoOperacao", "Adicionar Organizador");
+        model.addAttribute("botaoOperacao", "Adicionar organizador");
         return "organizador/manterOrganizador";
     }
 
@@ -80,8 +80,8 @@ public class OrganizadorController {
     public String administradorEdit(Model model, @PathVariable Long id) {
         Optional<Organizador> organizador = organizadorRepository.findById(id);
         model.addAttribute("operacao", "editar");
-        model.addAttribute("botaoOperacao", "Editar Organizador");
-        model.addAttribute("tittle", "Editar Organizador");
+        model.addAttribute("botaoOperacao", "Editar organizador");
+        model.addAttribute("tittle", "Editar organizador");
         model.addAttribute("administradores", administradorRepository.findAll());
         if (organizador.isPresent()){
             model.addAttribute("organizador", organizador.get());

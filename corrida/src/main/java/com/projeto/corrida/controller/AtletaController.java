@@ -22,7 +22,7 @@ public class AtletaController {
     public String atletas(Model model) {
         model.addAttribute("atletas", atletaRepository.findAll());
         model.addAttribute("operacao", "listar");
-        model.addAttribute("title", "Lista atleta");
+        model.addAttribute("title", "Atletas");
         model.addAttribute("botaoOperacao", "Atletas");
 
         return "atleta/pesquisaAtleta";
