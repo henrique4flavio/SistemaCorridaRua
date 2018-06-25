@@ -5,42 +5,14 @@
     <title th:text="${title}"> Prova </title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="/admin/home/">Sistema de Corrida de Rua</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="administradorHome.jsp">
-                    <i class="fa fa-fw fa-dashboard"></i>
-                    <!-- <span class="nav-link-text">Painel Administrativo</span> -->
-                </a>
-            </li>
+<!-- Navbar-->
+<header class="app-header"><a class="app-header__logo" href="index.html"><font face="verdana" color="#f0ffff">SCCR</font>
+</a>
+    <!-- Sidebar toggle button-->
+    <!-- Navbar Right Menu-->
+    <a class="app-nav__item leftIcon" href="/login/" data-toggle="dropdown" aria-label="Open Profile Menu">ENTRAR &nbsp;<i class="fa fa-user fa-lg"></i></a>
 
-        </ul>
-        <ul class="navbar-nav sidenav-toggler">
-            <li class="nav-item">
-                <a class="nav-link text-center" id="sidenavToggler">
-                    <i class="fa fa-fw fa-angle-left"></i>
-                </a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-
-                <form class="form-inline -align-right">
-                    <div class="form-group">
-                        <input type="text" placeholder="Email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                       <span>  </span> <input type="password" placeholder="Password" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-success">Sign in</button>
-                </form>
-        </ul>
-    </div>
-</nav>
+</header>
 <br>
 
 <div class="container ">
@@ -49,7 +21,7 @@
     <header class="jumbotron my-4">
         <h1 class="display-3">Seja bem vindo!</h1>
         <p class="lead">Sistema de Controle de Corrida de Rua</p>
-        <a href="/atleta/listar" class="btn btn-primary btn-lg">Registrar</a>
+        <a href="/atleta/add" class="btn btn-primary btn-lg">Registrar</a>
     </header>
 
 

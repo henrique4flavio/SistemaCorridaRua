@@ -15,6 +15,7 @@ import java.util.List;
 public class Atleta extends Usuario implements Serializable {
 
     private String apelido;
+    private String sexo;
 
     @OneToMany(mappedBy = "atleta")
     private List<Inscricao> listaInscricoes;
