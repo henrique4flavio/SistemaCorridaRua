@@ -5,7 +5,7 @@ import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -27,7 +27,7 @@ import java.util.Map;
 
 public class RelatorioAtletasController extends HttpServlet {
 
-    @GetMapping(value = "atletas")
+    @PostMapping(value = "atletas")
     @ResponseBody
     public String RelatorioAtletas(HttpServletResponse response, HttpServletRequest request) throws JRException, IOException, ClassNotFoundException, SQLException {
         Connection conexao = null;
@@ -36,7 +36,7 @@ public class RelatorioAtletasController extends HttpServlet {
 
         Map<String,Object> params = new HashMap<>();
 
-        InputStream jasperStream = this.getClass().getResourceAsStream("/relatorios/Relatorio_Atletas.jasper");
+        InputStream jasperStream = this.getClass().getResourceAsStream("/relatorios/Relatorio_Lotes.jasper");
         //  String relatorio = getServletContext().getRealPath("/relatorios") + "/Relatorio_Administradores.jasper";
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperStream, params,conexao);
         // JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);

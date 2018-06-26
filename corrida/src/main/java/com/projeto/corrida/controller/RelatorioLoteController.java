@@ -34,7 +34,7 @@ public class RelatorioLoteController extends HttpServlet {
 
         Map<String,Object> params = new HashMap<>();
 
-        InputStream jasperStream = this.getClass().getResourceAsStream("/relatorios/Relatorio_Lote.jasper");
+        InputStream jasperStream = this.getClass().getResourceAsStream("/relatorios/Relatorio_Lotes.jasper");
         //  String relatorio = getServletContext().getRealPath("/relatorios") + "/Relatorio_Administradores.jasper";
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperStream, params,conexao);
         // JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);

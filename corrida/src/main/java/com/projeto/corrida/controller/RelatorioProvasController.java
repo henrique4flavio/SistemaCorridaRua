@@ -36,7 +36,7 @@ public class RelatorioProvasController extends HttpServlet {
 
         Map<String,Object> params = new HashMap<>();
 
-        InputStream jasperStream = this.getClass().getResourceAsStream("/relatorios/Relatorio_Provas.jasper");
+        InputStream jasperStream = this.getClass().getResourceAsStream("/relatorios/Relatorio_Prova.jasper");
         //  String relatorio = getServletContext().getRealPath("/relatorios") + "/Relatorio_Administradores.jasper";
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperStream, params,conexao);
         // JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);
