@@ -64,7 +64,8 @@ public class AtletaController {
         } else {
             model.addAttribute("error", "Dados incorretos");
         }
-        return "redirect:/atleta/listar";
+        model.addAttribute("atleta",atleta);
+        return "atleta/atletaHome";
     }
 
     @GetMapping(value = "delete/{id}") // site.com/corredor/delete/1

@@ -52,7 +52,7 @@
 
                        <td th:text="${prova.getOrganizador().getNome()}">Organizador</td>
 
-                       <td><a class="btn btn-outline-success" th:href="@{'/prova/edit/' + ${prova.id}}">Inscrever</a></td>
+                       <td><a class="btn btn-outline-success" th:href="@{'/inscricao/add/' + ${prova.id}}">Inscrever</a></td>
                    </tr>
                </table>
                <a  class="btn btn-outline-warning"  th:href="@{'~/organizador/home/'}">Voltar</a>

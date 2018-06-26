@@ -40,11 +40,14 @@ public class InscricaoController {
         return "inscricao/pesquisar";
     }
 
-    @GetMapping(value = "add")
-    public String getInscricoesAdd(Model model){
+    @GetMapping(value = "add/{id}")
+    public String getInscricoesAdd(Model model, @PathVariable Long id){
+
+
         model.addAttribute("operacao", "adicionar");
         model.addAttribute("atletas", atletaRepository.findAll());
         model.addAttribute("percursos", percursoRepository.findAll());
+        model.addAttribute("prova", percursoRepository.findById(id));
         model.addAttribute("kits", kitRepository.findAll());
         model.addAttribute("title", "Adicionar inscrição");
         model.addAttribute("botaoOperacao", "Adicionar inscrição");
