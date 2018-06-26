@@ -54,7 +54,7 @@ public class InscricaoController {
         return "inscricao/manter";
     }
 
-    @PostMapping(value = "add")
+    @PostMapping(value = "add/{id}")
     public String postInscricoesAdd(Model model, @ModelAttribute Inscricao inscricao){
         model.addAttribute("title", "Adicionar inscrição");
         inscricaoRepository.save(inscricao);
