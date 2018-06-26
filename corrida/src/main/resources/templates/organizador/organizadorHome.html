@@ -28,8 +28,8 @@
 <aside class="app-sidebar">
     <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
         <div>
-            <p  th:text="${session.nome}"th:unless="session == null">
-
+            <h6><p>Bem vindo (a)</p></h6>
+            <p  th:text="${organizador.nome}">
             </p>
             <p class="app-sidebar__user-designation">Frontend Developer</p>
         </div>

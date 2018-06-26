@@ -31,6 +31,15 @@ public class ProvaController {
 
         return "prova/pesquisaProva";
     }
+    @GetMapping(value = "inscrever")
+    public String listaProvaInscricao(Model model) {
+        model.addAttribute("provas", provaRepository.findAll());
+        model.addAttribute("operacao", "listar");
+        model.addAttribute("title", "Provas");
+        model.addAttribute("botaoOperacao", "Adicionar prova");
+
+        return "prova/inscreverProva";
+    }
 
     @GetMapping(value = "")
     public String gridProvas(Model model) {
